@@ -30,8 +30,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="student_income" >Student Income</a></li>
-                        <li><a href="student_payment" >Received Payment</a></li>
                         <li><a href="sale_voucher" >Sale Voucher</a></li>
+                        <li><a href="received_payment" >Received Payment</a></li>
                     </ul>
                 </li>
                 <li>

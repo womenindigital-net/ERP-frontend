@@ -58,7 +58,15 @@ class HomeController extends Controller
     {
         return view("student_receivable");
     }
-
+    public function receivedPayment()
+    {
+        return view("received_payment");
+    }
+    public function saleVoucher()
+    {
+        return view("sale_voucher");
+    }
+    
     /*Language Translation*/
     public function lang($locale)
     {

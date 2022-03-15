@@ -66,12 +66,12 @@
                                         class="fas fa-check"></i></button>
                                 <button type="button"
                                     class="btn btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
                                     class="btn btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
                                     <i class="fas fa-pen"></i></button>
                                 <button type="button"
                                     class="btn btn-danger btn-rounded waves-effect waves-light"> <i
@@ -90,12 +90,12 @@
                                         class="fas fa-check"></i></button>
                                 <button type="button"
                                     class="btn btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
                                     class="btn btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
                                     <i class="fas fa-pen"></i></button>
                                 <button type="button"
                                     class="btn btn-danger btn-rounded waves-effect waves-light"> <i
@@ -114,12 +114,12 @@
                                         class="fas fa-check"></i></button>
                                 <button type="button"
                                     class="btn btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
                                     class="btn btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
                                     <i class="fas fa-pen"></i></button>
                                 <button type="button"
                                     class="btn btn-danger btn-rounded waves-effect waves-light"> <i

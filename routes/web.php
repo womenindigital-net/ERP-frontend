@@ -21,6 +21,8 @@ Route::get('/journal', [App\Http\Controllers\HomeController::class, 'journal'])-
 Route::get('/approved_journals_list', [App\Http\Controllers\HomeController::class, 'approvedJournal'])->name('approved.journal');
 Route::get('/student_income', [App\Http\Controllers\HomeController::class, 'studentIncome'])->name('student.income');
 Route::get('/student_receivable', [App\Http\Controllers\HomeController::class, 'studentReceivable'])->name('student.receivable');
+Route::get('/received_payment', [App\Http\Controllers\HomeController::class, 'receivedPayment'])->name('received.payment');
+Route::get('/sale_voucher', [App\Http\Controllers\HomeController::class, 'saleVoucher'])->name('sale.voucher');
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
