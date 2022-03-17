@@ -66,6 +66,14 @@ class HomeController extends Controller
     {
         return view("sale_voucher");
     }
+    public function requisition()
+    {
+        return view("requisition");
+    }
+    public function purchaseOrder()
+    {
+        return view("purchase_order");
+    }
     
     /*Language Translation*/
     public function lang($locale)

@@ -37,6 +37,19 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
+                        <span>Purchase </span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="requisition" >Requisition</a></li>
+                        <li><a href="purchase_order" >Purchase Order</a></li>
+                        <li><a href="purchase_return" >Purchase Return</a></li>
+                        <li><a href="payment_for_requisition" >Payment for requisition</a></li>
+                        <li><a href="payment_for_requisition" >Direct Payment</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
                         <span>Accounting</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">

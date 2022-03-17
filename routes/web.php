@@ -23,6 +23,8 @@ Route::get('/student_income', [App\Http\Controllers\HomeController::class, 'stud
 Route::get('/student_receivable', [App\Http\Controllers\HomeController::class, 'studentReceivable'])->name('student.receivable');
 Route::get('/received_payment', [App\Http\Controllers\HomeController::class, 'receivedPayment'])->name('received.payment');
 Route::get('/sale_voucher', [App\Http\Controllers\HomeController::class, 'saleVoucher'])->name('sale.voucher');
+Route::get('/requisition', [App\Http\Controllers\HomeController::class, 'requisition'])->name('requisition');
+Route::get('/purchase_order', [App\Http\Controllers\HomeController::class, 'purchaseOrder'])->name('purchase.order');
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');

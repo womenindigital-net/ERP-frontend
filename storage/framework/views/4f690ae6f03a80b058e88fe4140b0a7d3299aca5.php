@@ -52,6 +52,23 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
+                                        <label class="form-label">Requested By</label>
+                                        <select class="form-control select2">
+                                            <option>--Select--</option>
+                                            
+                                            <option value="AK">Alaska</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="CA">California</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="WA">Washington</option>
+                                            
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
                                         <label class="form-label">Project</label>
                                         <select class="form-control select2">
                                             <option>--Select--</option>
@@ -64,9 +81,39 @@
                                         </select>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Customer</label>
+                                        <label>Date</label>
+                                            <div class="input-group" id="datepicker1">
+                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
+                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
+
+                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="validationCustom02" class="form-label">Requisition Number</label>
+                                        <input type="text" class="form-control" id="validationCustom02"
+                                            placeholder="Enter Requisition Number here"  required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="validationCustom02" class="form-label">Requisition Name</label>
+                                        <input type="text" class="form-control" id="validationCustom02"
+                                            placeholder="Enter Requisition Name here"  required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Warehouses</label>
                                         <select class="form-control select2">
                                             <option>--Select--</option>
                                             
@@ -81,98 +128,22 @@
                                         </select>
                                     </div>
                                 </div>
-                                
-
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label>Payment Date</label>
-                                        <div class="input-group" id="datepicker1">
-                                        <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                                        data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-
-                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Requisition</label>
-                                        <input type="text" class="form-control" id="validationCustom02"
-                                            placeholder="Enter Requisition Number here"  required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Cash Pay</label>
-                                        <input type="text" class="form-control" id="validationCustom02"
-                                            placeholder="Enter Requisition Name here"  required>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 8th row start  -->
-                            <div class="row my-3">
-                                <div class="form-check form-check-primary mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
-                                    <label class="form-check-label" for="formCheckcolor1">Cheque Pay</label>
-                                </div>
-                                <div class="row">
-                                    <div class="row">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Amount</label>
-                                                    <input type="text" class="form-control" placeholder="Enter Bank Name Here">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Cheque No</label>
-                                                    <input type="text" class="form-control" placeholder="Phone One Here ">
-                                                    
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label"> Acc No</label>
-                                                    <input type="text" class="form-control" placeholder="Enter  Phone Two Here">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Account Name</label>
-                                                    <input type="text" class="form-control" placeholder="Enter Acc.Name Here">
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Bank Name</label>
-                                                    <input type="text" class="form-control" placeholder="Enter Bank Name Here">
-                                                    
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 8th row end  -->
                             <div class="row">
                                 <div class="col-12 p-0">
                                     <div class="card">
                                         <div class="card-body">
                                             <!-- 6th row start  -->
                                             <div class="row py-3 bg-secondary text-light rounded-3 mb-4">
-                                                <div class="col-md-6">
+                                                <div class="col-md-3">
+                                                    <div class="row">
+                                                        <label for="horizontal-firstname-input" class="col-4 text-end col-form-label"> Discount</label>
+                                                        <div class="col-8">
+                                                        <strong class="form-control">0</strong>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
                                                     <div class="row">
                                                         <label for="horizontal-firstname-input" class="col-4 text-end col-form-label"> Item</label>
                                                         <div class="col-8">
@@ -180,9 +151,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-3">
                                                     <div class="row">
-                                                        <label for="horizontal-firstname-input" class="col-4 text-end col-form-label"> Total Amount </label>
+                                                        <label for="horizontal-firstname-input" class="col-4 text-end col-form-label"> Cost</label>
+                                                        <div class="col-8">
+                                                            <strong class="form-control">0</strong>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="row">
+                                                        <label for="horizontal-firstname-input" class="col-4 text-end col-form-label"> Paid</label>
                                                         <div class="col-8">
                                                             <strong class="form-control">0</strong>
                                                         </div>
@@ -193,30 +172,35 @@
                                             <h4 class="card-title mb-4">All product</h4>
                                             <form class="repeater" enctype="multipart/form-data">
                                                 <div class="row">
-                                                    <div class="col-lg-1 p-0 pe-1">
+                                                    <div class="col-lg-2 p-0 pe-1">
                                                         <label for="name">SL</label>
-                                                    </div>
-                                                    <div class="col p-0 pe-1">
-                                                        <label for="product">Invoice Number</label>
-                                                    </div>
-                                                    <div class="col p-0 pe-1">
-                                                        <label for="product">Due Amount</label>
-                                                    </div>
-                                                    <div class="col p-0 pe-1">
-                                                        <label for="quality">Payment Amount</label>
+                                                        <label for="name">Catagory</label>
                                                     </div>
                                                     <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="quality">Action</label>
+                                                        <label for="product">Product</label>
+                                                    </div>
+                                                    <div class="col-lg-2 p-0 pe-1">
+                                                        <label for="product">Avlilable Quality </label>
+                                                    </div>
+                                                    <div class="col-lg-2 p-0 pe-1">
+                                                        <label for="quality">Quality</label>
+                                                    </div>
+                                                    <div class="col-lg-1 p-0 pe-1">
+                                                        <label for="total">Sub-total</label>
+                                                    </div>
+                                                    <div class="col-lg-1 p-0 pe-1">
+                                                        <label for="discount">Price</label>
+                                                    </div>
+                                                    <div class="col-lg-1 p-0 pe-1">
+                                                        <label for="subtotal">Discount</label>
                                                     </div>
                                                 </div>
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
                                                         
 
-                                                        <div  class=" col-lg-1 p-0 pe-1 pb-1">
+                                                        <div  class=" col-lg-2 d-flex p-0 pe-1 pb-1">
                                                             <span class="pe-2 pb-1">01</span>
-                                                        </div>
-                                                        <div class=" col p-0 pe-1 pb-1">
                                                             <select id="formrow-inputState" class="form-select">
                                                                 <option selected="">Select</option>
                                                                 <option value="AK">Alaska</option>
@@ -227,14 +211,27 @@
                                                                 <option value="WA">Washington</option>
                                                             </select>
                                                         </div>
-                                                        <div  class=" col p-0 pe-1 pb-1">
+                                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                                            <input type="text" class="form-control"/>
+                                                        </div>
+                                                        <div  class=" col-lg-2 p-0 pe-1 pb-1">
                                                             <input type="text" class="form-control"/>
                                                         </div>
 
-                                                        <div class=" col p-0 pe-1 pb-1">
+                                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                             <input type="text"  class="form-control"/>
                                                         </div>
-                                                        <div class="col-lg-2  p-0 pe-1 pb-1 align-self-center">
+
+                                                        <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                                            <input type="number"  class="form-control"/>
+                                                        </div>
+                                                        <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                                            <input type="number" class="form-control"/>
+                                                        </div>
+                                                        <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                                            <input type="text" class="form-control"/>
+                                                        </div>
+                                                        <div class="col-lg-1 p-0 pe-1 pb-1 align-self-center">
                                                             
                                                             <div class="d-grid">
                                                                 <input data-repeater-delete type="button" class="btn btn-primary" value="Delete"/>
@@ -264,10 +261,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                   
+                                    <button class="btn btn-danger w-100">Reset</button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger w-100">Reset</button>
+                                    <button class="btn btn-success w-100">Save as Draft</button>
                                 </div>
                                 <div class="col-md-4">
                                     <button class="btn btn-success w-100">Save</button>
@@ -277,38 +274,52 @@
                         </div>
                         <div class="tab-pane" id="received_payment_details" role="tabpanel">
                             <div class="row">
-                                <div class="col-12">
-                                    <div class="card-body">
-                                        <div>
-                                            <table id="datatable-buttons" class="table table-bordered dt-responsive table-responsive w-100">
-                                            <thead>
-                                                <tr class="table-primary">
-                                                    <th>Customer</th>
-                                                    <th>Project</th>
-                                                    <th>Date</th>
-                                                    <th>Cash Payment</th>
-                                                    <th>Cheque Payment</th>
-                                                    <th>Total Payment</th>
-                                                    <th>Reference</th>
-                                                    <th>Log</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Demo</td>
-                                                    <td>Demo</td>
-                                                    <td>Demo</td>
-                                                    <td>Demo</td>
-                                                    <td>Demo</td>
-                                                    <td>Demo</td>
-                                                    <td>Demo</td>
-                                                    <td>Demo</td>
-                                            </tbody>
-                                        </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
+                                <div class="col p-0 table-responsive border-0">
+                                    <table id="datatable-buttons" class="table table-bordered table-responsive w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>SL</th>
+                                                <th>Reg ID</th>
+                                                <th>Name</th>
+                                                <th>Posted By</th>
+                                                <th>Project</th>
+                                                <th>Date</th>
+                                                <th>Items</th>
+                                                <th>Total</th>
+                                                <th>Cost</th>
+                                                <th>Send for approve</th>
+                                                <th>Is Approved</th>
+                                                <th>Order IDs</th>
+                                                <th>Log</th>
+                                                <th>action</th>
+
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1235</td>
+                                                <td>puja</td>
+                                                <td>Hridoy</td>
+                                                <td>01</td>
+                                                <td>12/03</td>
+                                                <td>coffee</td>
+                                                <td>1205</td>
+                                                <td>459909</td>
+                                                <td>ok</td>
+                                                <td>yes</td>
+                                                <td>12</td>
+                                                <td>231</td>
+                                                <td>23</td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
                         
                         </div>
                     </div>
@@ -318,8 +329,6 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
-
-
 <?php $__env->startSection('script'); ?>
     <!-- form advanced init -->
     <script src="<?php echo e(URL::asset('/assets/js/pages/form-advanced.init.js')); ?>"></script>
@@ -358,5 +367,4 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script-bottom'); ?>
 <?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\github\ERP-frontend-wid\resources\views/received_payment.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\github\ERP-frontend-wid\resources\views/requisition.blade.php ENDPATH**/ ?>
