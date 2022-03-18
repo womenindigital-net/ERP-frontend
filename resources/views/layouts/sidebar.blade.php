@@ -50,6 +50,21 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
+                        <span>Inventory Management</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="stock_assign" >Stock Assign</a></li>
+                        <li><a href="stock_out" >Stock Out</a></li>
+                        <li><a href="stock_hand_report" >Stock On Hand Report</a></li>
+                        <li><a href="location_wise_product_report" >Location Wise Product Report</a></li>
+                        <li><a href="stock_reorder_report" >Stock Reorder Report</a></li>
+                        <li><a href="stock_receive_report" >Stock receive report</a></li>
+                        <li><a href="product_analysis_report" >Report::Product Analysis</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
                         <span>Accounting</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">

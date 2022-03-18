@@ -86,6 +86,31 @@ class HomeController extends Controller
     {
         return view("direct_payment");
     }
+    // Inventory management
+    public function stockAssign()
+    {
+        return view("stock_assign");
+    }
+    public function stockOut()
+    {
+        return view("stock_out");
+    }
+    public function stockHandReport()
+    {
+        return view("stock_hand_report");
+    }
+    public function locationWiseProductReport()
+    {
+        return view("location_wise_product_report");
+    }
+    public function stockReorderReport()
+    {
+        return view("stock_reorder_report");
+    }
+    public function stockAnalysisReport()
+    {
+        return view("product_analysis_report");
+    }
     
     /*Language Translation*/
     public function lang($locale)

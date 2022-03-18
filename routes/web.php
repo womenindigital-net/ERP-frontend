@@ -29,6 +29,15 @@ Route::get('/purchase_return', [App\Http\Controllers\HomeController::class, 'pur
 Route::get('/supplier_payment', [App\Http\Controllers\HomeController::class, 'supplierPayment'])->name('supplier.payment');
 Route::get('/direct_payment', [App\Http\Controllers\HomeController::class, 'directPayment'])->name('direct.payment');
 
+// Inventory management
+Route::get('/stock_assign', [App\Http\Controllers\HomeController::class, 'stockAssign'])->name('stock.assign');
+Route::get('/stock_out', [App\Http\Controllers\HomeController::class, 'stockOut'])->name('stock.out');
+Route::get('/stock_hand_report', [App\Http\Controllers\HomeController::class, 'stockHandReport'])->name('stock.hand.report');
+Route::get('/location_wise_product_report', [App\Http\Controllers\HomeController::class, 'locationWiseProductReport'])->name('location.wise.product.report');
+Route::get('/stock_reorder_report', [App\Http\Controllers\HomeController::class, 'stockReorderReport'])->name('stock.reorder.report');
+Route::get('/product_analysis_report', [App\Http\Controllers\HomeController::class, 'stockAnalysisReport'])->name('product.analysis.report');
+
+
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('updatePassword');
