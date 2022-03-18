@@ -191,13 +191,12 @@
                                                     <div class="col-lg-1 p-0 pe-1">
                                                         <label for="discount">Price</label>
                                                     </div>
-                                                    <div class="col-lg-1 p-0 pe-1">
+                                                    <div class="col-lg-2 p-0 pe-1">
                                                         <label for="subtotal">Discount</label>
                                                     </div>
                                                 </div>
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
-                                                        
 
                                                         <div  class=" col-lg-2 d-flex p-0 pe-1 pb-1">
                                                             <span class="pe-2 pb-1">01</span>
@@ -228,14 +227,11 @@
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
                                                             <input type="number" class="form-control"/>
                                                         </div>
-                                                        <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                                        <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
                                                             <input type="text" class="form-control"/>
-                                                        </div>
-                                                        <div class="col-lg-1 p-0 pe-1 pb-1 align-self-center">
-                                                            
-                                                            <div class="d-grid">
-                                                                <input data-repeater-delete type="button" class="btn btn-primary" value="Delete"/>
-                                                            </div>
+                                                            <button class="btn btn-danger ms-2">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                     
@@ -275,7 +271,7 @@
                         <div class="tab-pane" id="received_payment_details" role="tabpanel">
                             <div class="row">
                                 <div class="col p-0 table-responsive border-0">
-                                    <table id="datatable-buttons" class="table table-bordered table-responsive w-100">
+                                    <table id="datatable-buttons" class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>SL</th>
@@ -292,11 +288,8 @@
                                                 <th>Order IDs</th>
                                                 <th>Log</th>
                                                 <th>action</th>
-
                                             </tr>
                                         </thead>
-
-
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
@@ -312,7 +305,22 @@
                                                 <td>yes</td>
                                                 <td>12</td>
                                                 <td>231</td>
-                                                <td>23</td>
+                                                <td class="text-center">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
+                                                            class="fas fa-check"></i></button>
+                                                    <button type="button"
+                                                    class="btn btn-sm  m-1 btn-primary btn-rounded waves-effect waves-light"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-x"> <i
+                                                        class="fas fa-eye"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
+                                                        data-bs-toggle="modal" data-bs-target=".journal-modal-xl-edit">
+                                                        <i class="fas fa-pen"></i></button>
+                                                    <button type="button"
+                                                        class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light"> <i
+                                                            class="fas fa-trash-alt"></i></button>
+                                                </td>
 
                                             </tr>
 

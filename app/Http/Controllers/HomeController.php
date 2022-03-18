@@ -74,6 +74,18 @@ class HomeController extends Controller
     {
         return view("purchase_order");
     }
+    public function purchaseReturn()
+    {
+        return view("purchase_return");
+    }
+    public function supplierPayment()
+    {
+        return view("supplier_payment");
+    }
+    public function directPayment()
+    {
+        return view("direct_payment");
+    }
     
     /*Language Translation*/
     public function lang($locale)

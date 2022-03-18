@@ -43,8 +43,8 @@
                         <li><a href="requisition" >Requisition</a></li>
                         <li><a href="purchase_order" >Purchase Order</a></li>
                         <li><a href="purchase_return" >Purchase Return</a></li>
-                        <li><a href="payment_for_requisition" >Payment for requisition</a></li>
-                        <li><a href="payment_for_requisition" >Direct Payment</a></li>
+                        <li><a href="supplier_payment" >Supplier Payment</a></li>
+                        <li><a href="direct_payment" >Direct Payment</a></li>
                     </ul>
                 </li>
                 <li>

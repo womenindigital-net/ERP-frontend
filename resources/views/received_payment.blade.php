@@ -205,9 +205,6 @@
                                                     <div class="col p-0 pe-1">
                                                         <label for="quality">Payment Amount</label>
                                                     </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="quality">Action</label>
-                                                    </div>
                                                 </div>
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
@@ -235,14 +232,11 @@
                                                             <input type="text" class="form-control"/>
                                                         </div>
 
-                                                        <div class=" col p-0 pe-1 pb-1">
+                                                        <div class=" col p-0 pe-1 pb-1 d-flex">
                                                             <input type="text"  class="form-control"/>
-                                                        </div>
-                                                        <div class="col-lg-2  p-0 pe-1 pb-1 align-self-center">
-                                                            
-                                                            <div class="d-grid">
-                                                                <input data-repeater-delete type="button" class="btn btn-primary" value="Delete"/>
-                                                            </div>
+                                                            <button class="btn btn-danger ms-2">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                     

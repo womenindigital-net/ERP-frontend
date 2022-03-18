@@ -25,6 +25,9 @@ Route::get('/received_payment', [App\Http\Controllers\HomeController::class, 're
 Route::get('/sale_voucher', [App\Http\Controllers\HomeController::class, 'saleVoucher'])->name('sale.voucher');
 Route::get('/requisition', [App\Http\Controllers\HomeController::class, 'requisition'])->name('requisition');
 Route::get('/purchase_order', [App\Http\Controllers\HomeController::class, 'purchaseOrder'])->name('purchase.order');
+Route::get('/purchase_return', [App\Http\Controllers\HomeController::class, 'purchaseReturn'])->name('purchase.return');
+Route::get('/supplier_payment', [App\Http\Controllers\HomeController::class, 'supplierPayment'])->name('supplier.payment');
+Route::get('/direct_payment', [App\Http\Controllers\HomeController::class, 'directPayment'])->name('direct.payment');
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
