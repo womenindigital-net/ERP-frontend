@@ -13,9 +13,6 @@
     <!-- DataTables -->
     <link href="<?php echo e(URL::asset('/assets/libs/datatables/datatables.min.css')); ?>" rel="stylesheet" type="text/css" />
 
-    <!-- Responsive Table css -->
-    <link href="<?php echo e(URL::asset('/assets/libs/rwd-table/rwd-table.min.css')); ?>" rel="stylesheet" type="text/css" />
-
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -116,10 +113,10 @@
                             <!-- 8th row start  -->
                             <div class="row my-3">
                                 <div class="form-check form-check-primary mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                    <input class="form-check-input" type="checkbox" id="formCheckBox">
                                     <label class="form-check-label" for="formCheckcolor1">Cheque Pay</label>
                                 </div>
-                                <div class="row">
+                                <div class="row" id="formCheckBoxForm">
                                     <div class="row">
                                         <div class="row">
                                             <div class="col-lg-6">
@@ -272,11 +269,11 @@
                         <div class="tab-pane" id="received_payment_details" role="tabpanel">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="card-body">
-                                        <div>
+                                    <div class="card">
+                                        <div class="table-responsive">
                                             <table id="datatable-buttons" class="table table-bordered dt-responsive table-responsive w-100">
                                             <thead>
-                                                <tr class="table-primary">
+                                                <tr class="table-primary nowrap">
                                                     <th>Customer</th>
                                                     <th>Project</th>
                                                     <th>Date</th>
@@ -312,8 +309,6 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
-
-
 <?php $__env->startSection('script'); ?>
     <!-- form advanced init -->
     <script src="<?php echo e(URL::asset('/assets/js/pages/form-advanced.init.js')); ?>"></script>
@@ -332,8 +327,6 @@
 
     
 
-    <!-- Responsive Table js -->
-    <script src="<?php echo e(URL::asset('/assets/libs/rwd-table/rwd-table.min.js')); ?>"></script>
 
     <!-- Init js -->
     <script src="<?php echo e(URL::asset('/assets/js/pages/table-responsive.init.js')); ?>"></script>
@@ -349,6 +342,17 @@
     <script src="<?php echo e(URL::asset('/assets/libs/pdfmake/pdfmake.min.js')); ?>"></script>
     <!-- Datatable init js -->
     <script src="<?php echo e(URL::asset('/assets/js/pages/datatables.init.js')); ?>"></script>
+
+    
+    <script>
+    $(document).ready(function(){
+        $("#formCheckBoxForm").hide();
+
+        $("#formCheckBox").click(function(){
+            $("#formCheckBoxForm").toggle();
+        });
+    });
+    </script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script-bottom'); ?>
 <?php $__env->stopSection(); ?>

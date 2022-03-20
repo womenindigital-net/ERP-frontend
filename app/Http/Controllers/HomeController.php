@@ -111,6 +111,10 @@ class HomeController extends Controller
     {
         return view("product_analysis_report");
     }
+    public function stockRecive()
+    {
+        return view("stock_recive");
+    }
     
     /*Language Translation*/
     public function lang($locale)

@@ -36,6 +36,7 @@ Route::get('/stock_hand_report', [App\Http\Controllers\HomeController::class, 's
 Route::get('/location_wise_product_report', [App\Http\Controllers\HomeController::class, 'locationWiseProductReport'])->name('location.wise.product.report');
 Route::get('/stock_reorder_report', [App\Http\Controllers\HomeController::class, 'stockReorderReport'])->name('stock.reorder.report');
 Route::get('/product_analysis_report', [App\Http\Controllers\HomeController::class, 'stockAnalysisReport'])->name('product.analysis.report');
+Route::get('/stock_recive', [App\Http\Controllers\HomeController::class, 'stockRecive'])->name('stock.recive');
 
 
 //Update User Details

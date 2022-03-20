@@ -13,8 +13,6 @@
 <!-- DataTables -->
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
-<!-- Responsive Table css -->
-<link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -191,7 +189,7 @@
                                                     </div>
                                                     
                                                 </div>
-                                                <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
+                                                <input data-repeater-create type="button" class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"/>
                                             </form>
                                             <!-- 5th row start -->
                                             <div class="row justify-content-center pt-3">
@@ -262,10 +260,10 @@
                                             <!-- 8th row start  -->
                                             <div class="row">
                                                 <div class="form-check form-check-primary mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckBox" >
                                                     <label class="form-check-label" for="formCheckcolor1">Cheque Pay</label>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row" id="formCheckBoxForm">
                                                     <div class="row">
                                                         <div class="row">
                                                             <div class="col-lg-6">
@@ -315,10 +313,10 @@
                                             <!-- 9th row start  -->
                                             <div class="row">
                                                 <div class="form-check form-check-primary mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckBox2">
                                                     <label class="form-check-label" for="formCheckcolor1"> Credit Card Pay</label>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row" id="formCheckBoxForm2">
                                                     <div class="row">
                                                         <div class="row">
                                                             <div class="col-lg-6">
@@ -375,48 +373,47 @@
                         </div>
                         <div class="tab-pane" id="sale_voucher_list" role="tabpanel">
                             <div class="row">
-                                <div class="col-12 p-0">
+                                <div class="col-12">
                                     <div class="card">
-                                        <div class="table-responsive mb-0" data-pattern="priority-columns">
-                                            <table id="tech-companies-1" class="table table-striped">
-                                            <thead>
-                                                <tr class="table-primary">
-                                                    <th>Project</th>
-                                                    <th>Customer</th>
-                                                    <th>Is Draft</th>
-                                                    <th>Date</th>
-                                                    <th>Cost</th>
-                                                    <th>Discount</th>
-                                                    <th>Is Pay Completed</th>
-                                                    <th>Cash Amount</th>
-                                                    <th>Cheque Amount</th>
-                                                    <th>Credit Amount</th>
-                                                    <th>Total Paid</th>
-                                                    <th>Log</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                    <td>Hello</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <div class="table-responsive">
+                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive w-100">
+                                                <thead>
+                                                    <tr class="table-primary">
+                                                        <th>Project</th>
+                                                        <th>Customer</th>
+                                                        <th>Is Draft</th>
+                                                        <th>Date</th>
+                                                        <th>Cost</th>
+                                                        <th>Discount</th>
+                                                        <th>Is Pay Completed</th>
+                                                        <th>Cash Amount</th>
+                                                        <th>Cheque Amount</th>
+                                                        <th>Credit Amount</th>
+                                                        <th>Total Paid</th>
+                                                        <th>Log</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Hello HelloHelloHelloHelloHelloHello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                        <td>Hello</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
                             </div> <!-- end col -->
-                        
                         </div>
                     </div>
 
@@ -426,37 +423,50 @@
     </div>
 @endsection
 @section('script')
-     <!-- form advanced init -->
-     <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
- 
-     <!-- form repeater js -->
-     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
- 
-     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
- 
- 
-     <!-- Required datatable js -->
-     <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-     <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-     <!-- Datatable init js -->
-     <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
- 
-     <!-- Responsive Table js -->
-     <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
- 
-     <!-- Init js -->
-     <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
- 
-     <!-- Table Editable plugin -->
-     <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
- 
-     <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
+    <!-- form advanced init -->
+    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
+
+    <!-- form repeater js -->
+    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+
+    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
+
+
+    <!-- Required datatable js -->
+    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
+    <!-- Datatable init js -->
+    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
+
+
+    <!-- Init js -->
+    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
+
+    <!-- Table Editable plugin -->
+    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
+
+    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
+
+     {{-- Custom Js  form --}}
+     <script>
+        $(document).ready(function(){
+            $("#formCheckBoxForm").hide();
+            $("#formCheckBoxForm2").hide();
+
+            $("#formCheckBox").click(function(){
+                $("#formCheckBoxForm").toggle();
+            });
+            $("#formCheckBox2").click(function(){
+                $("#formCheckBoxForm2").toggle();
+            });
+        });
+     </script>
 @endsection

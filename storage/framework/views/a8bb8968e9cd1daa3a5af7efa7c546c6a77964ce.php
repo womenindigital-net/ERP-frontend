@@ -108,10 +108,10 @@
                                         <div class="card-body">
                                             <div class="row my-3">
                                                 <div class="form-check form-check-primary mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor1" checked="">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckBox">
                                                     <label class="form-check-label" for="formCheckcolor1">Cheque Pay</label>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row" id="formCheckBoxForm">
                                                     <div class="row">
                                                         <div class="row">
                                                             <div class="col-lg-6">
@@ -400,5 +400,16 @@
     <script src="<?php echo e(URL::asset('/assets/libs/dropzone/dropzone.min.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script-bottom'); ?>
+
+    
+    <script>
+        $(document).ready(function(){
+            $("#formCheckBoxForm").hide();
+    
+            $("#formCheckBox").click(function(){
+                $("#formCheckBoxForm").toggle();
+            });
+        });
+        </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\github\ERP-frontend-wid\resources\views/supplier_payment.blade.php ENDPATH**/ ?>

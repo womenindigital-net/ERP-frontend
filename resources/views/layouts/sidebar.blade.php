@@ -65,6 +65,20 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
+                        <span>Stock Management</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="stock_receive" >Stock Receive</a></li>
+                        <li><a href="" >1.2 Journal Approval</a></li>
+                        <li><a href="" >1.3 Chart Of Account View</a></li>
+                        <li><a href="" >1.4 Financial Year Closing</a></li>
+                        <li><a href="" >1.5 Cash Flow</a></li>
+                        <li><a href="" >1.6 Cheque Book  Setup</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
                         <span>Accounting</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">

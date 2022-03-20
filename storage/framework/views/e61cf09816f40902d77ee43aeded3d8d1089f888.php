@@ -29,11 +29,10 @@
             <div class="card">
                 <div class="d-flex justify-content-between pb-3 card-body">
                     <div>
-                        <h4 class="card-title">All approved Journals</h4>
+                        <h4 class="card-title">All Journals</h4>
                     </div>
                     <div class="">
-                        <a href="approved_journals_list" class="btn btn-success">All approved
-                            Journals</a>
+                        <a href="approved_journals_list" class="btn btn-success">All approved Journals</a>
                     </div>
                     <div>
                         <button type="button" class="btn btn-outline-info waves-effect waves-light"
@@ -63,19 +62,19 @@
                             <td>System Architect System Architect</td>
                             <td class="text-center">
                                 <button type="button"
-                                    class="btn btn-info btn-rounded waves-effect waves-light"> <i
+                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
                                         class="fas fa-check"></i></button>
                                 <button type="button"
-                                    class="btn btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
+                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
-                                    class="btn btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
+                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
                                     <i class="fas fa-pen"></i></button>
                                 <button type="button"
-                                    class="btn btn-danger btn-rounded waves-effect waves-light"> <i
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"> <i
                                         class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
@@ -87,19 +86,19 @@
                             <td>System Architect System Architect</td>
                             <td class="text-center">
                                 <button type="button"
-                                    class="btn btn-info btn-rounded waves-effect waves-light"> <i
+                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
                                         class="fas fa-check"></i></button>
                                 <button type="button"
-                                    class="btn btn-primary btn-rounded waves-effect waves-light"
+                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
                                     data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
-                                    class="btn btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
+                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
                                     <i class="fas fa-pen"></i></button>
                                 <button type="button"
-                                    class="btn btn-danger btn-rounded waves-effect waves-light"> <i
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"> <i
                                         class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
@@ -111,19 +110,19 @@
                             <td>System Architect System Architect</td>
                             <td class="text-center">
                                 <button type="button"
-                                    class="btn btn-info btn-rounded waves-effect waves-light"> <i
+                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
                                         class="fas fa-check"></i></button>
                                 <button type="button"
-                                    class="btn btn-primary btn-rounded waves-effect waves-light"
+                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
                                     data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
-                                    class="btn btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
+                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
                                     <i class="fas fa-pen"></i></button>
                                 <button type="button"
-                                    class="btn btn-danger btn-rounded waves-effect waves-light"> <i
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"> <i
                                         class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
@@ -135,12 +134,12 @@
 
 
 
-    <!--  Extra Large modal example -->
+    <!--  Edit Journal -->
     <div class="modal fade journal-modal-xl-add" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-primary">Add Journal <i class="fas fa-plus-circle"></i>
+                    <h5 class="modal-title text-primary">Add OR Edit Journal <i class="fas fa-plus-circle bx-spin"></i>
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -152,7 +151,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Project</label>
                                     <select class="form-control select2">
-                                        <option>Select</option>
+                                        <option>--Select--</option>
                                         <option value="AK">Alaska</option>
                                         <option value="HI">Hawaii</option>
                                         <option value="CA">California</option>
@@ -216,44 +215,54 @@
                                     <div class="card-body">
                                         <h4 class="card-title mb-4">Enter Transection Details</h4>
                                         <form class="repeater" enctype="multipart/form-data">
+                                            <div class="row">
+                                               <div class="col-lg-3">
+                                                   <label for="name">Acc. Number</label>
+                                                </div>
+                                               <div class="col-lg-4">
+                                                    <label for="email">Acc. Particular</label>
+                                               </div>
+                                               <div class="col-md-2">
+                                                <label for="subject">Debit</label>
+                                               </div>
+                                               <div class="col-lg-2">
+                                                    <label for="resume">Credit</label>
+                                               </div>
+                                               <div class="col-lg-1">
+                                                <label for="resume">Delete</label>
+                                               </div>
+                                            </div>
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item class="row">
                                                     <div class="mb-3 col-lg-3">
-                                                        <label for="name">Acc. Number</label>
                                                         <input type="text" id="name" name="untyped-input"
                                                             class="form-control" placeholder="Acc. Number" />
                                                     </div>
 
                                                     <div class="mb-3 col-lg-4">
-                                                        <label for="email">Acc. Particular</label>
                                                         <input type="email" id="email" class="form-control"
                                                             placeholder="Acc. Particular" />
                                                     </div>
 
                                                     <div class="mb-3 col-lg-2">
-                                                        <label for="subject">Debit</label>
                                                         <input type="text" id="subject" class="form-control"
                                                             placeholder="Debit" />
                                                     </div>
 
                                                     <div class="mb-3 col-lg-2">
-                                                        <label for="resume">Credit</label>
                                                         <input type="text" id="subject" class="form-control"
                                                             placeholder="Credit" />
                                                     </div>
 
-                                                    <div class="col-lg-1 align-self-center">
-                                                        <div class="">
-                                                            <button type="button"
-                                                                class="btn btn-danger btn-rounded waves-effect waves-light">
-                                                                <i class="fas fa-trash-alt"></i></button>
-                                                        </div>
+                                                    <div class="col-lg-1">
+                                                        <button type="button" class="btn btn-danger btn-rounded waves-effect waves-light">
+                                                        <i class="fas fa-trash-alt"></i></button>
                                                     </div>
                                                 </div>
 
                                             </div>
                                             <input data-repeater-create type="button"
-                                                class="btn btn-success mt-3 mt-lg-0" value="Add" />
+                                                class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
                                         </form>
                                     </div>
                                 </div>
@@ -274,11 +283,11 @@
 
 
     <!--  Extra Large modal example -->
-    <div class="modal fade" id="journal-modal-xl-view" tabindex="-2" role="dialog" aria-hidden="true">
+    <div class="modal fade journal-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-primary">View Journal <i class="fas fa-eye"></i>
+                    <h5 class="modal-title text-primary">View Journal <i class="fas fa-eye bx-tada"></i>
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -290,41 +299,33 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label">Project</label>
-                                    <input type="text" class="form-control" id="formrow-firstname-input"
-                                        placeholder="Core programme">
+                                    <p  class="form-control">Project</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="validationCustom02" class="form-label">Voucher
                                         Date</label>
-                                    <input type="text" class="form-control" id="validationCustom02"
-                                        placeholder="2021-09-30 00 00.00">
+                                        <p class="form-control">2021-09-30 00 00.00</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label>Trans Amount</label>
-                                    <div class="input-group" id="datepicker1">
-                                        <input type="text" class="form-control" id="validationCustom02"
-                                            placeholder="5000">
-                                    </div>
+                                    <p class="form-control" >5000 </p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="mb-3">
                                         <label for="validationCustom02" class="form-label">Particulars</label>
-                                        <input type="text" class="form-control" id="validationCustom02"
-                                            placeholder="payment for student. Student ID: 220. Name: Ismam Reza"
-                                            required>
+                                        <p class="form-control">payment for student</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="validationCustom04" class="form-label">Reference</label>
-                                        <input type="text" class="form-control" id="validationCustom04"
-                                            placeholder="Reference" required>
+                                        <p class="form-control">Reference</p>
                                     </div>
                                 </div>
 
@@ -347,7 +348,6 @@
                                                     <th style="width: 20%;">Acc.Particular</th>
                                                     <th>Debit</th>
                                                     <th>Credit</th>
-                                                    <th>Edit</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -357,11 +357,6 @@
                                                     <td data-field="age">Ismam Reza</td>
                                                     <td data-field="credit"></td>
                                                     <td data-field="debit">5000</td>
-                                                    <td style="width: 100px">
-                                                        <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </a>
-                                                    </td>
                                                 </tr>
                                                 <tr data-id="2" style="border-bottom-style: none;">
                                                     <td data-field="id" style="width: 80px">2</td>
@@ -369,17 +364,11 @@
                                                     <td data-field="age">Ismam Reza</td>
                                                     <td data-field="credit">5000</td>
                                                     <td data-field="debit"></td>
-                                                    <td style="width: 100px">
-                                                        <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                            <i class="fas fa-pencil-alt"></i>
-                                                        </a>
-                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3">Total: </td>
                                                     <td>5000</td>
                                                     <td>5000</td>
-                                                    <td></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -398,6 +387,8 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+
     
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
