@@ -111,9 +111,26 @@ class HomeController extends Controller
     {
         return view("product_analysis_report");
     }
+    // Stock Management
     public function stockRecive()
     {
         return view("stock_recive");
+    }
+    public function finishedGoods()
+    {
+        return view("finished_goods");
+    }
+    public function materialCallects()
+    {
+        return view("material_callects");
+    }
+    public function stockTransfer()
+    {
+        return view("stock_transfer");
+    }
+    public function stockCount()
+    {
+        return view("stock_count");
     }
     
     /*Language Translation*/

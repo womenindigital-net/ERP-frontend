@@ -69,11 +69,10 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="stock_receive" >Stock Receive</a></li>
-                        <li><a href="" >1.2 Journal Approval</a></li>
-                        <li><a href="" >1.3 Chart Of Account View</a></li>
-                        <li><a href="" >1.4 Financial Year Closing</a></li>
-                        <li><a href="" >1.5 Cash Flow</a></li>
-                        <li><a href="" >1.6 Cheque Book  Setup</a></li>
+                        <li><a href="finished_goods">Finished Goods</a></li>
+                        <li><a href="material_callects" >Material Collects</a></li>
+                        <li><a href="stock_transfer" >Stock Transfer</a></li>
+                        <li><a href="stock_count" >Stock Count</a></li>
                     </ul>
                 </li>
                 <li>

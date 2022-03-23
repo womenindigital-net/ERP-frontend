@@ -36,7 +36,14 @@ Route::get('/stock_hand_report', [App\Http\Controllers\HomeController::class, 's
 Route::get('/location_wise_product_report', [App\Http\Controllers\HomeController::class, 'locationWiseProductReport'])->name('location.wise.product.report');
 Route::get('/stock_reorder_report', [App\Http\Controllers\HomeController::class, 'stockReorderReport'])->name('stock.reorder.report');
 Route::get('/product_analysis_report', [App\Http\Controllers\HomeController::class, 'stockAnalysisReport'])->name('product.analysis.report');
+
+// Stock management Route
 Route::get('/stock_recive', [App\Http\Controllers\HomeController::class, 'stockRecive'])->name('stock.recive');
+Route::get('/finished_goods', [App\Http\Controllers\HomeController::class, 'finishedGoods'])->name('finished.goods');
+Route::get('/material_callects', [App\Http\Controllers\HomeController::class, 'materialCallects'])->name('material.Callects');
+Route::get('/stock_transfer', [App\Http\Controllers\HomeController::class, 'stockTransfer'])->name('stock.transfer');
+Route::get('/stock_count', [App\Http\Controllers\HomeController::class, 'stockCount'])->name('stock.count');
+
 
 
 //Update User Details

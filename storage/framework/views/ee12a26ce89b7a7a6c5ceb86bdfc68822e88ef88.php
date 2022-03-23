@@ -116,7 +116,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                     </div>
+                                    </div>
                                 </form>
                                 <!--form end -->
                                 <div class="row">
@@ -125,10 +125,8 @@
                                                 <h4 class="card-title mb-4">Product BOM</h4>
                                                 <form class="repeater" enctype="multipart/form-data">
                                                     <div class="row">
-                                                        <div  class=" col-lg-1">
+                                                        <div  class=" col-lg-2">
                                                             <label for="number">SL</label>
-                                                        </div>
-                                                        <div  class=" col-lg-1">
                                                             <label for="product">Product</label>
                                                         </div>
                                                         <div  class="col-lg-2">
@@ -155,11 +153,8 @@
                                                     </div>
                                                     <div data-repeater-list="group-a">
                                                         <div data-repeater-item class="row">
-                                                            <div  class="col-lg-1 p-0 pe-1"> 
-                                                                <input type="text" name="untyped-input" class="form-control"/>
-                                                            </div>
                 
-                                                            <div  class="col-lg-1 p-0 pe-1">
+                                                            <div  class="col-lg-2 p-0 pe-1">
                                                                 <input type="text" id="text" class="form-control" />
                                                             </div>
                 
@@ -213,41 +208,40 @@
                                         <div class="card-body">
                                             <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                                                 <thead>
-                                                <tr>
-                                                    <th>Project</th>
-                                                    <th>Type</th>
-                                                    <th>Date</th>
-                                                    <th>Total Item Quantity</th>
-                                                    <th>Location</th>
-                                                    <th>Receiver</th>
-                                                    <th>Log</th>
-                                                    <th>Action</th>
-                                                </tr>
+                                                    <tr>
+                                                        <th>Project</th>
+                                                        <th>Type</th>
+                                                        <th>Date</th>
+                                                        <th>Total Item Quantity</th>
+                                                        <th>Location</th>
+                                                        <th>Receiver</th>
+                                                        <th>Log</th>
+                                                        <th>Action</th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>html</td>
-                                                    <td>data</td>
-                                                    <td>12/04</td>
-                                                    <td>Hridoy</td>
-                                                    <td>Office Store</td>
-                                                    <td>12/04</td>
-                                                    <td>puja</td>
-                                                    <td class="px-0 d-flex justify-content-center">
-                                                        <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
-                                                            <i class="mdi mdi-eye"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                            <i class="mdi mdi-pencil"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                
+                                                    <tr>
+                                                        <td>html</td>
+                                                        <td>data</td>
+                                                        <td>12/04</td>
+                                                        <td>Hridoy</td>
+                                                        <td>Office Store</td>
+                                                        <td>12/04</td>
+                                                        <td>puja</td>
+                                                        <td class="">
+                                                            <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                                                <i class="mdi mdi-eye"></i>
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                                <i class="mdi mdi-pencil"></i>
+                                                            </button>
+                                                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
 

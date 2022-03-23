@@ -9,5 +9,4 @@
         @slot('title') Starter Page @endslot
     @endcomponent
 
-    
 @endsection

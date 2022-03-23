@@ -9,7 +9,6 @@
         <?php $__env->slot('title'); ?> Starter Page <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
 
-    
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\github\ERP-frontend-wid\resources\views/index.blade.php ENDPATH**/ ?>

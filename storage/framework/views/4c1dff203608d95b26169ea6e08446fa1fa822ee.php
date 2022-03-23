@@ -15,6 +15,9 @@
 
     <!-- Responsive Table css -->
     <link href="<?php echo e(URL::asset('/assets/libs/rwd-table/rwd-table.min.css')); ?>" rel="stylesheet" type="text/css" />
+
+    <!-- Sweet Alert-->
+    <link href="<?php echo e(URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css')); ?>" rel="stylesheet" type="text/css" />
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -55,9 +58,6 @@
                                 <td>Edinburgh</td>
                                 <td class="text-center">
                                     <button type="button"
-                                        class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                            class="fas fa-check"></i></button>
-                                    <button type="button"
                                         class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
                                         data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
                                         <i class=" fas fa-eye"></i>
@@ -67,7 +67,7 @@
                                         data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
                                         <i class="fas fa-pen"></i></button>
                                     <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"> <i
+                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
                                             class="fas fa-trash-alt"></i></button>
                                 </td>
                             </tr>
@@ -89,7 +89,6 @@
                 </div>
                 <div class="modal-body">
                     <!-- journal form start -->
-                    <form class="needs-validation" novalidate>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
@@ -137,7 +136,6 @@
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -150,57 +148,54 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Enter Transection Details</h4>
+                                    <div class="card-body p-0">
+                                        <div class="row">
+                                            <h2 class=" text-center mb-4">Posting Transaction Details</h2>
+                                        </div>
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div class="row">
-                                               <div class="col-lg-3">
+                                               <div class="col-lg-3  p-0 pe-1">
+                                                   <label class="pe-2 pb-1">SL</label>
                                                    <label for="name">Acc. Number</label>
                                                 </div>
-                                               <div class="col-lg-4">
+                                               <div class="col-lg-4  p-0 pe-1">
                                                     <label for="email">Acc. Particular</label>
                                                </div>
-                                               <div class="col-md-2">
+                                               <div class="col-lg-2 p-0 pe-1">
                                                 <label for="subject">Debit</label>
                                                </div>
-                                               <div class="col-lg-2">
+                                               <div class="col-lg-3  p-0 pe-1">
                                                     <label for="resume">Credit</label>
-                                               </div>
-                                               <div class="col-lg-1">
-                                                <label for="resume">Delete</label>
                                                </div>
                                             </div>
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item class="row">
-                                                    <div class="mb-3 col-lg-3">
+                                                    <div class=" col-lg-3 d-flex p-0 p-0 pe-1 pb-1 align-items-center">
+                                                        <span class="pe-2 pb-1">01</span>
                                                         <input type="text" id="name" name="untyped-input"
                                                             class="form-control" placeholder="Acc. Number" />
                                                     </div>
 
-                                                    <div class="mb-3 col-lg-4">
+                                                    <div class=" col-lg-4 p-0 pe-1 pb-1">
                                                         <input type="email" id="email" class="form-control"
                                                             placeholder="Acc. Particular" />
                                                     </div>
 
-                                                    <div class="mb-3 col-lg-2">
+                                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                         <input type="text" id="subject" class="form-control"
                                                             placeholder="Debit" />
                                                     </div>
 
-                                                    <div class="mb-3 col-lg-2">
+                                                    <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
                                                         <input type="text" id="subject" class="form-control"
                                                             placeholder="Credit" />
-                                                    </div>
-
-                                                    <div class="col-lg-1">
-                                                        <button type="button" class="btn btn-danger btn-rounded waves-effect waves-light">
-                                                        <i class="fas fa-trash-alt"></i></button>
+                                                        <button class="btn btn-danger btn-rounded ms-2">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
                                                     </div>
                                                 </div>
 
@@ -212,13 +207,11 @@
                                 </div>
                             </div>
                         </div>
-
-                    </form>
                     <!-- journal form end -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
+                    <button type="button" class="btn font-size-16 btn-success" id="sa-position"><i class="bx bx-save"></i> Save</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -278,7 +271,9 @@
                     </form>
                     <!-- journal form end -->
                     <!-- table start -->
-                    <h4 class="card-title ms-4">Posting Transaction Details</h4>
+                    <div class="row">
+                        <h2 class=" text-center mb-4">Posting Transaction Details</h2>
+                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -318,7 +313,6 @@
                                         </table>
                                         <!-- table start -->
                                     </div>
-
                                 </div>
                             </div>
                         </div> <!-- end col -->
@@ -326,7 +320,7 @@
                     <!-- journal form end -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -367,6 +361,13 @@
     <script src="<?php echo e(URL::asset('/assets/libs/table-edits/table-edits.min.js')); ?>"></script>
 
     <script src="<?php echo e(URL::asset('/assets/js/pages/table-editable.int.js')); ?>"></script>
+
+    
+    <!-- Sweet Alerts js -->
+    <script src="<?php echo e(URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js')); ?>"></script>
+
+    <!-- Sweet alert init js-->
+    <script src="<?php echo e(URL::asset('/assets/js/pages/sweet-alerts.init.js')); ?>"></script>
 
 
 <?php $__env->stopSection(); ?>

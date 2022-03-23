@@ -13,8 +13,6 @@
 <!-- DataTables -->
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
-<!-- Responsive Table css -->
-<link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -32,11 +30,10 @@
                         <h4 class="card-title">INCOME FROM STUDENTS</h4>
                     </div>
                     <div class="">
-                        <a href="student_receivable" class="btn btn-sm btn-danger">Student Receivable</a>
+                        <a href="student_receivable" class="btn btn-danger">Student Receivable</a>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-sm btn-outline-info waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add"> <i
+                        <button type="button" class="btn btn-outline-info waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add"> <i
                                 class="fas fa-plus-circle"></i> Add</button>
                     </div>
                 </div>
@@ -209,7 +206,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="card">
-                                        <div class="card-body">
+                                        <div class="card-body p-0">
                                             <div class="table-responsive">
                                                 <table class="table nowrap mb-0">
     
@@ -240,7 +237,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
-                                        <div class="card-body">
+                                        <div class="card-body p-0">
                                             <form class="repeater" enctype="multipart/form-data">
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
@@ -272,7 +269,7 @@
     
                                                 </div>
                                                 <input data-repeater-create type="button"
-                                                    class="btn btn-sm btn-success mt-3 mt-lg-0" value="Add" />
+                                                    class="btn btn-success mt-3 mt-lg-0" value="Add" />
                                             </form>
                                         </div>
                                     </div>
@@ -283,8 +280,8 @@
                         <!-- journal form end -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-sm btn-primary">Save</button>
+                        <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
+                        <button type="button" class="btn font-size-16 btn-success" id="sa-position"><i class="bx bx-save"></i> Save</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -375,8 +372,7 @@
                         <!-- journal form end -->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-sm btn-primary">Save</button>
+                        <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -405,9 +401,6 @@
     <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
     <!-- Datatable init js -->
     <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
 
     <!-- Init js -->
     <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
