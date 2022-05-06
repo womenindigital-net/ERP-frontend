@@ -24,7 +24,7 @@
                     <div class="auth-full-bg pt-lg-5 p-4">
                         <div class="w-100">
                             <div class="bg-overlay"></div>
-                            <div class="d-flex h-100 flex-column">
+                            {{-- <div class="d-flex h-100 flex-column">
 
                                 <div class="p-4 mt-auto">
                                     <div class="row justify-content-center">
@@ -46,7 +46,7 @@
 
                                                                 <div>
                                                                     <h4 class="font-size-16 text-primary">Abs1981</h4>
-                                                                    <p class="font-size-14 mb-0">- Skote User</p>
+                                                                    <p class="font-size-14 mb-0">- WID User</p>
                                                                 </div>
                                                             </div>
 
@@ -61,7 +61,7 @@
 
                                                                 <div>
                                                                     <h4 class="font-size-16 text-primary">nezerious</h4>
-                                                                    <p class="font-size-14 mb-0">- Skote User</p>
+                                                                    <p class="font-size-14 mb-0">- WID User</p>
                                                                 </div>
                                                             </div>
 
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -85,15 +85,15 @@
                             <div class="d-flex flex-column h-100">
                                 <div class="mb-4 mb-md-5">
                                     <a href="index" class="d-block auth-logo">
-                                        <img src="{{ URL::asset('/assets/images/logo-dark.png') }}" alt="" height="18" class="auth-logo-dark">
-                                        <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="18" class="auth-logo-light">
+                                        <img src="{{ URL::asset('/assets/images/logo-dark.png') }}" alt="" height="45" class="auth-logo-dark">
+                                        <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="45" class="auth-logo-light">
                                     </a>
                                 </div>
                                 <div class="my-auto">
 
                                     <div>
                                         <h5 class="text-primary">Welcome Back !</h5>
-                                        <p class="text-muted">Sign in to continue to Skote.</p>
+                                        <p class="text-muted">Sign in to continue to WID.</p>
                                     </div>
 
                                     <div class="mt-4">
@@ -101,7 +101,7 @@
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="username" class="form-label">Email</label>
-                                                <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', 'admin@themesbrand.com') }}" id="username" placeholder="Enter Email" autocomplete="email" autofocus>
+                                                <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', 'admin@wid.com') }}" id="username" placeholder="Enter Email" autocomplete="email" autofocus>
                                                 @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -138,28 +138,6 @@
                                                 <button class="btn btn-primary waves-effect waves-light" type="submit">Log
                                                     In</button>
                                             </div>
-
-                                            <div class="mt-4 text-center">
-                                                <h5 class="font-size-14 mb-3">Sign in with</h5>
-
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item">
-                                                        <a href="#" class="social-list-item bg-primary text-white border-primary">
-                                                            <i class="mdi mdi-facebook"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <a href="#" class="social-list-item bg-info text-white border-info">
-                                                            <i class="mdi mdi-twitter"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <a href="#" class="social-list-item bg-danger text-white border-danger">
-                                                            <i class="mdi mdi-google"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </form>
                                         <div class="mt-5 text-center">
                                             <p>Don't have an account ? <a href="{{ url('register') }}" class="fw-medium text-primary"> Signup now </a> </p>
@@ -170,8 +148,7 @@
                                 <div class="mt-4 mt-md-5 text-center">
                                     <p class="mb-0">© <script>
                                             document.write(new Date().getFullYear())
-                                        </script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by
-                                        Themesbrand</p>
+                                        </script> WID. <i class="mdi mdi-heart text-danger"></i></p>
                                 </div>
                             </div>
 

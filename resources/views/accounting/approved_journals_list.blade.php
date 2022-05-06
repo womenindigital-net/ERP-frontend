@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') Journal @endsection
+@section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
     <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
@@ -15,6 +15,7 @@
 
     <!-- Responsive Table css -->
     <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
+
     <!-- Sweet Alert-->
     <link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
@@ -23,118 +24,59 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Utility @endslot
-        @slot('title') Journal @endslot
+        @slot('title') Starter Page @endslot
     @endcomponent
 
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="row pb-3 card-body">
-                    <div class="col-md-4 mb-3 text-start ">
-                        <h4 class="card-title">All Journals</h4>
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between pb-3">
+                        <div>
+                            <h4 class="card-title">All Approved Journals list</h4>
+                        </div>
+                        <div class="">
+                            <a href="accounting.journal" class="btn btn-primary">All Journals</a>
+                        </div>
                     </div>
-                    <div class="col-md-4  mb-3 text-center">
-                        <a href="approved_journals_list" class="btn btn-success">All approved Journals</a>
-                    </div>
-                    <div class="col-md-4  mb-3 text-end">
-                        <button type="button" class="btn btn-outline-info waves-effect waves-light"
-                            data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add"> <i
-                                class="fas fa-plus-circle"></i> Add</button>
-                    </div>
+
+                    <table id="datatable-buttons"
+                        class="table table-bordered dt-responsive nowrap w-100">
+                        <thead>
+                            <tr>
+                                <th>Proj. id</th>
+                                <th>Particulars</th>
+                                <th>Trans. Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                                <td>Edinburgh</td>
+                                <td class="text-center">
+                                    <button type="button"
+                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
+                                        data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
+                                        <i class=" fas fa-eye"></i>
+                                    </button>
+                                    <button type="button"
+                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
+                                        data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
+                                        <i class="fas fa-pen"></i></button>
+                                    <button type="button"
+                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
+                                            class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
-                <table id="datatable-buttons"
-                    class="table table-striped table-bordered dt-responsive nowrap w-100">
-                    <thead>
-                        <tr class="table-primary">
-                            <th>Project</th>
-                            <th>Voucher Date</th>
-                            <th>Particulars</th>
-                            <th>Trans Amount</th>
-                            <th>Log</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>System Architect System Architect</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>System Architect System Architect</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>System Architect System Architect</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
-        </div>
-    </div> <!-- end col -->
-
-
+        </div> <!-- end col -->
+    </div> <!-- end row -->
 
     <!--  Edit Journal -->
     <div class="modal fade journal-modal-xl-add" tabindex="-1" role="dialog" aria-hidden="true">
@@ -371,7 +313,6 @@
                                         </table>
                                         <!-- table start -->
                                     </div>
-
                                 </div>
                             </div>
                         </div> <!-- end col -->
@@ -384,8 +325,6 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-
     
 @endsection
 @section('script')
@@ -423,9 +362,12 @@
 
     <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 
+    
     <!-- Sweet Alerts js -->
     <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
     <!-- Sweet alert init js-->
     <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
+
+
 @endsection

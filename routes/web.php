@@ -45,6 +45,16 @@ Route::get('/stock_transfer', [App\Http\Controllers\HomeController::class, 'stoc
 Route::get('/stock_count', [App\Http\Controllers\HomeController::class, 'stockCount'])->name('stock.count');
 
 
+// Settings Setup
+// Route::get('settings/company-setup', [App\Http\Controllers\HomeController::class, 'companySetup']);
+
+// program modual
+
+Route::get('/my_students', [App\Http\Controllers\HomeController::class, 'myStudents'])->name('my.students');
+
+
+
+
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
@@ -54,3 +64,4 @@ Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Language Translation
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
+

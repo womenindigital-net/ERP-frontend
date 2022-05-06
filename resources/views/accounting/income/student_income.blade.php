@@ -30,7 +30,7 @@
                         <h4 class="card-title">INCOME FROM STUDENTS</h4>
                     </div>
                     <div class="">
-                        <a href="student_receivable" class="btn btn-danger">Student Receivable</a>
+                        <a href="accounting.income.student_receivable" class="btn btn-danger">Student Receivable</a>
                     </div>
                     <div>
                         <button type="button" class="btn btn-outline-info waves-effect waves-light mb-2" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add"> <i

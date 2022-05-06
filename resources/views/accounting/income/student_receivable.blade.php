@@ -32,7 +32,7 @@
                         <h4 class="card-title">STUDENTS RECEIVABLE</h4>
                     </div>
                     <div class="">
-                        <a href="student_income" class="btn btn-primary">All Student Income</a>
+                        <a href="accounting.income.student_income" class="btn btn-primary">All Student Income</a>
                     </div>
                 </div>
 

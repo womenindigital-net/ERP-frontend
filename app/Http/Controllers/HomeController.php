@@ -132,6 +132,10 @@ class HomeController extends Controller
     {
         return view("stock_count");
     }
+    public function myStudents()
+    {
+        return view("my_students");
+    }
     
     /*Language Translation*/
     public function lang($locale)
