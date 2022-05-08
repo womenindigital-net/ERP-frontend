@@ -343,23 +343,25 @@
                     <div class="modal-body">
                         <!-- journal form start -->
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Job No./Name</label>
                                         <p class="form-control">R-26-1</p>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
                                     <div class="mb-3">
-                                        <p class="form-label">Requested Date:  <strong class="">2022-01-31</strong></p>
-                                        <p class="form-label">Approved Date:  <strong class="">2022-01-31</strong></p>
-                                        <p class="form-label">Warehouse:  <strong class="">Office Store</strong></p>
+                                        <label class="form-label">Supplier</label>
+                                        <select class="form-control select2">
+                                            <option>--Select--</option>
+                                            <option value="1">Advance Payment</option>
+                                            <option value="2">ASAP Healthy Food Ltd</option>
+                                            <option value="3">Ayman Enterprise</option>
+                                            <option value="4">Bahar General store</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="mb-3">
-                                        <p class="form-label">Project:  <strong class="">Administration</strong></p>
-                                        <p class="form-label">Approved Amount:  <strong class="">1591148.00</strong></p>
+                                       
                                     </div>
                                 </div>
                             </div>

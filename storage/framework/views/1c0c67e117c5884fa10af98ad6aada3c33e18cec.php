@@ -76,12 +76,228 @@
                         <li><a href="stock_count" >Stock Count</a></li>
                     </ul>
                 </li>
+                <li class="menu-title">Program Modules</li>
                 
                 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span >Student List</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="my_students" >My Students</a></li>
+                        <li><a href="my-online-students" >My Online Students</a></li>
+                        <li><a href="student-attendance-card-setup" >Student Attendance Card Setup</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Pre Admission</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="/case-histroy">Case History</a></li>
+                        <li><a href="/referral-form">Referral form</a></li>
+                        <li><a href="/care-needs-form">CARE needs form</a></li>
+                        <li><a href="/medicine-admin">Medicine Admin</a></li>
+                        <li><a href="/prescription">Prescription</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Admission</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="/student-payment">Student Payment</a></li>
+                        <li><a href="/course-payment">Course Payment</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Online Class</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="/report">Report</a></li>
+                        <li><a href="/create-task">Create Task</a></li>
+                        <li><a href="/create-itp">Create ITP</a></li>
+                        <li><a href="/assign-teacher">Assign Teacher</a></li>
+                        <li><a href="/task-assign">Task Assign</a></li>
+                        <li><a href="/create-homework">Create Homework</a></li>
+                        <li><a href="/assign-homework">Assign Homework</a></li>
+                        <li><a href="/create-tutorial">Create Tutorial</a></li>
+                        <li><a href="/assign-tutorial">Assign Tutorial</a></li>
+                        <li><a href="/class-lists">Class Lists</a></li>
+                        <li><a href="/assign-class">Assign Class</a></li>
+                        <li><a href="/weekly-task-plan">Weekly Task Plan</a></li>
+                        <li><a href="/date-wise-teacher-ttendance">Date Wise Teacher Attendance</a></li>
+                        <li><a href="/month-wise-teacher-attendance">Month Wise Teacher Attendance</a></li>
+                        <li><a href="/teacher-attendance">Teacher Attendance</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Program</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="/p-assign-task">Assign Task</a></li>
+                        <li><a href="/p-create-itp">Create ITP</a></li>
+                        <li><a href="/">Run MITP</a></li>
+                        <li><a href="/p-notice-board">Notice Board</a></li>
+                        <li><a href="/"> Assign Teacher</a></li>
+                        <li><a href="/">Score Calculator </a></li>
+                        <li><a href="/p-create-task">Create Task </a></li>
+                        <li><a href="/p-admission-request">Admission Request </a></li>
+                    </ul>
+                </li>
                 
-                
-                
-                
+                <li class="menu-title">Settings</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Settings</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Company Setup</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.company-setup">Company Setup</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Project Setup</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.project-setup">Project Setup</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Chart Of Accounts</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.chart-of-accounts">Chart Of Accounts</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.bank-details-setup">Bank Details Setup</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.bank-recncilation">Bank Reconcilation</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Vendor List</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.vendor-list">Vendor List</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Customer List</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.customer-list">Customer List</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.course-and-admission">Course and Admission</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Students details/ profile</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.students-details">Students details/ profile</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.vocational-marking">Vocational Marking</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">HR & Admin Links</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.hr-and-admin-links">HR & Admin Links</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.payroll-management">Payroll Management</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Store Management</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.store-management">Store Management</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Accounting Mapping</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.accounting-mapping">Accounting Mapping</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Budget & Forecasting</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.budget-and-forecasting">Budget & Forecasting</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.year-end-close">Year End Close</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Other Settings</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="settings.other-settings">Other Settings</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
         </div>
