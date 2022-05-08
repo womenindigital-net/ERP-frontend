@@ -55,29 +55,26 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Purchase</label>
+                                        <label class="form-label">Project</label>
                                         <select class="form-control select2">
                                             <option>--Select--</option>
-                                            <option value="AK">Alaska</option>
-                                            <option value="HI">Hawaii</option>
-                                            <option value="CA">California</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="WA">Washington</option>
+                                            <option value="1">Governing Office</option>
+                                            <option value="2">Operations</option>
+                                            <option value="3">Administration</option>
+                                            <option value="4">Finance and Accounts Section</option>
+                                            <option value="5">Procurement Section</option>
+                                            <option value="6">Inventory Management</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Project</label>
+                                        <label class="form-label">Purchase</label>
                                         <select class="form-control select2">
                                             <option>--Select--</option>
-                                            <option value="AK">Alaska</option>
-                                            <option value="HI">Hawaii</option>
-                                            <option value="CA">California</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="WA">Washington</option>
+                                            <option value="1">R-1-1</option>
+                                            <option value="2">R-1-2</option>
+                                            <option value="3">R-1-3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -167,13 +164,13 @@
                                                         <label for="name">SL</label>
                                                         <label for="name">Product</label>
                                                     </div>
-                                                    <div class="col-lg-1 p-0 pe-1">
+                                                    <div class="col-lg-2 p-0 pe-1">
                                                         <label for="product">Exp. Date</label>
                                                     </div>
                                                     <div class="col-lg-1 p-0 pe-1">
                                                         <label for="quality">Qnty</label>
                                                     </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
+                                                    <div class="col-lg-1 p-0 pe-1">
                                                         <label for="discount">Price</label>
                                                     </div>
                                                     <div class="col-lg-1 p-0 pe-1">
@@ -194,38 +191,34 @@
 
                                                         <div  class="col-lg-2 d-flex p-0 pe-1 pb-1">
                                                             <span class="pe-2 pb-1">01</span>
-                                                            <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">Select</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
+                                                            <select id="formrow-inputState" class="form-select py-0">
+                                                                <option selected="">--Select--</option>
+                                                                <option value="1">Koi Fish::191</option>
+                                                                <option value="2">Talapia Fish::193</option>
+                                                                <option value="3">Fish - Pangash Fish::1641</option>
                                                             </select>
                                                         </div>
-                                                        <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control" value="" placeholder="dd,M,yyyy"
-                                            data-date-format="dd,M,yyyy" data-date-container='#datepicker1' data-provide="datepicker">
+                                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                                            <P class="form-control m-0">08/02/2022</P>
                                                         </div>
 
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="text"  class="form-control"/>
-                                                        </div>
-                                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="number" class="form-control"/>
+                                                            <input type="number"  class="form-control"/>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <p class="form-control m-0">190</p>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <p class="form-control m-0">00</p>
+                                                        </div>
+                                                        <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                                            <p class="form-control m-0">00</p>
                                                         </div>
                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <input type="number"  class="form-control"/>
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <input type="text" class="form-control"/>
+                                                            <p class="form-control m-0">190</p>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>

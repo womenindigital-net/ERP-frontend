@@ -43,8 +43,8 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="accounting.purchase.requisition">Requisition</a></li>
                         <li><a href="accounting.purchase.purchase_order" >Purchase Order</a></li>
-                        <li><a href="purchase_return" >Purchase Return</a></li>
-                        <li><a href="supplier_payment" >Supplier Payment</a></li>
+                        <li><a href="accounting.purchase.purchase_return" >Purchase Return</a></li>
+                        <li><a href="accounting.purchase.supplier_payment" >Supplier Payment</a></li>
                         <li><a href="direct_payment" >Direct Payment</a></li>
                     </ul>
                 </li>
