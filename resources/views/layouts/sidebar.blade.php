@@ -46,8 +46,8 @@
                         <span>Purchase </span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="requisition" >Requisition</a></li>
-                        <li><a href="purchase_order" >Purchase Order</a></li>
+                        <li><a href="accounting.purchase.requisition">Requisition</a></li>
+                        <li><a href="accounting.purchase.purchase_order" >Purchase Order</a></li>
                         <li><a href="purchase_return" >Purchase Return</a></li>
                         <li><a href="supplier_payment" >Supplier Payment</a></li>
                         <li><a href="direct_payment" >Direct Payment</a></li>
@@ -81,10 +81,10 @@
                         <li><a href="stock_count" >Stock Count</a></li>
                     </ul>
                 </li>
-                <li class="menu-title">Program Modules</li>
+                {{-- <li class="menu-title">Program Modules</li> --}}
                 
                 
-                <li>
+                {{-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span >Student List</span>
@@ -156,7 +156,7 @@
                         <li><a href="/p-create-task">Create Task </a></li>
                         <li><a href="/p-admission-request">Admission Request </a></li>
                     </ul>
-                </li>
+                </li> --}}
                 {{-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
@@ -178,7 +178,7 @@
                         </li>
                     </ul>
                 </li> --}}
-                <li class="menu-title">Settings</li>
+                {{-- <li class="menu-title">Settings</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
@@ -322,7 +322,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
             </ul>
         </div>
