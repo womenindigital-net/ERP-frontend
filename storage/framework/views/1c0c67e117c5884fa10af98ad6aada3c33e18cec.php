@@ -88,8 +88,8 @@
                         <li><a href="stock-management.stock_receive" >Stock Receive</a></li>
                         <li><a href="stock-management.finished_goods">Finished Goods</a></li>
                         <li><a href="stock-management.material_callects" >Material Collects</a></li>
-                        <li><a href="stock_transfer" >Stock Transfer</a></li>
-                        <li><a href="stock_count" >Stock Count</a></li>
+                        <li><a href="stock-management.stock_transfer" >Stock Transfer</a></li>
+                        <li><a href="stock-management.stock_count" >Stock Count</a></li>
                     </ul>
                 </li>
                 <li class="menu-title">Program Modules</li>
