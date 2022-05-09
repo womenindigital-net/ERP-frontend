@@ -81,12 +81,12 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Return Date</label>
-                                            <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
+                                        <div class="input-group" id="datepicker1">
+                                        <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
+                                        data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
 
-                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                            </div>
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

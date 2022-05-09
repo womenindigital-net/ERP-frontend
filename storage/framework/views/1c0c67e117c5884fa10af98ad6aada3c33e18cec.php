@@ -40,12 +40,28 @@
                         <i class="bx bx-share-alt"></i>
                         <span>Purchase </span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="true">
+                    <ul class="sub-menu">
                         <li><a href="accounting.purchase.requisition">Requisition</a></li>
                         <li><a href="accounting.purchase.purchase_order" >Purchase Order</a></li>
                         <li><a href="accounting.purchase.purchase_return" >Purchase Return</a></li>
                         <li><a href="accounting.purchase.supplier_payment" >Supplier Payment</a></li>
-                        <li><a href="direct_payment" >Direct Payment</a></li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="accounting.purchase.direct_payment.payment_add">Payment Add</a>
+                                </li>
+                                <li>
+                                    <a href="accounting.purchase.direct_payment.cash_payment_list">Cash Payment List</a>
+                                </li>
+                                <li>
+                                    <a href="accounting.purchase.direct_payment.advance_payment_list">Advance Payment List</a>
+                                </li>
+                                <li>
+                                    <a href="accounting.purchase.direct_payment.bank_to_bank_list">Bank to Bank Transfer List</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -54,12 +70,12 @@
                         <span>Inventory Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="stock_assign" >Stock Assign</a></li>
-                        <li><a href="stock_out" >Stock Out</a></li>
-                        <li><a href="stock_hand_report" >Stock On Hand Report</a></li>
-                        <li><a href="location_wise_product_report" >Location Wise Product Report</a></li>
-                        <li><a href="stock_reorder_report" >Stock Reorder Report</a></li>
-                        <li><a href="stock_receive_report" >Stock receive report</a></li>
+                        <li><a href="inventory-management.stock_assign" >Stock Assign</a></li>
+                        <li><a href="inventory-management.stock_out" >Stock Out</a></li>
+                        <li><a href="inventory-management.stock_hand_report" >Stock On Hand Report</a></li>
+                        <li><a href="inventory-management.location_wise_product_report" >Location Wise Product Report</a></li>
+                        <li><a href="inventory-management.stock_reorder_report" >Stock Reorder Report</a></li>
+                        <li><a href="inventory-management.stock_receive_report" >Stock receive report</a></li>
                         <li><a href="product_analysis_report" >Report::Product Analysis</a></li>
                     </ul>
                 </li>
@@ -69,9 +85,9 @@
                         <span>Stock Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="stock_receive" >Stock Receive</a></li>
-                        <li><a href="finished_goods">Finished Goods</a></li>
-                        <li><a href="material_callects" >Material Collects</a></li>
+                        <li><a href="stock-management.stock_receive" >Stock Receive</a></li>
+                        <li><a href="stock-management.finished_goods">Finished Goods</a></li>
+                        <li><a href="stock-management.material_callects" >Material Collects</a></li>
                         <li><a href="stock_transfer" >Stock Transfer</a></li>
                         <li><a href="stock_count" >Stock Count</a></li>
                     </ul>
@@ -153,11 +169,11 @@
                     </ul>
                 </li>
                 
-                <li class="menu-title">Settings</li>
+                <li class="menu-title">Setup</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Settings</span>
+                        <span>Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>

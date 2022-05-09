@@ -336,7 +336,7 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title text-primary">View PURCHASE ORDER <i class=" fas fa-eye bx-tada"></i>
+                        <h5 class="modal-title text-primary">Invoice view<i class=" fas fa-eye bx-tada"></i>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -358,62 +358,97 @@
                                             <option value="4">Bahar General store</option>
                                         </select>
                                     </div>
+                                    <div class="mb-3">
+                                        <a href="#" class="nav-link">Click here to view the requisition</a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                       
+                                        <label class="form-label">Requisition</label>
+                                        <select class="form-control select2">
+                                            <option>--Select--</option>
+                                            <option value="1">1::canteen raw materials (09-08-2021)</option>
+                                            <option value="2">2::Canteen Cleaning Items(10-08-21)</option>
+                                            <option value="3">3::Utility bill and other expenses for july 2021</option>
+                                            <option value="4">4::Buy Tab for Students Arjune.</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Project</label>
+                                        <select class="form-control select2">
+                                            <option>--Select--</option>
+                                            <option value="1">Governing Office</option>
+                                            <option value="2">Operations</option>
+                                            <option value="3">Finance and Accounts Section</option>
+                                            <option value="4">Procurement Section</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Date</label>
+                                        <div class="input-group" id="datepicker1">
+                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
+                                        data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
+
+                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-lg-6">
+                                    <strong>All Products</strong>
+                                </div>
+                                <div class="col-lg-6">
+                                    <strong>Payable Amount:</strong>
+                                </div>
                                 <div class="table-responsive p-0 m-0">
                                     <table id="datatable-buttons" class="table table-bordered dt-responsive table-responsive w-100">
                                         <thead>
                                             <tr class="table-primary nowrap">
                                                 <th>Sl No</th>
                                                 <th>Product</th>
-                                                <th>Base Price</th>
-                                                <th>Cost Price</th>
-                                                <th>Quantity</th>
-                                                <th>Received Quantity</th>
-                                                <th>Remaining</th>
-                                                <th>Stock Quantity</th>
+                                                <th>Exp. Date</th>
+                                                <th>Avl. Qnty</th>
+                                                <th>Qnty</th>
+                                                <th>Req. Price</th>
+                                                <th>Price</th>
+                                                <th>VAT</th>
+                                                <th>Discount</th>
                                                 <th>Subtotal</th>
-                                                <th>Budget Head</th>
-                                                <th>Budget Sub Head</th>
-                                                <th>Budget Account</th>
-                                                <th>Budget Available</th>
-                                                <th>Expected Date</th>
-                                                <th>Remark</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                            <tr>
                                                 <td>1</td>
-                                                <td>Fabrics Mask</td>
-                                                <td>48.00</td>
-                                                <td>26.00</td>
-                                                <td>21502.00</td>
+                                                <td>Rice Chal-CAT0034::221</td>
+                                                <td>2021-09-2819</td>
+                                                <td></td>
+                                                <td>150.00</td>
+                                                <td>60.00</td>
+                                                <td>60.00</td>
                                                 <td>0.00</td>
-                                                <td>21502</td>
-                                                <td>0</td>
-                                                <td>559052.00</td>
-                                                <td>Cost of Goods Sold</td>
-                                                <td>COGS of Masks</td>
-                                                <td></td>
-                                                <td>6753827</td>
-                                                <td>2022-02-01</td>
-                                                <td></td>
+                                                <td>0.00</td>
+                                                <td>9000.00</td>
                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xl-12 my-4">
+                            <div class="row border border-primary my-3">
+                                <div class="col-xl-6 my-4">
+                                    <strong>Document</strong>
+                                   <div>
+                                    <img src="http://67.227.249.189/~pfdavtcadmin/pfdavtc/public/uploads/document/purchase-order" alt="ImageHere" width="160" height="100">
+                                    <br>
+                                    <img src="http://67.227.249.189/~pfdavtcadmin/pfdavtc/public/uploads/document/purchase-order" alt="ImageHere" width="160" height="100">
+                                   </div>
+                                </div>
+                                <div class="col-xl-6 my-4">
+                                    <strong>Note</strong>
                                    <p class="form-control">Qty= 21502 Febric Mask (Urgent Delivery Dt-10-02-2022)</p>
                                 </div>
-    
+                            </div>
+                            <div class="row">
                                 <div class="col-xl-12">
                                     <h4>Approval History</h4>
                                     <table id="datatable-buttons" class="table table-bordered dt-responsive table-responsive w-100">

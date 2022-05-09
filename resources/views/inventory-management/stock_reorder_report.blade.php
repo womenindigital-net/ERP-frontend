@@ -21,7 +21,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Utility @endslot
-        @slot('title') STOCK RECORDER REPORT @endslot
+        @slot('title') INVENTORY STOCK REPORT @endslot
     @endcomponent
 
     <div class="row">
@@ -32,29 +32,41 @@
                         <thead>
                             <tr>
                                 <th>SL</th>
-                                <th>Recieved Date</th>
-                                <th>Recieved Type</th>
                                 <th>Item Code</th>
                                 <th>Item Desc</th>
+                                <th>Stock Qnty</th>
                                 <th>Unit Name</th>
-                                <th>Qnty</th>
-                                <th>Expiry Date</th>
-                                <th>Serial No</th>
-                                <th>Store Name</th>
+                                <th>Cat Ware</th>
+                                <th>Recorder Qty</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>12/04</td>
-                                <td>puja</td>
-                                <td>Hridoy</td>
-                                <td>Office Store</td>
-                                <td>12/04</td>
-                                <td>puja</td>
-                                <td>Hridoy</td>
-                                <td>Hridoy</td>
-                                <td>Hridoy</td>
+                                <td>Slipper-0006</td>
+                                <td>Complete carpet slipper Poly Pack</td>
+                                <td>4500.00</td>
+                                <td>pair</td>
+                                <td>Raw materials (Carpet slipper</td>
+                                <td>3000</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Slipper-0006</td>
+                                <td>Complete carpet slipper Poly Pack</td>
+                                <td>4500.00</td>
+                                <td>pair</td>
+                                <td>Raw materials (Carpet slipper</td>
+                                <td>3000</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Slipper-0006</td>
+                                <td>Complete carpet slipper Poly Pack</td>
+                                <td>4500.00</td>
+                                <td>pair</td>
+                                <td>Raw materials (Carpet slipper</td>
+                                <td>3000</td>
                             </tr>
                         </tbody>
                     </table>

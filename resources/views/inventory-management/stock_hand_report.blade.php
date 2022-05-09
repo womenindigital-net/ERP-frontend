@@ -44,13 +44,33 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>12/04</td>
-                                <td>puja</td>
-                                <td>Hridoy</td>
-                                <td>Office Store</td>
-                                <td>12/04</td>
-                                <td>puja</td>
-                                <td>Hridoy</td>
+                                <td>CAT0034</td>
+                                <td>Rice Chal</td>
+                                <td>1050.00</td>
+                                <td>Kilogram</td>
+                                <td>Canteen Raw Material</td>
+                                <td>0</td>
+                                <td>Canteen Raw material</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>CAT0034</td>
+                                <td>Rice Chal</td>
+                                <td>1050.00</td>
+                                <td>Kilogram</td>
+                                <td>Canteen Raw Material</td>
+                                <td>0</td>
+                                <td>Canteen Raw material</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>canteen-0057</td>
+                                <td>Dal - Mosur Dal</td>
+                                <td>165.00</td>
+                                <td>Kilogram</td>
+                                <td>Canteen Raw Material</td>
+                                <td>0</td>
+                                <td>Canteen Raw material</td>
                             </tr>
                         </tbody>
                     </table>

@@ -35,13 +35,13 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#product_details" role="tab">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#stock_out" role="tab">
                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Add Product Details</span>    
+                                <span class="d-none d-sm-block">Stock Out</span>    
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#product_details_list" role="tab">
+                            <a class="nav-link" data-bs-toggle="tab" href="#stock_out_list" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
                                 <span class="d-none d-sm-block">Product Details List</span>    
                             </a>
@@ -50,12 +50,12 @@
 
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
-                        <div class="tab-pane active" id="product_details" role="tabpanel">
+                        <div class="tab-pane active" id="stock_out" role="tabpanel">
                             <!-- form start -->
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Warehouse</label>
+                                        <label class="form-label">Location</label>
                                         <select class="form-control select2">
                                             <option>--Select--</option>
                                             <option value="AK">Canteen Logistic Materials</option>
@@ -63,6 +63,20 @@
                                             <option value="CA">Office Outlet</option>
                                             <option value="NV">Office Programme</option>
                                             <option value="OR">Office Store</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Project</label>
+                                        <select class="form-control select2">
+                                            <option>--Select--</option>
+                                            <option value="1">Governing Office</option>
+                                            <option value="2">Operations</option>
+                                            <option value="3">Administration</option>
+                                            <option value="4">Finance and Accounts Section</option>
+                                            <option value="5">Procurement Section</option>
+                                            <option value="6">Inventory Management</option>
                                         </select>
                                     </div>
                                 </div>
@@ -85,58 +99,36 @@
                                             <h4 class="card-title mb-4">All product</h4>
                                             <form class="repeater" enctype="multipart/form-data">
                                                 <div class="row">
-                                                    <div class="col-lg-3 p-0 pe-1">
+                                                    <div class="col-lg-4 p-0 pe-1">
                                                         <label for="name">SL</label>
-                                                        <label for="name">Category</label>
+                                                        <label for="name">Product</label>
                                                     </div>
                                                     <div class="col-lg-3 p-0 pe-1">
-                                                        <label for="product">Product</label>
+                                                        <label for="product">Total Stock</label>
                                                     </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="product">Product Details</label>
-                                                    </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="quality">Depreciation Percent</label>
-                                                    </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="total">Assigned To</label>
+                                                    <div class="col-lg-5 p-0 pe-1">
+                                                        <label for="quality">Stock Out</label>
                                                     </div>
                                                 </div>
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
 
-                                                        <div  class="col-lg-3 d-flex p-0 pe-1 pb-1">
+                                                        <div  class="col-lg-4 d-flex p-0 pe-1 pb-1">
                                                             <span class="pe-2 pb-1">01</span>
                                                             <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">Select</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
+                                                                <option selected="">--Select--</option>
+                                                                <option value="1">Napkin Tissue::1025</option>
+                                                                <option value="2">Garbage Poly::1031</option>
+                                                                <option value="3">Vim Soap::1023</option>
+                                                                <option value="4">Vim Botal::1024</option>
+                                                                <option value="5">Wheel powder::1022</option>
                                                             </select>
                                                         </div>
-                                                        <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">Select</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
-                                                            </select>
+                                                        <div  class=" col-lg-3 p-0 pe-1 pb-1">
+                                                            <input type="text" readonly class="form-control" value="20.00"/>
                                                         </div>
-                                                        <div  class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
-                                                        </div>
-
-                                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text"  class="form-control"/>
-                                                        </div>
-                                                        <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <input type="text" class="form-control"/>
+                                                        <div class="col-lg-5 p-0 pe-1 pb-1 align-self-center d-flex">
+                                                            <input type="number" class="form-control"/>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -146,26 +138,11 @@
                                                 </div>
                                                 <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
                                             </form>
-                                            <!-- 7th row start  -->
-                                            <div class="row mt-3 justify-content-center ">
-                                                <div class="col-lg-6">
-                                                    <div class="row mb-2">
-                                                        <label for="horizontal-firstname-input" class="col-2 text-end col-form-label">Note</label>
-                                                        <div class="col-10">
-                                                        <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Note ">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- 7th row end  -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    
-                                </div>
+                            <div class="row justify-content-end">
                                 <div class="col-md-4">
                                     <button class="btn btn-danger w-100">Reset</button>
                                 </div>
@@ -175,18 +152,20 @@
                             </div>
                             <!-- end row -->
                         </div>
-                        <div class="tab-pane" id="product_details_list" role="tabpanel">
+                        <div class="tab-pane" id="stock_out_list" role="tabpanel">
                             <div class="row">
+                                <div class="text-center">
+                                    <button class="btn btn-danger">Send For Approval</button>
+                                </div>
                                 <div class="col p-0 table-responsive border-0">
                                     <table id="datatable-buttons" class="table table-bordered table-responsive w-100">
                                         <thead>
                                             <tr>
                                                 <th>SL</th>
-                                                <th>Warehouse</th>
-                                                <th>Product Name</th>
-                                                <th>Counted By</th>
-                                                <th>Note</th>
-                                                <th>Is Approved</th>
+                                                <th>Project</th>
+                                                <th>Location</th>
+                                                <th>Date</th>
+                                                <th>Total Item Quantity</th>
                                                 <th>Log</th>
                                                 <th class="nowrap">action</th>
                                             </tr>
@@ -199,7 +178,6 @@
                                                 <td>Hridoy</td>
                                                 <td>01</td>
                                                 <td>12/03</td>
-                                                <td>coffee</td>
                                                 <td class="text-center">
                                                     <button type="button"
                                                         class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
