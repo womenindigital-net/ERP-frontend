@@ -164,10 +164,10 @@
                                                         <label for="name">SL</label>
                                                         <label for="name">Product</label>
                                                     </div>
-                                                    <div class="col-lg-1 p-0 pe-1">
+                                                    <div class="col-lg-2 p-0 pe-1">
                                                         <label for="product">Exp. Date</label>
                                                     </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
+                                                    <div class="col-lg-1 p-0 pe-1">
                                                         <label for="product">Avl. Qnty </label>
                                                     </div>
                                                     <div class="col-lg-1 p-0 pe-1">
@@ -204,16 +204,16 @@
                                                                 <option value="WA">Washington</option>
                                                             </select>
                                                         </div>
-                                                        <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                             <input type="text" class="form-control" value="" placeholder="dd,M,yyyy"
                                             data-date-format="dd,M,yyyy" data-date-container='#datepicker1' data-provide="datepicker">
                                                         </div>
-                                                        <div  class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                        <div  class=" col-lg-1 p-0 pe-1 pb-1">
+                                                            <input type="number" readonly class="form-control"/>
                                                         </div>
 
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="text"  class="form-control"/>
+                                                            <input type="number"  class="form-control"/>
                                                         </div>
 
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
@@ -223,13 +223,13 @@
                                                             <input type="number" class="form-control"/>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <input type="number" class="form-control"/>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <input type="number" class="form-control"/>
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <input type="text" class="form-control"/>
+                                                            <input type="number" class="form-control"/>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>

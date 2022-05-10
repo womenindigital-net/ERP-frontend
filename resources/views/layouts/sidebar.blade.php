@@ -205,7 +205,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Company Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.company-setup">Company Setup</a>
+                                    <a href="setup.company-setup.company-setup">Company Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -213,7 +213,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Project Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.project-setup">Project Setup</a>
+                                    <a href="setup.project-setup.project-setup">Project Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -221,7 +221,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Chart Of Accounts</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.chart-of-accounts">Chart Of Accounts</a>
+                                    <a href="setup.chart-of-accounts">Chart Of Accounts</a>
                                 </li>
                             </ul>
                         </li>
@@ -229,7 +229,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.bank-details-setup">Bank Details Setup</a>
+                                    <a href="setup.bank-details-setup">Bank Details Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -237,7 +237,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.bank-recncilation">Bank Reconcilation</a>
+                                    <a href="setup.bank-recncilation">Bank Reconcilation</a>
                                 </li>
                             </ul>
                         </li>
@@ -245,7 +245,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Vendor List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.vendor-list">Vendor List</a>
+                                    <a href="setup.vendor-list.supplier-setup">Supplier Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.vendor-list.supplier-type-setup">Supplier Type Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -253,7 +256,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Customer List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.customer-list">Customer List</a>
+                                    <a href="setup.customers-list.customer-reg">Customer Reg.</a>
                                 </li>
                             </ul>
                         </li>
@@ -261,7 +264,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.course-and-admission">Course and Admission</a>
+                                    <a href="setup.course-and-admission">Course and Admission</a>
                                 </li>
                             </ul>
                         </li>
@@ -269,7 +272,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Students details/ profile</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.students-details">Students details/ profile</a>
+                                    <a href="setup.students-details">Students details/ profile</a>
                                 </li>
                             </ul>
                         </li>
@@ -277,7 +280,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.vocational-marking">Vocational Marking</a>
+                                    <a href="setup.vocational-marking">Vocational Marking</a>
                                 </li>
                             </ul>
                         </li>
@@ -285,7 +288,7 @@
                             <a href="javascript: void(0);" class="has-arrow">HR & Admin Links</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.hr-and-admin-links">HR & Admin Links</a>
+                                    <a href="setup.hr-and-admin-links">HR & Admin Links</a>
                                 </li>
                             </ul>
                         </li>
@@ -293,7 +296,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.payroll-management">Payroll Management</a>
+                                    <a href="setup.payroll-management">Payroll Management</a>
                                 </li>
                             </ul>
                         </li>
@@ -301,7 +304,16 @@
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.store-management">Store Management</a>
+                                    <a href="setup.store-management.warehouse_setup">Warehouse Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.store-management.measure-unit">Measure Unit Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.store-management.product-category">Product Category Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.store-management.warehouse_setup">Create Product</a>
                                 </li>
                             </ul>
                         </li>
@@ -309,7 +321,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Accounting Mapping</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.accounting-mapping">Accounting Mapping</a>
+                                    <a href="setup.accounting-mapping">Accounting Mapping</a>
                                 </li>
                             </ul>
                         </li>
@@ -317,7 +329,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Budget & Forecasting</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.budget-and-forecasting">Budget & Forecasting</a>
+                                    <a href="setup.budget-and-forecasting">Budget & Forecasting</a>
                                 </li>
                             </ul>
                         </li>
@@ -325,7 +337,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.year-end-close">Year End Close</a>
+                                    <a href="setup.year-end-close">Year End Close</a>
                                 </li>
                             </ul>
                         </li>
@@ -333,7 +345,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Other Settings</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="settings.other-settings">Other Settings</a>
+                                    <a href="setup.other-settings">Other Settings</a>
                                 </li>
                             </ul>
                         </li>

@@ -1,0 +1,1 @@
+<?php /**PATH D:\GITHUB\ERP-frontend-WID\resources\views/setup/project-setup.blade.php ENDPATH**/ ?>
