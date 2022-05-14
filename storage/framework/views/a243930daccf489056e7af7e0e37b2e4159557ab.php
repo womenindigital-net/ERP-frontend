@@ -75,8 +75,6 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Date</label>
@@ -95,6 +93,8 @@
                                             placeholder="Enter ship to address here"  required>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">

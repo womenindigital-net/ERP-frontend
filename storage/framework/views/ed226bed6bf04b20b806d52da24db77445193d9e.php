@@ -228,35 +228,76 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body p-0">
-                                            <form class="repeater" enctype="multipart/form-data">
-                                                <div data-repeater-list="group-a">
-                                                    <div data-repeater-item class="row">
-                                                        <div class="mb-3 col-lg-5">
-                                                            <label for="name">Payment For</label>
-                                                            <select class="form-control select2">
-                                                                <option>--Select--</option>
-                                                                <option value="1">Consultation Fees</option>
-                                                                <option value="2">Admission for Assessment /Observation</option>
-                                                                <option value="3">Pre-Vocational Course</option>
-                                                                <option value="4">Vocational Course</option>
-                                                                <option value="5">Karishma Cultural Group</option>
-                                                                <option value="6">Cricket Course</option>
-                                                                <option value="7">Therapy Course</option>
-                                                            </select>
+                                            <form class="needs-validation" novalidate>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Project</label>
+                                                            <p class="form-control">Project</p>
                                                         </div>
-    
-                                                        <div class="mb-3 col-lg-4">
-                                                            <label for="email">Payment Amount </label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Payment Amount" />
-                                                        </div>
-    
-                                                        
                                                     </div>
-    
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="validationCustom02" class="form-label">Student</label>
+                                                            <p class="form-control">Student</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label>Student ID</label>
+                                                            <div class="input-group" id="datepicker1">
+                                                                <p class="form-control">Student ID</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label>Payment Date</label>
+                                                            <p class="form-control">22/2/2022</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <input data-repeater-create type="button"
-                                                    class="btn btn-success mt-3 mt-lg-0" value="Add" />
+                                                <div class="row ms-3">
+                                                    <div class="col-4">
+                                                        <h4 class="text-danger">Total Amount : </h4>
+                                                        <h5>5000 TK</h5>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h4 class="text-success"> Total Paid : </h4>
+                                                        <h5>5000 TK</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="table-responsive">
+                                                                    <table class="table nowrap mb-0">
+                        
+                                                                        <thead>
+                                                                            <tr class="table-primary text-center">
+                                                                                <th>Food Subsidy</th>
+                                                                                <th>Monthly Fees Subsidy</th>
+                                                                                <th>Transport Subsidy</th>
+                                                                                <th>Other Subsidy</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="text-center">
+                                                                                <td>0</td>
+                                                                                <td>0</td>
+                                                                                <td>0</td>
+                                                                                <td>0</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                        
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                        
                                             </form>
                                         </div>
                                     </div>

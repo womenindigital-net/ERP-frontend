@@ -260,11 +260,19 @@
                                                                 placeholder="Payment Amount" />
                                                         </div>
     
-                                                        {{-- <div class="mb-3 col-lg-3">
+                                                        <div class="mb-3 col-lg-3">
                                                             <label for="subject">Receive Amount For</label>
-                                                            <input type="text" id="subject" class="form-control"
-                                                                placeholder="Debit" />
-                                                        </div> --}}
+                                                            <select class="form-control select2">
+                                                                <option>--Select--</option>
+                                                                <option value="1">Consultation Fees</option>
+                                                                <option value="2">Admission for Assessment /Observation</option>
+                                                                <option value="3">Pre-Vocational Course</option>
+                                                                <option value="4">Vocational Course</option>
+                                                                <option value="5">Karishma Cultural Group</option>
+                                                                <option value="6">Cricket Course</option>
+                                                                <option value="7">Therapy Course</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
     
                                                 </div>
@@ -362,7 +370,6 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-    
                                         </div>
                                     </div>
                                 </div>
