@@ -77,9 +77,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Customer Name</label>
+                                        <label for="validationCustom02" class="form-label">Customer Phone</label>
                                         <input type="text" class="form-control" id="validationCustom02"
-                                            placeholder="Customer Name"  required>
+                                            placeholder="Enter ship to address here"  required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -129,19 +129,19 @@
                                                         <label for="product">Product</label>
                                                     </div>
                                                     <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="product">Avlilable Quality </label>
+                                                        <label for="product">Avlilable Qty </label>
                                                     </div>
                                                     <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="quality">Quality</label>
-                                                    </div>
-                                                    <div class="col-lg-1 p-0 pe-1">
-                                                        <label for="total">Sub-total</label>
+                                                        <label for="quality">Qty</label>
                                                     </div>
                                                     <div class="col-lg-1 p-0 pe-1">
                                                         <label for="discount">Price</label>
                                                     </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
+                                                    <div class="col-lg-1 p-0 pe-1">
                                                         <label for="subtotal">Discount</label>
+                                                    </div>
+                                                    <div class="col-lg-2 p-0 pe-1">
+                                                        <label for="total">Sub-total</label>
                                                     </div>
                                                 </div>
                                                 <div data-repeater-list="group-a">
@@ -156,24 +156,28 @@
                                                             </select>
                                                         </div>
                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <select id="formrow-inputState" class="form-select">
+                                                                <option selected="">--Select--</option>
+                                                                <option value="1">Product 1</option>
+                                                                <option value="1">Product 2</option>
+                                                                <option value="1">Product 3</option>
+                                                            </select>
                                                         </div>
                                                         <div  class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <input type="text" readonly class="form-control"/>
                                                         </div>
 
                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                             <input type="text"  class="form-control"/>
                                                         </div>
-
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="number"  class="form-control"/>
+                                                            <input type="number" class="form-control"/>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
                                                             <input type="number" class="form-control"/>
                                                         </div>
                                                         <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
-                                                            <input type="text" class="form-control"/>
+                                                            <input type="text" readonly class="form-control"/>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -387,18 +391,18 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Hello HelloHelloHelloHelloHelloHello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
-                                                        <td>Hello</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -441,6 +445,9 @@
 
     <!-- Init js -->
     <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
+    
+    <!-- form wizard init -->
+    <script src="http://127.0.0.1:8000/assets/js/pages/form-wizard.init.js"></script>
 
     <!-- Table Editable plugin -->
     <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>

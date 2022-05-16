@@ -34,7 +34,7 @@
                 </div>
 
                 <table id="datatable-buttons"
-                    class="table table-striped table-bordered dt-responsive nowrap w-100">
+                    class="table table-striped table-bordered dt-responsive w-100">
                     <thead>
                         <tr class="table-primary">
                             <th>Stock Receive By</th>
@@ -100,7 +100,6 @@
                                         <option value="10">Atiya Azim</option>
                                         <option value="11">Badshah Faysal</option>
                                         <option value="12">Bijoy Rozareo</option>
-v
                                     </select>
                                 </div>
                             </div>

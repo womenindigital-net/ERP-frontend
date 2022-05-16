@@ -10,7 +10,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Utility @endslot
-        @slot('title') student_payment @endslot
+        @slot('title') Leave Report @endslot
     @endcomponent
     {{-- code  --}}
     <div class="">
@@ -30,33 +30,30 @@
                                     <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap ">
                                         <thead>
                                         <tr>
-                                            <th>ID </th>
-                                            <th>Student ID</th>
-                                            <th>Student name</th>
-                                            <th>Last pay date</th>
-                                            <th>Pay amount</th>
-                                            <th>Father name</th>
-                                            <th>Mother name</th>
-                                            <th>Mother mobile</th>
-                                            <th>Father mobile</th>
-                                            <th>Address</th>
-
+                                            <th>SL</th>
+                                            <th>Employee ID </th>
+                                            <th>Employee Full Name</th>
+                                            <th>Leave Type Name</th>
+                                            <th>Leave Carry Overed</th>
+                                            <th>Leave Entitled</th>
+                                            <th>Leave Cashed</th>
+                                            <th>Leave Enjoyed</th>
+                                            <th>Leave Elapsed</th>
                                         </tr>
                                         </thead>
 
 
                                         <tbody>
                                         <tr>
-                                            <td>121 </td>
-                                            <td>12/04</td>
-                                            <td>puja</td>
-                                            <td>04</td>
-                                            <td>5523 </td>
-                                            <td>hillo</td>
-                                            <td>hillo wife</td>
-                                            <td>0172585</td>
-                                            <td>0172585 </td>
-                                            <td>Dhaka</td>
+                                            <td>1 </td>
+                                            <td>1</td>
+                                            <td>Test Muhammad Employee</td>
+                                            <td>Test Leave</td>
+                                            <td>0.00 </td>
+                                            <td>3.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00</td>
+                                            <td>0.00 </td>
                                         </tr>
                                         
                                         </tbody>
@@ -104,6 +101,7 @@
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 <!-- jquery step -->
 <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
+
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
 @endsection

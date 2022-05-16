@@ -37,7 +37,8 @@
                             <h4 class="card-title">All Approved Journals list</h4>
                         </div>
                         <div class="">
-                            <a href="accounting.journal" class="btn btn-primary">All Journals</a>
+                            <a href="accounting.journal" class="btn btn-outline-info waves-effect waves-light"><i
+                                class="fas fa-plus-circle"></i> All Journals</a>
                         </div>
                     </div>
 
@@ -57,18 +58,25 @@
                                 <td>System Architect</td>
                                 <td>Edinburgh</td>
                                 <td class="text-center">
-                                    <button type="button"
-                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                        data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
-                                        <i class=" fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target="#viewmodal">
+                                    <i class="mdi mdi-eye"></i>
                                     </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                        data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
-                                        <i class="fas fa-pen"></i></button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
-                                            class="fas fa-trash-alt"></i></button>
+                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                    <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                    <i class="bx bx-dollar"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                    <i class="fas fa-trash-alt"></i>
+                                    </button> 
                                 </td>
                             </tr>
                         </tbody>
@@ -79,248 +87,79 @@
     </div> <!-- end row -->
 
     <!--  Edit Journal -->
-    <div class="modal fade journal-modal-xl-add" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="viewmodal" class="modal fade journal-modal-xl-add" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-primary">Add OR Edit Journal <i class="fas fa-plus-circle bx-spin"></i>
+                    <h5 class="modal-title text-primary"> Journal Voucher Approve Details 
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- journal form start -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label class="form-label">Project</label>
-                                    <select class="form-control select2">
-                                        <option>--Select--</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="WA">Washington</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="validationCustom02" class="form-label">Trans.Amount</label>
-                                    <input type="text" class="form-control" id="validationCustom02"
-                                        placeholder="Trans.Amount" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label>Vaucher date</label>
-                                    <div class="input-group" id="datepicker1">
-                                        <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1'
-                                            data-provide="datepicker">
-
-                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="mb-3">
-                                    <label for="validationCustom02" class="form-label">Particulars</label>
-                                    <input type="text" class="form-control" id="validationCustom02"
-                                        placeholder="Particulars" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="validationCustom04" class="form-label">Reference</label>
-                                    <input type="text" class="form-control" id="validationCustom04"
-                                        placeholder="Reference" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid city.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body p-0">
-                                        <div class="row">
-                                            <h2 class=" text-center mb-4">Posting Transaction Details</h2>
-                                        </div>
-                                        <form class="repeater" enctype="multipart/form-data">
-                                            <div class="row">
-                                               <div class="col-lg-3  p-0 pe-1">
-                                                   <label class="pe-2 pb-1">SL</label>
-                                                   <label for="name">Acc. Number</label>
-                                                </div>
-                                               <div class="col-lg-4  p-0 pe-1">
-                                                    <label for="email">Acc. Particular</label>
-                                               </div>
-                                               <div class="col-lg-2 p-0 pe-1">
-                                                <label for="subject">Debit</label>
-                                               </div>
-                                               <div class="col-lg-3  p-0 pe-1">
-                                                    <label for="resume">Credit</label>
-                                               </div>
-                                            </div>
-                                            <div data-repeater-list="group-a">
-                                                <div data-repeater-item class="row">
-                                                    <div class=" col-lg-3 d-flex p-0 p-0 pe-1 pb-1 align-items-center">
-                                                        <span class="pe-2 pb-1">01</span>
-                                                        <input type="text" id="name" name="untyped-input"
-                                                            class="form-control" placeholder="Acc. Number" />
-                                                    </div>
-
-                                                    <div class=" col-lg-4 p-0 pe-1 pb-1">
-                                                        <input type="email" id="email" class="form-control"
-                                                            placeholder="Acc. Particular" />
-                                                    </div>
-
-                                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                        <input type="text" id="subject" class="form-control"
-                                                            placeholder="Debit" />
-                                                    </div>
-
-                                                    <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                        <input type="text" id="subject" class="form-control"
-                                                            placeholder="Credit" />
-                                                        <button class="btn btn-danger btn-rounded ms-2">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <input data-repeater-create type="button"
-                                                class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- journal form end -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
-                    <button type="button" class="btn font-size-16 btn-success" id="sa-position"><i class="bx bx-save"></i> Save</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-
-
-    <!--  Extra Large modal example -->
-    <div class="modal fade journal-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-primary">View Journal <i class="fas fa-eye bx-tada"></i>
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- journal form start -->
-                    <!-- journal form start -->
-                    <form class="needs-validation" novalidate>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label class="form-label">Project</label>
-                                    <p  class="form-control">Project</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="validationCustom02" class="form-label">Voucher
-                                        Date</label>
-                                        <p class="form-control">2021-09-30 00 00.00</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label>Trans Amount</label>
-                                    <p class="form-control" >5000 </p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Particulars</label>
-                                        <p class="form-control">payment for student</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label for="validationCustom04" class="form-label">Reference</label>
-                                        <p class="form-control">Reference</p>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                    </form>
-                    <!-- journal form end -->
-                    <!-- table start -->
                     <div class="row">
-                        <h2 class=" text-center mb-4">Posting Transaction Details</h2>
+                        <table class="table table-bordered mb-0">
+                            <tbody>
+                                <tr data-id="1">
+                                    <td data-field="id" style="">Project Name: Administration</td>
+                                    <td data-field="name">Voucher Date: 2022-05-10 00:00:00</td>
+                                </tr>
+                                <tr data-id="2" style="border-bottom-style: none;">
+                                    <td data-field="id" style="">
+                                        Transaction Amount: 36433</td>
+                                    <td data-field="name">Transaction Amount: 36433</td>
+                                </tr>
+                                <tr data-id="2" style="border-bottom-style: none;">
+                                    <td data-field="id" style="">Particulars: Cash payment :Cash salary to be paid to the new staffs as 1. Jannatul Khuludh -Tk.5633/-, 2.Ms. Raksana Begum -7733/- 3. Sheyreen Binte Malek Tk.5200/-, 4. Bijoy Gharami Tk.10400/-, Md. Ridoy Hasan 7,467/- Cheque No: 6446620</td>
+                                    <td data-field="name">Reference: 112</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center pt-5 pb-2"><h5>Posting Transaction Details</h5></div>
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <th>Acc. Number</th>
+                                <th>Acc. Particular</th>
+                                <th>Credit</th>
+                                <th>Debit</th>
+
+                            </thead>
+                            <tbody>
+                                <tr data-id="1">
+                                    <td data-field="">Bank-The City Bank Ltd (3101829023001)::1050004</td>
+                                    <td data-field="">Cash payment :Cash salary to be paid to the new staffs as 1. Jannatul Khuludh -Tk.5633/-, 2.Ms. Raksana Begum -7733/- 3. Sheyreen Binte Malek Tk.5200/-, 4. Bijoy Gharami Tk.10400/-, Md. Ridoy Hasan 7,467/- Cheque No: 6446620</td>
+                                    <td data-field="" >36433</td>
+                                    <td data-field=""></td>
+                                </tr>
+                                <tr data-id="2" style="">
+                                    <td data-field="" >Administration Staff Salary::7550001</td>
+                                    <td data-field="">Cash payment :Cash salary to be paid to the new staffs as 1. Jannatul Khuludh -Tk.5633/-, 2.Ms. Raksana Begum -7733/- 3. Sheyreen Binte Malek Tk.5200/-, 4. Bijoy Gharami Tk.10400/-, Md. Ridoy Hasan 7,467/- Cheque No: 6446620</td>
+                                    <td data-field="" ></td>
+                                    <td data-field="">36433</td>
+                                </tr>
+                                <tr data-id="2" style="">
+                                    <td data-field="" ></td>
+                                    <td data-field=""></td>
+                                    <td data-field="" ></td>
+                                    <td data-field=""></td>
+                                </tr>
+                                <tr data-id="2" style="">
+                                    <td data-field="" ></td>
+                                    <td data-field=""></td>
+                                    <td data-field="" >36433</td>
+                                    <td data-field="">36433</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered mb-0 mt-3">
+                            <thead>
+                                <th>Authorized Signature</th>
+                            </thead>
+                        </table>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="">
-                                        <table class="table table-bordered mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>No.</th>
-                                                    <th>Acc. Number</th>
-                                                    <th style="width: 20%;">Acc.Particular</th>
-                                                    <th>Debit</th>
-                                                    <th>Credit</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr data-id="1">
-                                                    <td data-field="id" style="width: 80px">1</td>
-                                                    <td data-field="name">4255-Assessment fees</td>
-                                                    <td data-field="age">Ismam Reza</td>
-                                                    <td data-field="credit"></td>
-                                                    <td data-field="debit">5000</td>
-                                                </tr>
-                                                <tr data-id="2" style="border-bottom-style: none;">
-                                                    <td data-field="id" style="width: 80px">2</td>
-                                                    <td data-field="name">1010-Cash Operating Account</td>
-                                                    <td data-field="age">Ismam Reza</td>
-                                                    <td data-field="credit">5000</td>
-                                                    <td data-field="debit"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3">Total: </td>
-                                                    <td>5000</td>
-                                                    <td>5000</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- table start -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-                    <!-- journal form end -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
+                    <button type="button" class="btn  btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn  btn-success" id="sa-position"> Print</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

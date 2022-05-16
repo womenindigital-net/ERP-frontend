@@ -23,7 +23,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Utility @endslot
-        @slot('title') Journal @endslot
+        @slot('title') JOURNAL VOUCHER @endslot
     @endcomponent
 
     <div class="row">
@@ -31,7 +31,6 @@
             <div class="card">
                 <div class="row pb-3 card-body">
                     <div class="col-md-4 mb-3 text-start ">
-                        <h4 class="card-title">All Journals</h4>
                     </div>
                     <div class="col-md-4  mb-3 text-center">
                         <a href="accounting.approved_journals_list" class="btn btn-success">All approved Journals</a>
@@ -92,7 +91,7 @@
                                         class="fas fa-check"></i></button>
                                 <button type="button"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
@@ -116,7 +115,7 @@
                                         class="fas fa-check"></i></button>
                                 <button type="button"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#journal-modal-xl-view">
+                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
                                     <i class=" fas fa-eye"></i>
                                 </button>
                                 <button type="button"
@@ -141,7 +140,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-primary">Add OR Edit Journal <i class="fas fa-plus-circle bx-spin"></i>
+                    <h5 class="modal-title text-primary">Add OR Edit Journal 
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -251,7 +250,7 @@
                                                     <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
                                                         <input type="text" id="subject" class="form-control"
                                                             placeholder="Credit" />
-                                                        <button class="btn btn-danger btn-rounded ms-2">
+                                                        <button class="btn btn-danger  ms-2">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </div>
@@ -268,8 +267,8 @@
                     <!-- journal form end -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
-                    <button type="button" class="btn font-size-16 btn-success" id="sa-position"><i class="bx bx-save"></i> Save</button>
+                    <button type="button" class="btn  btn-danger" data-bs-dismiss="modal"> Close</button>
+                    <button type="button" class="btn  btn-success" id="sa-position"> Save</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -282,7 +281,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-primary">View Journal <i class="fas fa-eye bx-tada"></i>
+                    <h5 class="modal-title text-primary">View Journal
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -323,8 +322,6 @@
                                         <p class="form-control">Reference</p>
                                     </div>
                                 </div>
-
-
                             </div>
                     </form>
                     <!-- journal form end -->
@@ -379,7 +376,7 @@
                     <!-- journal form end -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Close</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

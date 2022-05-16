@@ -22,7 +22,7 @@
 
 @component('components.breadcrumb')
 @slot('li_1') DashBoard @endslot
-@slot('title') STUDENT QAS @endslot
+@slot('title') Case History @endslot
 @endcomponent
 
 <div class="row">
@@ -119,7 +119,7 @@
                   <div class="mb-3">
                     <label for="basicpill-phoneno-input">Candidate ID:</label>
                     <select class="form-control select2-search-disable">
-                      <option>--Select--</option>
+                      <option>Select</option>
                       <optgroup label="Alaskan/Hawaiian Time Zone">
                         <option value="AK">Alaska</option>
                         <option value="HI">Hawaii</option>
@@ -136,10 +136,27 @@
               </div>
 
               <div class="row">
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="verticalnav-phoneno-input">Phone</label>
+                    <input type="text" class="form-control" id="verticalnav-phoneno-input"
+                      placeholder="Enter Your Phone No.">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="verticalnav-email-input">Email</label>
+                    <input type="email" class="form-control" id="verticalnav-email-input"
+                      placeholder="Enter Your Email ID">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-lg-12">
                   <div class="mb-3">
-                    <label for="verticalnav-phoneno-input">Instruction:</label>
-                    <p>This form will be used after admission</p>
+                    <label for="verticalnav-address-input">Address</label>
+                    <textarea id="verticalnav-address-input" class="form-control" rows="2"
+                      placeholder="Enter Your Address"></textarea>
                   </div>
                 </div>
               </div>

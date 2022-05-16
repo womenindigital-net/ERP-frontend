@@ -77,6 +77,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
+                                        <label for="validationCustom02" class="form-label">Customer Name</label>
+                                        <input type="text" class="form-control" id="validationCustom02"
+                                            placeholder="Customer Name"  required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
                                         <label>Date</label>
                                             <div class="input-group" id="datepicker1">
                                             <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
@@ -93,10 +100,6 @@
                                             placeholder="Enter ship to address here"  required>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                            </div>
-                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Warehouses</label>

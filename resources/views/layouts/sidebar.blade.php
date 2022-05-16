@@ -106,9 +106,9 @@
                         <span >Student List</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="my_students" >My Students</a></li>
+                        {{-- <li><a href="my_students" >My Students</a></li> --}}
                         <li><a href="my-online-students" >My Online Students</a></li>
-                        <li><a href="student-attendance-card-setup" >Student Attendance Card Setup</a></li>
+                        {{-- <li><a href="student-attendance-card-setup" >Student Attendance Card Setup</a></li> --}}
                     </ul>
                 </li>
                 <li>
@@ -117,11 +117,11 @@
                         <span>Pre Admission</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="pre_admission.appointment">Appointment</a></li>
                         <li><a href="/case-histroy">Case History</a></li>
-                        <li><a href="/referral-form">Referral form</a></li>
-                        <li><a href="/care-needs-form">CARE needs form</a></li>
+                        <li><a href="/care-needs-form">Care Needs Form</a></li>
+                        <li><a href="/referral-form">Referral Form</a></li>
                         <li><a href="/medicine-admin">Medicine Admin</a></li>
-                        <li><a href="/prescription">Prescription</a></li>
                     </ul>
                 </li>
                 <li>
@@ -130,8 +130,27 @@
                         <span>Admission</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="/student-payment">Student Payment</a></li>
+                        <li><a href="admission.add_student">Add Student</a></li>
+                        
                         <li><a href="/course-payment">Course Payment</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Assessment</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="assessment.sensory-checklist-for-child">Sensory checklist for Child</a></li>
+                        <li><a href="assessment.Social-Communication">Social Communication</a></li>
+                        <li><a href="assessment.">Occupational Therapy</a></li>
+                        <li><a href="assessment.">Physiotherapy</a></li>
+                        <li><a href="assessment.">Functional Communication Assessment</a></li>
+                        <li><a href="assessment.">Fundamental Movement Skills</a></li>
+                        <li><a href="assessment.">Executive Function test</a></li>
+                        <li><a href="assessment.">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="assessment.">Sensory checklist for Young Adult</a></li>
+                        <li><a href="assessment.">Individual risk assessment form</a></li>
                     </ul>
                 </li>
                 <li>
@@ -141,7 +160,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="/report">Report</a></li>
-                        <li><a href="/create-task">Create Task</a></li>
+                        {{-- <li><a href="/create-task">Create Task</a></li> --}}
                         <li><a href="/create-itp">Create ITP</a></li>
                         <li><a href="/assign-teacher">Assign Teacher</a></li>
                         <li><a href="/task-assign">Task Assign</a></li>
@@ -163,11 +182,11 @@
                         <span>Program</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="/p-assign-task">Assign Task</a></li>
-                        <li><a href="/p-create-itp">Create ITP</a></li>
-                        <li><a href="/">Run MITP</a></li>
-                        <li><a href="/p-notice-board">Notice Board</a></li>
-                        <li><a href="/"> Assign Teacher</a></li>
+                        <li><a href="program.assign-task">Assign Task</a></li>
+                        <li><a href="program.create-itp">Create ITP</a></li>
+                        <li><a href="program.run-mitp">Run MITP</a></li>
+                        <li><a href="program.notice-board">Notice Board</a></li>
+                        <li><a href="program.assign-teacher"> Assign Teacher</a></li>
                         <li><a href="/">Score Calculator </a></li>
                         <li><a href="/p-create-task">Create Task </a></li>
                         <li><a href="/p-admission-request">Admission Request </a></li>
@@ -204,9 +223,20 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Company Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li>
-                                    <a href="setup.company-setup.company-setup">Company Setup</a>
-                                </li>
+                                <li> <a href="setup.company-setup.company-setup">Company Setup</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Program Setup</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                   <li> <a href="setup.program-setup.prescription">Prescription</a></li>
+                                   <li> <a href="setup.program-setup.activity-create">Activity create</a></li>
+                                   <li> <a href="setup.program-setup.tesk-create">Task create</a></li>
+                                   <li> <a href="setup.program-setup.tesk-weight-setup">Task Weight Setup</a></li>
+                                   <li> <a href="setup.program-setup.course-setup">Course Setup</a></li>
+                                   <li> <a href="setup.program-setup.attendence-card-setup">Attendence card setup</a></li>
+                                   <li> <a href="setup.program-setup.vocational-category-subcategory-setup">Vocational Category and subcategory setup</a></li>
+                                   <li> <a href="setup.program-setup.academic-calender-create">Academic Celender Create</a></li>
                             </ul>
                         </li>
                         <li>
@@ -214,6 +244,14 @@
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="setup.project-setup.project-setup">Project Setup</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Doctor Setup</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="setup.doctor-setup">Doctor Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -266,6 +304,7 @@
                                 <li>
                                     <a href="setup.course-and-admission">Course and Admission</a>
                                 </li>
+
                             </ul>
                         </li>
                         <li>
@@ -349,6 +388,24 @@
                                 </li>
                             </ul>
                         </li>
+                    </ul>
+                </li>
+
+                <li class="menu-title">HR Admin</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>HR Admin</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="HR.warning-notice">Warning Notice</a></li>
+                        <li><a href="HR.show-case-notice">Show Case Notice</a></li>
+                        <li><a href="HR.advice-letter">Advice Letter</a></li>
+                        <li><a href="HR.employee-leave-status">Employee Leave Status</a></li>
+                        <li><a href="HR.certificate_setup">Certificate Setup</a></li>
+                        <li><a href=""> </a></li>
+                        <li><a href=""> </a></li>
+                        <li><a href=""> </a></li>
                     </ul>
                 </li>
 

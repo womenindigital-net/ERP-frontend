@@ -9,7 +9,7 @@
     <link href="<?php echo e(URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css')); ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo e(URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css')); ?>" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="<?php echo e(URL::asset('/assets/libs/datepicker/datepicker.min.css')); ?>">
-    
+
     <!-- DataTables -->
     <link href="<?php echo e(URL::asset('/assets/libs/datatables/datatables.min.css')); ?>" rel="stylesheet" type="text/css" />
 
@@ -22,7 +22,7 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Utility <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Received Payment <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> Requisition <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
 
     <div class="row">
@@ -34,13 +34,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#receive_payment" role="tab">
                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Receive Payment</span>    
+                                <span class="d-none d-sm-block">Requisition</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#received_payment_details" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">Received Payment Details</span>    
+                                <span class="d-none d-sm-block">Requisition List</span>
                             </a>
                         </li>
                     </ul>
@@ -69,15 +69,15 @@
                                         <label class="form-label">Requested By</label>
                                         <select class="form-control select2">
                                             <option>--Select--</option>
-                                            
+
                                             <option value="AK">Alaska</option>
                                             <option value="HI">Hawaii</option>
                                             <option value="CA">California</option>
                                             <option value="NV">Nevada</option>
                                             <option value="OR">Oregon</option>
                                             <option value="WA">Washington</option>
-                                            
-                                            
+
+
                                         </select>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                             <option value="25">Canteen Raw material</option>
                                             <option value="21">Office Outlet</option>
                                             <option value="22">Office Programme</option>
-                                            <option value="26">Office Store</option> 
+                                            <option value="26">Office Store</option>
                                         </select>
                                     </div>
                                 </div>
@@ -229,13 +229,13 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
                                             </form>
                                             <!-- 7th row start  -->
                                             <div class="row justify-content-center">
-                                                
+
                                                 <div class="col-lg-6">
                                                     <div class="row mb-2">
                                                         <label for="horizontal-firstname-input" class="col-3 text-end col-form-label">Note</label>
@@ -323,7 +323,7 @@
                                     </table>
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
-                        
+
                         </div>
                     </div>
 
@@ -370,4 +370,5 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script-bottom'); ?>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\GITHUB\ERP-frontend-WID\resources\views/accounting/purchase/requisition.blade.php ENDPATH**/ ?>
