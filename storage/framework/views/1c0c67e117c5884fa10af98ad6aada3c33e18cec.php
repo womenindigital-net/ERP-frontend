@@ -95,17 +95,7 @@
                 <li class="menu-title">Program Modules</li>
                 
                 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-share-alt"></i>
-                        <span >Student List</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        
-                        <li><a href="my-online-students" >My Online Students</a></li>
-                        
-                    </ul>
-                </li>
+                
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
@@ -116,7 +106,7 @@
                         <li><a href="/case-histroy">Case History</a></li>
                         <li><a href="/care-needs-form">Care Needs Form</a></li>
                         <li><a href="/referral-form">Referral Form</a></li>
-                        <li><a href="/medicine-admin">Medicine Admin</a></li>
+                        
                     </ul>
                 </li>
                 <li>
@@ -124,11 +114,7 @@
                         <i class="bx bx-share-alt"></i>
                         <span>Admission</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="admission.add_student">Add Student</a></li>
-                        
-                        <li><a href="/course-payment">Course Payment</a></li>
-                    </ul>
+                    
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -151,26 +137,15 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Online Class</span>
+                        <span >Student</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="/report">Report</a></li>
-                        
-                        <li><a href="/create-itp">Create ITP</a></li>
-                        <li><a href="/assign-teacher">Assign Teacher</a></li>
-                        <li><a href="/task-assign">Task Assign</a></li>
-                        <li><a href="/create-homework">Create Homework</a></li>
-                        <li><a href="/assign-homework">Assign Homework</a></li>
-                        <li><a href="/create-tutorial">Create Tutorial</a></li>
-                        <li><a href="/assign-tutorial">Assign Tutorial</a></li>
-                        <li><a href="/class-lists">Class Lists</a></li>
-                        <li><a href="/assign-class">Assign Class</a></li>
-                        <li><a href="/weekly-task-plan">Weekly Task Plan</a></li>
-                        <li><a href="/date-wise-teacher-ttendance">Date Wise Teacher Attendance</a></li>
-                        <li><a href="/month-wise-teacher-attendance">Month Wise Teacher Attendance</a></li>
-                        <li><a href="/teacher-attendance">Teacher Attendance</a></li>
+                        <li><a href="my_students" >Student List</a></li>
+                        <li><a href="my-online-students">My Online Students</a></li>
+                        <li><a href="student-attendance-card-setup" >Student Attendance Card Setup</a></li>
                     </ul>
                 </li>
+                
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
