@@ -5,26 +5,18 @@
 
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
-
-    
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title') Student_Table @endslot
-    @endcomponent
+    <x-breadcrumb pageHeader="Sample Page Header" :base="['utility' => '#']" :sub="['another' => '#', 'another1' => '#']"></x-breadcrumb>
     {{-- code  --}}
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body">     
+                <div class="card-body">
                     </p>
                     <div class="d-flex justify-content-end pb-5">
                         <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Add</button>
-                
-                        
                     </div>
 
                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -39,11 +31,8 @@
                                 <th>Student Status</th>
                                 <th>Log</th>
                                 <th>Action</th>
-
                             </tr>
                         </thead>
-
-
                         <tbody>
                             <tr>
                                 <td>System </td>
@@ -73,7 +62,7 @@
                                     </button>
                                     <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                                     <i class="fas fa-trash-alt"></i>
-                                    </button> 
+                                    </button>
                                 </td>
 
                             </tr>
@@ -105,7 +94,7 @@
                                         </button>
                                         <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                                         <i class="fas fa-trash-alt"></i>
-                                        </button> 
+                                        </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -125,12 +114,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
-                
+
                 <div class="card p-0 m-0">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                
+
                                 <div class="mb-3 row">
                                     <label for="example-text-input" class="col-md-4 col-form-label">Student ID:</label>
                                     <div class="col-md-8">
@@ -147,14 +136,14 @@
                                     <label for="" class="col-md-4 col-form-label">Date of Birth:</label>
                                     <div class="col-md-8" id="datepicker2">
                                         <input class="form-control" placeholder="dd/mm/yy"  data-date-format="dd M, yyyy" data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
-                                        
+
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="" class="col-md-4 col-form-label">Date of Assesment:</label>
                                     <div class="col-md-8" id="datepicker2">
                                         <input class="form-control" placeholder="dd/m/yy" data-date-format="dd M, yyyy" data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
-                                        
+
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -163,7 +152,7 @@
                                         <input class="form-control" type="number" placeholder="Enter National ID" id="example-tel-input">
                                     </div>
                                 </div>
-                                
+
                                 <div class="mb-3 row">
                                     <label for="example-password-input" class="col-md-4 col-form-label">Present Address:</label>
                                     <div class="col-md-8">
@@ -182,42 +171,27 @@
                                 <div class="mb-3 row">
                                     <label class="col-md-4 col-form-label">Gender:</label>
                                     <div class="col-md-8">
-                                        <select class="form-select">
-                                            <option>Select</option>
-                                            <option>Female</option>
-                                            <option>Male</option>
-                                        </select>
+                                        <x-input-select name="gender" :records="$constants::$genders"></x-input-select>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label class="col-md-4 col-form-label">Blood Group:</label>
                                     <div class="col-md-8">
-                                        <select class="form-select">
-                                            <option>Select</option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                            <option>Others</option>
-                                        </select>
+                                        <x-input-select name="blood_group" :records="$constants::$bloodGroups"></x-input-select>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="example-email-input" class="col-md-4 col-form-label">Suborno Card No:</label>
                                     <div class="col-md-8">
-                                        <input class="form-control" type="text" placeholder="Enter Card No" id="example-email-input">
+                                        <x-input-text name="suborno_card_no" placeholder="Suborno Card No"></x-input-text>
                                     </div>
                                 </div>
-                               
-                                
+
+
                                 <div class="mb-3 row">
                                     <label for="example-tel-input" class="col-md-4 col-form-label">Diagonosis:</label>
                                     <div class="col-md-8">
-                                        <input class="form-control" type="text"  placeholder="" id="example-tel-input">
+                                        <x-input-text name="diagnosis"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -233,87 +207,86 @@
                                         <label for="switch1" data-on-label="Yes" data-off-label="No"></label>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <div class="mb-3 row">
                                     <label for="example-password-input" class="col-md-12 col-form-label text-center"><h4>Father's Name:</h4></label>
-                                    
+
                                 </div>
-                        
+
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Father's name" id="example-password-input">
+                                        <x-input-text name="father_name" placeholder="Father Name"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Father's number" id="example-password-input">
+                                        <x-input-text name="father_number" placeholder="Father's Number"></x-input-text>
                                     </div>
                                 </div>
-                                
+
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Father's profession" id="example-password-input">
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Father's Email" id="example-password-input">
+                                        <x-input-text name="father_profession" placeholder="Father's profession"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Father's Document" id="example-password-input">
+                                        <x-input-text name="father_email" placeholder="Father's Email"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Father's FB link" id="example-password-input">
+                                        <x-input-text name="father_doc" placeholder="Father's Document"></x-input-text>
                                     </div>
                                 </div>
-                                
+                                <div class="mb-3 row">
+                                    <div class="col-md-12">
+                                        <x-input-text name="father_fb_link" placeholder="Father's FB link"></x-input-text>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="col-6">
                                 <div class="mb-3 row">
                                     <label for="example-password-input" class="col-md-12 col-form-label text-center"><h4>Mother's Name:</h4></label>
-                                    
                                 </div>
-                        
+
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Mother's name" id="example-password-input">
+                                        <x-input-text name="mother_name" placeholder="Mother Name"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Mother's number" id="example-password-input">
+                                        <x-input-text name="mother_number" placeholder="Mother Number"></x-input-text>
                                     </div>
                                 </div>
-                                
+
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Mother's profession" id="example-password-input">
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Mother's Email" id="example-password-input">
+                                        <x-input-text name="mother_profession" placeholder="Mother's profession"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Mother's Document" id="example-password-input">
+                                        <x-input-text name="mother_email" placeholder="Mother's Email"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" placeholder="Enter your Mother's FB link" id="example-password-input">
+                                        <x-input-text name="mother_doc" placeholder="Mother's Document"></x-input-text>
                                     </div>
                                 </div>
-                                
+                                <div class="mb-3 row">
+                                    <div class="col-md-12">
+                                        <x-input-text name="mother_fb_link" placeholder="Mother's FB link"></x-input-text>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
