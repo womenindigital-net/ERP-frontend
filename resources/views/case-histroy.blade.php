@@ -161,45 +161,13 @@
                   <p>
                 </div>
               </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>সমন্বয় দক্ষতা আছে কি?</h5>
-                    <h5 class="mb-4">(Join Coordination এর মাধ্যমে কাজ করা যেমন- doe / আটা দিয়ে রুটি বানানো বলে জোড়ে কিক
-                      দেয়া)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <x-input-radio-or-check name="has_adjustment_capability" label="সমন্বয় দক্ষতা আছে কি? <br>(Join Coordination এর মাধ্যমে কাজ করা যেমন- doe / আটা দিয়ে রুটি বানানো বলে জোড়ে কিক
+                      দেয়া)" :records="$constants::$yesNo"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>চলাফেরার ক্ষেত্রে ভারসাম্য আছে কি?</h5>
-                    <h5 class="mb-4">(যেমন-হাটার সময় পড়ে যাওয়া, হাটার সময় শরীর দোলানো, থপ থপ জোরে হাটা, বেখাপ্পা ভাবে
-                      হাটা)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <x-input-radio-or-check name="has_adjustment_capability" label="চলাফেরার ক্ষেত্রে ভারসাম্য আছে কি? <br>(যেমন-হাটার সময় পড়ে যাওয়া, হাটার সময় শরীর দোলানো, থপ থপ জোরে হাটা, বেখাপ্পা ভাবে
+                      হাটা)" :records="$constants::$yesNo"></x-input-radio-or-check>
+
+
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
@@ -219,32 +187,9 @@
                 </div>
               </div>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="">লিখার পদ্ধতি ঠিক আছে কিনাঃ</h5>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        আকার, গঠন ঠিক আছে কিনা
-                      </label>
-                    </div>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        আকৃতি আকৃতিঃ ঠিক আছে কিনা
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        লিখা শেষ করার ধৈর্য : ঠিক আছে কিনা
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
+                <x-input-radio-or-check name="has_write_ability" label="লিখার পদ্ধতি ঠিক আছে কিনাঃ?"
+                                        :records="$caseConstants::$hasWriteAbilities" type="checkbox" :isVertical="false" :multiple="true"></x-input-radio-or-check>
+                <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">
@@ -375,6 +320,12 @@
                 </div>
               </div>
               <!-- end row -->
+                <x-input-radio-or-check name="has_speaking_problem"
+                                        label="কথা বলার সমস্যা আছে কিনাঃ"
+                                        :records="$constants::$yesNo"
+                                        secondaryInputLabel="থাকলে উল্লেখ করুন"
+                                        ></x-input-radio-or-check>
+
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">

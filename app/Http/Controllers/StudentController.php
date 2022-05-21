@@ -6,6 +6,9 @@ use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
 use App\Repositories\UserRepository;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class StudentController extends Controller
 {
@@ -97,11 +100,12 @@ class StudentController extends Controller
         return view('pre_admission.appointment');
     }
 
-    public function caseHistory()
+    public function caseHistory(): Factory|View|Application
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
+
         return view('case-histroy', $data);
     }
 }

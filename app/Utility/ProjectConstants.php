@@ -4,6 +4,9 @@ namespace App\Utility;
 
 final class ProjectConstants
 {
+    const YES = 'yes';
+    const NO = 'no';
+
     const GENDER_MALE = 'male';
     const GENDER_FEMALE = 'female';
     const GENDER_OTHER = 'other';
@@ -23,13 +26,18 @@ final class ProjectConstants
         self::GENDER_OTHER  => 'Other',
     ];
 
+    public static array $yesNo = [
+        self::YES => 'হ্যাঁ',
+        self::NO  => 'না',
+    ];
+
     public static array $bloodGroups = [
-        self::BLOOD_GROUP_A => 'A',
-        self::BLOOD_GROUP_A_POSITIVE => 'A+',
-        self::BLOOD_GROUP_B => 'B',
-        self::BLOOD_GROUP_B_POSITIVE => 'B+',
-        self::BLOOD_GROUP_O_POSITIVE => 'O+',
-        self::BLOOD_GROUP_O_NEGATIVE => 'O-',
+        self::BLOOD_GROUP_A           => 'A',
+        self::BLOOD_GROUP_A_POSITIVE  => 'A+',
+        self::BLOOD_GROUP_B           => 'B',
+        self::BLOOD_GROUP_B_POSITIVE  => 'B+',
+        self::BLOOD_GROUP_O_POSITIVE  => 'O+',
+        self::BLOOD_GROUP_O_NEGATIVE  => 'O-',
         self::BLOOD_GROUP_AB_POSITIVE => 'AB+',
         self::BLOOD_GROUP_AB_NEGATIVE => 'AB-',
 
