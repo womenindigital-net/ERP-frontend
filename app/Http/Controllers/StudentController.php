@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
+use App\Repositories\UserRepository;
 
 class StudentController extends Controller
 {
+    private UserRepository $userRepo;
+
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepo = $userRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -87,5 +95,13 @@ class StudentController extends Controller
     public function appointment()
     {
         return view('pre_admission.appointment');
+    }
+
+    public function caseHistory()
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('case-histroy', $data);
     }
 }

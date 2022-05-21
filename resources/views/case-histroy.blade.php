@@ -98,21 +98,7 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <x-input-select name="teacher_id" :records="$constants::$bloodGroups">
-                    </x-input-select>
-                    <select class="form-control select2-search-disable">
-                      <option>Select</option>
-                      <optgroup label="Alaskan/Hawaiian Time Zone">
-                        <option value="AK">Alaska</option>
-                        <option value="HI">Hawaii</option>
-                      </optgroup>
-                      <optgroup label="Pacific Time Zone">
-                        <option value="CA">California</option>
-                        <option value="NV">Nevada</option>
-                        <option value="OR">Oregon</option>
-                        <option value="WA">Washington</option>
-                      </optgroup>
-                    </select>
+                      <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                   </div>
                 </div>
                 <div class="col-lg-4">
