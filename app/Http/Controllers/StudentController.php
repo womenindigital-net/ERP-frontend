@@ -83,4 +83,9 @@ class StudentController extends Controller
     {
         //
     }
+
+    public function appointment()
+    {
+        return view('pre_admission.appointment');
+    }
 }
