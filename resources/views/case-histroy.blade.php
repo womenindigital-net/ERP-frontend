@@ -90,16 +90,16 @@
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
                     <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy"
-                        data-date-container='#datepicker2' data-provide="datepicker" data-date-autoclose="true">
-
-                      <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                      <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
+                      </x-input-text>
                     </div><!-- input-group -->
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
+                    <x-input-select name="teacher_id" :records="$constants::$bloodGroups">
+                    </x-input-select>
                     <select class="form-control select2-search-disable">
                       <option>Select</option>
                       <optgroup label="Alaskan/Hawaiian Time Zone">
