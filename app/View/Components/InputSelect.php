@@ -18,21 +18,23 @@ class InputSelect extends Component
     public string $required;
     public bool $multiple;
     public string $id;
-    public $targetColumn;
+    public string $targetColumn;
+    public string $wireModel;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $records, $targetColumn = '', $selected = null, $multiple = false, $required = '')
+    public function __construct($name, $records, $targetColumn = '', $selected = null, $multiple = false, $required = '', $wireModel='')
     {
         $this->name = $name . ($multiple ? '[]' : '');
         $this->targetColumn = $targetColumn;
         $this->records = $records;
         $this->selected = $selected;
         $this->required = $required;
-        $this->multiple = $multiple;
+        $this->multiple = $multiple ? 'multiple' : '';
+        $this->wireModel = $wireModel ? "wire:model=$wireModel" : '';
         $this->id = preg_replace('/[\[\]]/', '', $name);
     }
 

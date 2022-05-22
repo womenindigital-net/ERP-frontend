@@ -6,5 +6,6 @@
 {{--       id="{{$inputId}}"--}}
        value="{{ $value }}"
        placeholder="{{ $placeholder }}"
+       {{$wireModel}}
     {{$required}}>
 @error($name)<span style="color: red">{{$message}}</span>@enderror

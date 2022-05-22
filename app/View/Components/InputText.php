@@ -15,8 +15,9 @@ class InputText extends Component
 //    public $inputClass;
     public string $required;
     public string $type;
+    public string $wireModel;
 
-    public function __construct($name, $type = 'text', $placeholder='', $value = false, $required = false)
+    public function __construct($name, $type = 'text', $placeholder='', $value = false, $required = false, $wireModel='')
     {
         $this->name = $name;
 //        $this->label = $label ?: prepareInputLabel($name);
@@ -27,6 +28,7 @@ class InputText extends Component
 //        $this->inputClass = $inputClass;
         $this->required = $required ? 'required' : '';
         $this->type = $type;
+        $this->wireModel = $wireModel ? "wire:model=$wireModel" : '';
     }
 
     public function render()

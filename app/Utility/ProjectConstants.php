@@ -24,12 +24,12 @@ final class ProjectConstants
     ];
 
     public static array $bloodGroups = [
-        self::BLOOD_GROUP_A => 'A',
-        self::BLOOD_GROUP_A_POSITIVE => 'A+',
-        self::BLOOD_GROUP_B => 'B',
-        self::BLOOD_GROUP_B_POSITIVE => 'B+',
-        self::BLOOD_GROUP_O_POSITIVE => 'O+',
-        self::BLOOD_GROUP_O_NEGATIVE => 'O-',
+        self::BLOOD_GROUP_A           => 'A',
+        self::BLOOD_GROUP_A_POSITIVE  => 'A+',
+        self::BLOOD_GROUP_B           => 'B',
+        self::BLOOD_GROUP_B_POSITIVE  => 'B+',
+        self::BLOOD_GROUP_O_POSITIVE  => 'O+',
+        self::BLOOD_GROUP_O_NEGATIVE  => 'O-',
         self::BLOOD_GROUP_AB_POSITIVE => 'AB+',
         self::BLOOD_GROUP_AB_NEGATIVE => 'AB-',
 
