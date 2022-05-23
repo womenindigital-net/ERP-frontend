@@ -4,6 +4,9 @@ namespace App\Utility;
 
 final class ProjectConstants
 {
+    const YES = 'yes';
+    const NO = 'no';
+
     const GENDER_MALE = 'male';
     const GENDER_FEMALE = 'female';
     const GENDER_OTHER = 'other';
@@ -21,6 +24,11 @@ final class ProjectConstants
         self::GENDER_MALE   => 'Male',
         self::GENDER_FEMALE => 'Female',
         self::GENDER_OTHER  => 'Other',
+    ];
+
+    public static array $yesNo = [
+        self::YES => 'হ্যাঁ',
+        self::NO  => 'না',
     ];
 
     public static array $bloodGroups = [

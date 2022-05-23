@@ -11,6 +11,6 @@ Route::group(['prefix' => 'student', 'middleware' => []], function()
     ]);
 
     Route::get('appointment', [StudentController::class, 'appointment'])->name('student.appointment');
-
+    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
 });
 

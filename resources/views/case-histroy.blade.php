@@ -90,29 +90,15 @@
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
                     <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy"
-                        data-date-container='#datepicker2' data-provide="datepicker" data-date-autoclose="true">
-
-                      <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                      <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
+                      </x-input-text>
                     </div><!-- input-group -->
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <select class="form-control select2-search-disable">
-                      <option>Select</option>
-                      <optgroup label="Alaskan/Hawaiian Time Zone">
-                        <option value="AK">Alaska</option>
-                        <option value="HI">Hawaii</option>
-                      </optgroup>
-                      <optgroup label="Pacific Time Zone">
-                        <option value="CA">California</option>
-                        <option value="NV">Nevada</option>
-                        <option value="OR">Oregon</option>
-                        <option value="WA">Washington</option>
-                      </optgroup>
-                    </select>
+                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -175,345 +161,72 @@
                   <p>
                 </div>
               </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>সমন্বয় দক্ষতা আছে কি?</h5>
-                    <h5 class="mb-4">(Join Coordination এর মাধ্যমে কাজ করা যেমন- doe / আটা দিয়ে রুটি বানানো বলে জোড়ে কিক
-                      দেয়া)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_adjustment_capability" label="সমন্বয় দক্ষতা আছে কি? <br>(Join Coordination এর মাধ্যমে কাজ করা যেমন- doe / আটা দিয়ে রুটি বানানো বলে জোড়ে কিক
+                      দেয়া)" :records="$constants::$yesNo"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>চলাফেরার ক্ষেত্রে ভারসাম্য আছে কি?</h5>
-                    <h5 class="mb-4">(যেমন-হাটার সময় পড়ে যাওয়া, হাটার সময় শরীর দোলানো, থপ থপ জোরে হাটা, বেখাপ্পা ভাবে
-                      হাটা)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_adjustment_capability" label="চলাফেরার ক্ষেত্রে ভারসাম্য আছে কি? <br>(যেমন-হাটার সময় পড়ে যাওয়া, হাটার সময় শরীর দোলানো, থপ থপ জোরে হাটা, বেখাপ্পা ভাবে
+                      হাটা)" :records="$constants::$yesNo"></x-input-radio-or-check>
+
+
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">সূক্ষ্ম যন্ত্রপাতি ব্যবহার করা সহ ফাইন মটরের দক্ষতা আছে কি?</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_fine_equipment_use_ability"
+                label="সূক্ষ্ম যন্ত্রপাতি ব্যবহার করা সহ ফাইন মটরের দক্ষতা আছে কি?" :records="$constants::$yesNo">
+              </x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="">লিখার পদ্ধতি ঠিক আছে কিনাঃ</h5>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        আকার, গঠন ঠিক আছে কিনা
-                      </label>
-                    </div>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        আকৃতি আকৃতিঃ ঠিক আছে কিনা
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        লিখা শেষ করার ধৈর্য : ঠিক আছে কিনা
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_write_ability" label="লিখার পদ্ধতি ঠিক আছে কিনাঃ?"
+                :records="$caseConstants::$hasWriteAbilities" type="checkbox" :isVertical="false" :multiple="true">
+              </x-input-radio-or-check>
+
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">পড়াশুনা সহ শিক্ষার বিষয়ের উদ্বেগ আছে কিনা&nbsp;<span
-                        style="color: #3366ff;">(যেমন-পড়তে – লিখবে অনাগ্রহ / দেখে পড়া / সঠিক ভাবে দেখে লেখার
-                        সমস্যা)</span></h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_education_intersted" label="পড়াশুনা সহ শিক্ষার বিষয়ের উদ্বেগ আছে কিনা <br> (যেমন-পড়তে – লিখবে অনাগ্রহ / দেখে পড়া / সঠিক ভাবে দেখে লেখার
+              সমস্যা)" :records="$constants::$yesNo">
+              </x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">স্বনির্ভরতার (নিজে নিজে কাজ করার ) দক্ষতা আছে কিনা (যেমন-বয়স অনুযায়ী নিজের কাজ করতে
-                      পারা / রুটিন জানা)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_self_work_capabelity" label="স্বনির্ভরতার (নিজে নিজে কাজ করার ) দক্ষতা আছে কিনা (যেমন-বয়স অনুযায়ী নিজের কাজ করতে
+              পারা / রুটিন জানা)" :records="$constants::$yesNo">
+              </x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">সামাজিক যোগাযোগ করতে পারে কিনা (যেমন-বয়স অনুযায়ী সামাজিক যোগাযোগ)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_abil_to_comminite_socilely"
+                label="সামাজিক যোগাযোগ করতে পারে কিনা (যেমন-বয়স অনুযায়ী সামাজিক যোগাযোগ)" :records="$constants::$yesNo">
+              </x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">খেলার মাধ্যমে যোগাযোগ করে কিনা? অন্যের সাথে মিলে মিশে খেলাধুলা করে কিনা? (যেমন-বয়স
-                      অনুযায়ী খেলা / সঠিক ভাবে খেলা / খেলার প্রতি আগ্রহ / খেলার উপকরন চাওয়া)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="">শেখার প্রতিবন্ধকতা আছে কি? নীচের বিষয়গুলি সম্মন্ধে কোন ধারনা আছে কিনা? (যেমন-অক্ষর /
-                      বর্ণ শব্দ বাক্য পড়তে লিখতে সমস্যা অস্বাভাবিক তা, অংক শিখতে না পারা, অংকে অনাগ্রহ, গ্রাফ / চিত্র
-                      সম্পর্কে অনাগ্রহ)</h5>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        ডিসলেক্সিয়া (এটি সঠিক ভাবে শব্দ বোঝার অসুবিধা এবং ভুল বানান করা এবং সব্দের সঠিক মানে বুঝতে পারে
-                        না)
-                      </label>
-                    </div>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        ডিসপ্রেক্সিয়া (এটি ভারসাম্য এবং অঙ্গবিন্যাস এর সমস্যা তৈরি করে, যাতে লিখতে বা কলম পেন্সিল ধরতে
-                        অসুবিধা হয়)
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        ডিসক্যাল্কুলিয়া (বিভিন্ন ধরনের গণিত বা অংক বিষয়ক সমস্যা তৈরি করে )
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        ডিসগ্রাফিয়া (বানান ভুল করা, খারাপ হাতের লেখা এবং কাগজ সঠিক ভাবে গুছিয়ে না লিখতে পারার সমস্যা,
-                        এটা ভাষা ভিত্তিক বা অ-ভাষা ভিত্তিক সমস্যা হতে পারে।)
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="is_ableto_paly_others" label="খেলার মাধ্যমে যোগাযোগ করে কিনা? অন্যের সাথে মিলে মিশে খেলাধুলা করে কিনা? (যেমন-বয়স
+                অনুযায়ী খেলা / সঠিক ভাবে খেলা / খেলার প্রতি আগ্রহ / খেলার উপকরন চাওয়া)" :records="$constants::$yesNo">
+              </x-input-radio-or-check>
+
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">শরীরের ওপর সাধারণ নিয়ন্ত্রন আছে কিনা?</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_write_ability"
+                label="শেখার প্রতিবন্ধকতা আছে কি? নীচের বিষয়গুলি সম্মন্ধে কোন ধারনা আছে কিনা? (যেমন-অক্ষর / বর্ণ শব্দ বাক্য পড়তে লিখতে সমস্যা অস্বাভাবিক তা, অংক শিখতে না পারা, অংকে অনাগ্রহ, গ্রাফ / চিত্র সম্পর্কে অনাগ্রহ)"
+                :records="$caseConstants::$hasAnyLerningAbstagol" type="checkbox" :isVertical="false" :multiple="true">
+              </x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">কথা বলার সমস্যা আছে কিনাঃ</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                    <label for="basicpill-firstname-input">থাকলে উল্লেখ করুন</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control">
-                    </div><!-- input-group -->
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_control_over_body" label="শরীরের ওপর সাধারণ নিয়ন্ত্রন আছে কিনা?"
+                :records="$constants::$yesNo">
+              </x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">ভাষা বুঝতে পারে কিনা (যেমন-অতীত – ভবিষ্যৎ কাল, এক বচন – বহুবচন, পুরুষ (আপনি, তুমি)
-                      বুঝতে পারে )</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="has_speaking_problem" label="কথা বলার সমস্যা আছে কিনাঃ"
+                :records="$constants::$yesNo" secondaryInputLabel="থাকলে উল্লেখ করুন"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">ভাষার ব্যবহার পারে ?(যেমন- বাক্যে সঠিক শব্দের ব্যবহার)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">পারে</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">পারেনা</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">সামান্য পারে</label>
-                      </div>
-                    </div>
-                    <label for="basicpill-firstname-input">সমস্যা থাকলে উল্লেখ করুন</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control">
-                    </div><!-- input-group -->
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="is_able_to_understand_tense"
+                label="ভাষা বুঝতে পারে কিনা (যেমন-অতীত – ভবিষ্যৎ কাল, এক বচন – বহুবচন, পুরুষ (আপনি, তুমি) বুঝতে পারে )"
+                :records="$constants::$yesNo"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">অতীতে আপনার সন্তানের কোন স্পেশালিষ্ট এর মাধ্যমে অ্যাসেসমেন্ট হয়েছিল কিনা ?</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                    <label for="basicpill-firstname-input">স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control">
-                    </div>
-                    <!-- input-->
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="is_able_to_understand_tense"
+                label="ভাষার ব্যবহার পারে ?(যেমন- বাক্যে সঠিক শব্দের ব্যবহার)"
+                :records="$caseConstants::$isAbleToUseCurrectWordInSentanse"
+                secondaryInputLabel="সমস্যা থাকলে উল্লেখ করুন"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">লার্নিং ডিজাবিলিটি বা কোন কিছু শিখতে পারাতে কোন সমস্যা পরিবারে কারো ছিল কিনা?</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="is_able_to_understand_tense"
+                label="অতীতে আপনার সন্তানের কোন স্পেশালিষ্ট এর মাধ্যমে অ্যাসেসমেন্ট হয়েছিল কিনা ?"
+                :records="$constants::$yesNo" secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
+              </x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">সন্তানের মধ্যে অস্থিরতা আছে কিনা</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="is_able_to_understand_tense"
+                label="লার্নিং ডিজাবিলিটি বা কোন কিছু শিখতে পারাতে কোন সমস্যা পরিবারে কারো ছিল কিনা?"
+                :records="$constants::$yesNo"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="is_able_to_understand_tense" label="সন্তানের মধ্যে অস্থিরতা আছে কিনা"
+                :records="$constants::$yesNo"></x-input-radio-or-check>
             </form>
           </section>
 
@@ -523,417 +236,77 @@
             <div>
               <form>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">আপনি আপনার শিশুকে কি ভাবে বর্ণনা করবেন ?</h5>
+                <x-input-radio-or-check name="is_able_to_understand_tense"
+                  label="আপনি আপনার শিশুকে কি ভাবে বর্ণনা করবেন ?" :records="$caseConstants::$childDesctiption"
+                  type="checkbox" secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
+                </x-input-radio-or-check>
 
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        বেশি কান্নাকাটি/ চিৎকার করে
-                      </label>
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        বেশি ডিমান্ডিং
-                      </label>
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        জেদি
-                      </label>
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        হাশি খুশী
-                      </label>
-                      <input class="form-check-input" type="checkbox">
-                      <label class="form-check-label">
-                        বেশি ঘুমায়
-                      </label>
-                    </div>
-                    <label>স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control">
-                    </div>
-                    <!-- input-->
-                  </div>
-                </div>
+                {{-- TODO: need to fix style --}}
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">ঘুমের প্যাটার্নে কোন সমস্যা আছে কিনা ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                      <label>বিস্তারিত লিখুন</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="is_able_to_understand_tense"
+                  label="ঘুমের প্যাটার্নে কোন সমস্যা আছে কিনা ?" :records="$constants::$yesNo"
+                  secondaryInputLabel="বিস্তারিত লিখুন">
+                </x-input-radio-or-check>
               </form>
             </div>
           </section>
-
           <!-- Bank Details -->
           <h3>উন্নয়নের ইতিহাস</h3>
           <section>
             <div>
               <form>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">চুষে খেতে পারে কিনা ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="চুষে খেতে পারে কিনা ?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">শক্ত খাবার খেতে পারে কিনা?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শক্ত খাবার খেতে পারে কিনা?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">শ্বাস-প্রশ্বাস নিয়ন্ত্রন করতে পারে কিনা?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শ্বাস-প্রশ্বাস নিয়ন্ত্রন করতে পারে কিনা?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">খাবার একবারে গিলে ফেলে কিনা?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="খাবার একবারে গিলে ফেলে কিনা?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">খাবার খেতে লম্বা সময় নেয় কিনা?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="খাবার খেতে লম্বা সময় নেয় কিনা?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">চিবিয়ে খাবার খেতে কোন সমস্যা ছিল কিনা</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                      <label for="basicpill-firstname-input">স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="চিবিয়ে খাবার খেতে কোন সমস্যা ছিল কিনা"
+                  :records="$constants::$yesNo" secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">কোন বয়সে একা একা বসতে শিখেছে?</h5>
-                      <div class="form-check">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">০-২ বছর- সংবেদন-সঞ্চালন স্তর</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ২-৪বছর- প্রাক সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৪-৭ বছর- প্রাক সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৭-৯ বছর -মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৯-১১- মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কোন বয়সে একা একা বসতে শিখেছে?"
+                  :records="$caseConstants::$inWhichAgeLearnedToSitAlone" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">কোন বয়সে চাবানো শিখেছে ?</h5>
-                      <div class="form-check">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ০-২ বছর- সংবেদন-সঞ্চালন স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৩-৪ বছর- সংবেদন-সঞ্চালন স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৫-৭ বছর- প্রাক সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৮-৯ বছর -মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ১০-১১- মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কোন বয়সে চাবানো শিখেছে ?"
+                  :records="$caseConstants::$inWhichAgeLearnedToChewing" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">কোন বয়সে হামাগুরি দিতে শিখেছে ? পেছন দিক ছেঁচড়ে বা চার হাতপা ব্যবহার করে দিয়েছে</h5>
-                      <div class="form-check">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">০-২ বছর- সংবেদন-সঞ্চালন স্তর</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ২-৪বছর- প্রাক সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৪-৭ বছর- প্রাক সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৭-৯ বছর -মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৯-১১- মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name=""
+                  label="কোন বয়সে হামাগুরি দিতে শিখেছে ? পেছন দিক ছেঁচড়ে বা চার হাতপা ব্যবহার করে দিয়েছে"
+                  :records="$caseConstants::$inWhichAgeLearnedToCroling" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">কোন বয়সে নিজে নিজে একা হাটতে শিখেছে</h5>
-                      <div class="form-check">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">০-২ বছর- সংবেদন-সঞ্চালন স্তর</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ২-৪বছর- প্রাক সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৪-৭ বছর- প্রাক সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৭-৯ বছর -মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ৯-১১- মূর্ত সক্রিয়তার স্তর </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কোন বয়সে নিজে নিজে একা হাটতে শিখেছে"
+                  :records="$caseConstants::$inWhichAgeLearnedToWoakAlone" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">তিন বা চার চাকার বাইসাইকেল চালানো শিখেছে ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শিশু কি সাঁতার জানে ?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">শিশু কি সাঁতার জানে ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শিশু বাইরে খেলার উপকরন পছন্দ করে কিনা? (যেমন ফুটবল , ক্রিকেট )"
+                  :records="$constants::$yesNo"></x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">শিশু বাইরে খেলার উপকরন পছন্দ করে কিনা? (যেমন ফুটবল , ক্রিকেট )</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শিশু কি খুব সহজেই. ক্লান্ত হয়ে যায়?"
+                  :records="$constants::$yesNo" secondaryInputLabel="বিস্তারিত লিখুন"></x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">শিশু কি খুব সহজেই. ক্লান্ত হয়ে যায়?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                      <label for="basicpill-firstname-input">বিস্তারিত লিখুন</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="ভারসাম্য হীনতা আছে কিনা?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">ভারসাম্য হীনতা আছে কিনা?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">পেশী ব্যথা সব সময় থাকে কিনা?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="পেশী ব্যথা সব সময় থাকে কিনা?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
               </form>
             </div>
           </section>
@@ -944,365 +317,60 @@
             <div>
               <form>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">শিশুর কথা বলার প্রথম ভাষা কোনটি ?</h5>
-
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">বাংলা</label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">ইংরেজি</label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">হিন্দি</label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">ফ্রেঞ্চ</label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">স্প্যানিশ</label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">অন্য</label>
-                    </div>
-                    <label>অন্য ভাষা হলে তা লিখুন</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control">
-                    </div>
-                    <!-- input-->
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শিশুর কথা বলার প্রথম ভাষা কোনটি?"
+                  :records="$caseConstants::$firstVoiceLang" secondaryInputLabel="অন্য ভাষা হলে তা লিখুন">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">কোন বয়সে শিশু প্রথম শব্দ বলেছে ?</h5>
-
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ০-২ বছর- সংবেদন-সঞ্চালন স্তর </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ২-৪ বছর </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ৪-৭ বছর- প্রাক সক্রিয়তার স্তর </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ৭-৯ বছর -মূর্ত সক্রিয়তার স্তর </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ৭-৯ বছর -মূর্ত সক্রিয়তার স্তর </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">৯-১১- মূর্ত সক্রিয়তার স্তর</label>
-                      </div>
-                      <h5>অন্যান্য হলে তা লিখুন</h5>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কোন বয়সে শিশু প্রথম শব্দ বলেছে ?"
+                  :records="$caseConstants::$inWhichAgeSpokeTheFirstWord" secondaryInputLabel="অন্য ভাষা হলে তা লিখুন"
+                  :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">সহজ বাক্য বলতে পারে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="সহজ বাক্য বলতে পারে কি?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">কয় শব্দে বাক্য বলে?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">এক শব্দে</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> দুই শব্দে </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> তিন শব্দে </label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> ততোধিক শব্দে </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কয় শব্দে বাক্য বলে?"
+                  :records="$caseConstants::$howManyWordUseInASentaceMax">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">অন্য কোন ভাষায় কথা বলতে পারে কি ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="অন্য কোন ভাষায় কথা বলতে পারে কি?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">অন্য কোন ভাষা বলতে পারে?</h5>
-
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        বাংলা
-                      </label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        ইংরেজি
-                      </label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        হিন্দি
-                      </label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        ফ্রেঞ্চ
-                      </label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        স্প্যানিশ
-                      </label>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        অন্য
-                      </label>
-                    </div>
-                    <label>অন্য ভাষা হলে তা লিখুন</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control">
-                    </div>
-                    <!-- input-->
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="অন্য কোন ভাষা বলতে পারে?"
+                  :records="$caseConstants::$doseSpakeInOtherLang" secondaryInputLabel="অন্য ভাষা হলে তা লিখুন">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="mb-2">
-                    <h5 class="">কোন বয়স থেকে শিখেছে ?</h5>
-
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        ০-২ বছর- সংবেদন-সঞ্চালন স্তর
-                      </label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        ২-৪ বছর- প্রাক সক্রিয়তার স্তর
-                      </label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        ৪-৭ বছর- প্রাক সক্রিয়তার স্তর
-                      </label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        ৭-৯ বছর -মূর্ত সক্রিয়তার স্তর
-                      </label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">
-                        ৯-১১ মূর্ত সক্রিয়তার স্তর
-                      </label>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কোন বয়স থেকে শিখেছে ?"
+                  :records="$caseConstants::$fromWhichYearLearnigOtherLang" :isVertical="false">
+                </x-input-radio-or-check>
 
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="mb-2">
-                    <h5 class="">কোথা থেকে সেই ভাষা শিখেছে ?</h5>
-
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      পরিবার
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      আত্মীয়
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      বন্ধু
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      প্রতিবেশি
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      স্কুল
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      শিক্ষক
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      টেলিভিশন
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      অন্যান্য
-                    </label>
-                  </div>
-                  <label>অন্যান্য হলে তা লিখুন</label>
-                  <div class="input-group" id="datepicker2">
-                    <input type="text" class="form-control">
-                  </div>
-                  <!-- input-->
-                </div>
-
+                <x-input-radio-or-check name="" label="কোথা থেকে সেই ভাষা শিখেছে ?"
+                  :records="$caseConstants::$fromWhereLearnOtherLang" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="mb-2">
-                    <h5 class="">নাম ধরে ডাকলে শিশু সারা দেয় কি?</h5>
-
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      মাঝে মাঝে
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      কখনো না
-                    </label>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">
-                      সব সময়
-                    </label>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="নাম ধরে ডাকলে শিশু সারা দেয় কি?"
+                  :records="$caseConstants::$doesHeResponseIfCallByHisName">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="mb-2">
-                    <h5 class="">প্রাথমিক ও সহজ ভাষায় নির্দেশ ও দিক নির্দেশনা অনুসরণ করতে পারে ?</h5>
-
-                    <div class="d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="প্রাথমিক ও সহজ ভাষায় নির্দেশ ও দিক নির্দেশনা অনুসরণ করতে পারে ?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="mb-2">
-                    <h5 class="">শিশু কোন কোন শব্দ ভুল উচ্চারণ করে কিনা</h5>
-
-                    <div class="d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="শিশু কোন কোন শব্দ ভুল উচ্চারণ করে কিনা"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5>কোন কোন শব্দে শিশু প্রতিক্রিয়াশিলতা</h5>
-
-                      <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> খুব বেশি প্রতিক্রিয়াশীল </label>
-                      </div>
-                      <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> প্রতিক্রিয়াহীন </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> লাফালাফি করে </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="কোন কোন শব্দে শিশু প্রতিক্রিয়াশিলতা"
+                  :records="$caseConstants::$inWhichSoundChildReact" type="checkbox" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="mb-2">
-                    <h5 class="">মৌখিক নির্দেশ মেনে চলে-</h5>
-
-                    <div class="d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="মৌখিক নির্দেশ মেনে চলে" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="mb-2">
-                    <h5 class="">বাক্য গঠনে সঠিক শব্দের সঠিক ব্যবহার পারে?</h5>
-
-                    <div class="d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="বাক্য গঠনে সঠিক শব্দের সঠিক ব্যবহার পারে?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
               </form>
             </div>
           </section>
@@ -1314,312 +382,56 @@
             <div>
               <form>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">শিশু কি চাকু বা কাটা চামচ ব্যবহার করেতে পারে ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শিশু কি চাকু বা কাটা চামচ ব্যবহার করেতে পারে ?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5>নিজে একা একা কাপড় পরতে পারে ?</h5>
-
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          পরাপুরি স্বনির্ভর
-                        </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          কিছুটা সাহায্যে পারে
-                        </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          অনেক বেশি সহায়তা লাগে
-                        </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          পুরাপুরি পরনির্ভর
-                        </label>
-                      </div>
-                    </div>
-                    <label>বিস্তারিত লিখুন</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control">
-                    </div>
-                    <!-- input-->
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="নিজে একা একা কাপড় পরতে পারে ?"
+                  :records="$caseConstants::$canWearClothAlone" secondaryInputLabel="বিস্তারিত লিখুন" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">শিশু নিজের জিনিষ গুছিয়ে রাখে ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="শিশু নিজের জিনিষ গুছিয়ে রাখে ?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5>কোন বয়সে টয়লেট ট্রেনিং পেয়েছে?</h5>
-
-                      <div>
-                        <input <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ০-২ বছর- সংবেদন-সঞ্চালন স্তর </label>
-                      </div>
-                      <div>
-                        <input <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ২-৪ বছর- প্রাক সক্রিয়তার স্তর </label>
-                      </div>
-                      <div>
-                        <input <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ৪-৭ বছর- প্রাক সক্রিয়তার স্তর </label>
-                      </div>
-                      <div>
-                        <input <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ৭-৯ বছর -মূর্ত সক্রিয়তার স্তর</label>
-                      </div>
-                      <div>
-                        <input <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ৯-১১- মূর্ত সক্রিয়তার স্তর </label>
-                      </div>
-                      <div>
-                        <input <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> টয়লেট ট্রেনিং পায়নি </label>
-                      </div>
-                      <div>
-                        <input <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> ১১+ </label>
-                      </div>
-                    </div>
-                    <label>অন্যান্য হলে তা লিখুন</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control">
-                    </div>
-                    <!-- input-->
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কোন বয়সে টয়লেট ট্রেনিং পেয়েছে?"
+                  :records="$caseConstants::$inWhichAgeGotToyletTreaining" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">বাড়িতে কি নিজে নিজে টয়লেটে যায়?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বাড়িতে কি নিজে নিজে টয়লেটে যায়?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">অপরিচত জায়গায় টয়লেটে যায়?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="অপরিচত জায়গায় টয়লেটে যায়?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">বাড়িতে কি ছবি আঁকতে, কাটাকাঁটি করতে পছন্দ করে?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বাড়িতে কি ছবি আঁকতে, কাটাকাঁটি করতে পছন্দ করে?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">খেলাধুলা করতে পছন্দ করে ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="খেলাধুলা করতে পছন্দ করে ?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">সে কি স্বাধীনভাবে খেলতে পারে ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="সে কি স্বাধীনভাবে খেলতে পারে ?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">কি খেলা পছন্দ করে?</h5>
-                      <div class="">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">গঠনগত খেলা</label>
-                      </div>
-                      <div class="">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> কাল্পনিক খেলা </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> বস্তুগত খেলা </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label"> অন্যান্য </label>
-                      </div>
-                      <label>অন্যান্য হলে তা লিখুন</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কি খেলা পছন্দ করে?" :records="$caseConstants::$faveriteGames"
+                  :isVertical="false"> :secondaryInputLabel="অন্যান্য হলে তা লিখুন"
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">বড়দের নির্দেশ মেনে বা মানিয়ে চলতে পারে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বড়দের নির্দেশ মেনে বা মানিয়ে চলতে পারে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">আপনি কি মনে করেন এটা একটি খুবই কঠিন কাজ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="আপনি কি মনে করেন এটা একটি খুবই কঠিন কাজ"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">টয়লেট থেকে কি একা একা পরিস্কার হয়ে বের হয়ে আসতে পারে?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="টয়লেট থেকে কি একা একা পরিস্কার হয়ে বের হয়ে আসতে পারে?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">টয়লেট থেকে কি একা একা নিজের কাপড় পরে বের হয়ে আসতে পারে?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="টয়লেট থেকে কি একা একা নিজের কাপড় পরে বের হয়ে আসতে পারে?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
               </form>
             </div>
           </section>
@@ -1630,119 +442,30 @@
             <div>
               <form>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">বাসায় ভাইবোনদের সাথে খেলাধুলা করে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বাসায় ভাইবোনদের সাথে খেলাধুলা করে কি?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">সন্তানের বন্ধুরা কি বাসায় খেলতে আসে ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="সন্তানের বন্ধুরা কি বাসায় খেলতে আসে ?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">বন্ধুদের সাথে খেলনা শেয়ার করে কি নাকি বড়দের সহায়তা লাগে?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বন্ধুদের সাথে খেলনা শেয়ার করে কি নাকি বড়দের সহায়তা লাগে?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">গেমস বা খেলাধুলায় অথবা কথা বলার সময় তার নিজের পালা বা টার্ন এর জন্য অপেক্ষা করে?
-                      </h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name=""
+                  label="গেমস বা খেলাধুলায় অথবা কথা বলার সময় তার নিজের পালা বা টার্ন এর জন্য অপেক্ষা করে?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">বড়দের সাথে বা অন্য শিশুদের ব্যপারে আগ্রহ দেখায় নাকি উদাসীন থাকে?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বড়দের সাথে বা অন্য শিশুদের ব্যপারে আগ্রহ দেখায় নাকি উদাসীন থাকে?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">আপনি কি সন্তানের বিশেষ কোন আচরন নিয়ে চিন্তিত ?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                      <label>হ্যাঁ হলে বিস্তারিত লিখুন</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="আপনি কি সন্তানের বিশেষ কোন আচরন নিয়ে চিন্তিত ?"
+                  :records="$constants::$yesNo" secondaryInputLabel="হ্যাঁ হলে বিস্তারিত লিখুন">
+                </x-input-radio-or-check>
               </form>
             </div>
           </section>
@@ -1760,220 +483,53 @@
                       <h5 class="">স্কুলের কাজের ক্ষেত্রে আপনার সন্তানের প্রধান উদ্বেগের কারন/বিষয় গুলি কি কি ? উল্লেখ
                         করুন-</h5>
                       <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
+                        <x-input-text type="text" name=""></x-input-text>
                       </div>
                       <!-- input-->
                     </div>
                   </div>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">নতুন নতুন বিষয় শেখার আগ্রহ আছে কিনা?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="নতুন নতুন বিষয় শেখার আগ্রহ আছে কিনা?"
+                    :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">যেকোনো সাধারণ বিষয় সঠিকভাবে বুঝতে পারে কিনা ?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="যেকোনো সাধারণ বিষয় সঠিকভাবে বুঝতে পারে কিনা?"
+                    :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">শব্দের বানান শিখতে পারে কিনা?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="শব্দের বানান শিখতে পারে কিনা?" :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">নিজে নিজে লিখতে পারে?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="নিজে নিজে লিখতে পারে?" :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">কাজ করার গতি কেমন ?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label"> খুব ভালো </label>
-                          </div>
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label"> ভালো </label>
-                          </div>
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label"> মোটামুটি </label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">কম</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="কাজ করার গতি কেমন ?" :records="$caseConstants::$workingSpeed">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">আপনার সন্তানের কোন ও বিষয়ে বোঝার ক্ষমতা বোঝানোর পর কতদিন পর্যন্ত থাকে?</h5>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> একদিন দেখিয়ে দিতে হয় </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> পরবর্তী দিনগুলিতে দেখিয়ে দিতে হয় </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label"> নিয়মিত দেখিয়ে দিতে হয় </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name=""
+                    label="আপনার সন্তানের কোন ও বিষয়ে বোঝার ক্ষমতা বোঝানোর পর কতদিন পর্যন্ত থাকে?"
+                    :records="$caseConstants::$howLongChildCanManageAfterTeaching" :isVertical="false">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">হোমওয়ার্ক কি তার কাছে সাধারণ কাজ?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="হোমওয়ার্ক কি তার কাছে সাধারণ কাজ?"
+                    :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">স্কুলের কাজ করার সময় কি তার ব্যবহার/আচরণ অন্যরকম হয়ে যায়?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="স্কুলের কাজ করার সময় কি তার ব্যবহার/আচরণ অন্যরকম হয়ে যায়?"
+                    :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">তাকে কি উত্তেজিত মনে হয়?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="তাকে কি উত্তেজিত মনে হয়?" :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">কাগজপত্র বা বই খাতায় অগোছালো মনে হয়?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name="" label="কাগজপত্র বা বই খাতায় অগোছালো মনে হয়?"
+                    :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
                   <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <h5 class="mb-2">সে কি নিয়মিত পেন্সিল বক্স থেকে বিভিন্ন্য আইটেম বা স্কুল ব্যাগ থেকে বিভিন্ন
-                          জিনিষ হারায়?</h5>
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">হ্যাঁ</label>
-                          </div>
-                          <div>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">না</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <x-input-radio-or-check name=""
+                    label="সে কি নিয়মিত পেন্সিল বক্স থেকে বিভিন্ন্য আইটেম বা স্কুল ব্যাগ থেকে বিভিন্ন জিনিষ হারায়?"
+                    :records="$constants::$yesNo">
+                  </x-input-radio-or-check>
               </form>
             </div>
           </section>
@@ -1986,665 +542,133 @@
                 লিখুন। এই বিষয়গুলি মুলত স্কুলে যাওয়ার বয়সের জন্য প্রযোজ্যঃ</p>
               <form>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">খাওয়াদাওয়ার সময় বিশ্রী/বেমানান কাজ করে কিনা যেটা পিতামাতার জন্য বিরক্তি সৃষ্টি
-                        করে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name=""
+                  label="খাওয়াদাওয়ার সময় বিশ্রী/বেমানান কাজ করে কিনা যেটা পিতামাতার জন্য বিরক্তি সৃষ্টি করে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">কাপড় পরিধানঃ</h5>
-                      <div class="me-5">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          বেশি কান্নাকাটি/ চিৎকার করে
-                        </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কাপড় পরিধানঃ বেশি কান্নাকাটি/ চিৎকার করে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">আপনি আপনার শিশুকে কি ভাবে বর্ণনা করবেন?</h5>
-
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          জামা বা শার্ট এর হাতা বা গলার ফাঁক খুজে পেতে সমস্যা?
-                        </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          বোতাম ঘরের ফাঁকা অংশ দেখে বোতাম লাগাতে হয়
-                        </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                          না দেখে পারে?
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" type="checkbox" label="আপনি আপনার শিশুকে কি ভাবে বর্ণনা করবেন?"
+                  :records="$caseConstants::$howToDiscriveYourChild" :isVertical="false">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">গোসল</h5>
-
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> গোসলে সহায়তা প্রয়োজন হয় </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> সাবান লাগানোর সময় হাত থেকে পরে যায় </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> শ্যাম্পুর সময় চোখ বন্ধ করতে ভয় পায় </label>
-                      </div>
-                      <label>বিস্তারিত লিখুন</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="গোসল" type="checkbox" :records="$caseConstants::$bath"
+                  secondaryInputLabel="বিস্তারিত লিখুন" :isVertical="false">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="প্রয়োজনীয় জিনিস" type="checkbox"
+                  :records="$caseConstants::$necessaryThings" secondaryInputLabel="বিস্তারিত লিখুন" :isVertical="false">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="দিক নির্ণয়ের দক্ষতা আছে কি?" :records="$constants::$yesNo" >
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="খেলা" type="checkbox" :records="$caseConstants::$game" :isVertical="false">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="মবিলিটি" type="checkbox" :records="$caseConstants::$mobility" :isVertical="false">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="রুটিন পছন্দ করে" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
 
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">প্রয়োজনীয় জিনিস</h5>
-
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">প্রয়োজনীয় জিনিষ খুজে পায় না</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">খেলনা বা অন্যান্য জিনিষ গুছিয়ে রাখতে সাহায্য প্রয়োজন হয়</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="রুটিনে কোন পরিবর্তন মেনে নেয় কি?রুটিন পছন্দ করে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">দিক নির্ণয়ের দক্ষতা আছে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="নতুন পরিস্থিতি পছন্দ করে?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">খেলা</h5>
-
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">লেগো দিয়ে খেলনা তৈরি করতে পছন্দ করে</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">একটা লেগোর সাথে আর একটা লেগোর কানেকশন বের করা তার জন্য শক্ত
-                          কাজ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">খুব বেশী চাপ দিয়ে দিয়ে খেলনা গুলি ভেঙ্গে ফেলে</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="ধারাবাহিক নির্দেশ ঠিক মত পালন করতে পারে না"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">মবিলিটি</h5>
-
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">হোঁচট খায় বা জিনিষ পত্রের বা বন্ধুদের সাথে ধাক্কা খায়</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">কাঁচি, ছুরি বেমানান ভাবে ব্যবহার করে এবং সাহায্য প্রয়োজন
-                          হয়</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">লিখার কাজটি তার কাছে কঠিন মনে হয়</label>
-                      </div>
-                      <label>অন্যান্য হলে তা লিখুন</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="মেজাজ খুব তাড়াতাড়ি পরিবর্তিত হয়" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5 class="mb-2">রুটিন পছন্দ করে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+                <x-input-radio-or-check name="" label="সহজে হতাশাগ্রস্থ হয়" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">রুটিনে কোন পরিবর্তন মেনে নেয় কি?রুটিন পছন্দ করে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কাজ করা বন্ধ করে দেয়" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">নতুন পরিস্থিতি পছন্দ করে?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">ধারাবাহিক নির্দেশ ঠিক মত পালন করতে পারে না</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name=""
+                  label="একজায়গায় ঠিক মত বসতে পারে (পরিবেশ - পরিস্থিতির প্রয়োজনে দীর্ঘ সময় বসে থাকা )"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">মেজাজ খুব তাড়াতাড়ি পরিবর্তিত হয়</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বাসায় ধ্বংসাত্মক বা আক্রমণাত্মক ব্যাবহার আছে কি?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">সহজে হতাশাগ্রস্থ হয়</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="খেলাধুলায় মনে হয় মনোযোগ নেই, শুধু বসে থাকে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">কাজ করা বন্ধ করে দেয়</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="আপনার সন্তানের সময় সম্পর্কে জ্ঞান আছে কি?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">অস্থিরতা আছে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">একজায়গায় ঠিক মত বসতে পারে (পরিবেশ - পরিস্থিতির প্রয়োজনে দীর্ঘ সময় বসে থাকা )</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">বাসায় ধ্বংসাত্মক বা আক্রমণাত্মক ব্যাবহার আছে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                      <label>থাকলে কি ধরনের আচরন প্রদর্শন করে?</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">খেলাধুলায় মনে হয় মনোযোগ নেই, শুধু বসে থাকে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">আপনার সন্তানের সময় সম্পর্কে জ্ঞান আছে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">দিন, মাস ও সময় জ্ঞান অর্জনে সমস্যা আছে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="দিন, মাস ও সময় জ্ঞান অর্জনে সমস্যা আছে কি?"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">সারা প্রদান</h5>
-
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> ডাকলে সাড়া দেয় না </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">অনুরোধে প্রায়ই সাড়া দেয় না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="সারা প্রদান" :records="$caseConstants::$answerTheCall">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">দিবাস্বপ্নচারী মনে হয় । ঘোরের মধ্যে থাকা, কল্পনার জগতে থাকে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="দিবাস্বপ্নচারী মনে হয় । ঘোরের মধ্যে থাকা, কল্পনার জগতে থাকে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">এক জায়গায় ঘোরে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="এক জায়গায় ঘোরে" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">ঘোরাঘুরি করে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="ঘোরাঘুরি করে" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">সবসময়ই নড়াচড়া বা চলাফেরার মধ্যে থাকে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="সবসময়ই নড়াচড়া বা চলাফেরার মধ্যে থাকে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">সোজা হয়ে বসতে পছন্দ করে কি?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="সোজা হয়ে বসতে পছন্দ করে কি?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">বল নিয়ে খেলার ক্ষেত্রে পারদর্শী</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বল নিয়ে খেলার ক্ষেত্রে পারদর্শী" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">বল নিয়ে যে কোন ধরনের খেলা এড়িয়ে চলে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বল নিয়ে যে কোন ধরনের খেলা এড়িয়ে চলে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">ভাংচুর করতে পছন্দ করে (জিনিষ পত্র নষ্ট করে )</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="ভাংচুর করতে পছন্দ করে (জিনিষ পত্র নষ্ট করে )"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">বেমানান ভঙ্গিতে দৌঁড়ায়</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="বেমানান ভঙ্গিতে দৌঁড়ায়" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">উচ্চতা, নড়াচড়া, সিঁড়ি দিয়ে নামার ক্ষেত্রে সাবধান থাকে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="উচ্চতা, নড়াচড়া, সিঁড়ি দিয়ে নামার ক্ষেত্রে সাবধান থাকে"
+                  :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">সারাক্ষণ নড়াচড়ার মধ্যে থাকে</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="সারাক্ষণ নড়াচড়ার মধ্যে থাকে" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">কাজ এড়িয়ে চলতে চায়</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কাজ এড়িয়ে চলতে চায়" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">কোন ধরনের কাজ এড়িয়ে চলে? -</h5>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> ব্যাক্তিগত কাজ </label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">অন্যের সাথে মিলে কাজ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label"> শারীরিক পরিশ্রম আছে এমন কাজ </label>
-                      </div>
-                      <label>থাকলে কি ধরনের আচরন প্রদর্শন করে?</label>
-                      <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control">
-                      </div>
-                      <!-- input-->
-                    </div>
-                  </div>
-                </div>
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">বার বার হারিয়ে যায়?</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">হ্যাঁ</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">না</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="কোন ধরনের কাজ এড়িয়ে চলে?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="বার বার হারিয়ে যায়?" :records="$constants::$yesNo">
+                </x-input-radio-or-check>
                 <!-- end row -->
               </form>
             </div>

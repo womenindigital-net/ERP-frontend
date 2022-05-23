@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 Route::get('users', [UserController::class, 'index'])->name('users.index');
 Route::get('user-type/{type}', [UserController::class, 'specificUserType'])->name('users.index');
+
 /*Route::get('/journal', [App\Http\Controllers\HomeController::class, 'journal'])->name('journal');
 Route::get('/approved_journals_list', [App\Http\Controllers\HomeController::class, 'approvedJournal'])->name('approved.journal');
 Route::get('/student_income', [App\Http\Controllers\HomeController::class, 'studentIncome'])->name('student.income');
@@ -68,3 +69,4 @@ Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Language Translation
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);*/
 
+Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
