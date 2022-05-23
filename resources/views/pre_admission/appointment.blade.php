@@ -1,27 +1,29 @@
 @extends('layouts.master')
 
-@section('title') @lang('translation.Starter_Page') @endsection
+{{-- @section('title') @lang('translation.Starter_Page') @endsection --}}
 @section('css')
-
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
 @endsection
 
 @section('content')
-<x-breadcrumb pageHeader="Sample Page Header" :base="['utility' => '#']" :sub="['another' => '#', 'another1' => '#']">
-</x-breadcrumb>
+{{-- <x-breadcrumb pageHeader="Sample Page Header" :base="['utility' => '#']"
+    :sub="['another' => '#', 'another1' => '#']">
+</x-breadcrumb> --}}
+
 {{-- code --}}
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                </p>
                 <div class="d-flex justify-content-end pb-5">
                     <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal"
                         data-bs-target=".bs-example-modal-xl">Add</button>
                 </div>
 
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                <div>
+                    
+                </div>
+
+                <table class="table table-bordered dt-responsive  w-100">
                     <thead>
                         <tr>
                             <th>Name & ID</th>
@@ -346,10 +348,6 @@
 
 @endsection
 @section('script')
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<script src="{{ URL::asset('/assets/js/pages/fontawesome.init.js') }}"></script>
+
+
 @endsection
