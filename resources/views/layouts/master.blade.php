@@ -91,7 +91,6 @@
             default:
                 message = event.detail.message || 'Well done!';
         }
-        console.log(type, message)
         toastr[type](message)
     });
 </script>
