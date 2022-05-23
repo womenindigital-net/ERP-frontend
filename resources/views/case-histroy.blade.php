@@ -46,7 +46,13 @@
           <table class="table w-100">
             <thead>
               <tr>
-                <th>Collection Date</th>
+                <th>Collection Date
+
+                  <span>
+                    <i class="dripicons-arrow-thin-down"></i>
+                    <i class="dripicons-arrow-thin-up"></i>
+                  </span>
+                </th>
                 <th>Student Name</th>
                 <th>Collected By</th>
                 <th>Log</th>
@@ -65,7 +71,8 @@
                   </small>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
+                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
                     <i class="mdi mdi-eye"></i>
                   </button>
                   <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
@@ -74,7 +81,8 @@
                   <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
                       class="fas fa-check"></i>
                   </button>
-                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
                     <i class="mdi mdi-pencil"></i>
                   </button>
                   <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">

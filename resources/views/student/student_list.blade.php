@@ -1,13 +1,18 @@
 @extends('layouts.master')
 
 @section('title') @lang('translation.Starter_Page') @endsection
-@section('css')
-@endsection
+@section('css')@endsection
 
 @section('content')
-<x-breadcrumb pageHeader="Sample Page Header" :base="['utility' => '#']" :sub="['another' => '#', 'another1' => '#']">
-</x-breadcrumb>
+
+@component('components.breadcrumb')
+@slot('li_1') Utility @endslot
+@slot('title') Students list @endslot
+@endcomponent
 {{-- code --}}
+
+
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -16,8 +21,6 @@
                     <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal"
                         data-bs-target=".bs-example-modal-xl">Add</button>
                 </div>
-
-
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -57,7 +60,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>System </td>
+                                <td><a href="student.student_profile.profile">System</a></td>
                                 <td>Edinburgh</td>
                                 <td>61</td>
                                 <td>2011</td>
@@ -69,7 +72,6 @@
                                     <button type="button"
                                         class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
                                         data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-
                                         <i class="mdi mdi-eye"></i>
                                     </button>
                                     <button type="button"
@@ -90,7 +92,8 @@
                                         <i class="bx bx-dollar"></i>
                                     </button>
                                     <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
                                         <i class="fas fa-arrow-circle-right"></i>
                                     </button>
                                     <button type="button"
@@ -101,7 +104,7 @@
 
                             </tr>
                             <tr>
-                                <td>Puja </td>
+                                <td><a href="student.student_profile.profile">Puja</a></td>
                                 <td>Accountant</td>
                                 <td>Tokyo</td>
                                 <td>63</td>
@@ -111,8 +114,7 @@
                                 <td>2011/</td>
                                 <td>
                                     <button type="button"
-                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                                         <i class="mdi mdi-eye"></i>
                                     </button>
                                     <button type="button"
@@ -124,8 +126,7 @@
                                             class="fas fa-check"></i>
                                     </button>
                                     <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                         <i class="mdi mdi-pencil"></i>
                                     </button>
                                     <button type="button"
@@ -133,7 +134,8 @@
                                         <i class="bx bx-dollar"></i>
                                     </button>
                                     <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" prescription>
                                         <i class="fas fa-arrow-circle-right"></i>
                                     </button>
                                     <button type="button"
@@ -141,6 +143,7 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -171,7 +174,6 @@
         </div>
     </div> <!-- end col -->
 </div> <!-- end row -->
-
 <!-- sample modal content -->
 <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
     aria-hidden="true">
@@ -379,6 +381,155 @@
 
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12 d-flex pb-3">
+                                <label for="example-datetime-local-input" class=" pe-2 col-form-label">
+                                    <h4 class="pb-0 mb-0">Is interested in job:</h4>
+                                </label>
+                                <div class="form-check d-flex align-items-center ">
+                                    <input class="form-check-input" id="container" type="checkbox" name="container">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row hide">
+                            <div class="col-6">
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Disability
+                                        Type:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="disability"
+                                            placeholder="What type of disability do you have">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Work
+                                        Interest:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="work_interest" placeholder="Where is your interest">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Transport:</label>
+                                    <div class="col-md-8">
+
+                                        <x-input-text name="transport"
+                                            placeholder="What type of transport do you prefer?">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Device
+                                        Name:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="device_name" placeholder="Your device name">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Prefer Work
+                                        Area:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="prefer_work_area" placeholder="Your prefareble area">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Local
+                                        Guardian:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="local_guardian" placeholder="Your local guardian">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Position:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="position" placeholder="Your position">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Duration:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="duration" placeholder="Duration">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Skill/Strength of
+                                        work:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="skill_of_work" placeholder="Your strength of work">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Reasonable
+                                        accommodation :</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="reasonable_accommodation" placeholder="Your accommodation">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Device
+                                        Use:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="device_use" placeholder="Device Use">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input"
+                                        class="col-md-4 col-form-label">Qualification:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="qualification" placeholder="Your qualification">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Training:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="training" placeholder="What type of training do you have">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label for="example-search-input"
+                                        class="col-md-4 col-form-label">Organization:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="organization" placeholder="Your organization name">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Phone
+                                        Number:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="phone_number" placeholder="Your phone number">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="example-search-input" class="col-md-4 col-form-label">Cause of
+                                        Leave:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="cause_of_leave" placeholder="Your causes of leave">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -392,4 +543,12 @@
 
 @endsection
 @section('script')
+<script>
+    $(document).ready(function(){
+        $(".hide").hide();
+      $("#container").click(function(){
+        $(".hide").toggle();
+      });
+    });
+</script>
 @endsection
