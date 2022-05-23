@@ -12,5 +12,6 @@ Route::group(['prefix' => 'student', 'middleware' => []], function()
 
     Route::get('appointment', [StudentController::class, 'appointment'])->name('student.appointment');
     Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
+    Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
 });
 

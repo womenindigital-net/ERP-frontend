@@ -108,4 +108,12 @@ class StudentController extends Controller
 
         return view('case-histroy', $data);
     }
+    public function referralForm(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('referral-form', $data);
+    }
 }
