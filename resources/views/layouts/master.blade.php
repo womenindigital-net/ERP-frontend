@@ -46,10 +46,12 @@
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
     @livewireScripts
-<script src="{{asset('assets/libs/toastr/toastr.min.js')}}"></script>
-<script src="{{asset('assets/js/pages/toastr.init.js')}}"></script>
-<script>
-    toastr.options = {
+    <!-- jquery step -->
+    <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
+    <script src="{{asset('assets/libs/toastr/toastr.min.js')}}"></script>
+    <script src="{{asset('assets/js/pages/toastr.init.js')}}"></script>
+    <script>
+        toastr.options = {
         "closeButton": false,
         "debug": false,
         "newestOnTop": false,
@@ -94,7 +96,7 @@
         }
         toastr[type](message)
     });
-</script>
+    </script>
 </body>
 
 </html>

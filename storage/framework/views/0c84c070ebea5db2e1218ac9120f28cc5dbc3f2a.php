@@ -38,7 +38,7 @@
               data-bs-target=".bs-example-modal-lg">ADD</button>
           </div>
         </div>
-        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+        <table class="table table-bordered dt-responsive  w-100">
           <thead>
             <tr>
               <th>Collection Date</th>
@@ -54,8 +54,10 @@
               <td>Ashfaq Sadi</td>
               <td>Nurjahan Dipa</td>
               <td>
-                <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
-                <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                <small>
+                  <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span></br>
+                  <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                </small>
               </td>
               <td>
                 <button type="button" class="btn btn-lg p-1 btn-primary btn-rounded waves-effect waves-light">
@@ -119,7 +121,7 @@
                   <div class="mb-3">
                     <label for="basicpill-phoneno-input">Candidate ID:</label>
                     <select class="form-control select2-search-disable">
-                      <option>Select</option>
+                      <option>--Select--</option>
                       <optgroup label="Alaskan/Hawaiian Time Zone">
                         <option value="AK">Alaska</option>
                         <option value="HI">Hawaii</option>

@@ -1,1 +1,0 @@
-<?php /**PATH D:\GITHUB\ERP-frontend-WID\resources\views/settings/store-management.blade.php ENDPATH**/ ?>

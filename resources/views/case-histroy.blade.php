@@ -3,19 +3,6 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-  type="text/css" />
-<link href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
@@ -38,33 +25,94 @@
               data-bs-target=".bs-example-modal-lg">ADD</button>
           </div>
         </div>
-        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-          <thead>
-            <tr>
-              <th>Collection Date</th>
-              <th>Student Name</th>
-              <th>Collected By</th>
-              <th>Log</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2022-03-29</td>
-              <td>Ashfaq Sadi</td>
-              <td>Nurjahan Dipa</td>
-              <td>
-                <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
-                <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
-              </td>
-              <td>
-                <button type="button" class="btn btn-lg p-1 btn-primary btn-rounded waves-effect waves-light">
-                  <i class="mdi mdi-trash-can-outline font-size-32 align-middle"></i></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                class="form-control form-control-sm form-select form-select-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entries
+            </label>
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <label style="display: inline-flex;align-items: center;">Search:
+              <input type="search" class="form-control form-control-sm" placeholder="">
+            </label>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table w-100">
+            <thead>
+              <tr>
+                <th>Collection Date</th>
+                <th>Student Name</th>
+                <th>Collected By</th>
+                <th>Log</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2022-03-29</td>
+                <td>Ashfaq Sadi</td>
+                <td>Nurjahan Dipa</td>
+                <td>
+                  <small>
+                    <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span><br>
+                    <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                  </small>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="mdi mdi-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="bx bx-dollar"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="fas fa-arrow-circle-right"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            Showing 1 to 2 of 2 entries
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <nav>
+              <ul class="pagination" style="justify-content: end;">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </div> <!-- end col -->
@@ -387,7 +435,8 @@
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <x-input-radio-or-check name="" label="নিজে একা একা কাপড় পরতে পারে ?"
-                  :records="$caseConstants::$canWearClothAlone" secondaryInputLabel="বিস্তারিত লিখুন" :isVertical="false">
+                  :records="$caseConstants::$canWearClothAlone" secondaryInputLabel="বিস্তারিত লিখুন"
+                  :isVertical="false">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <x-input-radio-or-check name="" label="শিশু নিজের জিনিষ গুছিয়ে রাখে ?" :records="$constants::$yesNo">
@@ -563,13 +612,15 @@
                   :records="$caseConstants::$necessaryThings" secondaryInputLabel="বিস্তারিত লিখুন" :isVertical="false">
                 </x-input-radio-or-check>
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="দিক নির্ণয়ের দক্ষতা আছে কি?" :records="$constants::$yesNo" >
+                <x-input-radio-or-check name="" label="দিক নির্ণয়ের দক্ষতা আছে কি?" :records="$constants::$yesNo">
                 </x-input-radio-or-check>
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="খেলা" type="checkbox" :records="$caseConstants::$game" :isVertical="false">
+                <x-input-radio-or-check name="" label="খেলা" type="checkbox" :records="$caseConstants::$game"
+                  :isVertical="false">
                 </x-input-radio-or-check>
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="মবিলিটি" type="checkbox" :records="$caseConstants::$mobility" :isVertical="false">
+                <x-input-radio-or-check name="" label="মবিলিটি" type="checkbox" :records="$caseConstants::$mobility"
+                  :isVertical="false">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <x-input-radio-or-check name="" label="রুটিন পছন্দ করে" :records="$constants::$yesNo">
@@ -683,25 +734,6 @@
 @endsection
 
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-
-<!-- jquery step -->
-<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
-
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
-{{-- Form --}}
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-
 @endsection
