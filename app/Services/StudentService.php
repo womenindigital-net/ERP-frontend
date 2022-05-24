@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Student;
 use App\Repositories\StudentParentDetailRepository;
 use App\Repositories\StudentRepository;
 
@@ -18,6 +19,25 @@ class StudentService
 
     public function store(array $validate): void
     {
+        [$studentInfo, $parentInfo] = $this->segregateStudentAndParentInfo($validate);
+
+        /** @var Student $student */
+        $student = $this->repo->store($studentInfo);
+
+        $student->parentDetail()->create($parentInfo);
+    }
+
+    public function update(Student $student, array $validate)
+    {
+        [$studentInfo, $parentInfo] = $this->segregateStudentAndParentInfo($validate);
+
+        /** @var Student $student */
+        $student = $this->repo->update($student, $studentInfo);
+        $student->parentDetail()->update($parentInfo);
+    }
+
+    private function segregateStudentAndParentInfo(array $validate): array
+    {
         $parentDetail = [];
         foreach ($validate as $key => $item) {
             if (preg_match("/(father|mother)_*/", $key)) {
@@ -26,9 +46,6 @@ class StudentService
             }
         }
 
-        $obj = $this->repo->store($validate);
-
-        $parentDetail['student_id'] = $obj->id;
-        $this->parentDetailRepo->store($parentDetail);
+        return [$validate, $parentDetail];
     }
 }

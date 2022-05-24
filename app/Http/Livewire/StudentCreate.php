@@ -11,9 +11,12 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class StudentCreate extends Component
 {
+//    use WithPagination;
+
     public string $code = '';
     public string $name = '';
     public string $gender = '';
@@ -39,12 +42,16 @@ class StudentCreate extends Component
     public string $mother_email = '';
     public string $mother_doc = '';
     public string $mother_fb_link = '';
+    public string $mode = '';
+    public $recordId = 0;
 
     private StudentService $service;
     private StudentRepository $repo;
 
+    protected $listeners = ['show-appointment' => 'showAppointment'];
+
     protected array $rules = [
-        'code'   => 'required|min:6',
+        'code'   => 'required|min:2',
         'name'   => 'required|min:3',
         'gender' => 'nullable',
         'dob'    => 'nullable|string',
@@ -52,7 +59,7 @@ class StudentCreate extends Component
         'blood_group' => 'nullable',
         'suborno_card_no' => 'nullable',
         'diagnosis' => 'nullable',
-        'nid'    => 'required|min:11|max:17',
+        'nid'    => 'nullable',
         'photo' => 'nullable',
         'present_address' => 'nullable',
         'permanent_address' => 'nullable',
@@ -71,26 +78,24 @@ class StudentCreate extends Component
         'mother_fb_link' => 'nullable',
     ];
 
-    /*public function mount()
+    public function showAppointment($studentInfos = [], $mode = 'create', $recordId = 0)
     {
-        /*$studentFields = ['code', 'name', 'nid', 'dob', 'gender', 'blood_group', 'suborno_card_no', 'image', 'diagnosis', 'present_address',
-            'date_of_assessment', 'permanent_address', 'approved_for_observation'];
-
-        $studentParentFields = ['father_name', 'father_number', 'father_profession', 'father_email', 'father_doc', 'father_fb_link',
-            'mother_name', 'mother_number', 'mother_profession', 'mother_email', 'mother_doc', 'mother_fb_link'];
-
-        $student = new Student();
-        foreach ($studentFields as $field) {
-            $student->{$field} = null;
+        if (!count($studentInfos)) {
+            $class = new \ReflectionClass($this);
+            foreach ($class->getProperties() as $property) {
+                if ($property->isPublic() && $property->class === get_class($this)) {
+                    $this->{$property->name} = '';
+                }
+            }
+        } else {
+            foreach ($studentInfos as $key => $val) {
+                $this->{$key} = $val;
+            }
         }
-        $this->student = $student;
 
-        $studentParent = new StudentParentDetail();
-        foreach ($studentParentFields as $field) {
-            $studentParent->{$field} = null;
-        }
-        $this->studentParent = $studentParent;
-    }*/
+        $this->mode = $mode;
+        $this->recordId = $recordId;
+    }
 
     /**
      * @throws ValidationException
@@ -112,6 +117,16 @@ class StudentCreate extends Component
         $this->dispatchBrowserEvent('notify');
         $this->dispatchBrowserEvent("close-modal");
         $this->dispatchBrowserEvent("reset-form", ["formName" => "StudentCreateForm"]);
+        $this->emit('reset-appointment-list');
+    }
+
+    public function update($studentId)
+    {
+        $this->service->update(Student::find($studentId), $this->validate());
+
+        $this->dispatchBrowserEvent('notify');
+        $this->dispatchBrowserEvent("close-modal");
+        $this->emit('rerender-appointment-list');
     }
 
     public function render(): Factory|View|Application
