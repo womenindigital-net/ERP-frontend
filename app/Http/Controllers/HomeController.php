@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -136,7 +137,7 @@ class HomeController extends Controller
     {
         return view("my_students");
     }
-    
+
     /*Language Translation*/
     public function lang($locale)
     {
