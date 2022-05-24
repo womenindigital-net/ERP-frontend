@@ -1,6 +1,6 @@
-@if ($records->count())
-    <div>
-        @include('elements.per-page-item-and-search')
+<div>
+    @include('elements.per-page-item-and-search')
+    @if ($records->count())
         <div class="table-responsive">
             <table class="table w-100">
                 <thead>
@@ -30,7 +30,8 @@
                         <td>
                             <button type="button"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" wire:click="show({{$record}}, 'view', {{$record->id}})">
+                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"
+                                    wire:click="show({{$record}}, 'view', {{$record->id}})">
                                 <i class="mdi mdi-eye"></i>
                             </button>
                             <button type="button"
@@ -43,7 +44,8 @@
                             </button>
                             <button type="button"
                                     class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" wire:click="show({{$record}}, 'edit', {{$record->id}})">
+                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"
+                                    wire:click="show({{$record}}, 'edit', {{$record->id}})">
                                 <i class="mdi mdi-pencil"></i>
                             </button>
                             <button type="button"
@@ -65,9 +67,10 @@
             </table>
             {{$records->links()}}
         </div>
-    </div>
-@else
-<div class="class">
-    <h1>Sorry! No Record Found</h1>
+    @else
+        <div class="class">
+            <h1>Sorry! No Record Found</h1>
+        </div>
+    @endif
 </div>
-@endif
+
