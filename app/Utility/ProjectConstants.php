@@ -4,6 +4,7 @@ namespace App\Utility;
 
 final class ProjectConstants
 {
+    const DATA_PER_PAGE = 10;
     const YES = 'yes';
     const NO = 'no';
 
