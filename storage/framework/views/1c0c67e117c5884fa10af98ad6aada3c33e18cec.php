@@ -107,7 +107,7 @@
                         <li><a href="<?php echo e(route('student.case-history')); ?>">Case History</a></li>
                         <li><a href="/care-needs-form">Care Needs Form</a></li>
                         <li><a href="<?php echo e(route('student.referral-form')); ?>">Referral Form</a></li>
-                        <li><a href="/medicine-admin">Medicine Admin</a></li>
+                        
                     </ul>
                 </li>
                 <li>
@@ -142,12 +142,40 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Student</span>
+                        <span>Students</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="my_students">Student List</a></li>
-                        <li><a href="my-online-students">My Online Students</a></li>
-                        
+                        <li>
+                            <a href="student.student_list">Students</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Dairy
+                            </a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="student.dairy.trip-report-form">Trip report and Evaluation Form</a>
+                                </li>
+                                <li>
+                                    <a href="student.dairy.gym-outing-evalution">Gym and Outing Evaluation (D3cDT)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="student.dairy.ot-assessment">OT assessment in computer trainee</a>
+                                </li>
+                                <li>
+                                    <a href="student.dairy.incident-record">Incident Record</a>
+                                </li>
+                                <li>
+                                    <a href="student.dairy.medicine-admin">Medicine admin</a>
+                                </li>
+                                <li>
+                                    <a href="student.dairy.score-calculation">Score Calculation</a>
+                                </li>
+                                <li>
+                                    <a href="student.dairy.itp-evolution">ITP Evolution</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
@@ -164,8 +192,8 @@
                             </ul>
                         </li>
                         <li><a href="student.vocational_evalution">Vocational Evalution</a></li>
-                        
                     </ul>
+
                 </li>
                 
                 <li>

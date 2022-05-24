@@ -7,7 +7,7 @@
 
 @component('components.breadcrumb')
 @slot('li_1') Utility @endslot
-@slot('title') Student_Table @endslot
+@slot('title') Students list @endslot
 @endcomponent
 {{-- code --}}
 
@@ -60,7 +60,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>System </td>
+                                <td><a href="student.student_profile.profile">System</a></td>
                                 <td>Edinburgh</td>
                                 <td>61</td>
                                 <td>2011</td>
@@ -104,7 +104,7 @@
 
                             </tr>
                             <tr>
-                                <td>Puja </td>
+                                <td><a href="student.student_profile.profile">Puja</a></td>
                                 <td>Accountant</td>
                                 <td>Tokyo</td>
                                 <td>63</td>
