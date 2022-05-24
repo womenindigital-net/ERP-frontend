@@ -116,4 +116,12 @@ class StudentController extends Controller
 
         return view('referral-form', $data);
     }
+    public function careNeedForm(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('care-needs-form', $data);
+    }
 }

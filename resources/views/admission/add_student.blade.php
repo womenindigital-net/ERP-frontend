@@ -378,7 +378,6 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="row">

@@ -105,7 +105,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="<?php echo e(route('student.appointment')); ?>">Appointment</a></li>
                         <li><a href="<?php echo e(route('student.case-history')); ?>">Case History</a></li>
-                        <li><a href="/care-needs-form">Care Needs Form</a></li>
+                        <li><a href="<?php echo e(route('student.care-need-form')); ?>">Care Needs Form</a></li>
                         <li><a href="<?php echo e(route('student.referral-form')); ?>">Referral Form</a></li>
                         
                     </ul>
@@ -168,12 +168,7 @@
                                 <li>
                                     <a href="student.dairy.medicine-admin">Medicine admin</a>
                                 </li>
-                                <li>
-                                    <a href="student.dairy.score-calculation">Score Calculation</a>
-                                </li>
-                                <li>
-                                    <a href="student.dairy.itp-evolution">ITP Evolution</a>
-                                </li>
+                                
                             </ul>
                         </li>
                         <li>

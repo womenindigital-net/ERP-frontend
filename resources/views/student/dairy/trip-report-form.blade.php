@@ -26,6 +26,7 @@
             <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
               data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
           </div>
+
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -44,10 +45,15 @@
             </div>
           </div>
           <div class="table-responsive">
-            <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+            <table class="table table-bordered w-100">
               <thead>
                 <tr>
-                  <th>Collection Date</th>
+                  <th>Collection Date
+                    <span>
+                      <i class="dripicons-arrow-thin-down"></i>
+                      <i class="dripicons-arrow-thin-up"></i>
+                    </span>
+                  </th>
                   <th>Student Name</th>
                   <th>Collected By</th>
                   <th>Log</th>
@@ -120,10 +126,7 @@
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
                     <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy"
-                        data-date-container='#datepicker2' data-provide="datepicker" data-date-autoclose="true">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-calendar"></i></span>
+                      <input type="date" class="form-control" placeholder="dd, M, yyyy">
                     </div><!-- input-group -->
                   </div>
                 </div>

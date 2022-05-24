@@ -110,7 +110,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('student.appointment')}}">Appointment</a></li>
                         <li><a href="{{route('student.case-history')}}">Case History</a></li>
-                        <li><a href="/care-needs-form">Care Needs Form</a></li>
+                        <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
                         {{-- <li><a href="/medicine-admin">Medicine Admin</a></li> --}}
                     </ul>
@@ -178,12 +178,12 @@
                                 <li>
                                     <a href="student.dairy.medicine-admin">Medicine admin</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="student.dairy.score-calculation">Score Calculation</a>
                                 </li>
                                 <li>
                                     <a href="student.dairy.itp-evolution">ITP Evolution</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <li>

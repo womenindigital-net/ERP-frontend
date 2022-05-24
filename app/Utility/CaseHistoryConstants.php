@@ -285,20 +285,24 @@ final class CaseHistoryConstants
         self::BLOCKCONNECTION => 'একটা ব্লক সাথে আর একটা ব্লক কানেকশন বের করা তার জন্য শক্ত কাজ',
         self::THETOYISBROKEN => 'খুব বেশী চাপ দিয়ে দিয়ে খেলনা গুলি ভেঙ্গে ফেলে',
     ];
- 
-    const STUMBLES ='হোঁচট খায় বা জিনিষ পত্রের বা বন্ধুদের সাথে ধাক্কা খায়';
-    const NEEDHELPUSINGSCISSORSKNIVES ='কাঁচি, ছুরি বেমানান ভাবে ব্যবহার করে এবং সাহায্য প্রয়োজন হয়';
-    const TASKOFWRITINGSEEMSDIFFICULTTOHIM ='লিখার কাজটি তার কাছে কঠিন মনে হয়';
+
+    const STUMBLES = 'হোঁচট খায় বা জিনিষ পত্রের বা বন্ধুদের সাথে ধাক্কা খায়';
+    const NEEDHELPUSINGSCISSORSKNIVES = 'কাঁচি, ছুরি বেমানান ভাবে ব্যবহার করে এবং সাহায্য প্রয়োজন হয়';
+    const TASKOFWRITINGSEEMSDIFFICULTTOHIM = 'লিখার কাজটি তার কাছে কঠিন মনে হয়';
 
     public static array $mobility = [
         self::STUMBLES => 'হোঁচট খায় বা জিনিষ পত্রের বা বন্ধুদের সাথে ধাক্কা খায়',
         self::NEEDHELPUSINGSCISSORSKNIVES => 'কাঁচি, ছুরি বেমানান ভাবে ব্যবহার করে এবং সাহায্য প্রয়োজন হয়',
         self::TASKOFWRITINGSEEMSDIFFICULTTOHIM => 'লিখার কাজটি তার কাছে কঠিন মনে হয়',
     ];
-    const DOESNOTRESPONDTOCALLS='ডাকলে সাড়া দেয় না';
-    const OFTENDOESNOTRESPOND ='অনুরোধে প্রায়ই সাড়া দেয় না';
+    const DOESNOTRESPONDTOCALLS = 'ডাকলে সাড়া দেয় না';
+    const OFTENDOESNOTRESPOND = 'অনুরোধে প্রায়ই সাড়া দেয় না';
     public static array $answerTheCall = [
         self::DOESNOTRESPONDTOCALLS => 'ডাকলে সাড়া দেয় না',
         self::OFTENDOESNOTRESPOND => 'অনুরোধে প্রায়ই সাড়া দেয় না',
     ];
+
+    // care Needs Form
+
+    // care needs Form end
 }

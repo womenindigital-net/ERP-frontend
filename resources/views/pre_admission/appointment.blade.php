@@ -325,7 +325,8 @@
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <x-input-text name="father_doc" placeholder="Father's Document"></x-input-text>
+                                        <x-input-text name="father_doc" placeholder="Father's Document" type="file">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -367,7 +368,8 @@
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <x-input-text name="mother_doc" placeholder="Mother's Document"></x-input-text>
+                                        <x-input-text name="mother_doc" placeholder="Mother's Document" type="file">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
