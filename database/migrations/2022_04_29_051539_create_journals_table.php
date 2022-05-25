@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,9 +23,9 @@ return new class extends Migration
             $table->string('particulars')->nullable();
             $table->string('reference')->nullable();
             $table->boolean('is_approved')->default(0);
-            $table->foreignIdFor(\App\Models\User::class, 'approved_by')->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(\App\Models\User::class, 'created_by')->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(\App\Models\User::class, 'updated_by')->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(User::class, 'approved_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignIdFor(User::class, 'updated_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });
     }

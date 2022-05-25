@@ -29,7 +29,7 @@ return new class extends Migration
             $table->text('diagnosis')->nullable();
             $table->text('present_address')->nullable();
             $table->text('permanent_address')->nullable();
-            $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained()->references('id')->on('users')->cascadeOnDelete();
+            $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->boolean('approved_for_observation')->default(0);
             $table->timestamps();
             $table->softDeletes();
