@@ -98,12 +98,12 @@
                     </ul>
                 </li>
                 <li class="menu-title">Program Modules</li>
-                
-                
+
+
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span >Student List</span>
+                        <span >Student List --</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         {{-- <li><a href="my_students" >My Students</a></li> --}}
@@ -131,7 +131,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="admission.add_student">Add Student</a></li>
-                        
+
                         <li><a href="/course-payment">Course Payment</a></li>
                     </ul>
                 </li>
