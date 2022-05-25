@@ -40,28 +40,17 @@
                                                     <div class="col-6 d-flex">
                                                         <label class="col-4 col-form-label"> Student Name</label>
                                                         <div class="col-6">
-                                                            <select name="StudentID"  class="form-control strip-tags form-control section2 form-select" id="StudentID" required="">
-                                                                <option value="">Select Student</option>
-                                                                <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                                                                <option value="2">abdullah-al-nafi antor</option>
-                                                                <option value="3">Abdullahil Baki</option>
-                                                                <option value="4">Abdur Rahman Sajid</option>
-                                                                <option value="5">Abid Hossain Turjo</option>
-                                                                <option value="6">Abid Kabir Chowdhury</option>
-                                                                <option value="7">Abrar Ahosab Talha</option>
-                                                                <option value="8">Abrar Jawad Siam</option>
-                                                                <option value="9">Abu Sufiyan</option>
-                                                                <option value="10">Adib Akbar</option>
-                                                                <option value="11">Adiba Atiar</option>
-                                                                <option value="12">Adil Anaf</option>
-                                                                <option value="13">Aditya Chakraborty</option>
+                                                            <select class="form-select">
+                                                                <option>Select</option>
+                                                                <option>2222</option>
+                                                                <option>55555</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-6 d-flex">
                                                         <label for="example-text-input" class="col-md-4 col-form-label">ITP Name</label>
                                                         <div class="col-md-6">
-                                                            <input class="form-control" type="text" placeholder="Name Of Assign Task" id="example-text-input">
+                                                            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -79,16 +68,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                             
-
-                                                <div class="col-6 d-flex mb-3">
-                                                    <label for="example-date-input" class="col-md-4 col-form-label">Instruction </label>
-                                                    <div class="col-md-6">
-                                                        <textarea class="form-control strip-tags resetElement" rows="4" cols="5" id="TaskInstruction" placeholder="Task Assignment Instruction Here" minlength="1" name="TaskInstruction"></textarea>
-                                                    </div>
-                                                </div>
-                                                
                                                 <div class="row pb-3">
                                                     <div class="col-6">
                                                         <label class="form-label">Instruction</label>
@@ -160,7 +139,10 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> Hridoy
                                                     </div>
                                                     <div class="col-12 row">
                                                         <div class="col-2">
@@ -170,7 +152,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
+<<<<<<< HEAD
+=======
 
+>>>>>>> Hridoy
                                                     <div class="col-lg-12">
                                                         <div class="accordion" id="accordionExample">
                                                             <!-- Single item  -->
@@ -183,7 +168,10 @@
                                                                 </h2>
                                                                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                                                                     data-bs-parent="#accordionExample">
-                                                                    <div class="accordion-body"><div class="form-check form-check-info mb-3">
+                                                                    <div class="accordion-body">
+
+
+                                                                        <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Grooming
@@ -245,6 +233,9 @@
                                                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -275,6 +266,9 @@
                                                                 <div id="collapsefoure" class="accordion-collapse collapse" aria-labelledby="headingfoure"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -304,6 +298,9 @@
                                                                 <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -333,6 +330,9 @@
                                                                 <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -362,6 +362,9 @@
                                                                 <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -391,6 +394,9 @@
                                                                 <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -419,7 +425,10 @@
                                                                 </h2>
                                                                 <div id="collapsenine" class="accordion-collapse collapse" aria-labelledby="headingnine"
                                                                     data-bs-parent="#accordionExample">
-                                                                    <div class="accordion-body"><div class="form-check form-check-info mb-3">
+                                                                    <div class="accordion-body">
+
+
+                                                                        <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
@@ -448,6 +457,9 @@
                                                                 <div id="collapseten" class="accordion-collapse collapse" aria-labelledby="headingten"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -477,6 +489,9 @@
                                                                 <div id="collapseeleven" class="accordion-collapse collapse" aria-labelledby="headingeleven"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -489,6 +504,8 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
+
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -504,6 +521,9 @@
                                                                 <div id="collapsetwelve" class="accordion-collapse collapse" aria-labelledby="headingtwelve"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -533,6 +553,9 @@
                                                                 <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -562,6 +585,9 @@
                                                                 <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -580,6 +606,8 @@
                                                                                 Participate in preparing foods Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
+
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -595,6 +623,9 @@
                                                                 <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -609,7 +640,10 @@
                                                                         </div>
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> Hridoy
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -625,6 +659,9 @@
                                                                 <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -637,6 +674,8 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
+
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -652,6 +691,9 @@
                                                                 <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -664,6 +706,8 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
+
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -679,6 +723,9 @@
                                                                 <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -708,6 +755,9 @@
                                                                 <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="heading19"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -748,6 +798,9 @@
                                                                 <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="heading20"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
+
+
+                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -771,12 +824,12 @@
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Apologizing Type: Pre-Vocational
+>>>>>>> Hridoy
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
-
                                                                                 Wait while others speak Type: Vocational
                                                                             </label>
                                                                         </div>
@@ -847,6 +900,8 @@
                                                                 </div>
                                                             </div>
                                                             <!-- Single item  -->
+
+                                                            
                                                             <!-- Single item  -->
                                                             <div class="accordion-item">
                                                                 <h2 class="accordion-header" id="heading24">
@@ -1061,6 +1116,7 @@
                                                             <!-- Single item  -->
                                                          
                                                             <!-- Single item  -->
+
                                                         
                                                         </div>
                                                     </div>

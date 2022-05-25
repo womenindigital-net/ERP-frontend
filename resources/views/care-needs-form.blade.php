@@ -38,7 +38,7 @@
               data-bs-target=".bs-example-modal-lg">ADD</button>
           </div>
         </div>
-        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+        <table class="table table-bordered dt-responsive  w-100">
           <thead>
             <tr>
               <th>Collection Date</th>
@@ -54,8 +54,10 @@
               <td>Ashfaq Sadi</td>
               <td>Nurjahan Dipa</td>
               <td>
-                <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
-                <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                <small>
+                  <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span></br>
+                  <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                </small>
               </td>
               <td>
                 <button type="button" class="btn btn-lg p-1 btn-primary btn-rounded waves-effect waves-light">
@@ -158,32 +160,15 @@
                   <p>
                 </div>
               </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>সমন্বয় দক্ষতা আছে কি?</h5>
-                    <h5 class="mb-4">(Join Coordination এর মাধ্যমে কাজ করা যেমন- doe / আটা দিয়ে রুটি বানানো বলে জোড়ে কিক
-                      দেয়া)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">হ্যাঁ</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">না</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="" label="সমন্বয় দক্ষতা আছে কি? (Join Coordination এর মাধ্যমে কাজ করা যেমন- doe / আটা দিয়ে রুটি বানানো বলে জোড়ে কিক
+              দেয়া)" :records="$constants::$yesNo">
+              </x-input-radio-or-check>
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">
                     <h5>চলাফেরার ক্ষেত্রে ভারসাম্য আছে কি?</h5>
-                    <h5 class="mb-4">(যেমন-হাটার সময় পড়ে যাওয়া, হাটার সময় শরীর দোলানো, থপ থপ জোরে হাটা, বেখাপ্পা ভাবে
-                      হাটা)</h5>
+                    <h5 class="mb-4"></h5>
                     <div class="form-check d-flex">
                       <div class="me-5">
                         <input class="form-check-input" type="radio" name="formRadios" checked>
@@ -216,6 +201,9 @@
                 </div>
               </div>
               <!-- end row -->
+              <x-input-radio-or-check name="" label="লিখার পদ্ধতি ঠিক আছে কিনাঃ" type="checkbox" :records="$constants::$yesNo">
+                :records="$caseConstants::$hasWriteAbilities"
+              </x-input-radio-or-check>
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">

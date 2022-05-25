@@ -33,9 +33,9 @@
           <div class="col-6">
           </div>
           <div class="col-6 text-end">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal">PROFILE</button>
+            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"><i class="fa fa-user"></i>PROFILE</button>
             <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-              data-bs-target=".bs-example-modal-lg">ADD</button>
+              data-bs-target=".social-communication-view"><i class="fa fa-plus"></i>ADD</button>
           </div>
         </div>
         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -55,7 +55,7 @@
               <td>Karishma Cultural</td>
               <td>Create: Karishma Cultural @ 2019-02-17 18:32:43</td>
               <td class="text-center">
-                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target="#viewmodal">
+                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".social-communication-view">
                 <i class="mdi mdi-eye"></i>
                 </button>
                 <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
@@ -83,14 +83,14 @@
     </div>
   </div> <!-- end col -->
 </div> <!-- end row -->
-
+{{-- ===================== --}}
 <!--  Large modal example -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+<div class="modal fade social-communication-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="myLargeModalLabel">Large modal</h5>
+        <h5 class="modal-title" id="myLargeModalLabel">Social Communication (PA2bOT)</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -139,31 +139,31 @@
                   <h5>Interaction with adults</h5>
                   <div class="row">
                     
-                  <div class="form-check">
+                    <div class="form-check">
 
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios" checked="">
-                      <label class="form-check-label">Not Present </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
-                    </div>
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Uses Complex Language  </label>
-                    </div>
+                      <div class="me-5 ">
+                        <input class="form-check-input" type="radio" name="formRadios" checked="">
+                        <label class="form-check-label">Not Present </label>
+                      </div>
+                      <div class="me-5 ">
+                        <input class="form-check-input" type="radio" name="formRadios">
+                        <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                      </div>
+                      <div class="me-5 ">
+                        <input class="form-check-input" type="radio" name="formRadios">
+                        <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                      </div>
+                      <div class="me-5 ">
+                        <input class="form-check-input" type="radio" name="formRadios">
+                        <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                      </div>
+                      <div class="me-5">
+                        <input class="form-check-input" type="radio" name="formRadios">
+                        <label class="form-check-label">  Uses Complex Language  </label>
+                      </div>
 
 
-                  </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2961,6 +2961,7 @@
             </div>
           </section>
 
+
           <h3>Functional Intent > G. Humor</h3>
           <section>
             <div class="row border-top py-2">
@@ -3026,6 +3027,7 @@
               </div>
             </div>
           </section>
+
 
           <h3>Functional Intent > H. Greetings/Acknowledgements</h3>
           <section>
@@ -3125,6 +3127,7 @@
               </div>
             </div>
           </section>
+
 
           <h3>Functional Intent > I. Problem Solving</h3>
           <section>
@@ -3390,12 +3393,958 @@
             </div>
           </section>
 
-          <h3> Functional Intent > F. Style of Conversation</h3>
+
+          <h3>Academic Communication</h3>
+          <section>
+            <div class="title">
+              <h3><b>This section is designed to compare the individual’s ability to communicate in an academic setting with other students.</b></h3>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to respond appropriately to teacher requests</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to reorient to academic agenda appropriately</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to obtain teacher’s attention appropriately</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to request clarification from teacher</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to participate in classroom discussions</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to interact with classroom peers</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to paraphrase text</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to summarize a story providing key information</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to respond to questions requiring inferential reasoning</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <h3>Nonverbal Communication</h3>
+          <section>
+            <div class="title">
+              <h3><b>This section is designed to compare the individual’s ability to communicate with others using non-verbal means.</b></h3>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to recognize “personal space” boundaries</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to touch appropriately</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Comprehends facial expression</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Comprehends eye gaze</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Comprehends gestures</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Comprehends body language</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to use facial expression</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to use eye gaze</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to use gestures</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to use body language</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to use eye contact</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <h3>Perspective Taking</h3>
+          <section>
+            <div class="title">
+              <h3><b>This section is designed to compare the individual’s ability to recognize and use appropriate perspective taking.</b></h3>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to recognize another’s viewpoints</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to recognize another’s interests</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to recognize another’s feelings</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to demonstrate concern for another’s problems</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <h3> REGULATORY - Gives commands</h3>
           <section>
             <div class="row border-top py-2">
               <div class="col-xl-12 col-sm-12">
                 <div class="m-0">
-                  <h5>Ability to shift the style of conversation according to person</h5>
+                  <h5>Gives directions to play a game</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Gives directions to make something</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Gives directions to make something</h5>
+                  <div class="row">
+                    
+                  <div class="form-check">
+
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <h3>Social-Emotional</h3>
+          <section>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to recognize personal emotional states</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to recognize emotional states in others</h5>
+                  <div class="row">
+                  <div class="form-check">
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios" checked="">
+                      <label class="form-check-label">Not Present </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
+                    </div>
+                    <div class="me-5 ">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
+                    </div>
+                    <div class="me-5">
+                      <input class="form-check-input" type="radio" name="formRadios">
+                      <label class="form-check-label">  Uses Complex Language  </label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border-top py-2">
+              <div class="col-xl-12 col-sm-12">
+                <div class="m-0">
+                  <h5>Ability to express personal emotional state</h5>
                   <div class="row">
                     
                   <div class="form-check">
@@ -3428,38 +4377,7 @@
             <div class="row border-top py-2">
               <div class="col-xl-12 col-sm-12">
                 <div class="m-0">
-                  <h5>Ability to shift the style of conversation according to the setting</h5>
-                  <div class="row">
-                  <div class="form-check">
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios" checked="">
-                      <label class="form-check-label">Not Present </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
-                    </div>
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Uses Complex Language  </label>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="m-0">
-                  <h5>Ability to shift the style of conversation according to humor</h5>
+                  <h5>Perfectionist quality</h5>
                   <div class="row">
                     
                   <div class="form-check">
@@ -3492,38 +4410,7 @@
             <div class="row border-top py-2">
               <div class="col-xl-12 col-sm-12">
                 <div class="m-0">
-                  <h5>Ability to engage a listener appropriately</h5>
-                  <div class="row">
-                  <div class="form-check">
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios" checked="">
-                      <label class="form-check-label">Not Present </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
-                    </div>
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Uses Complex Language  </label>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="m-0">
-                  <h5>Ability to use politeness</h5>
+                  <h5>Ability to use appropriate self-control</h5>
                   <div class="row">
                     
                   <div class="form-check">
@@ -3556,9 +4443,11 @@
             <div class="row border-top py-2">
               <div class="col-xl-12 col-sm-12">
                 <div class="m-0">
-                  <h5>Appropriateness to the situation</h5>
+                  <h5>Ability to lose a game graciously</h5>
                   <div class="row">
+                    
                   <div class="form-check">
+
                     <div class="me-5 ">
                       <input class="form-check-input" type="radio" name="formRadios" checked="">
                       <label class="form-check-label">Not Present </label>
@@ -3587,40 +4476,10 @@
             <div class="row border-top py-2">
               <div class="col-xl-12 col-sm-12">
                 <div class="m-0">
-                  <h5>Ability to recognize other’s moods</h5>
+                  <h5>Degree of anxiety in social settings</h5>
                   <div class="row">
                   <div class="form-check">
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios" checked="">
-                      <label class="form-check-label">Not Present </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label"> Uses NO Words    (Gestures - Preverbal) </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Uses 1-3 Words / sentences </label>
-                    </div>
-                    <div class="me-5 ">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Able to communicate/ express opinion  </label>
-                    </div>
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">  Uses Complex Language  </label>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="m-0">
-                  <h5>Ability to differentiate requests from demands</h5>
-                  <div class="row">
-                  <div class="form-check">
+
                     <div class="me-5 ">
                       <input class="form-check-input" type="radio" name="formRadios" checked="">
                       <label class="form-check-label">Not Present </label>
@@ -3653,6 +4512,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
 
 @endsection
 
