@@ -81,7 +81,7 @@
         document.getElementById(event.detail.formName).reset();
     });
 
-    window.addEventListener('notify', event => {
+    window.addEventListener('notifyr', event => {
         let type = !event.detail || !event.detail.type ? 'success' : event.detail.type;
         let message;
 

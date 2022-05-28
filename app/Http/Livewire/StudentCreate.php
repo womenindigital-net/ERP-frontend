@@ -114,8 +114,9 @@ class StudentCreate extends Component
 
     public function store()
     {
+        // dd($this->validate());
         $this->service->store($this->validate());
-        $this->dispatchBrowserEvent('notify');
+        $this->dispatchBrowserEvent('notifyr');
         $this->dispatchBrowserEvent("close-modal");
         $this->dispatchBrowserEvent("reset-form", ["formName" => "StudentCreateForm"]);
         $this->emit('reset-appointment-list');
