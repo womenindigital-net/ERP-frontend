@@ -14,10 +14,14 @@ class DoctorFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'email' => $this->faker->safeEmail,
+            'phone' => $this->faker->phoneNumber,
+            'specialities' =>  $this->faker->word,
+            'address' => $this->faker->address,
         ];
     }
 }
