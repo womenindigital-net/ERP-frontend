@@ -43,6 +43,8 @@ class AppointmentList extends Component
     {
         $student =  Student::find($id);
         $student->delete();
+
+        $this->dispatchBrowserEvent('notify');
     }
 
     public function render()
