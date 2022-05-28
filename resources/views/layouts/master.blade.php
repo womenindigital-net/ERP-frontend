@@ -10,7 +10,9 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}">
     @include('layouts.head-css')
-    @livewireStyles
+    {{--
+    <livewire:styles /> --}}
+    @livewireStyles()
     <link rel="stylesheet" href="{{asset('assets/libs/toastr/toastr.min.css')}}">
 </head>
 
@@ -45,7 +47,9 @@
 
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
-    @livewireScripts
+    {{--
+    <livewire:scripts /> --}}
+    @livewireScripts()
     <!-- jquery step -->
     <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
     <script src="{{asset('assets/libs/toastr/toastr.min.js')}}"></script>

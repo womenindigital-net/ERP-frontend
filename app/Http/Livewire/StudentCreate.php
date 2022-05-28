@@ -15,7 +15,7 @@ use Livewire\WithPagination;
 
 class StudentCreate extends Component
 {
-//    use WithPagination;
+    //    use WithPagination;
 
     public string $code = '';
     public string $name = '';
@@ -82,6 +82,7 @@ class StudentCreate extends Component
     {
         if (!count($studentInfos)) {
             $class = new \ReflectionClass($this);
+            // dd($class);
             foreach ($class->getProperties() as $property) {
                 if ($property->isPublic() && $property->class === get_class($this)) {
                     $this->{$property->name} = '';
