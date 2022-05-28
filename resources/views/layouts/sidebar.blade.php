@@ -134,14 +134,14 @@
                         <span>Assessment</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="assessment.sensory-checklist-for-child">Sensory checklist for Child</a></li>
-                        <li><a href="assessment.Social-Communication">Social Communication</a></li>
-                        <li><a href="assessment.occupational-therapy">Occupational Therapy</a></li>
-                        <li><a href="assessment.physiotherapy">Physiotherapy</a></li>
-                        <li><a href="assessment.functional_communication_assessment">Functional Communication
+                        <li><a href="{{ route('sensory.checklist.for.child') }}">Sensory checklist for Child</a></li>
+                        <li><a href="{{ route('social.communication') }}">Social Communication</a></li>
+                        <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
+                        <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
+                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
                                 Assessment</a></li>
                         <li><a href="assessment.functional_movement_skills">Fundamental Movement Skills</a></li>
-                        <li><a href="assessment.executive_function_test">Executive Function test</a></li>
+                        <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
                         <li><a href="assessment.autism_behavior_checklist">Autism Behavior Checklist (ABC)</a></li>
                         <li><a href="assessment.sensory_checklist_for_young_adult">Sensory checklist for Young Adult</a>
                         </li>
