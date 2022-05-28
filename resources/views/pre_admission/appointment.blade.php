@@ -8,7 +8,7 @@
 <x-breadcrumb pageHeader="Sample Page Header" :base="['utility' => '#']" :sub="['another' => '#', 'another1' => '#']">
 </x-breadcrumb>
 
-<livewire:appointment />
+<livewire:appointment-list />
 
 @endsection
 @section('script')

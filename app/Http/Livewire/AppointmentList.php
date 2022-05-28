@@ -33,7 +33,7 @@ class AppointmentList extends Component
         $this->render();
     }
 
-    public function show($student, $mode, $recordId = 0)
+    public function show($student = [], $mode = 'create', $recordId = 0)
     {
         $this->recordId = $recordId;
         $this->emit('show-appointment', $student, $mode, $recordId);
