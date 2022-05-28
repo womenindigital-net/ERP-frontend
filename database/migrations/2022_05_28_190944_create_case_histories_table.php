@@ -18,8 +18,8 @@ return new class extends Migration
         Schema::create('case_histories', function(Blueprint $table)
         {
             $table->id();
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Student::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(User::class, 'created_by')->constrained('users')->cascadeOnDelete();
+            $table->foreignIdFor(Student::class)->unique()->constrained()->cascadeOnDelete();
             $table->string('phone');
             $table->string('email');
             $table->string('address');
@@ -136,7 +136,6 @@ return new class extends Migration
             $table->boolean('try_to_ignore_task');
             $table->boolean('which_kind_of_task_he_try_to_skip');
             $table->boolean('lost_again_and_again');
-
             $table->timestamps();
         });
     }
