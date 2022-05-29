@@ -83,7 +83,7 @@
                         <li><a href="inventory-management.location_wise_product_report">Location Wise Product Report</a>
                         </li>
                         <li><a href="inventory-management.stock_reorder_report">Stock Reorder Report</a></li>
-                        <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li>
+                        {{-- <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li> --}}
                         <li><a href="product_analysis_report">Report::Product Analysis</a></li>
                     </ul>
                 </li>
