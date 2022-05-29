@@ -55,7 +55,11 @@
                             <i class="fas fa-arrow-circle-right"></i>
                         </button>
                         <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+<<<<<<< HEAD
                             wire:click="delete({{$record->id}})">
+=======
+                                wire:click="delete({{$record->id}})">
+>>>>>>> 7b668c1e5087337cb4402810ef31a49a8c204ebb
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </td>

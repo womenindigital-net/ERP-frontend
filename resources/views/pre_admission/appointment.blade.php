@@ -11,6 +11,3 @@
 <livewire:appointment-list />
 
 @endsection
-@section('script')
-
-@endsection
