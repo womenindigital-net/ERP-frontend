@@ -14,6 +14,7 @@
     <livewire:styles /> --}}
     @livewireStyles()
     <link rel="stylesheet" href="{{asset('assets/libs/toastr/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 </head>
 
 @section('body')

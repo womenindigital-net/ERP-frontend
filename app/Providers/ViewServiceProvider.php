@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Utility\CareNeedsFormConstants;
 use App\Utility\CaseHistoryConstants;
 use App\Utility\ProjectConstants;
 use Illuminate\Support\Facades\View;
@@ -27,6 +28,13 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::share('constants', ProjectConstants::class);
-        View::share('caseConstants', CaseHistoryConstants::class);
+        View::composer('case-history', function($view)
+        {
+            $view->with('caseConstants', CaseHistoryConstants::class);
+        });
+        View::composer('careNeedConstants', function($view)
+        {
+            $view->with('care-needs-form', CareNeedsFormConstants::class);
+        });
     }
 }

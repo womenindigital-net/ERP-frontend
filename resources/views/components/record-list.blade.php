@@ -33,9 +33,4 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-    @if($wireClick)
-        <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true" wire:ignore>
-            <livewire:student-create/>
-        </div>
-    @endif
 </div>

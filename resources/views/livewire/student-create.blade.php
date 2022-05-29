@@ -1,5 +1,5 @@
 <div>
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl @if($mode === 'view') apply-view-only @endif">
         <div class="modal-content">
             <form wire:submit.prevent="submit" id="StudentCreateForm">
                 <div class="modal-header">

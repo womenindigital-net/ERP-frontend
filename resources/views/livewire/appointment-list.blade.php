@@ -67,5 +67,8 @@
             </tbody>
         </table>
     </x-record-list>
+        <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true" wire:ignore>
+            <livewire:student-create/>
+        </div>
 </div>
 

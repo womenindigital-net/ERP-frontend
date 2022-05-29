@@ -82,7 +82,6 @@ class StudentCreate extends Component
     {
         if (!count($studentInfos)) {
             $class = new \ReflectionClass($this);
-            // dd($class);
             foreach ($class->getProperties() as $property) {
                 if ($property->isPublic() && $property->class === get_class($this)) {
                     $this->{$property->name} = '';
@@ -114,7 +113,6 @@ class StudentCreate extends Component
 
     public function store()
     {
-        // dd($this->validate());
         $this->service->store($this->validate());
         $this->dispatchBrowserEvent('notifyr');
         $this->dispatchBrowserEvent("close-modal");
