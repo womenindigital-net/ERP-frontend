@@ -1,4 +1,4 @@
-.apply-view-only input,select{
+.apply-view-only input, .apply-view-only select{
     cursor: not-allowed;
     pointer-events: none;
 }
