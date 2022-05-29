@@ -53,6 +53,6 @@ class AppointmentList extends Component
             'records' => $this->service->getListData($this->perPage, $this->search)
         ];
 
-        return view('livewire.appointment-list', $data);
+        return view('livewire.appointment-list', $data)->extends('layouts.master')->section('content');
     }
 }

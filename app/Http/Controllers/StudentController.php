@@ -95,11 +95,6 @@ class StudentController extends Controller
         //
     }
 
-    public function appointment()
-    {
-        return view('pre_admission.appointment');
-    }
-
     public function caseHistory(): Factory|View|Application
     {
         $data = [
