@@ -329,27 +329,6 @@
                 <x-input-radio-or-check name="" label="Has difficulty with multiple meaning words"
                   :records="$constants::$yesNoEn" secondaryInputLabel="Excessive:"></x-input-radio-or-check>
                 <!--end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <h5>Has difficulty with multiple meaning words</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios" checked>
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                      <div class="mt-3">
-                        <label for="formmessage">Excessive:</label>
-                        <textarea id="formmessage" class="form-control" rows="1" placeholder="Enter Answer"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <!--end row -->
                 <x-input-radio-or-check name="" label="Uses rote / recital language" :records="$constants::$yesNoEn"
                   secondaryInputLabel="Excessive:"></x-input-radio-or-check>

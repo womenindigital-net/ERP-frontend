@@ -11,6 +11,10 @@ use App\Utility\CareNeedsFormConstants;
 use Illuminate\Support\ServiceProvider;
 use App\Utility\IndividualRiskAssessmentForm;
 use App\Utility\OccupationalTherapyConstants;
+use App\Utility\FunctionalMovement;
+use App\Utility\SensoryYoungAdult;
+
+
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -38,5 +42,9 @@ class ViewServiceProvider extends ServiceProvider
         View::share('physiotherapyConstants', physiotherapy::class);
         View::share('executiveConstants', executiveFunctionTest::class);
         View::share('IRAConstants', IndividualRiskAssessmentForm::class);
+        View::share('functionalConstants', FunctionalMovement::class);
+        View::share('sensoryChecklistConstant', SensoryYoungAdult::class);
+
+
     }
 }
