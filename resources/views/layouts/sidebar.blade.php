@@ -32,18 +32,18 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Income </span>
+                        <span>Income Receive </span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="accounting.income.student_income">Student Income</a></li>
                         <li><a href="accounting.income.sale_voucher">Sale Voucher</a></li>
-                        <li><a href="accounting.income.received_payment">Received Payment</a></li>
+                        <li><a href="accounting.income.received_payment">Donation And Other</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Purchase </span>
+                        <span>Payment </span>
                     </a>
                     <ul class="sub-menu">
                         <li><a href="accounting.purchase.requisition">Requisition</a></li>
@@ -83,7 +83,7 @@
                         <li><a href="inventory-management.location_wise_product_report">Location Wise Product Report</a>
                         </li>
                         <li><a href="inventory-management.stock_reorder_report">Stock Reorder Report</a></li>
-                        <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li>
+                        {{-- <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li> --}}
                         <li><a href="product_analysis_report">Report::Product Analysis</a></li>
                     </ul>
                 </li>

@@ -52,11 +52,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Puja</td>
-                                <td>puja</td>
+                                <td>demo</td>
+                                <td>demo</td>
                                 <td>reading</td>
                                 <td>first to last</td>
-                                <td>puja</td>
+                                <td>demo</td>
                                 <td>
                                     <button type="button"
                                         class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
@@ -83,11 +83,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Puja</td>
-                                <td>puja</td>
+                                <td>demo</td>
+                                <td>demo</td>
                                 <td>reading</td>
                                 <td>first to last</td>
-                                <td>puja</td>
+                                <td>demo</td>
                                 <td>
                                     <button type="button"
                                         class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"

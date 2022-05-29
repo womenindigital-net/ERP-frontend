@@ -217,15 +217,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Puja </td>
-                                <td>Hridoy</td>
-                                <td>Hridoy</td>
+                                <td>demo </td>
+                                <td>demo</td>
+                                <td>demo</td>
 
                                 <td><i class="fas fa-eye"></i><i class="fas fa-pen px-3"></i><i class="fas fa-trash-alt"></i></td>
                             </tr>
                             <tr>
-                                <td>Puja</td>
-                                <td>Hridoy</td>
+                                <td>demo</td>
+                                <td>demo</td>
                                 <td></td>
                                 <td><i class="fas fa-eye"></i><i class="fas fa-pen px-3"></i><i class="fas fa-trash-alt"></i></td>
                             </tr>

@@ -773,21 +773,21 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Puja</td>
-                                <td>puja</td>
+                                <td>demo</td>
+                                <td>demo</td>
                                 <td>reading</td>
                                 <td>first to last</td>
                                 <td>first to last</td>
-                                <td>puja</td>
+                                <td>demo</td>
                                 <td><i class="fas fa-eye pe-3"></i> <i class="fas fa-check pe-3"></i> <i class="fas fa-pen pe-3"></i><i class="fas fa-trash-alt"></i></td>
                             </tr>
                             <tr>
-                                <td>Puja</td>
-                                <td>puja</td>
+                                <td>demo</td>
+                                <td>demo</td>
                                 <td>reading</td>
                                 <td>first to last</td>
                                 <td>first to last</td>
-                                <td>puja</td>
+                                <td>demo</td>
                                 <td><i class="fas fa-eye pe-3"></i> <i class="fas fa-check pe-3"></i> <i class="fas fa-pen pe-3"></i><i class="fas fa-trash-alt"></i></td>
                             </tr>
                         </tbody>

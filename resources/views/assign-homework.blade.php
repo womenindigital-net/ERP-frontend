@@ -1319,12 +1319,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Puja</td>
+                                <td>demo</td>
                                 <td>Development</td>
                                 <td><i class="fas fa-eye"></i><i class="fas fa-pen px-3"></i><i class="fas fa-trash-alt"></i></td>
                             </tr>
                             <tr>
-                                <td>Puja</td>
+                                <td>demo</td>
                                 <td>Development</td>
                                 <td><i class="fas fa-eye"></i><i class="fas fa-pen px-3"></i><i class="fas fa-trash-alt"></i></td>
                             </tr>

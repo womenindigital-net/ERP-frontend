@@ -2,30 +2,38 @@
 
 namespace App\View\Components;
 
+use Exception;
 use Illuminate\View\Component;
 
 class InputText extends Component
 {
     public string $name;
-//    public string $label;
-//    public string $labelFor;
+    //    public string $label;
+    //    public string $labelFor;
     public $placeholder;
     public $value;
-//    public $inputId;
-//    public $inputClass;
+    //    public $inputId;
+    //    public $inputClass;
     public string $required;
     public string $type;
     public string $wireModel;
-
-    public function __construct($name, $type = 'text', $placeholder='', $value = false, $required = false, $wireModel='')
+    /**
+     * @throws Exception
+     */
+    public function __construct($name = '', $type = 'text', $placeholder = '', $value = false, $required = false, $wireModel = '')
     {
-        $this->name = $name;
-//        $this->label = $label ?: prepareInputLabel($name);
-//        $this->labelFor = $inputId ?: $this->label;
+        if (!$wireModel && !$name) {
+            throw new Exception("Need a name or wireModel");
+        }
+
+        $this->name = $wireModel ?: $name;
+        $this->name = $wireModel ?: $name;
+        //        $this->label = $label ?: prepareInputLabel($name);
+        //        $this->labelFor = $inputId ?: $this->label;
         $this->placeholder = $placeholder;
         $this->value = old($name, $value);
-//        $this->inputId = $this->labelFor;
-//        $this->inputClass = $inputClass;
+        //        $this->inputId = $this->labelFor;
+        //        $this->inputClass = $inputClass;
         $this->required = $required ? 'required' : '';
         $this->type = $type;
         $this->wireModel = $wireModel ? "wire:model=$wireModel" : '';
