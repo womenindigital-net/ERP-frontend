@@ -27,7 +27,6 @@ class InputText extends Component
         }
 
         $this->name = $wireModel ?: $name;
-        $this->name = $wireModel ?: $name;
         //        $this->label = $label ?: prepareInputLabel($name);
         //        $this->labelFor = $inputId ?: $this->label;
         $this->placeholder = $placeholder;
