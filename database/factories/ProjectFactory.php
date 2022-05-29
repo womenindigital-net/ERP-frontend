@@ -17,7 +17,10 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->name,
+            'order_no' => $this->faker->randomDigitNotNull,
+            'tier_no' => $this->faker->randomDigitNotNull,
+            'description' => $this->faker->text($maxNbChars = 200),
         ];
     }
 }
