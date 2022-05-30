@@ -6,6 +6,7 @@ use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
 use App\Repositories\ProjectRepository;
+use App\Repositories\StudentRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -15,11 +16,13 @@ class StudentController extends Controller
 {
     private UserRepository $userRepo;
     private ProjectRepository $projectRepo;
+    private StudentRepository $studentRepo;
 
-    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository)
+    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository)
     {
         $this->userRepo = $userRepository;
         $this->projectRepo = $projectRepository;
+        $this->studentRepo = $studentRepository;
     }
 
     /**
@@ -105,7 +108,8 @@ class StudentController extends Controller
     public function studentIncome()
     {
         $data = [
-            'project' => $this->projectRepo->getdata(),
+            'projects' => $this->projectRepo->getData(),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('accounting.income.student_income', $data);

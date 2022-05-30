@@ -20,7 +20,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Student</label>
-                                <x-input-select wireModel="student_id" name="student_id" :records="$projects">
+                                <x-input-select wireModel="student_id" name="student_id" :records="$students">
                                 </x-input-select>
                             </div>
                         </div>
@@ -71,22 +71,20 @@
                 <form wire:submit.prevent="submit" class="repeater">
                     <div class="row">
                         <div class="col-lg-4   pe-1">
-                            <label for="name">Payment For</label>
+                            <label for="name">Payment Amount For</label>
 
                         </div>
                         <div class="col-lg-4   pe-1">
-                            <label for="email">Payment Amount </label>
-
+                            <label for="subject">Receive Amount For</label>
                         </div>
                         <div class="col-lg-4  pe-1">
-                            <label for="subject">Receive Amount For</label>
-
+                            <label for="email">Payment Amount </label>
                         </div>
                     </div>
                     <div data-repeater-list="group-a">
                         <div data-repeater-item class="row">
                             <div class="mb-3  col-lg-4">
-                                <select class="form-control form-select">
+                                <select class="form-control form-select" wire:model="payment_for">
                                     <option>--Select--</option>
                                     <option value="1">Consultation Fees</option>
                                     <option value="2">Admission for Assessment /Observation</option>
@@ -99,13 +97,7 @@
                             </div>
 
                             <div class=" col-lg-4  pb-1">
-                                <x-input-text wireModel='payment_amount' value="{{$payment_amount}}" type="number"
-                                    placeholder='Payment Amount'>
-                                </x-input-text>
-                            </div>
-
-                            <div class="mb-3  col-lg-4">
-                                <select class="form-control form-select">
+                                <select class="form-control form-select" wire:model="course_id">
                                     <option>--Select--</option>
                                     <option value="1">Consultation Fees</option>
                                     <option value="2">Admission for Assessment /Observation</option>
@@ -116,16 +108,21 @@
                                     <option value="7">Therapy Course</option>
                                 </select>
                             </div>
+
+                            <div class="mb-3  col-lg-4">
+                                <x-input-text wireModel='amount' type="number" placeholder='Payment Amount'>
+                                </x-input-text>
+                            </div>
                         </div>
 
                     </div>
-                    <input data-repeater-create type="button" wire:click="add()"
-                        class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
+                    <input data-repeater-create type="button" wire:click="add" class="btn btn-success mt-3 px-4 mt-lg-0"
+                        value="Add" />
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"> Close</button>
-                <button type="button" class="btn font-size-16 btn-success" id="sa-position"> Save</button>
+                <button type="button" class="btn font-size-16 btn-success" wire:click="store"> Save</button>
             </div>
         </div>
     </div>
