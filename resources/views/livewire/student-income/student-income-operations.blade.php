@@ -12,7 +12,8 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Project</label>
-                                <x-input-select wireModel="project_id" name="project_id" :records="$projects">
+                                <x-input-select wireModel="project_id" name="project_id" :records="$projects"
+                                    targetColumn="title">
                                 </x-input-select>
                             </div>
                         </div>
@@ -67,7 +68,7 @@
                         </div>
                     </div>
                 </form>
-                <form class="repeater" enctype="multipart/form-data">
+                <form wire:submit.prevent="submit" class="repeater">
                     <div class="row">
                         <div class="col-lg-4   pe-1">
                             <label for="name">Payment For</label>
@@ -98,12 +99,14 @@
                             </div>
 
                             <div class=" col-lg-4  pb-1">
-                                <x-input-text wireModel='paymetn_amount' type="number" placeholder='Payment Amount'>
+                                <x-input-text wireModel='payment_amount' value="{{$payment_amount}}" type="number"
+                                    placeholder='Payment Amount'>
                                 </x-input-text>
                             </div>
 
                             <div class="mb-3  col-lg-4">
-                                <x-input-text wireModel='receive_amount' type="number" placeholder='Receive Amount'>
+                                <x-input-text wireModel='receive_amount' value="{{$receive_amount}}" type="number"
+                                    placeholder='Receive Amount'>
                                 </x-input-text>
                             </div>
                         </div>

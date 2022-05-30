@@ -225,7 +225,7 @@
               </x-input-radio-or-check>
               <!-- end row -->
               <x-input-radio-or-check name="has_write_ability" label="লিখার পদ্ধতি ঠিক আছে কিনাঃ?"
-                :records="$caseConstants::$hasWriteAbilities" type="checkbox" :isVertical="false" :multiple="true">
+                :records="$caseConstants::$hasWriteAbilities" type="checkbox" :isVertical="false">
               </x-input-radio-or-check>
 
               <!-- end row -->

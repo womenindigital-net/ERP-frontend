@@ -34,12 +34,10 @@ class ViewServiceProvider extends ServiceProvider
 
             $view->with('breadcrumbConstants', BreadcrumbsMappingConstants::class);
         });
-        View::composer('case-history', function($view)
-        {
+        View::composer('case-history', function ($view) {
             $view->with('caseConstants', CaseHistoryConstants::class);
         });
-        View::composer('careNeedConstants', function($view)
-        {
+        View::composer('careNeedConstants', function ($view) {
             $view->with('care-needs-form', CareNeedsFormConstants::class);
         });
     }

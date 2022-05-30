@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\StudentIncome;
 
+use App\Models\StudentIncomeDetail;
 use App\Repositories\ProjectRepository;
 use Livewire\Component;
 
@@ -16,26 +17,26 @@ class StudentIncomeOperations extends Component
 
 
     public string $project_id = "";
-    public string $paymetn_amount = "";
+    public string $payment_amount = "";
     public string $receive_amount = "";
 
-    protected $listeners = ['student-operations' => 'studentOperations'];
+    // protected $listeners = ['student-operations' => 'studentOperations'];
 
 
     protected array $rules = [
-        'project_id' => 'requeued|min:1',
-        'paymetn_amount' => 'requeued|min:1',
-        'receive_amount' => 'requeued|min:1',
+        'project_id' => 'required|min:1',
+        'payment_amount' => 'required|min:1',
+        'receive_amount' => 'required|min:1',
     ];
-    public function add()
+
+    public function updated($propertyName)
     {
-        dd('09989');
-        $this->emit('student-operations');
+        $this->validateOnly($propertyName);
     }
 
-    public function studentOperations()
+    public function add()
     {
-        dd(434);
+        
     }
 
     public function render()

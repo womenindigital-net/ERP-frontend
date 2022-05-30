@@ -45,7 +45,6 @@ class StudentService
                 unset($validate[$key]);
             }
         }
-
         return [$validate, $parentDetail];
     }
 }
