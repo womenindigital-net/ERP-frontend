@@ -12,13 +12,15 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Project</label>
-                                <x-input-select name="" :records="$projects"></x-input-select>
+                                <x-input-select wireModel="project_id" name="project_id" :records="$projects">
+                                </x-input-select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Student</label>
-                                <x-input-select name="" :records="$projects"></x-input-select>
+                                <x-input-select wireModel="student_id" name="student_id" :records="$projects">
+                                </x-input-select>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -30,8 +32,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Payment Date</label>
-                                <x-input-text wireModel='payment_date' type='date' placeholder='dd/mm/yyyy'
-                                    :required="true">
+                                <x-input-text wireModel='payment_date' type='date' placeholder='dd/mm/yyyy'>
                                 </x-input-text>
                             </div>
                         </div>
@@ -61,7 +62,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -98,16 +98,19 @@
                             </div>
 
                             <div class=" col-lg-4  pb-1">
-                                <input type="text" class="form-control" placeholder="Receive Amount" />
+                                <x-input-text wireModel='paymetn_amount' type="number" placeholder='Payment Amount'>
+                                </x-input-text>
                             </div>
 
                             <div class="mb-3  col-lg-4">
-                                <input type="text" class="form-control" />
+                                <x-input-text wireModel='receive_amount' type="number" placeholder='Receive Amount'>
+                                </x-input-text>
                             </div>
                         </div>
 
                     </div>
-                    <input data-repeater-create type="button" class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
+                    <input data-repeater-create type="button" wire:click="add()"
+                        class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
                 </form>
             </div>
             <div class="modal-footer">
