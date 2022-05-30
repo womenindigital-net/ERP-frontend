@@ -26,7 +26,6 @@
               data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
           </div>
 
-
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -55,6 +54,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr>
                   <td>2022-04-13</td>
@@ -280,7 +280,7 @@
                   <div class="m-0">
                     <h5>How many fingers use to eat</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="hello" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -360,7 +360,7 @@
                   <div class="m-0">
                     <h5>Other personal care/activities of daily living</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="hello1" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -397,7 +397,7 @@
                   <div class="m-0">
                     <h5>Details of current medical treatment</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="hello2" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -409,7 +409,7 @@
                   <div class="m-0">
                     <h5>Details of past/long term medical conditions</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="hello3" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -446,7 +446,7 @@
                   <div class="m-0">
                     <h5>More information</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="hello4" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -472,7 +472,7 @@
                   <div class="m-0">
                     <h5>Enter more info , if any</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="hello5" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -609,7 +609,7 @@
                       wrong and false information, may lead cancellation of the admission.</h5>
                     <div class="mt-3">
                       <div>
-                        <x-input-text name="" placeholder="">
+                        <x-input-text name="hello7" placeholder="">
                         </x-input-text>
                       </div>
                     </div>
@@ -621,7 +621,7 @@
                   <div class="m-0">
                     <h5>Name of parent/ guardian</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="hello6" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
