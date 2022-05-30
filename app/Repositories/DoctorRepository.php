@@ -8,7 +8,7 @@ class DoctorRepository
 {
     protected string $model = Doctor::class;
 
-    public function getDate()
+    public function getData()
     {
         return $this->model::get();
     }

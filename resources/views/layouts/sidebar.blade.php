@@ -35,7 +35,7 @@
                         <span>Income Receive </span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="accounting.income.student_income">Student Income</a></li>
+                        <li><a href="{{ route('student.income') }}">Student Income</a></li>
                         <li><a href="accounting.income.sale_voucher">Sale Voucher</a></li>
                         <li><a href="accounting.income.received_payment">Donation And Other</a></li>
                     </ul>

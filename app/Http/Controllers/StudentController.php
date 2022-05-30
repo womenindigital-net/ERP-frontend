@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
+use App\Repositories\ProjectRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -13,10 +14,12 @@ use Illuminate\Contracts\View\View;
 class StudentController extends Controller
 {
     private UserRepository $userRepo;
+    private ProjectRepository $projectRepo;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository)
     {
         $this->userRepo = $userRepository;
+        $this->projectRepo = $projectRepository;
     }
 
     /**
@@ -93,6 +96,19 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+    }
+
+    public function appointment()
+    {
+        return view('pre_admission.appointment');
+    }
+    public function studentIncome()
+    {
+        $data = [
+            'project' => $this->projectRepo->getdata(),
+        ];
+
+        return view('accounting.income.student_income', $data);
     }
 
     public function caseHistory(): Factory|View|Application

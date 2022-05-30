@@ -22,7 +22,7 @@ class ReferralFormCreate extends Component
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'doctors' => $this->doctorRepo->getDate(),
+            'doctors' => $this->doctorRepo->getData(),
         ];
 
         return view('livewire.referral-form-create', $data);
