@@ -19,7 +19,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(StudentIncome::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Course::class)->constrained()->cascadeOnDelete();
-            $table->string('info')->nullable();
+            $table->double('amount', 8, 2)->nullable();
+            $table->double('due', 8, 2)->nullable();
             $table->timestamps();
         });
     }

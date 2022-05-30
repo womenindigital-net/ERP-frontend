@@ -19,7 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Project::class)->constrained()->cascadeOnDelete();
             $table->string('type')->nullable();
-            $table->double('amount', 12, 2);
+            $table->double('amount', 12, 2)->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->string('date');
             $table->string('invoice_no')->nullable();
