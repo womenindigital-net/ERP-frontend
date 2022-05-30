@@ -35,13 +35,11 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('breadcrumbConstants', BreadcrumbsMappingConstants::class);
         });
 
-        View::composer(['case-history', 'pre_admission.care-needs-form'], function($view)
-        {
+        View::composer(['case-history', 'pre_admission.care-needs-form'], function ($view) {
             $view->with('caseConstants', CaseHistoryConstants::class);
         });
 
-        View::composer(['pre_admission.care-needs-form'], function($view)
-        {
+        View::composer(['pre_admission.care-needs-form'], function ($view) {
             $view->with('careConstants', CareNeedsFormConstants::class);
         });
         /*View::share('caseConstants', CaseHistoryConstants::class);
@@ -52,7 +50,5 @@ class ViewServiceProvider extends ServiceProvider
         View::share('IRAConstants', IndividualRiskAssessmentForm::class);
         View::share('functionalConstants', FunctionalMovement::class);
         View::share('sensoryChecklistConstant', SensoryYoungAdult::class);*/
-
-
     }
 }

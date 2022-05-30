@@ -74,12 +74,10 @@
 
                         </div>
                         <div class="col-lg-4   pe-1">
-                            <label for="email">Payment Amount </label>
-
+                            <label for="subject">Receive Amount For</label>
                         </div>
                         <div class="col-lg-4  pe-1">
-                            <label for="subject">Receive Amount For</label>
-
+                            <label for="email">Payment Amount </label>
                         </div>
                     </div>
                     <div data-repeater-list="group-a">
@@ -98,11 +96,20 @@
                             </div>
 
                             <div class=" col-lg-4  pb-1">
-                                <input type="text" class="form-control" placeholder="Receive Amount" />
+                                <select class="form-control form-select">
+                                    <option>--Select--</option>
+                                    <option value="1">Consultation Fees</option>
+                                    <option value="2">Admission for Assessment /Observation</option>
+                                    <option value="3">Pre-Vocational Course</option>
+                                    <option value="4">Vocational Course</option>
+                                    <option value="5">Karishma Cultural Group</option>
+                                    <option value="6">Cricket Course</option>
+                                    <option value="7">Therapy Course</option>
+                                </select>
                             </div>
 
                             <div class="mb-3  col-lg-4">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" placeholder="Payment Amount" />
                             </div>
                         </div>
 
