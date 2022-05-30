@@ -132,6 +132,72 @@ class StudentController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
 
-        return view('care-needs-form', $data);
+        return view('pre_admission.care-needs-form', $data);
+    }
+
+
+    public function sensoryChecklistForChild(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.sensory-checklist-for-child', $data);
+    }
+    public function socialCommunication(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.Social-Communication', $data);
+    }
+    public function occupationalTherapy(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.occupational-therapy', $data);
+    }
+    public function physioTherapy(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.physiotherapy', $data);
+    }
+    public function executiveFunctionTest(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.executive_function_test', $data);
+    }
+    public function autismBehaviorChecklist(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.autism_behavior_checklist', $data);
+    }
+    public function functionalCommunicationAssessment(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.functional_communication_assessment', $data);
+    }
+    public function ndividualRiskAssessmentForm(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.individual_risk_assessment_form', $data);
     }
 }
