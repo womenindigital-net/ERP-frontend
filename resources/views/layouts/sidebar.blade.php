@@ -321,7 +321,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-details-setup">Bank Details Setup</a>
+                                    <a href="setup.account-details">Account Details</a>
+                                </li>
+                                <li>
+                                    <a href="setup.manage-chequebook">Manage Chequebook</a>
                                 </li>
                             </ul>
                         </li>
@@ -329,7 +332,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-recncilation">Bank Reconcilation</a>
+                                    <a href="setup.bank-reconcilation-new">Bank Reconcilation New</a>
+                                </li>
+                                <li>
+                                    <a href="setup.bank-reconcilation">Bank Reconcilation</a>
                                 </li>
                             </ul>
                         </li>
@@ -356,7 +362,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.course-and-admission">Course and Admission</a>
+                                    <a href="setup.course-and-admission">Course </a>
                                 </li>
 
                             </ul>
@@ -373,7 +379,13 @@
                             <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.vocational-marking">Vocational Marking</a>
+                                    <a href="setup.vocational-marking-category">Vocational Marking Category</a>
+                                </li>
+                                <li>
+                                    <a href="setup.vocational-marking-subcategory">Vocational Marking Sub Category</a>
+                                </li>
+                                <li>
+                                    <a href="setup.vocational-student-evolution">Vocational Student Evolution</a>
                                 </li>
                             </ul>
                         </li>

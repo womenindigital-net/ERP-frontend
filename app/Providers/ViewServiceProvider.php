@@ -13,8 +13,11 @@ use App\Utility\IndividualRiskAssessmentForm;
 use App\Utility\OccupationalTherapyConstants;
 use App\Utility\FunctionalMovement;
 use App\Utility\SensoryYoungAdult;
-
-
+use App\Utility\TripReport;
+use App\Utility\Gymouting;
+use App\Utility\OtAssessment;
+use App\Utility\AssigntaskConstant;
+use App\Utility\IncidentRecord;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -44,7 +47,11 @@ class ViewServiceProvider extends ServiceProvider
         View::share('IRAConstants', IndividualRiskAssessmentForm::class);
         View::share('functionalConstants', FunctionalMovement::class);
         View::share('sensoryChecklistConstant', SensoryYoungAdult::class);
-
+        View::share('tripReportConstants', TripReport::class);
+        View::share('gymoutingConstants', Gymouting::class);
+        View::share('otassessmentConstants', OtAssessment::class);
+        View::share('assigntaskConstant', AssigntaskConstant::class);
+        View::share('incidentConstant', IncidentRecord::class);
 
     }
 }

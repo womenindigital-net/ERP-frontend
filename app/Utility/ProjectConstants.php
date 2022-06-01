@@ -73,5 +73,5 @@ final class ProjectConstants
         self::SOMETIME => 'Sometimes',
         self::IN_SPECIAL_OCCASION => 'In special occasion',
         self::DONT_DO_AT_ALL => 'Don’t do at all',
-     ];
+    ];
 }

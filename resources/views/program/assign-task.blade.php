@@ -300,8 +300,6 @@
                                         <div id="collapseOne" class="accordion-collapse collapse"
                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">
@@ -324,9 +322,6 @@
                                                         Squat while maintaining balance Type: Vocational
                                                     </label>
                                                 </div>
-
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -344,9 +339,6 @@
                                         <div id="collapseTwo" class="accordion-collapse collapse"
                                             aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">
@@ -371,9 +363,6 @@
                                         <div id="collapseThree" class="accordion-collapse collapse"
                                             aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">
@@ -402,9 +391,6 @@
                                         <div id="collapsefoure" class="accordion-collapse collapse"
                                             aria-labelledby="headingfoure" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">
@@ -421,8 +407,6 @@
                                                         Type: Vocational
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -440,9 +424,6 @@
                                         <div id="collapsefive" class="accordion-collapse collapse"
                                             aria-labelledby="headingfive" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">
@@ -457,8 +438,6 @@
                                                         Sideways Type: Vocational
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -476,9 +455,6 @@
                                         <div id="collapsesix" class="accordion-collapse collapse"
                                             aria-labelledby="headingsix" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">
@@ -519,9 +495,6 @@
                                         <div id="collapseseven" class="accordion-collapse collapse"
                                             aria-labelledby="headingseven" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">

@@ -161,10 +161,12 @@
                     </section>
                     <h3> Incident Record</h3>
                     <section>
+                        <x-input-radio-or-check name="" label="Incident Type"
+                        :records="$incidentConstant::$incidentType"></x-input-radio-or-check>
                         <div class="row border-top py-2">
                             <div class="col-xl-12 col-sm-12">
                                 <div class="m-0">
-                                    <h5>Incident Type</h5>
+                                    <h5></h5>
                                     <div class="row">
                                         <div class="form-check">
                                             <div class="me-5 ">
@@ -180,27 +182,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row border-top py-2">
-                                <div class="form-check">
-                                    <div class="me-5 ">
-                                        <label class="form-check-label pb-2">Date and Time</label>
-                                        <input class="form-control" type="date" value="2019-08-19"
-                                            id="example-date-input">
-                                    </div>
+                        </div>
+                        <div class="row border-top py-2">
+                            <div class="form-check">
+                                <div class="me-5 ">
+                                    <label class="form-check-label pb-2">Date and Time</label>
+                                    <input class="form-control" type="date" value="2019-08-19"
+                                        id="example-date-input">
                                 </div>
                             </div>
-                            <div class="row border-top py-2">
-                                <div class="form-check">
-                                    <div class="me-5 ">
-                                        <label class="form-check-label pb-2">Setting/Places</label>
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="me-5 ">
-                                        <label class="form-check-label pb-2">Duration ( in Minutes)</label>
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
+                        </div>
+                        <div class="row border-top py-2">
+                            <div class="form-check">
+                                <div class="me-5 ">
+                                    <label class="form-check-label pb-2">Setting/Places</label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="me-5 ">
+                                    <label class="form-check-label pb-2">Duration ( in Minutes)</label>
+                                    <input type="text" class="form-control" placeholder="">
                                 </div>
                             </div>
+                        </div>
                             <div class="row border-top py-2">
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
@@ -219,6 +222,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                                 <div class="row border-top py-2">
                                     <div class="col-xl-12 col-sm-12">
                                         <div class="m-0">
