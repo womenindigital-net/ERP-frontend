@@ -99,7 +99,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
-                            Showing 1 to 2 of 2 entries {{$another}}
+                            Showing 1 to 2 of 2 entries
                         </div>
                         <div class="col-sm-12 col-md-6 text-end">
                             <nav>
@@ -131,7 +131,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myLargeModalLabel">Large modal 234 {{$mode}} another {{$another}}</h5>
+                    <h5 class="modal-title" id="myLargeModalLabel">Large modal</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -145,7 +145,7 @@
                                         <div class="mb-3">
                                             <label for="basicpill-firstname-input">Collection Date:</label>
                                             <div class="input-group" id="datepicker2">
-                                                <x-input-text name="" type="date" wireModel="date"
+                                                <x-input-text name="sample" type="date" wireModel="date"
                                                               placeholder="mm/dd/yyyy">
                                                 </x-input-text>
                                             </div><!-- input-group -->
@@ -154,14 +154,14 @@
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="basicpill-lastname-input">Teacher:</label>
-                                            <x-input-select name="" :records="$teachers"
+                                            <x-input-select name="sample" :records="$teachers"
                                                             wireModel="$teacher_id"></x-input-select>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                            <x-input-select name="" :records="$students"
+                                            <x-input-select name="sample" :records="$students"
                                                             wireModel="$teacher_id"></x-input-select>
                                         </div>
                                     </div>
@@ -320,69 +320,69 @@
                             <div>
                                 <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="চুষে খেতে পারে কিনা ?"
+                                    <x-input-radio-or-check name="sample" label="চুষে খেতে পারে কিনা ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="শক্ত খাবার খেতে পারে কিনা?"
+                                    <x-input-radio-or-check name="sample" label="শক্ত খাবার খেতে পারে কিনা?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="শ্বাস-প্রশ্বাস নিয়ন্ত্রন করতে পারে কিনা?"
+                                    <x-input-radio-or-check name="sample" label="শ্বাস-প্রশ্বাস নিয়ন্ত্রন করতে পারে কিনা?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="খাবার একবারে গিলে ফেলে কিনা?"
+                                    <x-input-radio-or-check name="sample" label="খাবার একবারে গিলে ফেলে কিনা?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="খাবার খেতে লম্বা সময় নেয় কিনা?"
+                                    <x-input-radio-or-check name="sample" label="খাবার খেতে লম্বা সময় নেয় কিনা?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="চিবিয়ে খাবার খেতে কোন সমস্যা ছিল কিনা"
+                                    <x-input-radio-or-check name="sample" label="চিবিয়ে খাবার খেতে কোন সমস্যা ছিল কিনা"
                                                             :records="$constants::$yesNo"
                                                             secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন বয়সে একা একা বসতে শিখেছে?"
+                                    <x-input-radio-or-check name="sample" label="কোন বয়সে একা একা বসতে শিখেছে?"
                                                             :records="$caseConstants::$inWhichAgeLearnedToSitAlone"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন বয়সে চাবানো শিখেছে ?"
+                                    <x-input-radio-or-check name="sample" label="কোন বয়সে চাবানো শিখেছে ?"
                                                             :records="$caseConstants::$inWhichAgeLearnedToChewing"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="কোন বয়সে হামাগুরি দিতে শিখেছে ? পেছন দিক ছেঁচড়ে বা চার হাতপা ব্যবহার করে দিয়েছে"
                                                             :records="$caseConstants::$inWhichAgeLearnedToCroling"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন বয়সে নিজে নিজে একা হাটতে শিখেছে"
+                                    <x-input-radio-or-check name="sample" label="কোন বয়সে নিজে নিজে একা হাটতে শিখেছে"
                                                             :records="$caseConstants::$inWhichAgeLearnedToWoakAlone"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="শিশু কি সাঁতার জানে ?"
+                                    <x-input-radio-or-check name="sample" label="শিশু কি সাঁতার জানে ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="শিশু বাইরে খেলার উপকরন পছন্দ করে কিনা? (যেমন ফুটবল , ক্রিকেট )"
                                                             :records="$constants::$yesNo"></x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="শিশু কি খুব সহজেই. ক্লান্ত হয়ে যায়?"
+                                    <x-input-radio-or-check name="sample" label="শিশু কি খুব সহজেই. ক্লান্ত হয়ে যায়?"
                                                             :records="$constants::$yesNo"
                                                             secondaryInputLabel="বিস্তারিত লিখুন"></x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="ভারসাম্য হীনতা আছে কিনা?"
+                                    <x-input-radio-or-check name="sample" label="ভারসাম্য হীনতা আছে কিনা?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="পেশী ব্যথা সব সময় থাকে কিনা?"
+                                    <x-input-radio-or-check name="sample" label="পেশী ব্যথা সব সময় থাকে কিনা?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                 </form>
@@ -403,63 +403,63 @@
                                                             secondaryInputWire="first_voice_lang_additional">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন বয়সে শিশু প্রথম শব্দ বলেছে ?"
+                                    <x-input-radio-or-check name="sample" label="কোন বয়সে শিশু প্রথম শব্দ বলেছে ?"
                                                             :records="$caseConstants::$inWhichAgeSpokeTheFirstWord"
                                                             secondaryInputLabel="অন্য ভাষা হলে তা লিখুন"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সহজ বাক্য বলতে পারে কি?"
+                                    <x-input-radio-or-check name="sample" label="সহজ বাক্য বলতে পারে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কয় শব্দে বাক্য বলে?"
+                                    <x-input-radio-or-check name="sample" label="কয় শব্দে বাক্য বলে?"
                                                             :records="$caseConstants::$howManyWordUseInASentaceMax">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="অন্য কোন ভাষায় কথা বলতে পারে কি?"
+                                    <x-input-radio-or-check name="sample" label="অন্য কোন ভাষায় কথা বলতে পারে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="অন্য কোন ভাষা বলতে পারে?"
+                                    <x-input-radio-or-check name="sample" label="অন্য কোন ভাষা বলতে পারে?"
                                                             :records="$caseConstants::$doseSpakeInOtherLang"
                                                             secondaryInputLabel="অন্য ভাষা হলে তা লিখুন">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন বয়স থেকে শিখেছে ?"
+                                    <x-input-radio-or-check name="sample" label="কোন বয়স থেকে শিখেছে ?"
                                                             :records="$caseConstants::$fromWhichYearLearnigOtherLang"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
 
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোথা থেকে সেই ভাষা শিখেছে ?"
+                                    <x-input-radio-or-check name="sample" label="কোথা থেকে সেই ভাষা শিখেছে ?"
                                                             :records="$caseConstants::$fromWhereLearnOtherLang"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="নাম ধরে ডাকলে শিশু সারা দেয় কি?"
+                                    <x-input-radio-or-check name="sample" label="নাম ধরে ডাকলে শিশু সারা দেয় কি?"
                                                             :records="$caseConstants::$doesHeResponseIfCallByHisName">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="প্রাথমিক ও সহজ ভাষায় নির্দেশ ও দিক নির্দেশনা অনুসরণ করতে পারে ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="শিশু কোন কোন শব্দ ভুল উচ্চারণ করে কিনা"
+                                    <x-input-radio-or-check name="sample" label="শিশু কোন কোন শব্দ ভুল উচ্চারণ করে কিনা"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন কোন শব্দে শিশু প্রতিক্রিয়াশিলতা"
+                                    <x-input-radio-or-check name="sample" label="কোন কোন শব্দে শিশু প্রতিক্রিয়াশিলতা"
                                                             :records="$caseConstants::$inWhichSoundChildReact"
                                                             type="checkbox" :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="মৌখিক নির্দেশ মেনে চলে"
+                                    <x-input-radio-or-check name="sample" label="মৌখিক নির্দেশ মেনে চলে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বাক্য গঠনে সঠিক শব্দের সঠিক ব্যবহার পারে?"
+                                    <x-input-radio-or-check name="sample" label="বাক্য গঠনে সঠিক শব্দের সঠিক ব্যবহার পারে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                 </form>
@@ -473,67 +473,67 @@
                             <div>
                                 <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="শিশু কি চাকু বা কাটা চামচ ব্যবহার করেতে পারে ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="নিজে একা একা কাপড় পরতে পারে ?"
+                                    <x-input-radio-or-check name="sample" label="নিজে একা একা কাপড় পরতে পারে ?"
                                                             :records="$caseConstants::$canWearClothAlone"
                                                             secondaryInputLabel="বিস্তারিত লিখুন"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="শিশু নিজের জিনিষ গুছিয়ে রাখে ?"
+                                    <x-input-radio-or-check name="sample" label="শিশু নিজের জিনিষ গুছিয়ে রাখে ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন বয়সে টয়লেট ট্রেনিং পেয়েছে?"
+                                    <x-input-radio-or-check name="sample" label="কোন বয়সে টয়লেট ট্রেনিং পেয়েছে?"
                                                             :records="$caseConstants::$inWhichAgeGotToyletTreaining"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বাড়িতে কি নিজে নিজে টয়লেটে যায়?"
+                                    <x-input-radio-or-check name="sample" label="বাড়িতে কি নিজে নিজে টয়লেটে যায়?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="অপরিচত জায়গায় টয়লেটে যায়?"
+                                    <x-input-radio-or-check name="sample" label="অপরিচত জায়গায় টয়লেটে যায়?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="বাড়িতে কি ছবি আঁকতে, কাটাকাঁটি করতে পছন্দ করে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="খেলাধুলা করতে পছন্দ করে ?"
+                                    <x-input-radio-or-check name="sample" label="খেলাধুলা করতে পছন্দ করে ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সে কি স্বাধীনভাবে খেলতে পারে ?"
+                                    <x-input-radio-or-check name="sample" label="সে কি স্বাধীনভাবে খেলতে পারে ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কি খেলা পছন্দ করে?"
+                                    <x-input-radio-or-check name="sample" label="কি খেলা পছন্দ করে?"
                                                             :records="$caseConstants::$faveriteGames"
                                                             :isVertical="false"> :secondaryInputLabel="অন্যান্য হলে তা
                                         লিখুন"
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বড়দের নির্দেশ মেনে বা মানিয়ে চলতে পারে"
+                                    <x-input-radio-or-check name="sample" label="বড়দের নির্দেশ মেনে বা মানিয়ে চলতে পারে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="আপনি কি মনে করেন এটা একটি খুবই কঠিন কাজ"
+                                    <x-input-radio-or-check name="sample" label="আপনি কি মনে করেন এটা একটি খুবই কঠিন কাজ"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="টয়লেট থেকে কি একা একা পরিস্কার হয়ে বের হয়ে আসতে পারে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="টয়লেট থেকে কি একা একা নিজের কাপড় পরে বের হয়ে আসতে পারে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
@@ -547,30 +547,30 @@
                             <div>
                                 <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বাসায় ভাইবোনদের সাথে খেলাধুলা করে কি?"
+                                    <x-input-radio-or-check name="sample" label="বাসায় ভাইবোনদের সাথে খেলাধুলা করে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সন্তানের বন্ধুরা কি বাসায় খেলতে আসে ?"
+                                    <x-input-radio-or-check name="sample" label="সন্তানের বন্ধুরা কি বাসায় খেলতে আসে ?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="বন্ধুদের সাথে খেলনা শেয়ার করে কি নাকি বড়দের সহায়তা লাগে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="গেমস বা খেলাধুলায় অথবা কথা বলার সময় তার নিজের পালা বা টার্ন এর জন্য অপেক্ষা করে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="বড়দের সাথে বা অন্য শিশুদের ব্যপারে আগ্রহ দেখায় নাকি উদাসীন থাকে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="আপনি কি সন্তানের বিশেষ কোন আচরন নিয়ে চিন্তিত ?"
                                                             :records="$constants::$yesNo"
                                                             secondaryInputLabel="হ্যাঁ হলে বিস্তারিত লিখুন">
@@ -599,51 +599,51 @@
                                             </div>
                                         </div>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name="" label="নতুন নতুন বিষয় শেখার আগ্রহ আছে কিনা?"
+                                        <x-input-radio-or-check name="sample" label="নতুন নতুন বিষয় শেখার আগ্রহ আছে কিনা?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name=""
+                                        <x-input-radio-or-check name="sample"
                                                                 label="যেকোনো সাধারণ বিষয় সঠিকভাবে বুঝতে পারে কিনা?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name="" label="শব্দের বানান শিখতে পারে কিনা?"
+                                        <x-input-radio-or-check name="sample" label="শব্দের বানান শিখতে পারে কিনা?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name="" label="নিজে নিজে লিখতে পারে?"
+                                        <x-input-radio-or-check name="sample" label="নিজে নিজে লিখতে পারে?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name="" label="কাজ করার গতি কেমন ?"
+                                        <x-input-radio-or-check name="sample" label="কাজ করার গতি কেমন ?"
                                                                 :records="$caseConstants::$workingSpeed">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name=""
+                                        <x-input-radio-or-check name="sample"
                                                                 label="আপনার সন্তানের কোন ও বিষয়ে বোঝার ক্ষমতা বোঝানোর পর কতদিন পর্যন্ত থাকে?"
                                                                 :records="$caseConstants::$howLongChildCanManageAfterTeaching"
                                                                 :isVertical="false">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name="" label="হোমওয়ার্ক কি তার কাছে সাধারণ কাজ?"
+                                        <x-input-radio-or-check name="sample" label="হোমওয়ার্ক কি তার কাছে সাধারণ কাজ?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name=""
+                                        <x-input-radio-or-check name="sample"
                                                                 label="স্কুলের কাজ করার সময় কি তার ব্যবহার/আচরণ অন্যরকম হয়ে যায়?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name="" label="তাকে কি উত্তেজিত মনে হয়?"
+                                        <x-input-radio-or-check name="sample" label="তাকে কি উত্তেজিত মনে হয়?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name="" label="কাগজপত্র বা বই খাতায় অগোছালো মনে হয়?"
+                                        <x-input-radio-or-check name="sample" label="কাগজপত্র বা বই খাতায় অগোছালো মনে হয়?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
                                         <!-- end row -->
-                                        <x-input-radio-or-check name=""
+                                        <x-input-radio-or-check name="sample"
                                                                 label="সে কি নিয়মিত পেন্সিল বক্স থেকে বিভিন্ন্য আইটেম বা স্কুল ব্যাগ থেকে বিভিন্ন জিনিষ হারায়?"
                                                                 :records="$constants::$yesNo">
                                         </x-input-radio-or-check>
@@ -660,159 +660,159 @@
                                     লিখুন। এই বিষয়গুলি মুলত স্কুলে যাওয়ার বয়সের জন্য প্রযোজ্যঃ</p>
                                 <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="খাওয়াদাওয়ার সময় বিশ্রী/বেমানান কাজ করে কিনা যেটা পিতামাতার জন্য বিরক্তি সৃষ্টি করে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কাপড় পরিধানঃ বেশি কান্নাকাটি/ চিৎকার করে"
+                                    <x-input-radio-or-check name="sample" label="কাপড় পরিধানঃ বেশি কান্নাকাটি/ চিৎকার করে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" type="checkbox"
+                                    <x-input-radio-or-check name="sample" type="checkbox"
                                                             label="আপনি আপনার শিশুকে কি ভাবে বর্ণনা করবেন?"
                                                             :records="$caseConstants::$howToDiscriveYourChild"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="গোসল" type="checkbox"
+                                    <x-input-radio-or-check name="sample" label="গোসল" type="checkbox"
                                                             :records="$caseConstants::$bath"
                                                             secondaryInputLabel="বিস্তারিত লিখুন" :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="প্রয়োজনীয় জিনিস" type="checkbox"
+                                    <x-input-radio-or-check name="sample" label="প্রয়োজনীয় জিনিস" type="checkbox"
                                                             :records="$caseConstants::$necessaryThings"
                                                             secondaryInputLabel="বিস্তারিত লিখুন" :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="দিক নির্ণয়ের দক্ষতা আছে কি?"
+                                    <x-input-radio-or-check name="sample" label="দিক নির্ণয়ের দক্ষতা আছে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="খেলা" type="checkbox"
+                                    <x-input-radio-or-check name="sample" label="খেলা" type="checkbox"
                                                             :records="$caseConstants::$game"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="মবিলিটি" type="checkbox"
+                                    <x-input-radio-or-check name="sample" label="মবিলিটি" type="checkbox"
                                                             :records="$caseConstants::$mobility"
                                                             :isVertical="false">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="রুটিন পছন্দ করে"
+                                    <x-input-radio-or-check name="sample" label="রুটিন পছন্দ করে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
 
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="রুটিনে কোন পরিবর্তন মেনে নেয় কি?রুটিন পছন্দ করে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="নতুন পরিস্থিতি পছন্দ করে?"
+                                    <x-input-radio-or-check name="sample" label="নতুন পরিস্থিতি পছন্দ করে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="ধারাবাহিক নির্দেশ ঠিক মত পালন করতে পারে না"
+                                    <x-input-radio-or-check name="sample" label="ধারাবাহিক নির্দেশ ঠিক মত পালন করতে পারে না"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="মেজাজ খুব তাড়াতাড়ি পরিবর্তিত হয়"
+                                    <x-input-radio-or-check name="sample" label="মেজাজ খুব তাড়াতাড়ি পরিবর্তিত হয়"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সহজে হতাশাগ্রস্থ হয়"
+                                    <x-input-radio-or-check name="sample" label="সহজে হতাশাগ্রস্থ হয়"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কাজ করা বন্ধ করে দেয়"
+                                    <x-input-radio-or-check name="sample" label="কাজ করা বন্ধ করে দেয়"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="অস্থিরতা আছে কি?"
+                                    <x-input-radio-or-check name="sample" label="অস্থিরতা আছে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="একজায়গায় ঠিক মত বসতে পারে (পরিবেশ - পরিস্থিতির প্রয়োজনে দীর্ঘ সময় বসে থাকা )"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="বাসায় ধ্বংসাত্মক বা আক্রমণাত্মক ব্যাবহার আছে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="খেলাধুলায় মনে হয় মনোযোগ নেই, শুধু বসে থাকে"
+                                    <x-input-radio-or-check name="sample" label="খেলাধুলায় মনে হয় মনোযোগ নেই, শুধু বসে থাকে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="আপনার সন্তানের সময় সম্পর্কে জ্ঞান আছে কি?"
+                                    <x-input-radio-or-check name="sample" label="আপনার সন্তানের সময় সম্পর্কে জ্ঞান আছে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="দিন, মাস ও সময় জ্ঞান অর্জনে সমস্যা আছে কি?"
+                                    <x-input-radio-or-check name="sample" label="দিন, মাস ও সময় জ্ঞান অর্জনে সমস্যা আছে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সারা প্রদান"
+                                    <x-input-radio-or-check name="sample" label="সারা প্রদান"
                                                             :records="$caseConstants::$answerTheCall">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="দিবাস্বপ্নচারী মনে হয় । ঘোরের মধ্যে থাকা, কল্পনার জগতে থাকে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="এক জায়গায় ঘোরে"
+                                    <x-input-radio-or-check name="sample" label="এক জায়গায় ঘোরে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="ঘোরাঘুরি করে" :records="$constants::$yesNo">
+                                    <x-input-radio-or-check name="sample" label="ঘোরাঘুরি করে" :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সবসময়ই নড়াচড়া বা চলাফেরার মধ্যে থাকে"
+                                    <x-input-radio-or-check name="sample" label="সবসময়ই নড়াচড়া বা চলাফেরার মধ্যে থাকে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সোজা হয়ে বসতে পছন্দ করে কি?"
+                                    <x-input-radio-or-check name="sample" label="সোজা হয়ে বসতে পছন্দ করে কি?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বল নিয়ে খেলার ক্ষেত্রে পারদর্শী"
+                                    <x-input-radio-or-check name="sample" label="বল নিয়ে খেলার ক্ষেত্রে পারদর্শী"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বল নিয়ে যে কোন ধরনের খেলা এড়িয়ে চলে"
+                                    <x-input-radio-or-check name="sample" label="বল নিয়ে যে কোন ধরনের খেলা এড়িয়ে চলে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="ভাংচুর করতে পছন্দ করে (জিনিষ পত্র নষ্ট করে )"
+                                    <x-input-radio-or-check name="sample" label="ভাংচুর করতে পছন্দ করে (জিনিষ পত্র নষ্ট করে )"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বেমানান ভঙ্গিতে দৌঁড়ায়"
+                                    <x-input-radio-or-check name="sample" label="বেমানান ভঙ্গিতে দৌঁড়ায়"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name=""
+                                    <x-input-radio-or-check name="sample"
                                                             label="উচ্চতা, নড়াচড়া, সিঁড়ি দিয়ে নামার ক্ষেত্রে সাবধান থাকে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="সারাক্ষণ নড়াচড়ার মধ্যে থাকে"
+                                    <x-input-radio-or-check name="sample" label="সারাক্ষণ নড়াচড়ার মধ্যে থাকে"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কাজ এড়িয়ে চলতে চায়"
+                                    <x-input-radio-or-check name="sample" label="কাজ এড়িয়ে চলতে চায়"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="কোন ধরনের কাজ এড়িয়ে চলে?"
+                                    <x-input-radio-or-check name="sample" label="কোন ধরনের কাজ এড়িয়ে চলে?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="" label="বার বার হারিয়ে যায়?"
+                                    <x-input-radio-or-check name="sample" label="বার বার হারিয়ে যায়?"
                                                             :records="$constants::$yesNo">
                                     </x-input-radio-or-check>
                                     <!-- end row -->

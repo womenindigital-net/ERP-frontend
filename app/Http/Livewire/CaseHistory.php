@@ -292,7 +292,6 @@ class CaseHistory extends Component
 
         $this->mode     = $mode;
         $this->recordId = $recordId;
-        dump($this->mode);
     }
 
     public function save($recordId = false)
@@ -311,12 +310,9 @@ class CaseHistory extends Component
 
     public function render()
     {
-        $another = $this->mode;
-        dump($this->mode);
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'another' => $another,
         ];
 
         return view('livewire.case-history', $data)->extends('layouts.master')->section('content');

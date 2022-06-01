@@ -35,7 +35,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('breadcrumbConstants', BreadcrumbsMappingConstants::class);
         });
 
-        View::composer(['case-history', 'pre_admission.care-needs-form'], function ($view) {
+        View::composer(['livewire.case-history', 'pre_admission.care-needs-form'], function ($view) {
             $view->with('caseConstants', CaseHistoryConstants::class);
         });
 
