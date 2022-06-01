@@ -35,6 +35,7 @@ class AppointmentList extends Component
 
     public function show($student = [], $mode = 'create', $recordId = 0)
     {
+        dd($mode);
         $this->recordId = $recordId;
         $this->emit('show-appointment', $student, $mode, $recordId);
     }
@@ -43,7 +44,6 @@ class AppointmentList extends Component
     {
         $student =  Student::find($id);
         $student->delete();
-
         $this->dispatchBrowserEvent('notify');
     }
 

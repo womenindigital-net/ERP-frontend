@@ -33,7 +33,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Payment Date</label>
-                                <x-input-text wireModel='payment_date' type='date' placeholder='dd/mm/yyyy'>
+                                <x-input-text wireModel='date' type='date' placeholder='dd/mm/yyyy'>
                                 </x-input-text>
                             </div>
                         </div>
@@ -72,7 +72,6 @@
                     <div class="row">
                         <div class="col-lg-4   pe-1">
                             <label for="name">Payment Amount For</label>
-
                         </div>
                         <div class="col-lg-4   pe-1">
                             <label for="subject">Receive Amount For</label>
@@ -83,21 +82,24 @@
                     </div>
                     <div data-repeater-list="group-a">
                         <div data-repeater-item class="row">
-                            <div class="mb-3  col-lg-4">
-                                <select class="form-control form-select" wire:model="payment_for">
-                                    <option>--Select--</option>
-                                    <option value="1">Consultation Fees</option>
-                                    <option value="2">Admission for Assessment /Observation</option>
-                                    <option value="3">Pre-Vocational Course</option>
-                                    <option value="4">Vocational Course</option>
-                                    <option value="5">Karishma Cultural Group</option>
-                                    <option value="6">Cricket Course</option>
-                                    <option value="7">Therapy Course</option>
-                                </select>
+                            <div class="mb-3 d-flex col-lg-4">
+                                <span class="pe-2 pb-1">01</span>
+                                <div>
+                                    <select class="form-control form-select" wire:model="course_id">
+                                        <option>--Select--</option>
+                                        <option value="1">Consultation Fees</option>
+                                        <option value="2">Admission for Assessment /Observation</option>
+                                        <option value="3">Pre-Vocational Course</option>
+                                        <option value="4">Vocational Course</option>
+                                        <option value="5">Karishma Cultural Group</option>
+                                        <option value="6">Cricket Course</option>
+                                        <option value="7">Therapy Course</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class=" col-lg-4  pb-1">
-                                <select class="form-control form-select" wire:model="course_id">
+                                <select class="form-control form-select" {{-- wire:model="course_id" --}}>
                                     <option>--Select--</option>
                                     <option value="1">Consultation Fees</option>
                                     <option value="2">Admission for Assessment /Observation</option>
@@ -109,9 +111,14 @@
                                 </select>
                             </div>
 
-                            <div class="mb-3  col-lg-4">
+                            <div class="mb-3 d-flex col-lg-4">
                                 <x-input-text wireModel='amount' type="number" placeholder='Payment Amount'>
                                 </x-input-text>
+                                <div>
+                                    <button class="btn btn-danger ms-2">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 

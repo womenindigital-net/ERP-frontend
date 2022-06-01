@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class StudentIncomeDetail extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $guarded = [];
 }

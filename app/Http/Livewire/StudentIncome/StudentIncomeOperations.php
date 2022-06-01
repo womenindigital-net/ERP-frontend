@@ -6,16 +6,16 @@ use Livewire\Component;
 use App\Models\StudentIncomeDetail;
 use App\Repositories\ProjectRepository;
 use App\Repositories\StudentRepository;
-use App\Services\StudentIncomeDetailService;
+use App\Services\StudentIncomeService;
 
 class StudentIncomeOperations extends Component
 {
 
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
-    private StudentIncomeDetailService $service;
+    private StudentIncomeService $service;
 
-    public function boot(ProjectRepository $projectRepo, StudentRepository $studentRepo, StudentIncomeDetailService $service)
+    public function boot(ProjectRepository $projectRepo, StudentRepository $studentRepo, StudentIncomeService $service)
     {
         $this->projectRepo = $projectRepo;
         $this->studentRepo = $studentRepo;
@@ -25,9 +25,8 @@ class StudentIncomeOperations extends Component
 
     public string $project_id = "";
     public string $student_id = "";
-    public string $payment_date = "";
+    public string $date = "";
     public string $course_id = "";
-    public string $receive_amount_for = "";
     public string $amount = "";
     public string $type = "";
 
@@ -37,11 +36,12 @@ class StudentIncomeOperations extends Component
     protected array $rules = [
         'project_id' => 'required',
         'student_id' => 'required',
-        'payment_date' => 'required|date',
+        'date' => 'required|date',
         'course_id' => 'required',
-        'receive_amount_for' => 'required',
         'amount' => 'required|min:1',
     ];
+
+    protected $listeners = ['show-student-income' => 'showStudentIncome'];
 
     public function updated($propertyName)
     {
@@ -52,6 +52,11 @@ class StudentIncomeOperations extends Component
     public function add()
     {
         $this->service->store($this->validate());
+    }
+
+    public function showStudentIncome($studentIncome = [], $mode = 'create', $recordId = 0)
+    {
+        dd($mode);
     }
 
     public function store()

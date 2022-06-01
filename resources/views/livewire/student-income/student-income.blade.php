@@ -15,7 +15,6 @@
                                 class="fas fa-plus-circle"></i> Add</button>
                     </div>
                 </div>
-
                 <livewire:student-income.student-income-list />
             </div>
         </div>
