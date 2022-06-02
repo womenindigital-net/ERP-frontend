@@ -17,6 +17,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('case-history', CaseHistory::class)->name('student.case-history');
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
     Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+    Route::get('employment/staff_and_workplace_inspecation_tool', [StudentController::class, 'staffAndWorkplaceInspecationTool'])->name('employment.staff_and_workplace_inspecation_tool');
 
     Route::get('assessment/sensory-checklist-for-child', [StudentController::class, 'sensoryChecklistForChild'])->name('sensory.checklist.for.child');
     Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');

@@ -156,22 +156,7 @@
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-lastname-input">Teacher:</label>
-                                        <select class="form-control select2 form-select">
-                                            <option value="0">Select</option>
-                                            <option value="1">abulhasnat</option>
-                                            <option value="2">nila01</option>
-                                            <option value="3">Airins</option>
-                                            <option value="4">AmalRozareo</option>
-                                            <option value="5">anasbin</option>
-                                            <option value="6">arupmandal</option>
-                                            <option value="7">asadzaman</option>
-                                            <option value="8">Badshah</option>
-                                            <option value="9">BijoyRozareo</option>
-                                            <option value="10">Chandan</option>
-                                            <option value="11">dolonbishwash</option>
-                                            <option value="12">golamrabbani</option>
-                                            <option value="13">jahinur</option>
-                                        </select>
+                                        <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                                     </div>
                                 </div>
                             </div>
