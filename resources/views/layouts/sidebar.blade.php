@@ -194,7 +194,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="student.employment.staff_and_workplace_inspecation_tool">কর্মী ও কর্মস্থল
+                                <li> <a href="{{ route('student.employment.staff_and_workplace_inspecation_tool') }}">কর্মী ও কর্মস্থল
                                         পরিদর্শন টুল</a>
                                 </li>
                             </ul>

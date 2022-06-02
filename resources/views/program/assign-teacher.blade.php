@@ -94,129 +94,115 @@
                                                     </div>
                                                     <div class="col-2 d-flex align-items-center">
                                                         <div class="form-check ">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Select All
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Select All']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
+                                                          
                                                         </div>
                                                     </div>
                                                     <div class="col-2 d-flex align-items-center">
                                                         <div class="form-check ">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Deselect All
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="[' Deselect All']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row pt-3">
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Boutique
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Boutique']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Paperwork
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Paperwork']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Elementary
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Elementary']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Music
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Music']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row pt-3">
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Tailoring
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Tailoring']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Starter
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Starter']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Yoga
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Yoga']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Dance
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Dance']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row pt-3">
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Online Chess class
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Online Chess class']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Jewelry
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Jewelry']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Radial
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Radial']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                     <div class="col-3">
                                                         <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox" id="formCheck1">
-                                                            <label class="form-check-label" for="formCheck1">
-                                                                Physical Exercise(PE)
-                                                            </label>
+                                                            <x-input-radio-or-check name='' :records="['Physical Exercise(PE)']"
+                                                            label="" type="checkbox">
+                                                            </x-input-radio-or-check>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="square-switch pt-3">
                                                     <h6>Published:</h6>
-                                                    <input type="checkbox" id="square-switch1" switch="none" checked />
+                                                    <input type="checkbox" id="square-switch1" switch="none" checked="">
                                                     <label for="square-switch1" data-on-label="Yes" data-off-label="No"></label>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>

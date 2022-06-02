@@ -142,9 +142,6 @@
         </div>
     </div> <!-- end col -->
 </div> <!-- end row -->
-
-
-
 <!-- sample modal content -->
 <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
     aria-hidden="true">
@@ -171,8 +168,7 @@
                             <div class="col-6 d-flex">
                                 <label for="example-text-input" class="col-md-4 col-form-label">Assignment Name</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" value="Artisanal kale"
-                                        id="example-text-input">
+                                    <x-input-text name="Assignment Name" placeholder="Assignment Name"></x-input-text>
                                 </div>
                             </div>
                         </div>
@@ -180,13 +176,13 @@
                             <div class="col-6 d-flex">
                                 <label class="col-md-4 col-form-label">Start Date</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                                    <x-input-text name="start_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
                                 <label class="col-md-4 col-form-label">End Date</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                                    <x-input-text name="end_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
                                 </div>
                             </div>
                         </div>

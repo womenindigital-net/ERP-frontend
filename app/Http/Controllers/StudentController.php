@@ -232,4 +232,14 @@ class StudentController extends Controller
 
         return view('student.co-curricular.drama-diary-evaluation', $data);
     }
+    
+
+    public function staffWorkplace(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('student.employment.staff_and_workplace_inspecation_tool', $data);
+    }
 }
+

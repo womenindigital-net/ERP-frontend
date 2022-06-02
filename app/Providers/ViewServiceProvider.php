@@ -20,7 +20,7 @@ use App\Utility\AssigntaskConstant;
 use App\Utility\IncidentRecord;
 use App\Utility\individual_risk_assessment_form;
 use App\Utility\DramaDiaryEvaluation;
-
+use App\Utility\StaffAndWorkPlace;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -56,8 +56,6 @@ class ViewServiceProvider extends ServiceProvider
         View::share('assigntaskConstant', AssigntaskConstant::class);
         View::share('incidentConstant', IncidentRecord::class);
         View::share('diaryConstant', DramaDiaryEvaluation::class);
-
-
-
+        View::share('staffAndWork', StaffAndWorkPlace::class);
     }
 }
