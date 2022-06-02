@@ -125,6 +125,15 @@ class StudentController extends Controller
         return view('pre_admission.care-needs-form', $data);
     }
 
+    public function individualrisk(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.individual_risk_assessment_form', $data);
+    }
+
 
     public function sensoryChecklistForChild(): Factory|View|Application
     {
@@ -156,7 +165,7 @@ class StudentController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
 
-        return view('assessment.physiotherapy', $data);
+        return view('assessment.physiotherapy', $data); 
     }
     public function executiveFunctionTest(): Factory|View|Application
     {
@@ -182,12 +191,45 @@ class StudentController extends Controller
 
         return view('assessment.functional_communication_assessment', $data);
     }
-    public function ndividualRiskAssessmentForm(): Factory|View|Application
+    public function individualRiskAssessmentForm(): Factory|View|Application
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
 
         return view('assessment.individual_risk_assessment_form', $data);
+    }
+    public function incidentRecord(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.incident-record', $data);
+    }
+    public function medicineAdmin(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.medicine-admin', $data);
+    }
+
+    public function functionalMovementskill(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.functional_movement_skills', $data);
+    }
+    public function dramaDiary(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.co-curricular.drama-diary-evaluation', $data);
     }
 }

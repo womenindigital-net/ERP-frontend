@@ -18,6 +18,9 @@ use App\Utility\Gymouting;
 use App\Utility\OtAssessment;
 use App\Utility\AssigntaskConstant;
 use App\Utility\IncidentRecord;
+use App\Utility\individual_risk_assessment_form;
+use App\Utility\DramaDiaryEvaluation;
+
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -52,6 +55,9 @@ class ViewServiceProvider extends ServiceProvider
         View::share('otassessmentConstants', OtAssessment::class);
         View::share('assigntaskConstant', AssigntaskConstant::class);
         View::share('incidentConstant', IncidentRecord::class);
+        View::share('diaryConstant', DramaDiaryEvaluation::class);
+
+
 
     }
 }

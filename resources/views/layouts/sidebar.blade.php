@@ -138,15 +138,13 @@
                         <li><a href="{{ route('social.communication') }}">Social Communication</a></li>
                         <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
                         <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
-                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
-                                Assessment</a></li>
-                        <li><a href="assessment.functional_movement_skills">Fundamental Movement Skills</a></li>
+                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication Assessment</a></li>
+                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement Skills</a></li>
                         <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
                         <li><a href="assessment.autism_behavior_checklist">Autism Behavior Checklist (ABC)</a></li>
                         <li><a href="assessment.sensory_checklist_for_young_adult">Sensory checklist for Young Adult</a>
                         </li>
-                        <li><a href="assessment.individual_risk_assessment_form">Individual risk assessment form</a>
-                        </li>
+                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a></li>
                     </ul>
                 </li>
                 <li>
@@ -173,10 +171,10 @@
                                     <a href="student.dairy.ot-assessment">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.incident-record">Incident Record</a>
+                                    <a href="{{ route('student.dairy.incident-record') }}">Incident Record</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.medicine-admin">Medicine admin</a>
+                                    <a href="{{ route('student.dairy.medicine-admin') }}">Medicine admin</a>
                                 </li>
                                 {{-- <li>
                                     <a href="student.dairy.score-calculation">Score Calculation</a>
@@ -189,7 +187,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="student.co-curricular.drama-diary-evaluation">Drama Diary Evaluation</a>
+                                <li> <a href="{{ route('student.co-curricular.drama-diary-evaluation') }}">Drama Diary Evaluation</a>
                                 </li>
                             </ul>
                         </li>
