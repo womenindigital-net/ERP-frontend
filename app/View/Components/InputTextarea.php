@@ -8,13 +8,13 @@ class InputTextarea extends Component
 {
     public string $name;
     public int $rows;
-    public int $cols;
+    public string $cols;
     public $label;
     public $placeholder;
     public $value;
     public string $required;
 
-    public function __construct($name, $multiple=false, $label = false, $rows = 5, $cols = 5, $placeholder = false, $value = false, $required = false)
+    public function __construct($name, $multiple = false, $label = false, $rows = 1, $cols = '', $placeholder = false, $value = false, $required = false)
     {
         $this->name = $multiple ? $name . '[]' : $name;
         $this->label = $label ?: prepareInputLabel($name);

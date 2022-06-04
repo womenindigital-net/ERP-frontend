@@ -261,8 +261,10 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <textarea class="form-control" name="" id=""
-                                                                rows="1"></textarea>
+                                                            <x-input-textarea name="" rows="1">
+                                                            </x-input-textarea>
+                                                            {{-- <textarea class="form-control" name="" id=""
+                                                                rows="1"></textarea> --}}
                                                             <button class="btn btn-danger btn-rounded ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
