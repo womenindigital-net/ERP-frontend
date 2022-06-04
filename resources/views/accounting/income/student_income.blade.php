@@ -3,15 +3,6 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
 @endsection
 
@@ -37,9 +28,26 @@
                                 class="fas fa-plus-circle"></i> Add</button>
                     </div>
                 </div>
-
-                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive w-100">
-                    <thead>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                          class="form-control form-control-sm form-select form-select-sm">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select> entries
+                      </label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-end">
+                      <label style="display: inline-flex;align-items: center;">Search:
+                        <input type="search" class="form-control form-control-sm" placeholder="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered w-100">
+                      <thead>
                         <tr class="table-primary">
                             <th>Project Name</th>
                             <th>Voucher Date</th>
@@ -48,82 +56,65 @@
                             <th>Log</th>
                             <th>Action</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                      </thead>
+                      <tbody>
                         <tr>
                             <td>Core Programme</td>
                             <td>2021-09-30</td>
                             <td>Payment for Student. Student ID: 220, Name: Ishmam Reza</td>
                             <td>700</td>
                             <td>Create: A.K.M Shahidullah @ 2021-09-30 14:15:54</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
+                                <i class="mdi mdi-eye"></i>
                                 </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
+                                <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                <i class="bx bx-dollar"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                <i class="fas fa-arrow-circle-right"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                <i class="fas fa-trash-alt"></i>
+                                </button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Core Programme</td>
-                            <td>2021-09-30</td>
-                            <td>Payment for Student. Student ID: 220, Name: Ishmam Reza</td>
-                            <td>700</td>
-                            <td>Create: A.K.M Shahidullah @ 2021-09-30 14:15:54</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Core Programme</td>
-                            <td>2021-09-30</td>
-                            <td>Payment for Student. Student ID: 220, Name: Ishmam Reza</td>
-                            <td>700</td>
-                            <td>Create: A.K.M Shahidullah @ 2021-09-30 14:15:54</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      Showing 1 to 2 of 2 entries
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-end">
+                      <nav>
+                        <ul class="pagination" style="justify-content: end;">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item active">
+                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+
+
             </div>
         </div>
     </div> <!-- end col -->
@@ -173,34 +164,18 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Student ID</label>
-                                        <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" placeholder="Student ID" value="BTY-12" >
-                                        </div>
+                                        <x-input-text name="" placeholder="Student ID">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Payment Date</label>
-                                        <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                data-date-format="dd M, yyyy" data-date-container='#datepicker1'
-                                                data-provide="datepicker">
-    
-                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                        </div>
+                                        <x-input-text type="date" name="" placeholder="dd M, yyyy">
+                                        </x-input-text>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="row ms-3">
-                                <div class="col-4">
-                                    <h4 class="text-danger">Total Amount : </h4>
-                                    <h5>5000 TK</h5>
-                                </div>
-                                <div class="col-4">
-                                    <h4 class="text-success"> Total Paid : </h4>
-                                    <h5>5000 TK</h5>
-                                </div>
-                            </div> --}}
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="card">
@@ -268,12 +243,13 @@
                                                         </div>
                     
                                                         <div class=" col-lg-4  pb-1">
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Receive Amount" />
+                                                            <x-input-text name="" placeholder="Receive Amount">
+                                                            </x-input-text>
                                                         </div>
     
                                                         <div class="mb-3  col-lg-4">
-                                                            <input type="text" class="form-control"/>
+                                                            <x-input-text name="" placeholder="">
+                                                            </x-input-text>
                                                         </div>
                                                     </div>
                     
@@ -390,36 +366,12 @@
         </div><!-- /.modal -->
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
     <!-- form repeater js -->
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 
 
 @endsection

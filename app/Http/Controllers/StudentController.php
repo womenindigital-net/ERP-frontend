@@ -241,6 +241,28 @@ class StudentController extends Controller
         ];
         return view('student.employment.staff_and_workplace_inspecation_tool', $data);
     }
+    public function studentIncome(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('accounting.income.student_income', $data);
+    }
+    public function studentSaleVoucher(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('accounting.income.sale_voucher', $data);
+    }
+    public function studentReceivedPayment(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('accounting.income.received_payment', $data);
+    }
+
     public function assignTask(): Factory|View|Application
     {   
         $data = [

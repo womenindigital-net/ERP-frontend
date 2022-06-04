@@ -3,20 +3,6 @@
 @section('title') Journal @endsection
 
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Sweet Alert-->
-    <link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -41,10 +27,26 @@
                                 class="fas fa-plus-circle"></i> Add</button>
                     </div>
                 </div>
-
-                <table id="datatable-buttons"
-                    class="table table-striped table-bordered dt-responsive nowrap w-100">
-                    <thead>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                          class="form-control form-control-sm form-select form-select-sm">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select> entries
+                      </label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-end">
+                      <label style="display: inline-flex;align-items: center;">Search:
+                        <input type="search" class="form-control form-control-sm" placeholder="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered w-100">
+                      <thead>
                         <tr class="table-primary">
                             <th>Project</th>
                             <th>Voucher Date</th>
@@ -53,82 +55,65 @@
                             <th>Log</th>
                             <th>Action</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                      </thead>
+                      <tbody>
                         <tr>
                             <td>Core Programme</td>
                             <td>2021-09-30 00:00:00</td>
                             <td>Payment for Student. Student ID: 220, Name: Ishmam Reza</td>
                             <td>700</td>
                             <td>Create: A.K.M Shahidullah @ 2021-09-30 14:15:54</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
+                            <td>
+                            <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
+                              <i class="mdi mdi-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                class="fas fa-check"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                class="fas fa-check"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
+                              <i class="mdi mdi-pencil"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                              <i class="bx bx-dollar"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                              <i class="fas fa-arrow-circle-right"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                              <i class="fas fa-trash-alt"></i>
+                            </button>
+                          </td>
                         </tr>
-                        <tr>
-                            <td>Pre-Vocational</td>
-                            <td>2021-09-30 00:00:00</td>
-                            <td>Payment for Student. Student ID: 113, Name: Arjun Aldrin Rozario</td>
-                            <td>24300</td>
-                            <td>Create: A.K.M Shahidullah @ 2021-09-30 13:54:46</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jewelry Section</td>
-                            <td>2021-09-12 00:00:00</td>
-                            <td>Payment for Student. Student ID: 2, Name: Md. Moinul Islam Supta</td>
-                            <td>6000</td>
-                            <td>Create: A.K.M Shahidullah @ 2021-09-18 10:50:10</td>
-                            <td class="text-center">
-                                <button type="button"
-                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                        class="fas fa-check"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light" id="sa-warning"> <i
-                                        class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      Showing 1 to 2 of 2 entries
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-end">
+                      <nav>
+                        <ul class="pagination" style="justify-content: end;">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item active">
+                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+
+
             </div>
         </div>
     </div> <!-- end col -->
@@ -150,7 +135,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label">Project</label>
-                                    <select class="form-control select2">
+                                    <select class="form-control form-select">
                                         <option>--Select--</option>
                                         <option value="1">Governing Office</option>
                                         <option value="2">Operations</option>
@@ -164,8 +149,8 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="validationCustom02" class="form-label">Trans.Amount</label>
-                                    <input type="text" class="form-control" id="validationCustom02"
-                                        placeholder="Trans.Amount" required>
+                                    <x-input-text name="" placeholder="Trans.Amount">
+                                    </x-input-text>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -175,11 +160,8 @@
                                 <div class="mb-3">
                                     <label>Vaucher date</label>
                                     <div class="input-group" id="datepicker1">
-                                        <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1'
-                                            data-provide="datepicker">
-
-                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                        <x-input-text type="date" name="" placeholder="dd M, yyyy">
+                                        </x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -188,8 +170,8 @@
                             <div class="col-md-8">
                                 <div class="mb-3">
                                     <label for="validationCustom02" class="form-label">Particulars</label>
-                                    <input type="text" class="form-control" id="validationCustom02"
-                                        placeholder="Particulars" required>
+                                    <x-input-text name="" placeholder="Particulars">
+                                    </x-input-text>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -198,8 +180,8 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="validationCustom04" class="form-label">Reference</label>
-                                    <input type="text" class="form-control" id="validationCustom04"
-                                        placeholder="Reference" required>
+                                    <x-input-text name="" placeholder="Reference">
+                                    </x-input-text>
                                     <div class="invalid-feedback">
                                         Please provide a valid city.
                                     </div>
@@ -233,23 +215,23 @@
                                                 <div data-repeater-item class="row">
                                                     <div class=" col-lg-3 d-flex p-0 p-0 pe-1 pb-1 align-items-center">
                                                         <span class="pe-2 pb-1">01</span>
-                                                        <input type="text" id="name" name="untyped-input"
-                                                            class="form-control" placeholder="Acc. Number" />
+                                                        <x-input-text name="" placeholder="Acc. Number">
+                                                        </x-input-text>
                                                     </div>
 
                                                     <div class=" col-lg-4 p-0 pe-1 pb-1">
-                                                        <input type="email" id="email" class="form-control"
-                                                            placeholder="Acc. Particular" />
+                                                        <x-input-text name="" placeholder="Acc. Particular">
+                                                        </x-input-text>
                                                     </div>
 
                                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                        <input type="text" id="subject" class="form-control"
-                                                            placeholder="Debit" />
+                                                        <x-input-text name="" placeholder="Debit">
+                                                        </x-input-text>
                                                     </div>
 
                                                     <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                        <input type="text" id="subject" class="form-control"
-                                                            placeholder="Credit" />
+                                                        <x-input-text name="" placeholder="Credit">
+                                                        </x-input-text>
                                                         <button class="btn btn-danger  ms-2">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
@@ -286,7 +268,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- journal form start -->
                     <!-- journal form start -->
                     <form class="needs-validation" novalidate>
                         <div class="row">
@@ -366,7 +347,6 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <!-- table start -->
                                     </div>
 
                                 </div>
@@ -386,43 +366,13 @@
     
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
     <!-- form repeater js -->
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
-
     <!-- Init js -->
     <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
 
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
 @endsection

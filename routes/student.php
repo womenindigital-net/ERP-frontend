@@ -25,6 +25,10 @@ Route::group(['prefix' => 'student', 'middleware' => []], function () {
     Route::get('dairy/incident-record', [StudentController::class, 'incidentRecord'])->name('student.dairy.incident-record');
     Route::get('dairy/medicine-admin', [StudentController::class, 'medicineAdmin'])->name('student.dairy.medicine-admin');
     Route::get('assessment/functional_movement_skills', [StudentController::class, 'functionalMovementskill'])->name('assessment.functional_movement_skills');
+    Route::get('co-curricular/drama-diary-evaluation', [StudentController::class, 'dramaDiary'])->name('student.co-curricular.drama-diary-evaluation');
+    Route::get('accounting/income/student_income', [StudentController::class, 'studentIncome'])->name('accounting.income.student_income');
+    Route::get('accounting/income/sale_voucher', [StudentController::class, 'studentSaleVoucher'])->name('accounting.income.sale_voucher');
+    Route::get('accounting/income/received_payment', [StudentController::class, 'studentReceivedPayment'])->name('accounting.income.received_payment');
     Route::get('student/co-curricular/drama-diary-evaluation', [StudentController::class, 'dramaDiary'])->name('student.co-curricular.drama-diary-evaluation');
     Route::get('program/assign-task', [StudentController::class, 'assignTask'])->name('program.assign-task');
     Route::get('program/create-itp', [StudentController::class, 'createItp'])->name('program.create-itp');

@@ -3,15 +3,6 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
 @endsection
 
@@ -78,26 +69,22 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="validationCustom02" class="form-label">Customer Phone</label>
-                                        <input type="text" class="form-control" id="validationCustom02"
-                                            placeholder="Enter ship to address here"  required>
+                                        <x-input-text name="" placeholder="">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Date</label>
-                                            <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-
-                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                            </div>
+                                        <x-input-text   type="date" name="" placeholder="">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="validationCustom02" class="form-label">Ship to addr</label>
-                                        <input type="text" class="form-control" id="validationCustom02"
-                                            placeholder="Enter ship to address here"  required>
+                                        <x-input-text name="" placeholder="Enter ship to address here">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -164,20 +151,25 @@
                                                             </select>
                                                         </div>
                                                         <div  class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text" readonly class="form-control"/>
+                                                            <x-input-text name="" placeholder="">
+                                                            </x-input-text>
                                                         </div>
 
                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="text"  class="form-control"/>
+                                                            <x-input-text name="" placeholder="">
+                                                            </x-input-text>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="number" class="form-control"/>
+                                                            <x-input-text name="" placeholder="">
+                                                            </x-input-text>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="number" class="form-control"/>
+                                                            <x-input-text name="" placeholder="">
+                                                            </x-input-text>
                                                         </div>
                                                         <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
-                                                            <input type="text" readonly class="form-control"/>
+                                                            <x-input-text name="" placeholder="">
+                                                            </x-input-text>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -195,7 +187,8 @@
                                                         <div class="row">
                                                             <label for="horizontal-firstname-input" class="col-4 text-end col-form-label text-end">Reference</label>
                                                             <div class="col-8">
-                                                                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter reference if any ">
+                                                                <x-input-text name="" placeholder="Enter reference if any">
+                                                                </x-input-text>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -246,7 +239,8 @@
                                                     <div class="row mb-2">
                                                         <label for="horizontal-firstname-input" class="col-3 text-end col-form-label">Cash Pay</label>
                                                         <div class="col-9">
-                                                        <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Cash Amount ">
+                                                        <x-input-text name="" placeholder="Enter Cash Amount">
+                                                        </x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -265,13 +259,15 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter Bank Name Here">
+                                                                    <x-input-text name="" placeholder="Enter Bank Name Here">
+                                                                    </x-input-text>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Cheque No</label>
-                                                                    <input type="text" class="form-control" placeholder="Phone One Here ">
+                                                                    <x-input-text name="" placeholder="Phone One Here ">
+                                                                    </x-input-text>
                                                                     
                                                                 </div>
                                                             </div>
@@ -281,13 +277,15 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label"> Acc No</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter  Phone Two Here">
+                                                                    <x-input-text name="" placeholder="Enter  Phone Two Here ">
+                                                                    </x-input-text>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Account Name</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter Acc.Name Here">
+                                                                    <x-input-text name="" placeholder="Enter Acc.Name Here ">
+                                                                    </x-input-text>
                                                                 </div>
                                                             </div>
                                                             
@@ -296,7 +294,8 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Bank Name</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter Bank Name Here">
+                                                                    <x-input-text name="" placeholder="Enter Bank Name Here ">
+                                                                    </x-input-text>
                                                                     
                                                                 </div>
                                                             </div>
@@ -318,14 +317,16 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Amount</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter  Amount">
+                                                                    <x-input-text name="" placeholder="Enter  Amount">
+                                                                    </x-input-text>
                                                                     
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label"> Card No</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter  Credit Card Number">
+                                                                    <x-input-text name="" placeholder="Enter  Credit Card Number">
+                                                                    </x-input-text>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -333,15 +334,16 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Card Name</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter  Card Name">
+                                                                    <x-input-text name="" placeholder="Enter  Card Name">
+                                                                    </x-input-text>
                                                                     
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Card Type</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter  Card Type here">
-                                                                    
+                                                                    <x-input-text name="" placeholder="Enter  Card Type here">
+                                                                    </x-input-text>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -419,53 +421,7 @@
     </div>
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-
-    <!-- form repeater js -->
-    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
     
     <!-- form wizard init -->
     <script src="http://127.0.0.1:8000/assets/js/pages/form-wizard.init.js"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-     {{-- Custom Js  form --}}
-     <script>
-        $(document).ready(function(){
-            $("#formCheckBoxForm").hide();
-            $("#formCheckBoxForm2").hide();
-
-            $("#formCheckBox").click(function(){
-                $("#formCheckBoxForm").toggle();
-            });
-            $("#formCheckBox2").click(function(){
-                $("#formCheckBoxForm2").toggle();
-            });
-        });
-     </script>
 @endsection
