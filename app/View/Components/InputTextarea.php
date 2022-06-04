@@ -8,17 +8,16 @@ class InputTextarea extends Component
 {
     public string $name;
     public int $rows;
-    public int $cols;
+    public string $cols;
     public $label;
     public $placeholder;
     public $value;
     public string $required;
     public string $wireModel;
-
     /**
      * @throws \Exception
      */
-    public function __construct($name = '', $multiple=false, $label = false, $rows = 5, $cols = 5, $placeholder = false, $value = false, $required = false, $wireModel=false)
+    public function __construct($name = '', $multiple = false, $label = false, $rows = 5, $cols = 5, $placeholder = false, $value = false, $required = false, $wireModel = false)
     {
         if (!$name and !$wireModel) {
             throw new \Exception("Either name or wire model is required");

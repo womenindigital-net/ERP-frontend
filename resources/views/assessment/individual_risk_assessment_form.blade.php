@@ -152,22 +152,7 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <select class="form-control select2 form-select">
-                      <option value="0">Select</option>
-                      <option value="1">abulhasnat</option>
-                      <option value="2">nila01</option>
-                      <option value="3">Airins</option>
-                      <option value="4">AmalRozareo</option>
-                      <option value="5">anasbin</option>
-                      <option value="6">arupmandal</option>
-                      <option value="7">asadzaman</option>
-                      <option value="8">Badshah</option>
-                      <option value="9">BijoyRozareo</option>
-                      <option value="10">Chandan</option>
-                      <option value="11">dolonbishwash</option>
-                      <option value="12">golamrabbani</option>
-                      <option value="13">jahinur</option>
-                    </select>
+                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -194,66 +179,10 @@
               </div>
             </form>
           </section>
-
-          <!-- Company Document -->
           <h3>Risk Assessment</h3>
           <section>
             <form>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>Hazard spotted/Type</h5>
-                    <div class="form-check d-flex p-2">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Motor Skills related</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Intellectual / cognitive</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Sensory Related</label>
-                      </div>
-                    </div>
-                    <div class="form-check d-flex p-2">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Intrapersonal related </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Academic related</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Communication related</label>
-                      </div>
-                    </div>
-                    <div class="form-check d-flex p-2">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Aggressiveness and tantrum related </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Emotional related</label>
-                      </div>
-                    </div>
-                    <div class="form-check d-flex p-2">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Behavior related </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Daily Living related</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="hh" type="checkbox" label="Hazard spotted/Type" :records="$IRAConstants::$riskAssessment" :isVertical="false"></x-input-radio-or-check>
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
@@ -314,64 +243,14 @@
                   </div>
                 </div>
               </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Likelihood</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Almost Certain </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Likely</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Possible</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Unlikely</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Rare</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Consequences</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Insignificant</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Minor</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Significant </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Major</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Severe</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+              <x-input-radio-or-check name="hh" label="Likelihood"
+                :records="$IRAConstants::$likelihood"></x-input-radio-or-check>
+                {{-- end row --}}
+                <x-input-radio-or-check name="hh" label="Consequences"
+                :records="$IRAConstants::$consu"></x-input-radio-or-check>
+                {{-- end row --}}
+
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">

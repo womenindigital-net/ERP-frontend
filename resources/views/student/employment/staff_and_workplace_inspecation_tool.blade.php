@@ -144,13 +144,8 @@
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-firstname-input">Collection Date:</label>
-                                        <div class="input-group" id="datepicker2">
-                                            <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                data-date-format="dd M, yyyy" data-date-container='#datepicker2'
-                                                data-provide="datepicker" data-date-autoclose="true">
-                                            <span class="input-group-text">
-                                                <i class="mdi mdi-calendar"></i></span>
-                                        </div><!-- input-group -->
+                                        <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -162,7 +157,6 @@
                             </div>
                         </form>
                     </section>
-
                     <!-- Company Document -->
                     <h3>Common</h3>
                     <section>
@@ -172,7 +166,7 @@
                                     <div class="m-0">
                                         <h5>পরিদর্শনকৃত স্থান / প্রতিষ্ঠান(ঠিকানা)</h5>
                                         <h5 class="mt-2">শিক্ষক এর মন্তব্য</h5>
-                                        <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +175,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5>পরিদর্শনকারীর নাম ও পদবী</h5>
-                                        <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +184,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">কর্মীর কর্মস্থলে যোগদানের তারিখ</h5>
-                                        <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -198,7 +192,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">কর্মীর মাসিক বেতন</h5>
-                                        <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -206,7 +200,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">কর্মীর সাপ্তাহিক ছুটি সম্পর্কে তথ্য</h5>
-                                        <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +208,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">লক্ষিত কর্মীকে দিনে কত ঘণ্টা কাজ করতে হয় ? সময় উল্লেখ করুন</h5>
-                                        <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -223,217 +217,40 @@
                                     <div class="m-0">
                                         <h5 class="mb-4">লক্ষিত কর্মীর পদবী কি বা সে এ প্রতিষ্ঠানে কি কি দায়িত্ব পালন
                                             করে ?</h5>
-                                        <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                              <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
                             <!-- end row -->
                         </form>
                     </section>
-
                     <!-- Bank Details -->
                     <h3>Check List</h3>
                     <section>
                         <form>
+                            <x-input-radio-or-check name="" label="এ কর্ম ঘণ্টা কী তার সক্ষমতার প্রেক্ষিতে সঠিক ?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="লক্ষিত কর্মীর কি ডিউটির জন্য নির্ধারিত পোশাক আছে?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী কি ডিউটির সময় নির্ধারিত পোশাক পরিধান করে আছে ?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী কি যথেষ্ট পরিস্কার-পরিচ্ছন্ন ?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী কি উপযুক্ত / প্রত্যাশিত বেতন-ভাতা বা মজুরী পাচ্ছে"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী ও নিয়োগকারী কর্তৃপক্ষের মাঝে কি নিয়মিত যোগাযোগ হয়?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী ও নিয়োগকারী কর্তৃপক্ষের মাঝে কি নিয়মিত যোগাযোগ হয়?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="লক্ষিত কর্মীর প্রতি কর্মস্থলের সহকর্মীদের কথাবার্তা/মন্তব্য/আচরণ কেমন ?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="" label="কর্মস্থলে মোটের উপর কাজের পরিবেশ কেমন ?"
+                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
                             <div class="row border-top py-2">
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
-                                        <h5>এ কর্ম ঘণ্টা কী তার সক্ষমতার প্রেক্ষিতে সঠিক ?</h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end row -->
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5>লক্ষিত কর্মীর কি ডিউটির জন্য নির্ধারিত পোশাক আছে?</h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end row -->
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5 class="mb-4">লক্ষিত কর্মী কি ডিউটির সময় নির্ধারিত পোশাক পরিধান করে আছে ?
-                                        </h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5 class="mb-4">লক্ষিত কর্মী কি যথেষ্ট পরিস্কার-পরিচ্ছন্ন ?</h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5 class="mb-4">লক্ষিত কর্মী কি উপযুক্ত / প্রত্যাশিত বেতন-ভাতা বা মজুরী পাচ্ছে
-                                            ?</h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5 class="mb-4">লক্ষিত কর্মী ও নিয়োগকারী কর্তৃপক্ষের মাঝে কি নিয়মিত যোগাযোগ হয়
-                                            ?</h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5 class="mb-4">লক্ষিত কর্মীর প্রতি কর্মস্থলের সহকর্মীদের
-                                            কথাবার্তা/মন্তব্য/আচরণ কেমন ?</h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
                                         <h5 class="mb-4">বিস্তারিত লিখুন</h5>
-                                        <textarea name="" id="" rows="1" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5 class="mb-4">লক্ষিত কর্মীর প্রতি ক্লায়েন্টদের কথাবার্তা/মন্তব্য/আচরণ কেমন ?
-                                        </h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                        <h5 class="mb-4">বিস্তারিত লিখুন</h5>
-                                        <textarea name="" id="" rows="1" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5 class="mb-4">কর্মস্থলে মোটের উপর কাজের পরিবেশ কেমন ?</h5>
-                                        <div class="form-check d-flex">
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> হ্যাঁ </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> না </label>
-                                            </div>
-                                            <div class="me-5 ">
-                                                <input class="form-check-input" type="radio" name="">
-                                                <label class="form-check-label"> প্রযোজ্য নয় </label>
-                                            </div>
-                                        </div>
-                                        <h5 class="mb-4">বিস্তারিত লিখুন</h5>
-                                        <textarea name="" id="" rows="1" class="form-control"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -441,7 +258,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">মন্তব্য / সুপারিশ t(প্রয়োজনে অতিরিক্ত পাতা ব্যবহার করুন)</h5>
-                                        <textarea name="" id="" rows="1" class="form-control"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -449,7 +266,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">সাজেশন</h5>
-                                        <textarea name="" id="" rows="1" class="form-control"></textarea>
+                                        <x-input-text name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +274,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">পরিদর্শনকারীর স্বাক্ষর ও তারিখ</h5>
-                                        <input type="file" name="" id="" class="form-control">
+                                        <x-input-text type="file" name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -465,7 +282,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">নাম এবং পদবী</h5>
-                                        <textarea name="" id="" rows="1" class="form-control"></textarea>
+                                        <x-input-text type="file" name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -473,7 +290,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">তারিখ</h5>
-                                        <input type="date" name="" class="form-control">
+                                        <x-input-text type="date" name=""></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -485,7 +302,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
 @endsection
 
 @section('script')

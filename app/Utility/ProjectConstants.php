@@ -46,7 +46,7 @@ final class ProjectConstants
         self::YES => 'হ্যাঁ',
         self::NO  => 'না',
     ];
-    
+
     public static array $yesNoEn = [
         self::YES => 'Yes',
         self::NO  => 'No',
@@ -69,11 +69,11 @@ final class ProjectConstants
     ];
 
     public static array $socialCommunication = [
-       self::NOTPRESENT => 'Not Present',
-       self::USESNOWORD => 'Uses NO Words (Gestures - Preverbal)',
-       self::USES1TO3WORDS => 'Uses 1-3 Words / sentences',
-       self::ABLETOCOMMUNICATION => 'Able to communicate/ express opinion',
-       self::USESCOMLESLANG => 'Uses Complex Language',
+        self::NOTPRESENT => 'Not Present',
+        self::USESNOWORD => 'Uses NO Words (Gestures - Preverbal)',
+        self::USES1TO3WORDS => 'Uses 1-3 Words / sentences',
+        self::ABLETOCOMMUNICATION => 'Able to communicate/ express opinion',
+        self::USESCOMLESLANG => 'Uses Complex Language',
     ];
 
     public static array $autismBehaviorCheck = [
@@ -81,5 +81,5 @@ final class ProjectConstants
         self::SOMETIME => 'Sometimes',
         self::IN_SPECIAL_OCCASION => 'In special occasion',
         self::DONT_DO_AT_ALL => "Don't do at all",
-     ];
+    ];
 }
