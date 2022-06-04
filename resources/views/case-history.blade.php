@@ -140,10 +140,8 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
-                    <div class="input-group" id="datepicker2">
-                      <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
-                      </x-input-text>
-                    </div><!-- input-group -->
+                    <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
+                    </x-input-text>
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -176,15 +174,15 @@
                 <div class="col-lg-6">
                   <div class="mb-3">
                     <label for="verticalnav-phoneno-input">Phone</label>
-                    <input type="text" class="form-control" id="verticalnav-phoneno-input"
-                      placeholder="Enter Your Phone No.">
+                    <x-input-text name="" placeholder="Enter Your Phone No.">
+                    </x-input-text>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="mb-3">
                     <label for="verticalnav-email-input">Email</label>
-                    <input type="email" class="form-control" id="verticalnav-email-input"
-                      placeholder="Enter Your Email ID">
+                    <x-input-text name="" type="email" placeholder="Enter Your Email ID">
+                    </x-input-text>
                   </div>
                 </div>
               </div>

@@ -135,18 +135,20 @@
                         <span>Assessment</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="assessment.sensory-checklist-for-child">Sensory checklist for Child</a></li>
-                        <li><a href="assessment.Social-Communication">Social Communication</a></li>
-                        <li><a href="assessment.occupational-therapy">Occupational Therapy</a></li>
-                        <li><a href="assessment.physiotherapy">Physiotherapy</a></li>
-                        <li><a href="assessment.functional_communication_assessment">Functional Communication
+                        <li><a href="{{ route('sensory.checklist.for.child') }}">Sensory checklist for Child</a></li>
+                        <li><a href="{{ route('social.communication') }}">Social Communication</a></li>
+                        <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
+                        <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
+                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
                                 Assessment</a></li>
-                        <li><a href="assessment.functional_movement_skills">Fundamental Movement Skills</a></li>
-                        <li><a href="assessment.executive_function_test">Executive Function test</a></li>
-                        <li><a href="assessment.autism_behavior_checklist">Autism Behavior Checklist (ABC)</a></li>
-                        <li><a href="assessment.sensory_checklist_for_young_adult">Sensory checklist for Young Adult</a>
+                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement
+                                Skills</a></li>
+                        <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
+                        <li><a href="{{ route('autism.behavior.checklist') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('sensory.checklist.for.young.adult') }}">Sensory checklist for Young
+                                Adult</a>
                         </li>
-                        <li><a href="assessment.individual_risk_assessment_form">Individual risk assessment form</a>
+                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a>
                         </li>
                     </ul>
                 </li>
@@ -157,27 +159,27 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="student.student_list">Students</a>
+                            <a href="{{ route('student.list') }}">Students</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Dairy
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="student.dairy.trip-report-form">Trip report and Evaluation Form</a>
+                                    <a href="{{ route('trip.report.form') }}">Trip report and Evaluation Form</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.gym-outing-evalution">Gym and Outing Evaluation (D3cDT)
+                                    <a href="{{ route('gym.outing.evaluation') }}">Gym and Outing Evaluation (D3cDT)
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.ot-assessment">OT assessment in computer trainee</a>
+                                    <a href="{{ route('ot.assessment') }}">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.incident-record">Incident Record</a>
+                                    <a href="{{ route('student.dairy.incident-record') }}">Incident Record</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.medicine-admin">Medicine admin</a>
+                                    <a href="{{ route('student.dairy.medicine-admin') }}">Medicine admin</a>
                                 </li>
                                 {{-- <li>
                                     <a href="student.dairy.score-calculation">Score Calculation</a>
@@ -190,15 +192,19 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="student.co-curricular.drama-diary-evaluation">Drama Diary Evaluation</a>
+                                <li> <a href="{{ route('student.co-curricular.drama-diary-evaluation') }}">Drama Diary
+                                        Evaluation</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
+                            <a href="student.student-attendence">Student Attendence</a>
+                        </li>
+                        <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="student.employment.staff_and_workplace_inspecation_tool">কর্মী ও কর্মস্থল
-                                        পরিদর্শন টুল</a>
+                                <li> <a href="{{ route('student.employment.staff_and_workplace_inspecation_tool') }}">কর্মী
+                                        ও কর্মস্থল পরিদর্শন টুল</a>
                                 </li>
                             </ul>
                         </li>
@@ -322,7 +328,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-details-setup">Bank Details Setup</a>
+                                    <a href="setup.account-details">Account Details</a>
+                                </li>
+                                <li>
+                                    <a href="setup.manage-chequebook">Manage Chequebook</a>
                                 </li>
                             </ul>
                         </li>
@@ -330,7 +339,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-recncilation">Bank Reconcilation</a>
+                                    <a href="setup.bank-reconcilation-new">Bank Reconcilation New</a>
+                                </li>
+                                <li>
+                                    <a href="setup.bank-reconcilation">Bank Reconcilation</a>
                                 </li>
                             </ul>
                         </li>
@@ -357,7 +369,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.course-and-admission">Course and Admission</a>
+                                    <a href="setup.course-and-admission">Course </a>
                                 </li>
 
                             </ul>
@@ -374,7 +386,13 @@
                             <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.vocational-marking">Vocational Marking</a>
+                                    <a href="setup.vocational-marking-category">Vocational Marking Category</a>
+                                </li>
+                                <li>
+                                    <a href="setup.vocational-marking-subcategory">Vocational Marking Sub Category</a>
+                                </li>
+                                <li>
+                                    <a href="setup.vocational-student-evolution">Vocational Student Evolution</a>
                                 </li>
                             </ul>
                         </li>
