@@ -68,7 +68,8 @@
                         </div>
                     </div>
                 </form>
-                <form wire:submit.prevent="submit" class="repeater">
+
+                <form class="repeater" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-4   pe-1">
                             <label for="name">Payment Amount For</label>
@@ -80,8 +81,8 @@
                             <label for="email">Payment Amount </label>
                         </div>
                     </div>
-                    <div data-repeater-list="group-a">
-                        <div data-repeater-item class="row">
+                    <div data-repeater-list="group-a" id="removeButton">
+                        <div data-repeater-item class="row removeRow">
                             <div class="mb-3 d-flex col-lg-4">
                                 <span class="pe-2 pb-1">01</span>
                                 <div>
@@ -115,7 +116,7 @@
                                 <x-input-text wireModel='amount' type="number" placeholder='Payment Amount'>
                                 </x-input-text>
                                 <div>
-                                    <button class="btn btn-danger ms-2">
+                                    <button class="btn btn-danger ms-2 removeBtn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </div>
@@ -123,8 +124,7 @@
                         </div>
 
                     </div>
-                    <input data-repeater-create type="button" wire:click="add" class="btn btn-success mt-3 px-4 mt-lg-0"
-                        value="Add" />
+                    <input data-repeater-create type="button" class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
                 </form>
             </div>
             <div class="modal-footer">

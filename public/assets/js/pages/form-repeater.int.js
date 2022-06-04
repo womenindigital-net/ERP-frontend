@@ -4,6 +4,12 @@ var __webpack_exports__ = {};
   !*** ./resources/js/pages/form-repeater.int.js ***!
   \*************************************************/
 $(document).ready(function () {
+
+  $("body").on("click", ".removeBtn", function(){
+    $(this).closest('.removeRow').remove();
+});
+  
+
   "use strict";
 
   $(".repeater").repeater({
