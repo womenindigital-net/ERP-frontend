@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,15 @@ class CourseFactory extends Factory
      */
     public function definition()
     {
+
+        $count = 0;
+        $count++;
+        $parentCourseId = Course::count() > 10 ? Course::inRandomOrder()->first()->id: null;
         return [
-            //
+            'title' => $courses[$count++],
+            'amount' => $this->faker->randomDigit(200),
+            'duration' => $this->faker->randomDigitNotZero(200),
+            'parent_course_id' => $parentCourseId,
         ];
     }
 }

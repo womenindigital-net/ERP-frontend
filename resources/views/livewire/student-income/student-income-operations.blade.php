@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </form>
-                <form wire:submit.prevent="submit" class="repeater">
+                <form wire:submit.prevent="store" class="repeater">
                     <div class="row">
                         <div class="col-lg-4   pe-1">
                             <label for="name">Payment Amount For</label>
@@ -123,7 +123,7 @@
                         </div>
 
                     </div>
-                    <input data-repeater-create type="button" wire:click="add" class="btn btn-success mt-3 px-4 mt-lg-0"
+                    <input data-repeater-create type="button"class="btn btn-success mt-3 px-4 mt-lg-0"
                         value="Add" />
                 </form>
             </div>

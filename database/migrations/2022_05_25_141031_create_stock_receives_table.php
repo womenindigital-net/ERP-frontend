@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('receive_type')->nullable();
             $table->string('note')->nullable();
             $table->string('date')->nullable();
-            $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });

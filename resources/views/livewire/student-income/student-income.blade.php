@@ -20,9 +20,15 @@
         </div>
     </div> <!-- end col -->
 
-
     <!--  Extra Large modal example -->
     <div class="modal fade student-income-modal-xl-add" tabindex="-1" role="dialog" aria-hidden="true">
         <livewire:student-income.student-income-operations />
     </div>
 </div>
+
+@section('script')
+    <!-- form repeater js -->
+    <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
+
+@endsection

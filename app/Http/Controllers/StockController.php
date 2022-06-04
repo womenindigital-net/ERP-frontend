@@ -83,4 +83,34 @@ class StockController extends Controller
     {
         //
     }
+
+    public function stockReceive()
+    {
+        return view('stock-management.stock_receive');
+    }
+
+    public function stockAssign()
+    {
+        return view('inventory-management.stock_assign');
+    }
+
+    public function finishedGoods()
+    {
+        return view("stock-management.finished_goods");
+    }
+
+    public function materialCollect()
+    {
+        return view('stock-management.material_callects');
+    }
+
+    public function stockTransfer()
+    {
+        return view('stock-management.stock_transfer');
+    }
+
+    public function stockCount()
+    {
+        return view('stock-management.stock_count');
+    }
 }
