@@ -241,5 +241,19 @@ class StudentController extends Controller
         ];
         return view('student.employment.staff_and_workplace_inspecation_tool', $data);
     }
+    public function assignTask(): Factory|View|Application
+    {   
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('program.assign-task', $data);
+    }
+    public function createItp(): Factory|View|Application
+    {   
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('program.create-itp', $data);
+    }
 }
 

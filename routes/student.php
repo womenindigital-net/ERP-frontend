@@ -26,9 +26,7 @@ Route::group(['prefix' => 'student', 'middleware' => []], function () {
     Route::get('dairy/medicine-admin', [StudentController::class, 'medicineAdmin'])->name('student.dairy.medicine-admin');
     Route::get('assessment/functional_movement_skills', [StudentController::class, 'functionalMovementskill'])->name('assessment.functional_movement_skills');
     Route::get('student/co-curricular/drama-diary-evaluation', [StudentController::class, 'dramaDiary'])->name('student.co-curricular.drama-diary-evaluation');
-
-
-
-
+    Route::get('program/assign-task', [StudentController::class, 'assignTask'])->name('program.assign-task');
+    Route::get('program/create-itp', [StudentController::class, 'createItp'])->name('program.create-itp');
 
 });

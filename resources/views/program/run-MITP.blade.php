@@ -12,8 +12,6 @@
         @slot('title')RUN MITP @endslot
     @endcomponent
     {{-- code  --}}
-
- 
     <div class="row">
         <div class="col-12">
             <div class="card">

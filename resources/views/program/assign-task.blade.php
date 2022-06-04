@@ -189,7 +189,7 @@
                         <div class="row pb-3">
                             <div class="col-6">
                                 <label class="form-label">Instruction</label>
-                                <textarea name="" class="form-control" rows="5"></textarea>
+                                <x-input-textarea name='' rows='5'></x-input-textarea>
                             </div>
                             <div class="col-6 mt-4 border border-2">
                                 <div class="fw-bold">Section E: Domain 01 - Physical development : <span
@@ -233,10 +233,7 @@
                                                             <p class="form-control m-0">Cut on a line</p>
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                            <select id="formrow-inputState" class="form-select"
-                                                                disabled>
-                                                                <option selected="">Shonod</option>
-                                                            </select>
+                                                            <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                                                         </div>
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1">
                                                             <select id="formrow-inputState" class="form-select">
@@ -257,9 +254,7 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-textarea name='' rows='1'></x-input-textarea>
-                                                            {{-- <textarea class="form-control" name="" id=""
-                                                                rows="1"></textarea> --}}
+                                                            <x-input-textarea name='' rows='1' cols='35'></x-input-textarea>
                                                             <button class="btn btn-danger btn-rounded ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
