@@ -143,8 +143,9 @@
                         <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement
                                 Skills</a></li>
                         <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
-                        <li><a href="assessment.autism_behavior_checklist">Autism Behavior Checklist (ABC)</a></li>
-                        <li><a href="assessment.sensory_checklist_for_young_adult">Sensory checklist for Young Adult</a>
+                        <li><a href="{{ route('autism.behavior.checklist') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('sensory.checklist.for.young.adult') }}">Sensory checklist for Young
+                                Adult</a>
                         </li>
                         <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a>
                         </li>
@@ -157,21 +158,21 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="student.student_list">Students</a>
+                            <a href="{{ route('student.list') }}">Students</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Dairy
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="student.dairy.trip-report-form">Trip report and Evaluation Form</a>
+                                    <a href="{{ route('trip.report.form') }}">Trip report and Evaluation Form</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.gym-outing-evalution">Gym and Outing Evaluation (D3cDT)
+                                    <a href="{{ route('gym.outing.evaluation') }}">Gym and Outing Evaluation (D3cDT)
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.ot-assessment">OT assessment in computer trainee</a>
+                                    <a href="{{ route('ot.assessment') }}">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('student.dairy.incident-record') }}">Incident Record</a>

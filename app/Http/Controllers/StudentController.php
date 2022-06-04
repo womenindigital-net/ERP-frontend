@@ -201,6 +201,14 @@ class StudentController extends Controller
 
         return view('assessment.functional_communication_assessment', $data);
     }
+    public function sensoryChecklistForYoungAdult(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.sensory_checklist_for_young_adult', $data);
+    }
     public function individualRiskAssessmentForm(): Factory|View|Application
     {
         $data = [
@@ -233,6 +241,42 @@ class StudentController extends Controller
         ];
 
         return view('assessment.functional_movement_skills', $data);
+    }
+
+
+    public function studentList(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.student_list', $data);
+    }
+
+    public function tripReportForm(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.trip-report-form', $data);
+    }
+    public function gymOutingEvaluation(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.gym-outing-evalution', $data);
+    }
+
+    public function otAssessment(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.ot-assessment', $data);
     }
     public function dramaDiary(): Factory|View|Application
     {

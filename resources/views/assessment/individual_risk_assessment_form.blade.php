@@ -182,14 +182,15 @@
           <h3>Risk Assessment</h3>
           <section>
             <form>
-              <x-input-radio-or-check name="hh" type="checkbox" label="Hazard spotted/Type" :records="$IRAConstants::$riskAssessment" :isVertical="false"></x-input-radio-or-check>
+              <x-input-radio-or-check name="hh" type="checkbox" label="Hazard spotted/Type"
+                :records="$IRAConstants::$riskAssessment" :isVertical="false"></x-input-radio-or-check>
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">
                     <h5>Cause of Hazzard</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="name" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -204,7 +205,7 @@
                   <div class="m-0">
                     <h5>Possible Concerns</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="name" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -215,7 +216,7 @@
                   <div class="m-0">
                     <h5>Risk Rating (Overall risk level identified: 1-10 )</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="name" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -226,7 +227,7 @@
                   <div class="m-0">
                     <h5>Action to Reduce Hazard</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="name" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -237,26 +238,26 @@
                   <div class="m-0">
                     <h5>Level of risk (1-25)</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="name" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <x-input-radio-or-check name="hh" label="Likelihood"
-                :records="$IRAConstants::$likelihood"></x-input-radio-or-check>
-                {{-- end row --}}
-                <x-input-radio-or-check name="hh" label="Consequences"
-                :records="$IRAConstants::$consu"></x-input-radio-or-check>
-                {{-- end row --}}
+              <x-input-radio-or-check name="hh" label="Likelihood" :records="$IRAConstants::$likelihood">
+              </x-input-radio-or-check>
+              {{-- end row --}}
+              <x-input-radio-or-check name="hh" label="Consequences" :records="$IRAConstants::$consu">
+              </x-input-radio-or-check>
+              {{-- end row --}}
 
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">
                     <h5>Staff signature</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="name" placeholder="">
                     </div>
                   </div>
                 </div>
@@ -266,7 +267,7 @@
                   <div class="m-0">
                     <h5>Staff name</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder="">
+                      <x-input-text name="name" placeholder="">
                       </x-input-text>
                     </div>
                   </div>
@@ -287,7 +288,7 @@
                   <div class="m-0">
                     <h5>Support worker name</h5>
                     <div class="mb-2">
-                      <x-input-text name="" placeholder=""></x-input-text>
+                      <x-input-text name="name" placeholder=""></x-input-text>
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,7 @@
 
 namespace App\Utility;
 
-final class Physiotherapy
+final class PhysioTherapy
 {
     const NORMAL = 'Normal';
     const HYPER = 'Hyper';
