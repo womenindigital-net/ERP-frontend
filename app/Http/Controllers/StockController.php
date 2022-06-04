@@ -113,4 +113,29 @@ class StockController extends Controller
     {
         return view('stock-management.stock_count');
     }
+
+    public function stockOut()
+    {
+        return view('inventory-management.stock_out');
+    }
+
+    public function stockHandReport()
+    {
+        return view('inventory-management.stock_hand_report');
+    }
+
+    public function stockProductReport()
+    {
+        return view('inventory-management.location_wise_product_report');
+    }
+
+    public function stockReOrderReport()
+    {
+        return view('inventory-management.stock_reorder_report');
+    }
+
+    public function stockProductAnalysisReport()
+    {
+        return view('product_analysis_report');
+    }
 }

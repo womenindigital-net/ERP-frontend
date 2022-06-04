@@ -91,13 +91,13 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('stock-assign')}}">Stock Assign</a></li>
-                        <li><a href="inventory-management.stock_out">Stock Out</a></li>
-                        <li><a href="inventory-management.stock_hand_report">Stock On Hand Report</a></li>
-                        <li><a href="inventory-management.location_wise_product_report">Location Wise Product Report</a>
+                        <li><a href="{{route('stock-out')}}">Stock Out</a></li>
+                        <li><a href="{{route('stock-hand-report')}}">Stock On Hand Report</a></li>
+                        <li><a href="{{route('stock-product-report')}}">Location Wise Product Report</a>
                         </li>
-                        <li><a href="inventory-management.stock_reorder_report">Stock Reorder Report</a></li>
+                        <li><a href="{{route('stock-reorder-report')}}">Stock Reorder Report</a></li>
                         {{-- <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li> --}}
-                        <li><a href="product_analysis_report">Report::Product Analysis</a></li>
+                        <li><a href="{{route('product-analysis-report')}}">Report::Product Analysis</a></li>
                     </ul>
                 </li>
 

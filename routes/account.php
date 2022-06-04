@@ -25,7 +25,11 @@ Route::group(['prefix' => 'account', 'middleware' => []], function () {
     Route::get('stock-transfer', [\App\Http\Controllers\StockController::class, 'stockTransfer'])->name('stock-transfer');
     Route::get('stock-count', [\App\Http\Controllers\StockController::class, 'stockCount'])->name('stock-count');
 
-
+    Route::get('stock-out', [\App\Http\Controllers\StockController::class, 'stockOut'])->name('stock-out');
+    Route::get('stock-hand-report', [\App\Http\Controllers\StockController::class, 'stockHandReport'])->name('stock-hand-report');
+    Route::get('stock-product-report', [\App\Http\Controllers\StockController::class, 'stockProductReport'])->name('stock-product-report');
+    Route::get('stock-reorder-report', [\App\Http\Controllers\StockController::class, 'stockReorderReport'])->name('stock-reorder-report');
+    Route::get('product-analysis-report', [\App\Http\Controllers\StockController::class, 'stockProductAnalysisReport'])->name('product-analysis-report');
 
     Route::get('stock-assign', [\App\Http\Controllers\StockController::class, 'stockAssign'])->name('stock-assign');
 });
