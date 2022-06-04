@@ -3,21 +3,7 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
     
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Plugins css -->
-    <link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Sweet Alert-->
-    <link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -87,20 +73,15 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Reference</label>
-                                            <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Refference no here">
-                                            </div>
+                                           <div class="input-group">
+                                            <x-input-text name="" placeholder="Refference no here"></x-input-text>
+                                           </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Issue Date</label>
-                                            <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-
-                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                            </div>
+                                        <x-input-text name="" type="date" placeholder="Refference no here"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -163,13 +144,13 @@
                                                             </select>
                                                         </div>
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <input type="text" readonly class="form-control"/>
+                                                            <x-input-text name=""></x-input-text>
                                                         </div>
                                                         <div  class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <input type="text" class="form-control"/>
+                                                            <x-input-text name=""></x-input-text>
                                                         </div>
-                                                        <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <input type="text" class="form-control"/>
+                                                        <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">  
+                                                            <x-input-text name=""></x-input-text>
                                                             <button class="btn btn-danger btn-rounded ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -200,12 +181,28 @@
                             <div class="text-center" >
                                 <button class="btn btn-danger">Send For Approval</button>
                             </div>
-                            <div class="row">
-                                <div class="col p-0 table-responsive border-0">
-                                    <table id="datatable-buttons" class="table table-bordered table-responsive w-100">
-                                        <thead>
-                                            <tr class="table-primary">
-                                                <th>SL</th>
+                                    <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                            class="form-control form-control-sm form-select form-select-sm">
+                                            <option value="10">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> entries
+                                    </label>
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-end">
+                                    <label style="display: inline-flex;align-items: center;">Search:
+                                        <input type="search" class="form-control form-control-sm" placeholder="">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered w-100">
+                                    <thead>
+                                        <tr class="table-primary">
+                                            <th>SL</th>
                                                 <th>Project</th>
                                                 <th>Type</th>
                                                 <th>Reference</th>
@@ -219,40 +216,74 @@
                                                 <th>Action Taken</th>
                                                 <th>Action Date</th>
                                                 <th>Log</th>
-                                                <th class="nowrap">action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>Administration</td>
-                                                <td>Warehouse to Warehouse</td>
-                                                <td>6</td>
-                                                <td>2021-10-27</td>
-                                                <td>2</td>
-                                                <td>Office Store</td>
-                                                <td>Office Outlet</td>
-                                                <td>No</td>
-                                                <td>No</td>
-                                                <td></td>
-                                                <td>No</td>
-                                                <td></td>
-                                                <td>Create: Md. Kutubuddin .. @ 2021-10-27 11:54:08
-                                                    There is no update record.</td>
-                                                
-                                                <td class="text-center">
-                                                    <button type="button"
-                                                    class="btn btn-sm  m-1 btn-primary btn-rounded waves-effect waves-light"
-                                                    data-bs-toggle="modal" data-bs-target=".finished-goods-modal-xl-view"> <i
-                                                        class="fas fa-eye"></i></button>
-                                                    <a  href="stock_transfer" class="btn btn-sm btn-success btn-rounded waves-effect waves-light">
-                                                        <i class="fas fa-pen"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div> <!-- end col -->
+                                                <th>action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Puja</td>
+                                            <td>puja</td>
+                                            <td>reading</td>
+                                            <td>first to last</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>puja</td>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".finished-goods-modal-xl-view">
+                                                    <i class=" fas fa-eye"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    <i class="fas fa-pen"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-end">
+                                    <nav>
+                                        <ul class="pagination" style="justify-content: end;">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div> <!-- end row -->
                         </div>
                     </div>
@@ -311,13 +342,13 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Reference</label>
-                                    <p class="form-control">6</p>
+                                    <x-input-text name="" placeholder="6"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Issue Date</label>
-                                    <p class="form-control">24-4-2022</p>
+                                    <x-input-text name="" type="date"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -387,48 +418,11 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 @endsection
-@section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
+@section('script')
     <!-- form repeater js -->
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-    {{-- Table --}}
-
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Plugins js -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
 @endsection
 @section('script-bottom')
 @endsection

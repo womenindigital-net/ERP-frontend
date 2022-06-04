@@ -93,8 +93,8 @@
                         <span>Stock Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="stock-management.stock_receive">Stock Receive</a></li>
-                        <li><a href="stock-management.finished_goods">Finished Goods</a></li>
+                        <li><a href="{{route('stock-management.stock_receive')}}">Stock Receive</a></li>
+                        <li><a href="{{route('stock-management.finished_goods')}}">Finished Goods</a></li>
                         <li><a href="stock-management.material_callects">Material Collects</a></li>
                         <li><a href="stock-management.stock_transfer">Stock Transfer</a></li>
                         <li><a href="stock-management.stock_count">Stock Count</a></li>
@@ -108,7 +108,8 @@
                         <span>Pre Admission</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{route('student.appointment')}}">Appointment</a></li>
+                        <li><a href="
+                            ">Appointment</a></li>
                         <li><a href="{{route('student.case-history')}}">Case History</a></li>
                         <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>

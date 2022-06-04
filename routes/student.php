@@ -28,5 +28,9 @@ Route::group(['prefix' => 'student', 'middleware' => []], function () {
     Route::get('student/co-curricular/drama-diary-evaluation', [StudentController::class, 'dramaDiary'])->name('student.co-curricular.drama-diary-evaluation');
     Route::get('program/assign-task', [StudentController::class, 'assignTask'])->name('program.assign-task');
     Route::get('program/create-itp', [StudentController::class, 'createItp'])->name('program.create-itp');
-
+    Route::get('stock-management/stock_receive', [StudentController::class, 'stockReceive'])->name('stock-management.stock_receive');
+    Route::get('stock-management/finished_goods', [StudentController::class, 'finishedGoods'])->name('stock-management.finished_goods');
+    Route::get('stock-management/material_callects', [StudentController::class, 'materialCallects'])->name('stock-management.material_callects');
+    Route::get('stock-management/stock_transfer', [StudentController::class, 'stockTransfer'])->name('stock-management.stock_transfer');
+    Route::get('stock-management/stock_count', [StudentController::class, 'stockCount'])->name('stock-management.stock_count');
 });

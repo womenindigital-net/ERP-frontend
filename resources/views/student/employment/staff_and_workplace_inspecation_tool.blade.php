@@ -175,7 +175,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5>পরিদর্শনকারীর নাম ও পদবী</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        Reference
                                     </div>
                                 </div>
                             </div>

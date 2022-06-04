@@ -3,22 +3,7 @@
 @section('title') MATERIAL COLLECTS @endsection
 
 @section('css')
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-    type="text/css" />
-<link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
 
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -35,37 +20,120 @@
                 <button type="button" class="btn btn-outline-info waves-effect waves-light " data-bs-toggle="modal"
                     data-bs-target=".material-callects-modal-xl-add"> <i class="fas fa-plus-circle"></i> Add</button>
             </div>
-
-            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive w-100">
-                <thead>
-                    <tr class="table-primary">
-                        <th>Stock Receive By</th>
-                        <th>Receive From</th>
-                        <th>Receive Date</th>
-                        <th>Total Category</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Airin Shiddique</td>
-                        <td>Office Outlet</td>
-                        <td>2021-03-03</td>
-                        <td>1</td>
-                        <td class="text-center">
-                            <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                                <i class=" fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-add">
-                                <i class="fas fa-pen"></i></button>
-                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"> <i
-                                    class="fas fa-trash-alt" id="sa-warning"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+               <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                            class="form-control form-control-sm form-select form-select-sm">
+                                            <option value="10">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> entries
+                                    </label>
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-end">
+                                    <label style="display: inline-flex;align-items: center;">Search:
+                                        <input type="search" class="form-control form-control-sm" placeholder="">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered w-100">
+                                    <thead>
+                                        <tr class="table-primary">
+                                            <th>Stock Receive By</th>
+                                            <th>Receive From</th>
+                                            <th>Receive Date</th>
+                                            <th>Total Category</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Puja</td>
+                                            <td>puja</td>
+                                            <td>reading</td>
+                                            <td>first to last</td>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    <i class=" fas fa-eye"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    <i class="fas fa-pen"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Puja</td>
+                                            <td>puja</td>
+                                            <td>reading</td>
+                                            <td>first to last</td>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    <i class=" fas fa-eye"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    <i class="fas fa-pen"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-end">
+                                    <nav>
+                                        <ul class="pagination" style="justify-content: end;">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
         </div>
     </div>
 </div> <!-- end col -->
@@ -83,7 +151,7 @@
             <div class="modal-body">
                 <!-- journal form start -->
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="mb-3">
                             <label class="form-label">Select Name</label>
                             <select class="form-control select2 form-select">
@@ -102,19 +170,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="mb-3">
-                            <label>Select Date</label>
-                            <div class="input-group" id="datepicker1">
-                                <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                    data-date-format="dd M, yyyy" data-date-container='#datepicker1'
-                                    data-provide="datepicker">
-
-                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                            </div>
+                            <label class="form-label">Select Date</label>
+                            <x-input-text name="" type="date"></x-input-text>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="mb-3">
                             <label class="form-label">Materials Taken From</label>
                             <select class="form-control select2 form-select">
@@ -128,7 +190,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 p-0">
                         <div class="card">
@@ -187,10 +248,10 @@
                                                 </select>
                                             </div>
                                             <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <input type="text" class="form-control" />
+                                                <x-input-text name="" ></x-input-text>
                                             </div>
                                             <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <input type="text" class="form-control" />
+                                                <x-input-text name="" ></x-input-text>
                                             </div>
                                             <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                 <select id="formrow-inputState" class="form-select">
@@ -217,7 +278,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                <input type="text" class="form-control" />
+                                                <x-input-text name="" ></x-input-text>
                                                 <button class="btn btn-danger btn-rounded ms-2">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
@@ -347,40 +408,7 @@
 
 @endsection
 @section('script')
-<!-- form advanced init -->
-<script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-
 <!-- form repeater js -->
 <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
 <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-<!-- Init js -->
-<script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-<!-- Table Editable plugin -->
-<script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-<script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-<!-- Sweet Alerts js -->
-<script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-<!-- Sweet alert init js-->
-<script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
 @endsection

@@ -3,24 +3,7 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Plugins css -->
-    <link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Sweet Alert-->
-    <link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -49,11 +32,7 @@
             <div class="mb-3">
                 <label>Date</label>
                     <div class="input-group" id="datepicker1">
-                    <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                    data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-
-                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                    </div>
+                    <x-input-text name="" type="date"></x-input-text>
             </div>
         </div>
     </div>
@@ -117,8 +96,6 @@
         </div>
     </div>
     <!-- end row -->
-
-
     <!--  Extra Large modal example -->
     <div class="modal fade finished-goods-modal-xl-view" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -193,49 +170,7 @@
     </div><!-- /.modal -->
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
-    <!-- form repeater js -->
-    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-    {{-- Table --}}
-
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Plugins js -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
 @endsection
 @section('script-bottom')
 @endsection

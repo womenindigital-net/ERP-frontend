@@ -255,5 +255,40 @@ class StudentController extends Controller
         ];
         return view('program.create-itp', $data);
     }
+    public function stockReceive(): Factory|View|Application
+    {   
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('stock-management.stock_receive', $data);
+    }
+    public function finishedGoods(): Factory|View|Application
+    {   
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('stock-management.finished_goods', $data);
+    }
+    public function materialCallects(): Factory|View|Application
+    {   
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('stock-management.material_callects', $data);
+    }
+    public function stockTransfer(): Factory|View|Application
+    {   
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('stock-management.stock_transfer', $data);
+    }
+    public function stockCount(): Factory|View|Application
+    {   
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('stock-management.stock_count', $data);
+    }
 }
 
