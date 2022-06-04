@@ -8,6 +8,9 @@ final class ProjectConstants
     const YES = 'yes';
     const NO = 'no';
 
+    const USER_TYPE_TEACHER = 'teacher';
+    const USER_TYPE_GENERAL = 'general';
+
     const GENDER_MALE = 'male';
     const GENDER_FEMALE = 'female';
     const GENDER_OTHER = 'other';
@@ -21,6 +24,18 @@ final class ProjectConstants
     const BLOOD_GROUP_AB_POSITIVE = 'AB+';
     const BLOOD_GROUP_AB_NEGATIVE = 'AB-';
 
+    const NOTPRESENT = 'Not Present';
+    const USESNOWORD = 'Uses NO Words (Gestures - Preverbal)';
+    const USES1TO3WORDS = 'Uses 1-3 Words / sentences';
+    const ABLETOCOMMUNICATION = 'Able to communicate/ express opinion';
+    const USESCOMLESLANG = 'Uses Complex Language';
+
+    // Autism Behavior Checklist
+    const DO_REGULARLY = "Do regularly";
+    const SOMETIME = "Sometimes";
+    const IN_SPECIAL_OCCASION = "In special occasion";
+    const DONT_DO_AT_ALL = "Don't do at all";
+
     public static array $genders = [
         self::GENDER_MALE   => 'Male',
         self::GENDER_FEMALE => 'Female',
@@ -32,6 +47,11 @@ final class ProjectConstants
         self::NO  => 'না',
     ];
 
+    public static array $yesNoEn = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+    ];
+
     public static array $bloodGroups = [
         self::BLOOD_GROUP_A           => 'A',
         self::BLOOD_GROUP_A_POSITIVE  => 'A+',
@@ -41,6 +61,25 @@ final class ProjectConstants
         self::BLOOD_GROUP_O_NEGATIVE  => 'O-',
         self::BLOOD_GROUP_AB_POSITIVE => 'AB+',
         self::BLOOD_GROUP_AB_NEGATIVE => 'AB-',
+    ];
 
+    public static array $userTypes = [
+        self::USER_TYPE_TEACHER => 'Teacher',
+        self::USER_TYPE_GENERAL => 'General',
+    ];
+
+    public static array $socialCommunication = [
+        self::NOTPRESENT => 'Not Present',
+        self::USESNOWORD => 'Uses NO Words (Gestures - Preverbal)',
+        self::USES1TO3WORDS => 'Uses 1-3 Words / sentences',
+        self::ABLETOCOMMUNICATION => 'Able to communicate/ express opinion',
+        self::USESCOMLESLANG => 'Uses Complex Language',
+    ];
+
+    public static array $autismBehaviorCheck = [
+        self::DO_REGULARLY => 'Do regularly',
+        self::SOMETIME => 'Sometimes',
+        self::IN_SPECIAL_OCCASION => 'In special occasion',
+        self::DONT_DO_AT_ALL => "Don't do at all",
     ];
 }

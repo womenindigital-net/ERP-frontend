@@ -5,7 +5,7 @@
             <div class="form-check {{$isVertical}}">
                 @foreach($records as $key => $record)
                     <div class="mb-2 me-5">
-                        <input class="form-check-input" name="{{$name}}" type="{{$type}}" value="{{$key}}">
+                        <input class="form-check-input" name="{{$name}}" type="{{$type}}" value="{{$key}}" {{$wireModel}}>
                         <label class="form-check-label">
                             {{$record}}
                         </label>
@@ -15,7 +15,7 @@
             @if($secondaryInputLabel)
                 <label for="basicpill-firstname-input">{{$secondaryInputLabel}}</label>
                 <div class="input-group" id="datepicker2">
-                    <input type="text" class="form-control" name="{{$name}}_other">
+                    <input type="text" class="form-control" name="{{$name}}_other" {{$secondaryInputWire}}>
                 </div>
             @endif
         </div>

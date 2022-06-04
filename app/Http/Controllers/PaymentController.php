@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePaymentRequest;
 use App\Http\Requests\UpdatePaymentRequest;
 use App\Models\Payment;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class PaymentController extends Controller
 {
@@ -82,5 +85,25 @@ class PaymentController extends Controller
     public function destroy(Payment $payment)
     {
         //
+    }
+
+    public function requisition(): Factory|View|Application
+    {
+        return view('accounting.purchase.requisition');
+    }
+
+    public function supplier()
+    {
+        return view('accounting.purchase.supplier_payment');
+    }
+
+    public function directPaymentAdd()
+    {
+        return view('accounting.purchase.direct_payment.payment_add');
+    }
+
+    public function casePaymentList()
+    {
+        return view('accounting.purchase.direct_payment.cash_payment_list');
     }
 }

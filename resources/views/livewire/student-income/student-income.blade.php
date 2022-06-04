@@ -20,7 +20,6 @@
         </div>
     </div> <!-- end col -->
 
-
     <!--  Extra Large modal example -->
     <div class="modal fade student-income-modal-xl-add" tabindex="-1" role="dialog" aria-hidden="true">
         <livewire:student-income.student-income-operations />
@@ -28,8 +27,16 @@
 </div>
 
 @section('script')
+<<<<<<< HEAD
 <!-- form repeater js -->
 <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 <script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
 
 @endsection
+=======
+    <!-- form repeater js -->
+    <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
+
+@endsection
+>>>>>>> 1b7e9bc8197b02eb1faeb35a579c663fcee8c678

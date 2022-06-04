@@ -83,4 +83,14 @@ class PurchaseController extends Controller
     {
         //
     }
+
+    public function purchaseOrder()
+    {
+        return view('accounting.purchase.purchase_order');
+    }
+
+    public function purchaseReturn()
+    {
+        return view('accounting.purchase.purchase_return');
+    }
 }

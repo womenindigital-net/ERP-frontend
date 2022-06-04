@@ -46,7 +46,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered w-100">
                             <thead>
-                                <tr>
+                                <tr class="table-primary">
                                     <th>Student Name</th>
                                     <th>Prescription Name</th>
                                     <th>GivenBy</th>
@@ -62,7 +62,7 @@
                                 <td>Shonod Shonod </td>
                                 <td>2018-07-14 00:00:00</td>
                                 <td> 2018-07-14 02:01:00</td>
-                                <td><small>Create: Arif Dev @ 2018-07-28 07:38:02<br />
+                                <td><small>Create: Arif Dev @ 2018-07-28 07:38:02<br/>
                                         Update: Arif Dev @ 2018-07-28 09:04:25</small>
                                 </td>
                                 <td>
@@ -131,7 +131,7 @@
                                     <div class="col-md-8">
                                         <select name="StudentID" class="form-control strip-tags" id="StudentID"
                                             required="">
-                                            <option value="">--Select--</option>
+                                            <option value="">Select</option>
                                             <option value="1">SAFWAT NASIF</option>
                                             <option value="2">Md. Moinul Islam Supta</option>
                                             <option value="3">Rumi Akhter</option>
@@ -146,7 +146,7 @@
                                     <div class="col-md-8">
                                         <select name="PrescriptionID" class="form-control strip-tags"
                                             id="PrescriptionID" required="">
-                                            <option value="">--Select--</option>
+                                            <option value="">Select</option>
                                             <option value="1">Kate Banks</option>
                                             <option value="3">Roger Oliver</option>
                                             <option value="4">dfgdsf</option>
@@ -157,7 +157,7 @@
                                     <label class="col-md-4 col-form-label">Given By:</label>
                                     <div class="col-md-8">
                                         <select name="GivenBy" class="form-control strip-tags" id="GivenBy" required="">
-                                            <option value="">--Select--</option>
+                                            <option value="">Select</option>
                                             <option value="1">sk</option>
                                             <option value="2">Shonod</option>
                                             <option value="3">PFDA</option>
@@ -174,19 +174,20 @@
                                         </select>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-6">
                                 <div class="mb-3 row me-2">
                                     <label for="" class="col-md-4 col-form-label">Given Date:</label>
                                     <div class="col-md-8" id="datepicker2">
-                                        <input class="form-control" type="date" value="2019-08-19">
+                                        <x-input-text name="date" placeholder="dd/mm/yyyy" type="date">
+                                        </x-input-text>
                                     </div>
                                 </div>
                                 <div class="mb-3 row me-2">
                                     <label for="" class="col-md-4 col-form-label">Given Time:</label>
                                     <div class="col-md-8" id="datepicker2">
-                                        <input class="form-control" type="date" value="2019-08-19">
+                                        <x-input-text name="date" placeholder="dd/mm/yyyy" type="date">
+                                        </x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -213,20 +214,24 @@
                         <div data-repeater-list="group-a">
                             <div data-repeater-item="" class="row ms-1">
                                 <div class=" col p-0 pe-1 pb-1">
-                                    <input type="text" class="form-control">
+                                    <x-input-text name="medicine" placeholder="Medicine Name">
+                                    </x-input-text>
                                 </div>
                                 <div class=" col p-0 pe-1 pb-1">
-                                    <input type="text" class="form-control">
+                                    <x-input-text name="amountGiven" placeholder=" AmountGiven">
+                                    </x-input-text>
                                 </div>
                                 <div class=" col p-0 pe-1 pb-1">
-                                    <input type="text" class="form-control">
+                                    <x-input-text name="amountgivenunit" placeholder="AmountGivenUnit">
+                                    </x-input-text>
                                 </div>
                                 <div class=" col p-0  pb-1 text-center">
                                     <input type="checkbox" class="form-check-input">
                                 </div>
 
                                 <div class=" col p-0  pb-1 me-4 d-flex">
-                                    <input type="text" class="form-control">
+                                    <x-input-text name="note" placeholder="Note">
+                                    </x-input-text>
                                     <button class="btn btn-danger ms-2">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>

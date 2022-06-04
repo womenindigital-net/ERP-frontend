@@ -1,28 +1,22 @@
 @extends('layouts.master')
 
-@section('title') @lang('translation.Starter_Page') @endsection
-
 @section('css')
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+<style>
+  .wizard .steps>ul>li a {
+    padding-right: 0 !important;
+  }
 
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-  type="text/css" />
-<link href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
+  .wizard .steps>ul>li a {
+    padding-left: 5px !important;
+  }
+</style>
 @endsection
 
 @section('content')
 
 @component('components.breadcrumb')
 @slot('li_1') DashBoard @endslot
-@slot('title') Case History @endslot
+@slot('title') STUDENT QA @endslot
 @endcomponent
 
 <div class="row">
@@ -34,62 +28,108 @@
             <h4 class="card-title">STUDENT QAS</h4>
           </div>
           <div class="col-6 text-end  mb-3">
-                <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-            data-bs-target=""><i class="fa fa-user"></i> Profile</button>
+            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
+              data-bs-target=""><i class="fa fa-user"></i> Profile</button>
             <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
               data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
- 
-        </div>
-        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-          <thead>
-            <tr>
-              <th>Collection Date</th>
-              <th>Student Name</th>
-              <th>Collected By</th>
-              <th>Log</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2022-03-29</td>
-              <td>Ashfaq Sadi</td>
-              <td>Nurjahan Dipa</td>
-              <td>
-                <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
-                <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
-              </td>
-              <td>
-              <button type="button"
-                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                <i class=" fas fa-eye"></i>
-            </button>
-            <button type="button"
-                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                 <i class="fas fa-check"></i>
-            </button>
-            <button type="button"
-                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                 <i class="fas fa-check"></i>
-            </button>
-            <button type="button"
-                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                <i class="fas fa-pen"></i></button>
-            <button type="button"
-                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                    class="fas fa-trash-alt"></i></button></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
 
+
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                  class="form-control form-control-sm form-select form-select-sm">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select> entries
+              </label>
+            </div>
+            <div class="col-sm-12 col-md-6 text-end">
+              <label style="display: inline-flex;align-items: center;">Search:
+                <input type="search" class="form-control form-control-sm" placeholder="">
+              </label>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered w-100">
+              <thead>
+                <tr class="table-primary">
+                  <th>Collection Date</th>
+                  <th>Student Name</th>
+                  <th>Collected By</th>
+                  <th>Log</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2022-03-29</td>
+                  <td>Ashfaq Sadi</td>
+                  <td>Nurjahan Dipa</td>
+                  <td>
+                    <small>
+                      <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span><br />
+                      <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                    </small>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
+                      data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                      <i class="mdi mdi-eye"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                        class="fas fa-check"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
+                      <i class="fas fa-check"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                      data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                      <i class="mdi mdi-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                      <i class="bx bx-dollar"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                      <i class="fas fa-arrow-circle-right"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              Showing 1 to 2 of 2 entries
+            </div>
+            <div class="col-sm-12 col-md-6 text-end">
+              <nav>
+                <ul class="pagination" style="justify-content: end;">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </div> <!-- end col -->
-</div> <!-- end row -->
+    </div> <!-- end col -->
+  </div> <!-- end row -->
 </div>
 <!--  Large modal example -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -97,7 +137,7 @@
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="myLargeModalLabel">Large modal</h5>
+        <h5 class="modal-title" id="myLargeModalLabel"> Sensory Checklist - Child (PA2aOT)</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -110,33 +150,13 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="text" class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy"
-                        data-date-container='#datepicker2' data-provide="datepicker" data-date-autoclose="true">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-calendar"></i></span>
-                    </div><!-- input-group -->
+                    <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <select class="form-control select2 form-select">
-                      <option value="0">Select</option>
-                      <option value="1">abulhasnat</option>
-                      <option value="2">nila01</option>
-                      <option value="3">Airins</option>
-                      <option value="4">AmalRozareo</option>
-                      <option value="5">anasbin</option>
-                      <option value="6">arupmandal</option>
-                      <option value="7">asadzaman</option>
-                      <option value="8">Badshah</option>
-                      <option value="9">BijoyRozareo</option>
-                      <option value="10">Chandan</option>
-                      <option value="11">dolonbishwash</option>
-                      <option value="12">golamrabbani</option>
-                      <option value="13">jahinur</option>
-                    </select>
+                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -165,13 +185,17 @@
                 <div class="col-lg-12">
                   <div class="mb-3">
                     <label for="verticalnav-phoneno-input">Description:</label>
-                   <p>Sensory checklist</p>
+                    <p>Sensory checklist</p>
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="mb-3">
                     <label for="verticalnav-email-input">Instruction:</label>
-                  <p>Parents can use this checklist to identify potential sensory challenges for their Child. The checklist is designed to target specific areas of potential dysfunction and to give you an opportunity to look at child’s environment and assess potential triggers for challenging behaviors. Read the statements and put a check mark or an X next to any statements that are true.</p>
+                    <p>Parents can use this checklist to identify potential sensory challenges for their Child. The
+                      checklist is designed to target specific areas of potential dysfunction and to give you an
+                      opportunity to look at child’s environment and assess potential triggers for challenging
+                      behaviors. Read the statements and put a check mark or an X next to any statements that are true.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -182,715 +206,165 @@
           <h3>Signs Of Tactile Dysfunction</h3>
           <section>
             <form>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>Hypersensitivity To Touch (Tactile Defensiveness)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Na</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="" label="Hypersensitivity To Touch (Tactile Defensiveness)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>Becomes fearful, anxious or aggressive with light or unexpected touch</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name=""
+                label="Becomes fearful, anxious or aggressive with light or unexpected touch"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">As an infant, did/does not like to be held or cuddled; may arch back, cry, and pull away</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Distressed when diaper is being, or needs to be, changed</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Complains about having hair brushed; may be very picky about using a particular brush</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Bothered by rough bed sheets (i.e., if old and "bumpy")</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Complains about having hair brushed; may be very picky about using a particular brush</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Complains about having hair brushed; may be very picky about using a particular brush</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Avoids group situations for fear of the unexpected touch</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Complains about having hair brushed; may be very picky about using a particular brush</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Dislikes kisses, will "wipe off" place where kissed</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Complains about having hair brushed; may be very picky about using a particular brush</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name=""
+                label="As an infant, did/does not like to be held or cuddled; may arch back, cry, and pull away"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Bothered by rough bed sheets (i.e., if old and "bumpy")</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Avoids group situations for fear of the unexpected touch</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Dislikes kisses, will "wipe off" place where kissed</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Prefers hugs</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">May overreact to minor cuts, scrapes, and or bug bites</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Avoids touching certain textures of material (blankets, rugs, stuffed animals)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Refuses to wear new or stiff clothes, clothes with rough textures, turtlenecks, jeans, hats, or belts, etc.</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Avoids using hands for play</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Yes No
-                      Avoids/dislikes/aversive to "messy play", i.e., sand, mud, water, glue, glitter, playdoh, slime, shaving cream/funny foam etc.</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Will be distressed by dirty hands and want to wipe or wash them frequently</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Excessively ticklish</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      Distressed by seams in socks and may refuse to wear them</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Distressed by clothes rubbing on skin; may want to wear shorts and short sleeves year round, toddlers may prefer to be naked and pull diapers and clothes off constantly</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      May want to wear long sleeve shirts and long pants year-round to avoid having skin exposed</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      Distressed about having face washed</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      Distressed about having hair, toenails, or fingernails cut</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      Resists brushing teeth and is extremely fearful of the dentist</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      Is a picky eater, only eating certain tastes and textures; mixed textures tend to be avoided as well as hot or cold foods; resists trying new foods</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      May refuse to walk barefoot on grass or sand</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">
-                      May walk on toes only</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="" label="Distressed when diaper is being, or needs to be, changed"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Bothered by rough bed sheets (i.e., if old and 'bumpy')"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Avoids group situations for fear of the unexpected touch"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Dislikes kisses, will 'wipe off' place where kissed"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Bothered by rough bed sheets (i.e., if old and 'bumpy')"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Avoids group situations for fear of the unexpected touch"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Dislikes kisses, will 'wipe off' place where kissed"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Prefers hugs" :records="$constants::$yesNoEn">
+              </x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="May overreact to minor cuts, scrapes, and or bug bites"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Avoids touching certain textures of material (blankets, rugs, stuffed animals)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name=""
+                label="Refuses to wear new or stiff clothes, clothes with rough textures, turtlenecks, jeans, hats, or belts, etc."
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name=""
+                label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name=""
+                label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name="" label="Avoids using hands for play" :records="$constants::$yesNoEn">
+              </x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name=""
+                label="Yes No Avoids/dislikes/aversive to 'messy play', i.e., sand, mud, water, glue, glitter, playdoh, slime, shaving cream/funny foam etc."
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name=""
+                label="Will be distressed by dirty hands and want to wipe or wash them frequently"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name="" label="Excessively ticklish" :records="$constants::$yesNoEn">
+              </x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name="" label="Distressed by seams in socks and may refuse to wear them"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Distressed by clothes rubbing on skin; may want to wear shorts and short sleeves year round, toddlers may prefer to be naked and pull diapers and clothes off constantly"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="May want to wear long sleeve shirts and long pants year-round to avoid having skin exposed"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name="" label="Distressed about having face washed"
+                :records="$constants::$yesNoEn">
+              </x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name="" label="Distressed about having hair, toenails, or fingernails cut"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+
+              <x-input-radio-or-check name="" label="Resists brushing teeth and is extremely fearful of the dentist"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Is a picky eater, only eating certain tastes and textures; mixed textures tend to be avoided as well as hot or cold foods; resists trying new foods"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="May refuse to walk barefoot on grass or sand"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="May walk on toes only" :records="$constants::$yesNoEn">
+              </x-input-radio-or-check>
+              <!-- end row -->
               <!-- end row -->
             </form>
           </section>
@@ -899,196 +373,44 @@
           <h3>Hyposensitivity To Touch (Under-Responsive)</h3>
           <section>
             <form>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>May crave touch, needs to touch everything and everyone</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Na</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name="" label="May crave touch, needs to touch everything and everyone"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>Is not aware of being touched/bumped unless done with extreme force or intensity</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios" checked>
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-input-radio-or-check name=""
+                label="Is not aware of being touched/bumped unless done with extreme force or intensity"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
               <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Is not bothered by injuries, like cuts and bruises, and shows no distress with shots (may even say they love getting shots!)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">May not be aware that hands or face are dirty or feel his/her nose running</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">May be self-abusive; pinching, biting, or banging his own head</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Mouths objects excessively</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Frequently hurts other children or pets while playing</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Repeatedly touches surfaces or objects that are soothing (i.e., blanket)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Seeks out surfaces and textures that provide strong tactile feedback</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Thoroughly enjoys and seeks out messy play</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5 class="mb-4">Craves vibrating or strong sensory input</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
+              <x-input-radio-or-check name=""
+                label="Is not bothered by injuries, like cuts and bruises, and shows no distress with shots (may even say they love getting shots!)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="May not be aware that hands or face are dirty or feel his/her nose running"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="May be self-abusive; pinching, biting, or banging his own head"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Mouths objects excessively" :records="$constants::$yesNoEn">
+              </x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Frequently hurts other children or pets while playing"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Repeatedly touches surfaces or objects that are soothing (i.e., blanket)"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name=""
+                label="Seeks out surfaces and textures that provide strong tactile feedback"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Thoroughly enjoys and seeks out messy play"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
+              <x-input-radio-or-check name="" label="Craves vibrating or strong sensory input"
+                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+              <!-- end row -->
               <!-- end row -->
             </form>
           </section>
@@ -1099,270 +421,52 @@
             <div>
               <form>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Has difficulty with fine motor tasks such as buttoning ,zipping,and fastening clothes</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name=""
+                  label="Has difficulty with fine motor tasks such as buttoning ,zipping,and fastening clothes"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
                 <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="May not be able to identify which part of their body was touched if they were not looking"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">May not be able to identify which part of their body was touched if they were not looking</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="Maybe afraid of the dark" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
+                <x-input-radio-or-check name="" label="May be a messy dresser" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Maybe afraid of the dark</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="Looks disheveled" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
+                <x-input-radio-or-check name="" label="Does not notice pants are twisted"
+                  :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">May be a messy dresser</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="Shirt is half un tucked" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
+                <x-input-radio-or-check name="" label="Shoes are untied" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Looks disheveled</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="One pant leg is up and one is down"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
                 <!-- end row -->
+                <x-input-radio-or-check name="" label="Has difficulty using scissors" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Does not notice pants are twisted</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name="" label="Crayons, or silverware" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
                 <!-- end row -->
+                <x-input-radio-or-check name="" label="Continues to mouth objects to explore them even after age two"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
                 <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Shirt is half un tucked</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name=""
+                  label="Has difficulty figuring out physical characteristics of objects; shape, size, texture, . Temperature, weight, etc"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
                 <!-- end row -->
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Shoes are untied</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end row -->
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">One pant leg is up and one is down</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end row -->
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Has difficulty using scissors</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end row -->
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Crayons, or silverware</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end row -->
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Continues to mouth objects to explore them even after age two</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end row -->
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">Has difficulty figuring out physical characteristics of objects; shape, size, texture, . Temperature, weight, etc</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end row -->
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="mb-2">
-                      <h5 class="">May not be able to identify objects by feel, uses vision to help; such as, reaching into backpack or desk to retrieve an item Vestibular Sense: input from the inner ear about equilibrium, gravitational changes, movement experiences, and position in space.</h5>
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <x-input-radio-or-check name=""
+                  label="May not be able to identify objects by feel, uses vision to help; such as, reaching into backpack or desk to retrieve an item Vestibular Sense: input from the inner ear about equilibrium, gravitational changes, movement experiences, and position in space."
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
                 <!-- end row -->
               </form>
             </div>
@@ -1373,314 +477,65 @@
           <section>
             <div>
               <form>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Avoids/dislikes playground equipment; i.e., swings, ladders, slides, or merry-go-rounds</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Prefers sedentary tasks, moves slowly and cautiously, avoids taking risks, and may appear "wimpy"</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Avoids/dislikes elevators and escalators; may prefer sitting while they are on them or, actually get motion sickness from them</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">May physically cling to an adult they trust</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">May appear terrified of falling even when there is no real risk of it</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Afraid of heights, even the height of a curb or step</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Fearful of feet leaving the ground</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Fearful of going up or down stairs or walking on uneven surfaces</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Afraid of being tipped upside down, sideways or backwards; will strongly resist getting hair washed over the sink</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Startles if someone else moves them; i.e., pushing his/her chair closer to the table</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">As an infant, may never have liked baby swings or jumpers</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class=""></h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">May be fearful of, and have difficulty riding a bike, jumping, hopping, or balancing on one foot (especially if eyes are closed)</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">May have disliked being placed on stomach as an infant</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Loses balance easily and may appear clumsy</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Fearful of activities which require good balance</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">
-                      Avoids rapid or rotating movements</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Avoids/dislikes playground equipment; i.e., swings, ladders, slides, or merry-go-rounds"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Prefers sedentary tasks, moves slowly and cautiously, avoids taking risks, and may appear 'wimpy'"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Avoids/dislikes elevators and escalators; may prefer sitting while they are on them or, actually get motion sickness from them"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="May physically cling to an adult they trust"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="May appear terrified of falling even when there is no real risk of it"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Afraid of heights, even the height of a curb or step"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Fearful of feet leaving the ground"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Fearful of going up or down stairs or walking on uneven surfaces"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Afraid of being tipped upside down, sideways or backwards; will strongly resist getting hair washed over the sink"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Startles if someone else moves them; i.e., pushing his/her chair closer to the table"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="As an infant, may never have liked baby swings or jumpers"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                {{--
+                <!-- end row --> may be messing one row
+                <x-input-radio-or-check name="" label="" :records="$constants::$yesNoEn"></x-input-radio-or-check> --}}
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="May be fearful of, and have difficulty riding a bike, jumping, hopping, or balancing on one foot (especially if eyes are closed)"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="May have disliked being placed on stomach as an infant"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Loses balance easily and may appear clumsy"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Fearful of activities which require good balance"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Avoids rapid or rotating movements"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
 
               </form>
             </div>
@@ -1692,234 +547,46 @@
           <section>
             <div>
               <form>
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">in constant motion, can't seem to sit still</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Craves fast, spinning, and/or intense movement experiences</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">loves being tossed in the air</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Could spin for hours and never appear to be dizzy</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Loves the fast, intense, and/or scary rides at amusement parks</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Always jumping on furniture, trampolines, spinning in a swivel chair, or getting into upside down positions</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Loves to swing as high as possible and for long periods of time</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Is a "thrill-seeker"; dangerous at times</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Always running, jumping, hopping etc. instead of walking</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Rocks body, shakes leg, or head while sitting</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class=""></h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
-                           <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="mb-2">
-                    <h5 class="">Likes sudden or quick movements, such as, going over a big bump in the car or on a bike</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Yes</label>
-                      </div>
-                      <div>
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">No</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end row -->
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="in constant motion, can't seem to sit still"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Craves fast, spinning, and/or intense movement experiences"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="loves being tossed in the air" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Could spin for hours and never appear to be dizzy"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Loves the fast, intense, and/or scary rides at amusement parks"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Always jumping on furniture, trampolines, spinning in a swivel chair, or getting into upside down positions"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Loves to swing as high as possible and for long periods of time"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Is a 'thrill-seeker' dangerous at times"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Always running, jumping, hopping etc. instead of walking"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Rocks body, shakes leg, or head while sitting"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                {{--
+                <!-- end row --> messing one row maybe
+                <x-input-radio-or-check name="" label="" :records="$constants::$yesNoEn"></x-input-radio-or-check> --}}
+
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Likes sudden or quick movements, such as, going over a big bump in the car or on a bike"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
               </form>
             </div>
           </section>
@@ -1928,847 +595,181 @@
           <!-- Bank Details -->
           <h3>Signs Of Vestibular Dysfunction > . Poor Muscle Tone And/Or Coordination</h3>
           <section>
-              <div>
+            <div>
               <form>
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">has a limp, "floppy" body</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Frequently slumps, lies down, and/or leans head on hand or arm while working at his/her desk</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Difficulty simultaneously lifting head, arms, and legs off the floor while lying on stomach ("superman" position)</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Often sits in a "W sit" position on the floor to stabilize body</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Fatigues easily! __ compensates for "looseness" by grasping objects tightly</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Difficulty turning doorknobs, handles, opening and closing items</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Difficulty catching him/her self if falling</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Difficulty getting dressed and doing fasteners, zippers, and buttons</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">May have never crawled as an baby</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">has poor body awareness; bumps into things, knocks things over, trips, and/or appears clumsy</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Poor gross motor skills; jumping, catching a ball, jumping jacks, climbing a ladder etc.</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Poor fine motor skills; difficulty using "tools", such as pencils, silverware, combs, scissors etc.</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">
-                    May appear ambidextrous, frequently switching hands for coloring, cutting, writing etc.; does not have an established hand preference/dominance by 4 or 5 years old</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">has difficulty licking an ice cream cone</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Seems to be unsure about how to move body during movement, for example, stepping over something</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
-              <!-- end row -->
-              <div class="row border-top py-2">
-              <div class="col-xl-12 col-sm-12">
-                <div class="mb-2">
-                  <h5 class="">Difficulty learning exercise or dance steps</h5>
-                  <div class="form-check d-flex">
-                    <div class="me-5">
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">Yes</label>
-                    </div>
-                    <div>
-                      <input class="form-check-input" type="radio" name="formRadios">
-                      <label class="form-check-label">No</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end row -->
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="has a limp, 'floppy' body" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Frequently slumps, lies down, and/or leans head on hand or arm while working at his/her desk"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Difficulty simultaneously lifting head, arms, and legs off the floor while lying on stomach ('superman' position)"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Often sits in a 'W sit' position on the floor to stabilize body"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Fatigues easily! __ compensates for 'looseness' by grasping objects tightly"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Difficulty turning doorknobs, handles, opening and closing items"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Difficulty catching him/her self if falling"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Difficulty getting dressed and doing fasteners, zippers, and buttons"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="May have never crawled as an baby"
+                  :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="has poor body awareness; bumps into things, knocks things over, trips, and/or appears clumsy"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Poor gross motor skills; jumping, catching a ball, jumping jacks, climbing a ladder etc."
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Poor fine motor skills; difficulty using 'tools', such as pencils, silverware, combs, scissors etc."
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="May appear ambidextrous, frequently switching hands for coloring, cutting, writing etc.; does not have an established hand preference/dominance by 4 or 5 years old"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="has difficulty licking an ice cream cone"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Seems to be unsure about how to move body during movement, for example, stepping over something"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Difficulty learning exercise or dance steps"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
               </form>
             </div>
           </section>
 
-            <!-- Bank Details -->
-            <h3> Signs Of Proprioceptive Dysfunction > Sensory Seeking Behaviors</h3>
-            <section>
-              <div>
-                <form>
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Seeks out jumping, bumping, and crashing activities</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
+          <!-- Bank Details -->
+          <h3> Signs Of Proprioceptive Dysfunction > Sensory Seeking Behaviors</h3>
+          <section>
+            <div>
+              <form>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Seeks out jumping, bumping, and crashing activities"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Stomps feet when walking" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Kicks his/her feet on floor or chair while sitting at desk/table"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Bites or sucks on fingers and/or frequently cracks his/her knuckles"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Loves to be tightly wrapped in many or weighted blankets, especially at bedtime"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Prefers clothes (and belts, hoods, shoelaces) to be as tight as possible"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="May not understand the idea of 'heavy' or 'light'; would not be able to hold two objects and tell you which weighs more"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Loves/seeks out 'squishing' activities"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Enjoys bear hugs" :records="$constants::$yesNoEn">
+                </x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Excessive banging on/with toys and objects"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="loves 'roughhousing' and tackling/wrestling games"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Frequently falls on floor intentionally"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Would jump on a trampoline for hours on end"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Grinds his/her teeth throughout the day"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Loves pushing/pulling/dragging objects"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Loves jumping off furniture or from high places"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Frequently hits, bumps or pushes other children"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="chews on pens, straws, shirt sleeves etc."
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+              </form>
             </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Stomps feet when walking</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
+          </section>
+
+          <!-- Bank Details -->
+          <h3> Signs Of Proprioceptive Dysfunction > 2. Difficulty With "Grading Of Movement"</h3>
+          <section>
+            <div>
+              <form>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Misjudges how much to flex and extend muscles during tasks/activities (i.e., putting arms into sleeves or climbing)"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Difficulty regulating pressure when writing/drawing; may be too light to see or so hard the tip"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Kicks his/her feet on floor or chair while sitting at desk/table"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Written work is messy and he/she often rips the paper when erasing"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="Always seems to be breaking objects and toys"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Misjudges the weight of an object, such as a glass of juice, picking it up with too much force sending it flying or spilling, or with too little force and complaining about objects being too heavy"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="May not understand the idea of 'heavy' or 'light'; would not be able to hold two objects and tell you which weighs more"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name=""
+                  label="Seems to do everything with too much force; i.e., walking, slamming doors, pressing things too hard, slamming objects down"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+                <x-input-radio-or-check name="" label="plays with animals with too much force, often hurting them"
+                  :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                <!-- end row -->
+              </form>
             </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Kicks his/her feet on floor or chair while sitting at desk/table</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Bites or sucks on fingers and/or frequently cracks his/her knuckles</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Loves to be tightly wrapped in many or weighted blankets, especially at bedtime</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Prefers clothes (and belts, hoods, shoelaces) to be as tight as possible</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">May not understand the idea of "heavy" or "light"; would not be able to hold two objects and tell you which weighs more</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Loves/seeks out "squishing" activities</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Enjoys bear hugs</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Excessive banging on/with toys and objects</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">loves "roughhousing" and tackling/wrestling games</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Frequently falls on floor intentionally</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Would jump on a trampoline for hours on end</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Grinds his/her teeth throughout the day</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Loves pushing/pulling/dragging objects</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Loves jumping off furniture or from high places</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">Frequently hits, bumps or pushes other children</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-          <!-- end row -->
-          <div class="row border-top py-2">
-            <div class="col-xl-12 col-sm-12">
-              <div class="mb-2">
-                <h5 class="">chews on pens, straws, shirt sleeves etc.</h5>
-                <div class="form-check d-flex">
-                  <div class="me-5">
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">Yes</label>
-                  </div>
-                  <div>
-                    <input class="form-check-input" type="radio" name="formRadios">
-                    <label class="form-check-label">No</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row -->
-                </form>
-              </div>
-            </section>
-  
-       <!-- Bank Details -->
-       <h3> Signs Of Proprioceptive Dysfunction > 2. Difficulty With "Grading Of Movement"</h3>
-       <section>
-         <div>
-           <form>
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">Misjudges how much to flex and extend muscles during tasks/activities (i.e., putting arms into sleeves or climbing)</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">Difficulty regulating pressure when writing/drawing; may be too light to see or so hard the tip</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">Kicks his/her feet on floor or chair while sitting at desk/table</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">Written work is messy and he/she often rips the paper when erasing</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">Always seems to be breaking objects and toys</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">Misjudges the weight of an object, such as a glass of juice, picking it up with too much force sending it flying or spilling, or with too little force and complaining about objects being too heavy</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">May not understand the idea of "heavy" or "light"; would not be able to hold two objects and tell you which weighs more</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">Seems to do everything with too much force; i.e., walking, slamming doors, pressing things too hard, slamming objects down</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-     <!-- end row -->
-     <div class="row border-top py-2">
-       <div class="col-xl-12 col-sm-12">
-         <div class="mb-2">
-           <h5 class="">plays with animals with too much force, often hurting them</h5>
-           <div class="form-check d-flex">
-             <div class="me-5">
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">Yes</label>
-             </div>
-             <div>
-               <input class="form-check-input" type="radio" name="formRadios">
-               <label class="form-check-label">No</label>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!-- end row -->
-           </form>
-         </div>
-       </section>
+          </section>
         </div>
       </div>
     </div><!-- /.modal-content -->
@@ -2778,25 +779,10 @@
 @endsection
 
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-
 <!-- jquery step -->
 <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
 
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
-{{-- Form --}}
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
 @endsection

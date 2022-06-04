@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\StudentIncome;
 
+use App\Models\Course;
 use Livewire\Component;
 use App\Models\StudentIncomeDetail;
 use App\Repositories\ProjectRepository;
@@ -10,7 +11,6 @@ use App\Services\StudentIncomeService;
 
 class StudentIncomeOperations extends Component
 {
-
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
     private StudentIncomeService $service;
@@ -21,7 +21,6 @@ class StudentIncomeOperations extends Component
         $this->studentRepo = $studentRepo;
         $this->service = $service;
     }
-
 
     public string $project_id = "";
     public string $student_id = "";
@@ -65,12 +64,33 @@ class StudentIncomeOperations extends Component
 
     public function render()
     {
-
+//        dd($this->formatCourses());
         $data = [
             'projects' => $this->projectRepo->getData(),
             'students' => $this->studentRepo->getData(),
+//            'courses' => $this->formatCourses(),
         ];
 
         return view('livewire.student-income.student-income-operations', $data);
+    }
+
+    private function formatCourses(): array
+    {
+        $courseItems = [];
+        foreach (Course::all() as $course) {
+            if (!$course->parent_course_id) {
+                $courseItems[$course->id] = $course->title;
+            } else {
+//                $courseItems[$course->parent_course_id][$course->id] = $course->title;
+                $courseItems[$course->parent_course_id] = $course->id;
+//                dd($courseItems);
+//                dd($course->id, $course->parent_course_id);
+//                $courseItems[$course->parent_course_id][] = $course;
+            }
+        }
+
+        dd($courseItems);
+
+        return $courseItems ?? [];
     }
 }

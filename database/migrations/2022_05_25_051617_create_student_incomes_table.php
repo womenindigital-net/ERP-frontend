@@ -20,7 +20,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Income::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Student::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(PaymentMethod::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(PaymentMethod::class)->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -83,4 +83,9 @@ class IncomeController extends Controller
     {
         //
     }
+
+    public function donationAndOther()
+    {
+        return view('accounting.income.received_payment');
+    }
 }

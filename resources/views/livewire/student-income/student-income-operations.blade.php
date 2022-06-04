@@ -68,8 +68,12 @@
                         </div>
                     </div>
                 </form>
+<<<<<<< HEAD
 
                 <form class="repeater" enctype="multipart/form-data">
+=======
+                <form wire:submit.prevent="store" class="repeater">
+>>>>>>> 1b7e9bc8197b02eb1faeb35a579c663fcee8c678
                     <div class="row">
                         <div class="col-lg-4   pe-1">
                             <label for="name">Payment Amount For</label>
@@ -124,7 +128,12 @@
                         </div>
 
                     </div>
+<<<<<<< HEAD
                     <input data-repeater-create type="button" class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
+=======
+                    <input data-repeater-create type="button"class="btn btn-success mt-3 px-4 mt-lg-0"
+                        value="Add" />
+>>>>>>> 1b7e9bc8197b02eb1faeb35a579c663fcee8c678
                 </form>
             </div>
             <div class="modal-footer">

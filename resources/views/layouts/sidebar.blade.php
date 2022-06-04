@@ -24,7 +24,7 @@
                 <li class="menu-title">Accounting</li>
 
                 <li>
-                    <a href="accounting.journal" class="waves-effect">
+                    <a href="{{route('journal')}}" class="waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span>Journal</span>
                     </a>
@@ -36,8 +36,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('student.income') }}">Student Income</a></li>
-                        <li><a href="accounting.income.sale_voucher">Sale Voucher</a></li>
-                        <li><a href="accounting.income.received_payment">Donation And Other</a></li>
+                        <li><a href="{{route('sale-voucher')}}">Sale Voucher</a></li>
+                        <li><a href="{{route('donation-and-other')}}">Donation And Other</a></li>
                     </ul>
                 </li>
                 <li>
@@ -46,18 +46,18 @@
                         <span>Payment </span>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="accounting.purchase.requisition">Requisition</a></li>
-                        <li><a href="accounting.purchase.purchase_order">Purchase Order</a></li>
-                        <li><a href="accounting.purchase.purchase_return">Purchase Return</a></li>
-                        <li><a href="accounting.purchase.supplier_payment">Supplier Payment</a></li>
+                        <li><a href="{{route('requisition')}}">Requisition</a></li>
+                        <li><a href="{{route('purchase-order')}}">Purchase Order</a></li>
+                        <li><a href="{{route('purchase-return')}}">Purchase Return</a></li>
+                        <li><a href="{{route('payment-supplier')}}">Supplier Payment</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="accounting.purchase.direct_payment.payment_add">Payment Add</a>
+                                    <a href="{{route('direct-payment-add')}}">Payment Add</a>
                                 </li>
                                 <li>
-                                    <a href="accounting.purchase.direct_payment.cash_payment_list">Cash Payment List</a>
+                                    <a href="{{route('cash-payment-list')}}">Cash Payment List</a>
                                 </li>
                                 <li>
                                     <a href="accounting.purchase.direct_payment.advance_payment_list">Advance Payment
@@ -74,10 +74,23 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
+                        <span>Stock Management</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('stock-receive')}}">Stock Receive</a></li>
+                        <li><a href="{{route('finished-goods')}}">Finished Goods</a></li>
+                        <li><a href="{{route('material-collect')}}">Material Collects</a></li>
+                        <li><a href="{{route('stock-transfer')}}">Stock Transfer</a></li>
+                        <li><a href="{{route('stock-count')}}">Stock Count</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
                         <span>Inventory Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="inventory-management.stock_assign">Stock Assign</a></li>
+                        <li><a href="{{route('stock-assign')}}">Stock Assign</a></li>
                         <li><a href="inventory-management.stock_out">Stock Out</a></li>
                         <li><a href="inventory-management.stock_hand_report">Stock On Hand Report</a></li>
                         <li><a href="inventory-management.location_wise_product_report">Location Wise Product Report</a>
@@ -87,19 +100,7 @@
                         <li><a href="product_analysis_report">Report::Product Analysis</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-share-alt"></i>
-                        <span>Stock Management</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="stock-management.stock_receive">Stock Receive</a></li>
-                        <li><a href="stock-management.finished_goods">Finished Goods</a></li>
-                        <li><a href="stock-management.material_callects">Material Collects</a></li>
-                        <li><a href="stock-management.stock_transfer">Stock Transfer</a></li>
-                        <li><a href="stock-management.stock_count">Stock Count</a></li>
-                    </ul>
-                </li>
+
                 <li class="menu-title">Program Modules</li>
 
                 <li>
@@ -134,18 +135,20 @@
                         <span>Assessment</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="assessment.sensory-checklist-for-child">Sensory checklist for Child</a></li>
-                        <li><a href="assessment.Social-Communication">Social Communication</a></li>
-                        <li><a href="assessment.occupational-therapy">Occupational Therapy</a></li>
-                        <li><a href="assessment.physiotherapy">Physiotherapy</a></li>
-                        <li><a href="assessment.functional_communication_assessment">Functional Communication
+                        <li><a href="{{ route('sensory.checklist.for.child') }}">Sensory checklist for Child</a></li>
+                        <li><a href="{{ route('social.communication') }}">Social Communication</a></li>
+                        <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
+                        <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
+                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
                                 Assessment</a></li>
-                        <li><a href="assessment.functional_movement_skills">Fundamental Movement Skills</a></li>
-                        <li><a href="assessment.executive_function_test">Executive Function test</a></li>
-                        <li><a href="assessment.autism_behavior_checklist">Autism Behavior Checklist (ABC)</a></li>
-                        <li><a href="assessment.sensory_checklist_for_young_adult">Sensory checklist for Young Adult</a>
+                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement
+                                Skills</a></li>
+                        <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
+                        <li><a href="{{ route('autism.behavior.checklist') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('sensory.checklist.for.young.adult') }}">Sensory checklist for Young
+                                Adult</a>
                         </li>
-                        <li><a href="assessment.individual_risk_assessment_form">Individual risk assessment form</a>
+                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a>
                         </li>
                     </ul>
                 </li>
@@ -156,27 +159,27 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="student.student_list">Students</a>
+                            <a href="{{ route('student.list') }}">Students</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Dairy
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="student.dairy.trip-report-form">Trip report and Evaluation Form</a>
+                                    <a href="{{ route('trip.report.form') }}">Trip report and Evaluation Form</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.gym-outing-evalution">Gym and Outing Evaluation (D3cDT)
+                                    <a href="{{ route('gym.outing.evaluation') }}">Gym and Outing Evaluation (D3cDT)
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.ot-assessment">OT assessment in computer trainee</a>
+                                    <a href="{{ route('ot.assessment') }}">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.incident-record">Incident Record</a>
+                                    <a href="{{ route('student.dairy.incident-record') }}">Incident Record</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.medicine-admin">Medicine admin</a>
+                                    <a href="{{ route('student.dairy.medicine-admin') }}">Medicine admin</a>
                                 </li>
                                 {{-- <li>
                                     <a href="student.dairy.score-calculation">Score Calculation</a>
@@ -189,15 +192,19 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="student.co-curricular.drama-diary-evaluation">Drama Diary Evaluation</a>
+                                <li> <a href="{{ route('student.co-curricular.drama-diary-evaluation') }}">Drama Diary
+                                        Evaluation</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
+                            <a href="student.student-attendence">Student Attendence</a>
+                        </li>
+                        <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="student.employment.staff_and_workplace_inspecation_tool">কর্মী ও কর্মস্থল
-                                        পরিদর্শন টুল</a>
+                                <li> <a href="{{ route('student.employment.staff_and_workplace_inspecation_tool') }}">কর্মী
+                                        ও কর্মস্থল পরিদর্শন টুল</a>
                                 </li>
                             </ul>
                         </li>
@@ -321,7 +328,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-details-setup">Bank Details Setup</a>
+                                    <a href="setup.account-details">Account Details</a>
+                                </li>
+                                <li>
+                                    <a href="setup.manage-chequebook">Manage Chequebook</a>
                                 </li>
                             </ul>
                         </li>
@@ -329,7 +339,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-recncilation">Bank Reconcilation</a>
+                                    <a href="setup.bank-reconcilation-new">Bank Reconcilation New</a>
+                                </li>
+                                <li>
+                                    <a href="setup.bank-reconcilation">Bank Reconcilation</a>
                                 </li>
                             </ul>
                         </li>
@@ -356,7 +369,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.course-and-admission">Course and Admission</a>
+                                    <a href="setup.course-and-admission">Course </a>
                                 </li>
 
                             </ul>
@@ -373,7 +386,13 @@
                             <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.vocational-marking">Vocational Marking</a>
+                                    <a href="setup.vocational-marking-category">Vocational Marking Category</a>
+                                </li>
+                                <li>
+                                    <a href="setup.vocational-marking-subcategory">Vocational Marking Sub Category</a>
+                                </li>
+                                <li>
+                                    <a href="setup.vocational-student-evolution">Vocational Student Evolution</a>
                                 </li>
                             </ul>
                         </li>

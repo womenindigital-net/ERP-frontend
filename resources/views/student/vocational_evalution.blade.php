@@ -138,13 +138,8 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label>Select Date</label>
-                            <div class="input-group" id="datepicker1">
-                                <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                    data-date-format="dd M, yyyy" data-date-container='#datepicker1'
-                                    data-provide="datepicker">
-
-                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                            </div>
+                            <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
+                            </x-input-text>
                         </div>
                     </div>
                 </div>
