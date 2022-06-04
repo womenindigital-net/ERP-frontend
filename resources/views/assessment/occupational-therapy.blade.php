@@ -218,17 +218,17 @@
               </div>
             </div>
             <!-- row end -->
-            <x-input-radio-or-check name="" label="Separate Home equipment" :records="$constants::$yesNoEn">
+            <x-input-radio-or-check name="name" label="Separate Home equipment" :records="$constants::$yesNoEn">
             </x-input-radio-or-check>
             <!-- row end -->
-            <x-input-radio-or-check name="" label="Communication" :records="$therapyConstants::$communication">
+            <x-input-radio-or-check name="name" label="Communication" :records="$therapyConstants::$communication">
             </x-input-radio-or-check>
             <!-- row end -->
           </section>
 
           <h3>Muscle Tone</h3>
           <section>
-            <x-input-radio-or-check name="" label="Separate Home equipment"
+            <x-input-radio-or-check name="name" label="Separate Home equipment"
               :records="$therapyConstants::$separateHomeEquipment">
             </x-input-radio-or-check>
             <!-- row end -->
@@ -240,11 +240,11 @@
                     <div class="form-check">
                       <div class="me-5 ">
                         <label class="form-check-label pb-2">Left</label>
-                        <x-input-text name="" placeholder="Left"></x-input-text>
+                        <x-input-text name="name" placeholder="Left"></x-input-text>
                       </div>
                       <div class="me-5 ">
                         <label class="form-check-label pb-2">Right</label>
-                        <x-input-text name="" placeholder="Right"></x-input-text>
+                        <x-input-text name="name" placeholder="Right"></x-input-text>
                       </div>
                     </div>
                   </div>
@@ -252,13 +252,13 @@
               </div>
             </div>
             <!-- row end -->
-            <x-input-radio-or-check name="" label="Lower Limbs" :records="$therapyConstants::$lowerLimbs">
+            <x-input-radio-or-check name="name" label="Lower Limbs" :records="$therapyConstants::$lowerLimbs">
             </x-input-radio-or-check>
             <!-- row end -->
-            <x-input-radio-or-check name="" label="Trunk/neck" :records="$therapyConstants::$trunkNeck">
+            <x-input-radio-or-check name="name" label="Trunk/neck" :records="$therapyConstants::$trunkNeck">
             </x-input-radio-or-check>
             <!-- row end -->
-            <x-input-radio-or-check name="" label="Lower Limbs" :records="$therapyConstants::$lowerLimbsTone">
+            <x-input-radio-or-check name="name" label="Lower Limbs" :records="$therapyConstants::$lowerLimbsTone">
             </x-input-radio-or-check>
             <!-- row end -->
             <div class="row border-top py-2">
@@ -269,11 +269,11 @@
                     <div class="form-check">
                       <div class="me-5 ">
                         <label class="form-check-label pb-2">Left</label>
-                        <x-input-text name="" placeholder="Left"></x-input-text>
+                        <x-input-text name="name" placeholder="Left"></x-input-text>
                       </div>
                       <div class="me-5 ">
                         <label class="form-check-label pb-2">Right</label>
-                        <x-input-text name="" placeholder="Right"></x-input-text>
+                        <x-input-text name="name" placeholder="Right"></x-input-text>
                       </div>
                     </div>
                   </div>
@@ -284,7 +284,7 @@
 
           <h3>Range of movement</h3>
           <section>
-            <x-input-radio-or-check name="" label="Upper limbs" :records="$therapyConstants::$upperLimbs">
+            <x-input-radio-or-check name="name" label="Upper limbs" :records="$therapyConstants::$upperLimbs">
             </x-input-radio-or-check>
             <!-- row end -->
             <div class="row border-top py-2">
@@ -295,19 +295,19 @@
                     <div class="form-check">
                       <div class="me-5 ">
                         <label class="form-check-label pb-2">Left</label>
-                        <x-input-text name="" placeholder="Left"></x-input-text>
+                        <x-input-text name="name" placeholder="Left"></x-input-text>
                       </div>
                       <div class="me-5 ">
                         <label class="form-check-label pb-2">Right</label>
-                        <x-input-text name="" placeholder="Right"></x-input-text>
+                        <x-input-text name="name" placeholder="Right"></x-input-text>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-             <!-- row end -->
-            <x-input-radio-or-check name="" label="Trunk/neck" :records="$therapyConstants::$trunkNeckRange">
+            <!-- row end -->
+            <x-input-radio-or-check name="name" label="Trunk/neck" :records="$therapyConstants::$trunkNeckRange">
             </x-input-radio-or-check>
             <!-- row end -->
           </section>

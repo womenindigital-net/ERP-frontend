@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
 
 <head>
     <meta charset="utf-8" />
@@ -10,8 +10,11 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}">
     @include('layouts.head-css')
-    @livewireStyles
+    {{--
+    <livewire:styles /> --}}
+    @livewireStyles()
     <link rel="stylesheet" href="{{asset('assets/libs/toastr/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 </head>
 
 @section('body')
@@ -28,6 +31,7 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
+{{--                     @include('elements.breadcrumb')--}}
                     @yield('content')
                 </div>
                 <!-- container-fluid -->
@@ -45,7 +49,9 @@
 
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
-    @livewireScripts
+    {{--
+    <livewire:scripts /> --}}
+    @livewireScripts()
     <!-- jquery step -->
     <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
     <script src="{{asset('assets/libs/toastr/toastr.min.js')}}"></script>
@@ -77,7 +83,7 @@
         document.getElementById(event.detail.formName).reset();
     });
 
-    window.addEventListener('notify', event => {
+    window.addEventListener('notifyr', event => {
         let type = !event.detail || !event.detail.type ? 'success' : event.detail.type;
         let message;
 

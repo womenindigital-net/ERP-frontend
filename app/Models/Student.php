@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,5 +21,13 @@ class Student extends Model
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
+    public function approvedForObservation(): Attribute
+    {
+        return new Attribute(
+            get: fn ($val) => $val ? 1 : 0,
+            set: fn ($val) => $val ? 1 : 0,
+        );
     }
 }

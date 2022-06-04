@@ -2,10 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Livewire\Traits\CommonListElements;
-use App\Services\AppointmentService;
+use App\Models\Student;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Services\AppointmentService;
+use App\Http\Livewire\Traits\CommonListElements;
 
 class AppointmentList extends Component
 {
@@ -32,10 +33,18 @@ class AppointmentList extends Component
         $this->render();
     }
 
-    public function show($student, $mode, $recordId = 0)
+    public function show($student = [], $mode = 'create', $recordId = 0)
     {
+        dd($mode);
         $this->recordId = $recordId;
-//        $this->emit('show-appointment', $student, $mode, $recordId);
+        $this->emit('show-appointment', $student, $mode, $recordId);
+    }
+
+    public function delete($id)
+    {
+        $student =  Student::find($id);
+        $student->delete();
+        $this->dispatchBrowserEvent('notify');
     }
 
     public function render()
@@ -44,6 +53,6 @@ class AppointmentList extends Component
             'records' => $this->service->getListData($this->perPage, $this->search)
         ];
 
-        return view('livewire.appointment-list', $data);
+        return view('livewire.appointment-list', $data)->extends('layouts.master')->section('content');
     }
 }

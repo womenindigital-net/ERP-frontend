@@ -139,9 +139,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Puja</td>
-                                <td>puja</td>
-                                <td>puja</td>
+                                <td>demo</td>
+                                <td>demo</td>
+                                <td>demo</td>
                                 <td class="text-center">
                                     <button type="button"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
@@ -162,9 +162,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Puja</td>
-                                <td>puja</td>
-                                <td>puja</td>
+                                <td>demo</td>
+                                <td>demo</td>
+                                <td>demo</td>
                                 <    <td class="text-center">
                                     <button type="button"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"

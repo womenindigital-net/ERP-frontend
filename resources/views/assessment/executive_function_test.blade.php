@@ -146,7 +146,7 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
-                    <x-input-text name="" type="date" placeholder=""></x-input-text>
+                    <x-input-text name="name" type="date" placeholder=""></x-input-text>
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -200,69 +200,73 @@
             <div>
               <form>
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Have trouble getting started or initiating tasks."
+                <x-input-radio-or-check name="name" label="Have trouble getting started or initiating tasks."
                   :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Start tasks with enthusiasm but lose interest quickly."
+                <x-input-radio-or-check name="name" label="Start tasks with enthusiasm but lose interest quickly."
                   :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
-                <x-input-radio-or-check name=""
+                <x-input-radio-or-check name="name"
                   label="Find it hard to do things that aren't necessary or highly stimulating."
                   :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Become absorbed in things or tasks that interest me—sometimes to the point of
+                <x-input-radio-or-check name="name" label="Become absorbed in things or tasks that interest me—sometimes to the point of
                 forgetting about people around me or other obligations." :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Have trouble following conversations because I am distracted or because I am trying
+                <x-input-radio-or-check name="name" label="Have trouble following conversations because I am distracted or because I am trying
                 to remember what I wanted to say." :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Forget things, even when they are important to me."
+                <x-input-radio-or-check name="name" label="Forget things, even when they are important to me."
                   :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="At least once a day, lose or misplace items—for example, keys, wallet, purse, or cell
+                <x-input-radio-or-check name="name" label="At least once a day, lose or misplace items—for example, keys, wallet, purse, or cell
                 phone." :records="$executiveConstants::$agreeOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name=""
+                <x-input-radio-or-check name="name"
                   label="Consistently forget appointments and, when I do remember, I often am late."
                   :records="$executiveConstants::$agreeOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Can’t seem to get a handle on clutter, my personal space is messy and has piles of
+                <x-input-radio-or-check name="name" label="Can't seem to get a handle on clutter, my personal space is messy and has piles of
                 papers and miscellaneous items." :records="$executiveConstants::$agreeOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Have difficulty figuring out what is most important or what I should start with given
+                <x-input-radio-or-check name="name" label="Have difficulty figuring out what is most important or what I should start with given
                 a list of things to do." :records="$executiveConstants::$agreeOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Waste time trying to decide what to do first." :records="$executiveConstants::$oftenOrNot">
+                <x-input-radio-or-check name="name" label="Waste time trying to decide what to do first."
+                  :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Become frustrated when things don’t go as planned and can quickly become angry. I
+                <x-input-radio-or-check name="name" label="Become frustrated when things don’t go as planned and can quickly become angry. I
                 often let go of my anger as quickly as it came." :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="Have trouble completing multiple-step tasks and moving from one task to another." :records="$executiveConstants::$agreeOrNot">
+                <x-input-radio-or-check name="name"
+                  label="Have trouble completing multiple-step tasks and moving from one task to another."
+                  :records="$executiveConstants::$agreeOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->
-                <x-input-radio-or-check name="" label="I say “I will do it later” and then forget all about it." :records="$executiveConstants::$oftenOrNot">
+                <x-input-radio-or-check name="name" label="I say “I will do it later” and then forget all about it."
+                  :records="$executiveConstants::$oftenOrNot">
                 </x-input-radio-or-check>
                 <!-- end row -->
                 <!-- end row -->

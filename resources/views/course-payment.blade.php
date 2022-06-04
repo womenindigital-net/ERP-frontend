@@ -45,7 +45,7 @@
                                         <tr>
                                             <td>121 </td>
                                             <td>12/04</td>
-                                            <td>puja</td>
+                                            <td>demo</td>
                                             <td>04</td>
                                             <td>5523 </td>
                                             <td ><table id="" class="table table-bordered nowrap">
@@ -64,7 +64,7 @@
                                                 <tr>
                                                     <td>121 </td>
                                                     <td>12/04</td>
-                                                    <td>puja</td>
+                                                    <td>demo</td>
                                                     <td>04</td>
                                                     <td>5523 </td>
                                                 </tr>
@@ -75,7 +75,7 @@
                                         <tr>
                                             <td>121 </td>
                                             <td>12/04</td>
-                                            <td>puja</td>
+                                            <td>demo</td>
                                             <td>04</td>
                                             <td>5523 </td>
                                             <td><table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap ">
@@ -94,7 +94,7 @@
                                                 <tr>
                                                     <td>121 </td>
                                                     <td>12/04</td>
-                                                    <td>puja</td>
+                                                    <td>demo</td>
                                                     <td>04</td>
                                                     <td>5523 </td>
                                                 </tr>

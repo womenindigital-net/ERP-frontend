@@ -13,17 +13,19 @@ class RecordList extends Component
     public string $title;
     public string $newEntryLink;
     public LengthAwarePaginator $records;
+    public mixed $wireClick;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($records, $title, $newEntryLink = false)
+    public function __construct($records, $title, $newEntryLink = false, $wireClick=false)
     {
         $this->title = $title;
         $this->newEntryLink = $newEntryLink;
         $this->records = $records;
+        $this->wireClick = $wireClick;
     }
 
     /**

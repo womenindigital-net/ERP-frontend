@@ -90,10 +90,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Puja</td>
-                                        <td>puja</td>
+                                        <td>demo</td>
+                                        <td>demo</td>
                                         
-                                        <td>puja</td>
+                                        <td>demo</td>
                                         <td> <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                             <i class="mdi mdi-pencil"></i>
                                            </button>
@@ -103,10 +103,10 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Puja</td>
-                                        <td>puja</td>
+                                        <td>demo</td>
+                                        <td>demo</td>
                                     
-                                        <td>puja</td>
+                                        <td>demo</td>
                                         <td> <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                             <i class="mdi mdi-pencil"></i>
                                            </button>

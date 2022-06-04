@@ -121,7 +121,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Puja </td>
+                                <td>demo </td>
                                 <td>Edinburgh</td>
                                 <td>Number</td>
                                 <td>No </td>
@@ -131,7 +131,7 @@
 
                             </tr>
                             <tr>
-                                <td>Puja </td>
+                                <td>demo </td>
                                 <td>Edinburgh</td>
                                 <td>Number</td>
                                 <td>No </td>

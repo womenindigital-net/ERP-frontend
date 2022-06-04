@@ -104,7 +104,7 @@
 
                             </tr>
                             <tr>
-                                <td><a href="student.student_profile.profile">Puja</a></td>
+                                <td><a href="student.student_profile.profile">demo</a></td>
                                 <td>Accountant</td>
                                 <td>Tokyo</td>
                                 <td>63</td>

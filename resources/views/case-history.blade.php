@@ -1,10 +1,5 @@
 @extends('layouts.master')
 
-@section('title') @lang('translation.Starter_Page') @endsection
-
-@section('css')
-@endsection
-
 @section('content')
 
 @component('components.breadcrumb')
@@ -538,7 +533,7 @@
                       <h5 class="">স্কুলের কাজের ক্ষেত্রে আপনার সন্তানের প্রধান উদ্বেগের কারন/বিষয় গুলি কি কি ? উল্লেখ
                         করুন-</h5>
                       <div class="input-group" id="datepicker2">
-                        <x-input-text type="text" name=""></x-input-text>
+                        <x-input-text type="text" name="abc"></x-input-text>
                       </div>
                       <!-- input-->
                     </div>

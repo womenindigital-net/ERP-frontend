@@ -9,7 +9,7 @@
     <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    
+
     <!-- DataTables -->
     <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
@@ -37,13 +37,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#product_details" role="tab">
                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Add Product Details</span>    
+                                <span class="d-none d-sm-block">Add Product Details</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#product_details_list" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">Product Details List</span>    
+                                <span class="d-none d-sm-block">Product Details List</span>
                             </a>
                         </li>
                     </ul>
@@ -149,7 +149,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
                                             </form>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    
+
                                 </div>
                                 <div class="col-md-4">
                                     <button class="btn btn-danger w-100">Reset</button>

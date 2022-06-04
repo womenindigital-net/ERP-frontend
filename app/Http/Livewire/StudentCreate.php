@@ -15,7 +15,7 @@ use Livewire\WithPagination;
 
 class StudentCreate extends Component
 {
-//    use WithPagination;
+    //    use WithPagination;
 
     public string $code = '';
     public string $name = '';
@@ -93,6 +93,7 @@ class StudentCreate extends Component
             }
         }
 
+
         $this->mode = $mode;
         $this->recordId = $recordId;
     }
@@ -114,7 +115,7 @@ class StudentCreate extends Component
     public function store()
     {
         $this->service->store($this->validate());
-        $this->dispatchBrowserEvent('notify');
+        $this->dispatchBrowserEvent('notifyr');
         $this->dispatchBrowserEvent("close-modal");
         $this->dispatchBrowserEvent("reset-form", ["formName" => "StudentCreateForm"]);
         $this->emit('reset-appointment-list');

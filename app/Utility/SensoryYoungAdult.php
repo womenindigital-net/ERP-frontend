@@ -15,5 +15,4 @@ final class SensoryYoungAdult
         self::MIXE => 'MIXED',
         self::DNEUTRAL => 'DNEUTRAL',
     ];
-
 }

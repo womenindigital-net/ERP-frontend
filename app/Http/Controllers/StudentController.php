@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
+use App\Repositories\ProjectRepository;
+use App\Repositories\StudentRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -13,10 +15,14 @@ use Illuminate\Contracts\View\View;
 class StudentController extends Controller
 {
     private UserRepository $userRepo;
+    private ProjectRepository $projectRepo;
+    private StudentRepository $studentRepo;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository)
     {
         $this->userRepo = $userRepository;
+        $this->projectRepo = $projectRepository;
+        $this->studentRepo = $studentRepository;
     }
 
     /**
@@ -99,6 +105,15 @@ class StudentController extends Controller
     {
         return view('pre_admission.appointment');
     }
+    public function studentIncome()
+    {
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'students' => $this->studentRepo->getData(),
+        ];
+
+        return view('accounting.income.student_income', $data);
+    }
 
     public function caseHistory(): Factory|View|Application
     {
@@ -106,16 +121,15 @@ class StudentController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
 
-        return view('case-histroy', $data);
+        return view('case-history', $data);
     }
+
     public function referralForm(): Factory|View|Application
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        ];
 
-        return view('referral-form', $data);
+        return view('referral-form');
     }
+
     public function careNeedForm(): Factory|View|Application
     {
         $data = [
@@ -165,7 +179,7 @@ class StudentController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
 
-        return view('assessment.physiotherapy', $data); 
+        return view('assessment.physiotherapy', $data);
     }
     public function executiveFunctionTest(): Factory|View|Application
     {
@@ -191,6 +205,14 @@ class StudentController extends Controller
 
         return view('assessment.functional_communication_assessment', $data);
     }
+    public function sensoryChecklistForYoungAdult(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('assessment.sensory_checklist_for_young_adult', $data);
+    }
     public function individualRiskAssessmentForm(): Factory|View|Application
     {
         $data = [
@@ -199,12 +221,12 @@ class StudentController extends Controller
 
         return view('assessment.individual_risk_assessment_form', $data);
     }
+    // public function staffAndWorkplaceInspecationTool(): Factory|View|Application
     public function incidentRecord(): Factory|View|Application
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
-
         return view('student.dairy.incident-record', $data);
     }
     public function medicineAdmin(): Factory|View|Application
@@ -224,6 +246,42 @@ class StudentController extends Controller
 
         return view('assessment.functional_movement_skills', $data);
     }
+
+
+    public function studentList(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.student_list', $data);
+    }
+
+    public function tripReportForm(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.trip-report-form', $data);
+    }
+    public function gymOutingEvaluation(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.gym-outing-evalution', $data);
+    }
+
+    public function otAssessment(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('student.dairy.ot-assessment', $data);
+    }
     public function dramaDiary(): Factory|View|Application
     {
         $data = [
@@ -232,7 +290,7 @@ class StudentController extends Controller
 
         return view('student.co-curricular.drama-diary-evaluation', $data);
     }
-    
+
 
     public function staffWorkplace(): Factory|View|Application
     {
@@ -313,4 +371,3 @@ class StudentController extends Controller
         return view('stock-management.stock_count', $data);
     }
 }
-

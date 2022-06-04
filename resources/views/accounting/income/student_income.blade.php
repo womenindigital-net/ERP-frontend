@@ -182,7 +182,7 @@
                                         <div class="card-body p-0">
                                             <div class="table-responsive">
                                                 <table class="table nowrap mb-0">
-    
+
                                                     <thead>
                                                         <tr class="table-primary text-center">
                                                             <th>Food Subsidy</th>
@@ -201,7 +201,7 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-    
+
                                         </div>
                                     </div>
                                 </div>
@@ -216,15 +216,15 @@
                                                 <div class="row">
                                                    <div class="col-lg-4   pe-1">
                                                     <label for="name">Payment For</label>
-                                                   
+
                                                     </div>
                                                    <div class="col-lg-4   pe-1">
                                                     <label for="email">Payment Amount </label>
-                                                    
+
                                                    </div>
                                                    <div class="col-lg-4  pe-1">
                                                     <label for="subject">Receive Amount For</label>
-                                                   
+
                                                    </div>
                                                 </div>
                                                 <div data-repeater-list="group-a">
@@ -241,18 +241,18 @@
                                                                 <option value="7">Therapy Course</option>
                                                             </select>
                                                         </div>
-                    
+
                                                         <div class=" col-lg-4  pb-1">
                                                             <x-input-text name="" placeholder="Receive Amount">
                                                             </x-input-text>
                                                         </div>
-    
+
                                                         <div class="mb-3  col-lg-4">
                                                             <x-input-text name="" placeholder="">
                                                             </x-input-text>
                                                         </div>
                                                     </div>
-                    
+
                                                 </div>
                                                 <input data-repeater-create type="button"
                                                     class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />
@@ -261,7 +261,7 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                         </form>
                         <!-- journal form end -->
                     </div>
@@ -329,7 +329,7 @@
                                         <div class="card-body">
                                             <div class="table-responsive">
                                                 <table class="table nowrap mb-0">
-    
+
                                                     <thead>
                                                         <tr class="table-primary text-center">
                                                             <th>Food Subsidy</th>
@@ -348,14 +348,14 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-    
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-    
+
                         </form>
-                        
+
                         <!-- journal form end -->
                     </div>
                     <div class="modal-footer">

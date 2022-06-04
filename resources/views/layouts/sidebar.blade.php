@@ -24,7 +24,7 @@
                 <li class="menu-title">Accounting</li>
 
                 <li>
-                    <a href="accounting.journal" class="waves-effect">
+                    <a href="{{route('journal')}}" class="waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span>Journal</span>
                     </a>
@@ -32,32 +32,32 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Income </span>
+                        <span>Income Receive </span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('accounting.income.student_income') }}">Student Income</a></li>
-                        <li><a href="{{ route('accounting.income.sale_voucher') }}">Sale Voucher</a></li>
-                        <li><a href="{{ route('accounting.income.received_payment') }}">Received Payment</a></li>
+                        <li><a href="{{ route('student.income') }}">Student Income</a></li>
+                        <li><a href="{{route('sale-voucher')}}">Sale Voucher</a></li>
+                        <li><a href="{{route('donation-and-other')}}">Donation And Other</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Purchase </span>
+                        <span>Payment </span>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="accounting.purchase.requisition">Requisition</a></li>
-                        <li><a href="accounting.purchase.purchase_order">Purchase Order</a></li>
-                        <li><a href="accounting.purchase.purchase_return">Purchase Return</a></li>
-                        <li><a href="accounting.purchase.supplier_payment">Supplier Payment</a></li>
+                        <li><a href="{{route('requisition')}}">Requisition</a></li>
+                        <li><a href="{{route('purchase-order')}}">Purchase Order</a></li>
+                        <li><a href="{{route('purchase-return')}}">Purchase Return</a></li>
+                        <li><a href="{{route('payment-supplier')}}">Supplier Payment</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="accounting.purchase.direct_payment.payment_add">Payment Add</a>
+                                    <a href="{{route('direct-payment-add')}}">Payment Add</a>
                                 </li>
                                 <li>
-                                    <a href="accounting.purchase.direct_payment.cash_payment_list">Cash Payment List</a>
+                                    <a href="{{route('cash-payment-list')}}">Cash Payment List</a>
                                 </li>
                                 <li>
                                     <a href="accounting.purchase.direct_payment.advance_payment_list">Advance Payment
@@ -74,32 +74,33 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Inventory Management</span>
+                        <span>Stock Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="inventory-management.stock_assign">Stock Assign</a></li>
-                        <li><a href="inventory-management.stock_out">Stock Out</a></li>
-                        <li><a href="inventory-management.stock_hand_report">Stock On Hand Report</a></li>
-                        <li><a href="inventory-management.location_wise_product_report">Location Wise Product Report</a>
-                        </li>
-                        <li><a href="inventory-management.stock_reorder_report">Stock Reorder Report</a></li>
-                        <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li>
-                        <li><a href="product_analysis_report">Report::Product Analysis</a></li>
+                        <li><a href="{{route('stock-receive')}}">Stock Receive</a></li>
+                        <li><a href="{{route('finished-goods')}}">Finished Goods</a></li>
+                        <li><a href="{{route('material-collect')}}">Material Collects</a></li>
+                        <li><a href="{{route('stock-transfer')}}">Stock Transfer</a></li>
+                        <li><a href="{{route('stock-count')}}">Stock Count</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Stock Management</span>
+                        <span>Inventory Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{route('stock-management.stock_receive')}}">Stock Receive</a></li>
-                        <li><a href="{{route('stock-management.finished_goods')}}">Finished Goods</a></li>
-                        <li><a href="stock-management.material_callects">Material Collects</a></li>
-                        <li><a href="stock-management.stock_transfer">Stock Transfer</a></li>
-                        <li><a href="stock-management.stock_count">Stock Count</a></li>
+                        <li><a href="{{route('stock-assign')}}">Stock Assign</a></li>
+                        <li><a href="{{route('stock-out')}}">Stock Out</a></li>
+                        <li><a href="{{route('stock-hand-report')}}">Stock On Hand Report</a></li>
+                        <li><a href="{{route('stock-product-report')}}">Location Wise Product Report</a>
+                        </li>
+                        <li><a href="{{route('stock-reorder-report')}}">Stock Reorder Report</a></li>
+                        {{-- <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li> --}}
+                        <li><a href="{{route('product-analysis-report')}}">Report::Product Analysis</a></li>
                     </ul>
                 </li>
+
                 <li class="menu-title">Program Modules</li>
 
                 <li>
@@ -108,8 +109,7 @@
                         <span>Pre Admission</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="
-                            ">Appointment</a></li>
+                        <li><a href="{{route('student.appointment')}}">Appointment</a></li>
                         <li><a href="{{route('student.case-history')}}">Case History</a></li>
                         <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
@@ -139,13 +139,17 @@
                         <li><a href="{{ route('social.communication') }}">Social Communication</a></li>
                         <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
                         <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
-                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication Assessment</a></li>
-                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement Skills</a></li>
+                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
+                                Assessment</a></li>
+                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement
+                                Skills</a></li>
                         <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
-                        <li><a href="assessment.autism_behavior_checklist">Autism Behavior Checklist (ABC)</a></li>
-                        <li><a href="assessment.sensory_checklist_for_young_adult">Sensory checklist for Young Adult</a>
+                        <li><a href="{{ route('autism.behavior.checklist') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('sensory.checklist.for.young.adult') }}">Sensory checklist for Young
+                                Adult</a>
                         </li>
-                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a></li>
+                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -155,21 +159,21 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="student.student_list">Students</a>
+                            <a href="{{ route('student.list') }}">Students</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Dairy
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="student.dairy.trip-report-form">Trip report and Evaluation Form</a>
+                                    <a href="{{ route('trip.report.form') }}">Trip report and Evaluation Form</a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.gym-outing-evalution">Gym and Outing Evaluation (D3cDT)
+                                    <a href="{{ route('gym.outing.evaluation') }}">Gym and Outing Evaluation (D3cDT)
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="student.dairy.ot-assessment">OT assessment in computer trainee</a>
+                                    <a href="{{ route('ot.assessment') }}">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('student.dairy.incident-record') }}">Incident Record</a>
@@ -188,15 +192,19 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('student.co-curricular.drama-diary-evaluation') }}">Drama Diary Evaluation</a>
+                                <li> <a href="{{ route('student.co-curricular.drama-diary-evaluation') }}">Drama Diary
+                                        Evaluation</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
+                            <a href="student.student-attendence">Student Attendence</a>
+                        </li>
+                        <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('student.employment.staff_and_workplace_inspecation_tool') }}">কর্মী ও কর্মস্থল
-                                        পরিদর্শন টুল</a>
+                                <li> <a href="{{ route('student.employment.staff_and_workplace_inspecation_tool') }}">কর্মী
+                                        ও কর্মস্থল পরিদর্শন টুল</a>
                                 </li>
                             </ul>
                         </li>
@@ -233,8 +241,8 @@
                         <span>Program</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('program.assign-task') }}">Assign Task</a></li>
-                        <li><a href="{{ route('program.create-itp') }}">Create ITP</a></li>
+                        <li><a href="program.assign-task">Assign Task</a></li>
+                        <li><a href="program.create-itp">Create ITP</a></li>
                         <li><a href="program.run-mitp">Run MITP</a></li>
                         <li><a href="program.notice-board">Notice Board</a></li>
                         <li><a href="program.assign-teacher"> Assign Teacher</a></li>

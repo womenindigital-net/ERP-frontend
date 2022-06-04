@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Livewire\Traits\CommonListElements;
+use App\Models\Student;
 use Livewire\Component;
+use App\Http\Livewire\Traits\CommonListElements;
 
 class Appointment extends Component
 {
@@ -13,6 +14,7 @@ class Appointment extends Component
     {
         $this->emit('show-appointment');
     }
+
 
     public function render()
     {
