@@ -41,7 +41,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Warehouse</label>
-                                        <select class="form-control select2">
+                                        <select class="form-control form-select">
                                             <option>--Select--</option>
                                             <option value="1">Canteen Logistic Materials</option>
                                             <option value="2">Canteen Raw material</option>
@@ -54,7 +54,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Date</label>
-                                        <x-input-text name="" type="date"></x-input-text>
+                                        <x-input-text name="hh" type="date"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,6 @@
                                                 </div>
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
-
                                                         <div  class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
                                                             <span class="pe-2 pb-1">01</span>
                                                             <select id="formrow-inputState" class="form-select">
@@ -112,11 +111,11 @@
                                                             </select>
                                                         </div>
                                                         <div  class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <x-input-text name=""></x-input-text>
+                                                            <x-input-text name="hh"></x-input-text>
                                                         </div>
                                                         <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-text name=""></x-input-text>
-                                                            <button class="btn btn-danger btn-rounded ms-2">
+                                                            <x-input-text name="hh"></x-input-text>
+                                                            <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                         </div>
@@ -124,7 +123,7 @@
                                                     
                                                 </div>
                                                <div class="ms-2">
-                                                <button data-repeater-create type="button" class="btn btn-success font-size-16 waves-effect waves-light"> Add</button>
+                                                <button data-repeater-create type="button" class="btn btn-success waves-effect waves-light"> Add</button>
                                                </div>
                                             </form>
                                             <!-- 7th row start  -->
@@ -133,7 +132,7 @@
                                                     <div class="row mb-2">
                                                         <label for="horizontal-firstname-input" class="col-2 text-end col-form-label">Note</label>
                                                         <div class="col-10">
-                                                        <x-input-text name="" placeholder="Enter Note" ></x-input-text>
+                                                        <x-input-text name="hh" placeholder="Enter Note" ></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -146,10 +145,10 @@
                             
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger font-size-16 btn-rounded waves-effect waves-light w-100"> <i class="bx bx-reset align-middle me-1 mb-1"></i>Reset</button>
+                                    <button class="btn btn-danger waves-effect waves-light w-100">Reset</button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-success font-size-16 btn-rounded waves-effect waves-light w-100" id="sa-position"><i class="bx bx-save align-middle me-1 mb-1"></i>Save</button>
+                                    <button class="btn btn-success  waves-effect waves-light w-100" id="sa-position">Save</button>
                                 </div>
                             </div>
                             <!-- end row -->
@@ -192,7 +191,7 @@
                                             <td>
                                                 <button type="button"
                                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    data-bs-toggle="modal" data-bs-target=".finished-goods-modal-xl-view">
                                                     <i class=" fas fa-eye"></i>
                                                 </button>
                                                 <button type="button"
@@ -222,7 +221,7 @@
                                             <td>
                                                 <button type="button"
                                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    data-bs-toggle="modal" data-bs-target=".finished-goods-modal-xl-view">
                                                     <i class=" fas fa-eye"></i>
                                                 </button>
                                                 <button type="button"
@@ -241,7 +240,8 @@
                                                     <i class="fas fa-pen"></i></button>
                                                 <button type="button"
                                                     class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                        class="fas fa-trash-alt"></i></button>
+                                                        class="fas fa-trash-alt"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                     </tbody>

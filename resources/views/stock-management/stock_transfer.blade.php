@@ -73,15 +73,13 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Reference</label>
-                                           <div class="input-group">
-                                            <x-input-text name="" placeholder="Refference no here"></x-input-text>
-                                           </div>
+                                        <x-input-text name="hh" placeholder="Refference no here"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Issue Date</label>
-                                        <x-input-text name="" type="date" placeholder="Refference no here"></x-input-text>
+                                        <x-input-text name="hh" type="date"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -115,7 +113,6 @@
                                 <div class="col-12 p-0">
                                     <div class="card">
                                         <div class="card-body">
-                                            
                                             <form class="repeater" enctype="multipart/form-data">
                                                 <div class="row">
                                                     <div class="col-lg-3 p-0 pe-1">
@@ -134,32 +131,29 @@
                                                 </div>
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
-
                                                         <div  class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
-                                                            <span class="pe-2 pb-1">01</span>
-                                                            <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">--Select--</option>
-                                                                <option value="1">Coockis</option>
-
-                                                            </select>
+                                                        <span class="pe-2 pb-1">01</span>
+                                                        <select id="formrow-inputState" class="form-select">
+                                                            <option selected="">--Select--</option>
+                                                            <option value="1">Coockis</option>
+                                                        </select>
                                                         </div>
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <x-input-text name=""></x-input-text>
+                                                            <x-input-text name="hh"></x-input-text>
                                                         </div>
                                                         <div  class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <x-input-text name=""></x-input-text>
+                                                            <x-input-text name="hh"></x-input-text>
                                                         </div>
                                                         <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">  
-                                                            <x-input-text name=""></x-input-text>
-                                                            <button class="btn btn-danger btn-rounded ms-2">
+                                                            <x-input-text name="hh"></x-input-text>
+                                                            <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    
                                                 </div>
                                                <div class="ms-2">
-                                                <button data-repeater-create type="button" class="btn btn-success font-size-16 waves-effect waves-light"> Add</button>
+                                                <button data-repeater-create type="button" class="btn btn-success  waves-effect waves-light"> Add</button>
                                                </div>
                                             </form>
                                         </div>
@@ -169,10 +163,10 @@
                             
                             <div class="row justify-content-center">
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger font-size-16 btn-rounded waves-effect waves-light w-100"> <i class="bx bx-reset align-middle me-1 mb-1"></i>Reset</button>
+                                    <button class="btn btn-danger waves-effect waves-light w-100">Reset</button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-success font-size-16 btn-rounded waves-effect waves-light w-100" id="sa-position"><i class="bx bx-save align-middle me-1 mb-1"></i>Save</button>
+                                    <button class="btn btn-success waves-effect waves-light w-100" id="sa-position">Save</button>
                                 </div>
                             </div>
                             <!-- end row -->
@@ -342,13 +336,13 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Reference</label>
-                                    <x-input-text name="" placeholder="6"></x-input-text>
+                                    <x-input-text name="pp" placeholder=""></x-input-text>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Issue Date</label>
-                                    <x-input-text name="" type="date"></x-input-text>
+                                    <x-input-text name="hh" type="date"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -412,7 +406,7 @@
                     <!-- journal form end -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i class="bx bx-exit"></i> Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Close</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

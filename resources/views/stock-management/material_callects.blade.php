@@ -20,120 +20,120 @@
                 <button type="button" class="btn btn-outline-info waves-effect waves-light " data-bs-toggle="modal"
                     data-bs-target=".material-callects-modal-xl-add"> <i class="fas fa-plus-circle"></i> Add</button>
             </div>
-               <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                            class="form-control form-control-sm form-select form-select-sm">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select> entries
-                                    </label>
-                                </div>
-                                <div class="col-sm-12 col-md-6 text-end">
-                                    <label style="display: inline-flex;align-items: center;">Search:
-                                        <input type="search" class="form-control form-control-sm" placeholder="">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-bordered w-100">
-                                    <thead>
-                                        <tr class="table-primary">
-                                            <th>Stock Receive By</th>
-                                            <th>Receive From</th>
-                                            <th>Receive Date</th>
-                                            <th>Total Category</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Puja</td>
-                                            <td>puja</td>
-                                            <td>reading</td>
-                                            <td>first to last</td>
-                                            <td>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                                    <i class=" fas fa-eye"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                                    <i class="fas fa-pen"></i></button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                        class="fas fa-trash-alt"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Puja</td>
-                                            <td>puja</td>
-                                            <td>reading</td>
-                                            <td>first to last</td>
-                                            <td>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                                    <i class=" fas fa-eye"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                                    <i class="fas fa-pen"></i></button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                        class="fas fa-trash-alt"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    Showing 1 to 2 of 2 entries
-                                </div>
-                                <div class="col-sm-12 col-md-6 text-end">
-                                    <nav>
-                                        <ul class="pagination" style="justify-content: end;">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                            class="form-control form-control-sm form-select form-select-sm">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select> entries
+                    </label>
+                </div>
+                <div class="col-sm-12 col-md-6 text-end">
+                    <label style="display: inline-flex;align-items: center;">Search:
+                        <input type="search" class="form-control form-control-sm" placeholder="">
+                    </label>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered w-100">
+                    <thead>
+                        <tr class="table-primary">
+                            <th>Stock Receive By</th>
+                            <th>Receive From</th>
+                            <th>Receive Date</th>
+                            <th>Total Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Puja</td>
+                            <td>puja</td>
+                            <td>reading</td>
+                            <td>first to last</td>
+                            <td>
+                                <button type="button"
+                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                    <i class=" fas fa-eye"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                    <i class="fas fa-pen"></i></button>
+                                <button type="button"
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                                        class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Puja</td>
+                            <td>puja</td>
+                            <td>reading</td>
+                            <td>first to last</td>
+                            <td>
+                                <button type="button"
+                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                    <i class=" fas fa-eye"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                    <i class="fas fa-pen"></i></button>
+                                <button type="button"
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                                        class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    Showing 1 to 2 of 2 entries
+                </div>
+                <div class="col-sm-12 col-md-6 text-end">
+                    <nav>
+                        <ul class="pagination" style="justify-content: end;">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 </div> <!-- end col -->
@@ -173,7 +173,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label class="form-label">Select Date</label>
-                            <x-input-text name="" type="date"></x-input-text>
+                            <x-input-text name="hh" type="date"></x-input-text>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -248,10 +248,10 @@
                                                 </select>
                                             </div>
                                             <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <x-input-text name="" ></x-input-text>
+                                                <x-input-text name="hh" ></x-input-text>
                                             </div>
                                             <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <x-input-text name="" ></x-input-text>
+                                                <x-input-text name="hh" ></x-input-text>
                                             </div>
                                             <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                 <select id="formrow-inputState" class="form-select">
@@ -278,8 +278,8 @@
                                                 </select>
                                             </div>
                                             <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                <x-input-text name="" ></x-input-text>
-                                                <button class="btn btn-danger btn-rounded ms-2">
+                                                <x-input-text name="hh" ></x-input-text>
+                                                <button class="btn btn-danger  ms-2">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </div>
@@ -288,7 +288,7 @@
                                     </div>
                                     <div class="ms-2">
                                         <button data-repeater-create type="button"
-                                            class="btn btn-success font-size-16 waves-effect waves-light"> Add</button>
+                                            class="btn btn-success waves-effect waves-light">Add</button>
                                     </div>
                                 </form>
                             </div>
@@ -298,9 +298,8 @@
                 <!-- journal form end -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i
-                        class="bx bx-exit"></i> Close</button>
-                <button type="button" class="btn font-size-16 btn-success" id="sa-position"><i class="bx bx-save"></i>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Close</button>
+                <button type="button" class="btn btn-success" id="sa-position">
                     Save</button>
             </div>
         </div><!-- /.modal-content -->
@@ -319,8 +318,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- journal form start -->
-                <!-- journal form start -->
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
