@@ -18,6 +18,8 @@ Route::group(['prefix' => 'account', 'middleware' => []], function () {
     Route::get('payment-supplier', [\App\Http\Controllers\PaymentController::class, 'supplier'])->name('payment-supplier');
     Route::get('direct-payment-add', [\App\Http\Controllers\PaymentController::class, 'directPaymentAdd'])->name('direct-payment-add');
     Route::get('cash-payment-list', [\App\Http\Controllers\PaymentController::class, 'casePaymentList'])->name('cash-payment-list');
+    Route::get('advance-payment-list', [\App\Http\Controllers\PaymentController::class, 'advancePaymentList'])->name('advance.payment.list');
+    Route::get('bank-to-bank-list', [\App\Http\Controllers\PaymentController::class, 'bankToBankList'])->name('bank.to.bank.list');
 
     Route::get('stock-receive', [\App\Http\Controllers\StockController::class, 'stockReceive'])->name('stock-receive');
     Route::get('finished-goods', [\App\Http\Controllers\StockController::class, 'finishedGoods'])->name('finished-goods');

@@ -106,4 +106,13 @@ class PaymentController extends Controller
     {
         return view('accounting.purchase.direct_payment.cash_payment_list');
     }
+
+    public function advancePaymentList()
+    {
+        return view('accounting.purchase.direct_payment.advance_payment_list');
+    }
+    public function bankToBankList()
+    {
+        return view('accounting.purchase.direct_payment.bank_to_bank_list');
+    }
 }
