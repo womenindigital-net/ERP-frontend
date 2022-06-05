@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\StudentIncome;
 
+use App\Models\Course;
 use Livewire\Component;
 
 class StudentIncome extends Component

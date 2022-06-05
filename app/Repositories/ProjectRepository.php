@@ -4,12 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Project;
 
-class ProjectRepository
+class ProjectRepository extends BaseRepository
 {
     protected string $model = Project::class;
-
-    public function getData()
-    {
-        return $this->model::get('title');
-    }
 }

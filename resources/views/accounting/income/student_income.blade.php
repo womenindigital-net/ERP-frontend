@@ -164,14 +164,14 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Student ID</label>
-                                        <x-input-text name="" placeholder="Student ID">
+                                        <x-input-text name="hello" placeholder="Student ID">
                                         </x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Payment Date</label>
-                                        <x-input-text type="date" name="" placeholder="dd M, yyyy">
+                                        <x-input-text type="date" name="hello" placeholder="dd M, yyyy">
                                         </x-input-text>
                                     </div>
                                 </div>
@@ -243,12 +243,12 @@
                                                         </div>
 
                                                         <div class=" col-lg-4  pb-1">
-                                                            <x-input-text name="" placeholder="Receive Amount">
+                                                            <x-input-text name="hello" placeholder="Receive Amount">
                                                             </x-input-text>
                                                         </div>
 
                                                         <div class="mb-3  col-lg-4">
-                                                            <x-input-text name="" placeholder="">
+                                                            <x-input-text name="hello" placeholder="">
                                                             </x-input-text>
                                                         </div>
                                                     </div>
@@ -348,14 +348,11 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </form>
-
                         <!-- journal form end -->
                     </div>
                     <div class="modal-footer">
@@ -366,12 +363,7 @@
         </div><!-- /.modal -->
 @endsection
 @section('script')
-
     <!-- form repeater js -->
-    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-
-
+    <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection

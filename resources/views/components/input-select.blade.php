@@ -6,7 +6,7 @@
         @php($val = $record->id ?? $key)
         <option value="{{$val}}" {{ old($name) ? (old($name)==$val ? 'selected' : '' ) : ($isSelected($val) ? 'selected'
             : '' )}}>
-            {{$targetColumn ? $record->$targetColumn : ($record->name ?? $record)}}
+            {{$targetColumn ? $record->$targetColumn : ($record->name ?? $record)}} {{$additional ? '(' . $record->{$additional} . ')' : ''}}
         </option>
         @endforeach
     </select>

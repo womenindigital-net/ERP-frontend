@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -9,6 +10,7 @@ use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 use phpDocumentor\Reflection\Types\Mixed_;
 use function PHPUnit\Framework\isInstanceOf;
+use function Sodium\add;
 
 class InputSelect extends Component
 {
@@ -20,14 +22,20 @@ class InputSelect extends Component
     public string $id;
     public string $targetColumn;
     public string $wireModel;
+    public string $additional;
 
     /**
      * Create a new component instance.
      *
      * @return void
+     * @throws Exception
      */
-    public function __construct($name, $records, $targetColumn = '', $selected = null, $multiple = false, $required = '', $wireModel = '')
+    public function __construct($name = '', $records, $targetColumn = '', $selected = null, $multiple = false, $required = '', $wireModel = '', $additional=false)
     {
+        if (!$name and !$wireModel) {
+            throw new Exception("Either name or wire model is needed");
+        }
+        $name = $wireModel ?: $name;
         $this->name = $name . ($multiple ? '[]' : '');
         $this->targetColumn = $targetColumn;
         $this->records = $records;
@@ -36,6 +44,7 @@ class InputSelect extends Component
         $this->multiple = $multiple ? 'multiple' : '';
         $this->wireModel = $wireModel ? "wire:model=$wireModel" : '';
         $this->id = preg_replace('/[\[\]]/', '', $name);
+        $this->additional = $additional ?: '';
     }
 
     public function isSelected($option): bool
