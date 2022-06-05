@@ -299,13 +299,13 @@ class StudentController extends Controller
         ];
         return view('student.employment.staff_and_workplace_inspecation_tool', $data);
     }
-    public function studentIncome(): Factory|View|Application
-    {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        ];
-        return view('accounting.income.student_income', $data);
-    }
+    // public function studentIncome(): Factory|View|Application
+    // {
+    //     $data = [
+    //         'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+    //     ];
+    //     return view('accounting.income.student_income', $data);
+    // }
     public function studentSaleVoucher(): Factory|View|Application
     {
         $data = [
@@ -322,49 +322,49 @@ class StudentController extends Controller
     }
 
     public function assignTask(): Factory|View|Application
-    {   
+    {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
         return view('program.assign-task', $data);
     }
     public function createItp(): Factory|View|Application
-    {   
+    {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
         return view('program.create-itp', $data);
     }
     public function stockReceive(): Factory|View|Application
-    {   
+    {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
         return view('stock-management.stock_receive', $data);
     }
     public function finishedGoods(): Factory|View|Application
-    {   
+    {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
         return view('stock-management.finished_goods', $data);
     }
     public function materialCallects(): Factory|View|Application
-    {   
+    {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
         return view('stock-management.material_callects', $data);
     }
     public function stockTransfer(): Factory|View|Application
-    {   
+    {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
         return view('stock-management.stock_transfer', $data);
     }
     public function stockCount(): Factory|View|Application
-    {   
+    {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];

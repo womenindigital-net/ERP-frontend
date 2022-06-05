@@ -24,7 +24,7 @@ class StudentIncomeList extends Component
 
     public function show($studentIncome = [], $mode = 'create', $recordId = 0)
     {
-        dd($mode);
+        // dd($mode);
         $this->recordId = $recordId;
         $this->emit('show-student-income', $studentIncome, $mode, $recordId);
     }
