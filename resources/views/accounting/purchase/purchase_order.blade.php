@@ -179,24 +179,24 @@
                                                             <x-input-text name="yousuf" type="date"></x-input-text>
                                                         </div>
                                                         <div  class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <x-input-text name="yousuf" type="number" readonly="ture"></x-input-text>
+                                                            <x-input-text name="yousuf" type="number" :readOnly="true"></x-input-text>
                                                         </div>
 
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <x-input-text name="yousuf" type="number" readonly="ture"></x-input-text>
+                                                            <x-input-text name="yousuf" type="number" :readOnly="true"></x-input-text>
                                                         </div>
 
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <x-input-text name="yousuf" type="number" readonly="ture"></x-input-text>
+                                                            <x-input-text name="yousuf" type="number" :readOnly="true"></x-input-text>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <x-input-text name="yousuf" type="number" readonly="ture"></x-input-text>
+                                                            <x-input-text name="yousuf" type="number" :readOnly="true"></x-input-text>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <x-input-text name="yousuf" type="number" readonly="ture"></x-input-text>
+                                                            <x-input-text name="yousuf" type="number" :readOnly="true"></x-input-text>
                                                         </div>
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <x-input-text name="yousuf" type="number" readonly="ture"></x-input-text>
+                                                            <x-input-text name="yousuf" type="number" :readOnly="true"></x-input-text>
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
                                                             <input type="number" class="form-control"/>
