@@ -22,13 +22,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="tab" href="#receive_payment" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block">Receive Payment</span>
+                            <span class="d-none d-sm-block">Donation And Other Payment</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#received_payment_details" role="tab">
                             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                            <span class="d-none d-sm-block">Received Payment Details</span>
+                            <span class="d-none d-sm-block">Donation And Other Details</span>
                         </a>
                     </li>
                 </ul>
@@ -79,9 +79,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="validationCustom02" class="form-label">Requisition</label>
-                                    <x-input-text name="name" placeholder="Enter requisition">
-                                    </x-input-text>
+                                    <label for="validationCustom02" class="form-label">Note</label>
+                                    <x-input-textarea name="name" rows="1" placeholder="">
+                                    </x-input-textarea>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,6 @@
                                                 <label class="form-label">Bank Name</label>
                                                 <x-input-text name="name" placeholder="Enter Bank Name Here">
                                                 </x-input-text>
-
                                             </div>
                                         </div>
 
@@ -186,9 +185,7 @@
                                                 <div class="col p-0 pe-1">
                                                     <label for="product">Invoice Number</label>
                                                 </div>
-                                                <div class="col p-0 pe-1">
-                                                    <label for="product">Due Amount</label>
-                                                </div>
+                                               
                                                 <div class="col p-0 pe-1">
                                                     <label for="quality">Payment Amount</label>
                                                 </div>
@@ -196,7 +193,7 @@
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item class="row">
 
-                                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                                    <div class=" col-lg-1 p-0 pe-1 pb-1 mt-2">
                                                         <span class="pe-2 pb-1">01</span>
                                                     </div>
                                                     <div class=" col p-0 pe-1 pb-1">
@@ -208,38 +205,21 @@
                                                         </select>
                                                     </div>
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <x-input-text name="name" placeholder="">
+                                                        <x-input-text name="name"  placeholder="">
                                                         </x-input-text>
                                                     </div>
-
-                                                    <div class=" col p-0 pe-1 pb-1 d-flex">
-                                                        <x-input-text name="name" placeholder="">
-                                                        </x-input-text>
-                                                        <button class="btn btn-danger ms-2">
+                                                    <div class=" col-1 p-0 pe-1 pb-1">
+                                                        <div> 
+                                                            <button class="btn btn-danger ms-2">
                                                             <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                            </button>
+                                                       </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <input data-repeater-create type="button"
                                                 class="btn btn-success mt-3 mt-lg-0" value="Add" />
                                         </form>
-                                        <!-- 7th row start  -->
-                                        <div class="row justify-content-center">
-
-                                            <div class="col-lg-6">
-                                                <div class="row mb-2">
-                                                    <label for="horizontal-firstname-input"
-                                                        class="col-3 text-end col-form-label">Note</label>
-                                                    <div class="col-9">
-                                                        <x-input-text name="name" placeholder="">
-                                                        </x-input-text>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 7th row end  -->
                                     </div>
                                 </div>
                             </div>
@@ -365,10 +345,8 @@
                                 </div>
                             </div>
                         </div> <!-- end col -->
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

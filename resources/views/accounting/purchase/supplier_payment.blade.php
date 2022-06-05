@@ -3,22 +3,7 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Plugins css -->
-    <link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
-
+   
 @endsection
 
 @section('content')
@@ -47,7 +32,6 @@
                             </a>
                         </li>
                     </ul>
-
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="supplier_payment" role="tabpanel">
@@ -79,17 +63,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                
-                                
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Payment Date</label>
-                                            <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-
-                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                            </div>
+                                            
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -132,7 +109,6 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-6">

@@ -54,7 +54,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Date</label>
-                                        <x-input-text name="" type="date"></x-input-text>
+                                        <x-input-text name="yousuf" type="date"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -112,10 +112,10 @@
                                                             </select>
                                                         </div>
                                                         <div  class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <x-input-text name=""></x-input-text>
+                                                            <x-input-text name="yousuf"></x-input-text>
                                                         </div>
                                                         <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-text name=""></x-input-text>
+                                                            <x-input-text name="yousuf"></x-input-text>
                                                             <button class="btn btn-danger btn-rounded ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -133,7 +133,7 @@
                                                     <div class="row mb-2">
                                                         <label for="horizontal-firstname-input" class="col-2 text-end col-form-label">Note</label>
                                                         <div class="col-10">
-                                                        <x-input-text name="" placeholder="Enter Note" ></x-input-text>
+                                                        <x-input-text name="yousuf" placeholder="Enter Note" ></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -173,7 +173,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label class="form-label">Select Date</label>
-                            <x-input-text name="" type="date"></x-input-text>
+                            <x-input-text name="yousuf" type="date"></x-input-text>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -248,10 +248,10 @@
                                                 </select>
                                             </div>
                                             <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <x-input-text name="" ></x-input-text>
+                                                <x-input-text name="yousuf" ></x-input-text>
                                             </div>
                                             <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <x-input-text name="" ></x-input-text>
+                                                <x-input-text name="yousuf" ></x-input-text>
                                             </div>
                                             <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                 <select id="formrow-inputState" class="form-select">
@@ -278,7 +278,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                <x-input-text name="" ></x-input-text>
+                                                <x-input-text name="yousuf" ></x-input-text>
                                                 <button class="btn btn-danger btn-rounded ms-2">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
