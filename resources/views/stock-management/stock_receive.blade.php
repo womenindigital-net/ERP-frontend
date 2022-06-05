@@ -72,12 +72,13 @@
                                     <div class="mb-3">
                                         <label for="validationCustom02" class="form-label">Purchase</label>
                                         <x-input-text name="name" placeholder="Purchase no here"></x-input-text>
+                                        <label for="validationCustom02" class="form-label">Return</label>
+                                        <x-input-text name="name" placeholder="Return here"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Return</label>
-                                        <x-input-text name="name" placeholder="Return here"></x-input-text>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -88,7 +89,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Location</label>
+                                        <label class="form-label">Warehouse</label>
                                         <select class="form-control form-select">
                                             <option>--Select--</option>
                                             <option value="1">Canteen Logistic Materials</option>
@@ -153,7 +154,7 @@
                                                     <x-input-text name="name" type="date"></x-input-text>
                                                 </div>
                                                 <div class="col-lg-1 p-0 pe-1">
-                                                    <x-input-text name="name" placeholder="0"></x-input-text>
+                                                    <x-input-text type="number" name="name" placeholder="0"></x-input-text>
                                                 </div>
 
                                                 <div class="col-lg-1 p-0 pe-1">
@@ -169,7 +170,7 @@
                                                     <x-input-text name="name"></x-input-text>
                                                 </div>
                                                 <div class="col-lg-1 p-0 pe-1">
-                                                    <x-input-text name="name"></x-input-text>
+                                                    <x-input-text type="number" name="name"></x-input-text>
                                                 </div>
                                                 <div class="mb-2 col-lg-1 p-0 pe-1">
                                                     <button type="button"
@@ -214,7 +215,7 @@
                                         <th class="">Type</th>
                                         <th class="">Date</th>
                                         <th class="">Quantity</th>
-                                        <th class="">Location</th>
+                                        <th class="">Warehouse</th>
                                         <th class="">Receiver</th>
                                         <th>Log</th>
                                         <th>Action</th>

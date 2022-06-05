@@ -50,10 +50,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Puja</td>
-                            <td>puja</td>
-                            <td>reading</td>
-                            <td>first to last</td>
+                            <td>Airin Shiddique</td>
+                            <td>Office Outlet</td>
+                            <td>2021-03-03</td>
+                            <td>1</td>
                             <td>
                                 <button type="button"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
@@ -213,7 +213,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                <x-input-text name="name"></x-input-text>
+                                                <p class="form-control m-0">25</p>
                                             </div>
                                             <div class="col-lg-2 p-0 pe-1 pb-1">
                                                 <x-input-text name="name" type="number"></x-input-text>

@@ -31,7 +31,6 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label>Date</label>
-                    <div class="input-group" id="datepicker1">
                     <x-input-text name="hh" type="date"></x-input-text>
             </div>
         </div>

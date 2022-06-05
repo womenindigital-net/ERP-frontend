@@ -111,10 +111,12 @@
                                                             </select>
                                                         </div>
                                                         <div  class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <x-input-text name="hh"></x-input-text>
+                                                            <select id="formrow-inputState" class="form-select">
+                                                                <option selected="">Select</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-text name="hh"></x-input-text>
+                                                            <x-input-text type="number" name="hh"></x-input-text>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -132,7 +134,7 @@
                                                     <div class="row mb-2">
                                                         <label for="horizontal-firstname-input" class="col-2 text-end col-form-label">Note</label>
                                                         <div class="col-10">
-                                                        <x-input-text name="hh" placeholder="Enter Note" ></x-input-text>
+                                                        <x-input-textarea name="hh" placeholder="Enter Note" ></x-input-textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -184,10 +186,12 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Puja</td>
-                                            <td>puja</td>
-                                            <td>reading</td>
-                                            <td>first to last</td>
+                                            <td>Office Store</td>
+                                            <td>2021-04-24</td>
+                                            <td></td>
+                                            <td>Create: Ohidul Hassan @ 2021-04-24 16:12:28
+                                                There is no update record.
+                                            </td>
                                             <td>
                                                 <button type="button"
                                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
@@ -211,37 +215,6 @@
                                                 <button type="button"
                                                     class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
                                                         class="fas fa-trash-alt"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Puja</td>
-                                            <td>puja</td>
-                                            <td>reading</td>
-                                            <td>first to last</td>
-                                            <td>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".finished-goods-modal-xl-view">
-                                                    <i class=" fas fa-eye"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                                    <i class="fas fa-pen"></i></button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                        class="fas fa-trash-alt"></i>
-                                                </button>
                                             </td>
                                         </tr>
                                     </tbody>

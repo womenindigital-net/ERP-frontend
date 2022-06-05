@@ -87,11 +87,9 @@
                                         <label class="form-label">Location From</label>
                                         <select class="form-control form-select">
                                             <option>--Select--</option>
-                                            <option value="AK">Canteen Logistic Materials</option>
-                                            <option value="HI">Canteen Raw material</option>
-                                            <option value="CA">Office Outlet</option>
-                                            <option value="NV">Office Programme</option>
-                                            <option value="OR">Office Store</option>
+                                            <option value="1">Warehouse to Warehouse</option>
+                                            <option value="2">Warehouse to Customer</option>
+                                            <option value="3">Warehouse to Service Provider</option>
                                         </select>
                                     </div>
                                 </div>
@@ -100,11 +98,9 @@
                                         <label class="form-label">Location to</label>
                                         <select class="form-control form-select">
                                             <option>--Select--</option>
-                                            <option value="AK">Canteen Logistic Materials</option>
-                                            <option value="HI">Canteen Raw material</option>
-                                            <option value="CA">Office Outlet</option>
-                                            <option value="NV">Office Programme</option>
-                                            <option value="OR">Office Store</option>
+                                            <option value="1">Warehouse to Warehouse</option>
+                                            <option value="2">Warehouse to Customer</option>
+                                            <option value="3">Warehouse to Service Provider</option>
                                         </select>
                                     </div>
                                 </div>
@@ -139,13 +135,13 @@
                                                         </select>
                                                         </div>
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <x-input-text name="hh"></x-input-text>
+                                                            <x-input-text type="number" name="hh"></x-input-text>
                                                         </div>
                                                         <div  class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <x-input-text name="hh"></x-input-text>
+                                                            <x-input-text type="number" name="hh"></x-input-text>
                                                         </div>
                                                         <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">  
-                                                            <x-input-text name="hh"></x-input-text>
+                                                            <x-input-text type="number" name="hh"></x-input-text>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -215,20 +211,23 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Puja</td>
-                                            <td>puja</td>
-                                            <td>reading</td>
-                                            <td>first to last</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
-                                            <td>puja</td>
+                                            <td></td>
+                                            <td>Administration</td>
+                                            <td>Warehouse to Warehouse</td>
+                                            <td>6</td>
+                                            <td>2021-10-27</td>
+                                            <td>2</td>
+                                            <td>Office Store</td>
+                                            <td>Office Outlet</td>
+                                            <td>No</td>
+                                            <td>No</td>
+                                            <td></td>
+                                            <td>No</td>
+                                            <td></td>
+                                            <td>Create: Md. Kutubuddin .. @ 2021-10-27 11:54:08
+                                                There is no update record.
+                                            </td>
+                                            
                                             <td>
                                                 <button type="button"
                                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
@@ -251,7 +250,8 @@
                                                     <i class="fas fa-pen"></i></button>
                                                 <button type="button"
                                                     class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                        class="fas fa-trash-alt"></i></button>
+                                                        class="fas fa-trash-alt"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                     </tbody>
