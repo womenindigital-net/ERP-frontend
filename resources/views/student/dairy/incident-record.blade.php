@@ -22,10 +22,6 @@
         background-color: #4CAF50
     }
 
-    #saveBtn {
-        display: none;
-    }
-
     .thanks-message {
         display: none
     }
@@ -232,7 +228,6 @@
                                 onclick="nextPrev(-1)">Previous</button>
                             <button class="btn font-size-14 btn-success" type="button" id="nextBtn"
                                 onclick="nextPrev(1)">Next</button>
-                            <button class="btn font-size-14 btn-danger" type="button" id="saveBtn">Save</button>
                         </div>
                     </div>
                 </form>
@@ -361,8 +356,7 @@ function nextPrev(n) {
     currentTab = currentTab + n;
     // console.log(currentTab);
     if (currentTab >= x.length) {
-        // document.getElementById("nextprevious").style.display = "none";
-        document.getElementById("nextBtn").style.display = "none";
+        document.getElementById("nextprevious").style.display = "none";
         document.getElementById("text-message").style.display = "block";
         document.getElementById("saveBtn").style.display = "block";
         // console.log(x.length);
