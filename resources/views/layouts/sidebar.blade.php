@@ -416,16 +416,16 @@
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.store-management.warehouse_setup">Warehouse Setup</a>
+                                    <a href="{{ route('warehouse.setup') }}">Warehouse Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.store-management.measure-unit">Measure Unit Setup</a>
+                                    <a href="{{ route('measure.unit.setup') }}">Measure Unit Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.store-management.product-category">Product Category Setup</a>
+                                    <a href="{{ route('product.category.setup') }}">Product Category Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.store-management.warehouse_setup">Create Product</a>
+                                    <a href="{{ route('product.create') }}">Product Create</a>
                                 </li>
                             </ul>
                         </li>
