@@ -50,10 +50,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Puja</td>
-                            <td>puja</td>
-                            <td>reading</td>
-                            <td>first to last</td>
+                            <td>Airin Shiddique</td>
+                            <td>Office Outlet</td>
+                            <td>2021-03-03</td>
+                            <td>1</td>
                             <td>
                                 <button type="button"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
@@ -141,7 +141,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label class="form-label">Select Date</label>
-                            <x-input-text name="yousuf" type="date"></x-input-text>
+                            <x-input-text name="name" type="date"></x-input-text>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -212,11 +212,11 @@
                                                     <option selected="">Select</option>
                                                 </select>
                                             </div>
-                                            <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <x-input-text name="yousuf" ></x-input-text>
+                                            <div class="col-lg-2 p-0 pe-1 pb-1">
+                                                <p class="form-control m-0">25</p>
                                             </div>
-                                            <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                                <x-input-text name="yousuf" ></x-input-text>
+                                            <div class="col-lg-2 p-0 pe-1 pb-1">
+                                                <x-input-text name="name" type="number"></x-input-text>
                                             </div>
                                             <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                 <select id="formrow-inputState" class="form-select">
@@ -241,9 +241,6 @@
                                                 <select id="formrow-inputState" class="form-select">
                                                     <option selected="">Select</option>
                                                 </select>
-                                            </div>
-                                            <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                <x-input-text name="yousuf" ></x-input-text>
                                                 <button class="btn btn-danger btn-rounded ms-2">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
@@ -253,7 +250,7 @@
                                     </div>
                                     <div class="ms-2">
                                         <button data-repeater-create type="button"
-                                            class="btn btn-success font-size-16 waves-effect waves-light"> Add</button>
+                                            class="btn btn-success waves-effect waves-light">Add</button>
                                     </div>
                                 </form>
                             </div>
@@ -263,9 +260,8 @@
                 <!-- journal form end -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"><i
-                        class="bx bx-exit"></i> Close</button>
-                <button type="button" class="btn font-size-16 btn-success" id="sa-position"><i class="bx bx-save"></i>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Close</button>
+                <button type="button" class="btn btn-success" id="sa-position">
                     Save</button>
             </div>
         </div><!-- /.modal-content -->

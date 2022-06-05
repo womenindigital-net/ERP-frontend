@@ -31,8 +31,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label>Date</label>
-                    <div class="input-group" id="datepicker1">
-                    <x-input-text name="" type="date"></x-input-text>
+                    <x-input-text name="hh" type="date"></x-input-text>
             </div>
         </div>
     </div>
@@ -62,11 +61,13 @@
                                             <option value="2">Angel Chef Hot Kitchen</option>
                                         </select>
                                     </td>
-                                    <td><select class="form-control border border-0 p-0 select2">
-                                        <option>--Select--</option>
-                                        <option value="1">Jhuri Puti (Culser)- Red::3</option>
-                                        <option value="2">Jhuri Puti (Culser)- Blue::4</option>
-                                    </select></td>
+                                    <td>
+                                        <select class="form-control border border-0 p-0 select2">
+                                            <option>--Select--</option>
+                                            <option value="1">Jhuri Puti (Culser)- Red::3</option>
+                                            <option value="2">Jhuri Puti (Culser)- Blue::4</option>
+                                        </select>
+                                    </td>
                                     <td>Price</td>
                                     <td>88</td>
                                 </tr>
