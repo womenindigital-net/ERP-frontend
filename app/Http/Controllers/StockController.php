@@ -136,6 +136,6 @@ class StockController extends Controller
 
     public function stockProductAnalysisReport()
     {
-        return view('product_analysis_report');
+        return view('inventory-management.product_analysis_report');
     }
 }

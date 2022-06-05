@@ -10,6 +10,7 @@ class InputText extends Component
     public string $name;
     //    public string $label;
     //    public string $labelFor;
+    public string $readOnly;
     public $placeholder;
     public $value;
     //    public $inputId;
@@ -20,7 +21,7 @@ class InputText extends Component
     /**
      * @throws Exception
      */
-    public function __construct($name = '', $type = 'text', $placeholder = '', $value = false, $required = false, $wireModel = '')
+    public function __construct($name = '', $readOnly = false, $type = 'text', $placeholder = '', $value = false, $required = false, $wireModel = '')
     {
         if (!$wireModel && !$name) {
             throw new Exception("Need a name or wireModel");
@@ -29,6 +30,7 @@ class InputText extends Component
         $this->name = $wireModel ?: $name;
         //        $this->label = $label ?: prepareInputLabel($name);
         //        $this->labelFor = $inputId ?: $this->label;
+        $this->readOnly = $readOnly ? 'readonly' : '';
         $this->placeholder = $placeholder;
         $this->value = old($name, $value);
         //        $this->inputId = $this->labelFor;
