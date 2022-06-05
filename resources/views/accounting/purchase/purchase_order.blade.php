@@ -209,7 +209,8 @@
                                             data-date-format="dd,M,yyyy" data-date-container='#datepicker1' data-provide="datepicker">
                                                         </div>
                                                         <div  class=" col-lg-1 p-0 pe-1 pb-1">
-                                                            <input type="number" readonly class="form-control"/>
+                                                            
+                                                            <input type="number" readonly="true" class="form-control"/>
                                                         </div>
 
                                                         <div class=" col-lg-1 p-0 pe-1 pb-1">
