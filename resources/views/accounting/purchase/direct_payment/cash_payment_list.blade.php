@@ -3,21 +3,6 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Plugins css -->
-    <link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
 
 @endsection
 
@@ -34,14 +19,29 @@
                 <div class="card-body p-0">
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
+                        <!-- end row -->
                         <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <table id="datatable" class="table table-bordered dt-responsive w-100">
-                                            <thead>
-                                            <tr>
-                                                <th>Purpose</th>
+                            <div class="col-sm-12 col-md-6">
+                                <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                        class="form-control form-control-sm form-select form-select-sm">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> entries
+                                </label>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                                <label style="display: inline-flex;align-items: center;">Search:
+                                    <input type="search" class="form-control form-control-sm" placeholder="">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered w-100">
+                                <thead>
+                                    <tr class="table-primary">
+                                        <th>Purpose</th>
                                                 <th>From Account</th>
                                                 <th>To account</th>
                                                 <th>Amount</th>
@@ -55,49 +55,74 @@
                                                 <th>Is Transfer Done</th>
                                                 <th>Transfer Date</th>
                                                 <th>Log</th>
-                                                <th>Action</th>
-                                                </tr>
-                                            </thead>
-        
-        
-                                            <tbody>
-                                            <tr>
-                                                <td>Cash salary to be paid to the new staffs as 1. Jannatul Khuludh -Tk.5633/-, 2.Ms. Raksana Begum -7733/- 3. Sheyreen Binte Malek Tk.5200/-, 4. Bijoy Gharami Tk.10400/-, Md. Ridoy Hasan 7,467/-</td>
-                                                <td>1050004-Bank-The City Bank Ltd (3101829023001)-Y</td>
-                                                <td>7550001-Administration Staff Salary-N</td>
-                                                <td>36433</td>
-                                                <td>City Bank Book-3</td>
-                                                <td>6446620</td>
-                                                <td></td>
-                                                <td>Y</td>
-                                                <td>No</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>N</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><button type="button"
-                                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                                        class="fas fa-check"></i></button>
-                                                <button type="button"
+                                                <th class="nowrap">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Puja</td>
+                                        <td>puja</td>
+                                        <td>reading</td>
+                                        <td>first to last</td>
+                                        <td>Puja</td>
+                                        <td>puja</td>
+                                        <td>reading</td>
+                                        <td>first to last</td>
+                                        <td>Puja</td>
+                                        <td>puja</td>
+                                        <td>yousuf</td>
+                                        <td>reading</td>
+                                        <td>first to last</td>
+                                        <td>first to last</td>
+                                        <td>
+                                            <button type="button"
                                                 class="btn btn-sm  m-1 btn-primary btn-rounded waves-effect waves-light"
                                                 data-bs-toggle="modal" data-bs-target=".cash-payment-view"> <i
                                                     class="fas fa-eye"></i></button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                                    data-bs-toggle="modal" data-bs-target=".journal-modal-xl-edit">
-                                                    <i class="fas fa-pen"></i></button>
-                                                <button type="button"
-                                                    class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light"> <i
-                                                        class="fas fa-trash-alt"></i></button></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-        
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
+                                            <button type="button"
+                                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button type="button"
+                                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button type="button"
+                                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                                                data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                <i class="fas fa-pen"></i></button>
+                                            <button type="button"
+                                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                                                    class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                Showing 1 to 2 of 2 entries
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                                <nav>
+                                    <ul class="pagination" style="justify-content: end;">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -122,6 +147,7 @@
                                         <label class="col-sm-3 col-form-label">Project</label>
                                         <div class="col-sm-9">
                                           <input type="text" readonly class="form-control"  value="Administration">
+                                          <x-input-text name="yousuf" placeholder="Enter Amount Here"></x-input-text>
                                         </div>
                                     </div>
                                 </div>
@@ -214,43 +240,7 @@
         </div><!-- /.modal -->
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-
-    <!-- form repeater js -->
-    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-    {{-- Table --}}
-
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Plugins js -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
+  
 @endsection
 @section('script-bottom')
 @endsection

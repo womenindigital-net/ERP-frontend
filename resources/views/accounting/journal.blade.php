@@ -3,6 +3,9 @@
 @section('title') Journal @endsection
 
 @section('css')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 @endsection
 
 @section('content')
@@ -162,6 +165,15 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
+                            <label class="form-label">Datalist example</label>
+                            <input class="form-control" list="datalistOptions" placeholder="Type to search...">
+                            <datalist id="datalistOptions">
+                                <option value="San Francisco">
+                                <option value="New York">
+                                <option value="Seattle">
+                                <option value="Los Angeles">
+                                <option value="Chicago">
+                            </datalist>
                             <label for="validationCustom02" class="form-label">Trans.Amount</label>
                             <x-input-text name="NAME" :readOnly="true" placeholder="Trans.Amount">
                             </x-input-text>

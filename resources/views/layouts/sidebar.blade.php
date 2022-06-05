@@ -60,11 +60,11 @@
                                     <a href="{{route('cash-payment-list')}}">Cash Payment List</a>
                                 </li>
                                 <li>
-                                    <a href="accounting.purchase.direct_payment.advance_payment_list">Advance Payment
+                                    <a href="{{ route('advance.payment.list') }}">Advance Payment
                                         List</a>
                                 </li>
                                 <li>
-                                    <a href="accounting.purchase.direct_payment.bank_to_bank_list">Bank to Bank Transfer
+                                    <a href="{{ route('bank.to.bank.list') }}">Bank to Bank Transfer
                                         List</a>
                                 </li>
                             </ul>

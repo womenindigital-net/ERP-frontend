@@ -3,22 +3,7 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <!-- Plugins css -->
-    <link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
-
+   
 @endsection
 
 @section('content')
@@ -47,7 +32,6 @@
                             </a>
                         </li>
                     </ul>
-
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="supplier_payment" role="tabpanel">
@@ -79,26 +63,23 @@
                                         </select>
                                     </div>
                                 </div>
-                                
-                                
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Payment Date</label>
-                                            <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                                            data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-
-                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                            </div>
+                                        <x-input-text name="yousuf" type="date"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Reference</label>
-                                        <input type="text" class="form-control" placeholder="Enter Reference here" disabled value="RP-76">
-                                    </div>
+                                        <label for="validationCustom02" class="form-label">Order Purchase</label>
+                                        <select class="form-control select2">
+                                            <option>--Select--</option>
+                                            <option value="1">R-1-1</option>
+                                            <option value="2">R-1-2</option>
+                                            <option value="3">R-1-3</option>
+                                        </select>
+                                   </div>
                                 </div>
-
                             </div>
                             <div class="row">
                                 <div class="col-12 p-0">
@@ -115,7 +96,7 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Amount</label>
-                                                                    <input type="number" class="form-control" placeholder="Enter Amount Here">
+                                                                    <x-input-text name="yousuf" placeholder="Enter Amount Here"></x-input-text>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
@@ -132,7 +113,6 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-6">
@@ -152,7 +132,7 @@
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Cheque No.</label>
-                                                                    <input type="text" class="form-control" placeholder="Enter Cheque No. Here">
+                                                                    <x-input-text name="yousuf" placeholder="Enter Cheque No. Here"></x-input-text>
                                                                 </div>
                                                             </div> 
                                                         </div>
@@ -206,7 +186,7 @@
                                                     <div data-repeater-item class="row">
 
                                                         <div  class="col-lg-3 d-flex p-0 pe-1 pb-1">
-                                                            <span class="pe-2 pb-1">01</span>
+                                                            <span class="pe-2 pb-1 mt-2">01</span>
                                                             <select id="formrow-inputState" class="form-select">
                                                                 <option selected="">--Select invoice--</option>
                                                                 <option value="1">SDT-1212</option>
@@ -220,14 +200,14 @@
                                                             </button>
                                                         </div>
                                                         <div  class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <p class="form-control m-0">667</p>
+                                                            <x-input-text name="yousuf"></x-input-text>
                                                         </div>
 
                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                            <input type="number" class="form-control"/>
+                                                            <x-input-text name="yousuf" type="number"></x-input-text>
                                                         </div>
                                                         <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <input type="text" class="form-control"/>
+                                                            <x-input-text name="yousuf" type="text"></x-input-text>
                                                             <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -243,7 +223,7 @@
                                                     <div class="row mb-2">
                                                         <label for="horizontal-firstname-input" class="col-2 text-end col-form-label">Note</label>
                                                         <div class="col-10">
-                                                        <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Note ">
+                                                            <x-input-textarea name="yousuf" rows="1"></x-input-textarea>                                                        
                                                         </div>
                                                     </div>
                                                 </div>
@@ -267,11 +247,28 @@
                             <!-- end row -->
                         </div>
                         <div class="tab-pane" id="supplier_payment_list" role="tabpanel">
-                            <div class="row">
-                                <div class="col p-0 table-responsive border-0">
-                                    <table id="datatable-buttons" class="table table-bordered table-responsive w-100">
-                                        <thead>
-                                            <tr>
+                             <!-- end row -->
+                             <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                            class="form-control form-control-sm form-select form-select-sm">
+                                            <option value="10">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> entries
+                                    </label>
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-end">
+                                    <label style="display: inline-flex;align-items: center;">Search:
+                                        <input type="search" class="form-control form-control-sm" placeholder="">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered w-100">
+                                    <thead>
+                                        <tr class="table-primary">
                                                 <th>SL</th>
                                                 <th>Supplier</th>
                                                 <th>Project</th>
@@ -285,43 +282,72 @@
                                                 <th>Check No.</th>
                                                 <th>Log</th>
                                                 <th>action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1235</td>
-                                                <td>demo</td>
-                                                <td>demo</td>
-                                                <td>01</td>
-                                                <td>12/03</td>
-                                                <td>coffee</td>
-                                                <td>1205</td>
-                                                <td>459909</td>
-                                                <td>ok</td>
-                                                <td>yes</td>
-                                                <td>12</td>
-                                                <td class="text-center">
-                                                    <button type="button"
-                                                        class="btn btn-sm btn-info btn-rounded waves-effect waves-light"> <i
-                                                            class="fas fa-check"></i></button>
-                                                    <button type="button"
-                                                    class="btn btn-sm  m-1 btn-primary btn-rounded waves-effect waves-light"
-                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-x"> <i
-                                                        class="fas fa-eye"></i></button>
-                                                    <button type="button"
-                                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                                        data-bs-toggle="modal" data-bs-target=".journal-modal-xl-edit">
-                                                        <i class="fas fa-pen"></i></button>
-                                                    <button type="button"
-                                                        class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light"> <i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div> <!-- end col -->
-                            </div> <!-- end row -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Puja</td>
+                                            <td>puja</td>
+                                            <td>reading</td>
+                                            <td>first to last</td>
+                                            <td>Puja</td>
+                                            <td>puja</td>
+                                            <td>reading</td>
+                                            <td>first to last</td>
+                                            <td>yousuf</td>
+                                            <td>reading</td>
+                                            <td>first to last</td>
+                                            <td>first to last</td>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    <i class=" fas fa-eye"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
+                                                    <i class="fas fa-pen"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    Showing 1 to 2 of 2 entries
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-end">
+                                    <nav>
+                                        <ul class="pagination" style="justify-content: end;">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
                         
                         </div>
                     </div>
@@ -346,7 +372,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Job No./Name</label>
-                                        <p class="form-control">R-26-1</p>
+                                        <x-input-text name="yousuf" placeholder="R-26-1"></x-input-text>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Supplier</label>
@@ -385,12 +411,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label>Date</label>
-                                        <div class="input-group" id="datepicker1">
-                                            <input type="text" class="form-control" value="" placeholder="dd M, yyyy"
-                                        data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-
-                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                                        </div>
+                                        <x-input-text name="yousuf" type="date"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -474,7 +495,7 @@
                                 </div>
                                 <div class="col-xl-12 my-4">
                                     <label for="">Comments</label>
-                                    <input type="text" class="form-control" placeholder="Enter Your Your Comment">
+                                    <x-input-textarea name="yousuf" rows="1"></x-input-textarea>
                                  </div>
                             </div>
                         <!-- journal form end -->
@@ -487,43 +508,9 @@
         </div><!-- /.modal -->
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-
     <!-- form repeater js -->
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-    {{-- Table --}}
-
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Plugins js -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
 @endsection
 @section('script-bottom')
 
