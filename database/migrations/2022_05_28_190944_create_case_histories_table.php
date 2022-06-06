@@ -15,11 +15,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('case_histories', function(Blueprint $table)
-        {
+        Schema::create('case_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class, 'created_by')->constrained('users')->cascadeOnDelete();
-            $table->foreignIdFor(Student::class)->unique()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Student::class)->constrained()->cascadeOnDelete();
+            $table->string('date');
             $table->string('phone');
             $table->string('email')->nullable();
             $table->string('address')->nullable();

@@ -16,6 +16,7 @@ class CaseHistoryService
 
     public function store(array $validate)
     {
+        $validate['created_by'] = "2";
         $this->repo->store($validate);
     }
 
