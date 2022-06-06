@@ -205,6 +205,7 @@
                                 <table class="table table-bordered w-100">
                                     <thead>
                                         <tr class="table-primary">
+                                                <th>SL</th>
                                                 <th>Approvar</th>
                                                 <th>Status</th>
                                                 <th>Comments</th>
