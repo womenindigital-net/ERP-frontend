@@ -160,10 +160,8 @@
                                             <li><a href="#">Uses arms to raise trunk from stomach position</a></li>
                                             <li><a href="#">Sit with support of pillow or chair</a></li>
                                             <li><a href="#">Bounce up & down in sitting position</a></li>
-                                            <li><a href="#">Use simple hand movements to the side to show protective
-                                                    behavior</a></li>
-                                            <li><a href="#">Walk a specified distance pushing and pulling a wagon</a>
-                                            </li>
+                                            <li><a href="#">Use simple hand movements to the side to show protective behavior</a></li>
+                                            <li><a href="#">Walk a specified distance pushing and pulling a wagon</a></li>
                                         </ul>
                                     </li>
                                     <li>Employee Maint.</li>
