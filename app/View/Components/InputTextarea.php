@@ -31,7 +31,7 @@ class InputTextarea extends Component
         $this->placeholder = $placeholder ?? $label;
         $this->value = old($name, $value);
         $this->required = $required ? 'required' : '';
-        $this->wireModel = $wireModel ? "wire:model='$wireModel'" : '';
+        $this->wireModel = $wireModel ? "wire:model=$wireModel" : '';
     }
 
     public function render()
