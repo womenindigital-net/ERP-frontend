@@ -129,7 +129,6 @@
             </div>
         </div>
     </div>
-
          <!--  Extra Large modal example -->
          <div class="modal fade cash-payment-view" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-xl">
@@ -146,8 +145,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Project</label>
                                         <div class="col-sm-9">
-                                          <input type="text" readonly class="form-control"  value="Administration">
-                                          <x-input-text name="yousuf" placeholder="Enter Amount Here"></x-input-text>
+                                          <x-input-text type="text" name="yousuf" placeholder="Administration" :readOnly="true"></x-input-text>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +153,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">From Account</label>
                                         <div class="col-sm-9">
-                                          <input type="text" readonly class="form-control"  value="1050004-Bank-The City Bank Ltd (3101829023001)">
+                                          <x-input-text type="text" name="yousuf" placeholder="1050004-Bank-The City Bank Ltd (3101829023001)" :readOnly="true"></x-input-text>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +161,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">To Account</label>
                                         <div class="col-sm-9">
-                                          <input type="text" readonly class="form-control"  value="1050001-Bank - Brac Bank (A/c # 1555204025093001)">
+                                          <x-input-text type="text" name="yousuf" placeholder="1050001-Bank - Brac Bank (A/c # 1555204025093001)" :readOnly="true"></x-input-text>
                                         </div>
                                     </div>
                                 </div>
@@ -171,7 +169,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Amount</label>
                                         <div class="col-sm-9">
-                                          <input type="number"  class="form-control"  value="21343">
+                                          <x-input-text type="number" name="yousuf" value="21343"></x-input-text>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +177,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Chequebook Name</label>
                                         <div class="col-sm-9">
-                                          <input type="text" readonly class="form-control"  value="City Bank Book-3">
+                                          <x-input-text type="text" name="yousuf" placeholder="City Bank Book-3" :readOnly="true"></x-input-text>
                                         </div>
                                     </div>
                                 </div>
@@ -187,7 +185,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Cheque No</label>
                                         <div class="col-sm-9">
-                                          <input type="text" readonly class="form-control"  value="6446552">
+                                          <x-input-text type="text" name="yousuf" placeholder="6446552" :readOnly="true"></x-input-text>
                                         </div>
                                     </div>
                                 </div>
@@ -195,38 +193,36 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Amount</label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control" readonly rows="5">Amount as bank transfer from City bank (VTC A/C -3101829023001) to BRAC Bank (Angel Chef A/C-1555204025093001) for food sales by Angel chef to the parents for celebrating new year-2022 prog. because this amount deposited in the city bank a/c as subscriptions received from the parents.</textarea>
+                                          <x-input-textarea type="text" name="yousuf" rows="5" :readOnly="true" placeholder="Amount as bank transfer from City bank (VTC A/C -3101829023001) to BRAC Bank (Angel Chef A/C-1555204025093001) for food sales by Angel chef to the parents for celebrating new year-2022 prog. because this amount deposited in the city bank a/c as subscriptions received from the parents."></x-input-textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <h4>Approval History</h4>
-                                    <table id="datatable-buttons" class="table table-bordered dt-responsive table-responsive w-100">
-                                        <thead>
-                                            <tr class="table-primary nowrap">
-                                                <th>Sl</th>
+                            <div class="table-responsive">
+                                <h4>Approval History</h4>
+                                <table class="table table-bordered w-100">
+                                    <thead>
+                                        <tr class="table-primary">
+                                                 <th>Sl</th>
                                                 <th>Approvar</th>
                                                 <th>Status</th>
                                                 <th>Comments</th>
                                                 <th>Status Changed</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
                                                 <td>1</td>
                                                 <td>Sajida Rahman</td>
                                                 <td>Approved</td>
                                                 <td></td>
-                                                <td>2022-01-25</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                                <td>2022-01-25</td> 
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <div class="col-xl-12 my-4">
                                     <label for="">Comments</label>
-                                    <input type="text" class="form-control" placeholder="Enter Your Your Comment">
+                                    <x-input-textarea  name="yousuf" rows="1"></x-input-text>
                                  </div>
                             </div>
                         <!-- journal form end -->

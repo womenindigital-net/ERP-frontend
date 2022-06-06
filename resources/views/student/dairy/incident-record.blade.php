@@ -2,7 +2,31 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 
-@section('css')@endsection
+@section('css')
+<style>
+    .tab {
+        display: none
+    }
+
+
+
+    button:hover {
+        opacity: 0.8
+    }
+
+    .step.active {
+        opacity: 1
+    }
+
+    .step.finish {
+        background-color: #4CAF50
+    }
+
+    .thanks-message {
+        display: none
+    }
+</style>
+@endsection
 
 @section('content')
 
@@ -114,7 +138,103 @@
                 <h5 class="modal-title" id="myLargeModalLabel">Incident Record</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body ">
+                <!-- MultiStep Form -->
+                <form>
+                    <div class="tab">
+                        <h3>Incident Type</h3>
+                        <section>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="basicpill-firstname-input">Collection Date:</label>
+                                        <x-input-text name="date" placeholder="dd/mm/yyyy" type="date">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="basicpill-lastname-input">Teacher:</label>
+                                        <x-input-select name="teacher_id" :records="$teachers">
+                                        </x-input-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tab">
+                        <h3> Incident Record</h3>
+                        <section>
+                            <x-input-radio-or-check name="" label="Incident Type"
+                                :records="$incidentConstant::$incidentType"></x-input-radio-or-check>
+                            <div class="row border-top py-2">
+                                <div class="form-check">
+                                    <div class="me-5 ">
+                                        <label class="form-check-label pb-2">Date and Time</label>
+                                        <x-input-text name="date" placeholder="dd/mm/yyyy" type="date">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-top py-2">
+                                <div class="form-check">
+                                    <div class="me-5 ">
+                                        <label class="form-check-label pb-2">Setting/Places</label>
+                                        <x-input-text name="setting" placeholder="Setting">
+                                        </x-input-text>
+                                    </div>
+                                    <div class="me-5 ">
+                                        <label class="form-check-label pb-2">Duration ( in Minutes)</label>
+                                        <x-input-text name="duration" placeholder="duration">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-top py-2">
+                                <div class="col-xl-12 col-sm-12">
+                                    <div class="m-0">
+                                        <h5>Action Taken?</h5>
+                                        <div class="row">
+                                            <div class="form-check">
+                                                <div class="me-5 ">
+                                                    <input class="form-check-input" type="radio" name="formRadios">
+                                                    <label class="form-check-label">Yes</label>
+                                                </div>
+                                                <div class="me-5 ">
+                                                    <input class="form-check-input" type="radio" name="formRadios">
+                                                    <label class="form-check-label">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <x-input-radio-or-check name="hh" type="checkbox"
+                                label="What is the Previous cause of Incident/Antecedent Behavior?"
+                                :records="$incidentConstant::$activityType" :isVertical="false">
+                            </x-input-radio-or-check>
+                        </section>
+                    </div>
+
+                    <div class="thanks-message text-center" id="text-message"> <img
+                            src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
+                        <h3>Thanks for your Donation!</h3> <span>Your donation has been entered! We will contact you
+                            shortly!</span>
+                    </div>
+
+                    <div style="overflow:auto;" id="nextprevious">
+                        <div style="float:right;">
+                            <button class="btn font-size-14 btn-danger" type="button" id="prevBtn"
+                                onclick="nextPrev(-1)">Previous</button>
+                            <button class="btn font-size-14 btn-success" type="button" id="nextBtn"
+                                onclick="nextPrev(1)">Next</button>
+                        </div>
+                    </div>
+                </form>
+
+
+                {{--
+                <!-- /.MultiStep Form -->
                 <div id="vertical-example" class="vertical-wizard">
                     <!-- Seller Details -->
                     <h3>Incident Record</h3>
@@ -144,7 +264,7 @@
                     <h3> Incident Record</h3>
                     <section>
                         <x-input-radio-or-check name="" label="Incident Type"
-                        :records="$incidentConstant::$incidentType"></x-input-radio-or-check>
+                            :records="$incidentConstant::$incidentType"></x-input-radio-or-check>
                         <div class="row border-top py-2">
                             <div class="form-check">
                                 <div class="me-5 ">
@@ -168,32 +288,35 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                        <h5>Action Taken?</h5>
-                                        <div class="row">
-                                            <div class="form-check">
-                                                <div class="me-5 ">
-                                                    <input class="form-check-input" type="radio" name="formRadios">
-                                                    <label class="form-check-label">Yes</label>
-                                                </div>
-                                                <div class="me-5 ">
-                                                    <input class="form-check-input" type="radio" name="formRadios">
-                                                    <label class="form-check-label">No</label>
-                                                </div>
+                        <div class="row border-top py-2">
+                            <div class="col-xl-12 col-sm-12">
+                                <div class="m-0">
+                                    <h5>Action Taken?</h5>
+                                    <div class="row">
+                                        <div class="form-check">
+                                            <div class="me-5 ">
+                                                <input class="form-check-input" type="radio" name="formRadios">
+                                                <label class="form-check-label">Yes</label>
+                                            </div>
+                                            <div class="me-5 ">
+                                                <input class="form-check-input" type="radio" name="formRadios">
+                                                <label class="form-check-label">No</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <x-input-radio-or-check name="hh" type="checkbox" label="What is the Previous cause of Incident/Antecedent Behavior?" :records="$incidentConstant::$activityType" :isVertical="false">
-                            </x-input-radio-or-check>     
+                        </div>
+                        <x-input-radio-or-check name="hh" type="checkbox"
+                            label="What is the Previous cause of Incident/Antecedent Behavior?"
+                            :records="$incidentConstant::$activityType" :isVertical="false">
+                        </x-input-radio-or-check>
                     </section>
-                </div>
+                </div> --}}
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+
 </div><!-- /.modal -->
 
 @endsection
@@ -203,5 +326,45 @@
 <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
+
+<script>
+    //your javascript goes here
+var currentTab = 0;
+document.addEventListener("DOMContentLoaded", function(event) {
+    showTab(currentTab);
+});
+
+function showTab(n) {
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    if (n == 0) {
+        document.getElementById("prevBtn").style.display = "none";
+    } else {
+        document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n == (x.length - 1)) {
+        document.getElementById("nextBtn").innerHTML = "Submit";
+    } else {
+        document.getElementById("nextBtn").innerHTML = "Next";
+    }
+    fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+    var x = document.getElementsByClassName("tab");
+    x[currentTab].style.display = "none";
+    currentTab = currentTab + n;
+    // console.log(currentTab);
+    if (currentTab >= x.length) {
+        document.getElementById("nextprevious").style.display = "none";
+        document.getElementById("text-message").style.display = "block";
+        document.getElementById("saveBtn").style.display = "block";
+        // console.log(x.length);
+    }
+    showTab(currentTab);
+}
+
+
+</script>
 
 @endsection
