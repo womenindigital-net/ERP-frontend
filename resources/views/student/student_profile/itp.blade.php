@@ -124,6 +124,10 @@
     .indicator {
         margin-right: 5px;
     }
+    .click{
+        height: 10px;
+        widows: 10px;
+        }
 </style>
 @endsection
 
@@ -147,29 +151,29 @@
         <div class="email-rightbar mb-3">
             <div class="card">
                 <ul id="tree1" class="tree ">
-                    <li><a href="#">Section E: Domain 01 - Physical development </a>
+                    <li><a href="#"><a href="#"><input type="checkbox" class="click">  Section E: Domain 01 - Physical development </a>
                         <ul>
-                            <li><a href="#">Motor Planning </a>
+                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Motor Planning </a>
                                 <ul>
-                                    <li><a href="#">Gross Motor Skills</a>
+                                    <li><a href="#"><a href="#"><input type="checkbox" class="click">  Gross Motor Skills</a>
                                         <ul>
-                                            <li><a href="#">Riding a tricycle</a></li>
-                                            <li><a href="#">playing on swings</a></li>
-                                            <li><a href="#">playing on monkey bars</a></li>
-                                            <li><a href="#">Sit with support of pillow or chair</a></li>
-                                            <li><a href="#">Uses arms to raise trunk from stomach position</a></li>
-                                            <li><a href="#">Sit with support of pillow or chair</a></li>
-                                            <li><a href="#">Bounce up & down in sitting position</a></li>
-                                            <li><a href="#">Use simple hand movements to the side to show protective
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Riding a tricycle</a></li>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  playing on swings</a></li>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  playing on monkey bars</a></li>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Sit with support of pillow or chair</a></li>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Uses arms to raise trunk from stomach position</a></li>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Sit with support of pillow or chair</a></li>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Bounce up & down in sitting position</a></li>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Use simple hand movements to the side to show protective
                                                     behavior</a></li>
-                                            <li><a href="#">Walk a specified distance pushing and pulling a wagon</a>
+                                            <li><a href="#"><a href="#"><input type="checkbox" class="click">  Walk a specified distance pushing and pulling a wagon</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li>Employee Maint.</li>
+                                    <li><a href="#"><input type="checkbox" class="click">  Employee Maint.</li>
                                 </ul>
                             </li>
-                            <li>Human Resources</li>
+                            <li><a href="#"><input type="checkbox" class="click">  Human Resources</li>
                         </ul>
                     </li>
                 </ul>

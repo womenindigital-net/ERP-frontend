@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('title') MATERIAL COLLECTS @endsection
 
 @section('css')
@@ -13,14 +12,16 @@
 <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
     type="text/css" />
 <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-
 <!-- DataTables -->
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
 <!-- Sweet Alert-->
 <link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <style>
+    .click{
+        height: 10px;
+        widows: 10px;
+        }
     .tree {
         margin: 0;
         padding: 0;
@@ -146,39 +147,113 @@
         <!-- Right Sidebar -->
         <div class="email-rightbar mb-3">
             <div class="card">
-                <ul id="tree1" class="tree ">
-                    <li><a href="#">Section E: Domain 01 - Physical development </a>
+                <ul id="tree1" class="tree">
+                    <li><a href="#"><input type="checkbox" class="click">  Section E: Domain 01 - Physical development<i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"></i></a>
                         <ul>
-                            <li><a href="#">Motor Planning </a>
+                            <li><a href="#"><input type="checkbox" class="click">  Motor Planning <i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"></i></a>
                                 <ul>
-                                    <li><a href="#">Gross Motor Skills</a>
+                                    <li><a href="#"><input type="checkbox" class="click">  Gross Motor Skills <i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"></i></a>
                                         <ul>
-                                            <li><a href="#">Riding a tricycle</a></li>
-                                            <li><a href="#">playing on swings</a></li>
-                                            <li><a href="#">playing on monkey bars</a></li>
-                                            <li><a href="#">Sit with support of pillow or chair</a></li>
-                                            <li><a href="#">Uses arms to raise trunk from stomach position</a></li>
-                                            <li><a href="#">Sit with support of pillow or chair</a></li>
-                                            <li><a href="#">Bounce up & down in sitting position</a></li>
-                                            <li><a href="#">Use simple hand movements to the side to show protective
+                                            <li><a href="#"><input type="checkbox" class="click">  Riding a tricycle</a></li>
+                                            <li><a href="#"><input type="checkbox" class="click">  playing on swings</a></li>
+                                            <li><a href="#"><input type="checkbox" class="click">  playing on monkey bars</a></li>
+                                            <li><a href="#"><input type="checkbox" class="click">  Sit with support of pillow or chair</a></li>
+                                            <li><a href="#"><input type="checkbox" class="click">  Uses arms to raise trunk from stomach position</a></li>
+                                            <li><a href="#"><input type="checkbox" class="click">  Sit with support of pillow or chair</a></li>
+                                            <li><a href="#"><input type="checkbox" class="click">  Bounce up & down in sitting position</a></li>
+                                            <li><a href="#"><input type="checkbox" class="click">  Use simple hand movements to the side to show protective
                                                     behavior</a></li>
-                                            <li><a href="#">Walk a specified distance pushing and pulling a wagon</a>
+                                            <li><a href="#"><input type="checkbox" class="click">  Walk a specified distance pushing and pulling a wagon</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li>Employee Maint.</li>
+                                    <li><input type="checkbox" class="click">  Employee Maint.</li>
                                 </ul>
                             </li>
-                            <li>Human Resources</li>
+                            <li><input type="checkbox" class="click">  Human Resources</li>
                         </ul>
                     </li>
                 </ul>
             </div><!-- card -->
         </div> <!-- end Col-9 -->
     </div>
-
 </div>
-
+<!--  mtp qa view Details modal example -->
+<div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myExtraLargeModalLabel">MTP QA VIEW DETAILS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <section>
+                  <form>
+                    <x-input-radio-or-check name="mitp" label="Is Occupational Assessment has completed?" :records="$mitpConstent::$yesNoEn">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="Is Physiotherapy assessment has completed?" :records="$mitpConstent::$yesNoEn">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="Is Fundamental Movement Skills has completed?" :records="$mitpConstent::$yesNoEn">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="Gross Motor Skills" type="checkbox" :records="$mitpConstent::$organization">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="Fine Motor Skills" type="checkbox" :records="$mitpConstent::$fine">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="চলাফেরার ক্ষেত্রে ভারসাম্য আছে কি?
+                    (যেমন-হাটার সময় পড়ে যাওয়া, হাটার সময় শরীর দোলানো, থপ থপ জোরে হাটা, বেখাপ্পা ভাবে হাটা )" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="চুষে খেতে পারে কিনা ?" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="শক্ত খাবার খেতে পারে কিনা?" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="খাবার একবারে গিলে ফেলে কিনা?" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="চিবিয়ে খাবার খেতে কোন সমস্যা ছিল কিনা" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-text name="hh" value="কোন খাবার চিবিয়ে কায়না ।গিলে ফেলে ।" placeholder="বিস্তারিত লিখুন" label="বিস্তারিত লিখুন">
+                    </x-input-text>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="তিন বা চার চাকার বাইসাইকেল চালানো শিখেছে ?" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="শিশু কি সাঁতার জানে ?" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="শিশু বাইরে খেলার উপকরন পছন্দ করে কিনা? (যেমন ফুটবল , ক্রিকেট )" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="খেলাধুলা করতে পছন্দ করে ?" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="মবিলিটি " type="checkbox" :records="$mitpConstent::$mobility">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="সোজা হয়ে বসতে পছন্দ করে কি?" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="বেমানান ভঙ্গিতে দৌঁড়ায়" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                    {{-- end row --}}
+                    <x-input-radio-or-check name="mitp" label="কাজ এড়িয়ে চলতে চায়" type="checkbox" :records="$mitpConstent::$yesNo">
+                    </x-input-radio-or-check>
+                    {{-- end row --}}
+                  </form>
+                </section>   
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 @endsection
 @section('script')
 <script>
