@@ -79,7 +79,8 @@
                                 <th>Percentage</th>
                                 <th>Home Visit Updates</th>
                                 <th>Total</th><th>Percentage</th>
-                                <th>Remarks</th></tr>
+                                <th>Remarks</th>
+                            </tr>
                             <tr>
                                 <td></td>
                                 <td ></td>
@@ -134,6 +135,15 @@
                                 <td style="text-align: center">0</td>
                                 <td style="text-align: center"></td>
                                 <td style="text-align: center">0</td>
+                                <td style="text-align: center">0</td>
+                                <td style="text-align: center"></td>
+                                <td style="text-align: center">0</td>
+                                <td style="text-align: center"></td>
+                                <td style="text-align: center">0</td>
+                                <td style="text-align: center"></td>
+                                <td style="text-align: center">0</td>
+                                <td style="text-align: center"></td>
+                                <td style="text-align: center">0</td>
                                 <td style="text-align: center"></td>
                                 <td style="text-align: center">77 </td>
                                 <td> </td>
@@ -144,6 +154,10 @@
                                 <td></td>
                                 <td> </td>
                                 <td>26.36 <input type="hidden" name="taskScore[ 78]" value="26.36"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td> 
+                                <td>  </td> 
                                 <td></td>
                                 <td></td>
                                 <td></td> 
@@ -169,6 +183,19 @@
                                     <td> </td>
                                     <td>1120 </td>
                                     <td>364 </td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">161 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">154 </td>
+                                    <td> </td>
+                                    <td>1120 </td>
+                                    <td>364 </td>
                                     <td> </td>
                                     <td> </td>
                                     <td>32.5 <input type="hidden" name="taskScore[ 207]" value="32.5"></td>
@@ -179,6 +206,19 @@
                                  </tr>
                                  <tr>
                                      <td> Perform ball activit</td>
+                                     <td style="text-align: center">0</td>
+                                     <td style="text-align: center"></td>
+                                     <td style="text-align: center">0</td>
+                                     <td style="text-align: center"></td>
+                                     <td style="text-align: center">0</td>
+                                     <td style="text-align: center"></td>
+                                     <td style="text-align: center">49 </td>
+                                     <td> </td>
+                                     <td style="text-align: center">84 </td>
+                                     <td> </td>
+                                     <td style="text-align: center">133 </td>
+                                     <td> </td> 
+                                     <td>1120 </td> 
                                      <td style="text-align: center">0</td>
                                      <td style="text-align: center"></td>
                                      <td style="text-align: center">0</td>
@@ -225,6 +265,19 @@
                                     <td style="text-align: center">33 </td>
                                     <td> </td> 
                                     <td>700 </td> 
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">76 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">33 </td>
+                                    <td> </td> 
+                                    <td>700 </td> 
                                     <td>158 </td> 
                                     <td> </td> 
                                     <td> </td> 
@@ -256,6 +309,9 @@
                                     <td></td> 
                                     <td></td> 
                                     <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -263,7 +319,19 @@
                                     <td></td>
                                     <td></td>
                                     <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td class="fw-bold border-none " colspan="4">Total Domain:  991  Maximum Total:  3710 </td>
+                                    <td></td>
+                                    <td></td> 
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -294,8 +362,10 @@
                                     <td class="fw-bold text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Pragmatic communication</td>
                                 </tr>
                                 <tr>
-                                    <td> Apologize for inappr</td><td style="text-align: center">0</td>
-                                    <td style="text-align: center"></td><td style="text-align: center">0</td>
+                                    <td> Apologize for inappr</td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
                                     <td style="text-align: center"></td>
                                     <td style="text-align: center">0</td>
                                     <td style="text-align: center"></td>
@@ -303,6 +373,17 @@
                                     <td> </td>
                                     <td style="text-align: center">98 </td>
                                     <td> </td>
+                                    <td style="text-align: center">91 </td>
+                                    <td>1260 </td> 
+                                    <td>238 </td> 
+                                    <td> </td> 
+                                    <td style="text-align: center"></td><td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
                                     <td style="text-align: center">91 </td>
                                     <td> </td> 
                                     <td>1260 </td> 
@@ -329,6 +410,18 @@
                                     <td style="text-align: center">84 </td>
                                     <td> </td> 
                                     <td>1260 </td> 
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">84 </td>
+                                    <td> </td> 
+                                    <td>1260 </td> 
                                     <td>231 </td> 
                                     <td> </td> 
                                     <td> </td> 
@@ -342,6 +435,18 @@
                                      <td> Learn strategies to </td>
                                      <td style="text-align: center">0</td>
                                      <td style="text-align: center"></td>
+                                     <td style="text-align: center">0</td>
+                                     <td style="text-align: center"></td>
+                                     <td style="text-align: center">0</td>
+                                     <td style="text-align: center"></td>
+                                     <td style="text-align: center">49 </td>
+                                     <td> </td>
+                                     <td style="text-align: center">98 </td>
+                                     <td> </td>
+                                     <td style="text-align: center">91 </td>
+                                     <td> </td> 
+                                     <td>1260 </td> 
+                                     <td>238 </td> 
                                      <td style="text-align: center">0</td>
                                      <td style="text-align: center"></td>
                                      <td style="text-align: center">0</td>
@@ -381,6 +486,18 @@
                                     <td style="text-align: center">98 </td>
                                     <td> </td>
                                     <td style="text-align: center">98 </td>
+                                     <td>1260 </td> 
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
                                     <td> </td>
                                      <td>1260 </td> 
                                      <td>245 </td> 
@@ -397,6 +514,19 @@
                                 </tr> 
                                 <tr> 
                                     <td class="fw-bold">Total</td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td></td> 
                                     <td></td> 
                                     <td></td> 
@@ -438,6 +568,18 @@
                                     <td> </td>
                                     <td style="text-align: center">91 </td>
                                     <td> </td> 
+                                    <td> Make positive statem</td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td style="text-align: center">98 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">91 </td>
+                                    <td> </td> 
                                     <td>1260 </td> 
                                     <td>238 </td>
                                     <td> </td> 
@@ -456,6 +598,18 @@
                                 </tr>
                                 <tr>
                                     <td> Expression emotion</td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">91 </td>
+                                    <td>1260 </td> 
                                     <td style="text-align: center">0</td>
                                     <td style="text-align: center"></td>
                                     <td style="text-align: center">0</td>
@@ -491,10 +645,23 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td class="fw-bold border-none " colspan="4">Total Domain:  476  Maximum Total:  2520 </td>
                                     <td></td>
                                     <td></td>
@@ -534,6 +701,18 @@
                                     <td> </td>
                                     <td style="text-align: center">98 </td>
                                     <td> </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
                                     <td style="text-align: center">84 </td>
                                     <td> </td> 
                                     <td>1260 </td> 
@@ -551,6 +730,18 @@
                                 </tr>
                                 <tr>
                                     <td> Ability to interrupt</td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">0</td>
+                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">49 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">98 </td>
+                                    <td> </td>
+                                    <td style="text-align: center">84 </td>
+                                    <td>1260 </td>
                                     <td style="text-align: center">0</td>
                                     <td style="text-align: center"></td>
                                     <td style="text-align: center">0</td>
@@ -590,6 +781,19 @@
                                          <td></td>
                                          <td></td>
                                          <td></td> 
+                                         <td></td>
+                                         <td></td>
+                                         <td></td> 
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td>
+                                         <td></td> 
+                                         <td></td>
                                          <td class="fw-bold border-none " colspan="4">Total Domain:  462  Maximum Total:  2520 </td>
                                          <td></td>
                                          <td></td>
@@ -618,6 +822,19 @@
                                      <td></td>
                                      <td></td>
                                      <td></td>
+                                     <td></td> 
+                                     <td></td> 
+                                     <td></td> 
+                                     <td></td> 
+                                     <td></td> 
+                                     <td></td> 
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td> 
                                      <td></td> 
                                      <td class="fw-bold border-none " colspan="4">Total Domain:  0  Maximum Total:  0 </td>
                                      <td></td>
