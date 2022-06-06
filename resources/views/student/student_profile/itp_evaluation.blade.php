@@ -3,22 +3,7 @@
 @section('title') MATERIAL COLLECTS @endsection
 
 @section('css')
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-    type="text/css" />
-<link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
 
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -37,9 +22,245 @@
 
         @include('layouts.student_profile.left_sidebar')
 
-        <!-- Right Sidebar -->
         <div class="email-rightbar mb-3">
             <div class="card">
+                <div class="table-responsive">
+                    <table id="itpEvaluateTable" class="table table-bordered w-100">
+                        <thead>
+                                <tr class="table-primary">
+                                    <th>ITP</th>
+                                    <th>January</th>
+                                    <th>February</th>
+                                    <th>March</th>
+                                    <th>April</th>
+                                    <th>May</th>
+                                    <th>June</th>
+                                    <th>July</th>
+                                    <th>August</th>
+                                    <th>September</th>
+                                    <th>October</th>
+                                    <th>November</th>
+                                    <th>December</th>
+                                    <th>Total</th>
+                                    <th>Percentage</th>
+                                    <th>Home Visit Updates</th>
+                                    <th>Total</th>
+                                    <th>Percentage</th>
+                                    <th>Remarks</th>
+                                </tr>
+                        </thead>
+                                    <tbody>
+                                          <tr style="background-color: #1d7ea9 !important;">
+                                            <td class="text-white"  colspan="100%">Domain: Section E:  Domain 01 - Physical development</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Organized Play</td>      
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Rolling</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Fitness  Physical Activity</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Adaptations</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Scissor activities</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Craft activities</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                             <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Eye-hand coordination games</td>
+                                           </tr> 
+                                           <tr style="background-color: #02bec9 !important;">
+                                              <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Chewy Foods(Organizing)</td>
+                                           </tr>
+                                           <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Crunchy Foods(Alerting)</td>    
+                                           </tr>
+                                           <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Sucking Foods(Calming)</td>
+                                           </tr>
+                                           <tr style="background-color: #02bec9 !important;">
+                                             <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Yoga</td>    
+                                           </tr>
+                                           <tr class="border-info">
+                                            <td class="fw-bold border-info">Total</td>
+                                            <td ></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="fw-bold border-none" colspan="5">Total Domain: 0 Maximum Total: 0</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                          </tr>
+                                          <tr style="background-color: #1d7ea9 !important;">
+                                            <td class="text-white" colspan="100%">Domain: Section F:  Domain 02 : Intellectual / cognitive development</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Distance maintains</td>    
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Understanding situation</td>
+                                          </tr>
+                                          <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Curiosity and asking question</td>
+                                         </tr>
+                                         <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Generalization ability</td>
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Money management Skills</td>
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Request</td> 
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Pragmatic communication</td>
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Grooming</td>
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Basic First Aid Knowledge</td>
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Feeling and saying sorry</td>
+                                        </tr>
+                                        <tr class="border-info">
+                                            <td class="fw-bold" >Total</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                              <td class="fw-bold border-none" colspan="5">Total Domain: 0  Maximum Total: 0</td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                         </tr>
+                                         <tr style="background-color: #1d7ea9 !important;">
+                                            <td class="text-white" colspan="100%">Domain: Section G : Domain 03 - Emotional development</td>
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Sense of self</td>
+                                       </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                        <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Understanding self</td>
+                                       </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                        <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Self-Awareness</td>      
+                                      </tr>
+                                      <tr style="background-color: #02bec9 !important;">
+                                        <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Self – Regulation</td>
+                                      </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                                <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: breakup of relationship</td>
+                                        </tr> 
+                                        <tr class="border-info">
+                                            <td class="fw-bold">Total</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="fw-bold border-none" colspan="5">Total Domain: 0  Maximum Total: 0</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: #1d7ea9 !important;">
+                                            <td class="text-white" colspan="100%">Domain: Section H : Domain 04 - Social and ethical development</td>   
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Dress and Hygiene</td>
+                                        </tr>
+                                        <tr style="background-color: #02bec9 !important;">
+                                            <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Relating with others</td>
+                                       </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                        <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Communication (work related)</td>
+                                       </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                        <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Work Readiness</td>
+                                      </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                           <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: How to Play with others</td>
+                                       </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                           <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Social Interaction</td>
+                                       </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                           <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Topic Maintenance</td>   
+                                       </tr>
+        
+                                       <tr style="background-color: #02bec9 !important;">
+                                           <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Accept formal/official decision</td>
+                                       </tr>
+                                       <tr class="border-info">
+                                           <td class="fw-bold">Total</td>
+                                           <td></td>
+                                           <td></td>
+                                           <td></td>
+                                           <td></td>
+                                           <td></td>
+                                           <td></td>
+                                           <td class="fw-bold border-none" colspan="5">Total Domain: 0  Maximum Total: 0</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: #1d7ea9 !important;">
+                                             <td class="text-white" colspan="100%">Domain: Section I: Independent skills</td>
+                                        </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                           <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Cleaning  Washing Chores</td>                                  
+                                       </tr>
+                                       <tr style="background-color: #02bec9 !important;">
+                                           <td class="text-white" colspan="100%" style="margin-bottom:5px; ">Activity: Laundry Tasks</td> 
+                                       </tr>
+                                      <tr class="border-info">
+                                        <td class="fw-bold">Total</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="fw-bold border-none" colspan="5">Total Domain: 0  Maximum Total: 0</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td> 
+                                      </tr>                                    
+                                    </tbody>
+                    </table>
+                </div>
             </div><!-- card -->
         </div> <!-- end Col-9 -->
     </div>
@@ -48,48 +269,5 @@
 
 @endsection
 @section('script')
-<!-- form advanced init -->
-<script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-
-<!-- form repeater js -->
-<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-<!-- Init js -->
-<script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-<!-- Table Editable plugin -->
-<script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-<script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-<!-- Sweet Alerts js -->
-<script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-<!-- Sweet alert init js-->
-<script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
-<!-- apexcharts -->
-<script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-
-<!-- dashboard init -->
-<script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
-
 
 @endsection
