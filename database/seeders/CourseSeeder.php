@@ -14,29 +14,32 @@ class CourseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-//        Course::factory()->count(10)->create();
-        $courses = ['Course 001', 'Course 002', 'Course 003', 'Course 004', 'Course 005'];
+        if (!Course::count()) {
+            for ($i = 0; $i < 10; $i++) {
+                $custom[] = [
+                    'title'            => "Course_$i",
+                    'amount'           => rand(100, 1000),
+                    'duration'         => rand(50, 1000),
+                    'parent_course_id' => null,
+                ];
+            }
 
-        for ($i = 0; $i < 10; $i++) {
+            DB::table('courses')->insert($custom ?? []);
+        }
+
+        $numberOfExistingCourses = Course::count();
+
+        for ($i = $numberOfExistingCourses; $i < $numberOfExistingCourses+10; $i++) {
             $custom[] = [
-                'title' => "Course _$i",
-                'amount'=> rand(100, 1000),
-                'duration' => rand(50, 1000),
-                'parent_course_id' => null
-            ];
-
-            dd($custom);
-
-            $custom[] = [
-                'title' => "Course _$i",
-                'amount'=> rand(100, 1000),
-                'duration' => rand(50, 1000),
-                'parent_course_id' => Course::inRandomOrder()->first()->id
+                'title'            => "Course_$i",
+                'amount'           => rand(100, 1000),
+                'duration'         => rand(50, 1000),
+                'parent_course_id' => Course::inRandomOrder()->first()->id,
             ];
         }
-        dd($custom);
+
         DB::table('courses')->insert($custom ?? []);
     }
 }
