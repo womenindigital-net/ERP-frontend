@@ -249,7 +249,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td class="fw-bold border-none" colspan="5">Total Domain: 0  Maximum Total: 0</td>
+                                        <td class="fw-bold~ border-none" colspan="5">Total Domain: 0  Maximum Total: 0</td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

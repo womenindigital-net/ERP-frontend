@@ -191,7 +191,7 @@
                                                 </div>
                                             </div>
                                             <div data-repeater-list="group-a">
-                                                <div data-repeater-item class="row">
+                                                <div data-repeater-item class="row removeRow">
 
                                                     <div class=" col-lg-1 p-0 pe-1 pb-1 mt-2">
                                                         <span class="pe-2 pb-1">01</span>
@@ -218,7 +218,7 @@
                                                 </div>
                                             </div>
                                             <input data-repeater-create type="button"
-                                                class="btn btn-success mt-3 mt-lg-0" value="Add" />
+                                                class="btn btn-success mt-3 mt-lg-0 removeBtn" value="Add" />
                                         </form>
                                     </div>
                                 </div>
