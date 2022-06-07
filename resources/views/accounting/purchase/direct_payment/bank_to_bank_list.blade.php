@@ -205,6 +205,7 @@
                                 <table class="table table-bordered w-100">
                                     <thead>
                                         <tr class="table-primary">
+                                                <th>SL</th>
                                                 <th>Approvar</th>
                                                 <th>Status</th>
                                                 <th>Comments</th>
@@ -213,11 +214,11 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>1</td>
-                                                <td>Sajida Rahman</td>
-                                                <td>Approved</td>
-                                                <td></td>
-                                                <td>2022-01-25</td> 
+                                            <td>1</td>
+                                            <td>Sajida Rahman</td>
+                                            <td>Approved</td>
+                                            <td></td>
+                                            <td>2022-01-25</td> 
                                         </tr>
                                     </tbody>
                                 </table>
