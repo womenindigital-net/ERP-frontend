@@ -64,33 +64,35 @@ class StudentIncomeOperations extends Component
 
     public function render()
     {
-//        dd($this->formatCourses());
         $data = [
             'projects' => $this->projectRepo->getData(),
             'students' => $this->studentRepo->getData(),
-//            'courses' => $this->formatCourses(),
+            'courses' => $this->formattedCourses(),
         ];
 
         return view('livewire.student-income.student-income-operations', $data);
     }
 
-    private function formatCourses(): array
+    private function formattedCourses(): array
     {
-        $courseItems = [];
-        foreach (Course::all() as $course) {
-            if (!$course->parent_course_id) {
-                $courseItems[$course->id] = $course->title;
-            } else {
-//                $courseItems[$course->parent_course_id][$course->id] = $course->title;
-                $courseItems[$course->parent_course_id] = $course->id;
-//                dd($courseItems);
-//                dd($course->id, $course->parent_course_id);
-//                $courseItems[$course->parent_course_id][] = $course;
+        $courses = Course::specifyingRelation()->get();
+        foreach ($courses as $key => $course) {
+            if (!isset($custom[$course->parent_course_id])) {
+                $custom[$course->parent_course_id] = [
+                    'id'       => $course->parent_course_id,
+                    'title'    => $course->parentCourse->title,
+                    'children' => [],
+                ];
             }
+
+            $childrenInfo = [
+                'id'    => $course->id,
+                'title' => $course->title,
+            ];
+
+            $custom[$course->parent_course_id]['children'][] = $childrenInfo;
         }
 
-        dd($courseItems);
-
-        return $courseItems ?? [];
+        return $custom ?? [];
     }
 }
