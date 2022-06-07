@@ -210,7 +210,7 @@
                                                     </div>
                                                     <div class=" col-1 p-0 pe-1 pb-1">
                                                         <div> 
-                                                            <button class="btn btn-danger ms-2">
+                                                            <button class="btn btn-danger ms-2 removeBtn">
                                                             <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                        </div>
@@ -218,7 +218,7 @@
                                                 </div>
                                             </div>
                                             <input data-repeater-create type="button"
-                                                class="btn btn-success mt-3 mt-lg-0 removeBtn" value="Add" />
+                                                class="btn btn-success mt-3 mt-lg-0" value="Add" />
                                         </form>
                                     </div>
                                 </div>
