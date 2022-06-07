@@ -290,7 +290,7 @@
                             <ul class="sub-menu" aria-expanded="true">
                                 <li> <a href="setup.program-setup.prescription">Prescription</a></li>
                                 <li> <a href="setup.program-setup.activity-create">Activity create</a></li>
-                                <li> <a href="setup.program-setup.tesk-create">Task create</a></li>
+                                <li> <a href="{{ route('setup.program-setup.tesk-create') }}">Task create</a></li>
                                 <li> <a href="setup.program-setup.tesk-weight-setup">Task Weight Setup</a></li>
                                 <li> <a href="setup.program-setup.course-setup">Course Setup</a></li>
                                 <li> <a href="setup.program-setup.attendence-card-setup">Attendence card setup</a></li>

@@ -19,77 +19,92 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-end pb-5">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".course-add-or-edit">Add</button>
+                        <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".course-add-or-edit">Add</button>
                     </div>
-
-                    <table id="datatable" class="table table-bordered dt-responsive w-100">
-                        <thead>
-                            <tr>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                              class="form-control form-control-sm form-select form-select-sm">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                            </select> entries
+                          </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <label style="display: inline-flex;align-items: center;">Search:
+                            <input type="search" class="form-control form-control-sm" placeholder="">
+                          </label>
+                        </div>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table table-bordered w-100">
+                          <thead>
+                            <tr class="table-primary">
                                 <th>Course / Service Name</th>
                                 <th>Duration</th>
                                 <th>Cash Account</th>
                                 <th>Log</th>
                                 <th>Action</th>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Consultation Fees</td>
-                                <td>1</td>
-                                <td>1010 :: Cash Operating Account</td>
-                                <td><small>Create: Nusrat Jahan @ 2019-06-09 22:22:54 There is no update record.</small></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".Courses-view">
-                                    <i class="mdi mdi-eye"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="bx bx-dollar"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="fas fa-arrow-circle-right"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                    <i class="fas fa-trash-alt"></i>
-                                    </button> 
-                                </td>
-                            </tr>
+                          </thead>
+                          <tbody>
                             <tr>
                                 <td>Pre-Vocational Course</td>
                                 <td>12</td>
                                 <td>1010 :: Cash Operating Account</td>
                                 <td>Create: Shonod Digital @ <br> 2018-08-30 22:46:52 <br>
                                     Update: Shonod Digital @ <br> 2018-09-06 17:06:46</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".Courses-view">
-                                        <i class="mdi mdi-eye"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="mdi mdi-pencil"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="bx bx-dollar"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="fas fa-arrow-circle-right"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                        <i class="fas fa-trash-alt"></i>
-                                        </button> 
-                                </td>
+                              <td>
+                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".Courses-view"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="mdi mdi-pencil" data-bs-toggle="modal" data-bs-target=".Courses-view"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="bx bx-dollar"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="fas fa-arrow-circle-right"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </td>
                             </tr>
-                        </tbody>
-                    </table>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <nav>
+                            <ul class="pagination" style="justify-content: end;">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
 
                 </div>
             </div>
@@ -110,11 +125,13 @@
                         <div class="row pb-3">
                             <div class="col-6">
                                 <label class="col-form-label">Course / Service Name</label>
-                                <input type="text" class="form-control">
+                                <x-input-text type="number" name="hh"  placeholder="">
+                                </x-input-text>
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Duration</label>
-                                <input type="text" class="form-control">
+                                <x-input-text type="number" name="hh"  placeholder="">
+                                </x-input-text>
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Cash Acc:</label>
@@ -128,7 +145,8 @@
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Description:</label>
-                                <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                <x-input-textarea type="number" name="hh"  placeholder="">
+                                </x-input-textarea>
                             </div>
                             
                         </div>
@@ -145,8 +163,9 @@
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item class="row mb-1">
-                                                    <div class=" col-lg-4">   
-                                                         <input type="text" id="name" name="untyped-input" class="form-control " placeholder="Enter Your Name" />
+                                                    <div class=" col-lg-4"> 
+                                                        <x-input-text name="hh"  placeholder="Enter Your Name">
+                                                        </x-input-text> 
                                                     </div>
                                                     <div class=" col-lg-4 px-1">
                                                         <select class="form-select">
@@ -158,7 +177,8 @@
                                                         </select>
                                                     </div>                                                                  
                                                     <div class=" col-lg-4">
-                                                        <input type="number" class="form-control"/>
+                                                        <x-input-text type="number" name="hh"  placeholder="Enter amount">
+                                                        </x-input-text> 
                                                     </div>                                                                  
                                                 </div>
                                             </div>
@@ -193,11 +213,13 @@
                         <div class="row pb-3">
                             <div class="col-6">
                                 <label class="col-form-label">Course / Service Name</label>
-                                <input type="text" readonly class="form-control">
+                                <x-input-text type="number" name="hh"  placeholder="" readonly>
+                                </x-input-text>
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Duration</label>
-                                <input type="text" readonly class="form-control">
+                                <x-input-text type="number" name="hh"  placeholder="" readonly>
+                                </x-input-text>
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Cash Acc:</label>
@@ -205,7 +227,8 @@
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Description:</label>
-                                <textarea class="form-control" readonly name="" id="" rows="1"></textarea>
+                                <x-input-text type="number" rows="1" name="hh"  placeholder="" readonly>
+                                </x-input-text>
                             </div>
                             
                         </div>
