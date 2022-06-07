@@ -171,7 +171,7 @@
                                                     </div>
                                                 </div>
                                                 <div data-repeater-list="group-a">
-                                                    <div data-repeater-item class="row">
+                                                    <div data-repeater-item class="row removeRow">
 
                                                         <div  class="col-lg-2 d-flex p-0 pe-1 pb-1">
                                                             <span class="pe-2 pb-1">01</span>
@@ -203,7 +203,7 @@
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
                                                             <x-input-text name="yousuf" placeholder="190"></x-input-text>
-                                                            <button class="btn btn-danger ms-2">
+                                                            <button class="btn btn-danger ms-2 removeBtn">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                         </div>

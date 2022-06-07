@@ -136,7 +136,7 @@
                                             </div>
                                         </div>
                                         <div data-repeater-list="group-a">
-                                            <div data-repeater-item class="row">
+                                            <div data-repeater-item class="row removeRow">
 
                                                 <div class="col-lg-2  d-flex p-0 pe-1 pb-2 align-items-center ">
                                                     <strong class="pe-2 pb-1">01</strong>
@@ -174,7 +174,7 @@
                                                 </div>
                                                 <div class="mb-2 col-lg-1 p-0 pe-1">
                                                     <button type="button"
-                                                        class="btn btn-danger waves-effect waves-light ">
+                                                        class="btn btn-danger waves-effect waves-light removeBtn">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </div>
