@@ -1,4 +1,9 @@
-.apply-view-only input, .apply-view-only select{
+.apply-view-only input,
+.apply-view-only select {
     cursor: not-allowed;
     pointer-events: none;
+}
+
+.removeRow:first-child .removeBtn {
+    display: none;
 }
