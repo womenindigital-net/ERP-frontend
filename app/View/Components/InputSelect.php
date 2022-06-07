@@ -21,6 +21,7 @@ class InputSelect extends Component
     public string $id;
     public string $targetColumn;
     public string $wireModel;
+    public string $additional;
 
     /**
      * Create a new component instance.
@@ -28,20 +29,21 @@ class InputSelect extends Component
      * @return void
      * @throws Exception
      */
-    public function __construct($records, $name = '', $targetColumn = '', $selected = null, $multiple = false, $required = '', $wireModel = '')
+    public function __construct($name = '', $records, $targetColumn = '', $selected = null, $multiple = false, $required = '', $wireModel = '', $additional=false)
     {
         if (!$name and !$wireModel) {
             throw new Exception("Either name or wire model is needed");
         }
-        $name               = $wireModel ?: $name;
-        $this->name         = $name . ($multiple ? '[]' : '');
+        $name = $wireModel ?: $name;
+        $this->name = $name . ($multiple ? '[]' : '');
         $this->targetColumn = $targetColumn;
-        $this->records      = $records;
-        $this->selected     = $selected;
-        $this->required     = $required;
-        $this->multiple     = $multiple ? 'multiple' : '';
-        $this->wireModel    = $wireModel ? "wire:model=$wireModel" : '';
-        $this->id           = preg_replace('/[\[\]]/', '', $name);
+        $this->records = $records;
+        $this->selected = $selected;
+        $this->required = $required;
+        $this->multiple = $multiple ? 'multiple' : '';
+        $this->wireModel = $wireModel ? "wire:model=$wireModel" : '';
+        $this->id = preg_replace('/[\[\]]/', '', $name);
+        $this->additional = $additional ?: '';
     }
 
     public function isSelected($option): bool

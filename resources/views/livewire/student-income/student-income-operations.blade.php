@@ -15,7 +15,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Student</label>
-                                <x-input-select wireModel="student_id" name="student_id" :records="$students">
+                                <x-input-select wireModel="student_id" name="student_id" :records="$students" additional="code">
                                 </x-input-select>
                             </div>
                         </div>
@@ -82,13 +82,13 @@
                                 <div>
                                     <select class="form-control form-select" wire:model="course_id">
                                         <option>--Select--</option>
-                                        <option value="1">Consultation Fees</option>
-                                        <option value="2">Admission for Assessment /Observation</option>
-                                        <option value="3">Pre-Vocational Course</option>
-                                        <option value="4">Vocational Course</option>
-                                        <option value="5">Karishma Cultural Group</option>
-                                        <option value="6">Cricket Course</option>
-                                        <option value="7">Therapy Course</option>
+                                        @foreach($courses as $course)
+                                            <optgroup label="{{$course['title']}}">
+                                                @foreach($course['children'] as $childCourse)
+                                                    <option value="{{$childCourse['id']}}">{{$childCourse['title']}}</option>
+                                                @endforeach
+                                            </optgroup>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
