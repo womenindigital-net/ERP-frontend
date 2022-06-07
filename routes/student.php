@@ -60,4 +60,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('stock-management/material_callects', [StudentController::class, 'materialCallects'])->name('stock-management.material_callects');
     Route::get('stock-management/stock_transfer', [StudentController::class, 'stockTransfer'])->name('stock-management.stock_transfer');
     Route::get('stock-management/stock_count', [StudentController::class, 'stockCount'])->name('stock-management.stock_count');
+
 });
+ 

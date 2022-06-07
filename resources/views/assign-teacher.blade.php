@@ -13,17 +13,12 @@
         @slot('title') Student_Table @endslot
     @endcomponent
     {{-- code  --}}
-
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
-                    
-                    </p>
                     <div class="d-flex justify-content-end pb-5">
                         <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Add</button>
-                
                         <!-- sample modal content -->
                         <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl">
@@ -33,7 +28,6 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body p-0">
-                                        
                                         <div class="card p-0 m-0">
                                             <div class="card-body">
                                                 <div class="row">
@@ -66,8 +60,7 @@
                                                 <div class="row mb-3 ">
                                                     <div class="col-2 d-flex align-items-center">
                                                         <div class=" row">
-                                                            <label class=" col-form-label ">Teacher:</label>
-                                                            
+                                                            <label class=" col-form-label ">Teacher:</label>  
                                                         </div>
                                                     </div>
                                                     <div class="col-2 d-flex align-items-center">
