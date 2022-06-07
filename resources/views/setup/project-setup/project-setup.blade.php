@@ -1,19 +1,14 @@
 @extends('layouts.master')
-
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
-
 @section('content')
-
     @component('components.breadcrumb')
         @slot('li_1') Utility @endslot
         @slot('title')Project Setup @endslot
     @endcomponent
     {{-- code  --}}
-
- 
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -38,28 +33,28 @@
                                             <div class="card-body">
                                                 <div class="row pb-3">
                                                     <div class="col-6 d-flex">
-                                                        <label for="example-text-input" class="col-md-4 col-form-label">Name:</label>
-                                                        <div class="col-md-6">
-                                                            <input class="form-control" type="text" id="example-text-input" placeholder="Module display name">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Name:</label>
+                                                        <div class="col-md-10">
+                                                            <x-input-text name="Name" placeholder="Name"></x-input-text>
                                                         </div>
                                                     </div>
                                                     <div class="col-6 d-flex">
-                                                        <label for="example-text-input" class="col-md-4 col-form-label">Seq.No:</label>
-                                                        <div class="col-md-6">
-                                                            <input class="form-control" type="number" id="example-text-input">
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Seq.No:</label>
+                                                        <div class="col-md-10">
+                                                            <x-input-text name="Seq No" placeholder="Seq No" type="number"></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row pb-3">
                                                     <div class="col-6 d-flex">
-                                                        <label for="example-date-input" class="col-md-4 col-form-label">Tier No:</label>
-                                                        <div class="col-md-6">
-                                                            <input class="form-control" type="number" id="example-text-input" >
+                                                        <label for="example-date-input" class="col-md-2 col-form-label">Tier No:</label>
+                                                        <div class="col-md-10">
+                                                            <x-input-text name="Tier No" placeholder="Tier No" type="number"></x-input-text>
                                                         </div>
                                                     </div>
                                                     <div class="col-6 d-flex">
-                                                        <label class="col-4 col-form-label"> Parent:</label>
-                                                        <div class="col-6">
+                                                        <label class="col-2 col-form-label"> Parent:</label>
+                                                        <div class="col-10">
                                                             <select class="form-select">
                                                                     <option value="0">Top</option>
                                                                     <option value="1">Governing Office</option>
@@ -102,20 +97,16 @@
                                                 </div>
                                                 <div class="row pb-3">
                                                     <div class="col-12 d-flex">
-                                                        <label for="example-date-input" class="col-md-4 col-form-label text-center">Description:</label>
-                                                        <div class="col-md-6">
-                                                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                                                        <label for="example-date-input" class="col-md-1 col-form-label">Description:</label>
+                                                        <div class="col-md-11">
+                                                            <x-input-textarea name="Description"></x-input-textarea>
                                                         </div>
                                                     </div>
-
-                                                    
                                                 </div>
-                                               
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row modal-footer">
-  
                                         <div class="col-md-1">
                                             <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
                                         </div>
@@ -127,67 +118,88 @@
                             </div><!-- /.modal-dialog -->
                         </div><!-- /.modal -->
                     </div>
-
-                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
-                            <tr>
-                                <th class="">Name</th>
-                                <th class="">Parent</th>
-                                <th class="">Log</th>
-                                <th class="">Action</th>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                              class="form-control form-control-sm form-select form-select-sm">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                            </select> entries
+                          </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <label style="display: inline-flex;align-items: center;">Search:
+                            <input type="search" class="form-control form-control-sm" placeholder="">
+                          </label>
+                        </div>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table w-100 table-bordered">
+                          <thead>
+                            <tr class="table-primary">
+                              <th>Name</th>
+                              <th>Parent</th>
+                              <th>Log</th>
+                              <th>Action</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                          </thead>
+                          <tbody>
                             <tr>
-                                <td>demo</td>
-                                <td>demo</td>
-                                <td>demo</td>
-                                <td class="text-center">
-                                    <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
+                              <td>Wages Employment </td>
+                              <td>32 </td>
+                              <td>Create: Ohidul Hassan @
+                                  Update: Ohidul Hassan @ </td>
+                              <td>
+                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                  <i class="mdi mdi-eye"></i>
                                 </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-info btn-rounded waves-effect waves-light"
-                                        > <i
-                                            class="fas fa-check"></i></button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                        data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-add">
-                                        <i class="fas fa-pen"></i></button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"> <i
-                                            class="fas fa-trash-alt" id="sa-warning"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>demo</td>
-                                <td>demo</td>
-                                <td>demo</td>
-                                <    <td class="text-center">
-                                    <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
+                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
                                 </button>
-
-                                    <button type="button"
-                                        class="btn btn-sm btn-info btn-rounded waves-effect waves-light" 
-                                       > <i
-                                            class="fas fa-check"></i></button>
-                                
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                        data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-add">
-                                        <i class="fas fa-pen"></i></button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"> <i
-                                            class="fas fa-trash-alt" id="sa-warning"></i></button>
-                                </td>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="bx bx-dollar"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="fas fa-arrow-circle-right"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </td>
                             </tr>
-                        </tbody>
-                    </table>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <nav>
+                            <ul class="pagination" style="justify-content: end;">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
 
                 </div>
             </div>

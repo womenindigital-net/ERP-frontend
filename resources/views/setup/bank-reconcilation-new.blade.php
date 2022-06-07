@@ -25,13 +25,13 @@
                                 <div class="col-6 d-flex">
                                     <label class="col-2 col-form-label">Form</label>
                                     <div class="col-6 mb-4">
-                                        <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                                        <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex">
                                     <label for="example-date-input" class="col-md-4 col-form-label">To</label>
                                     <div class="col-md-6">
-                                        <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                                        <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                     </div>
                                 </div>
                             </div>    
@@ -49,7 +49,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 ms-2">
-                                    <button class="btn btn-info w-100" data-bs-dismiss="modal">SHOW</button>
+                                    <button type="button" class="btn btn-outline-info  waves-light w-100" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Show</button>
                                 </div>
                          </div>
                         <div class="row pb-3">
@@ -70,10 +70,10 @@
                             </div>
                             <div class="row modal-footer">
                                 <div class="col-md-2">
-                                    <button class="btn btn-success w-100">Print</button>
+                                    <button type="button" class="btn btn-outline-success  waves-light w-100" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Print</button>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-outline-danger waves-effect waves-light w-100" data-bs-dismiss="modal"> Close</button> 
                                 </div>
                             </div>
                          </div>
