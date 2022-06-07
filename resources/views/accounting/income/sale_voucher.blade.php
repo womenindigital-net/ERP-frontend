@@ -132,7 +132,7 @@
                                                 </div>
                                             </div>
                                             <div data-repeater-list="group-a">
-                                                <div data-repeater-item class="row">
+                                                <div data-repeater-item class="row removeRow">
 
                                                     <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
                                                         <span class="pe-2 pb-1">01</span>
@@ -170,7 +170,7 @@
                                                     <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
                                                         <x-input-text name="name" placeholder="">
                                                         </x-input-text>
-                                                        <button class="btn btn-danger ms-2">
+                                                        <button class="btn btn-danger ms-2 removeBtn">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </div>
@@ -438,7 +438,22 @@
 </div>
 @endsection
 @section('script')
+<!-- form repeater js -->
+<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 
-<!-- form wizard init -->
-<script src="http://127.0.0.1:8000/assets/js/pages/form-wizard.init.js"></script>
+{{-- Custom Js form --}}
+<script>
+    $(document).ready(function(){
+            $("#formCheckBoxForm").hide();
+            $("#formCheckBoxForm2").hide();
+
+            $("#formCheckBox").click(function(){
+                $("#formCheckBoxForm").toggle();
+            });
+            $("#formCheckBox2").click(function(){
+                $("#formCheckBoxForm2").toggle();
+            });
+        });
+</script>
 @endsection

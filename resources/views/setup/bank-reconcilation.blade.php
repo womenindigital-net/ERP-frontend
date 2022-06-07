@@ -27,13 +27,13 @@
                                 <div class="col-6 d-flex">
                                     <label class="col-2 col-form-label text-end me-4">Form</label>
                                     <div class="col-6 mb-4">
-                                        <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                                        <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex">
                                     <label for="example-date-input" class="col-md-4 col-form-label me-4  text-end">To</label>
                                     <div class="col-md-6">
-                                        <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                                        <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                     </div>
                                 </div>
                             </div>    
@@ -56,8 +56,9 @@
                          </div>
                          <div class="col-6 d-flex ps-0">
                             <label class="col-2 col-form-label me-5"></label>
-                            <div class="col-6 mb-4">
-                                <input class="form-control ms-5" type="text" value="Company Amount: Bank Amount:" id="example-date-input">
+                            <div class="col-6 ms-5 mb-4">
+                                <x-input-text value="Company Amount: Bank Amount:" name="date" placeholder="mm/dd/yyyy"></x-input-text>
+                              
                             </div>
                         </div>
                         <div class="row">
@@ -139,13 +140,13 @@
                                                     <div class="col-lg-4">
                                                         <div class="mb-3 text-center">
                                                             <label for="formrow-inputState" class="form-label">Trans. Amount</label>
-                                                            <input type="number" class="form-control" id="formrow-inputZip" placeholder="Trans. Amount">
+                                                            <x-input-text type="number" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="mb-3 text-center">
                                                             <label for="formrow-inputState" class="form-label">Voucher Date</label>
-                                                            <input type="date" class="form-control" id="formrow-inputZip" placeholder="Trans. Amount">
+                                                            <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -153,13 +154,13 @@
                                                     <div class="col-lg-8">
                                                         <div class="mb-3 text-center">
                                                             <label for="formrow-inputZip" class="form-label ">Particulars</label>
-                                                            <input type="text" class="form-control" id="formrow-inputZip" placeholder="Particulars If Any">
+                                                            <x-input-text name="Particulars" placeholder="Particulars"></x-input-text>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="mb-3 text-center">
-                                                            <label for="formrow-inputZip" class="form-label ">Reference</label>
-                                                            <input type="text" class="form-control" id="formrow-inputZip" placeholder="Reference If Any">
+                                                            <label for="formrow-inputZip" class="form-label">Reference</label>
+                                                            <x-input-text name="Reference" placeholder="Reference If Any"></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -184,16 +185,16 @@
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item="" class="row ms-1">
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <input type="number" class="form-control">
+                                                        <x-input-text name="Acc. Number" type="number" placeholder="Acc. Number"></x-input-text>
                                                     </div>
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <input type="text" class="form-control">
+                                                        <x-input-text name="Acc. Particular" placeholder="Acc. Particular"></x-input-text>
                                                     </div>
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <input type="number" class="form-control">
+                                                        <x-input-text name="Debit" type="number" placeholder="Debit"></x-input-text>
                                                     </div>
                                                     <div class=" col p-0  pb-1 me-4 d-flex">
-                                                        <input type="number" class="form-control">
+                                                        <x-input-text name="Credit" type="number" placeholder="Credit"></x-input-text>
                                                         <button class="btn btn-outline-danger waves-effect waves-light ms-2">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>

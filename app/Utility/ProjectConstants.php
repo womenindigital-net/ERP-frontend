@@ -11,6 +11,9 @@ final class ProjectConstants
     const USER_TYPE_TEACHER = 'teacher';
     const USER_TYPE_GENERAL = 'general';
 
+    const STUDENT_TYPE_ONLINE = 'online';
+    const STUDENT_TYPE_OFFLINE = 'offline';
+
     const GENDER_MALE = 'male';
     const GENDER_FEMALE = 'female';
     const GENDER_OTHER = 'other';
@@ -66,6 +69,11 @@ final class ProjectConstants
     public static array $userTypes = [
         self::USER_TYPE_TEACHER => 'Teacher',
         self::USER_TYPE_GENERAL => 'General',
+    ];
+
+    public static array $studentTypes = [
+        self::STUDENT_TYPE_ONLINE => 'Online',
+        self::STUDENT_TYPE_OFFLINE => 'Offline',
     ];
 
     public static array $socialCommunication = [
