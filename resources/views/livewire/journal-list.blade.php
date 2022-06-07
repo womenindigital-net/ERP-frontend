@@ -29,30 +29,30 @@
                 <tbody>
                 @foreach($records as $record)
                     <tr>
-                    <td>{{$record->project->title}}</td>
-                    <td>{{$record->voucher_date}}</td>
-                    <td>{{$record->particulars}}</td>
-                    <td>{{$record->transaction_amount}}</td>
-                    <td>{{$record->created_at}}</td>
-                    <td>
-                        <a href="{{route('journal.show', $record->id)}}"
-                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
-                            <i class="mdi mdi-eye"></i>
-                        </a>
-                        <a href="{{route('journal.toggleApprove', $record->id)}}"
-                                class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
-                            <i class="fas fa-check"></i>
-                        </a>
-                        <a href="{{route('journal.edit', $record->id)}}"
-                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                            <i class="mdi mdi-pencil"></i>
-                        </a>
-                        <a href="{{route('journal.destroy', $record->id)}}"
-                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </td>
-                </tr>
+                        <td>{{$record->project->title}}</td>
+                        <td>{{$record->voucher_date}}</td>
+                        <td>{{$record->particulars}}</td>
+                        <td>{{$record->transaction_amount}}</td>
+                        <td>{{$record->created_at}}</td>
+                        <td>
+                            <a href="{{route('journal.show', $record->id)}}"
+                               class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                <i class="mdi mdi-eye"></i>
+                            </a>
+                            <button type="button" wire:click="toggleApprove({{$record->id}})"
+                                    class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button type="button"
+                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                <i class="mdi mdi-pencil"></i>
+                            </button>
+                            <button type="button"
+                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>

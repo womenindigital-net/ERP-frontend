@@ -24,6 +24,12 @@ class JournalList extends Component
         $this->repo = $repository;
     }
 
+    public function toggleApprove($recordId)
+    {
+        $this->repo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
+    }
+
     public function render(): Factory|View|Application
     {
         $data = [

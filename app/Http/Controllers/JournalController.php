@@ -125,13 +125,4 @@ class JournalController extends Controller
     {
         dd($journal);
     }
-
-    public function toggleApprove(Journal $journal)
-    {
-        $this->repo->toggleColumn($journal, 'is_approved');
-
-        Session::flash('success');
-
-        return redirect()->back();
-    }
 }
