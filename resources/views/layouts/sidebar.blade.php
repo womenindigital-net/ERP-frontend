@@ -24,7 +24,7 @@
                 <li class="menu-title">Accounting</li>
 
                 <li>
-                    <a href="{{route('journal')}}" class="waves-effect">
+                    <a href="{{route('journal.index')}}" class="waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span>Journal</span>
                     </a>

@@ -17,4 +17,10 @@ class BaseRepository
 
         return $this->model::all();
     }
+
+    public function toggleColumn($obj, string $column)
+    {
+        $obj->{$column} = !$obj->{$column};
+        $obj->save();
+    }
 }

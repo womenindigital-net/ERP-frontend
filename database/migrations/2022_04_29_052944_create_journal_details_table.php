@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignIdFor(Journal::class)->constrained()->cascadeOnDelete();
             $table->string('account_no');
             $table->string('account_particulars')->nullable();
-            $table->float('amount', 8, 2);
             $table->float('debit', 8, 2)->default(0);
             $table->float('credit', 8, 2)->default(0);
             $table->timestamps();
