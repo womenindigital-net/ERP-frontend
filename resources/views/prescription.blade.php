@@ -38,6 +38,7 @@
               data-bs-target=".bs-example-modal-lg">ADD</button>
           </div>
         </div>
+
         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
           <thead>
             <tr>
@@ -60,11 +61,14 @@
               </td>
               <td>
                 <button type="button" class="btn btn-lg p-1 btn-primary btn-rounded waves-effect waves-light">
-                  <i class="mdi mdi-trash-can-outline font-size-32 align-middle"></i></button>
+                  <i class="mdi mdi-trash-can-outline font-size-32 align-middle"></i>
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
+
+        
 
       </div>
     </div>

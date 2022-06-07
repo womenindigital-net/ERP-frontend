@@ -90,7 +90,7 @@
                                         I have expanded like a Pufferfish.
                                         <a href="#">Less</a>
                                     </p>
-                                    <a href="#hashLink">Expand</a>
+                                    <a href="#hashLink">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                                         I have expanded like a Pufferfish.
                                         <a href="#">Less</a>
                                     </p>
-                                    <a href="#hashLink2">Expand</a>
+                                    <a href="#hashLink2">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                                         I have expanded like a Pufferfish.
                                         <a href="#">Less</a>
                                     </p>
-                                    <a href="#hashLink3">Expand</a>
+                                    <a href="#hashLink3">Read More</a>
                                 </div>
                             </div>
                         </div>
