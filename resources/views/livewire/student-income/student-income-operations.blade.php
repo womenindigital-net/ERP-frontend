@@ -4,7 +4,7 @@
             <div class="modal-body">
                 <form class="needs-validation" novalidate>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label class="form-label">Project</label>
                                 <x-input-select wireModel="project_id" name="project_id" :records="$projects"
@@ -12,20 +12,15 @@
                                 </x-input-select>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Student</label>
-                                <x-input-select wireModel="student_id" name="student_id" :records="$students" additional="code">
+                                <x-input-select wireModel="student_id" name="student_id" :records="$students"
+                                    additional="code">
                                 </x-input-select>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label>Student ID</label>
-                                <p class="form-control">STD-232</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label>Payment Date</label>
                                 <x-input-text wireModel='date' type='date' placeholder='dd/mm/yyyy'>
@@ -65,48 +60,30 @@
                 </form>
                 <form wire:submit.prevent="store" class="repeater">
                     <div class="row">
-                        <div class="col-lg-4   pe-1">
+                        <div class="col-lg-7 pe-1">
                             <label for="name">Payment Amount For</label>
                         </div>
-                        <div class="col-lg-4   pe-1">
-                            <label for="subject">Receive Amount For</label>
-                        </div>
-                        <div class="col-lg-4  pe-1">
+                        <div class="col-lg-5  pe-1">
                             <label for="email">Payment Amount </label>
                         </div>
                     </div>
                     <div data-repeater-list="group-a">
                         <div data-repeater-item class="row removeRow">
-                            <div class="mb-3 d-flex col-lg-4">
-                                <span class="pe-2 pb-1">01</span>
-                                <div>
+                            <div class="mb-3 d-flex col-lg-7">
+                                <div class="w-100">
                                     <select class="form-control form-select" wire:model="course_id">
                                         <option>--Select--</option>
                                         @foreach($courses as $course)
-                                            <optgroup label="{{$course['title']}}">
-                                                @foreach($course['children'] as $childCourse)
-                                                    <option value="{{$childCourse['id']}}">{{$childCourse['title']}}</option>
-                                                @endforeach
-                                            </optgroup>
+                                        <optgroup label="{{$course['title']}}">
+                                            @foreach($course['children'] as $childCourse)
+                                            <option value="{{$childCourse['id']}}">{{$childCourse['title']}}</option>
+                                            @endforeach
+                                        </optgroup>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-
-                            <div class=" col-lg-4  pb-1">
-                                <select class="form-control form-select" {{-- wire:model="course_id" --}}>
-                                    <option>--Select--</option>
-                                    <option value="1">Consultation Fees</option>
-                                    <option value="2">Admission for Assessment /Observation</option>
-                                    <option value="3">Pre-Vocational Course</option>
-                                    <option value="4">Vocational Course</option>
-                                    <option value="5">Karishma Cultural Group</option>
-                                    <option value="6">Cricket Course</option>
-                                    <option value="7">Therapy Course</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3 d-flex col-lg-4">
+                            <div class="mb-3 d-flex col-lg-5">
                                 <x-input-text wireModel='amount' type="number" placeholder='Payment Amount'>
                                 </x-input-text>
                                 <div>
