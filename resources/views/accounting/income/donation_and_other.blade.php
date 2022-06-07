@@ -185,7 +185,7 @@
                                                 <div class="col p-0 pe-1">
                                                     <label for="product">Invoice Number</label>
                                                 </div>
-                                               
+
                                                 <div class="col p-0 pe-1">
                                                     <label for="quality">Payment Amount</label>
                                                 </div>
@@ -205,15 +205,15 @@
                                                         </select>
                                                     </div>
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <x-input-text name="name"  placeholder="">
+                                                        <x-input-text name="name" placeholder="">
                                                         </x-input-text>
                                                     </div>
                                                     <div class=" col-1 p-0 pe-1 pb-1">
-                                                        <div> 
+                                                        <div>
                                                             <button class="btn btn-danger ms-2 removeBtn">
-                                                            <i class="fas fa-trash-alt"></i>
+                                                                <i class="fas fa-trash-alt"></i>
                                                             </button>
-                                                       </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -356,8 +356,18 @@
 
 <!-- form repeater js -->
 <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
 <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
+
+{{-- Custom Js form --}}
+<script>
+    $(document).ready(function(){
+            $("#formCheckBoxForm").hide();
+    
+            $("#formCheckBox").click(function(){
+                $("#formCheckBoxForm").toggle();
+            });
+        });
+</script>
 
 @endsection
 @section('script-bottom')
