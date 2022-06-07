@@ -27,9 +27,26 @@
     .details{
         padding-top: 5px;
     }
-    #more {display: none;}
-    #myBtn{
-        color: #f46a6a; 
+    #hashLink, #hashLink2, #hashLink3 {
+    display: none;
+    }
+
+    #hashLink:target {
+    display: block;
+    }
+    #hashLink2 {
+    display: none;
+    }
+
+    #hashLink2:target {
+    display: block;
+    }
+    #hashLink3 {
+    display: none;
+    }
+
+    #hashLink3:target {
+    display: block;
     }
 </style>
 @endsection
@@ -69,9 +86,11 @@
                                 <div class="details">
                                     <p class=""><b class="pe-2">Duration:</b><i class="far fa-clock"></i>  2 hours</p>
                                     <p class=""><b class="pe-2">Teacher:</b>Mr.Habibullah</p>
-                                    <span id="dots"></span>
-                                    <span id="more">erisque enim ligula venenatis dolor.</span>
-                                    <div onclick="myFunction()" id="myBtn">Read more</div>
+                                    <p id="hashLink">
+                                        I have expanded like a Pufferfish.
+                                        <a href="#">Less</a>
+                                    </p>
+                                    <a href="#hashLink">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -83,9 +102,11 @@
                                 <div class="details">
                                     <p class=""><b class="pe-2">Duration:</b><i class="far fa-clock"></i>  2 hours</p>
                                     <p class=""><b class="pe-2">Teacher:</b>  Mr.Habibullah</p>
-                                    <span id="dots"></span>
-                                    <span id="more">erisque enim ligula venenatis dolor.</span>
-                                    <div onclick="myFunction()" id="myBtn">Read more</div>
+                                    <p id="hashLink2">
+                                        I have expanded like a Pufferfish.
+                                        <a href="#">Less</a>
+                                    </p>
+                                    <a href="#hashLink2">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -97,9 +118,11 @@
                                 <div class="details">
                                     <p class=""><b class="pe-2">Duration:</b><i class="far fa-clock"></i>  2 hours</p>
                                     <p class=""><b class="pe-2">Teacher:</b>  Mr.Habibullah</p>
-                                    <span id="dots"></span>
-                                    <span id="more">erisque enim ligula venenatis dolor.</span>
-                                    <div onclick="myFunction()" id="myBtn">Read more</div>
+                                    <p id="hashLink3">
+                                        I have expanded like a Pufferfish.
+                                        <a href="#">Less</a>
+                                    </p>
+                                    <a href="#hashLink3">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -115,23 +138,6 @@
 
 @endsection
 @section('script')
-<script>
-    function myFunction() {
-      var dots = document.getElementById("dots");
-      var moreText = document.getElementById("more");
-      var btnText = document.getElementById("myBtn");
-    
-      if (dots.style.display == "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Read more"; 
-        moreText.style.display = "none";
-      } else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Read less"; 
-        moreText.style.display = "inline";
-      }
-    }
-    </script>
 
 
 @endsection

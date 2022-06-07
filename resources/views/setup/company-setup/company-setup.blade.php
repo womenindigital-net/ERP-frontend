@@ -38,206 +38,262 @@
                 class="fas fa-plus-circle"></i> Add</button>
           </div>
         </div>
-        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Total Dept</th>
-              <th>Manager</th>
-              <th>City</th>
-              <th>Country</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Fax</th>
-              <th>Mobile</th>
-              <th>Log</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2022-03-29</td>
-              <td>7</td>
-              <td>Danny Rahaman</td>
-              <td>Dhaka</td>
-              <td>Bangladesh</td>
-              <td>chairman@pfda-vtc.org</td>
-              <td>8801751778308</td>
-              <td>8801751778308</td>
-              <td>8801751778308</td>
-              <td>
-                <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
-                <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
-              </td>
-              <td class="text-center">
-
-                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                </button>
-                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"> <i class="mdi mdi-eye"></i>
-                </button>
-                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"><i class="mdi mdi-pencil"></i>
-                </button>
-                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"><i class="fas fa-trash-alt"></i>
-                </button>                                                        
-          </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                class="form-control form-control-sm form-select form-select-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entries
+            </label>
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <label style="display: inline-flex;align-items: center;">Search:
+              <input type="search" class="form-control form-control-sm" placeholder="">
+            </label>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table w-100 table-bordered">
+            <thead>
+              <tr class="table-primary">
+                <th>Name</th>
+                <th>Total Dept</th>
+                <th>Manager</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Fax</th>
+                <th>Mobile</th>
+                <th>Log</th>
+                <th>Action</th>
+              </tr>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2022-03-29</td>
+                <td>7</td>
+                <td>Danny Rahaman</td>
+                <td>Dhaka</td>
+                <td>Bangladesh</td>
+                <td>chairman@pfda-vtc.org</td>
+                <td>8801751778308</td>
+                <td>8801751778308</td>
+                <td>8801751778308</td>
+                <td>
+                  <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
+                  <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                    <i class="mdi mdi-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="bx bx-dollar"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="fas fa-arrow-circle-right"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            Showing 1 to 2 of 2 entries
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <nav>
+              <ul class="pagination" style="justify-content: end;">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </div> <!-- end col -->
 </div> <!-- end row -->
-
-    <!--  Extra Large modal example -->
-    <div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title text-primary"> Add Company
-                  </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <!-- journal form start -->
-                  <!-- journal form start -->
-                  <div class="row">
-                      <div class="col-md-4">
-                          <div class="mb-3">
-                              <label class="form-label">Company Name </label>
-                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter company name ">
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Total Department:</label>
-                          <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter departmrnt name ">
-                      </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="mb-3">
-                          <label class="form-label">Manager </label>
-                          <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter manager name ">
-                      </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Street 1</label>
-                            <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="First line of address ">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="mb-3">
-                        <label class="form-label">Street 2</label>
-                        <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Second line of address">
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="mb-3">
-                        <label class="form-label">City </label>
-                        <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="City ">
-                    </div>
-                    </div>
-                </div>
-                <div class="row">
+<!--  Extra Large modal example -->
+<div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title text-primary"> Add Company
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- journal form start -->
+              <!-- journal form start -->
+              <div class="row">
                   <div class="col-md-4">
                       <div class="mb-3">
-                          <label class="form-label">Zip Code </label>
-                          <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Zip Code ">
+                          <label class="form-label">Company Name </label>
+                          <x-input-text name="Company Name" placeholder="Company Name"></x-input-text>
                       </div>
                   </div>
                   <div class="col-md-4">
                     <div class="mb-3">
-                      <label class="form-label">State </label>
-                      <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="State ">
+                      <label class="form-label">Total Department:</label>
+                      <x-input-text name="Total Department:" placeholder="Total Department:"></x-input-text>
                   </div>
                   </div>
                   <div class="col-md-4">
                     <div class="mb-3">
-                      <label class="form-label">Country </label>
-                      <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Country ">
+                      <label class="form-label">Manager </label>
+                      <x-input-text name="Manager " placeholder="Manager "></x-input-text>
                   </div>
                   </div>
               </div>
               <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label class="form-label">Email </label>
-                        <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Email ">
+                        <label class="form-label">Street 1</label>
+                        <x-input-text name="Street 1" placeholder="Street 1"></x-input-text>
                     </div>
                 </div>
                 <div class="col-md-4">
                   <div class="mb-3">
-                    <label class="form-label">Phone 1:
-                    </label>
-                    <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Phone 1:
-                    ">
+                    <label class="form-label">Street 2</label>
+                    <x-input-text name="Street 2" placeholder="Street 2"></x-input-text>
+                  </div>
                 </div>
                 </div>
                 <div class="col-md-4">
                   <div class="mb-3">
-                    <label class="form-label">Phone 2: </label>
-                    <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Phone 2: ">
+                    <label class="form-label">City </label>
+                    <x-input-text name="City" placeholder="City"></x-input-text>
+                    </div>
                 </div>
                 </div>
             </div>
             <div class="row">
               <div class="col-md-4">
                   <div class="mb-3">
-                      <label class="form-label">Fax: </label>
-                      <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Fax: ">
+                      <label class="form-label">Zip Code </label>
+                      <x-input-text name="Zip Code" placeholder="Zip Code"></x-input-text>
+                    </div>
                   </div>
               </div>
               <div class="col-md-4">
                 <div class="mb-3">
-                  <label class="form-label">Mobile: </label>
-                  <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Mobile: ">
+                  <label class="form-label">State </label>
+                  <x-input-text name="Zip Code" placeholder="Zip Code"></x-input-text>
               </div>
               </div>
               <div class="col-md-4">
                 <div class="mb-3">
-                  <label class="form-label">Website Address: </label>
-                  <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Website address ">
+                  <label class="form-label">Country </label>
+                  <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Country ">
               </div>
               </div>
           </div>
           <div class="row">
             <div class="col-md-4">
                 <div class="mb-3">
-                    <label class="form-label">Project </label>
-                    <select name="RefProjID" class="form-control strip-tags" id="RefProjID" required="">
-                      <option value="">--Select Project--</option>
-                      <option value="1">Governing Office</option>
-                      <option value="2">Operations</option>
-                      <option value="3">Administration</option>
-                      <option value="4">Finance and Accounts Section</option>
-                      <option value="6">Procurement Section</option>
-                      <option value="7">Inventory Management</option>
-                      <option value="8">Stock maintenance</option>
-                      <option value="9">ICT Section</option>
-                      <option value="10">Programme</option>
-                    </select>
+                    <label class="form-label">Email </label>
+                    <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Email ">
                 </div>
             </div>
             <div class="col-md-4">
               <div class="mb-3">
-                <label class="form-label">Logo </label>
-                <input class="form-control" type="file" id="formFile">
+                <label class="form-label">Phone 1:
+                </label>
+                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Phone 1:
+                ">
             </div>
             </div>
+            <div class="col-md-4">
+              <div class="mb-3">
+                <label class="form-label">Phone 2: </label>
+                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Phone 2: ">
+            </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+              <div class="mb-3">
+                  <label class="form-label">Fax: </label>
+                  <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Fax: ">
+              </div>
           </div>
-                  <!-- journal form end -->
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label class="form-label">Mobile: </label>
+              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Mobile: ">
+          </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label class="form-label">Website Address: </label>
+              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Website address ">
+          </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label class="form-label">Project </label>
+                <select name="RefProjID" class="form-control strip-tags" id="RefProjID" required="">
+                  <option value="">--Select Project--</option>
+                  <option value="1">Governing Office</option>
+                  <option value="2">Operations</option>
+                  <option value="3">Administration</option>
+                  <option value="4">Finance and Accounts Section</option>
+                  <option value="6">Procurement Section</option>
+                  <option value="7">Inventory Management</option>
+                  <option value="8">Stock maintenance</option>
+                  <option value="9">ICT Section</option>
+                  <option value="10">Programme</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label">Logo </label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        </div>
+      </div>
+              <!-- journal form end -->
 
-              </div>
-              <div class="modal-footer">
-                  
-                  <button type="button" class="btn  btn-danger" data-bs-dismiss="modal"> Close</button>
-                  <button type="button" class="btn  btn-success" data-bs-dismiss="modal"> Save</button>
-              </div>
-          </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+          </div>
+          <div class="modal-footer">
+              
+              <button type="button" class="btn  btn-danger" data-bs-dismiss="modal"> Close</button>
+              <button type="button" class="btn  btn-success" data-bs-dismiss="modal"> Save</button>
+          </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 @endsection
 

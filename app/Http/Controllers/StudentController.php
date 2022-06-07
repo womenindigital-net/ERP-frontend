@@ -363,11 +363,7 @@ class StudentController extends Controller
         ];
         return view('stock-management.stock_transfer', $data);
     }
-    public function stockCount(): Factory|View|Application
-    {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        ];
-        return view('stock-management.stock_count', $data);
-    }
+  
+   
+
 }

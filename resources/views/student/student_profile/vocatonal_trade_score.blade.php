@@ -28,23 +28,17 @@
 @slot('li_1') Utility @endslot
 @slot('title') Student Profile @endslot
 @endcomponent
-
-
 @include('layouts.student_profile.header')
-
-
 <div class="row">
     <div class="col-12">
-
         @include('layouts.student_profile.left_sidebar')
-
         <!-- Right Sidebar -->
         <div class="email-rightbar mb-3">
             <div class="card">
                 <div class="d-flex justify-content-between mb-3">
                     <div>
                         <button type="button" class="btn btn-danger btn-block waves-effect waves-light"
-                            data-bs-toggle="modal" data-bs-target="#composemodal">
+                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
                             <i class="mdi mdi-plus me-2"></i> Vocational Trade Score
                         </button>
                     </div>
@@ -52,7 +46,123 @@
             </div><!-- card -->
         </div> <!-- end Col-9 -->
     </div>
+</div>
+<!--  Extra Large modal example -->
+<div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="myExtraLargeModalLabel">ITP Scoring</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="basicpill-phoneno-input">Student</label>
+                      <select class="form-control select2 form-select">
+                        <option value="0">Select</option>
+                      </select>
+                    </div>
+                  </div>
+                <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="basicpill-phoneno-input">Teacher</label>
+                      <select class="form-control select2 form-select">
+                        <option value="0">Select</option>
+                      </select>
+                    </div>
+                  </div>
 
+                {{-- <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="basicpill-lastname-input">Teacher:</label>
+                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
+                  </div>
+                </div> --}}
+              </div>
+              <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label for="basicpill-phoneno-input">Vocational Trade Task</label>
+                  <select class="form-control select2 form-select">
+                    <option value="0">Select</option>
+                  </select>
+                </div>
+              </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label for="basicpill-firstname-input">Collection Date:</label>
+                <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
+              </div>
+            </div>
+        </div>
+        <p>(1) Full physical prompt (2) Partial Support (3) Pectoral guidance / follow others (4) Verbal Instruction (5) Independent</p>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                  class="form-control form-control-sm form-select form-select-sm">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select> entries
+              </label>
+            </div>
+            <div class="col-sm-12 col-md-6 text-end">
+              <label style="display: inline-flex;align-items: center;">Search:
+                <input type="search" class="form-control form-control-sm" placeholder="">
+              </label>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table w-100 table-bordered">
+              <thead>
+                <tr class="table-primary">
+                  <th>SL</th>
+                  <th>Product</th>
+                  <th>Target</th>
+                  <th>No. of Production</th>
+                  <th>Target Achieved</th>
+                  <th>Wastage</th>
+                  <th>Time Taken</th>
+                  <th>Quality of Work</th>
+                  <th>Completeness of Delivery</th>
+                  <th>Follow Instruction</th>
+                  <th>Generalization</th>
+                  <th>Adaption</th>
+                  <th>Remarks</th>
+                  <th>Source Store</th>
+                  <th>Destination Store</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              Showing 1 to 2 of 2 entries
+            </div>
+            <div class="col-sm-12 col-md-6 text-end">
+              <nav>
+                <ul class="pagination" style="justify-content: end;">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
 </div>
 
 @endsection

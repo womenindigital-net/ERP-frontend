@@ -33,8 +33,6 @@
             <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
               data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
           </div>
-
-
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -159,25 +157,39 @@
                     <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                   </div>
                 </div>
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="basicpill-phoneno-input">Candidate ID:</label>
-                    <select class="form-control select2 form-select">
-                      <option value="0">Select</option>
-                      <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                      <option value="2">abdullah-al-nafi antor</option>
-                      <option value="3">Abdullahil Baki</option>
-                      <option value="4">Abdur Rahman Sajid</option>
-                      <option value="5">Abid Hossain Turjo</option>
-                      <option value="6">Abid Kabir Chowdhury</option>
-                      <option value="7">Abrar Ahosab Talha</option>
-                      <option value="8">Abrar Jawad Siam</option>
-                      <option value="9">Abu Sufiyan</option>
-                      <option value="10">Adib Akbar</option>
-                      <option value="11">Adiba Atiar</option>
-                      <option value="12">Adil Anaf</option>
-                      <option value="13">Aditya Chakraborty</option>
-                    </select>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="mb-3">
+                      <label for="basicpill-firstname-input">Collection Date:</label>
+                      <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="mb-3">
+                      <label for="basicpill-lastname-input">Teacher:</label>
+                      <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="mb-3">
+                      <label for="basicpill-phoneno-input">Candidate ID:</label>
+                      <select class="form-control select2 form-select">
+                        <option value="0">Select</option>
+                        <option value="1">Aalliyah Tehzeeb Ahmed</option>
+                        <option value="2">abdullah-al-nafi antor</option>
+                        <option value="3">Abdullahil Baki</option>
+                        <option value="4">Abdur Rahman Sajid</option>
+                        <option value="5">Abid Hossain Turjo</option>
+                        <option value="6">Abid Kabir Chowdhury</option>
+                        <option value="7">Abrar Ahosab Talha</option>
+                        <option value="8">Abrar Jawad Siam</option>
+                        <option value="9">Abu Sufiyan</option>
+                        <option value="10">Adib Akbar</option>
+                        <option value="11">Adiba Atiar</option>
+                        <option value="12">Adil Anaf</option>
+                        <option value="13">Aditya Chakraborty</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
