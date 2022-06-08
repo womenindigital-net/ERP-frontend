@@ -1,4 +1,5 @@
 <div>
+
     <x-record-list :records="$records" wireClick="show()" title="STUDENT QAS" $dataBsTarget=".bs-example-modal-xl">
         <table class="table w-100">
             <thead>
