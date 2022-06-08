@@ -61,11 +61,15 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('stock-management/material_callects', [StudentController::class, 'materialCallects'])->name('stock-management.material_callects');
     Route::get('stock-management/stock_transfer', [StudentController::class, 'stockTransfer'])->name('stock-management.stock_transfer');
     Route::get('stock-management/stock_count', [StudentController::class, 'stockCount'])->name('stock-management.stock_count');
+
     Route::get('setup/program-setup/tesk-create', [SetupController::class, 'teskCreate'])->name('setup.program-setup.tesk-create');
     Route::get('setup/program-setup/vocational-category-subcategory-setup', [SetupController::class, 'vocationalSetup'])->name('setup.program-setup.vocational-category-subcategory-setup');
     Route::get('setup/program-setup/academic-calender-create', [SetupController::class, 'academicCalender'])->name('setup.program-setup.academic-calender-create');
     Route::get('setup/program-setup/attendence-card-setup', [SetupController::class, 'attendenceCardSetup'])->name('setup.program-setup.attendence-card-setup');
 
-    
+    Route::get('setup/program-setup/tesk-create', [StudentController::class, 'teskCreate'])->name('setup.program-setup.tesk-create');
+    Route::get('setup/program-setup/vocational-category-subcategory-setup', [StudentController::class, 'teskCreate'])->name('setup.program-setup.vocational-category-subcategory-setup');
+    Route::get('setup/program-setup/academic-calender-create', [StudentController::class, 'teskCreate'])->name('setup.program-setup.academic-calender-create');
+    Route::get('setup/program-setup/attendence-card-setup', [StudentController::class, 'teskCreate'])->name('setup.program-setup.attendence-card-setup');
 
 });
