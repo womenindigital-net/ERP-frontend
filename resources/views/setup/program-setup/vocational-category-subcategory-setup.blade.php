@@ -48,22 +48,11 @@
                                 <option>Mercedes</option>
                                 <option>Audi</option>
                                 </datalist>
-                                {{-- <select class="form-select">
-                                    <option>--Select--</option>
-                                    <option>Alamin Islam</option>
-                                    <option>SAFWAT NASIF</option>
-                                    <option>Md. Moinul Islam Supta</option>
-                                    <option>Rumi Akhter</option>
-                                    <option>abdullah-al-nafi antor</option>
-                                    <option>Md. Shakib Khan</option>
-                                    <option>SARRAJ SARWAR</option>
-                                    <option>Humaira Sultana</option>
-                                    <option>Tabassum Mehejbeen Liana</option>
-                                </select> --}}
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Sub Categories</label>
-                                <input class="form-control" type="text"  placeholder="Enter Number">
+                                <x-input-text name="hh"  placeholder="Enter amount">
+                                </x-input-text> 
                             </div>
                         </div>
                         <div class="text-end pe-2">
@@ -72,44 +61,89 @@
                         </div>
                     </div>
                     <div class="tab-pane" id="profile" role="tabpanel">
-                        <table id="datatable" class="table table-bordered dt-responsive w-100">
-                            <thead>
-                                <tr>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                  class="form-control form-control-sm form-select form-select-sm">
+                                  <option value="10">10</option>
+                                  <option value="25">25</option>
+                                  <option value="50">50</option>
+                                  <option value="100">100</option>
+                                </select> entries
+                              </label>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                              <label style="display: inline-flex;align-items: center;">Search:
+                                <input type="search" class="form-control form-control-sm" placeholder="">
+                              </label>
+                            </div>
+                          </div>
+                          <div class="table-responsive">
+                            <table class="table table-bordered w-100">
+                              <thead>
+                                <tr class="table-primary">
                                     <th class="">SL</th>
                                     <th>Categories</th>
                                     <th>Sub Categories</th>
                                     <th>Action</th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                              </thead>
+                              <tbody>
                                 <tr>
                                     <td>1 </td>
                                     <td>Edinburgh</td>
                                     <td>Edinburgh Sub</td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="mdi mdi-eye"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                <i class="mdi mdi-pencil"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                <i class="bx bx-dollar"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                <i class="fas fa-arrow-circle-right"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                            <i class="fas fa-trash-alt"></i>
-                                            </button> 
-                                    </td>
+                                  <td>
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="mdi mdi-eye"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="bx bx-dollar"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="fas fa-arrow-circle-right"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                      <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                  </td>
                                 </tr>
-                            </tbody>
-                        </table>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                              Showing 1 to 2 of 2 entries
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                              <nav>
+                                <ul class="pagination" style="justify-content: end;">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item active">
+                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
+                                </ul>
+                              </nav>
+                            </div>
+                          </div>
+
+
                     </div>
                 </div>
 
