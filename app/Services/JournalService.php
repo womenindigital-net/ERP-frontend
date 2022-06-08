@@ -15,7 +15,7 @@ class JournalService
         $this->repo = $repository;
     }
 
-    public function store(mixed $validated)
+    public function store(mixed $validated): void
     {
         [$info, $detailInfo] = $this->segregateInfo($validated);
 
@@ -33,7 +33,7 @@ class JournalService
 
     }
 
-    public function update(Journal $journal, array $validated)
+    public function update(Journal $journal, array $validated): void
     {
         [$info, $detailInfo] = $this->segregateInfo($validated);
 
@@ -53,29 +53,27 @@ class JournalService
 
     private function segregateInfo(mixed $validated): array
     {
-        $detailColumns = ['account_no', 'account_particulars', 'debit', 'credit'];
-        $custom        = [];
-        $detailInfos   = [];
-
-        foreach ($validated as $key => $val) {
-            if (in_array($key, $detailColumns)) {
-                $custom[$key] = $val;
-                unset($validated[$key]);
-            }
+        foreach ($validated['journal'] as $key => $journal) {
+            if (!$this->isValidJournalEntry($journal))
+                unset($validated['journal'][$key]);
         }
 
-        foreach ($custom['account_no'] as $key => $val) {
-            if (!$val || (!$custom['debit'][$key] or !$custom['credit'][$key]))
-                continue;
-
-            $detailInfos[] = [
-                'account_no'          => $val,
-                'account_particulars' => $custom['account_particulars'][$key],
-                'debit'               => $custom['debit'][$key],
-                'credit'              => $custom['credit'][$key],
-            ];
-        }
+        $detailInfos = $validated['journal'];
+        unset($validated['journal']);
 
         return [$validated, $detailInfos];
+    }
+
+    private function isValidJournalEntry(array $journal): bool
+    {
+        if (!empty($journal['account_no']) and
+        !empty($journal['account_particulars']) and
+        (empty($journal['debit']) or empty($journal['credit'])) and
+        ($journal['debit'] or $journal['credit'])
+        ) {
+            return true;
+        }
+
+        return false;
     }
 }
