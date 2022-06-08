@@ -38,5 +38,21 @@ class SetupController extends Controller
     {
         return view('setup.program-setup.vocational-category-subcategory-setup');
     }
+    public function presCription()
+    {
+        return view('setup.program-setup.prescription');
+    }
+    public function activityCreate()
+    {
+        return view('setup.program-setup.activity-create');
+    }
+    public function taskWeightSetup()
+    {
+        return view('setup.program-setup.tesk-weight-setup');
+    }
+    public function courseSetup()
+    {
+        return view('setup.program-setup.course-setup');
+    }
     
 }
