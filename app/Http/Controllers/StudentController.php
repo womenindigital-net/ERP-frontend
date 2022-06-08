@@ -147,6 +147,16 @@ class StudentController extends Controller
 
         return view('pre_admission.care-needs-form', $data);
     }
+    public function admissionAddStudent(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('admission.add_student', $data);
+    }
+
+
 
     public function individualrisk(): Factory|View|Application
     {

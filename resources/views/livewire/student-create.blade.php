@@ -11,12 +11,13 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6">
+                        
                                     <div class="mb-3 row">
                                         <label for="example-text-input" class="col-md-4 col-form-label">Student
                                             ID:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="code" type="number" placeholder="Student Code"
-                                                wireModel="code" value="{{$code}}">
+                                                wireModel="code">
                                             </x-input-text>
                                         </div>
                                     </div>
@@ -24,7 +25,7 @@
                                         <label for="example-search-input" class="col-md-4 col-form-label">Name:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="student_name" placeholder="Student Name"
-                                                wireModel="name" value="{{$name}}">
+                                                wireModel="name">
                                             </x-input-text>
                                         </div>
                                     </div>
