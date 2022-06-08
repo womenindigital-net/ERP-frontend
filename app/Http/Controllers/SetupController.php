@@ -22,4 +22,70 @@ class SetupController extends Controller
     {
         return view('setup.store-management.product_setup');
     }
+    public function academicCalender()
+    {
+        return view('setup.program-setup.academic-calender-create');
+    }
+    public function attendenceCardSetup()
+    {
+        return view('setup.program-setup.attendence-card-setup');
+    }
+    public function teskCreate()
+    {
+        return view('setup.program-setup.tesk-create');
+    }
+    public function vocationalSetup()
+    {
+        return view('setup.program-setup.vocational-category-subcategory-setup');
+    }
+    public function presCription()
+    {
+        return view('setup.program-setup.prescription');
+    }
+    public function activityCreate()
+    {
+        return view('setup.program-setup.activity-create');
+    }
+    public function taskWeightSetup()
+    {
+        return view('setup.program-setup.tesk-weight-setup');
+    }
+    public function courseSetup()
+    {
+        return view('setup.program-setup.course-setup');
+    }
+    public function companySetup()
+    {
+        return view('setup.company-setup.company-setup');
+    }
+    public function projectSetup()
+    {
+        return view('setup.project-setup.project-setup');
+    }
+    public function doctorSetup()
+    {
+        return view('setup.doctor-setup');
+    }
+    public function chartAccountSetup()
+    {
+        return view('setup.chart-of-accounts');
+    }
+    public function accountDetailsSetup()
+    {
+        return view('setup.account-details');
+    }
+    public function manageChequebook()
+    {
+        return view('setup.manage-chequebook');
+    }
+    public function bankReconcilationNew()
+    {
+        return view('setup.bank-reconcilation-new');
+    }
+    public function bankReconcilation()
+    {
+        return view('setup.bank-reconcilation');
+    }
+    
+    
 }

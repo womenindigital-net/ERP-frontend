@@ -7,14 +7,6 @@
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title') Student_attendance_card_setup @endslot
-    @endcomponent
-    {{-- code  --}}
-
- 
         <div class="card">
             <div class="card-body">
 
@@ -57,7 +49,7 @@
                         </div>
                         <div class="text-end pe-2">
                             <button type="button" class="btn btn-danger waves-effect waves-light">Reset</button>
-                            <button type="button" class="btn btn-primary waves-effect waves-light">Save</button>
+                            <button type="button" class="btn btn-success waves-effect waves-light">Save</button>
                         </div>
                     </div>
                     <div class="tab-pane" id="profile" role="tabpanel">
@@ -142,8 +134,6 @@
                               </nav>
                             </div>
                           </div>
-
-
                     </div>
                 </div>
 
@@ -153,14 +143,4 @@
 
 @endsection
 @section('script')
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<!-- jquery step -->
-<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
-
-<!-- form wizard init -->
-<script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
 @endsection

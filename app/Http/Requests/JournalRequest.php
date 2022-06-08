@@ -29,10 +29,7 @@ class JournalRequest extends FormRequest
             'voucher_date' => 'required',
             'particulars' => 'nullable',
             'reference' => 'nullable',
-            'account_no.*' => 'required',
-            'account_particulars.*' => 'required',
-            'debit.*' => 'nullable',
-            'credit.*' => 'nullable',
+            'journal.*' => 'nullable',
         ];
     }
 }

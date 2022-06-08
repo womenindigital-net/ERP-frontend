@@ -62,7 +62,7 @@ class JournalController extends Controller
      */
     public function store(JournalRequest $request)
     {
-        dd($request);
+//        dd($request->all(), $request->validated());
         $this->service->store($request->validated());
 
         Session::flash('success');

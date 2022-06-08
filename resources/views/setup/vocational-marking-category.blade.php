@@ -109,7 +109,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                  <!-- journal form start -->  
+            <!-- journal form start -->  
               <div class="row">
                 <div class="col-12 p-0">
                     <div class="card">
@@ -121,7 +121,7 @@
                                             <div class="col-lg-4 p-0 pt-2 ms-5">
                                                 <label for="product">Category Name</label>
                                             </div>
-                                            <input type="text" class="form-control align-self-start" placeholder="Category Name Here"/>
+                                            <x-input-text name="Name" placeholder="Category Name Here"></x-input-text>
                                             <button class="btn btn-outline-danger waves-effect waves-light me- ms-4 ">
                                               <i class="fas fa-trash-alt"></i>
                                           </button>

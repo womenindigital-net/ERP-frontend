@@ -110,24 +110,16 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('student.appointment')}}">Appointment</a></li>
-                        <li><a href="{{route('student.case-history')}}">Case History</a></li>
+                        <li><a href="{{route('case-history.index')}}">Case History</a></li>
                         <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
-                        {{-- <li><a href="/medicine-admin">Medicine Admin</a></li> --}}
                     </ul>
                 </li>
                 <li>
-                    <a href="admission.add_student" class="waves-effect">
+                    <a href="{{ route('admission.addStudent') }}" class="waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span>Admission</span>
                     </a>
-                    {{-- <a href="admission.add_student">Admission</a>
-                </li> --}}
-                {{-- <ul class="sub-menu" aria-expanded="true">
-                    <li><a href="admission.add_student">Add Student</a></li>
-
-                    <li><a href="/course-payment">Course Payment</a></li>
-                </ul> --}}
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -282,21 +274,24 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Company Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="setup.company-setup.company-setup">Company Setup</a></li>
+                                <li> <a href="{{ route('setup.company-setup.company-setup') }}">Company Setup</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Program Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="setup.program-setup.prescription">Prescription</a></li>
-                                <li> <a href="setup.program-setup.activity-create">Activity create</a></li>
+                                <li> <a href="{{ route('setup.program-setup.prescription') }}">Prescription</a></li>
+                                <li> <a href="{{ route('setup.program-setup.activity-create') }}">Activity create</a></li>
                                 <li> <a href="{{ route('setup.program-setup.tesk-create') }}">Task create</a></li>
-                                <li> <a href="setup.program-setup.tesk-weight-setup">Task Weight Setup</a></li>
-                                <li> <a href="setup.program-setup.course-setup">Course Setup</a></li>
+
+                                <li> <a href="{{ route('setup.program-setup.tesk-weight-setup') }}">Task Weight Setup</a></li>
+                                <li> <a href="{{ route('setup.program-setup.course-setup') }}">Course Setup</a></li>
                                 <li> <a href="{{ route('setup.program-setup.attendence-card-setup') }}">Attendence card setup</a></li>
+
                                 <li> <a href="{{ route('setup.program-setup.vocational-category-subcategory-setup') }}">Vocational
                                         Category and subcategory setup</a></li>
-                                <li> <a href="{{ route('setup.program-setup.academic-calender-create') }}">Academic Celender Create</a>
+                                <li> <a href="{{ route('setup.program-setup.academic-calender-create') }}">Academic
+                                        Celender Create</a>
                                 </li>
                             </ul>
                         </li>
@@ -304,7 +299,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Project Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.project-setup.project-setup">Project Setup</a>
+                                    <a href="{{ route('setup.project-setup.project-setup') }}">Project Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -312,7 +307,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Doctor Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.doctor-setup">Doctor Setup</a>
+                                    <a href="{{ route('setup.doctor-setup') }}">Doctor Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -320,7 +315,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Chart Of Accounts</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.chart-of-accounts">Chart Of Accounts</a>
+                                    <a href="{{ route('setup.chart-of-accounts') }}">Chart Of Accounts</a>
                                 </li>
                             </ul>
                         </li>
@@ -328,10 +323,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.account-details">Account Details</a>
+                                    <a href="{{ route('setup.account-details') }}">Account Details</a>
                                 </li>
                                 <li>
-                                    <a href="setup.manage-chequebook">Manage Chequebook</a>
+                                    <a href="{{ route('setup.manage-chequebook') }}">Manage Chequebook</a>
                                 </li>
                             </ul>
                         </li>
@@ -339,10 +334,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-reconcilation-new">Bank Reconcilation New</a>
+                                    <a href="{{ route('setup.bank-reconcilation-new') }}">Bank Reconcilation New</a>
                                 </li>
                                 <li>
-                                    <a href="setup.bank-reconcilation">Bank Reconcilation</a>
+                                    <a href="{{ route('setup.bank-reconcilation') }}">Bank Reconcilation</a>
                                 </li>
                             </ul>
                         </li>
