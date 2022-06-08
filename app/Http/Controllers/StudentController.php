@@ -372,4 +372,7 @@ class StudentController extends Controller
         ];
         return view('stock-management.stock_transfer', $data);
     }
+
+
+
 }

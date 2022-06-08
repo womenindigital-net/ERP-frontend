@@ -123,7 +123,6 @@
                         <div class="row pb-3">
                             <div class="col-6 mb-3">
                                 <label class="form-label">Event Name</label>
-                                <x-forms.input type="text"/>
                             </div>
                             <div class="col-6 mb-3">
                                 <label class="form-label">Event Type</label>

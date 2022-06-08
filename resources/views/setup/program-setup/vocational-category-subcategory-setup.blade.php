@@ -8,11 +8,6 @@
 
 @section('content')
 
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title') Student_attendance_card_setup @endslot
-    @endcomponent
-    {{-- code  --}}
 
  
         <div class="card">
@@ -142,8 +137,6 @@
                               </nav>
                             </div>
                           </div>
-
-
                     </div>
                 </div>
 

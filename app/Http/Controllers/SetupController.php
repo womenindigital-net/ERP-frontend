@@ -22,4 +22,21 @@ class SetupController extends Controller
     {
         return view('setup.store-management.product_setup');
     }
+    public function academicCalender()
+    {
+        return view('setup.program-setup.academic-calender-create');
+    }
+    public function attendenceCardSetup()
+    {
+        return view('setup.program-setup.attendence-card-setup');
+    }
+    public function teskCreate()
+    {
+        return view('setup.program-setup.tesk-create');
+    }
+    public function vocationalSetup()
+    {
+        return view('setup.program-setup.vocational-category-subcategory-setup');
+    }
+    
 }
