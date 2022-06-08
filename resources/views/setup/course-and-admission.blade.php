@@ -99,130 +99,130 @@
   </div> <!-- end col -->
 </div> <!-- end row -->
 <!--  Extra Large modal example -->
-    <div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title text-primary">Course Create
-                  </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <!-- journal form start -->
-                  <div class="col-md-12 d-flex">
-                    <div class="col-md-6 mb-3 text-center">
-                        <label class="form-label">Course / Service Name</label>
-                        <input class="form-control" type="text" placeholder="Course Name Here" id="example-text-input"> 
-                    </div>
-                    <div class="col-md-6 ms-2  mb-3 text-center">
-                        <label class="form-label">Duration</label>
-                        <input class="form-control" type="number" placeholder="Duration In Month ex:6"       id="example-text-input"> 
-                    </div>
-                  </div>  
-                  {{--  Cash Acc / Description  --}}
-                  <div class="col-md-12 d-flex">
-                    <div class="col-md-6 mb-3 text-center">
-                        <label class="form-label">Cash Acc:</label>
-                        <select name="CreditAcc" id="CreditAcc" class="form-control select2 form-select strip-tags" required="">
-                            <option value="0">Select</option>
-                            <option value="1"> 1561003 :: 10 Stations </option>
-                            <option value="2"> 6205 :: 1st January New Year event </option>
-                            <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
-                            <option value="4"> 1200 :: Accounts Receivable </option>
-                            <option value="5"> 7550002 :: Accounts Staff Salary </option>
-                            <option value="6"> 2130 :: Accrued accounts payable </option>
-                            <option value="7"> 2220 :: Accrued Commissions </option>
-                            <option value="8"> 2200 :: Accrued Compensation </option>
-                            <option value="9"> 2260 :: Accrued expenses </option>
-                            <option value="10"> 1450 :: Accrued Income </option>
-                            <option value="11"> 2240 :: Accrued Interest </option>
-                            <option value="12"> 2270 :: Accrued paid leave </option>
-                            <option value="13"> 2210 :: Accrued Payroll </option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 ms-2  mb-3 text-center">
-                        <label class="form-label">Description:</label>
-                        <textarea rows="1" minlength="10" class="form-control strip-tags my-editor" id="CourseDescription" placeholder="Type course description..." name="CourseDescription" cols="50" style="width:100%;"></textarea>
-                    </div>
-                  </div>    
-              <div class="row">
-                <div class="col-12 p-0">
-                    <div class="card">
-                        <div class="card-body p-0">
-                            <form class="repeater" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-lg-4 p-0  text-center">
-                                        <label for="product">Fee Heading</label>
-                                    </div>
-                                    <div class="col-lg-4 p-0  text-center">
-                                        <label for="product">Acc No</label>
-                                    </div>
-                                    <div class="col-lg-4 p-0  text-center">
-                                        <label for="total">Amount</label>
-                                    </div>
+<div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title text-primary">Course Create
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- journal form start -->
+              <div class="col-md-12 d-flex">
+                <div class="col-md-6 mb-3 text-center">
+                    <label class="form-label">Course / Service Name</label>
+                    <x-input-text name="Course"  placeholder="Course Name Here"></x-input-text>
+                </div>
+                <div class="col-md-6 ms-2  mb-3 text-center">
+                    <label class="form-label">Duration</label>
+                    <x-input-text name="Duration"  placeholder="Duration In Month ex:6"></x-input-text>
+                </div>
+              </div>  
+              {{--  Cash Acc / Description  --}}
+              <div class="col-md-12 d-flex">
+                <div class="col-md-6 mb-3 text-center">
+                    <label class="form-label">Cash Acc:</label>
+                    <select name="CreditAcc" id="CreditAcc" class="form-control select2 form-select strip-tags" required="">
+                        <option value="0">Select</option>
+                        <option value="1"> 1561003 :: 10 Stations </option>
+                        <option value="2"> 6205 :: 1st January New Year event </option>
+                        <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
+                        <option value="4"> 1200 :: Accounts Receivable </option>
+                        <option value="5"> 7550002 :: Accounts Staff Salary </option>
+                        <option value="6"> 2130 :: Accrued accounts payable </option>
+                        <option value="7"> 2220 :: Accrued Commissions </option>
+                        <option value="8"> 2200 :: Accrued Compensation </option>
+                        <option value="9"> 2260 :: Accrued expenses </option>
+                        <option value="10"> 1450 :: Accrued Income </option>
+                        <option value="11"> 2240 :: Accrued Interest </option>
+                        <option value="12"> 2270 :: Accrued paid leave </option>
+                        <option value="13"> 2210 :: Accrued Payroll </option>
+                    </select>
+                </div>
+                <div class="col-md-6 ms-2  mb-3 text-center">
+                    <label class="form-label">Description:</label>
+                    <x-input-textarea name="Description"  placeholder="Description"></x-input-textarea>
+                </div>
+              </div>    
+          <div class="row">
+            <div class="col-12 p-0">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <form class="repeater" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-lg-4 p-0  text-center">
+                                    <label for="product">Fee Heading</label>
                                 </div>
-                                <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="row">
-                                        <div  class="col-lg-4 d-flex p-0 ps-4 pe-2 pb-1 align-items-center">
-                                            <select id="formrow-inputState" class="form-select">
-                                              <option value="0">Select</option>
-                                              <option value="1"> 1561003 :: 10 Stations </option>
-                                              <option value="2"> 6205 :: 1st January New Year event </option>
-                                              <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
-                                              <option value="4"> 1200 :: Accounts Receivable </option>
-                                              <option value="5"> 7550002 :: Accounts Staff Salary </option>
-                                              <option value="6"> 2130 :: Accrued accounts payable </option>
-                                              <option value="7"> 2220 :: Accrued Commissions </option>
-                                              <option value="8"> 2200 :: Accrued Compensation </option>
-                                              <option value="9"> 2260 :: Accrued expenses </option>
-                                              <option value="10"> 1450 :: Accrued Income </option>
-                                              <option value="11"> 2240 :: Accrued Interest </option>
-                                              <option value="12"> 2270 :: Accrued paid leave </option>
-                                              <option value="13"> 2210 :: Accrued Payroll </option>   
-                                            </select>
-                                        </div>
-                                        <div class=" col-lg-4 p-0 pe-2 ps-2 pb-1">
-                                            <select id="formrow-inputState" class="form-select">
-                                              <option value="1">Select</option>
-                                              <option value="2"> 6205 :: 1st January New Year event </option>
-                                              <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
-                                              <option value="4"> 1200 :: Accounts Receivable </option>
-                                              <option value="5"> 7550002 :: Accounts Staff Salary </option>
-                                              <option value="6"> 2130 :: Accrued accounts payable </option>
-                                              <option value="7"> 2220 :: Accrued Commissions </option>
-                                              <option value="8"> 2200 :: Accrued Compensation </option>
-                                              <option value="9"> 2260 :: Accrued expenses </option>
-                                              <option value="10"> 1450 :: Accrued Income </option>
-                                              <option value="11"> 2240 :: Accrued Interest </option>
-                                              <option value="12"> 2270 :: Accrued paid leave </option>
-                                              <option value="13"> 2210 :: Accrued Payroll </option>  
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4 p-0 pe-4 ps-2 pe-2 pb-1 align-self-center d-flex">
-                                            <input type="number" class="form-control pe-1"/>
-                                            <button class="btn btn-outline-danger waves-effect waves-light ms-2">
-                                              <i class="fas fa-trash-alt"></i>
-                                          </button>
-                                        </div>
-                                    </div> 
+                                <div class="col-lg-4 p-0  text-center">
+                                    <label for="product">Acc No</label>
                                 </div>
-                               <div class="ms-2">
-                                <button data-repeater-create type="button" class="btn btn-outline-info waves-effect waves-light mt-3 ms-1  mt-lg-0"><i class="fa fa-plus"></i> Add</button>
-                               </div>
-                            </form>
-                        </div>
+                                <div class="col-lg-4 p-0  text-center">
+                                    <label for="total">Amount</label>
+                                </div>
+                            </div>
+                            <div data-repeater-list="group-a">
+                                <div data-repeater-item class="row">
+                                    <div  class="col-lg-4 d-flex p-0 ps-4 pe-2 pb-1 align-items-center">
+                                        <select id="formrow-inputState" class="form-select">
+                                          <option value="0">Select</option>
+                                          <option value="1"> 1561003 :: 10 Stations </option>
+                                          <option value="2"> 6205 :: 1st January New Year event </option>
+                                          <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
+                                          <option value="4"> 1200 :: Accounts Receivable </option>
+                                          <option value="5"> 7550002 :: Accounts Staff Salary </option>
+                                          <option value="6"> 2130 :: Accrued accounts payable </option>
+                                          <option value="7"> 2220 :: Accrued Commissions </option>
+                                          <option value="8"> 2200 :: Accrued Compensation </option>
+                                          <option value="9"> 2260 :: Accrued expenses </option>
+                                          <option value="10"> 1450 :: Accrued Income </option>
+                                          <option value="11"> 2240 :: Accrued Interest </option>
+                                          <option value="12"> 2270 :: Accrued paid leave </option>
+                                          <option value="13"> 2210 :: Accrued Payroll </option>   
+                                        </select>
+                                    </div>
+                                    <div class=" col-lg-4 p-0 pe-2 ps-2 pb-1">
+                                        <select id="formrow-inputState" class="form-select">
+                                          <option value="1">Select</option>
+                                          <option value="2"> 6205 :: 1st January New Year event </option>
+                                          <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
+                                          <option value="4"> 1200 :: Accounts Receivable </option>
+                                          <option value="5"> 7550002 :: Accounts Staff Salary </option>
+                                          <option value="6"> 2130 :: Accrued accounts payable </option>
+                                          <option value="7"> 2220 :: Accrued Commissions </option>
+                                          <option value="8"> 2200 :: Accrued Compensation </option>
+                                          <option value="9"> 2260 :: Accrued expenses </option>
+                                          <option value="10"> 1450 :: Accrued Income </option>
+                                          <option value="11"> 2240 :: Accrued Interest </option>
+                                          <option value="12"> 2270 :: Accrued paid leave </option>
+                                          <option value="13"> 2210 :: Accrued Payroll </option>  
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4 p-0 pe-4 ps-2 pe-2 pb-1 align-self-center d-flex">
+                                      <x-input-text name="Amount" type="number"  placeholder="Amount"></x-input-text>
+                                        <button class="btn btn-outline-danger waves-effect waves-light ms-2">
+                                          <i class="fas fa-trash-alt"></i>
+                                      </button>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="ms-2">
+                            <button data-repeater-create type="button" class="btn btn-outline-info waves-effect waves-light mt-3 ms-1  mt-lg-0"><i class="fa fa-plus"></i> Add</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-              </div>
-                  <!-- journal form end -->
-                 </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
-                <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
             </div>
-          </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+          </div>
+              <!-- journal form end -->
+              </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
+            <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
+        </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 @endsection
 @section('script')
     <!-- form repeater js -->

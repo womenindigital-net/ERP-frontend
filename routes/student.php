@@ -54,7 +54,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('accounting/income/received_payment', [StudentController::class, 'studentReceivedPayment'])->name('accounting.income.received_payment');
     Route::get('student/co-curricular/drama-diary-evaluation', [StudentController::class, 'dramaDiary'])->name('student.co-curricular.drama-diary-evaluation');
     Route::get('program/assign-task', [StudentController::class, 'assignTask'])->name('program.assign-task');
-    Route::get('program/assign-task', [StudentController::class, 'assignTask'])->name('program.assign-task');
     Route::get('program/create-itp', [StudentController::class, 'createItp'])->name('program.create-itp');
     Route::get('stock-management/stock_receive', [StudentController::class, 'stockReceive'])->name('stock-management.stock_receive');
     Route::get('stock-management/finished_goods', [StudentController::class, 'finishedGoods'])->name('stock-management.finished_goods');
