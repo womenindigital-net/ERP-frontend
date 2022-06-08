@@ -30,10 +30,6 @@ class JournalRequest extends FormRequest
             'particulars' => 'nullable',
             'reference' => 'nullable',
             'journal.*' => 'nullable',
-            /*'account_no.*' => 'required',
-            'account_particulars.*' => 'required',
-            'debit.*' => 'nullable',
-            'credit.*' => 'nullable',*/
         ];
     }
 }

@@ -122,7 +122,7 @@ class StudentController extends Controller
         return view('accounting.income.student_income', $data);
     }
 
-    public function caseHistory(): Factory|View|Application
+    /*public function caseHistory(): Factory|View|Application
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
@@ -131,7 +131,7 @@ class StudentController extends Controller
         ];
 
         return view('case-history', $data);
-    }
+    }*/
 
     public function referralForm(): Factory|View|Application
     {
