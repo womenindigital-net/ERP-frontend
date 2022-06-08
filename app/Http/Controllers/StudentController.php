@@ -18,7 +18,7 @@ use Illuminate\Contracts\Foundation\Application;
 class StudentController extends Controller
 {
     use WithPagination, CommonListElements;
-    
+
     private UserRepository $userRepo;
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
@@ -371,5 +371,12 @@ class StudentController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
         return view('stock-management.stock_transfer', $data);
+    }
+    public function teskCreate(): Factory|View|Application
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('setup.program-setup.tesk-create', $data);
     }
 }

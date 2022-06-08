@@ -22,7 +22,8 @@ class JournalController extends Controller
     private JournalRepository $repo;
     private ProjectRepository $projectRepo;
 
-    public function __construct(JournalService $service, JournalRepository $journalRepository, ProjectRepository $projectRepository)    {
+    public function __construct(JournalService $service, JournalRepository $journalRepository, ProjectRepository $projectRepository)
+    {
         $this->service = $service;
         $this->repo = $journalRepository;
         $this->projectRepo = $projectRepository;
@@ -61,6 +62,7 @@ class JournalController extends Controller
      */
     public function store(JournalRequest $request)
     {
+        dd($request);
         $this->service->store($request->validated());
 
         Session::flash('success');
