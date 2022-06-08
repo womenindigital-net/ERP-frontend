@@ -104,41 +104,41 @@
   </div> <!-- end col -->
 </div> <!-- end row -->
 <!--  Extra Large modal example -->
-    <div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title text-primary">Vocational Marking Sub Category Create</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title text-primary">Vocational Marking Sub Category Create</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- journal form start -->  
+              <div class="col-md-12 d-flex">
+                <div class="col-md-6 mb-3 text-center">
+                    <label class="form-label">Sub Category Name</label>
+                    <x-input-text name="Name" placeholder=" Sub Category Name Here"></x-input-text>
+                </div>
+                <div class="col-md-6 ms-2  mb-3 text-center">
+                    <label class="form-label">Category Name</label>
+                    <select id="formrow-inputState" class="form-select">
+                        <option value="0">Select</option>
+                        <option value="1">Computer training</option>
+                        <option value="2">Painting</option>
+                        <option value="3">Paper work</option>
+                        <option value="4">Carpet Slipper</option>
+                        <option value="5">Photography</option>
+                    </select>
+                </div>
+              </div>  
+              <!-- journal form end -->
               </div>
-              <div class="modal-body">
-                  <!-- journal form start -->  
-                  <div class="col-md-12 d-flex">
-                    <div class="col-md-6 mb-3 text-center">
-                        <label class="form-label">Sub Category Name</label>
-                        <input class="form-control" type="text" placeholder="Sub Category Name" id="example-text-input"> 
-                    </div>
-                    <div class="col-md-6 ms-2  mb-3 text-center">
-                        <label class="form-label">Category Name</label>
-                        <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Computer training</option>
-                            <option value="2">Painting</option>
-                            <option value="3">Paper work</option>
-                            <option value="4">Carpet Slipper</option>
-                            <option value="5">Photography</option>
-                        </select>
-                    </div>
-                  </div>  
-                  <!-- journal form end -->
-                 </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
-                <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
-            </div>
-          </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
+            <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
+        </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 @endsection
 @section('script')
 

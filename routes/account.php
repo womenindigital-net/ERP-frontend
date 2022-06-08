@@ -12,7 +12,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
     ]);
-    Route::get('journal/approve/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
+    Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
 
 //    Route::get('journal', [JournalController::class, 'index'])->name('journal');
     Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');

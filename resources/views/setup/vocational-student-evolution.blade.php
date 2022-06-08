@@ -140,7 +140,7 @@
                     </div>
                     <div class="col-md-6 mb-3 ps-2 text-center">
                         <label class="form-label">Select Date</label>
-                        <input class="form-control " type="Date" placeholder="Sub Category Name" id="example-text-input"> 
+                        <x-input-text name="Date" type="date" placeholder="dd/mm/yyyy"></x-input-text>
                     </div>
                   </div>
                   <div class="">
@@ -202,34 +202,34 @@
                                       </select>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control "/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                          <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text>
                                   </div>
                                   <div class="col-1 p-0 pb-1 align-self-center d-flex">
-                                      <input type="text" class="form-control"/>
+                                    <x-input-text name="text" type="text"></x-input-text>
                                       <button class="btn btn-outline-danger waves-effect waves-light">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
