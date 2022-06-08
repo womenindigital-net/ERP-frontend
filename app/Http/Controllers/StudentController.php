@@ -382,7 +382,9 @@ class StudentController extends Controller
         ];
         return view('stock-management.stock_transfer', $data);
     }
-    public function teskCreate(): Factory|View|Application
+
+    public function taskCreate(): Factory|View|Application
+
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
