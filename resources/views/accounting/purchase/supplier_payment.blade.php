@@ -166,7 +166,6 @@
                                             <form class="repeater" enctype="multipart/form-data">
                                                 <div class="row">
                                                     <div class="col-lg-3 p-0 pe-1">
-                                                        <label for="name">SL</label>
                                                         <label for="name">Invoice Number</label>
                                                     </div>
                                                     <div class="col-lg-1 p-0 pe-1">
@@ -184,9 +183,7 @@
                                                 </div>
                                                 <div data-repeater-list="group-a">
                                                     <div data-repeater-item class="row">
-
                                                         <div  class="col-lg-3 d-flex p-0 pe-1 pb-1">
-                                                            <span class="pe-2 pb-1 mt-2">01</span>
                                                             <select id="formrow-inputState" class="form-select">
                                                                 <option selected="">--Select invoice--</option>
                                                                 <option value="1">SDT-1212</option>

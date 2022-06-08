@@ -2,27 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreStudentRequest;
-use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
+use Livewire\WithPagination;
+use Illuminate\Contracts\View\View;
+use App\Repositories\UserRepository;
+use Illuminate\Contracts\View\Factory;
 use App\Repositories\ProjectRepository;
 use App\Repositories\StudentRepository;
-use App\Repositories\UserRepository;
+use App\Http\Requests\StoreStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
+use App\Repositories\CaseHistoryRepository;
+use App\Http\Livewire\Traits\CommonListElements;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 
 class StudentController extends Controller
 {
+    use WithPagination, CommonListElements;
+    
     private UserRepository $userRepo;
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
+    private CaseHistoryRepository $caseRepo;
 
-    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository)
+    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository, CaseHistoryRepository $caseHistoryRepository)
     {
         $this->userRepo = $userRepository;
         $this->projectRepo = $projectRepository;
         $this->studentRepo = $studentRepository;
+        $this->caseRepo = $caseHistoryRepository;
     }
 
     /**
@@ -119,6 +126,8 @@ class StudentController extends Controller
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'records' => $this->caseRepo->getListData($this->perPage, $this->search),
         ];
 
         return view('case-history', $data);
@@ -363,14 +372,4 @@ class StudentController extends Controller
         ];
         return view('stock-management.stock_transfer', $data);
     }
-    public function teskCreate(): Factory|View|Application
-    {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        ];
-        return view('setup.program-setup.tesk-create', $data);
-    }
-  
-   
-
 }

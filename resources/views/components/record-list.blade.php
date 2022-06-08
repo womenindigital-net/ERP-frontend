@@ -4,14 +4,16 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row mb-3">
-                        <div class="col-6">
-                            <h4 class="card-title">{{$title}}</h4>
-                        </div>
+                        @if($title)
+                            <div class="col-6">
+                                <h4 class="card-title">{{$title}}</h4>
+                            </div>
+                        @endif
                         <div class="col-6 text-end">
                             @if($wireClick)
                                 <button type="button" class="btn btn-primary waves-effect waves-light"
                                         @if($dataBsTarget)
-                                            data-bs-toggle="modal" data-bs-target="{{$dataBsTarget}}"
+                                        data-bs-toggle="modal" data-bs-target="{{$dataBsTarget}}"
                                         @endif
                                         {{$wireClick}}
                                         wire:key>
@@ -23,7 +25,7 @@
                                 </a>
                             @elseif($dataBsTarget)
                                 <button type="button" class="btn btn-primary waves-effect waves-light"
-                                            data-bs-toggle="modal" {{$dataBsTarget}}>Add
+                                        data-bs-toggle="modal" {{$dataBsTarget}}>Add
                                 </button>
                             @endif
                         </div>

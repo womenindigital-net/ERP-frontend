@@ -21,13 +21,14 @@ class InputText extends Component
     /**
      * @throws Exception
      */
-    public function __construct($name = '', $readOnly = false, $type = 'text', $placeholder = '', $value = false, $required = false, $wireModel = '')
+    public function __construct($name = '', $readOnly = false, $type = 'text', $placeholder = '', $value = false, $required = false, $multiple = false, $wireModel = '')
     {
         if (!$wireModel && !$name) {
             throw new Exception("Need a name or wireModel");
         }
 
-        $this->name = $wireModel ?: $name;
+        $name = $wireModel ?: $name;
+        $this->name = $name . ($multiple ? '[]' : '');
         //        $this->label = $label ?: prepareInputLabel($name);
         //        $this->labelFor = $inputId ?: $this->label;
         $this->readOnly = $readOnly ? 'readonly' : '';
