@@ -285,10 +285,10 @@
                                 <li> <a href="{{ route('setup.program-setup.tesk-create') }}">Task create</a></li>
                                 <li> <a href="setup.program-setup.tesk-weight-setup">Task Weight Setup</a></li>
                                 <li> <a href="setup.program-setup.course-setup">Course Setup</a></li>
-                                <li> <a href="setup.program-setup.attendence-card-setup">Attendence card setup</a></li>
-                                <li> <a href="setup.program-setup.vocational-category-subcategory-setup">Vocational
+                                <li> <a href="{{ route('setup.program-setup.attendence-card-setup') }}">Attendence card setup</a></li>
+                                <li> <a href="{{ route('setup.program-setup.vocational-category-subcategory-setup') }}">Vocational
                                         Category and subcategory setup</a></li>
-                                <li> <a href="setup.program-setup.academic-calender-create">Academic Celender Create</a>
+                                <li> <a href="{{ route('setup.program-setup.academic-calender-create') }}">Academic Celender Create</a>
                                 </li>
                             </ul>
                         </li>
