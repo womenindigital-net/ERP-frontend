@@ -274,7 +274,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Company Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="setup.company-setup.company-setup">Company Setup</a></li>
+                                <li> <a href="{{ route('setup.company-setup.company-setup') }}">Company Setup</a></li>
                             </ul>
                         </li>
                         <li>
@@ -299,7 +299,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Project Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.project-setup.project-setup">Project Setup</a>
+                                    <a href="{{ route('setup.project-setup.project-setup') }}">Project Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -307,7 +307,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Doctor Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.doctor-setup">Doctor Setup</a>
+                                    <a href="{{ route('setup.doctor-setup') }}">Doctor Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -315,7 +315,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Chart Of Accounts</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.chart-of-accounts">Chart Of Accounts</a>
+                                    <a href="{{ route('setup.chart-of-accounts') }}">Chart Of Accounts</a>
                                 </li>
                             </ul>
                         </li>
@@ -323,10 +323,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.account-details">Account Details</a>
+                                    <a href="{{ route('setup.account-details') }}">Account Details</a>
                                 </li>
                                 <li>
-                                    <a href="setup.manage-chequebook">Manage Chequebook</a>
+                                    <a href="{{ route('setup.manage-chequebook') }}">Manage Chequebook</a>
                                 </li>
                             </ul>
                         </li>
@@ -334,10 +334,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.bank-reconcilation-new">Bank Reconcilation New</a>
+                                    <a href="{{ route('setup.bank-reconcilation-new') }}">Bank Reconcilation New</a>
                                 </li>
                                 <li>
-                                    <a href="setup.bank-reconcilation">Bank Reconcilation</a>
+                                    <a href="{{ route('setup.bank-reconcilation') }}">Bank Reconcilation</a>
                                 </li>
                             </ul>
                         </li>
