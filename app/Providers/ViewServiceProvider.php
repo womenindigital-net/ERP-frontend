@@ -70,8 +70,8 @@ class ViewServiceProvider extends ServiceProvider
         View::share('incidentConstant', IncidentRecord::class);
         View::share('diaryConstant', DramaDiaryEvaluation::class);
         View::share('mitpConstent', MitpConstent::class);
-
-        /*View::share('caseConstants', CaseHistoryConstants::class);
+        View::share('caseConstants', CaseHistoryConstants::class);
+        /*
         View::share('careConstants', CareNeedsFormConstants::class);
         View::share('functionalConstants', FunctionalMovement::class);
 

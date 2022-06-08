@@ -73,7 +73,6 @@
                     {{-- Step --}}
                     <div class="container">
                         <div class="row">
-                            {{-- <div class="col-sm-3" id="horizontal_nev"></div> --}}
                             <div class="col-sm-12">
                                 <!-- Wizard container -->
                                 <div class="wizard-container">
