@@ -1,133 +1,68 @@
 <div>
     @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
     @endsection
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row mb-3">
-                        <div class="col-6">
-                            <h4 class="card-title">STUDENT QAS</h4>
-                        </div>
-                        <div class="col-6 text-end">
-                            <button type="button" class="btn btn-outline-info waves-effect waves-light"
-                                data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" wire:click="show()"
-                                wire:key>ADD
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                    class="form-control form-control-sm form-select form-select-sm">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select> entries
-                            </label>
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                            <label style="display: inline-flex;align-items: center;">Search:
-                                <input type="search" class="form-control form-control-sm" placeholder="">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table w-100">
-                            <thead>
-                                <tr>
-                                    <th>Collection Date
-
-                                        <span>
-                                            <i class="dripicons-arrow-thin-down"></i>
-                                            <i class="dripicons-arrow-thin-up"></i>
-                                        </span>
-                                    </th>
-                                    <th>Student Name</th>
-                                    <th>Collected By</th>
-                                    <th>Log</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2022-03-29</td>
-                                    <td>Ashfaq Sadi</td>
-                                    <td>Nurjahan Dipa</td>
-                                    <td>
-                                        <small>
-                                            <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span><br>
-                                            <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
-                                        </small>
-                                    </td>
-                                    <td>
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                                            <i class="mdi mdi-eye"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                                            <i class="mdi mdi-pencil"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="bx bx-dollar"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="fas fa-arrow-circle-right"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            Showing 1 to 2 of 2 entries
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                            <nav>
-                                <ul class="pagination" style="justify-content: end;">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end col -->
-    </div> <!-- end row -->
+    <x-record-list :records="$records" title="STUDENT QAS" dataBsTarget=".bs-example-modal-lg">
+        <table class="table w-100">
+            <thead>
+            <tr>
+                <th>Collection Date</th>
+                <th>Student Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Created At</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($records as $record)
+                <tr>
+                    <td>{{$record->date}}</td>
+                    <td>{{$record->student->name}}</td>
+                    <td>{{$record->email}}</td>
+                    <td>{{$record->phone}}</td>
+                    <td>{{$record->created_at}}</td>
+                    <td>
+                        <button type="button"
+                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
+                                data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                            <i class="mdi mdi-eye"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1">
+                            <i class="fas fa-check"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
+                            <i class="fas fa-check"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                                data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" wire:click="edit({{$record}})">
+                            <i class="mdi mdi-pencil"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                            <i class="bx bx-dollar"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </x-record-list>
 
     <!--  Large modal example -->
     <div class="modal fade bs-example-modal-lg @if($mode === 'view') apply-view-only @endif" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" wire:ignore aria-hidden="true">
+         aria-labelledby="myLargeModalLabel" wire:ignore aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -135,7 +70,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     {{-- Step --}}
                     <div class="container">
                         <div class="row">
@@ -148,9 +82,9 @@
                                             <div id="wizard-navigation">
                                                 <ul class="wizard-navigation">
                                                     <li class="w-100"><a href="#case_history_init"
-                                                            data-toggle="tab">Case History Init</a></li>
+                                                                         data-toggle="tab">Case History Init</a></li>
                                                     <li class="w-100"><a href="#referral_information"
-                                                            data-toggle="tab">রেফারাল তথ্য</a></li>
+                                                                         data-toggle="tab">রেফারাল তথ্য</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -168,8 +102,8 @@
                                                                                 Date:</label>
                                                                             <div class="input-group" id="datepicker2">
                                                                                 <x-input-text name="sample" type="date"
-                                                                                    wireModel="date"
-                                                                                    placeholder="mm/dd/yyyy">
+                                                                                              wireModel="date"
+                                                                                              placeholder="mm/dd/yyyy">
                                                                                 </x-input-text>
                                                                             </div><!-- input-group -->
                                                                         </div>
@@ -179,8 +113,8 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="sample"
-                                                                                :records="$teachers"
-                                                                                wireModel="teacher_id">
+                                                                                            :records="$teachers"
+                                                                                            wireModel="teacher_id">
                                                                             </x-input-select>
                                                                         </div>
                                                                     </div>
@@ -190,8 +124,8 @@
                                                                                 for="basicpill-phoneno-input">Candidate
                                                                                 ID:</label>
                                                                             <x-input-select name="sample"
-                                                                                :records="$students"
-                                                                                wireModel="student_id">
+                                                                                            :records="$students"
+                                                                                            wireModel="student_id">
                                                                             </x-input-select>
                                                                         </div>
                                                                     </div>
@@ -262,21 +196,22 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check name="has_write_ability"
-                                                                    label="লিখার পদ্ধতি ঠিক আছে কিনাঃ?"
-                                                                    :records="$caseConstants::$hasWriteAbilities"
-                                                                    type="checkbox" :isVertical="false"
-                                                                    :multiple="true">
+                                                                                        label="লিখার পদ্ধতি ঠিক আছে কিনাঃ?"
+                                                                                        :records="$caseConstants::$hasWriteAbilities"
+                                                                                        type="checkbox"
+                                                                                        :isVertical="false"
+                                                                                        :multiple="true">
                                                                 </x-input-radio-or-check>
 
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check name="has_education_intersted"
-                                                                    label="পড়াশুনা সহ শিক্ষার বিষয়ের উদ্বেগ আছে কিনা <br> (যেমন-পড়তে – লিখবে অনাগ্রহ / দেখে পড়া / সঠিক ভাবে দেখে লেখার সমস্যা)"
-                                                                    :records="$constants::$yesNo">
+                                                                                        label="পড়াশুনা সহ শিক্ষার বিষয়ের উদ্বেগ আছে কিনা <br> (যেমন-পড়তে – লিখবে অনাগ্রহ / দেখে পড়া / সঠিক ভাবে দেখে লেখার সমস্যা)"
+                                                                                        :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check name="has_self_work_capabelity"
-                                                                    label="স্বনির্ভরতার (নিজে নিজে কাজ করার ) দক্ষতা আছে কিনা (যেমন-বয়স অনুযায়ী নিজের কাজ করতে পারা / রুটিন জানা)"
-                                                                    :records="$constants::$yesNo">
+                                                                                        label="স্বনির্ভরতার (নিজে নিজে কাজ করার ) দক্ষতা আছে কিনা (যেমন-বয়স অনুযায়ী নিজের কাজ করতে পারা / রুটিন জানা)"
+                                                                                        :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
@@ -286,22 +221,23 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check name="is_ableto_paly_others"
-                                                                    label="খেলার মাধ্যমে যোগাযোগ করে কিনা? অন্যের সাথে মিলে মিশে খেলাধুলা করে কিনা? (যেমন-বয়স অনুযায়ী খেলা / সঠিক ভাবে খেলা / খেলার প্রতি আগ্রহ / খেলার উপকরন চাওয়া)"
-                                                                    :records="$constants::$yesNo">
+                                                                                        label="খেলার মাধ্যমে যোগাযোগ করে কিনা? অন্যের সাথে মিলে মিশে খেলাধুলা করে কিনা? (যেমন-বয়স অনুযায়ী খেলা / সঠিক ভাবে খেলা / খেলার প্রতি আগ্রহ / খেলার উপকরন চাওয়া)"
+                                                                                        :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
 
                                                                 {{--todo--}}
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check wireModel="has_write_ability"
-                                                                    label="শেখার প্রতিবন্ধকতা আছে কি? নীচের বিষয়গুলি সম্মন্ধে কোন ধারনা আছে কিনা? (যেমন-অক্ষর / বর্ণ শব্দ বাক্য পড়তে লিখতে সমস্যা অস্বাভাবিক তা, অংক শিখতে না পারা, অংকে অনাগ্রহ, গ্রাফ / চিত্র সম্পর্কে অনাগ্রহ)"
-                                                                    :records="$caseConstants::$hasAnyLerningAbstagol"
-                                                                    type="checkbox" :isVertical="false"
-                                                                    :multiple="true">
+                                                                                        label="শেখার প্রতিবন্ধকতা আছে কি? নীচের বিষয়গুলি সম্মন্ধে কোন ধারনা আছে কিনা? (যেমন-অক্ষর / বর্ণ শব্দ বাক্য পড়তে লিখতে সমস্যা অস্বাভাবিক তা, অংক শিখতে না পারা, অংকে অনাগ্রহ, গ্রাফ / চিত্র সম্পর্কে অনাগ্রহ)"
+                                                                                        :records="$caseConstants::$hasAnyLerningAbstagol"
+                                                                                        type="checkbox"
+                                                                                        :isVertical="false"
+                                                                                        :multiple="true">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check name="has_control_over_body"
-                                                                    label="শরীরের ওপর সাধারণ নিয়ন্ত্রন আছে কিনা?"
-                                                                    :records="$constants::$yesNo">
+                                                                                        label="শরীরের ওপর সাধারণ নিয়ন্ত্রন আছে কিনা?"
+                                                                                        :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
                                                                 {{--todo--}}
                                                                 <!-- end row -->
@@ -310,7 +246,7 @@
                                                                     label="কথা বলার সমস্যা আছে কিনাঃ"
                                                                     :records="$constants::$yesNo"
                                                                     secondaryInputLabel="থাকলে উল্লেখ করুন"
-                                                                    secondaryInputWire="has_speaking_problem_additional">
+                                                                    secondaryInputWire="has_speaking_problem_secondary">
                                                                 </x-input-radio-or-check> --}}
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
@@ -320,13 +256,13 @@
                                                                 </x-input-radio-or-check>
                                                                 {{--todo--}}
                                                                 <!-- end row -->
-                                                                {{-- <x-input-radio-or-check
+                                                                <x-input-radio-or-check
                                                                     name="is_able_to_use_correct_word_in_sentence"
                                                                     label="ভাষার ব্যবহার পারে ?(যেমন- বাক্যে সঠিক শব্দের ব্যবহার)"
                                                                     :records="$caseConstants::$isAbleToUseCurrectWordInSentanse"
-                                                                    secondaryInputWire="is_able_to_use_correct_word_in_sentence_additional"
+                                                                    {{--                                                                    secondaryInputWire="is_able_to_use_correct_word_in_sentence_secondary"--}}
                                                                     secondaryInputLabel="সমস্যা থাকলে উল্লেখ করুন">
-                                                                </x-input-radio-or-check> --}}
+                                                                </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 {{-- <x-input-radio-or-check
                                                                     name="is_able_to_understand_tense"
@@ -353,15 +289,15 @@
                                                 <div class="wizard-footer d-flex justify-content-between">
                                                     <div class="pull-left">
                                                         <input type='button'
-                                                            class='btn btn-primary waves-effect waves-light btn-previous'
-                                                            name='previous' value='Previous' />
+                                                               class='btn btn-primary waves-effect waves-light btn-previous'
+                                                               name='previous' value='Previous'/>
                                                     </div>
                                                     <div class="pull-right">
                                                         <input type='button'
-                                                            class='btn btn-primary waves-effect waves-light btn-next'
-                                                            name='next' value='Next' />
+                                                               class='btn btn-primary waves-effect waves-light btn-next'
+                                                               name='next' value='Next'/>
                                                         <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                            wire:click='save' value='Finish' />
+                                                               wire:click='save' value='Finish'/>
                                                     </div>
                                                 </div>
                                             </form>
@@ -378,9 +314,8 @@
     </div><!-- /.modal -->
 
     @section('script')
-
-    <!-- Custom step -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
+        <!-- Custom step -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
     @endsection
 </div>

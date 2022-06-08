@@ -26,7 +26,6 @@
               <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="home" role="tabpanel">
-                        <p class="mb-0">
                             <div class="col-xl-6">
                                 <div class="card">
                                     <div class="card-body">
@@ -34,7 +33,7 @@
                                             <div class="row mb-1">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Checkbook Name</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Store Name Here ">
+                                                  <x-input-text name="Checkbook Name" placeholder="Checkbook Name"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -53,28 +52,26 @@
                                             <div class="row mb-3">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Start Page</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Start Page">
+                                                  <x-input-text name="Start Page" placeholder="Enter Start Page"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">End Page</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter End Page ">
+                                                  <x-input-text name="End Page" placeholder="Enter End Page"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Creation Date</label>
                                                 <div class="col-sm-9">
-                                                    <input type="date" class="form-control" id="horizontal-firstname-input" placeholder="dd/mm/yyyy ">
+                                                  <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row justify-content-end">
-                                                <div class="col-sm-9">
-                                                    <div class="text-end">
-                                                        <button type="button" class="btn  btn-danger me-3" data-bs-dismiss="modal"> Close</button>
-                                                        <button type="button" class="btn  btn-success" data-bs-dismiss="modal"> Save</button>
-                                                    </div>
-                                                </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
+                                                <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
+                                            </div>
                                             </div>
                                         </form>
                                     </div>
@@ -82,7 +79,6 @@
                                 </div>
                                 <!-- end card -->
                             </div>
-                        </p>
                     </div>
                     <div class="tab-pane" id="profile" role="tabpanel">
                         <div class="row">

@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCaseHistoryRequest;
+use App\Http\Requests\CaseHistoryRequest;
 use App\Http\Requests\UpdateCaseHistoryRequest;
 use App\Models\CaseHistory;
+use App\Services\CaseHistoryService;
 
 class CaseHistoryController extends Controller
 {
+    private CaseHistoryService $service;
+
+    public function __construct(CaseHistoryService $service)
+    {
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,12 +39,13 @@ class CaseHistoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCaseHistoryRequest  $request
+     * @param  \App\Http\Requests\CaseHistoryRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCaseHistoryRequest $request)
+    public function store(CaseHistoryRequest $request)
     {
-        //
+        $this->service->store($request->validated());
     }
 
     /**

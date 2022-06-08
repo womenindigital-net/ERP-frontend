@@ -21,7 +21,7 @@ class InputRadioOrCheck extends Component
      *
      * @return void
      */
-    public function __construct($records, $label, $name = '', $isVertical = true, $multiple = false, $secondaryInputLabel = '', $type = 'radio', $wireModel = false, $secondaryInputWire = false)
+    public function __construct($records, $label, $name = '', $isVertical = true, $multiple = false, $secondaryInputLabel = '', $type = 'radio', $wireModel = false)
     {
         $name                      = $wireModel ?: $name;
         $this->multiple            = $multiple;
@@ -32,7 +32,7 @@ class InputRadioOrCheck extends Component
         $this->isVertical          = $isVertical ? 'd-flex' : '';
         $this->secondaryInputLabel = $secondaryInputLabel;
         $this->wireModel           = $wireModel ? "wire:model=$wireModel" : '';
-        $this->secondaryInputWire = $secondaryInputWire ? "wire:model=$secondaryInputWire" : '';
+        $this->secondaryInputWire = $secondaryInputLabel ? "wire:model={$name}_secondary" : '';
     }
 
     /**

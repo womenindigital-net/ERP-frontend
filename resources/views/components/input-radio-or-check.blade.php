@@ -14,9 +14,7 @@
             </div>
             @if($secondaryInputLabel)
                 <label for="basicpill-firstname-input">{{$secondaryInputLabel}}</label>
-                <div class="input-group" id="datepicker2">
-                    <input type="text" class="form-control" name="{{$name}}_other" {{$secondaryInputWire}}>
-                </div>
+                <input type="text" class="form-control" {{$secondaryInputWire}}>
             @endif
         </div>
     </div>

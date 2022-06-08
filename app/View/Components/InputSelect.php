@@ -17,7 +17,7 @@ class InputSelect extends Component
     public string $name;
     private $selected;
     public string $required;
-    public bool $multiple;
+    public string $multiple;
     public string $id;
     public string $targetColumn;
     public string $wireModel;
@@ -29,7 +29,7 @@ class InputSelect extends Component
      * @return void
      * @throws Exception
      */
-    public function __construct($name = '', $records, $targetColumn = '', $selected = null, $multiple = false, $required = '', $wireModel = '', $additional=false)
+    public function __construct($records, $name = '', $targetColumn = '', $selected = null, $multiple = false, $required = '', $wireModel = '', $additional=false)
     {
         if (!$name and !$wireModel) {
             throw new Exception("Either name or wire model is needed");

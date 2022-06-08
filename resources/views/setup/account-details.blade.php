@@ -2,9 +2,7 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
 @endsection
-
 @section('content')
-
 @component('components.breadcrumb')
 @slot('li_1') DashBoard @endslot
 @slot('title') ACCOUNTING @endslot
@@ -129,19 +127,19 @@
                   <div class="col-md-12">
                     <div class="mb-3">
                         <label class="form-label">Account No :</label>
-                        <input class="form-control" type="number" placeholder="Account No"       id="example-text-input"> 
+                        <x-input-text name="Account No" placeholder="Account No" type="number"></x-input-text>
                     </div>
                   </div>  
                   <div class="col-md-12">
                     <div class="mb-3">
                         <label class="form-label">Account Name :</label>
-                        <input class="form-control" type="text" placeholder="Account Name"       id="example-text-input"> 
+                        <x-input-text name="Account Name" placeholder="Account Name"></x-input-text>
                     </div>
                   </div>  
                   <div class="col-md-12">
                     <div class="mb-3">
                         <label class="form-label">Initial Balance :</label>
-                        <input class="form-control" type="number" placeholder="Initial Balance "       id="example-text-input"> 
+                        <x-input-text type="number" name="Initial Balance" placeholder="Initial Balance"></x-input-text>
                     </div>
                   </div>  
                   {{-- Show Cause Description --}}
@@ -149,16 +147,16 @@
                     <div class="mb-3">
                         <label class="form-label">Show Cause Description</label>
                           <div class="col-md-12">
-                              <textarea class="form-control strip-tags resetElement" rows="4" cols="5" id="TaskInstruction" placeholder="Description" minlength="1" name="TaskInstruction"></textarea>
+                            <x-input-textarea name="Description" placeholder="Description"></x-input-textarea>
                           </div>
                     </div>
                 </div> 
                   <!-- journal form end -->
               </div>
-              <div class="modal-footer"> 
-                  <button type="button" class="btn  btn-danger" data-bs-dismiss="modal"> Close</button>
-                  <button type="button" class="btn  btn-success" data-bs-dismiss="modal"> Save</button>
-              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
+                <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
+            </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

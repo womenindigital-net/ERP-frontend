@@ -2,13 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Livewire\Traits\CommonListElements;
+use App\Repositories\CaseHistoryRepository;
 use App\Repositories\StudentRepository;
 use App\Repositories\UserRepository;
 use App\Services\CaseHistoryService;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class CaseHistory extends Component
 {
+    use WithPagination, CommonListElements;
+
     private UserRepository $userRepo;
     private StudentRepository $studentRepo;
 
@@ -29,15 +35,15 @@ class CaseHistory extends Component
     public string $has_any_learning_obstacle;
     public string $has_control_over_body;
     public string $has_speaking_problem;
-    public string $has_speaking_problem_additional;
+    public string $has_speaking_problem_secondary;
     public string $is_able_to_understand_tense;
     public string $is_able_to_use_correct_word_in_sentence;
-    public string $is_able_to_use_correct_word_in_sentence_additional;
+    public string $is_able_to_use_correct_word_in_sentence_secondary;
     public string $has_past_assessment_by_specialist;
     public string $has_family_learning_disability;
     public string $has_instability;
     public string $child_description;
-    public string $child_description_additional;
+    public string $child_description_secondary;
     public string $has_sleep_patten_problem;
     public string $is_able_to_lick;
     public string $is_able_to_eat_hard_thing;
@@ -56,7 +62,7 @@ class CaseHistory extends Component
     public string $dose_have_balancing_problem;
     public string $dose_have_muscle_pain;
     public string $first_voice_lang;
-    public string $first_voice_lang_additional;
+    public string $first_voice_lang_secondary;
     public string $in_which_age_spoke_the_first_word;
     public string $is_able_spake_simple_sentence;
     public string $how_many_word_use_in_a_sentence_max;
@@ -139,12 +145,14 @@ class CaseHistory extends Component
     public string $mode = '';
     public $recordId = 0;
     private CaseHistoryService $service;
+    private CaseHistoryRepository $caseRepo;
 
-    public function boot(CaseHistoryService $service, UserRepository $userRepository, StudentRepository $studentRepository)
+    public function boot(CaseHistoryService $service, UserRepository $userRepository, StudentRepository $studentRepository, CaseHistoryRepository $caseHistoryRepository)
     {
         $this->service     = $service;
         $this->userRepo    = $userRepository;
         $this->studentRepo = $studentRepository;
+        $this->caseRepo = $caseHistoryRepository;
     }
 
     // protected array $rules = [
@@ -165,15 +173,15 @@ class CaseHistory extends Component
     //     'has_any_learning_obstacle'                              => 'nullable',
     //     'has_control_over_body'                                  => 'nullable',
     //     'has_speaking_problem'                                   => 'nullable',
-    //     'has_speaking_problem_additional'                        => 'nullable',
+    //     'has_speaking_problem_secondary'                        => 'nullable',
     //     'is_able_to_understand_tense'                            => 'nullable',
     //     'is_able_to_use_correct_word_in_sentence'                => 'nullable',
-    //     'is_able_to_use_correct_word_in_sentence_additional'     => 'nullable',
+    //     'is_able_to_use_correct_word_in_sentence_secondary'     => 'nullable',
     //     'has_past_assessment_by_specialist'                      => 'nullable',
     //     'has_family_learning_disability'                         => 'nullable',
     //     'has_instability'                                        => 'nullable',
     //     'child_description'                                      => 'nullable',
-    //     'child_description_additional'                           => 'nullable',
+    //     'child_description_secondary'                           => 'nullable',
     //     'has_sleep_patten_problem'                               => 'nullable',
     //     'is_able_to_lick'                                        => 'nullable',
     //     'is_able_to_eat_hard_thing'                              => 'nullable',
@@ -192,7 +200,7 @@ class CaseHistory extends Component
     //     'dose_have_balancing_problem'                            => 'nullable',
     //     'dose_have_muscle_pain'                                  => 'nullable',
     //     'first_voice_lang'                                       => 'nullable',
-    //     'first_voice_lang_additional'                            => 'nullable',
+    //     'first_voice_lang_secondary'                            => 'nullable',
     //     'in_which_age_spoke_the_first_word'                      => 'nullable',
     //     'is_able_spake_simple_sentence'                          => 'nullable',
     //     'how_many_word_use_in_a_sentence_max'                    => 'nullable',
@@ -301,6 +309,7 @@ class CaseHistory extends Component
         'email' => 'nullable',
         'address' => 'nullable',
         'has_adjustment_capability' => 'nullable',
+        'is_able_to_use_correct_word_in_sentence_secondary' => 'nullable',
     ];
 
     // public function updated($propertyName)
@@ -326,6 +335,7 @@ class CaseHistory extends Component
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'records' => $this->caseRepo->getListData($this->perPage, $this->search),
         ];
 
         return view('livewire.case-history', $data)->extends('layouts.master')->section('content');

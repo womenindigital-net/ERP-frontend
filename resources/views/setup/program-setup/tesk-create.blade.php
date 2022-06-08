@@ -11,84 +11,97 @@
         @slot('li_1') Utility @endslot
         @slot('title')TASK ACTIVITIES @endslot
     @endcomponent
-    {{-- code  --}}
-
  
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-end pb-5">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".text-add-or-edit">Add</button>
+                        <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".text-add-or-edit">Add</button>
                     </div>
-
-                    <table id="datatable" class="table table-bordered dt-responsive w-100">
-                        <thead>
-                            <tr>
-                                <th class="col-3 bold"> Activity</th>
-                                <th class="col-5 bold"> task</th>
-                                <th class="col-2 text-center">Log</th>
-                                <th class="col-2 text-center">Action</th>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                              class="form-control form-control-sm form-select form-select-sm">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                            </select> entries
+                          </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <label style="display: inline-flex;align-items: center;">Search:
+                            <x-input-text name="hello1" type="search" placeholder="">
+                            </x-input-text>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table table-bordered w-100">
+                          <thead>
+                            <tr class="table-primary">
+                                <th class=""> Activity</th>
+                                <th class=""> task</th>
+                                <th class="">Log</th>
+                                <th class="">Action</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                          </thead>
+                          <tbody>
                             <tr>
                                 <td>General Play</td>
                                 <td>Push and Pull Doors open and closed</td>
                                 <td>Create: Nusrat Jahan @ <br> 2019-06-09 22:22:54 <br>
                                     There is no update record.</td>
-                                <td>
-                                    <button type="button" tesk-view class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".tesk-view">
-                                    <i class="mdi mdi-eye"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="bx bx-dollar"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="fas fa-arrow-circle-right"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                    <i class="fas fa-trash-alt"></i>
-                                    </button> 
-                                </td>
+                              <td>
+                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="mdi mdi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="bx bx-dollar"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="fas fa-arrow-circle-right"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </td>
                             </tr>
-                            <tr>
-                                <td>Organized Play	</td>
-                                <td>Riding a tricycle</td>
-                                <td>Create: Shonod Digital @ <br> 2018-08-30 22:46:52 <br>
-                                    Update: Shonod Digital @ <br> 2018-09-06 17:06:46</td>
-                                <td>
-                                    <button type="button" tesk-view class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".tesk-view">
-                                        <i class="mdi mdi-eye"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="mdi mdi-pencil"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="bx bx-dollar"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                            <i class="fas fa-arrow-circle-right"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                        <i class="fas fa-trash-alt"></i>
-                                        </button> 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <nav>
+                            <ul class="pagination" style="justify-content: end;">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div> <!-- end col -->
@@ -99,7 +112,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myExtraLargeModalLabel">Tesk Add or Edit</h5>
+                <h5 class="modal-title" id="myExtraLargeModalLabel">Task Add or Edit</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
@@ -150,7 +163,8 @@
                                                             <label for="name" class="">Task Name</label>
                                                         </div>
                                                         <div class="col-7">
-                                                            <input type="text" id="name" name="untyped-input" class="form-control " placeholder="Enter Your Name" />
+                                                            <x-input-text name="hello1" placeholder="">
+                                                            </x-input-text>
                                                         </div>
                                                     </div>
                                                     <div class=" col-lg-4 d-flex row">
