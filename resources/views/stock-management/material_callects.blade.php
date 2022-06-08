@@ -162,16 +162,53 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 p-0">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2 class=" text-center mb-4">Raw Material Lists</h2>
-                                    <form class="repeater" enctype="multipart/form-data">
-                                        <div class="row">
-                                            <div class="col-lg-2 p-0 pe-1">
-                                                <label for="name">SL</label>
-                                                <label for="name">Category Name</label>
+                </div>
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class=" text-center mb-4">Raw Material Lists</h2>
+                                <form class="repeater" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-lg-2 p-0 pe-1">
+                                            <label for="name">Category Name</label>
+                                        </div>
+                                        <div class="col-lg-2 p-0 pe-1">
+                                            <label for="product">Product Name</label>
+                                        </div>
+                                        <div class="col-lg-2 p-0 pe-1">
+                                            <label for="product">Avl Stock</label>
+                                        </div>
+                                        <div class="col-lg-2 p-0 pe-1">
+                                            <label for="total">Quantity</label>
+                                        </div>
+                                        <div class="col-lg-2 p-0 pe-1">
+                                            <label for="total">Produce Category</label>
+                                        </div>
+                                        <div class="col-lg-2 p-0 pe-1">
+                                            <label for="total">Produce Product</label>
+                                        </div>
+                                    </div>
+                                    <div data-repeater-list="group-a">
+                                        <div data-repeater-item class="row">
+                                            <div class="col-lg-2 d-flex p-0 pe-1 pb-1 align-items-center">
+                                                <select id="formrow-inputState" class="form-select">
+                                                    <option selected="">Select</option>
+                                                    <option value="1">4 Water Purifier & 6 Fire Exti</option>
+                                                    <option value="2">AC (11)</option>
+                                                    <option value="3">Angel Chef Hot Kitchen</option>
+                                                    <option value="4">Anklet</option>
+                                                    <option value="5">Annual Anniversary</option>
+                                                    <option value="6">Annual Anniversary of PFDA - V</option>
+                                                    <option value="7">antivirus</option>
+                                                    <option value="8">Application Development</option>
+                                                    <option value="9">Art Finished Goods </option>
+                                                    <option value="10">Art Raw Materials </option>
+                                                    <option value="11">Art Training Materials </option>
+                                                    <option value="12">Asus Laptop </option>
+                                                    <option value="13">Attend meetings, Workshop, Sem </option>
+                                                    <option value="14">BAKERY</option>
+                                                </select>
                                             </div>
                                             <div class="col-lg-2 p-0 pe-1">
                                                 <label for="product">Product Name</label>
@@ -256,20 +293,20 @@
                                             <button data-repeater-create type="button"
                                                 class="btn btn-success waves-effect waves-light">Add</button>
                                         </div>
-                                    </form>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <!-- journal form end -->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Close</button>
-                    <button type="button" class="btn btn-success" id="sa-position">
-                        Save</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
+                <!-- journal form end -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Close</button>
+                <button type="button" class="btn btn-success" id="sa-position">
+                    Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 @endsection
 @section('script')

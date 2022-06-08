@@ -95,39 +95,35 @@
                                         </div>
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div class="row">
-                                                <div class="col-lg-3  p-0 pe-1">
-                                                    <label class="pe-2 pb-1">SL</label>
+                                                <div class="col  p-0 pe-1">
                                                     <label for="name">Acc. Number</label>
                                                 </div>
-                                                <div class="col-lg-4  p-0 pe-1">
+                                                <div class="col p-0 pe-1">
                                                     <label for="email">Acc. Particular</label>
                                                 </div>
-                                                <div class="col-lg-2 p-0 pe-1">
+                                                <div class="col p-0 pe-1">
                                                     <label for="subject">Debit</label>
                                                 </div>
-                                                <div class="col-lg-3  p-0 pe-1">
+                                                <div class="col  p-0 pe-1">
                                                     <label for="resume">Credit</label>
                                                 </div>
                                             </div>
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item class="row removeRow" >
-                                                    <div class=" col-lg-3 d-flex p-0 p-0 pe-1 pb-1 align-items-center">
-                                                        <span class="pe-2 pb-1">01</span>
+                                                    <div class=" col p-0 pe-1 pb-1">
                                                         <x-input-text name="NAME" placeholder="Acc. Number">
                                                         </x-input-text>
                                                     </div>
-
-                                                    <div class=" col-lg-4 p-0 pe-1 pb-1">
+                                                    <div class=" col p-0 pe-1 pb-1">
                                                         <x-input-text name="NAME" placeholder="Acc. Particular">
                                                         </x-input-text>
                                                     </div>
 
-                                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                                    <div class=" col p-0 pe-1 pb-1">
                                                         <x-input-text name="NAME" placeholder="Debit">
                                                         </x-input-text>
                                                     </div>
-
-                                                    <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
+                                                    <div class=" col p-0 pe-1 pb-1 align-self-center d-flex">
                                                         <x-input-text name="NAME" placeholder="Credit">
                                                         </x-input-text>
                                                         <button class="btn btn-danger ms-2 removeBtn">
@@ -135,7 +131,6 @@
                                                         </button>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <input data-repeater-create type="button"
                                                 class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" />

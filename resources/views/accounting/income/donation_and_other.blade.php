@@ -179,9 +179,6 @@
                                         <h4 class="card-title mb-4">All product</h4>
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div class="row">
-                                                <div class="col-lg-1 p-0 pe-1">
-                                                    <label for="name">SL</label>
-                                                </div>
                                                 <div class="col p-0 pe-1">
                                                     <label for="product">Invoice Number</label>
                                                 </div>
@@ -192,10 +189,6 @@
                                             </div>
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item class="row removeRow">
-
-                                                    <div class=" col-lg-1 p-0 pe-1 pb-1 mt-2">
-                                                        <span class="pe-2 pb-1">01</span>
-                                                    </div>
                                                     <div class=" col p-0 pe-1 pb-1">
                                                         <select id="formrow-inputState" class="form-select">
                                                             <option selected="">--Select invoice--</option>
