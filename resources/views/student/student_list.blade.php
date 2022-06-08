@@ -10,16 +10,13 @@
 @slot('title') Students list @endslot
 @endcomponent
 {{-- code --}}
-
-
-
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-end pb-5">
-                    <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal"
-                        data-bs-target=".bs-example-modal-xl">Add</button>
+                    <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
+                    data-bs-target=".bs-example-modal-xl"><i class="fa fa-plus"></i> ADD</button>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
@@ -184,7 +181,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
-
                 <div class="card p-0 m-0">
                     <div class="card-body">
                         <div class="row">
@@ -244,9 +240,16 @@
                                         </x-input-textarea>
                                     </div>
                                 </div>
+                                <div class="mb-3 row">
+                                    <label for="example-password-input" class="col-md-4 col-form-label">Diagonosis:</label>
+                                    <div class="col-md-8">
+                                        <x-input-textarea name="student_parmanent_address"
+                                            placeholder="Student Parmanent Address" rows="1">
+                                        </x-input-textarea>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-6">
-
                                 <div class="mb-3 row">
                                     <label class="col-md-4 col-form-label">Gender:</label>
                                     <div class="col-md-8">
@@ -268,8 +271,6 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
-
                                 <div class="mb-3 row">
                                     <label for="example-tel-input" class="col-md-4 col-form-label">Diagonosis:</label>
                                     <div class="col-md-8">
@@ -284,14 +285,39 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="example-number-input" class="col-md-4 col-form-label">Approved for
-                                        Observation:</label>
-                                    <div class="col-md-8 d-flex align-items-center">
-                                        <input type="checkbox" id="switch1" switch="none" checked />
-                                        <label for="switch1" data-on-label="Yes" data-off-label="No"></label>
+                                    <label class="col-md-4 col-form-label">Status:</label>
+                                    <div class="col-md-8">
+                                        <div class="mb-3">
+                                          <select class="form-control select2 form-select">
+                                            <option value="0">Select</option>
+                                            <option value="0">Student Status</option>
+                                            <option value="1">New</option>
+                                            <option value="2">Regular</option>
+                                            <option value="3">Part Time</option>
+                                            <option value="4">Drop-Out</option>
+                                            <option value="5">Discontinued</option>
+                                            <option value="6">Wages Employment</option>
+                                            <option value="7">Sheltered Employment</option>
+                                            <option value="8">Self Employment</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                <div class="mb-3 row">
+                                    <label class="col-md-4 col-form-label">Stage:</label>
+                                    <div class="col-md-8">
+                                        <div class="mb-3">
+                                            <select class="form-control select2 form-select">
+                                              <option value="0">Select</option>
+                                              <option value="1">Student Stage</option>
+                                              <option value="2">Pre-Vocational</option>
+                                              <option value="3">Vocational</option>
+                                              <option value="4">independent</option>
+                                              <option value="5">Internship</option>
+                                            </select>
+                                          </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="row">
@@ -300,9 +326,7 @@
                                     <label for="example-password-input" class="col-md-12 col-form-label text-center">
                                         <h4>Father's Name:</h4>
                                     </label>
-
                                 </div>
-
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
                                         <x-input-text name="father_name" placeholder="Father Name"></x-input-text>
@@ -336,7 +360,6 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-6">
                                 <div class="mb-3 row">
@@ -344,7 +367,6 @@
                                         <h4>Mother's Name:</h4>
                                     </label>
                                 </div>
-
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
                                         <x-input-text name="mother_name" placeholder="Mother Name"></x-input-text>
@@ -355,7 +377,6 @@
                                         <x-input-text name="mother_number" placeholder="Mother Number"></x-input-text>
                                     </div>
                                 </div>
-
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
                                         <x-input-text name="mother_profession" placeholder="Mother's profession">
@@ -378,17 +399,25 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 d-flex pb-3">
-                                <label for="example-datetime-local-input" class=" pe-2 col-form-label">
-                                    <h4 class="pb-0 mb-0">Is interested in job:</h4>
-                                </label>
-                                <div class="form-check d-flex align-items-center ">
-                                    <input class="form-check-input" id="container" type="checkbox" name="container">
+                            <div class="col-12 d-flex pb-3"> 
+                            <div class="mb-3 col-6 d-flex ">
+                                <label for="example-number-input" class="col-md-6 pe-4 col-form-label fs-5">Is Interested in Job: <input class="form-check-input me-5" id="container" type="checkbox" name="container"></label>
+                                      
+                              </div>
+                            <div class="mb-3 col-6 d-flex justify-content-end ">
+                              <label for="example-number-input" class="col-md-6 pe-4 col-form-label fs-5">Approved for
+                                Observation:</label>
+                                <div class="btn-group col-md-2" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked>
+                                    <label class="btn btn-outline-success" for="btnradio4">Yes</label>
+                                    
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="btnradio5">No</label>
                                 </div>
+                            </div>
                             </div>
                         </div>
                         <div class="row hide">
@@ -458,8 +487,6 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
-
                             </div>
                             <div class="col-6">
                                 <div class="mb-3 row">
@@ -501,7 +528,6 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
                                 <div class="mb-3 row">
                                     <label for="example-search-input"
                                         class="col-md-4 col-form-label">Organization:</label>
@@ -526,10 +552,8 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
