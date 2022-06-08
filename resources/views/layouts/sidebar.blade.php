@@ -113,7 +113,6 @@
                         <li><a href="{{route('student.case-history')}}">Case History</a></li>
                         <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
-                        {{-- <li><a href="/medicine-admin">Medicine Admin</a></li> --}}
                     </ul>
                 </li>
                 <li>
@@ -121,13 +120,6 @@
                         <i class="bx bx-share-alt"></i>
                         <span>Admission</span>
                     </a>
-                    {{-- <a href="admission.add_student">Admission</a>
-                </li> --}}
-                {{-- <ul class="sub-menu" aria-expanded="true">
-                    <li><a href="admission.add_student">Add Student</a></li>
-
-                    <li><a href="/course-payment">Course Payment</a></li>
-                </ul> --}}
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
