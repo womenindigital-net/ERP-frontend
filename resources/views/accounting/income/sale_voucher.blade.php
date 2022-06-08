@@ -109,7 +109,6 @@
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-lg-2 p-0 pe-1">
-                                                    <label for="name">SL</label>
                                                     <label for="name">Catagory</label>
                                                 </div>
                                                 <div class="col-lg-2 p-0 pe-1">
@@ -135,7 +134,6 @@
                                                 <div data-repeater-item class="row removeRow">
 
                                                     <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
-                                                        <span class="pe-2 pb-1">01</span>
                                                         <select id="formrow-inputState" class="form-select">
                                                             <option selected="">--Select--</option>
                                                             <option value="1">Cake</option>
@@ -439,8 +437,8 @@
 @endsection
 @section('script')
 <!-- form repeater js -->
-<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
+<script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+<script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
 
 {{-- Custom Js form --}}
 <script>

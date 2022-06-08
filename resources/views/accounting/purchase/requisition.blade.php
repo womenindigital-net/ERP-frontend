@@ -155,7 +155,6 @@
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-lg-2 p-0 pe-1">
-                                                    <label for="name">SL</label>
                                                     <label for="name">Catagory</label>
                                                 </div>
                                                 <div class="col-lg-2 p-0 pe-1">
@@ -180,8 +179,7 @@
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item class="row removeRow">
 
-                                                    <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
-                                                        <span class="pe-2 pb-1">01</span>
+                                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
                                                         <select id="formrow-inputState" class="form-select">
                                                             <option selected="">Select</option>
                                                             <option value="AK">Alaska</option>

@@ -15,7 +15,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     //    Route::get('appointment', [StudentController::class, 'appointment'])->name('student.appointment');
     Route::get('student-income', StudentIncome::class)->name('student.income');
     Route::get('appointment', AppointmentList::class)->name('student.appointment');
-    Route::get('case-history', CaseHistory::class)->name('student.case-history');
+    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
     Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
@@ -60,8 +60,4 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('stock-management/material_callects', [StudentController::class, 'materialCallects'])->name('stock-management.material_callects');
     Route::get('stock-management/stock_transfer', [StudentController::class, 'stockTransfer'])->name('stock-management.stock_transfer');
     Route::get('stock-management/stock_count', [StudentController::class, 'stockCount'])->name('stock-management.stock_count');
-    Route::get('setup/program-setup/tesk-create', [StudentController::class, 'teskCreate'])->name('setup.program-setup.tesk-create');
-
-
 });
- 
