@@ -40,7 +40,7 @@
         </div>
         <table id="datatable" class="table table-bordered dt-responsive  w-100">
           <thead>
-            <tr>
+            <tr class="table-primary">
               <th>Student Name</th>
               <th>Prescription Name</th>
               <th>Prescribe By</th>
@@ -106,17 +106,15 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescription Name:</label>
-                      <div class="input-group" >
-                        <input type="text" class="form-control">
-                      </div>
+                      <x-input-text name="hello1" placeholder="">
+                      </x-input-text>
                     </div>
                   </div>
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescribe By:</label>
-                      <div class="input-group" >
-                        <input type="text" class="form-control">
-                      </div>
+                      <x-input-text name="hello1" placeholder="">
+                      </x-input-text>
                     </div>
                   </div>
                   <div class="col-lg-12">
@@ -126,27 +124,32 @@
                         <div data-repeater-item class="row">
                             <div class="mb-3 col-lg-2">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="untyped-input" class="form-control" placeholder="Enter Your Name" />
+                                <x-input-text name="hello1" placeholder="">
+                                </x-input-text>
                             </div>
 
                             <div class="mb-3 col-lg-2">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" placeholder="Enter Your Email ID" />
+                                <x-input-text name="hello1" placeholder="">
+                                </x-input-text>
                             </div>
 
                             <div class="mb-3 col-lg-2">
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" class="form-control" placeholder="Enter Your Subject" />
+                                <x-input-text name="hello1" placeholder="">
+                                </x-input-text>
                             </div>
 
                             <div class="mb-3 col-lg-2">
                                 <label for="resume">Resume</label>
-                                <input type="file" class="form-control" id="resume">
+                                <x-input-text name="hello1" placeholder="">
+                                </x-input-text>
                             </div>
 
                             <div class="mb-3 col-lg-2">
                                 <label for="message">Message</label>
-                                <textarea id="message" class="form-control" placeholder="Enter Your Message"></textarea>
+                                <x-input-textarea name="hello1" placeholder="">
+                                </x-input-textarea>
                             </div>
 
                             <div class="col-lg-2 align-self-center">
@@ -194,7 +197,7 @@
                           <div class="col-md-4">
                             <div class="mb-3">
                               <label for="basicpill-lastname-input">Student:</label>
-                              <select class="form-control select2-search-disable">
+                              <select class="form-control form-control">
                                 <option>--Select--</option>
                                 <option value="AK">Alaska</option>
                                 <option value="HI">Hawaii</option>
@@ -208,17 +211,15 @@
                           <div class="col-md-4">
                               <div class="mb-3">
                                 <label for="basicpill-lastname-input">Prescription Name:</label>
-                                <div class="input-group" >
-                                  <input type="text" class="form-control">
-                                </div>
+                                <x-input-text name="hello1" placeholder="">
+                                </x-input-text>
                               </div>
                           </div>
                           <div class="col-md-4">
                               <div class="mb-3">
                                 <label for="basicpill-lastname-input">Prescribe By:</label>
-                                <div class="input-group" >
-                                  <input type="text" class="form-control">
-                                </div>
+                                <x-input-text name="hello1" placeholder="">
+                                </x-input-text>
                               </div>
                           </div>
                       </div>
@@ -230,9 +231,8 @@
                                       <h2 class=" text-center mb-4">Posting Transaction Details</h2>
                                       <form class="repeater" enctype="multipart/form-data">
                                           <div class="row">
-                                              <div class="col-lg-4 p-0 pe-1">
-                                                  <label for="name">SL</label>
-                                                  <label for="name">Medicine Name	</label>
+                                              <div class="col-lg-4 p-0 ps-2 pe-1">
+                                                <label for="name">Medicine Name	</label>
                                               </div>
                                               <div class="col-lg-4 p-0 pe-1">
                                                   <label for="product">Medicine Dose</label>
@@ -243,25 +243,25 @@
                                           </div>
                                           <div data-repeater-list="group-a">
                                               <div data-repeater-item class="row">
-                                                  <div  class="col-lg-4 d-flex p-0 pe-1 pb-1 align-items-center">
-                                                      <span class="pe-2 pb-1">01</span>
-                                                      <input type="text" class="form-control"/>
+                                                  <div class="col-lg-4 p-0 pe-1 ps-2 pb-1 ">
+                                                    <x-input-text name="hello1" placeholder="">
+                                                    </x-input-text>
                                                   </div>
                                                   <div class=" col-lg-4 p-0 pe-1 pb-1">
-                                                      <input type="text" class="form-control"/>
+                                                    <x-input-text name="hello1" class="form-control" placeholder="">
+                                                    </x-input-text>
                                                   </div>
                                                   <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                      <input type="text" class="form-control"/>
-                                                      <button class="btn btn-danger btn-rounded ms-2">
-                                                          <i class="fas fa-trash-alt"></i>
-                                                      </button>
+                                                    <x-input-text name="hello1" placeholder="">
+                                                    </x-input-text>
+                                                    <button class="btn btn-danger btn-rounded me-3 ms-2">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
                                                   </div>
                                               </div>
                                               
                                           </div>
-                                         <div class="ms-2">
                                           <button data-repeater-create type="button" class="btn btn-success font-size-16 waves-effect waves-light"> Add</button>
-                                         </div>
                                       </form>
                                   </div>
                               </div>

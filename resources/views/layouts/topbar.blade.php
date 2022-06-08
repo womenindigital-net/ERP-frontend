@@ -5,19 +5,19 @@
             <div class="navbar-brand-box">
                 <a href="index" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ URL::asset('/assets/images/logo-dark.png') }}" alt="" height="22">
+                        <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ URL::asset('/assets/images/logo-dark.png') }}" alt="" height="17">
+                        <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="17">
                     </span>
                 </a>
 
                 <a href="index" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="22">
+                        <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="19">
+                        <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="19">
                     </span>
                 </a>
             </div>
@@ -382,9 +382,9 @@
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/assets/images/users/avatar-1.jpg') }}"
+                <img class="rounded-circle header-profile-user" src="{{ isset(auth()->user()->avatar) ? asset(auth()->user()->avatar) : asset('/assets/images/users/avatar-1.jpg') }}"
                     alt="Header Avatar">
-                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(Auth::user()->name)}}</span>
+                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(auth()->user()->name)}}</span>
                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-end">
@@ -421,7 +421,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-body">
                 <form method="POST" id="change-password">
                     @csrf
-                    <input type="hidden" value="{{ Auth::user()->id }}" id="data_id">
+                    <input type="hidden" value="{{ auth()->user()->id }}" id="data_id">
                     <div class="mb-3">
                         <label for="current_password">Current Password</label>
                         <input id="current-password" type="password"
@@ -447,7 +447,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     </div>
 
                     <div class="mt-3 d-grid">
-                        <button class="btn btn-primary waves-effect waves-light UpdatePassword" data-id="{{ Auth::user()->id }}"
+                        <button class="btn btn-primary waves-effect waves-light UpdatePassword" data-id="{{ auth()->user()->id }}"
                             type="submit">Update Password</button>
                     </div>
                 </form>

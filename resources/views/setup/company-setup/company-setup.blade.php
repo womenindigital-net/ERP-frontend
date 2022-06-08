@@ -3,18 +3,7 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
 
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -163,13 +152,13 @@
                   <div class="col-md-4">
                     <div class="mb-3">
                       <label class="form-label">Total Department:</label>
-                      <x-input-text name="Total Department:" placeholder="Total Department:"></x-input-text>
+                        <x-input-text name="Total Department" placeholder="Total Department"></x-input-text>
                   </div>
                   </div>
                   <div class="col-md-4">
                     <div class="mb-3">
                       <label class="form-label">Manager </label>
-                      <x-input-text name="Manager " placeholder="Manager "></x-input-text>
+                      <x-input-text name="Manager" placeholder="Manager"></x-input-text>
                   </div>
                   </div>
               </div>
@@ -184,14 +173,12 @@
                   <div class="mb-3">
                     <label class="form-label">Street 2</label>
                     <x-input-text name="Street 2" placeholder="Street 2"></x-input-text>
-                  </div>
                 </div>
                 </div>
                 <div class="col-md-4">
                   <div class="mb-3">
                     <label class="form-label">City </label>
                     <x-input-text name="City" placeholder="City"></x-input-text>
-                    </div>
                 </div>
                 </div>
             </div>
@@ -199,20 +186,19 @@
               <div class="col-md-4">
                   <div class="mb-3">
                       <label class="form-label">Zip Code </label>
-                      <x-input-text name="Zip Code" placeholder="Zip Code"></x-input-text>
-                    </div>
+                      <x-input-text type="number" name="Zip Code" placeholder="Zip Code"></x-input-text>
                   </div>
               </div>
               <div class="col-md-4">
                 <div class="mb-3">
                   <label class="form-label">State </label>
-                  <x-input-text name="Zip Code" placeholder="Zip Code"></x-input-text>
+                  <x-input-text name="State" placeholder="State"></x-input-text>
               </div>
               </div>
               <div class="col-md-4">
                 <div class="mb-3">
                   <label class="form-label">Country </label>
-                  <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Country ">
+                  <x-input-text name="Country" placeholder="Country"></x-input-text>
               </div>
               </div>
           </div>
@@ -220,21 +206,19 @@
             <div class="col-md-4">
                 <div class="mb-3">
                     <label class="form-label">Email </label>
-                    <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Email ">
+                    <x-input-text name="Email" placeholder="Email"></x-input-text>
                 </div>
             </div>
             <div class="col-md-4">
               <div class="mb-3">
-                <label class="form-label">Phone 1:
-                </label>
-                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Phone 1:
-                ">
+                <label class="form-label">Phone 1:</label>
+                <x-input-text name="Phone 1" placeholder="Phone 1"></x-input-text>
             </div>
             </div>
             <div class="col-md-4">
               <div class="mb-3">
                 <label class="form-label">Phone 2: </label>
-                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Phone 2: ">
+                <x-input-text name="Phone 2" placeholder="Phone 2"></x-input-text>
             </div>
             </div>
         </div>
@@ -242,19 +226,19 @@
           <div class="col-md-4">
               <div class="mb-3">
                   <label class="form-label">Fax: </label>
-                  <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Fax: ">
+                  <x-input-text name="Fax" placeholder="Fax"></x-input-text>
               </div>
           </div>
           <div class="col-md-4">
             <div class="mb-3">
               <label class="form-label">Mobile: </label>
-              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Mobile: ">
+              <x-input-text name="Mobile" placeholder="Mobile"></x-input-text>
           </div>
           </div>
           <div class="col-md-4">
             <div class="mb-3">
               <label class="form-label">Website Address: </label>
-              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Website address ">
+              <x-input-text name="Website Address" placeholder="Website Address"></x-input-text>
           </div>
           </div>
       </div>
@@ -263,7 +247,7 @@
             <div class="mb-3">
                 <label class="form-label">Project </label>
                 <select name="RefProjID" class="form-control strip-tags" id="RefProjID" required="">
-                  <option value="">--Select Project--</option>
+                  <option value="">Select Project</option>
                   <option value="1">Governing Office</option>
                   <option value="2">Operations</option>
                   <option value="3">Administration</option>
@@ -279,7 +263,7 @@
         <div class="col-md-4">
           <div class="mb-3">
             <label class="form-label">Logo </label>
-            <input class="form-control" type="file" id="formFile">
+            <x-input-text type="file" name="Logo" placeholder="Logo"></x-input-text>
         </div>
         </div>
       </div>
@@ -287,7 +271,6 @@
 
           </div>
           <div class="modal-footer">
-              
               <button type="button" class="btn  btn-danger" data-bs-dismiss="modal"> Close</button>
               <button type="button" class="btn  btn-success" data-bs-dismiss="modal"> Save</button>
           </div>
@@ -298,47 +281,6 @@
 @endsection
 
 @section('script')
- <!-- form advanced init -->
- <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 
-
-<!-- jquery step -->
-<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
-
-<!-- form wizard init -->
-<script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
-{{-- Form --}}
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
 
 @endsection

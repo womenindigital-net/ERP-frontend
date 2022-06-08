@@ -3,19 +3,6 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-  type="text/css" />
-<link href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
@@ -38,37 +25,93 @@
               data-bs-target=".bs-example-modal-lg">ADD</button>
           </div>
         </div>
-
-        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-          <thead>
-            <tr>
-              <th>Student Name</th>
-              <th>Prescription Name</th>
-              <th>Prescribe By</th>
-              <th>Log</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Md. Moinul Islam Supta</td>
-              <td>Roger Oliver</td>
-              <td>Shonod Shonod</td>
-              <td>
-                <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
-                <br/>
-                <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
-              </td>
-              <td>
-                <button type="button" class="btn btn-lg p-1 btn-primary btn-rounded waves-effect waves-light">
-                  <i class="mdi mdi-trash-can-outline font-size-32 align-middle"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                class="form-control form-control-sm form-select form-select-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entries
+            </label>
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <label style="display: inline-flex;align-items: center;">Search:
+              <input type="search" class="form-control form-control-sm" placeholder="">
+            </label>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table w-100">
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Prescription Name</th>
+                <th>Prescribe By</th>
+                <th>Log</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Md. Moinul Islam Supta</td>
+                <td>Roger Oliver</td>
+                <td>Shonod Shonod</td>
+                <td>
+                  <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span>
+                  <br/>
+                  <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="mdi mdi-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="bx bx-dollar"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="fas fa-arrow-circle-right"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            Showing 1 to 2 of 2 entries
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <nav>
+              <ul class="pagination" style="justify-content: end;">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -92,18 +135,14 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Student:</label>
-                      <select class="form-control select2-search-disable">
+                      <select class="form-control form-select">
                         <option>Select</option>
-                        <optgroup label="Alaskan/Hawaiian Time Zone">
-                          <option value="AK">Alaska</option>
-                          <option value="HI">Hawaii</option>
-                        </optgroup>
-                        <optgroup label="Pacific Time Zone">
-                          <option value="CA">California</option>
-                          <option value="NV">Nevada</option>
-                          <option value="OR">Oregon</option>
-                          <option value="WA">Washington</option>
-                        </optgroup>
+                        <option value="AK">Alaska</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="CA">California</option>
+                        <option value="NV">Nevada</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
                       </select>
                     </div>
                   </div>
@@ -111,7 +150,8 @@
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescription Name:</label>
                       <div class="input-group" >
-                        <input type="text" class="form-control">
+                        <x-input-text name="hello1" placeholder="">
+                        </x-input-text>
                       </div><!-- input -->
                     </div>
                   </div>
@@ -119,16 +159,15 @@
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescribe By:</label>
                       <div class="input-group" >
-                        <input type="text" class="form-control">
+                        <x-input-text name="hello1" placeholder="">
+                        </x-input-text>
                       </div><!-- input -->
                     </div>
                   </div>
               </div>
-
               <div class="row">
                 <div class="col-lg-12">
                   <div class="mb-3">
-                    
                   </div>
                 </div>
               </div>
@@ -142,12 +181,6 @@
 @endsection
 
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 
 
 <!-- jquery step -->
@@ -155,12 +188,5 @@
 
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
-{{-- Form --}}
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
 @endsection
