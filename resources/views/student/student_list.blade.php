@@ -408,17 +408,17 @@
                                       
                               </div>
                             <div class="mb-3 col-6 d-flex justify-content-end ">
-                              <label for="example-number-input" class="col-md-6 pe-4 col-form-label fs-5">Approved for
+                              <label for="example-number-input" class="col-md-6 pe-4 col-form-label fs-5 text-end">Approved for
                                 Observation:</label>
-                                <div class="btn-group col-md-2" role="group" aria-label="Basic radio toggle button group">
+                                <div class="btn-group btn-group-sm p-2 col-md-2" role="group" aria-label="Basic radio toggle button group">
                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked>
                                     <label class="btn btn-outline-success" for="btnradio4">Yes</label>
-                                    
+
                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
                                     <label class="btn btn-outline-success" for="btnradio5">No</label>
                                 </div>
                             </div>
-                            </div>
+                          </div>
                         </div>
                         <div class="row hide">
                             <div class="col-6">
@@ -558,8 +558,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
+                <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
