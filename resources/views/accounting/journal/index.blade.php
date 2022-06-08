@@ -3,9 +3,9 @@
 @section('title') Journal @endsection
 
 @section('css')
-{{--
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    crossorigin="anonymous"> --}}
+    crossorigin="anonymous">
 
 <!-- Sweet Alert-->
 
@@ -158,6 +158,28 @@
 </div>
 
 
+<!--  Edit Journal -->
+<div class="modal fade modal-view" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary">Journal View</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                </div>
+            </div>
+            <div class="row">
+            </div>
+            <!-- journal form end -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Close</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
 
 @endsection
 @section('script')
@@ -166,12 +188,12 @@
 <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 <script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
 
-{{--
+
 <!-- Sweet Alerts js -->
 <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- Sweet alert init js-->
-<script src="{{ asset('assets/js/pages/sweet-alerts.init.js') }}"></script> --}}
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('assets/js/pages/sweet-alerts.init.js') }}"></script>
+{{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 
 
 @endsection

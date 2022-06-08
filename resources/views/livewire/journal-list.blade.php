@@ -31,10 +31,14 @@
                         <td>{{$record->transaction_amount}}</td>
                         <td>{{$record->created_at}}</td>
                         <td>
-                            <a href="{{route('journal.show', $record->id)}}"
+                            <button type="button"
+                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
+                                data-bs-toggle="modal" data-bs-target=".modal-view"> <i
+                                    class="mdi mdi-eye"></i></button>
+                            {{-- <a href="{{route('journal.show', $record->id)}}"
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-eye"></i>
-                            </a>
+                            </a> --}}
                             <button type="button" wire:click="toggleApprove({{$record->id}})"
                                 class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-check"></i>
