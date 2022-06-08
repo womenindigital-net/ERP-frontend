@@ -64,7 +64,4 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('setup/program-setup/vocational-category-subcategory-setup', [StudentController::class, 'teskCreate'])->name('setup.program-setup.vocational-category-subcategory-setup');
     Route::get('setup/program-setup/academic-calender-create', [StudentController::class, 'teskCreate'])->name('setup.program-setup.academic-calender-create');
     Route::get('setup/program-setup/attendence-card-setup', [StudentController::class, 'teskCreate'])->name('setup.program-setup.attendence-card-setup');
-
-    
-
 });
