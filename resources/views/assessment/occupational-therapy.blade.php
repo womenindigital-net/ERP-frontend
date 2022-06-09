@@ -4,7 +4,7 @@
     @lang('translation.Starter_Page')
 @endsection
 @section('css')
-
+<link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
     <style>
         .wizard .steps>ul>li a {
             padding-right: 0 !important;
@@ -19,18 +19,12 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('li_1')
-            DashBoard
+
         @endslot
         @slot('title')
-            STUDENT QAS
+
         @endslot
     @endcomponent
-
-    <div class="row">
-        <div class="col-6 mb-2">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"><i
-                    class="fa fa-user"></i>PROFILE</button>
-        </div>
         <div class="row">
             <div class="col-xl-12 p-0">
                 <div class="card">
