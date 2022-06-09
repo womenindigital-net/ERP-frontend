@@ -7,7 +7,6 @@
 
 @component('components.breadcrumb')
 
-
 <div class="row">
   <div class="col-xl-12 p-0">
     <div class="card">
@@ -29,10 +28,9 @@
         </ul>
 
         <!-- Tab panes -->
-        <div class="tab-content p-3 text-muted">
+        <div class="tab-content text-muted">
           <div class="tab-pane active" id="case-histroy" role="tabpanel">
-            <!-- form start -->
-
+            <livewire:case-history-list />
             <!-- end row -->
           </div>
           <div class="tab-pane" id="case-histroy_list" role="tabpanel">
@@ -173,7 +171,7 @@
                                 :records="$constants::$yesNo">
                               </x-input-radio-or-check>
                               <!-- end row -->
-                              <x-input-radio-or-check name="has_write_ability"
+                              <x-input-radio-or-check name="has_any_learning_obstacle"
                                 label="শেখার প্রতিবন্ধকতা আছে কি? নীচের বিষয়গুলি সম্মন্ধে কোন ধারনা আছে কিনা? (যেমন-অক্ষর / বর্ণ শব্দ বাক্য পড়তে লিখতে সমস্যা অস্বাভাবিক তা, অংক শিখতে না পারা, অংকে অনাগ্রহ, গ্রাফ / চিত্র সম্পর্কে অনাগ্রহ)"
                                 :records="$caseConstants::$hasAnyLerningAbstagol" type="checkbox" :isVertical="false"
                                 :multiple="true">
@@ -363,8 +361,8 @@
                                 <!-- end row -->
                                 <x-input-radio-or-check name='in_which_sound_child_react'
                                   label="কোন কোন শব্দে শিশু প্রতিক্রিয়াশিলতা"
-                                  :records="$caseConstants::$inWhichSoundChildReact" type="checkbox"
-                                  :isVertical="false">
+                                  :records="$caseConstants::$inWhichSoundChildReact" type="checkbox" :isVertical="false"
+                                  :multiple="true">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <x-input-radio-or-check name='does_follow_verbal_commend' label="মৌখিক নির্দেশ মেনে চলে"
@@ -563,17 +561,18 @@
                                 <!-- end row -->
                                 <x-input-radio-or-check name='how_you_will_describe_you_child' type="checkbox"
                                   label="আপনি আপনার শিশুকে কি ভাবে বর্ণনা করবেন?"
-                                  :records="$caseConstants::$howToDiscriveYourChild" :isVertical="false">
+                                  :records="$caseConstants::$howToDiscriveYourChild" :isVertical="false"
+                                  :multiple="true">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <x-input-radio-or-check name='bath' label="গোসল" type="checkbox"
                                   :records="$caseConstants::$bath" secondaryInputLabel="বিস্তারিত লিখুন"
-                                  :isVertical="false">
+                                  :isVertical="false" :multiple="true">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <x-input-radio-or-check name='necessary_things' label="প্রয়োজনীয় জিনিস" type="checkbox"
                                   :records="$caseConstants::$necessaryThings" secondaryInputLabel="বিস্তারিত লিখুন"
-                                  :isVertical="false">
+                                  :isVertical="false" :multiple="true">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <x-input-radio-or-check name='does_have_the_navigation_capability'
@@ -581,11 +580,11 @@
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <x-input-radio-or-check name='play' label="খেলা" type="checkbox"
-                                  :records="$caseConstants::$game" :isVertical="false">
+                                  :records="$caseConstants::$game" :isVertical="false" :multiple="true">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <x-input-radio-or-check name='mobility' label="মবিলিটি" type="checkbox"
-                                  :records="$caseConstants::$mobility" :isVertical="false">
+                                  :records="$caseConstants::$mobility" :isVertical="false" :multiple="true">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <x-input-radio-or-check name='does_like_routine' label="রুটিন পছন্দ করে"
@@ -724,7 +723,6 @@
             </div> <!-- end col -->
           </div>
         </div>
-
       </div>
     </div>
   </div>

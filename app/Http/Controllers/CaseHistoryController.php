@@ -10,6 +10,7 @@ use App\Repositories\ProjectRepository;
 use App\Repositories\StudentRepository;
 use App\Repositories\UserRepository;
 use App\Services\CaseHistoryService;
+use App\Utility\ProjectConstants;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -18,11 +19,11 @@ use Illuminate\Support\Facades\Session;
 class CaseHistoryController extends Controller
 {
     private CaseHistoryService $service;
-
     private UserRepository $userRepo;
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
     private CaseHistoryRepository $caseRepo;
+    public $caseHistory;
 
     public function __construct(CaseHistoryService $service, UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository, CaseHistoryRepository $caseHistoryRepository)
     {
@@ -43,10 +44,9 @@ class CaseHistoryController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'records' => $this->caseRepo->getListData($perPage = ProjectConstants::DATA_PER_PAGE, $search = ''),
         ];
-
-        $data = CaseHistory::latest()->first()->child_description;
-        dd($data);
+        // dd($data['caseList']);
 
         return view('case-history', $data);
     }
@@ -88,7 +88,11 @@ class CaseHistoryController extends Controller
      */
     public function show(CaseHistory $caseHistory)
     {
-        //
+        $data = [
+            'caseHistory' => $this->caseHistory = $caseHistory,
+        ];
+        // dd($data['caseHistory']);
+        return view('case-history-view', $data);
     }
 
     /**
