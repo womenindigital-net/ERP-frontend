@@ -14,14 +14,11 @@
 <!-- Sweet Alert-->
 <link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
-
 @section('content')
-
 @component('components.breadcrumb')
 @slot('li_1') DashBoard @endslot
 @slot('title')HRMS > EMPLOYEE @endslot
 @endcomponent
-
 <div class="row">
   <div class="col-xl-12">
       <div class="card">
@@ -45,7 +42,6 @@
                     data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
                   </li>
               </ul>
-
               <!-- Tab panes -->
               <div class="tab-content text-muted">
                   <div class="tab-pane active " id="home" role="tabpanel "> 
@@ -125,7 +121,8 @@
                                                                 <h6>Employee Code</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter code hare.. ">
+                                                                <x-input-text name="Code" type="number" placeholder="Enter Code Here">
+                                                                </x-input-text>
                                                                </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -179,16 +176,16 @@
                                                               </div>
                                                                <div class="col-4">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                  <x-input-text name="date" type="date" placeholder="dd/mm/yyyy">
+                                                                  </x-input-text>
                                                               </div>
                                                                </div>
                                                               <div class="col-2 d-flex align-items-center">
                                                                 <h6>Age</h6>
                                                               </div>
                                                                <div class="col-4">
-                                                                <input type="number" class="form-control" id="horizontal-firstname-input" ">
+                                                                <x-input-text name="age" type="number" placeholder="Enter Age Here">
+                                                                </x-input-text>
                                                                </div>
                                                             </div>
                                                             <div class="row mb-4">
@@ -211,7 +208,8 @@
                                                                 <h6>Full Name in Bangla</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Bangla name hare.. ">
+                                                                <x-input-text name="Name" placeholder="Enter Bangla Name Here">
+                                                                </x-input-text>
                                                                </div>
                                                             </div>
                                                            <div class="row mb-4">
@@ -219,7 +217,8 @@
                                                               <h6>Fathers Name</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Fathere hare.. ">
+                                                              <x-input-text name="Name" placeholder="Enter Father Name Here">
+                                                              </x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -227,7 +226,8 @@
                                                               <h6>Mothers Name</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Mothers Name hare.. ">
+                                                              <x-input-text name="Name" placeholder="Enter Mother Name Here">
+                                                              </x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -235,8 +235,7 @@
                                                               <h6>Present Address</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <textarea id="textarea" class="form-control"  rows="2"
-                                                              placeholder="Present Address"></textarea>
+                                                              <x-input-textarea name="Adress"></x-input-textarea>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -244,16 +243,16 @@
                                                               <h6>Permanent Address</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <textarea id="textarea" class="form-control"  rows="2"
-                                                              placeholder="Permanent Address"></textarea>
+                                                              <x-input-textarea name="Adress"></x-input-textarea>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
                                                             <div class="col-4 d-flex align-items-center">
-                                                              <h6>Phone</h6>
+                                                              <h6>Phone Number</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="phone number">
+                                                              <x-input-text name="Number" placeholder="Phone Number">
+                                                              </x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -261,7 +260,8 @@
                                                               <h6>Mobile</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Mobile number ">
+                                                              <x-input-text name="Number" placeholder="Mobile Number">
+                                                              </x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -269,17 +269,8 @@
                                                               <h6>Blood Group</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="A(+)">A(+)</option>
-                                                                <option value="A(-)">A(-)</option>
-                                                                <option value="B(+)">B(+)</option>
-                                                                <option value="B(-)">B(-)</option>
-                                                                <option value="O(+)">O(+)</option>
-                                                                <option value="O(-)">O(-)</option>
-                                                                <option value="AB(+)">AB(+)</option>
-                                                                <option value="AB(-)">AB(-)</option> 
-                                                              </select>
+                                                              <x-input-select name="blood_group" :records="$constants::$bloodGroups">
+                                                              </x-input-select>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -301,9 +292,7 @@
                                                             </div>
                                                              <div class="col-8">
                                                               <div class="input-group" id="datepicker1">
-                                                                <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                    data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                <x-input-text name="date" type="date" placeholder="dd/mm/yyyy"></x-input-text> 
                                                             </div>
                                                              </div>
                                                            </div>
@@ -312,7 +301,7 @@
                                                               <h6>Spouse Name</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Spouse Name">  
+                                                              <x-input-text name="Name" placeholder="Spouse Name"></x-input-text> 
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -320,7 +309,7 @@
                                                               <h6>Occupation</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Occupation">  
+                                                              <x-input-text name="Occupation" placeholder="Occupation"></x-input-text> 
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -342,7 +331,7 @@
                                                               <h6>Nationality</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Nationality here">  
+                                                              <x-input-text name="Nationality" placeholder="Enter Nationality here"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -350,7 +339,7 @@
                                                               <h6>Passport No</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Passport No here">  
+                                                              <x-input-text name="number" type="number" placeholder="Passport Number"></x-input-text> 
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -358,7 +347,7 @@
                                                               <h6>Personal Mobile</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Personal Mobile">  
+                                                              <x-input-text name="number" placeholder="Enter Personal Mobile"></x-input-text> 
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -366,7 +355,7 @@
                                                               <h6>Personal Email1</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Personal Email1">  
+                                                              <x-input-text name="email" placeholder="Personal Email1"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -374,7 +363,7 @@
                                                               <h6>National ID</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="National ID">  
+                                                              <x-input-text name="id" placeholder="National ID"></x-input-text>
                                                              </div>
                                                            </div>
                                                       </div>
@@ -448,7 +437,7 @@
                                                               <h6>Route</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder=" ">
+                                                              <x-input-text name="Route" type="number" placeholder="Route"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -520,9 +509,7 @@
                                                               </div>
                                                                <div class="col-8">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                  <x-input-text name="date" type="date" placeholder="dd/mm/yyyy"></x-input-text>
                                                               </div>
                                                                </div>
                                                              </div>
@@ -637,9 +624,7 @@
                                                              </div>
                                                               <div class="col-8">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                  <x-input-text name="date" type="date" placeholder="dd/mm/yyyy"></x-input-text>
                                                                  </div>
                                                                </div>
                                                               </div>
@@ -649,9 +634,7 @@
                                                              </div>
                                                               <div class="col-8">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                  <x-input-text name="date" type="date" placeholder="dd/mm/yyyy"></x-input-text>
                                                                  </div>
                                                                </div>
                                                             </div>   
@@ -702,7 +685,7 @@
                                                              <h6>Valuation Interval</h6>
                                                            </div>
                                                             <div class="col-8">
-                                                             <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="phone number">
+                                                              <x-input-text name="Number" placeholder="Phone Number"></x-input-text>
                                                             </div>
                                                           </div>
                                                           <div class="row mb-4">
@@ -726,7 +709,7 @@
                                                               <h6>Card No</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter card number here ">
+                                                              <x-input-text name="Number" placeholder="Enter Card Number Here "></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -734,7 +717,7 @@
                                                               <h6>Bank Acc No</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Bank acc no here">
+                                                              <x-input-text name="Number" placeholder="Enter Bank Account Number Here"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">

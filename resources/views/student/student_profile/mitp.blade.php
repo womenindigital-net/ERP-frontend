@@ -148,7 +148,7 @@
         <div class="email-rightbar mb-3">
             <div class="card">
                 <ul id="tree1" class="tree">
-                    <li><a href="#"><input type="checkbox" class="click">  Section E: Domain 01 - Physical development<i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"></i></a>
+                    <li><a href="#"><input type="checkbox" class="click text-danger">  Section E: Domain 01 - Physical development<i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"></i></a>
                         <ul>
                             <li><a href="#"><input type="checkbox" class="click">  Motor Planning <i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"></i></a>
                                 <ul>
