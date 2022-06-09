@@ -16,11 +16,11 @@ class CaseHistory extends Model
         return $this->belongsTo(Student::class);
     }
 
-    /*protected function hasAdjustmentCapability(): Attribute
+    protected function childDescription(): Attribute
     {
         return Attribute::make(
-            get: fn ($val) => $val ? 1 : 0,
-            set: fn ($val) => $val ? 1 : 0,
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
         );
-    }*/
+    }
 }

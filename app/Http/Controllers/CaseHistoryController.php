@@ -45,6 +45,9 @@ class CaseHistoryController extends Controller
             'students' => $this->studentRepo->getData(),
         ];
 
+        $data = CaseHistory::latest()->first()->child_description;
+        dd($data);
+
         return view('case-history', $data);
     }
 
@@ -67,6 +70,8 @@ class CaseHistoryController extends Controller
      */
     public function store(CaseHistoryRequest $request)
     {
+
+        // dd($request->validated()['child_description']);
         $this->service->store($request->validated());
 
         Session::flash('success');
