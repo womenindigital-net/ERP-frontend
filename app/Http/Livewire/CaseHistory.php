@@ -193,7 +193,9 @@ class CaseHistory extends Component
     //     'learned_to_chewing_in'                                  => 'nullable',
     //     'learned_to_scrolling_in'                                => 'nullable',
     //     'learned_to_walk_alone_in'                               => 'nullable',
+
     //     'is_able_to_chewing'                                     => 'nullable',
+
     //     'is_able_to_swimming'                                    => 'nullable',
     //     'dose_like_play_outside'                                 => 'nullable',
     //     'dose_get_tired_soon'                                    => 'nullable',
@@ -206,6 +208,9 @@ class CaseHistory extends Component
     //     'how_many_word_use_in_a_sentence_max'                    => 'nullable',
     //     'dose_spake_in_other_lang'                               => 'nullable',
     //     'from_which_year_learning_other_lang'                    => 'nullable',
+
+    // কোন বয়স থেকে শিখেছে ?
+
     //     'from_where_learn_other_lang'                            => 'nullable',
     //     'does_he_response_if_call_by_his_name'                   => 'nullable',
     //     'can_give_simple_instruction_and_follow_direction'       => 'nullable',
@@ -276,6 +281,7 @@ class CaseHistory extends Component
     //     'does_like_to_destroy'                                   => 'nullable',
     //     'does_run_in_wrong_way'                                  => 'nullable',
     //     'does_height_movement_be_careful_when_going_down_stairs' => 'nullable',
+    
     //     'try_to_ignore_task'                                     => 'nullable',
     //     'which_kind_of_task_he_try_to_skip'                      => 'nullable',
     //     'lost_again_and_again'                                   => 'nullable',
