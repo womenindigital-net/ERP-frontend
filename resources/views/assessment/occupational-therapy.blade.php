@@ -4,7 +4,7 @@
     @lang('translation.Starter_Page')
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
+
     <style>
         .wizard .steps>ul>li a {
             padding-right: 0 !important;
@@ -628,10 +628,10 @@
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
+
         <!-- jquery step -->
         <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
 
         <!-- form wizard init -->
         <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
     @endsection
-@endsection
