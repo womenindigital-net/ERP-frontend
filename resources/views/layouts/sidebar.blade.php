@@ -395,19 +395,19 @@
                             <a href="javascript: void(0);" class="has-arrow">HR & Admin Links</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ ('setup.employee-information') }}">Employee information </a>
+                                    <a href="{{ route('setup.employee-information') }}">Employee information </a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.attendance-policy-setup') }}">Attendance policy setup</a>
+                                    <a href="{{ route('setup.attendance-policy-setup') }}">Attendance policy setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.leave-type') }}">Leave Type</a>
+                                    <a href="{{ route('setup.leave-type') }}">Leave Type</a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.leave-package') }}">Leave Package</a>
+                                    <a href="{{ route('setup.leave-package') }}">Leave Package</a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.create-product') }}">create product</a>
+                                    <a href="{{ route('setup.create-product') }}">create product</a>
                                 </li>
                             </ul>
                         </li>
