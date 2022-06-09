@@ -34,7 +34,12 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // bank reconcilation 
     Route::get('bank-reconcilation-new', [SetupController::class, 'bankReconcilationNew'])->name('setup.bank-reconcilation-new');
     Route::get('bank-reconcilation', [SetupController::class, 'bankReconcilation'])->name('setup.bank-reconcilation');
-     
+    // Payroll Management setup 
+    Route::get('payroll-management/salary_grade_setup', [SetupController::class, 'salaryGradeSetup'])->name('setup.payroll-management.salary_grade_setup');
+    Route::get('payroll-management/salary_step_setup', [SetupController::class, 'salaryStepSetup'])->name('setup.payroll-management.salary_step_setup');
+    Route::get('payroll-management/salary_head_setup', [SetupController::class, 'salaryHeadSetup'])->name('setup.payroll-management.salary_head_setup');
+    Route::get('payroll-management/salary_package_setup', [SetupController::class, 'salaryPackageSetup'])->name('setup.payroll-management.salary_package_setup');
+    Route::get('payroll-management/salary_budget_setup', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup');
 
 
     

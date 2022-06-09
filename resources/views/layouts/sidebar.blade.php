@@ -403,19 +403,19 @@
                             <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.payroll-management.salary_grade_setup">Salary Grade Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_grade_setup') }}">Salary Grade Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.payroll-management.salary_step_setup">Salary Step Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_step_setup') }}">Salary Step Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.payroll-management.salary_head_setup">Salary Head Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_head_setup') }}">Salary Head Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.payroll-management.salary_package_setup">Salary Package Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_package_setup') }}">Salary Package Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.payroll-management.salary_budget_setup">Salary Budget Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_budget_setup') }}">Salary Budget Setup</a>
                                 </li>
                             </ul>
                         </li>
