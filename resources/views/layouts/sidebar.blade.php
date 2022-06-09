@@ -395,19 +395,19 @@
                             <a href="javascript: void(0);" class="has-arrow">HR & Admin Links</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ ('setup.employee-information') }}">Employee information </a>
+                                    <a href="{{ route('setup.employee-information') }}">Employee information </a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.attendance-policy-setup') }}">Attendance policy setup</a>
+                                    <a href="{{ route('setup.attendance-policy-setup') }}">Attendance policy setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.leave-type') }}">Leave Type</a>
+                                    <a href="{{ route('setup.leave-type') }}">Leave Type</a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.leave-package') }}">Leave Package</a>
+                                    <a href="{{ route('setup.leave-package') }}">Leave Package</a>
                                 </li>
                                 <li>
-                                    <a href="{{ ('setup.create-product') }}">create product</a>
+                                    <a href="{{ route('setup.create-product') }}">create product</a>
                                 </li>
                             </ul>
                         </li>
@@ -466,16 +466,16 @@
                             <a href="javascript: void(0);" class="has-arrow">Budget & Forecasting</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.budget-year-setup">Budget Year Setup</a>
+                                    <a href="{{ route('setup.budget-year-setup') }}">Budget Year Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.budget-head-setup">Budget Head Setup</a>
+                                    <a href="{{ route('setup.budget-head-setup') }}">Budget Head Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.Budget-Template-setup">Budget Template Setup</a>
+                                    <a href="{{ route('setup.Budget-Template-setup') }}">Budget Template Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.budget-review">Budget Review</a>
+                                    <a href="{{ route('setup.budget-review') }}">Budget Review</a>
                                 </li>
                             </ul>
                         </li>
@@ -483,7 +483,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.year-end-close.year_end_stock_count">Year End Stock Count</a>
+                                    <a href="{{ route('setup.year-end-close.year_end_stock_count') }}">Year End Stock Count</a>
                                 </li>
                             </ul>
                         </li>
@@ -491,16 +491,16 @@
                             <a href="javascript: void(0);" class="has-arrow">Other Settings</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.other-settings.user">User</a>
+                                    <a href="{{ route('setup.other-settings.user') }}">User</a>
                                 </li>
                                 <li>
-                                    <a href="setup.other-settings.academic_calendar">Academic Calendar</a>
+                                    <a href="{{ route('setup.other-settings.academic_calendar') }}">Academic Calendar</a>
                                 </li>
                                 <li>
-                                    <a href="setup.other-settings.task_weight_setting">Task Weight Setting</a>
+                                    <a href="{{ route('setup.other-settings.task_weight_setting') }}">Task Weight Setting</a>
                                 </li>
                                 <li>
-                                    <a href="setup.other-settings.user_permission_setup">User Permission Setup</a>
+                                    <a href="{{ route('setup.other-settings.user_permission_setup') }}">User Permission Setup</a>
                                 </li>
                             </ul>
                         </li>
