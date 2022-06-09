@@ -24,12 +24,7 @@
         @slot('title')
         @endslot
     @endcomponent
-    <div class="row mb-3">
-        <div class="col-6">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"><i
-                    class="fa fa-user"></i>PROFILE</button>
-        </div>
-    </div>
+      
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">
@@ -923,7 +918,7 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check name="" label="Changes the style of commands or requests depending on who the child is speaking to and what the
-                                                                           child wants" :records="$constants::$socialCommunication"
+                                                                               child wants" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                             </section>
@@ -1795,7 +1790,7 @@
                             </x-input-radio-or-check>
                             <!-- row end -->
                             <x-input-radio-or-check name="" label="Changes the style of commands or requests depending on who the child is speaking to and what the
-                                                          child wants" :records="$constants::$socialCommunication" :isVertical="false">
+                                                              child wants" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
 
