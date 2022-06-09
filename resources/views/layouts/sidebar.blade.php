@@ -415,7 +415,19 @@
                             <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.payroll-management">Payroll Management</a>
+                                    <a href="setup.payroll-management.salary_grade_setup">Salary Grade Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.payroll-management.salary_step_setup">Salary Step Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.payroll-management.salary_head_setup">Salary Head Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.payroll-management.salary_package_setup">Salary Package Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.payroll-management.salary_budget_setup">Salary Budget Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -440,7 +452,13 @@
                             <a href="javascript: void(0);" class="has-arrow">Accounting Mapping</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.accounting-mapping">Accounting Mapping</a>
+                                    <a href="setup.accounting-mapping.account_mapping">Accounting Mapping</a>
+                                </li>
+                                <li>
+                                    <a href="setup.accounting-mapping.accounting_year_setup">Accounting Year Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.accounting-mapping.closing_account_setup">Closing Accounting Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -465,7 +483,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.year-end-close">Year End Close</a>
+                                    <a href="setup.year-end-close.year_end_stock_count">Year End Stock Count</a>
                                 </li>
                             </ul>
                         </li>
@@ -473,7 +491,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Other Settings</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.other-settings">Other Settings</a>
+                                    <a href="setup.other-settings.user">User</a>
                                 </li>
                             </ul>
                         </li>
