@@ -8,6 +8,7 @@ use App\Services\JournalService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -18,10 +19,17 @@ class JournalList extends Component
     private JournalService $service;
     private JournalRepository $repo;
 
+    public array $viewRecord = [];
+
     public function boot(JournalService $service, JournalRepository $repository)
     {
         $this->service = $service;
         $this->repo = $repository;
+    }
+
+    public function view($record)
+    {
+        $this->viewRecord = $record;
     }
 
     public function toggleApprove($recordId)

@@ -31,8 +31,8 @@ class InputRadioOrCheck extends Component
         $this->records             = $records;
         $this->isVertical          = $isVertical ? 'd-flex' : '';
         $this->secondaryInputLabel = $secondaryInputLabel;
-        $this->wireModel           = $wireModel ? "wire:model=$wireModel" : '';
-        $this->secondaryInputWire = $secondaryInputLabel ? "wire:model={$name}_secondary" : '';
+        $this->wireModel           = $wireModel ? "name=$wireModel" : '';
+        $this->secondaryInputWire = $secondaryInputLabel ? "name={$name}_secondary" : '';
     }
 
     /**
