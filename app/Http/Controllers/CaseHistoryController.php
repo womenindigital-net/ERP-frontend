@@ -10,6 +10,7 @@ use App\Repositories\ProjectRepository;
 use App\Repositories\StudentRepository;
 use App\Repositories\UserRepository;
 use App\Services\CaseHistoryService;
+use App\Utility\ProjectConstants;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -18,7 +19,6 @@ use Illuminate\Support\Facades\Session;
 class CaseHistoryController extends Controller
 {
     private CaseHistoryService $service;
-
     private UserRepository $userRepo;
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
@@ -43,10 +43,9 @@ class CaseHistoryController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'records' => $this->caseRepo->getListData($perPage = ProjectConstants::DATA_PER_PAGE, $search = ''),
         ];
-
-        $data = CaseHistory::latest()->first()->child_description;
-        dd($data);
+        // dd($data['caseList']);
 
         return view('case-history', $data);
     }
