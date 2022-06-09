@@ -23,6 +23,7 @@ class CaseHistoryController extends Controller
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
     private CaseHistoryRepository $caseRepo;
+    public $caseHistory;
 
     public function __construct(CaseHistoryService $service, UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository, CaseHistoryRepository $caseHistoryRepository)
     {
@@ -87,7 +88,11 @@ class CaseHistoryController extends Controller
      */
     public function show(CaseHistory $caseHistory)
     {
-        //
+        $data = [
+            'caseHistory' => $this->caseHistory = $caseHistory,
+        ];
+        // dd($data['caseHistory']);
+        return view('case-history-view', $data);
     }
 
     /**
