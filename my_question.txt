@@ -1,1 +1,7 @@
+1:migration
+2:set name in input component
+3:Data insert
+4:Data View 
+5:Data Edit
+
 
