@@ -86,6 +86,26 @@ class SetupController extends Controller
     {
         return view('setup.bank-reconcilation');
     }
+    public function salaryGradeSetup()
+    {
+        return view('setup.payroll-management.salary_grade_setup');
+    }
+    public function salaryStepSetup()
+    {
+        return view('setup.payroll-management.salary_step_setup');
+    }
+    public function salaryHeadSetup()
+    {
+        return view('setup.payroll-management.salary_head_setup');
+    }
+    public function salaryPackageSetup()
+    {
+        return view('setup.payroll-management.salary_package_setup');
+    }
+    public function salaryBudgetSetup()
+    {
+        return view('setup.payroll-management.salary_budget_setup');
+    }
     
     
 }
