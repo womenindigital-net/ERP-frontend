@@ -493,6 +493,15 @@
                                 <li>
                                     <a href="setup.other-settings.user">User</a>
                                 </li>
+                                <li>
+                                    <a href="setup.other-settings.academic_calendar">Academic Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="setup.other-settings.task_weight_setting">Task Weight Setting</a>
+                                </li>
+                                <li>
+                                    <a href="setup.other-settings.user_permission_setup">User Permission Setup</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
