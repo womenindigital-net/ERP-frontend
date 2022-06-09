@@ -31,7 +31,7 @@
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">Care Needs Details</span>
+                                <span class="d-none d-sm-block">Care Needs Dtails</span>
                             </a>
                         </li>
                     </ul>

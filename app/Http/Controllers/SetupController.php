@@ -106,6 +106,102 @@ class SetupController extends Controller
     {
         return view('setup.payroll-management.salary_budget_setup');
     }
+    public function supplierSetup()
+    {
+        return view('setup.vendor-list.supplier-setup');
+    }
+    public function supplierTypeSetup()
+    {
+        return view('setup.vendor-list.supplier-type-setup');
+    }
+    public function customerReg()
+    {
+        return view('setup.customers-list.customer-reg');
+    }
+    public function courseAdmission()
+    {
+        return view('setup.course-and-admission');
+    }
+    public function markingCategory()
+    {
+        return view('setup.vocational-marking-category');
+    }
+    public function markingSubcategory()
+    {
+        return view('setup.vocational-marking-subcategory');
+    }
+    public function studentEvolution()
+    {
+        return view('setup.vocational-student-evolution');
+    }
+    public function employeeInformation()
+    {
+        return view('setup.employee-information');
+    }
+    public function attendeanceSetup()
+    {
+        return view('setup.attendance-policy-setup');
+    }
+    public function leaveTypeSetup()
+    {
+        return view('setup.leave-type');
+    }
+    public function leavePackageSetup()
+    {
+        return view('setup.leave-package');
+    }
+    public function createProduct()
+    {
+        return view('setup.create-product');
+    }
+    public function accountMappingSetup()
+    {
+        return view('setup.accounting-mapping.account_mapping');
+    }
+    public function accountingYearSetup()
+    {
+        return view('setup.accounting-mapping.accounting_year_setup');
+    }
+    public function clossingAccountSetup()
+    {
+        return view('setup.accounting-mapping.closing_account_setup');
+    }
+    public function budgetYearSetup()
+    {
+        return view('setup.budget-year-setup');
+    }
+    public function budgetHeadSetup()
+    {
+        return view('setup.budget-head-setup');
+    }
+    public function budgetTemplateSetup()
+    {
+        return view('setup.Budget-Template-setup');
+    }
+    public function budgetReviewSetup()
+    {
+        return view('setup.budget-review');
+    }
+    public function yearEnd()
+    {
+        return view('setup.year-end-close.year_end_stock_count');
+    }
+    public function otherUser()
+    {
+        return view('setup.other-settings.user');
+    }
+    public function academicCalendar()
+    {
+        return view('setup.other-settings.academic_calendar');
+    }
+    public function taskWeight()
+    {
+        return view('setup.other-settings.task_weight_setting');
+    }
+    public function userPermission()
+    {
+        return view('setup.other-settings.user_permission_setup');
+    }
     
     
 }

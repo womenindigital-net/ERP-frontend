@@ -5,6 +5,7 @@
 @endsection
 
 @section('css')
+
 @endsection
 
 @section('content')
@@ -285,7 +286,6 @@
             </div>
         </div>
     </div>
-
     <!--  Edit Journal -->
     <div class="modal fade material-callects-modal-xl-add" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl">

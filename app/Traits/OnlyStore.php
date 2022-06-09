@@ -8,7 +8,6 @@ trait OnlyStore
 {
     public function store(array $data): Model
     {
-        // dd($data);
         $obj = new $this->model;
 
         foreach ($data as $key => $val) {

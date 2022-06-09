@@ -17,6 +17,7 @@ return new class extends Migration
     {
         Schema::create('case_histories', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_approved')->default(0);
             $table->foreignIdFor(User::class, 'created_by')->constrained('users')->cascadeOnDelete();
             $table->foreignIdFor(Student::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(User::class, 'teacher_id')->constrained('users')->cascadeOnDelete();
