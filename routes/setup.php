@@ -62,6 +62,22 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('accounting-mapping.account_mapping', [SetupController::class, 'accountMappingSetup'])->name('setup.accounting-mapping.account_mapping');
     Route::get('accounting-mapping.accounting_year_setup', [SetupController::class, 'accountingYearSetup'])->name('setup.accounting-mapping.accounting_year_setup');
     Route::get('accounting-mapping.closing_account_setup', [SetupController::class, 'clossingAccountSetup'])->name('setup.accounting-mapping.closing_account_setup');
+    // Budget & Forecasting 
+    Route::get('budget-year-setup', [SetupController::class, 'budgetYearSetup'])->name('setup.budget-year-setup');
+    Route::get('budget-head-setup', [SetupController::class, 'budgetHeadSetup'])->name('setup.budget-head-setup');
+    Route::get('Budget-Template-setup', [SetupController::class, 'budgetTemplateSetup'])->name('setup.Budget-Template-setup');
+    Route::get('budget-review', [SetupController::class, 'budgetReviewSetup'])->name('setup.budget-review');
+    // Year End Close 
+    Route::get('year-end-close.year_end_stock_count', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.year_end_stock_count');
+    // Other Setting  
+    Route::get('other-settings.user', [SetupController::class, 'otherUser'])->name('setup.other-settings.user');
+    Route::get('other-settings.academic_calendar', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic_calendar');
+    Route::get('other-settings.task_weight_setting', [SetupController::class, 'taskWeight'])->name('setup.other-settings.task_weight_setting');
+    Route::get('other-settings.user_permission_setup', [SetupController::class, 'userPermission'])->name('setup.other-settings.user_permission_setup');
+
+
+
+
  
 
 

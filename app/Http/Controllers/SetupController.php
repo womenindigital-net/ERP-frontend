@@ -166,6 +166,42 @@ class SetupController extends Controller
     {
         return view('setup.accounting-mapping.closing_account_setup');
     }
+    public function budgetYearSetup()
+    {
+        return view('setup.budget-year-setup');
+    }
+    public function budgetHeadSetup()
+    {
+        return view('setup.budget-head-setup');
+    }
+    public function budgetTemplateSetup()
+    {
+        return view('setup.Budget-Template-setup');
+    }
+    public function budgetReviewSetup()
+    {
+        return view('setup.budget-review');
+    }
+    public function yearEnd()
+    {
+        return view('setup.year-end-close.year_end_stock_count');
+    }
+    public function otherUser()
+    {
+        return view('setup.other-settings.user');
+    }
+    public function academicCalendar()
+    {
+        return view('setup.other-settings.academic_calendar');
+    }
+    public function taskWeight()
+    {
+        return view('setup.other-settings.task_weight_setting');
+    }
+    public function userPermission()
+    {
+        return view('setup.other-settings.user_permission_setup');
+    }
     
     
 }
