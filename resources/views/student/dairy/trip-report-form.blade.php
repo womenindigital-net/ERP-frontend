@@ -113,11 +113,15 @@
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1">Previous</a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
                                     <li class="page-item active">
                                         <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
                                     <li class="page-item">
                                         <a class="page-link" href="#">Next</a>
                                     </li>
@@ -186,8 +190,6 @@
                             {{-- end row --}}
                         </form>
                     </section>
-
-
                     <h3>শুধু স্টাফ এর জন্য প্রযোজ্য</h3>
                     <section>
                         <form>
@@ -255,7 +257,6 @@
                                 </div>
                         </form>
                     </section>
-
                     <h3>বাড়ীর আসেসমেন্টের ওয়ার্কসিট > কার্যক্রম</h3>
                     <section>
                         <form>
@@ -293,7 +294,6 @@
 
                         </form>
                     </section>
-
                     <h3>বাড়ীর আসেসমেন্টের ওয়ার্কসিট > নিরাপত্তা এবং সুরক্ষা</h3>
                     <section>
                         <form>
@@ -328,9 +328,6 @@
                             </div>
                         </form>
                     </section>
-
-
-
                     <h3>বাড়ীর আসেসমেন্টের ওয়ার্কসিট > সাজসরঞ্জাম</h3>
                     <section>
                         <form>
@@ -348,7 +345,6 @@
 
                         </form>
                     </section>
-
                     <h3>বাড়ীর আসেসমেন্টের ওয়ার্কসিট > আলো</h3>
                     <section>
                         <form>
@@ -363,10 +359,8 @@
                             <x-input-radio-or-check name="name" label="প্যাসেজ ওয়েতে রাতে জালিয়ে রাখার লাইট আছে"
                                 :records="$constants::$yesNo" secondaryInputLabel="সাজেশন"></x-input-radio-or-check>
                             {{-- end row --}}
-
                         </form>
                     </section>
-
                     <h3>বাড়ীর আসেসমেন্টের ওয়ার্কসিট > রান্নাঘর</h3>
                     <section>
                         <form>
@@ -403,7 +397,6 @@
                             {{-- end row --}}
                         </form>
                     </section>
-
                     <h3>বাড়ীর আসেসমেন্টের ওয়ার্কসিট > বাথরুম</h3>
                     <section>
                         <form>
@@ -426,7 +419,6 @@
 
                         </form>
                     </section>
-
                     <h3>বাড়ীর আসেসমেন্টের ওয়ার্কসিট > মেঝে</h3>
                     <section>
                         <form>
@@ -437,10 +429,8 @@
                             <x-input-radio-or-check name="name" label="রাগ বা পাপোশে কোন আলগা ঝুল আছে কিনা"
                                 :records="$constants::$yesNo" secondaryInputLabel="সাজেশন"></x-input-radio-or-check>
                             {{-- end row --}}
-
                         </form>
                     </section>
-
                     <h3> Instrumental Activities of Daily Living (IADLs)</h3>
                     <section>
                         <form>
@@ -473,7 +463,6 @@
                                 :records="$tripReportConstants::$do" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সাজেশন</label>
                                 <div class="input-group" id="datepicker2">
@@ -485,7 +474,6 @@
                                 :records="$tripReportConstants::$do" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সাজেশন</label>
                                 <div class="input-group" id="datepicker2">
@@ -493,13 +481,11 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
                             <x-input-radio-or-check name="name"
                                 label="লন্ড্রির কাজ করা / নোংরা কাপড় আলাদা করা / কাপড় শুকানোর হ্যাঙ্গারে ছোট কাপড় ঝুলানো"
                                 :records="$tripReportConstants::$do" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সাজেশন</label>
                                 <div class="input-group" id="datepicker2">
@@ -507,13 +493,11 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
                             <x-input-radio-or-check name="name"
                                 label="কাপড় ভাজ করা / ভাঁজ করা কাপড় ড্রয়ারে গুছিয়ে রাখবে।"
                                 :records="$tripReportConstants::$do" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সাজেশন</label>
                                 <div class="input-group" id="datepicker2">
@@ -521,28 +505,22 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
                             <x-input-radio-or-check name="name"
                                 label="ঘরের হালকা কাজ করা / নিজের খেলনা ও খেলার জায়গা গুছানো"
                                 :records="$tripReportConstants::$do" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
-
                             <x-input-radio-or-check name="name" label="খাবার প্রস্তুত করা/ নিজ হাতে খাবার খাওয়া"
                                 :records="$tripReportConstants::$do" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <x-input-radio-or-check name="name"
                                 label="সবজি কাটা / সবজির ধরন অনুযায়ি আলাদা করে গুছিয়ে রাখা"
                                 :records="$tripReportConstants::$do" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                         </form>
                     </section>
-
                     <h3>Environmental Safety > প্রতিবেশি</h3>
                     <section>
                         <form>
@@ -550,21 +528,16 @@
                                 :records="$tripReportConstants::$change" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <x-input-radio-or-check name="name" label="স্বাচ্ছন্দ্যদায়ক ব্যবস্থা"
                                 :records="$tripReportConstants::$change" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <x-input-radio-or-check name="name" label="কাছাকাছি বন্ধু বা আত্মীয়দের অবস্থান"
                                 :records="$tripReportConstants::$change" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                         </form>
                     </section>
-
-
                     <h3>Environmental Safety > সিঁড়ি</h3>
                     <section>
                         <form>
@@ -597,8 +570,6 @@
                             </div>
                         </form>
                     </section>
-
-
                     <h3>শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন > সকালে ঘুম থেকে উঠে</h3>
                     <section>
                         <form>
@@ -621,14 +592,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="বিছানা গুছানো"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -647,7 +614,6 @@
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -662,8 +628,6 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="হাত মুখ ধোওয়া"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
@@ -683,13 +647,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="কাপড় পালটানো"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -704,13 +665,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="চুল আঁচড়ানো"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -725,15 +683,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="নাস্তা তৈরি করবে ও খাবে/ টেবিলে নাস্তা খাবে"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
-
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -748,14 +701,11 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name"
                                 label="প্লেট গ্লাস ধুয়ে পরিস্কার করবে/ প্লেট নিয়ে সিংকে /ধোয়ার জায়গায় রাখবে।"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -770,8 +720,6 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="টেবিল পরিস্কার করা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
@@ -793,16 +741,12 @@
                             </div>
                         </form>
                     </section>
-
-
-
                     <h3>শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন > লিখাপড়া</h3>
                     <section>
                         <form>
                             <x-input-radio-or-check name="name" label="বই পড়া" :records="$tripReportConstants::$help"
                                 secondaryInputLabel="সাজেশন"></x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -817,13 +761,10 @@
                                     </x-input-text>
                                 </div>
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="হাতের লিখা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -838,12 +779,10 @@
                                     </x-input-text>
                                 </div>
                             </div>
-
                             <x-input-radio-or-check name="name" label="ছবি আঁকা /রঙ করা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -858,13 +797,9 @@
                                     </x-input-text>
                                 </div>
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="পেপার পড়া" :records="$tripReportConstants::$help"
                                 secondaryInputLabel="সাজেশন"></x-input-radio-or-check>
                             {{-- end row --}}
-
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -879,13 +814,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="গান শোনা / গানের রেওয়াজ করা (গায়কদের ক্ষেত্রে)"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -900,8 +832,6 @@
                                     </x-input-text>
                                 </div>
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="কম্পিউটারে (কাজের) প্রাকটিস করবে"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
@@ -923,9 +853,6 @@
                             </div>
                         </form>
                     </section>
-
-
-
                     <h3>শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন > দৈনন্দিন কাজ</h3>
                     <section>
                         <form>
@@ -933,7 +860,6 @@
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -948,14 +874,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="বাবার / মায়ের সাথে বাজারে যাওয়া"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -970,14 +892,11 @@
                                     </x-input-text>
                                 </div>
                             </div>
-
-
                             <x-input-radio-or-check name="name"
                                 label="মায়ের সাথে সবজি কাটা ও রান্নাতে সাহায্য করা / মায়ের সাথে সবজি আলাদা করতে সাহায্য করা/ সেদ্ধ আলু ,ডিম ছেলা/ডিম ফেটা, ডিম ভাঙ্গা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -992,14 +911,11 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name"
                                 label="খাবারের মেনু তৈরি করা / ছবি দেখে খাবার চিনতে পারা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1016,9 +932,6 @@
                             </div>
                         </form>
                     </section>
-
-
-
                     <h3>শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন > নিজের কাজ</h3>
                     <section>
                         <form>
@@ -1026,7 +939,6 @@
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1041,13 +953,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="নিজের রুম পরিস্কার করা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1062,13 +971,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="কাপড় ভাজ করা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1083,13 +989,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="ওয়ার্ডরোব বা কাপরের ড্রয়ার গুছানো"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1104,13 +1007,10 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="কাপড় ইস্ত্রি করা"
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1125,12 +1025,9 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="নখ কাটা" :records="$tripReportConstants::$help"
                                 secondaryInputLabel="সাজেশন"></x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1145,12 +1042,9 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="চুল কাটা" :records="$tripReportConstants::$help"
                                 secondaryInputLabel="সাজেশন"></x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1165,12 +1059,9 @@
                                     </x-input-text>
                                 </div><!-- input-group -->
                             </div>
-
-
                             <x-input-radio-or-check name="name" label="সেভ করা" :records="$tripReportConstants::$help"
                                 secondaryInputLabel="সাজেশন"></x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
@@ -1187,9 +1078,6 @@
                             </div>
                         </form>
                     </section>
-
-
-
                     <h3> শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন > দুপুরের খাবারের সময়</h3>
                     <section>
                         <form>
@@ -1197,7 +1085,6 @@
                                 :records="$tripReportConstants::$help" secondaryInputLabel="সাজেশন">
                             </x-input-radio-or-check>
                             {{-- end row --}}
-
                             <div class="mb-3">
                                 <label for="basicpill-firstname-input">সময়</label>
                                 <div class="input-group" id="datepicker2">
