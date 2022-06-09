@@ -395,7 +395,19 @@
                             <a href="javascript: void(0);" class="has-arrow">HR & Admin Links</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.hr-and-admin-links">HR & Admin Links</a>
+                                    <a href="setup.employee-information">Employee information </a>
+                                </li>
+                                <li>
+                                    <a href="setup.attendance-policy-setup">Attendance policy setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.leave-type">Leave Type</a>
+                                </li>
+                                <li>
+                                    <a href="setup.leave-package">Leave Package</a>
+                                </li>
+                                <li>
+                                    <a href="setup.create-product">create product</a>
                                 </li>
                             </ul>
                         </li>
@@ -436,7 +448,16 @@
                             <a href="javascript: void(0);" class="has-arrow">Budget & Forecasting</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.budget-and-forecasting">Budget & Forecasting</a>
+                                    <a href="setup.budget-year-setup">Budget Year Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.budget-head-setup">Budget Head Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.Budget-Template-setup">Budget Template Setup</a>
+                                </li>
+                                <li>
+                                    <a href="setup.budget-review">Budget Review</a>
                                 </li>
                             </ul>
                         </li>
