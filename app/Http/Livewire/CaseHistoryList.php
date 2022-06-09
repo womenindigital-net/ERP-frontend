@@ -13,7 +13,7 @@ class CaseHistoryList extends Component
 
     private CaseHistoryRepository $caseRepo;
 
-    // public $reportList;
+    public $reportList;
 
     public function boot(CaseHistoryRepository $caseHistRepo)
     {

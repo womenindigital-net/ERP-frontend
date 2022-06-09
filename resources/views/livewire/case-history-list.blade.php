@@ -25,11 +25,11 @@
                             </small>
                         </td>
                         <td>
-                            <button type="button"
+                            <a href="{{ route('case-history.show', $record->id) }}"
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                                data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="mdi mdi-eye"></i>
-                            </button>
+                            </a>
                             <button type="button" wire:click="toggleApprove({{$record->id}})"
                                 class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-check"></i>
