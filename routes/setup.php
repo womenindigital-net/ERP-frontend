@@ -40,6 +40,31 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('payroll-management/salary_head_setup', [SetupController::class, 'salaryHeadSetup'])->name('setup.payroll-management.salary_head_setup');
     Route::get('payroll-management/salary_package_setup', [SetupController::class, 'salaryPackageSetup'])->name('setup.payroll-management.salary_package_setup');
     Route::get('payroll-management/salary_budget_setup', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup');
+    // Vendor List   
+    Route::get('vendor-list/supplier-setup', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup');
+    Route::get('vendor-list/supplier-type-setup', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup');
+    // Customer List 
+    Route::get('customers-list/customer-reg', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg');
+    // Course and Admission
+    Route::get('course-and-admission', [SetupController::class, 'courseAdmission'])->name('setup.course-and-admission');
+
+    // Vocational Marking 
+    Route::get('vocational-marking-category', [SetupController::class, 'markingCategory'])->name('setup.vocational-marking-category');
+    Route::get('vocational-marking-subcategory', [SetupController::class, 'markingSubcategory'])->name('setup.vocational-marking-subcategory');
+    Route::get('vocational-student-evolution', [SetupController::class, 'studentEvolution'])->name('setup.vocational-student-evolution');
+    // HR & Admin Links 
+    Route::get('employee-information', [SetupController::class, 'employeeInformation'])->name('setup.employee-information');
+    Route::get('attendance-policy-setupy', [SetupController::class, 'attendeanceSetup'])->name('setup.attendance-policy-setup');
+    Route::get('leave-type', [SetupController::class, 'leaveTypeSetup'])->name('setup.leave-type');
+    Route::get('leave-package', [SetupController::class, 'leavePackageSetup'])->name('setup.leave-package');
+    Route::get('create-product', [SetupController::class, 'createProduct'])->name('setup.create-product');
+    // Accounting Mapping 
+    Route::get('accounting-mapping.account_mapping', [SetupController::class, 'accountMappingSetup'])->name('setup.accounting-mapping.account_mapping');
+    Route::get('accounting-mapping.accounting_year_setup', [SetupController::class, 'accountingYearSetup'])->name('setup.accounting-mapping.accounting_year_setup');
+    Route::get('accounting-mapping.closing_account_setup', [SetupController::class, 'clossingAccountSetup'])->name('setup.accounting-mapping.closing_account_setup');
+ 
+
+
 
 
     

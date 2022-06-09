@@ -345,10 +345,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Vendor List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.vendor-list.supplier-setup">Supplier Setup</a>
+                                    <a href="{{ route('setup.vendor-list.supplier-setup') }}">Supplier Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.vendor-list.supplier-type-setup">Supplier Type Setup</a>
+                                    <a href="{{ route('setup.vendor-list.supplier-type-setup') }}">Supplier Type Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -356,7 +356,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Customer List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.customers-list.customer-reg">Customer Reg.</a>
+                                    <a href="{{ route('setup.customers-list.customer-reg') }}">Customer Reg.</a>
                                 </li>
                             </ul>
                         </li>
@@ -364,7 +364,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.course-and-admission">Course </a>
+                                    <a href="{{ route('setup.course-and-admission') }}">Course </a>
                                 </li>
 
                             </ul>
@@ -381,13 +381,13 @@
                             <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.vocational-marking-category">Vocational Marking Category</a>
+                                    <a href="{{ route('setup.vocational-marking-category') }}">Vocational Marking Category</a>
                                 </li>
                                 <li>
-                                    <a href="setup.vocational-marking-subcategory">Vocational Marking Sub Category</a>
+                                    <a href="{{ route('setup.vocational-marking-subcategory') }}">Vocational Marking Sub Category</a>
                                 </li>
                                 <li>
-                                    <a href="setup.vocational-student-evolution">Vocational Student Evolution</a>
+                                    <a href="{{ route('setup.vocational-student-evolution') }}">Vocational Student Evolution</a>
                                 </li>
                             </ul>
                         </li>
@@ -395,19 +395,19 @@
                             <a href="javascript: void(0);" class="has-arrow">HR & Admin Links</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.employee-information">Employee information </a>
+                                    <a href="{{ ('setup.employee-information') }}">Employee information </a>
                                 </li>
                                 <li>
-                                    <a href="setup.attendance-policy-setup">Attendance policy setup</a>
+                                    <a href="{{ ('setup.attendance-policy-setup') }}">Attendance policy setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.leave-type">Leave Type</a>
+                                    <a href="{{ ('setup.leave-type') }}">Leave Type</a>
                                 </li>
                                 <li>
-                                    <a href="setup.leave-package">Leave Package</a>
+                                    <a href="{{ ('setup.leave-package') }}">Leave Package</a>
                                 </li>
                                 <li>
-                                    <a href="setup.create-product">create product</a>
+                                    <a href="{{ ('setup.create-product') }}">create product</a>
                                 </li>
                             </ul>
                         </li>
@@ -452,13 +452,13 @@
                             <a href="javascript: void(0);" class="has-arrow">Accounting Mapping</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="setup.accounting-mapping.account_mapping">Accounting Mapping</a>
+                                    <a href="{{ route('setup.accounting-mapping.account_mapping') }}">Accounting Mapping</a>
                                 </li>
                                 <li>
-                                    <a href="setup.accounting-mapping.accounting_year_setup">Accounting Year Setup</a>
+                                    <a href="{{ route('setup.accounting-mapping.accounting_year_setup') }}">Accounting Year Setup</a>
                                 </li>
                                 <li>
-                                    <a href="setup.accounting-mapping.closing_account_setup">Closing Accounting Setup</a>
+                                    <a href="{{ route('setup.accounting-mapping.closing_account_setup') }}">Closing Accounting Setup</a>
                                 </li>
                             </ul>
                         </li>
