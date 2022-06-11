@@ -14,26 +14,22 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
+            <a class="nav-link active" data-bs-toggle="tab" href="#case-history" role="tab">
               <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-              <span class="d-none d-sm-block">Sale Voucher</span>
+              <span class="d-none d-sm-block">Case History</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
+            <a class="nav-link" data-bs-toggle="tab" href="#case-history_list" role="tab">
               <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-              <span class="d-none d-sm-block">Sale Voucher List</span>
+              <span class="d-none d-sm-block">Case History List</span>
             </a>
           </li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content text-muted">
-          <div class="tab-pane active" id="case-histroy" role="tabpanel">
-            <livewire:case-history-list />
-            <!-- end row -->
-          </div>
-          <div class="tab-pane" id="case-histroy_list" role="tabpanel">
+          <div class="tab-pane active" id="case-history" role="tabpanel">
             <div class="row">
               <div class="col-12">
                 <!-- Wizard container -->
@@ -63,6 +59,7 @@
                               <div class="row">
                                 <div class="col-lg-4">
                                   <div class="mb-3">
+                                    {{ dump($caseHistoryEdit) }}
                                     <label for="basicpill-firstname-input">Collection
                                       Date:</label>
                                     <div class="input-group" id="datepicker2">
@@ -721,6 +718,10 @@
                 </div> <!-- wizard container -->
               </div>
             </div> <!-- end col -->
+            <!-- end row -->
+          </div>
+          <div class="tab-pane" id="case-history_list" role="tabpanel">
+            <livewire:case-history-list />
           </div>
         </div>
       </div>
