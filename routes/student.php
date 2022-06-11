@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CaseHistoryController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
 use App\Http\Livewire\AppointmentList;
 use App\Http\Livewire\CaseHistory;
@@ -12,6 +13,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
         '' => StudentController::class,
         'case-history' => CaseHistoryController::class,
+        'social-communication' => SocialController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
@@ -30,7 +32,10 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('student/employment/-staff-and_workplace-inspecation-tool', [StudentController::class, 'staffWorkplace'])->name('student.employment.staff_and_workplace_inspecation_tool');
 
     Route::get('assessment/sensory-checklist-for-child', [StudentController::class, 'sensoryChecklistForChild'])->name('sensory.checklist.for.child');
-    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
+
+//    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
+//    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+
     Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
     Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');
     Route::get('assessment/executive-function-test', [StudentController::class, 'executiveFunctionTest'])->name('executive.function.test');
