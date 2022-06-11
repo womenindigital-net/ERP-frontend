@@ -71,11 +71,11 @@ class ViewServiceProvider extends ServiceProvider
         View::share('diaryConstant', DramaDiaryEvaluation::class);
         View::share('mitpConstent', MitpConstent::class);
         View::share('caseConstants', CaseHistoryConstants::class);
+        View::share('staffAndWork', StaffAndWorkPlace::class);
         /*
         View::share('careConstants', CareNeedsFormConstants::class);
         View::share('functionalConstants', FunctionalMovement::class);
 
-        View::share('assigntaskConstant', AssigntaskConstant::class);
-        View::share('staffAndWork', StaffAndWorkPlace::class);*/
+        View::share('assigntaskConstant', AssigntaskConstant::class);*/
     }
 }
