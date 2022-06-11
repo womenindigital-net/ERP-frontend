@@ -1,4 +1,4 @@
-1:migration
+1:migration(30m)
 2:set name in input component
 3:Data insert
 4:Data View 
