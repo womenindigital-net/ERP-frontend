@@ -7,11 +7,6 @@
 @endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') STUDENT QAS @endslot
-@endcomponent
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -27,96 +22,95 @@
                             data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i>
                             ADD</button>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                    class="form-control form-control-sm form-select form-select-sm">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select> entries
-                            </label>
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                            <label style="display: inline-flex;align-items: center;">Search:
-                                <input type="search" class="form-control form-control-sm" placeholder="">
-                            </label>
-                        </div>
-                    </div>
                     <div class="table-responsive">
-                        <table class="table table-bordered w-100">
-                            <thead>
-                                <tr>
-                                    <th>Collection Date</th>
-                                    <th>Student Name</th>
-                                    <th>Collected By</th>
-                                    <th>Log</th>
-                                    <th>Action</th>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                  class="form-control form-control-sm form-select form-select-sm">
+                                  <option value="10">10</option>
+                                  <option value="25">25</option>
+                                  <option value="50">50</option>
+                                  <option value="100">100</option>
+                                </select> entries
+                              </label>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                              <label style="display: inline-flex;align-items: center;">Search:
+                                  <x-input-text type="search" name="search" />
+                              </label>
+                            </div>
+                          </div>
+                          <div class="table-responsive">
+                            <table class="table w-100 table-bordered">
+                              <thead>
+                                <tr class="table-primary">
+                                  <th>Collection Date</th>
+                                  <th>Student Name</th>
+                                  <th>Collected By</th>
+                                  <th>Log</th>
+                                  <th>Action</th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                              </thead>
+                              <tbody>
                                 <tr>
-                                    <td>2022-03-29</td>
-                                    <td>Ashfaq Sadi</td>
-                                    <td>Nurjahan Dipa</td>
-                                    <td>
-                                        <small>
-                                            <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span><br />
-                                            <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
-                                        </small>
-                                    </td>
-                                    <td>
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-toggle="modal"
-                                            data-bs-target=".bs-example-modal-lg">
-                                            <i class=" fas fa-eye"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-toggle="modal"
-                                            data-bs-target=".bs-example-modal-lg">
-                                            <i class="fas fa-pen"></i></button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                class="fas fa-trash-alt"></i></button>
-                                    </td>
+                                  <td>2022-03-29</td>
+                                  <td>Ashfaq Sadi</td>
+                                  <td>Nurjahan Dipa</td>
+                                  <td>
+                                    <small>
+                                      <span>Create: Nurjahan Dipa @ 2022-03-29 16:04:41</span><br />
+                                      <span>Update: Ohidul Hassan @ 2022-04-12 11:36:44</span>
+                                    </small>
+                                  </td>
+                                  <td>
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                      <i class="mdi mdi-eye"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                      <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="bx bx-dollar"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="fas fa-arrow-circle-right"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                      <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                  </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            Showing 1 to 2 of 2 entries
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                            <nav>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                              Showing 1 to 2 of 2 entries
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                              <nav>
                                 <ul class="pagination" style="justify-content: end;">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item active">
+                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
                                 </ul>
-                            </nav>
-                        </div>
+                              </nav>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -143,54 +137,20 @@
                                     <div class="mb-3">
                                         <label for="basicpill-firstname-input">Collection Date:</label>
                                         <div class="input-group" id="datepicker2">
-                                            <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                data-date-format="dd M, yyyy" data-date-container='#datepicker2'
-                                                data-provide="datepicker" data-date-autoclose="true">
-                                            <span class="input-group-text">
-                                                <i class="mdi mdi-calendar"></i></span>
+                                          <x-input-text type="date" name="date"/>
                                         </div><!-- input-group -->
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-lastname-input">Teacher:</label>
-                                        <select class="form-control select2 form-select">
-                                            <option value="0">Select</option>
-                                            <option value="1">abulhasnat</option>
-                                            <option value="2">nila01</option>
-                                            <option value="3">Airins</option>
-                                            <option value="4">AmalRozareo</option>
-                                            <option value="5">anasbin</option>
-                                            <option value="6">arupmandal</option>
-                                            <option value="7">asadzaman</option>
-                                            <option value="8">Badshah</option>
-                                            <option value="9">BijoyRozareo</option>
-                                            <option value="10">Chandan</option>
-                                            <option value="11">dolonbishwash</option>
-                                            <option value="12">golamrabbani</option>
-                                            <option value="13">jahinur</option>
-                                        </select>
+                                        <x-input-select name="teachar_id" :records="[]" />
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                        <select class="form-control select2 form-select">
-                                            <option value="0">Select</option>
-                                            <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                                            <option value="2">abdullah-al-nafi antor</option>
-                                            <option value="3">Abdullahil Baki</option>
-                                            <option value="4">Abdur Rahman Sajid</option>
-                                            <option value="5">Abid Hossain Turjo</option>
-                                            <option value="6">Abid Kabir Chowdhury</option>
-                                            <option value="7">Abrar Ahosab Talha</option>
-                                            <option value="8">Abrar Jawad Siam</option>
-                                            <option value="9">Abu Sufiyan</option>
-                                            <option value="10">Adib Akbar</option>
-                                            <option value="11">Adiba Atiar</option>
-                                            <option value="12">Adil Anaf</option>
-                                            <option value="13">Aditya Chakraborty</option>
-                                        </select>
+                                        <x-input-select name="candidate_id" :records="[]" />
                                     </div>
                                 </div>
                             </div>
@@ -264,7 +224,6 @@
                             <!-- end row -->
                         </form>
                     </section>
-
                     <!-- Bank Details -->
                     <h3>অন্যান এরিয়া</h3>
                     <section>

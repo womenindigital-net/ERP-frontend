@@ -65,3 +65,10 @@ if (!function_exists('dataPerPage')) {
         return request()->per_page ?? ProjectConstants::DATA_PER_PAGE;
     }
 }
+
+if (!function_exists('convertLevelIntoName')){
+    function convertLevelIntoName($label): string
+    {
+        return strtolower(preg_replace("/[.',?]/", '', str_replace(' ', '_', trim($label))));
+    }
+}

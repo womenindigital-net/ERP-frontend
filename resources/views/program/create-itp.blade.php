@@ -6,11 +6,6 @@
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title')STUDENT ITP @endslot
-    @endcomponent
     {{-- code  --}}
     <div class="row">
         <div class="col-12">
@@ -36,11 +31,7 @@
                                                     <div class="col-6 d-flex">
                                                         <label class="col-4 col-form-label"> Student Name</label>
                                                         <div class="col-6">
-                                                            <select class="form-select">
-                                                                <option>Select</option>
-                                                                <option>2222</option>
-                                                                <option>55555</option>
-                                                            </select>
+                                                          <x-input-select name="student_id" :records="[]" />
                                                         </div>
                                                     </div>
                                                     <div class="col-6 d-flex">
@@ -67,7 +58,7 @@
                                                 <div class="row pb-3">
                                                     <div class="col-6">
                                                         <label class="form-label">Instruction</label>
-                                                        <x-input-textarea name='' rows='5'></x-input-textarea>
+                                                        <x-input-textarea name='instruction' rows='5'></x-input-textarea>
                                                     </div>
                                                     <div class="col-6 mt-4 border border-2">
                                                         <div class="fw-bold">Section E: Domain 01 - Physical development : <span class="text-danger">0</span></div>
@@ -106,7 +97,7 @@
                                                                                     <p class="form-control">Cut on a line</p>
                                                                                 </div>
                                                                                 <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                                                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
+                                                                                    <x-input-select name="teacher_id" :records="[]" />
                                                                                 </div>
                                                                                 <div  class=" col-lg-3 p-0 pe-1 pb-1">
                                                                                     <select id="formrow-inputState" class="form-select">
@@ -122,7 +113,7 @@
                                                                                     </select>
                                                                                 </div>
                                                                                 <div class="col-lg-4 p-0 pe-1 pb-1  d-flex">
-                                                                                    <x-input-textarea name='' rows='1' cols='35'></x-input-textarea>
+                                                                                    <x-input-textarea name='des' rows='1' cols='35'></x-input-textarea>
                                                                                     <div>
                                                                                         <button class="btn btn-danger btn-rounded ms-2">
                                                                                             <i class="fas fa-trash-alt"></i>
@@ -135,10 +126,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> Hridoy
                                                     </div>
                                                     <div class="col-12 row">
                                                         <div class="col-2">
@@ -148,10 +135,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-<<<<<<< HEAD
-=======
-
->>>>>>> Hridoy
                                                     <div class="col-lg-12">
                                                         <div class="accordion" id="accordionExample">
                                                             <!-- Single item  -->
@@ -277,8 +260,6 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -373,8 +354,6 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -390,9 +369,6 @@
                                                                 <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -436,8 +412,6 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -453,9 +427,6 @@
                                                                 <div id="collapseten" class="accordion-collapse collapse" aria-labelledby="headingten"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -468,8 +439,6 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -485,9 +454,6 @@
                                                                 <div id="collapseeleven" class="accordion-collapse collapse" aria-labelledby="headingeleven"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -500,8 +466,6 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -517,9 +481,6 @@
                                                                 <div id="collapsetwelve" class="accordion-collapse collapse" aria-labelledby="headingtwelve"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -532,8 +493,6 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -549,9 +508,6 @@
                                                                 <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -564,8 +520,6 @@
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -581,9 +535,6 @@
                                                                 <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
                                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
@@ -1129,127 +1080,95 @@
                             </div><!-- /.modal-dialog -->
                         </div><!-- /.modal -->
                     </div>
-
-
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                    class="form-control form-control-sm form-select form-select-sm">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select> entries
-                            </label>
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                            <label style="display: inline-flex;align-items: center;">Search:
-                                <input type="search" class="form-control form-control-sm" placeholder="">
-                            </label>
-                        </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-bordered w-100">
-                            <thead>
-                                <tr>
-                                    <th class="">Student</th>
-                                    <th class="">ITP Name</th>
-                                    <th class="">Type</th>
-                                    <th class="">Is Closed</th>
-                                    <th class="">Instruction</th>
-                                    <th class=""> Log</th>
-                                    <th class=""> Action</th>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                  class="form-control form-control-sm form-select form-select-sm">
+                                  <option value="10">10</option>
+                                  <option value="25">25</option>
+                                  <option value="50">50</option>
+                                  <option value="100">100</option>
+                                </select> entries
+                              </label>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                              <label style="display: inline-flex;align-items: center;">Search:
+                                  <x-input-text type="search" name="search" />
+                              </label>
+                            </div>
+                          </div>
+                          <div class="table-responsive">
+                            <table class="table w-100 table-bordered">
+                              <thead>
+                                <tr class="table-primary">
+                                  <th>Student</th>
+                                  <th>ITP Name</th>
+                                  <th>Type</th>
+                                  <th>Is Closed</th>
+                                  <th>Instruction</th>
+                                  <th> Log</th>
+                                  <th>Action</th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                              </thead>
+                              <tbody>
                                 <tr>
-                                    <td>Puja</td>
-                                    <td>puja</td>
-                                    <td>reading</td>
-                                    <td>first to last</td>
-                                    <td>puja</td>
-                                    <td>puja</td>
-                                    <td>
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                            <i class=" fas fa-eye"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                            <i class="fas fa-pen"></i></button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                class="fas fa-trash-alt"></i></button>
-                                    </td>
+                                  <td>Puja</td>
+                                  <td>Demo</td>
+                                  <td>reading</td>
+                                  <td>first to last</td>
+                                  <td>Demo</td>
+                                  <td>Demo</td>
+                                  <td>
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                      <i class="mdi mdi-eye"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                      <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="bx bx-dollar"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="fas fa-arrow-circle-right"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                      <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                  </td>
                                 </tr>
-                                <tr>
-                                    <td>Puja</td>
-                                    <td>puja</td>
-                                    <td>reading</td>
-                                    <td>first to last</td>
-                                    <td>puja</td>
-                                    <td>puja</td>
-                                    <td>
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                            <i class=" fas fa-eye"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                            <i class="fas fa-pen"></i></button>
-                                        <button type="button"
-                                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                                class="fas fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            Showing 1 to 2 of 2 entries
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                            <nav>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                              Showing 1 to 2 of 2 entries
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-end">
+                              <nav>
                                 <ul class="pagination" style="justify-content: end;">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item active">
+                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
                                 </ul>
-                            </nav>
-                        </div>
+                              </nav>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>

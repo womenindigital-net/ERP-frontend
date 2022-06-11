@@ -129,7 +129,7 @@
                                             <div class="col-lg-4 p-0 pt-2 ms-5">
                                                 <label for="product">Step Name</label>
                                             </div>
-                                            <input type="text" class="form-control align-self-start" placeholder="Step Name Here"/>
+                                            <x-input-text name="Name" pleceholder="Grade Name Here"></x-input-text>
                                             <button class="btn btn-outline-danger waves-effect waves-light me- ms-4 ">
                                               <i class="fas fa-trash-alt"></i>
                                           </button>

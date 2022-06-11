@@ -2,18 +2,12 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+
 
 @endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') Utility @endslot
-@slot('title') STUDENT TEACHERS @endslot
-@endcomponent
 {{-- code --}}
-
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -23,74 +17,92 @@
                     <button type="button" class="btn btn-outline-info waves-effect waves-light " data-bs-toggle="modal"
                         data-bs-target=".bs-example-modal-xl"><i class="fas fa-plus-circle"></i>Add</button>
                 </div>
-
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                    <thead>
-                        <tr>
-                            <th class="">Student</th>
-                            <th class="">Main Teacher</th>
-                            <th class="">Log</th>
-                            <th>Action</th>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                          class="form-control form-control-sm form-select form-select-sm">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select> entries
+                      </label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-end">
+                      <label style="display: inline-flex;align-items: center;">Search:
+                          <x-input-text type="search" name="search" />
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table w-100 table-bordered">
+                      <thead>
+                        <tr class="table-primary">
+                          <th>Student</th>
+                          <th>Main Teacher</th>
+                          <th>Log</th>
+                          <th>Action</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                      </thead>
+                      <tbody>
                         <tr>
-                            <td>Iaffee Hossain Dipto</td>
-                            <td>PFDA C COMMON</td>
-                            <td>Create: Md. Amir Hossain @ 2019-07-25 00:32:35
-                                There is no update record.</td>
-
-                            <td>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal"
-                                    data-bs-target=".student-income-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal"
-                                    data-bs-target=".student-income-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>
+                          <td>Iaffee Hossain Dipto</td>
+                          <td>PFDA C COMMON</td>
+                          <td>Create: Md. Amir Hossain @ 2019-07-25 00:32:35
+                              There is no update record.</td>
+                          <td>
+                            <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                              <i class="mdi mdi-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                class="fas fa-check"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                                class="fas fa-check"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                              <i class="mdi mdi-pencil"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                              <i class="bx bx-dollar"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                              <i class="fas fa-arrow-circle-right"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                              <i class="fas fa-trash-alt"></i>
+                            </button>
+                          </td>
                         </tr>
-                        <tr>
-                            <td>Iaffee Hossain Dipto</td>
-                            <td>PFDA C COMMON</td>
-                            <td>Create: Md. Amir Hossain @ 2019-07-25 00:32:35
-                                There is no update record.</td>
-                            <td> <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal"
-                                    data-bs-target=".student-income-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal" data-bs-toggle="modal"
-                                    data-bs-target=".student-income-modal-xl-add">
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                        class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      Showing 1 to 2 of 2 entries
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-end">
+                      <nav>
+                        <ul class="pagination" style="justify-content: end;">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item active">
+                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
             </div>
         </div>
     </div> <!-- end col -->
 </div> <!-- end row -->
-
-
-
 <!-- sample modal content -->
 <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
     aria-hidden="true">
@@ -100,7 +112,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
-
                 <div class="card p-0 m-0">
                     <div class="card-body">
                         <div class="row">
@@ -108,26 +119,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-md-4 col-form-label">Student:</label>
                                     <div class="col-md-8">
-                                        <select name="StudentID"
-                                            class="form-control strip-tags  form-control section2 form-select"
-                                            id="StudentID" required="">
-                                            <option value="">Select</option>
-                                            <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                                            <option value="2">abdullah-al-nafi antor</option>
-                                            <option value="3">Abdullahil Baki</option>
-                                            <option value="4">Abdur Rahman Sajid</option>
-                                            <option value="5">Abid Hossain Turjo</option>
-                                            <option value="6">Abid Kabir Chowdhury</option>
-                                            <option value="7">Abrar Ahosab Talha</option>
-                                            <option value="8">Abrar Jawad Siam</option>
-                                            <option value="9">Abu Sufiyan</option>
-                                            <option value="10">Adib Akbar</option>
-                                            <option value="11">Adiba Atiar</option>
-                                            <option value="12">Adil Anaf</option>
-                                            <option value="13">Aditya Chakraborty</option>
-                                            <option value="12">Adil Anaf</option>
-                                            <option value="13">Aditya Chakraborty</option>
-                                        </select>
+                                        <x-input-select name="student_id" :records="[]" />
                                     </div>
                                 </div>
                             </div>
@@ -135,24 +127,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-md-4 col-form-label">Main Teacher:</label>
                                     <div class="col-md-8">
-                                        <select name="IsMainTeacher" onchange="activeMainTeacher(this)"
-                                            class="form-control strip-tags  form-control section2 form-select"
-                                            id="IsMainTeacher" required="">
-                                            <option value="">Select</option>
-                                            <option value="1">Abul hasnat</option>
-                                            <option value="2">Airin Shiddique</option>
-                                            <option value="3">Anas Bin Iqbal</option>
-                                            <option value="4">Arup Mandal</option>
-                                            <option value="5">Ashiqur Rahman</option>
-                                            <option value="6">Atiya Azim</option>
-                                            <option value="7">Bijoy ..</option>
-                                            <option value="8">Dolon Bishwas</option>
-                                            <option value="9">Farhana ..</option>
-                                            <option value="10">Golam Rabbani</option>
-                                            <option value="11">Habibur Rahman</option>
-                                            <option value="12">Kalon Hossain</option>
-                                            <option value="13">Karishma Cultural</option>
-                                        </select>
+                                        <x-input-select name="teachar_id" :records="[]" />
                                     </div>
                                 </div>
                             </div>
