@@ -59,7 +59,7 @@
                               <div class="row">
                                 <div class="col-lg-4">
                                   <div class="mb-3">
-                                    {{ dump($caseHistoryEdit) }}
+                                    {{-- {{ dump($caseHistoryEdit) }} --}}
                                     <label for="basicpill-firstname-input">Collection
                                       Date:</label>
                                     <div class="input-group" id="datepicker2">
