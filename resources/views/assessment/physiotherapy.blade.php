@@ -26,13 +26,6 @@
             STUDENT QA
         @endslot
     @endcomponent
-    <div class="col-6 mb-3">
-        <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-            data-bs-target=""><i class="fa fa-user"></i> Profile</button>
-        <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-            data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
-    </div>
-
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">
@@ -42,13 +35,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Social Communication</span>
+                                <span class="d-none d-sm-block">physiotherapy</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">Social Communication Dtails</span>
+                                <span class="d-none d-sm-block">Physiotherapy List</span>
                             </a>
                         </li>
                     </ul>
@@ -93,15 +86,16 @@
                                                                 data-toggle="tab">Treatment</a></li>
                                                         <li class="w-100"><a href="#Functional_Intent_E"
                                                                 data-toggle="tab">Signature</a></li>
-                                                        <li class="w-100"><a href="#Functional_Intent_G"
-                                                                data-toggle="tab">Muscle Power</a></li>
-                                                        <li class="w-100"><a href="#Functional_Intent_H"
-                                                                data-toggle="tab">Muscle Tone</a></li>
-                                                        <li class="w-100"><a href="#Functional_Intent_I"
+                                                        <li class="w-100"><a href="#mp" data-toggle="tab">Muscle
+                                                                Power</a></li>
+                                                        <li class="w-100"><a href="#mt" data-toggle="tab">Muscle
+                                                                tone</a></li>
+                                                        <li class="w-100"><a href="#Be"
                                                                 data-toggle="tab">Behavior</a>
                                                         </li>
-                                                        <li class="w-100"><a href="#Functional_Intent_J"
-                                                                data-toggle="tab">Domain Area</a></li>
+                                                        <li class="w-100"><a href="#DA" data-toggle="tab">Domain
+                                                                Area</a></li>
+
                                                     </ul>
                                                 </div>
                                             </div>
@@ -674,7 +668,7 @@
 
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent_E">
-
+                                                            <h3>Signature</h3>
                                                             <section>
                                                                 <form>
                                                                     <div class="mb-3">
@@ -696,8 +690,8 @@
                                                                 </form>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_F">
-
+                                                        <div class="tab-pane" id="mp">
+                                                            <h3>Muscle Power</h3>
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -739,13 +733,12 @@
                                                                             <x-input-text name="name" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
-
                                                                         <!-- end row -->
                                                                     </form>
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_G">
+                                                        <div class="tab-pane" id="mt">
                                                             <h3>Muscle Tone</h3>
                                                             <section>
                                                                 <div>
@@ -789,8 +782,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_H">
-                                                            <h3>Behavior</h3>
+                                                        <div class="tab-pane" id="Be">
                                                             <section>
                                                                 <form>
                                                                     <!-- end row -->
@@ -817,8 +809,7 @@
                                                             </section>
 
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_I">
-                                                            <h3>Domain Area</h3>
+                                                        <div class="tab-pane" id="DA">
                                                             <section>
                                                                 <form>
                                                                     <!-- end row -->
@@ -988,99 +979,7 @@
             </div>
         </div>
     </div>
-    {{-- <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                  class="form-control form-control-sm form-select form-select-sm">
-                  <option value="10">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select> entries
-              </label>
-            </div>
-            <div class="col-sm-12 col-md-6 text-end">
-              <label style="display: inline-flex;align-items: center;">Search:
-                <input type="search" class="form-control form-control-sm" placeholder="">
-              </label>
-            </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-bordered w-100">
-              <thead>
-                <tr class="table-primary ">
-                  <th>Collection Date</th>
-                  <th>Student Name</th>
-                  <th>Collected By</th>
-                  <th>Log</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2022-05-16</td>
-                  <td>Abdur Rahman Sajid</td>
-                  <td>Ohidul Hassan</td>
-                  <td><small>Create: Ohidul Hassan @ 2022-05-16 16:38:29</small></td>
-                  <td>
-                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                      data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                      <i class="mdi mdi-eye"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                        class="fas fa-check"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="fas fa-check"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                      data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                      <i class="mdi mdi-pencil"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="bx bx-dollar"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="fas fa-arrow-circle-right"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              Showing 1 to 2 of 2 entries
-            </div>
-            <div class="col-sm-12 col-md-6 text-end">
-              <nav>
-                <ul class="pagination" style="justify-content: end;">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div> --}}
-
-
-
-
-    <!-- end col -->
-    <!-- end row -->
-
-
+    
     <!--  Large modal example -->
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
