@@ -8,11 +8,6 @@
 
 @section('content')
 
-@component('components.breadcrumb')
-@slot('li_1') Utility @endslot
-@slot('title') Student Attendance @endslot
-@endcomponent
-
 <div class="row">
     <div class="col-xl-12 p-0">
         <div class="card">
@@ -32,7 +27,6 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="student_attendance" role="tabpanel">
@@ -42,42 +36,25 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Student</label>
-                                        <select class="form-control select2">
-                                            <option>--Select--</option>
-                                            <option value="1">A</option>
-                                            <option value="2">B</option>
-                                            <option value="3">C</option>
-                                        </select>
+                                        <x-input-select name="student_id" :records="[]" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Date</label>
-                                        <input type="date" class="form-control" placeholder="dd M, yyyy">
+                                        <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Topic</label>
-                                        <select class="form-control select2">
-                                            <option>--Select--</option>
-                                            <option value="1">A</option>
-                                            <option value="2">B</option>
-                                            <option value="3">C</option>
-                                        </select>
+                                        <x-input-select name="topic_id" :records="[]" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label>Rating</label>
-                                        <select class="form-control select2">
-                                            <option>--Select--</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
+                                         <label>Rating</label>
+                                         <x-input-select name="rating_id" :records="[]" />
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +62,7 @@
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label>Notes</label>
-                                        <textarea name="" id="" rows="5" class="form-control"></textarea>
+                                        <x-input-textarea  name="note"/>
                                     </div>
                                 </div>
                             </div>
@@ -96,85 +73,84 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-6">
-                                                <label style="display: inline-flex;align-items: center;"> Show <select
-                                                        name="length"
-                                                        class="form-control form-control-sm form-select form-select-sm">
-                                                        <option value="10">10</option>
-                                                        <option value="25">25</option>
-                                                        <option value="50">50</option>
-                                                        <option value="100">100</option>
-                                                    </select> entries
-                                                </label>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 text-end">
-                                                <label style="display: inline-flex;align-items: center;">Search:
-                                                    <input type="search" class="form-control form-control-sm"
-                                                        placeholder="">
-                                                </label>
-                                            </div>
-                                        </div>
                                         <div class="table-responsive">
-                                            <table class="table table-bordered w-100">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Student Name</th>
-                                                        <th>Date</th>
-                                                        <th>Delay</th>
-                                                        <th>Topic</th>
-                                                        <th>Rating</th>
-                                                        <th>Notes</th>
-                                                        <th>Log</th>
-                                                        <th>Action</th>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6">
+                                                  <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                                      class="form-control form-control-sm form-select form-select-sm">
+                                                      <option value="10">10</option>
+                                                      <option value="25">25</option>
+                                                      <option value="50">50</option>
+                                                      <option value="100">100</option>
+                                                    </select> entries
+                                                  </label>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 text-end">
+                                                  <label style="display: inline-flex;align-items: center;">Search:
+                                                      <x-input-text type="search" name="search" />
+                                                  </label>
+                                                </div>
+                                              </div>
+                                              <div class="table-responsive">
+                                                <table class="table w-100 table-bordered">
+                                                  <thead>
+                                                    <tr class="table-primary">
+                                                      <th>Student Name</th>
+                                                      <th>Date</th>
+                                                      <th>Delay</th>
+                                                      <th>Topic</th>
+                                                      <th>Rating</th>
+                                                      <th>Notes</th>
+                                                      <th>Log</th>
+                                                      <th>Action</th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
+                                                  </thead>
+                                                  <tbody>
                                                     <tr>
-                                                        <td>Administration</td>
-                                                        <td>2022-04-19</td>
-                                                        <td>1</td>
-                                                        <td>A</td>
-                                                        <td>*****</td>
-                                                        <td>Lorem ipsum dolor sit amet.</td>
-                                                        <td>Create: A.K.M Shahidullah @ 2022-04-19 15:12:04
-                                                            There is no update record.</td>
-                                                        <td class="text-center">
-                                                            <button type="button"
-                                                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                                <i class="mdi mdi-pencil"></i>
-                                                            </button>
-                                                            <button type="button"
-                                                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                                                <i class="fas fa-trash-alt"></i>
-                                                            </button>
-                                                        </td>
+                                                      <td>Administration</td>
+                                                      <td>2022-04-19</td>
+                                                      <td>1</td>
+                                                      <td>A</td>
+                                                      <td>*****</td>
+                                                      <td>Lorem ipsum dolor sit amet.</td>
+                                                      <td>Create: A.K.M Shahidullah @ 2022-04-19 15:12:04
+                                                          There is no update record.</td>
+                                                      <td class="text-center">
+                                                          <button type="button"
+                                                              class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                              <i class="mdi mdi-pencil"></i>
+                                                          </button>
+                                                          <button type="button"
+                                                              class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                                              <i class="fas fa-trash-alt"></i>
+                                                          </button>
+                                                      </td>
                                                     </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-6">
-                                                Showing 1 to 2 of 2 entries
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 text-end">
-                                                <nav>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-sm-12 col-md-6">
+                                                  Showing 1 to 2 of 2 entries
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 text-end">
+                                                  <nav>
                                                     <ul class="pagination" style="justify-content: end;">
-                                                        <li class="page-item disabled">
-                                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                        </li>
-                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                        <li class="page-item active">
-                                                            <a class="page-link" href="#">2 <span
-                                                                    class="sr-only">(current)</span></a>
-                                                        </li>
-                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                        <li class="page-item">
-                                                            <a class="page-link" href="#">Next</a>
-                                                        </li>
+                                                      <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                      </li>
+                                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                      <li class="page-item active">
+                                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                      </li>
+                                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                      <li class="page-item">
+                                                        <a class="page-link" href="#">Next</a>
+                                                      </li>
                                                     </ul>
-                                                </nav>
-                                            </div>
+                                                  </nav>
+                                                </div>
+                                              </div>
                                         </div>
                                     </div>
                                 </div>
@@ -185,12 +161,11 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-4">
-                        <button class="btn btn-danger font-size-16 btn-rounded waves-effect waves-light w-100"> <i
-                                class="bx bx-reset align-middle me-1 mb-1"></i>Reset</button>
+                        <button class="btn btn-outline-danger font-size-16 btn-rounded waves-effect waves-light w-50">Reset</button>
                     </div>
                     <div class="col-md-4">
-                        <button class="btn btn-success font-size-16 btn-rounded waves-effect waves-light w-100"
-                            id="sa-position"><i class="bx bx-save align-middle me-1 mb-1"></i>Save</button>
+                        <button class="btn btn-outline-success font-size-16 btn-rounded waves-effect waves-light w-50"
+                            id="sa-position"></i>Save</button>
                     </div>
                 </div>
 

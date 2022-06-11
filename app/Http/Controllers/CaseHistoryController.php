@@ -47,7 +47,6 @@ class CaseHistoryController extends Controller
             'students' => $this->studentRepo->getData(),
             'records' => $this->caseRepo->getListData($perPage = ProjectConstants::DATA_PER_PAGE, $search = ''),
         ];
-        // dd($data['caseList']);
 
         return view('case-history', $data);
     }
