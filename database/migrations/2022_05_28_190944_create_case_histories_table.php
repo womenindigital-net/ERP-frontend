@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('phone');
             $table->string('email')->nullable();
-            $table->string('address')->nullable();
+            $table->tinyText('address')->nullable();
             $table->string('has_adjustment_capability')->nullable();
             $table->string('has_move_ability')->nullable();
             $table->string('has_fine_equipment_use_ability')->nullable();
@@ -109,7 +109,7 @@ return new class extends Migration
             $table->json('is_curious_to_learn_new_things')->nullable();
             $table->json('can_understand_simple_things_right_way')->nullable();
             $table->json('can_learn_word_spelling')->nullable();
-            $table->json('can_write_himself')->nullable();
+            $table->string('can_write_himself')->nullable();
             $table->json('working_speed')->nullable();
             $table->json('how_long_child_can_remember_after_teaching')->nullable();
             $table->json('is_home_work_a_simple_things')->nullable();
