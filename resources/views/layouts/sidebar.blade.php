@@ -233,7 +233,7 @@
                         <span>Program</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="program.assign-task">Assign Task</a></li>
+                        <li><a href="{{ route('program.assign-task')}}">Assign Task</a></li>
                         <li><a href="program.create-itp">Create ITP</a></li>
                         <li><a href="program.run-mitp">Run MITP</a></li>
                         <li><a href="program.notice-board">Notice Board</a></li>
