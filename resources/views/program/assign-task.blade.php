@@ -14,7 +14,7 @@
                         data-bs-target=".bs-example-modal-xl"><i class="fas fa-plus-circle"></i>
                         Add</button>
                 </div>
-             
+
                 <div class="table-responsive">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -254,23 +254,20 @@
                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                    <input class="form-check-input" type="checkbox">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Kick a large stationary ball with a 2-step start Type:
                                                         Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                    <input class="form-check-input" type="checkbox">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Catch a large ball Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                    <input class="form-check-input" type="checkbox">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Squat while maintaining balance Type: Vocational
                                                     </label>

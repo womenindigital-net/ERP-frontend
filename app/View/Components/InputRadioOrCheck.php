@@ -12,18 +12,19 @@ class InputRadioOrCheck extends Component
     public string $type;
     public string $label;
     public string $isVertical;
-    public $secondaryInputLabel;
+    public string $secondaryInputLabel;
     public $records;
     public string $wireModel;
-    public string $secondaryInputWire;
+    public string $secondaryInputName;
     public array $checked;
+    public string $secondaryInputValue;
 
     /**
      * Create a new component instance.
      *
      * @return Exception
      */
-    public function __construct($records, $label = '', $name = '', $checked = false, $isVertical = true, $multiple = false, $secondaryInputLabel = '', $type = 'radio', $wireModel = false)
+    public function __construct($records, $label = '', $name = '', $checked = false, $isVertical = true, $multiple = false, $secondaryInputLabel = '', $secondaryInputValue='', $type = 'radio', $wireModel = false)
     {
         if (!$name and !$wireModel and !$label) {
             return new Exception("Please, pass name or label or wireModel");
@@ -38,8 +39,9 @@ class InputRadioOrCheck extends Component
         $this->isVertical          = $isVertical ? 'd-flex' : '';
         $this->secondaryInputLabel = $secondaryInputLabel;
         $this->wireModel           = $wireModel ? "name=$wireModel" : '';
-        $this->secondaryInputWire = $secondaryInputLabel ? "name={$name}_secondary" : '';
+        $this->secondaryInputName = $secondaryInputLabel ? "{$name}_secondary" : '';
         $this->checked = $checked ? (is_array($checked) ? $checked : [$checked]) : [];
+        $this->secondaryInputValue = $secondaryInputValue;
     }
 
     /**
