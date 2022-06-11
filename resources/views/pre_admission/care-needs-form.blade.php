@@ -197,9 +197,7 @@
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
-                                                                        label="Therapy
-                                                                        assessment: OT,
+                                                                    <x-input-radio-or-check name="hh" label="Therapy assessment: OT,
                                                                         SLT, Physio" :records="$careConstants::$therapyAssessment" multiline="true"/>
                                                                     
 
