@@ -5,9 +5,10 @@
                 <thead>
                     <tr>
                         <th>Collection Date</th>
-                        <th>Student Name</th>
-                        <th>Collected By</th>
-                        <th>Log</th>
+                        <th>Student</th>
+                        <th>Teacher</th>
+                        <th>Created By</th>
+                        <th>Created At</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -16,14 +17,9 @@
                     <tr>
                         <td>{{ $record->date }}</td>
                         <td>{{ $record->student->name }}</td>
-                        <td>{{ $record->user->name ?? 'no name' }}</td>
-                        <td>
-                            <small>
-                                <span>Create: {{ $record->user->name ?? 'no name' }} @ {{ $record->created_at
-                                    }}</span><br>
-                                <span>Update: {{ $record->user->name ?? 'no name' }} @ {{ $record->updated_at }}</span>
-                            </small>
-                        </td>
+                        <td>{{ $record->teacher->name }}</td>
+                        <td>{{ $record->creator->name }}</td>
+                        <td>{{ $record->created_at }}</td>
                         <td>
                             <a href="{{ route('case-history.show', $record->id) }}"
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
