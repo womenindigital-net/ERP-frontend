@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 text-end">
                             <label style="display: inline-flex;align-items: center;">Search:
-                                <input type="search" class="form-control form-control-sm" placeholder="">
+                                <x-input-text type="search" name="search" />
                             </label>
                         </div>
                     </div>
@@ -129,49 +129,22 @@
                                 <div class="mb-3 row ms-2">
                                     <label class="col-md-4 col-form-label">Sudent:</label>
                                     <div class="col-md-8">
-                                        <select name="StudentID" class="form-control strip-tags" id="StudentID"
-                                            required="">
-                                            <option value="">Select</option>
-                                            <option value="1">SAFWAT NASIF</option>
-                                            <option value="2">Md. Moinul Islam Supta</option>
-                                            <option value="3">Rumi Akhter</option>
-                                            <option value="4">abdullah-al-nafi antor</option>
-                                            <option value="5">Boni Amin</option>
-                                            <option value="6">Samiya Ahmed</option>
-                                        </select>
+                                        <x-input-select name="student_id"
+                                        :records="[]" />
                                     </div>
                                 </div>
                                 <div class="mb-3 row ms-2">
                                     <label class="col-md-4 col-form-label">Prescription:</label>
                                     <div class="col-md-8">
-                                        <select name="PrescriptionID" class="form-control strip-tags"
-                                            id="PrescriptionID" required="">
-                                            <option value="">Select</option>
-                                            <option value="1">Kate Banks</option>
-                                            <option value="3">Roger Oliver</option>
-                                            <option value="4">dfgdsf</option>
-                                        </select>
+                                        <x-input-select name="prescription_id"
+                                        :records="[]" />
                                     </div>
                                 </div>
                                 <div class="mb-3 row ms-2">
                                     <label class="col-md-4 col-form-label">Given By:</label>
                                     <div class="col-md-8">
-                                        <select name="GivenBy" class="form-control strip-tags" id="GivenBy" required="">
-                                            <option value="">Select</option>
-                                            <option value="1">sk</option>
-                                            <option value="2">Shonod</option>
-                                            <option value="3">PFDA</option>
-                                            <option value="4">Arif</option>
-                                            <option value="6">PFDA C</option>
-                                            <option value="7">Parent</option>
-                                            <option value="8">Sajida</option>
-                                            <option value="9">Nurjahan</option>
-                                            <option value="10">Md. Kutubuddin</option>
-                                            <option value="11">Md.</option>
-                                            <option value="12">Md. Amir</option>
-                                            <option value="13">Nusrat</option>
-                                            <option value="14">Karishma</option>
-                                        </select>
+                                        <x-input-select name="given_id"
+                                        :records="[]" />
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +159,7 @@
                                 <div class="mb-3 row me-2">
                                     <label for="" class="col-md-4 col-form-label">Given Time:</label>
                                     <div class="col-md-8" id="datepicker2">
-                                        <x-input-text name="date" placeholder="dd/mm/yyyy" type="date">
+                                        <x-input-text name="date" placeholder="dd/mm/yyyy" type="time">
                                         </x-input-text>
                                     </div>
                                 </div>

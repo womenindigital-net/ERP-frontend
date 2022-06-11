@@ -12,7 +12,6 @@
 @slot('li_1') DashBoard @endslot
 @slot('title')STUDENT QA @endslot
 @endcomponent
-
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -28,7 +27,6 @@
                             data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i>
                             ADD</button>
                     </div>
-
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -42,7 +40,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 text-end">
                             <label style="display: inline-flex;align-items: center;">Search:
-                                <input type="search" class="form-control form-control-sm" placeholder="">
+                                <x-input-text type="search" name="search" />
                             </label>
                         </div>
                     </div>
@@ -156,9 +154,6 @@
                                                                                     placeholder="dd/mm/yyyy"
                                                                                     type="date">
                                                                                 </x-input-text>
-                                                                                <span class="input-group-text">
-                                                                                    <i
-                                                                                        class="mdi mdi-calendar"></i></span>
                                                                             </div><!-- input-group -->
                                                                         </div>
                                                                     </div>
@@ -232,7 +227,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <x-input-radio-or-check name="hh" type="checkbox"
+                                                            <x-input-radio-or-check name="what_is_the_previous" type="checkbox"
                                                                 label="What is the Previous cause of Incident/Antecedent Behavior?"
                                                                 :records="$incidentConstant::$activityType"
                                                                 :isVertical="false">
