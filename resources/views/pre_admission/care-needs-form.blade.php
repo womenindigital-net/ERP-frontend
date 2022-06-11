@@ -197,40 +197,13 @@
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
+                                                                    <x-input-radio-or-check name="hh"
+                                                                        label="Therapy
+                                                                        assessment: OT,
+                                                                        SLT, Physio" :records="$careConstants::$therapyAssessment" multiline="true"/>
+                                                                    
 
-                                                                    <div class="row border-top py-2">
-                                                                        <div class="col-xl-12 col-sm-12">
-                                                                            <div class="m-0">
-                                                                                <h5 class="mb-4">Therapy
-                                                                                    assessment: OT,
-                                                                                    SLT, Physio</h5>
-                                                                                <div class="form-check d-flex">
-                                                                                    <div class="me-5">
-                                                                                        <input class="form-check-input"
-                                                                                            type="checkbox"
-                                                                                            name="formRadios">
-                                                                                        <label
-                                                                                            class="form-check-label">OT</label>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <input class="form-check-input "
-                                                                                            type="checkbox"
-                                                                                            name="formRadios">
-                                                                                        <label
-                                                                                            class="form-check-label me-5">
-                                                                                            SLT</label>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <input class="form-check-input"
-                                                                                            type="checkbox"
-                                                                                            name="formRadios">
-                                                                                        <label class="form-check-label">
-                                                                                            Physio</label>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                    <!-- end row -->
                                                                 </form>
                                                             </section>
                                                         </div>

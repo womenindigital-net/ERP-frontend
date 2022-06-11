@@ -35,13 +35,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Individual Fisk Assessment Form</span>
+                                <span class="d-none d-sm-block">Individual Risk Assessment Form</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">Individual Fisk Assessment List</span>
+                                <span class="d-none d-sm-block">Individual Risk Assessment List</span>
                             </a>
                         </li>
                     </ul>

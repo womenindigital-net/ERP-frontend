@@ -1,16 +1,9 @@
 @extends('layouts.master')
-
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')@endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') Utility @endslot
-@slot('title')ASSIGN TESK @endslot
-@endcomponent
 {{-- code --}}
-
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -21,122 +14,93 @@
                         data-bs-target=".bs-example-modal-xl"><i class="fas fa-plus-circle"></i>
                         Add</button>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                class="form-control form-control-sm form-select form-select-sm">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select> entries
-                        </label>
-                    </div>
-                    <div class="col-sm-12 col-md-6 text-end">
-                        <label style="display: inline-flex;align-items: center;">Search:
-                            <input type="search" class="form-control form-control-sm" placeholder="">
-                        </label>
-                    </div>
-                </div>
+             
                 <div class="table-responsive">
-                    <table class="table table-bordered w-100">
-                        <thead>
-                            <tr>
-                                <th class=""> Assign To</th>
-                                <th class=""> Student</th>
-                                <th class=""> Assign Task Name</th>
-                                <th class=""> Instruction</th>
-                                <th class=""> Log</th>
-                                <th class=""> Action</th>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                              class="form-control form-control-sm form-select form-select-sm">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                            </select> entries
+                          </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <label style="display: inline-flex;align-items: center;">Search:
+                              <x-input-text type="search" name="search" />
+                          </label>
+                        </div>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table w-100 table-bordered">
+                          <thead>
+                            <tr class="table-primary">
+                              <th> Assign To</th>
+                              <th> Student</th>
+                              <th> Assign Task Name</th>
+                              <th> Instruction</th>
+                              <th> Log</th>
+                              <th> Action</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                          </thead>
+                          <tbody>
                             <tr>
-                                <td>demo</td>
-                                <td>demo</td>
-                                <td>reading</td>
-                                <td>first to last</td>
-                                <td>demo</td>
-                                <td>
-                                    <button type="button"
-                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                        <i class=" fas fa-eye"></i>
-                                    </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                        <i class="fas fa-pen"></i></button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                            class="fas fa-trash-alt"></i></button>
-                                </td>
+                              <td>demo</td>
+                              <td>demo</td>
+                              <td>reading</td>
+                              <td>first to last</td>
+                              <td>demo</td>
+                              <td>
+                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                  <i class="mdi mdi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="bx bx-dollar"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="fas fa-arrow-circle-right"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </td>
                             </tr>
-                            <tr>
-                                <td>demo</td>
-                                <td>demo</td>
-                                <td>reading</td>
-                                <td>first to last</td>
-                                <td>demo</td>
-                                <td>
-                                    <button type="button"
-                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                        <i class=" fas fa-eye"></i>
-                                    </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                                        <i class="fas fa-pen"></i></button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                                            class="fas fa-trash-alt"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        Showing 1 to 2 of 2 entries
-                    </div>
-                    <div class="col-sm-12 col-md-6 text-end">
-                        <nav>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <nav>
                             <ul class="pagination" style="justify-content: end;">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
                             </ul>
-                        </nav>
-                    </div>
+                          </nav>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
@@ -158,17 +122,13 @@
                             <div class="col-6 d-flex">
                                 <label class="col-4 col-form-label"> Student Name</label>
                                 <div class="col-6">
-                                    <select class="form-select">
-                                        <option>Select</option>
-                                        <option>2222</option>
-                                        <option>55555</option>
-                                    </select>
+                                    <x-input-select name="student_id" :records="[]" />
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
                                 <label for="example-text-input" class="col-md-4 col-form-label">Assignment Name</label>
                                 <div class="col-md-6">
-                                    <x-input-text name="Assignment Name" placeholder="Assignment Name"></x-input-text>
+                                    <x-input-text name="assignment_name" placeholder="Assignment Name"></x-input-text>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +149,7 @@
                         <div class="row pb-3">
                             <div class="col-6">
                                 <label class="form-label">Instruction</label>
-                                <x-input-textarea name='name' rows='5'></x-input-textarea>
+                                <x-input-textarea name='instruction' rows='5'></x-input-textarea>
                             </div>
                             <div class="col-6 mt-4 border border-2">
                                 <div class="fw-bold">Section E: Domain 01 - Physical development : <span
@@ -233,12 +193,13 @@
                                                             <p class="form-control m-0">Cut on a line</p>
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                            {{-- <x-input-select name="teacher_id" :records="$teachers">
-                                                            </x-input-select> --}}
+
+                                                            <x-input-select name="teacher_id" :records="[]" />
+
                                                         </div>
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1">
                                                             <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">--Select--</option>
+                                                                <option selected="">Select</option>
                                                                 <option value="1">09:00:AM - 09:15:AM - Assembly
                                                                 </option>
                                                                 <option value="2">09:15:AM - 10:30:AM - Breakfast
@@ -257,6 +218,7 @@
                                                         <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
                                                             <x-input-textarea name='name' rows='1' cols='35'>
                                                             </x-input-textarea>
+
                                                             <button class="btn btn-danger btn-rounded ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
@@ -273,10 +235,7 @@
                                     <button class="btn btn-primary" type="button" id="collapse">Collapse</button>
                                     <button class="btn btn-primary" type="button" id="expend">Expend</button>
                                 </div>
-
                             </div>
-
-
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
@@ -365,7 +324,6 @@
                                                         hands clap above the head and then jump again so the feet go
                                                         back together and the arms go back to the sides - Do several of
                                                         these Type: Vocational
-
                                                     </label>
                                                 </div>
                                             </div>
@@ -470,8 +428,6 @@
                                                         Low Back Type: Pre-Vocational
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -522,11 +478,8 @@
                                                         id="formCheckcolor3">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Podmasana Type: Pre-Vocational
-
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -544,9 +497,6 @@
                                         <div id="collapseeight" class="accordion-collapse collapse"
                                             aria-labelledby="headingeight" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
                                                         id="formCheckcolor3">

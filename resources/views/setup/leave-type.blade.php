@@ -23,7 +23,6 @@
 @slot('li_1') DashBoard @endslot
 @slot('title')HRMS > LEAVE TYPE @endslot
 @endcomponent
-
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -38,41 +37,97 @@
                 class="fas fa-plus-circle"></i> Add</button>
           </div>
         </div>
-        <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Measure Unit</th>
-              <th>Calculation Type</th>
-              <th>Calculation Interval</th>
-              <th>Calculation Base</th>
-              <th>Nature</th>
-              <th>Leave TTL</th>
-              <th>Log</th>
-              <th>action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Maternity Leave</td>
-              <td>D</td>
-              <td>Flat</td>
-              <td></td>
-              <td></td>
-              <td>Maternal Leave	</td>
-              <td>0</td>
-              <td>Create: Shonod Digital @ 2019-01-19 23:04:23</td>
-              <td class="text-center">
-
-                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i class="fas fa-check"></i>
-                </button>
-                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" 
-                data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view"><i class="mdi mdi-pencil"></i>
-                </button>                                                        
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                class="form-control form-control-sm form-select form-select-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entries
+            </label>
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <label style="display: inline-flex;align-items: center;">Search:
+              <input type="search" class="form-control form-control-sm" placeholder="">
+            </label>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table w-100 table-bordered">
+            <thead>
+              <tr class="table-primary">
+                <th>Name</th>
+                <th>Measure Unit</th>
+                <th>Calculation Type</th>
+                <th>Calculation Interval</th>
+                <th>Calculation Base</th>
+                <th>Nature</th>
+                <th>Leave TTL</th>
+                <th>Log</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Maternity Leave</td>
+                <td>D</td>
+                <td>Flat</td>
+                <td></td>
+                <td></td>
+                <td>Maternal Leave	</td>
+                <td>0</td>
+                <td>Create: Shonod Digital @ 2019-01-19 23:04:23</td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                    <i class="mdi mdi-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="bx bx-dollar"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="fas fa-arrow-circle-right"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            Showing 1 to 2 of 2 entries
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <nav>
+              <ul class="pagination" style="justify-content: end;">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </div> <!-- end col -->
@@ -93,14 +148,14 @@
                       <div class="col-md-4">
                           <div class="mb-3">
                               <label class="form-label">Name</label>
-                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Name here.. ">
+                              <x-input-text name="Name"  placeholder="Enter Name here"></x-input-text>
                           </div>
                       </div>
                       <div class="col-md-8">
                         <div class="mb-3">
                           <label class="form-label">Description</label>
                           <div>
-                              <textarea placeholder="Leave Type Desc here" required class="form-control" rows="1"></textarea>
+                            <x-input-textarea name="Description"  placeholder=""></x-input-textarea>
                           </div>
                       </div>
                       </div>
@@ -124,7 +179,7 @@
                     <div class="col-md-4">
                       <div class="mb-3">
                         <label class="form-label">Calculation Interval</label>
-                        <input type="Number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Calculation Interval.. ">
+                        <x-input-text name="number" type="number" placeholder="Enter Calculation Interval"></x-input-text>
                     </div>
                     </div>
                     <div class="col-md-4">
@@ -161,13 +216,13 @@
                     <div class="col-md-4">
                       <div class="mb-3">
                         <label class="form-label">Leave TTL</label>
-                        <input type="Number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Leave TTL here .. ">
+                        <x-input-text name="number" type="number" placeholder="Enter Leave TTL here"></x-input-text>
                     </div>
                     </div>
                     <div class="col-md-4">
                       <div class="mb-4">
                         <label class="form-label">Max Carry Cash Day</label>
-                        <input type="Number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Max Carry Cash Day here .. ">
+                        <x-input-text name="number" type="number" placeholder="Enter Max Carry Cash Day here"></x-input-text>
                     </div>
                     </div>  
                 </div>
@@ -213,10 +268,10 @@
                   </div>
               </div>
             </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn  btn-danger" data-bs-dismiss="modal"> Close</button>
-                            <button type="button" class="btn  btn-success" data-bs-dismiss="modal"> Save</button>
-                        </div>
+            <div class="modal-footer">
+              <button type="button" class="btn  btn-outline-danger" data-bs-dismiss="modal"> Close</button>
+              <button type="button" class="btn  btn-outline-success" data-bs-dismiss="modal"> Save</button>
+          </div>
                                 
          </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
