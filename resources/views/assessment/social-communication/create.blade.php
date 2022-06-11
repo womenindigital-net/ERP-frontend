@@ -1084,24 +1084,8 @@
                                     <div class="col-lg-4 pull-left pb-2">
                                         <label class="p-2">Candidate ID: <span
                                                 class="text-danger text-bold">*</span></label>
-                                        <select class="form-control strip-tags select2 form-select" id="StudentID"
-                                            required="" name="StudentID">
-                                            <option selected="selected" value="">-- Select --</option>
-                                            <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                                            <option value="2">abdullah-al-nafi antor</option>
-                                            <option value="3">Abdullahil Baki</option>
-                                            <option value="4">Abdur Rahman Sajid</option>
-                                            <option value="5">Abid Hossain Turjo</option>
-                                            <option value="6">Abid Kabir Chowdhury</option>
-                                            <option value="7">Abrar Ahosab Talha</option>
-                                            <option value="8">Abrar Jawad Siam</option>
-                                            <option value="9">Abu Sufiyan</option>
-                                            <option value="10">Adib Akbar</option>
-                                            <option value="11">Adiba Atiar</option>
-                                            <option value="12">Adil Anaf</option>
-                                            <option value="13">Aditya Chakraborty</option>
-                                            <option value="14">Adiyan Islam Danial</option>
-                                        </select>
+                                                <x-input-select name="candidate_id"
+                                                :records="[]" />
                                     </div>
                                 </div>
                                 <div class="row">

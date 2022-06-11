@@ -104,7 +104,7 @@
                                                                     <div class="col-lg-4">
                                                                       <div class="mb-3">
                                                                         <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                                                        <x-input-select name="candidate_id" :records="[]" />
+                                                                        <x-input-select name="candidate_i" :records="[]" />
                                                                       </div>
                                                                     </div>
                                                                   </div>
@@ -217,8 +217,8 @@
                                                               </form>
                                                             </div>
                                                           </section>
-                                                                                                        </div>
-                                                                                                        <div class="tab-pane" id="Topic_Maintenance">
+                                                          </div>
+                                                          <div class="tab-pane" id="Topic_Maintenance">
                                                           <h3>Words usages / Vocabulary</h3>
                                                           <section>
                                                             <div>
@@ -949,7 +949,7 @@
                   :records="$constants::$yesNoEn" secondaryInputLabel="Excessive:"></x-input-radio-or-check>
                 <!--end row -->
                 <!--end row -->
-                <x-input-radio-or-check name=""
+                <x-input-radio-or-check name="has_difficulties_using_ad_understanding"
                   label="Has difficulties using ad understanding non – literal meanings (proverbs, idioms, slangs, sarcasm, teasing etc),"
                   :records="$constants::$yesNoEn" secondaryInputLabel="Excessive:"></x-input-radio-or-check>
                 <!--end row -->
