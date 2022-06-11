@@ -10,7 +10,7 @@ final class CaseHistoryRepository extends BaseRepository
 
     public function getListData($perPage, $search)
     {
-        return $this->model::with('student')->when($search, function ($query) use ($search)
+        return $this->model::with('student', 'teacher', 'creator')->when($search, function ($query) use ($search)
         {
             $query->where("address", "like", "%$search%")
                   ->orWhere("email", "like", "%$search%")
