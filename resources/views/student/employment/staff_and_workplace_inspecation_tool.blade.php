@@ -166,7 +166,7 @@
                                     <div class="m-0">
                                         <h5>পরিদর্শনকৃত স্থান / প্রতিষ্ঠান(ঠিকানা)</h5>
                                         <h5 class="mt-2">শিক্ষক এর মন্তব্য</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">কর্মীর কর্মস্থলে যোগদানের তারিখ</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -192,7 +192,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">কর্মীর মাসিক বেতন</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +200,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">কর্মীর সাপ্তাহিক ছুটি সম্পর্কে তথ্য</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -208,7 +208,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">লক্ষিত কর্মীকে দিনে কত ঘণ্টা কাজ করতে হয় ? সময় উল্লেখ করুন</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                                     <div class="m-0">
                                         <h5 class="mb-4">লক্ষিত কর্মীর পদবী কি বা সে এ প্রতিষ্ঠানে কি কি দায়িত্ব পালন
                                             করে ?</h5>
-                                              <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -228,29 +228,35 @@
                     <h3>Check List</h3>
                     <section>
                         <form>
-                            <x-input-radio-or-check name="" label="এ কর্ম ঘণ্টা কী তার সক্ষমতার প্রেক্ষিতে সঠিক ?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="লক্ষিত কর্মীর কি ডিউটির জন্য নির্ধারিত পোশাক আছে?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী কি ডিউটির সময় নির্ধারিত পোশাক পরিধান করে আছে ?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী কি যথেষ্ট পরিস্কার-পরিচ্ছন্ন ?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী কি উপযুক্ত / প্রত্যাশিত বেতন-ভাতা বা মজুরী পাচ্ছে"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী ও নিয়োগকারী কর্তৃপক্ষের মাঝে কি নিয়মিত যোগাযোগ হয়?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="লক্ষিত কর্মী ও নিয়োগকারী কর্তৃপক্ষের মাঝে কি নিয়মিত যোগাযোগ হয়?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="লক্ষিত কর্মীর প্রতি কর্মস্থলের সহকর্মীদের কথাবার্তা/মন্তব্য/আচরণ কেমন ?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
-                            <x-input-radio-or-check name="" label="কর্মস্থলে মোটের উপর কাজের পরিবেশ কেমন ?"
-                              :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name" label="এ কর্ম ঘণ্টা কী তার সক্ষমতার প্রেক্ষিতে সঠিক ?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name"
+                                label="লক্ষিত কর্মীর কি ডিউটির জন্য নির্ধারিত পোশাক আছে?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name"
+                                label="লক্ষিত কর্মী কি ডিউটির সময় নির্ধারিত পোশাক পরিধান করে আছে ?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name" label="লক্ষিত কর্মী কি যথেষ্ট পরিস্কার-পরিচ্ছন্ন ?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name"
+                                label="লক্ষিত কর্মী কি উপযুক্ত / প্রত্যাশিত বেতন-ভাতা বা মজুরী পাচ্ছে"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name"
+                                label="লক্ষিত কর্মী ও নিয়োগকারী কর্তৃপক্ষের মাঝে কি নিয়মিত যোগাযোগ হয়?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name"
+                                label="লক্ষিত কর্মী ও নিয়োগকারী কর্তৃপক্ষের মাঝে কি নিয়মিত যোগাযোগ হয়?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name"
+                                label="লক্ষিত কর্মীর প্রতি কর্মস্থলের সহকর্মীদের কথাবার্তা/মন্তব্য/আচরণ কেমন ?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
+                            <x-input-radio-or-check name="name" label="কর্মস্থলে মোটের উপর কাজের পরিবেশ কেমন ?"
+                                :records="$staffAndWork::$staffAndWorkplace"></x-input-radio-or-check>
                             <div class="row border-top py-2">
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">বিস্তারিত লিখুন</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -258,7 +264,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">মন্তব্য / সুপারিশ t(প্রয়োজনে অতিরিক্ত পাতা ব্যবহার করুন)</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +272,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">সাজেশন</h5>
-                                        <x-input-text name=""></x-input-text>
+                                        <x-input-text name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -274,7 +280,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">পরিদর্শনকারীর স্বাক্ষর ও তারিখ</h5>
-                                        <x-input-text type="file" name=""></x-input-text>
+                                        <x-input-text type="file" name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -282,7 +288,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">নাম এবং পদবী</h5>
-                                        <x-input-text type="file" name=""></x-input-text>
+                                        <x-input-text type="file" name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +296,7 @@
                                 <div class="col-xl-12 col-sm-12">
                                     <div class="m-0">
                                         <h5 class="mb-4">তারিখ</h5>
-                                        <x-input-text type="date" name=""></x-input-text>
+                                        <x-input-text type="date" name="name"></x-input-text>
                                     </div>
                                 </div>
                             </div>

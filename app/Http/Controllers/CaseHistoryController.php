@@ -24,6 +24,7 @@ class CaseHistoryController extends Controller
     private StudentRepository $studentRepo;
     private CaseHistoryRepository $caseRepo;
     public $caseHistory;
+    public $caseHistoryEdit;
 
     public function __construct(CaseHistoryService $service, UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository, CaseHistoryRepository $caseHistoryRepository)
     {
@@ -104,7 +105,12 @@ class CaseHistoryController extends Controller
      */
     public function edit(CaseHistory $caseHistory)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'caseHistoryEdit' => $this->caseHistory = $caseHistory,
+        ];
+        return view('case-history', $data);
     }
 
     /**
