@@ -3,24 +3,17 @@
 @section('title') @lang('translation.Data_Tables') @endsection
 
 @section('css')
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Dashbord @endslot
-        @slot('title')  Notices @endslot
-    @endcomponent
-
-    <div class="col-xl-12 col-lg-12 col-sm-6 d-flex justify-content-end mb-3">
-        <!-- Extra Large modal button -->
-        <div class="pb-3 card-body text-end">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light "
-            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"> <i
-                class="fas fa-plus-circle"></i> Add</button>
-        </div>
+<div class="col-xl-12 col-lg-12 col-sm-6 d-flex justify-content-end mb-3">
+<!-- Extra Large modal button -->
+<div class="pb-3 card-body text-end">
+    <button type="button" class="btn btn-outline-info waves-effect waves-light "
+    data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"> <i
+        class="fas fa-plus-circle"></i> Add</button>
+</div>
 {{-- Add Content Modul --}}
 <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -35,34 +28,7 @@
             <div class="mb-3 row">
                 <label for="example-email-input" class="col-md-4 col-form-label text-center">Send To:</label>
                 <div class="col-md-8 pe-5">
-                    <select class="form-control select2-templating">
-                        
-                        <optgroup label="Select">
-                            <option value="1">Accouting</option>
-                            <option value="2">Accouting Full</option>
-                            <option value="3">Admin</option>
-                            <option value="4">Angle Chet</option>
-                            <option value="5">Bakery</option>
-                            <option value="6">Doctor</option>
-                            <option value="7">Full Admin</option>
-                            <option value="8">HR And Adimin</option>
-                            <option value="9">Parent</option>
-                            <option value="10">Principal</option>
-                            <option value="11">Program Menager</option>
-                            <option value="12">Read Only User</option>
-                            <option value="13">Role For IT</option>
-                            <option value="14">Settings</option>
-                            <option value="15">Sarah</option>
-                            <option value="16">Senior Teacher</option>
-                            <option value="17">Support Staff</option>
-                            <option value="18">Teacher</option>
-                            <option value="19">Teacher With DataEntry</option>
-                            <option value="20">Therapy</option>
-                            <option value="21">Specific User</option>
-                          
-                            
-                        </optgroup>
-                    </select>
+                    <x-input-select name="send_to" :records="[]" />
                 </div>
             </div>
 
@@ -70,8 +36,7 @@
             <div class="mb-3 row">
                 <label for="example-search-input" class="col-md-4 col-form-label text-center">Subject:</label>
                 <div class="col-md-8 pe-5">
-                    <input class="form-control" type="search" placeholder="Notice Subject Here"
-                        id="example-search-input">
+                    <x-input-text name="sub" placeholder="Notice Subject Here" />
                 </div>
             </div>
             {{--  --}}
@@ -80,7 +45,7 @@
                 <label for="example-search-input" class="col-md-4 col-form-label text-center">Message:</label>
                 <div class="col-md-8 pe-5">
                     <form method="post">
-                        <textarea id="elm1" name="area"></textarea>
+                        <x-input-textarea name="area"/>
                     </form>
                 </div>
             </div>

@@ -27,29 +27,11 @@
                             <form method="POST" action=""><input name="_token" type="hidden" value="">
                             <div class="form-group">
                                 <div class="col-xs-12 col-md-9 input-group">
-                                    <select class="form-control form-control section2 form-select" name="studentID" id="" required="">
-                                        <option value="">Select</option>
-                                        <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                                        <option value="2">abdullah-al-nafi antor</option>
-                                        <option value="3">Abdullahil Baki</option>
-                                        <option value="4">Abdur Rahman Sajid</option>
-                                        <option value="5">Abid Hossain Turjo</option>
-                                        <option value="6">Abid Kabir Chowdhury</option>
-                                        <option value="7">Abrar Ahosab Talha</option>
-                                        <option value="8">Abrar Jawad Siam</option>
-                                        <option value="9">Abu Sufiyan</option>
-                                        <option value="10">Adib Akbar</option>
-                                        <option value="11">Adiba Atiar</option>
-                                        <option value="12">Adil Anaf</option>
-                                        <option value="13">Aditya Chakraborty</option>
-                                        <option value="14">Adiyan Islam Danial</option>
-                                        <option value="15">Adkin Rozar Quiah</option>
-                                    </select>
+                                    <x-input-select name="student_id" :records="[]" />
                                 </div>
                             </div>
                             </form>
-                        </div>
-                            
+                        </div>    
                     </div>
                     <div class="row">
                         <div class="col-2">
@@ -66,8 +48,6 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-
-
 @endsection
 @section('script')
 

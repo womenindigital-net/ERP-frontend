@@ -1,16 +1,7 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endsection
 @section('content')
 @component('components.breadcrumb')
@@ -29,58 +20,100 @@
             <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
               data-bs-target=".material-callects-modal-xl-view"><i class="fa fa-plus"></i> ADD</button>
         </div>
-        <table id="datatable" class="table table-bordered dt-responsive w-100">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Gross Salary</th>
-              <th>Net Salary</th>
-              <th>Currency</th>
-              <th>Will Convert</th>
-              <th>Pay Type</th>
-              <th>Over Time Amnt</th>
-              <th>Log</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Junior Programme Assistant (9-3)</td>
-              <td>Junior Programme Assistant</td>
-              <td>14700.0000</td>
-              <td>14700.0000</td>
-              <td>USD</td>
-              <td>Y</td>
-              <td>Monthly</td>
-              <td>0.0000</td>
-              <td>Create: Md. Kutubuddin..@ 2021-07-05 21:20:28
-                  Update: Md. Kutubuddin..@ 2021-07-06 01:09:15</td>
-              <td><button type="button"
-                  class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                  data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                  <i class=" fas fa-eye"></i>
-              </button>
-              <button type="button"
-              class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-              data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-               <i class="fas fa-check"></i>
-          </button>
-          <button type="button"
-              class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-              data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-               <i class="fas fa-check"></i>
-          </button>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                class="form-control form-control-sm form-select form-select-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entries
+            </label>
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <label style="display: inline-flex;align-items: center;">Search:
+              <input type="search" class="form-control form-control-sm" placeholder="">
+            </label>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table w-100 table-bordered">
+            <thead>
+              <tr class="table-primary">
+                <th>Name</th>
+                <th>Description</th>
+                <th>Gross Salary</th>
+                <th>Net Salary</th>
+                <th>Currency</th>
+                <th>Will Convert</th>
+                <th>Pay Type</th>
+                <th>Over Time Amnt</th>
+                <th>Log</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Junior Programme Assistant (9-3)</td>
+                <td>Junior Programme Assistant</td>
+                <td>14700.0000</td>
+                <td>14700.0000</td>
+                <td>USD</td>
+                <td>Y</td>
+                <td>Monthly</td>
+                <td>0.0000</td>
+                <td>Create: Md. Kutubuddin..@ 2021-07-05 21:20:28
+                    Update: Md. Kutubuddin..@ 2021-07-06 01:09:15</td>
+                    <td><button type="button"
+                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                        data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                        <i class=" fas fa-eye"></i>
+                    </button>
+                    <button type="button"
+                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                     <i class="fas fa-check"></i>
+                </button>
                 <button type="button"
-              class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-              data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-              <i class="fas fa-pen"></i></button>
-                <button type="button"
-              class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-              class="fas fa-trash-alt"></i></button></td>
-            </tr>
-          </tbody>
-        </table>
+                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                    data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                     <i class="fas fa-check"></i>
+                </button>
+                      <button type="button"
+                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
+                    data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                    <i class="fas fa-pen"></i></button>
+                      <button type="button"
+                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
+                    class="fas fa-trash-alt"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            Showing 1 to 2 of 2 entries
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <nav>
+              <ul class="pagination" style="justify-content: end;">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </div> <!-- end col -->
@@ -99,11 +132,11 @@
                     <div class="col-md-12 d-flex">
                       <div class="col-md-4 mb-3">
                           <label class="form-label">Package Name</label>
-                          <input class="form-control" type="text" placeholder="Enter Head Name Here" id="example-text-input"> 
+                          <x-input-text name="Package Name" placeholder="Enter Head Name Here" ></x-input-text>
                       </div>
                       <div class="col-md-4 ms-2 mb-3">
-                          <label class="form-label">Desc</label>
-                          <textarea class="form-control" placeholder="Enter salary head description" rows="1" name="SHDesc" cols="50" id="SHDesc"></textarea>
+                          <label class="form-label">Description</label>
+                          <x-input-textarea name="Description"></x-input-textarea>
                       </div>
                       <div class="col-md-4 ms-2 pe-3 mb-3">
                           <label class="form-label">Grade Name</label>
@@ -179,7 +212,7 @@
                       <div class="col-md-12 d-flex">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Over Time Amt</label>
-                            <input class="form-control" type="number" placeholder="Over Time Amt Per Hours" id="example-text-input"> 
+                            <x-input-text name="number" type="number"  placeholder="Over Time Amt Per Hours" ></x-input-text>
                         </div>
                         <div class="col-md-4 ms-2 pb-5 text-center">
                             <label class="form-label ">Overtime in Percent of</label> <br>
@@ -214,7 +247,7 @@
                       <div class="col-md-12 d-flex">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Attendance Bonus Amt</label>
-                            <input class="form-control" type="number" placeholder="Enter Attendance Bonus Amt" id="example-text-input"> 
+                            <x-input-text name="number" type="number"  placeholder="Enter Attendance Bonus Amt" ></x-input-text>
                         </div>
                         <div class="col-md-4 ms-2 pb-5 text-center">
                             <label class="form-label ">Bonus In Percent</label><br>
@@ -233,28 +266,28 @@
                       <div class="col-md-12 d-flex">
                         <div class="col-md-3 pe-2 mb-3">
                             <label class="form-label">Late Count</label>
-                            <input class="form-control" type="number" placeholder="Enter Late Count In Da" id="example-text-input"> 
+                            <x-input-text name="number" type="number"  placeholder="Enter Late Count In Da" ></x-input-text> 
                         </div>
                         <div class="col-md-3 mb-3">
                             <label class="form-label">Salary Deduction Days</label>
-                            <input class="form-control" type="number" placeholder="Enter late sal count here" id="example-text-input"> 
+                            <x-input-text name="number" type="number"  placeholder="Enter late sal count here" ></x-input-text> 
                         </div>
                         <div class="col-md-3 ms-2 pe-3 mb-3">
                           <label class="form-label">Late Sal Head</label>
                           <select id="formrow-inputState" class="form-select">
                             <option value="0">Select</option>
-                                   <option value="1">Medicine</option>
-                        <option value="2">Bakery assets</option>
-                        <option value="3">Anklet</option>
-                        <option value="4">Jewelerry Raw Materials</option>
-                        <option value="5">Paperwork Raw Materials</option>
-                        <option value="6">Paperwork Finished Goods</option>
-                        <option value="7">Block Raw Materials</option>
-                        <option value="8">Canteen Raw Material</option>
-                        <option value="9">Canteen Finished Goods</option>
-                        <option value="10">Tie-dye Raw Materials</option>
-                        <option value="11">Bakery Raw Materials</option>
-                        <option value="12">Angel Chef Hot Kitchen</option>
+                            <option value="1">Medicine</option>
+                            <option value="2">Bakery assets</option>
+                            <option value="3">Anklet</option>
+                            <option value="4">Jewelerry Raw Materials</option>
+                            <option value="5">Paperwork Raw Materials</option>
+                            <option value="6">Paperwork Finished Goods</option>
+                            <option value="7">Block Raw Materials</option>
+                            <option value="8">Canteen Raw Material</option>
+                            <option value="9">Canteen Finished Goods</option>
+                            <option value="10">Tie-dye Raw Materials</option>
+                            <option value="11">Bakery Raw Materials</option>
+                            <option value="12">Angel Chef Hot Kitchen</option>
                           </select>
                       </div>
                         <div class="col-md-3 ms-2 pb-5">
@@ -277,11 +310,11 @@
                       </div>
                         <div class="col-md-4 pe-2 mb-3">
                             <label class="form-label">Gross Salary</label>
-                            <input class="form-control" type="number" placeholder="Enter Total Gross Salary Here" id="example-text-input"> 
+                            <x-input-text name="number" type="number"  placeholder="Enter Total Gross Salary Here" ></x-input-text> 
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Net Salary</label>
-                            <input class="form-control" type="number" placeholder="Enter Total Salary Here" id="example-text-input"> 
+                            <x-input-text name="number" type="number"  placeholder="Enter Total Salary Here" ></x-input-text> 
                         </div>
                       </div>
                       <div class="col-md-12 d-flex">
@@ -352,7 +385,7 @@
                                       </select>
                                     </div>
                                     <div class=" col-1 p-0 pb-1">
-                                      <input type="number" class="form-control "/>
+                                      <x-input-text name="number" type="number"></x-input-text> 
                                     </div>
                                     <div class=" col-1 p-0 pb-1 ps-5">
                                       <input type="checkbox" class="form-check-input">
@@ -382,10 +415,10 @@
                                       </select>
                                     </div>
                                     <div class=" col-1 p-0 pb-1 ps-3 pe-3">
-                                      <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text> 
                                     </div>
                                     <div class="col-2 p-0 pb-1 pe-3 align-self-center d-flex">
-                                        <input type="number" class="form-control"/>
+                                      <x-input-text name="number" type="number"></x-input-text> 
                                         <button class="btn btn-outline-danger waves-effect waves-light">
                                           <i class="fas fa-trash-alt"></i>
                                       </button>
@@ -404,69 +437,15 @@
                 <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
                 <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
             </div>
-                </div>
+          </div>
 
-          </div><!-- /.modal-content -->
+        </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+</div><!-- /.modal -->
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
     <!-- form repeater js -->
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-{{-- Form --}}
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Plugins js -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $("#formCheckBoxForm").hide();
-        $("#formCheckBoxForm2").hide();
-
-        $("#formCheckBox").click(function(){
-            $("#formCheckBoxForm").toggle();
-        });
-        $("#formCheckBox2").click(function(){
-            $("#formCheckBoxForm2").toggle();
-        });
-    });
- </script>
 @endsection

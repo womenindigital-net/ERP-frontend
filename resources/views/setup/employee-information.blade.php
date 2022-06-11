@@ -1,18 +1,7 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Responsive Table css -->
-<link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endsection
 @section('content')
 @component('components.breadcrumb')
@@ -893,56 +882,81 @@
                         </div>
                   </div>
                   <div class="tab-pane mt-4" id="profile" role="tabpanel">
-                    <table id="datatable" class="table table-bordered dt-responsive w-100">
-                      <thead>
-                          <tr>
-                              <th> Name</th>
-                              <th>Gander</th>
-                              <th>Mobile</th>
-                              <th>Email</th>
-                              <th>Religion</th>
-                              <th>Department</th>
-                              <th>Section</th>
-                              <th>Type</th>
-                              <th>Log</th>
-                              <th>action</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>System </td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011</td>
-                              <td>$320,</td>
-                              <td>61</td>
-                              <td>2011/</td>
-                              <td>$320,</td>
-                              <td>$320,</td>
-                              <td>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                            class="form-control form-control-sm form-select form-select-sm">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select> entries
+                        </label>
+                      </div>
+                      <div class="col-sm-12 col-md-6 text-end">
+                        <label style="display: inline-flex;align-items: center;">Search:
+                          <input type="search" class="form-control form-control-sm" placeholder="">
+                        </label>
+                      </div>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table w-100 table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Name</th>
+                                <th>Gander</th>
+                                <th>Mobile</th>
+                                <th>Email</th>
+                                <th>Religion</th>
+                                <th>Department</th>
+                                <th>Section</th>
+                                <th>Type</th>
+                                <th>Log</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>System </td>
+                                <td>Edinburgh</td>
+                                <td>61</td>
+                                <td>2011</td>
+                                <td>$320,</td>
+                                <td>61</td>
+                                <td>2011/</td>
+                                <td>$320,</td>
+                                <td>$320,</td>
+                                <td>
                                   <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                       <i class="mdi mdi-pencil"></i>
                                   </button>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>Puja </td>
-                              <td>Accountant</td>
-                              <td>Tokyo</td>
-                              <td>63</td>
-                              <td>20115</td>
-                              <td>$170</td>
-                              <td>61</td>
-                              <td>2011/</td>
-                              <td>2011/</td>
-                              <td>
-                                      <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                          <i class="mdi mdi-pencil"></i>
-                                      </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        Showing 1 to 2 of 2 entries
+                      </div>
+                      <div class="col-sm-12 col-md-6 text-end">
+                        <nav>
+                          <ul class="pagination" style="justify-content: end;">
+                            <li class="page-item disabled">
+                              <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                              <a class="page-link" href="#">Next</a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
              
                   </div>
               </div>     
@@ -952,44 +966,6 @@
 </div>
 @endsection
 @section('script')
-   <!-- form advanced init -->
-   <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
-   <!-- form repeater js -->
-   <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-   <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-
-   <!-- Required datatable js -->
-   <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-   <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-   <!-- Datatable init js -->
-   <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-   <!-- Responsive Table js -->
-   <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
-
-   <!-- Init js -->
-   <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-   <!-- Table Editable plugin -->
-   <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-   <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-   <!-- Sweet Alerts js -->
-   <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-   <!-- Sweet alert init js-->
-   <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
 
 @endsection

@@ -1,16 +1,7 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endsection
 @section('content')
 @component('components.breadcrumb')
@@ -31,46 +22,74 @@
                 class="fas fa-plus-circle"></i> Add</button>
           </div>
         </div>
-        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-          <thead>
-            <tr>
-              <th class="text-center">Name</th>
-              <th class="text-center">Bangla Name</th>
-              <th class="text-center">Head Nature</th>
-              <th class="text-center">Is Other Payment</th>
-              <th class="text-center">Log</th>
-              <th class="text-center">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="text-center">Basic</td>
-              <td class="text-center">বেসিক</td>
-              <td class="text-center">Additive</td>
-              <td class="text-center">No</td>
-              <td class="text-center">Create: Shonod Digital @ 2018-12-26 15:49:16 <br>
-                Update: Shonod Digital @ 2020-02-07 03:40:53</td>
-              <td class="text-center">
-                <button type="button"
-                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                 <i class="fas fa-check"></i>
-            </button>
-            <button type="button"
-                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                 <i class="fas fa-check"></i>
-            </button>
-                  <button type="button"
-                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                <i class="fas fa-pen"></i></button>
-                  <button type="button"
-                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"> <i
-                    class="fas fa-trash-alt"></i></button></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                class="form-control form-control-sm form-select form-select-sm">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select> entries
+            </label>
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <label style="display: inline-flex;align-items: center;">Search:
+              <input type="search" class="form-control form-control-sm" placeholder="">
+            </label>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table w-100 table-bordered">
+            <thead>
+              <tr class="table-primary">
+                <th>Name</th>
+                <th>Bangla Name</th>
+                <th>Head Nature</th>
+                <th>Is Other Payment</th>
+                <th>Log</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Basic</td>
+                <td>বেসিক</td>
+                <td>Additive</td>
+                <td>No</td>
+                <td>Create: Shonod Digital @ 2018-12-26 15:49:16 <br>
+                  Update: Shonod Digital @ 2020-02-07 03:40:53</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                        <i class="mdi mdi-pencil"></i>
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            Showing 1 to 2 of 2 entries
+          </div>
+          <div class="col-sm-12 col-md-6 text-end">
+            <nav>
+              <ul class="pagination" style="justify-content: end;">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </div> <!-- end col -->
@@ -86,22 +105,22 @@
               <div class="modal-body">
                     <!-- journal form start -->  
                     <div class="col-md-12 d-flex">
-                      <div class="col-md-6 mb-3 text-center">
+                      <div class="col-md-6 mb-3">
                           <label class="form-label">Head Name</label>
-                          <input class="form-control" type="text" placeholder="Enter Head Name Here" id="example-text-input"> 
+                            <x-input-text name="name" placeholder="Enter Head Name Here"></x-input-text>
                       </div>
-                      <div class="col-md-6 ms-2 mb-3 text-center">
+                      <div class="col-md-6 ms-2 mb-3">
                           <label class="form-label">Head Name Bangla</label>
-                          <input class="form-control" type="text" placeholder="Enter Head Name Bangla Here" id="example-text-input"> 
+                          <x-input-text name="name" placeholder="Enter Head Name Bangla Here"></x-input-text>
                       </div>
                     </div>
                 </div>
                     <div class="col-md-12 d-flex ps-3">
-                      <div class="col-md-6 mb-3 text-center">
+                      <div class="col-md-6 mb-3">
                           <label class="form-label">Default Amount</label>
-                          <input class="form-control" type="number" placeholder="Enter Default Amount Here" id="example-text-input"> 
+                            <x-input-text name="number" type="number" placeholder="Enter Default Amount Here"></x-input-text>                          
                       </div>
-                      <div class="col-md-6 ps-2 pe-3 mb-3 text-center">
+                      <div class="col-md-6 ps-2 pe-3 mb-3">
                           <label class="form-label">Account</label>
                           <select id="formrow-inputState" class="form-select">
                               <option value="0">Select</option>
@@ -141,9 +160,9 @@
                               </div>
                         </div>
                       </div>
-                    <div class="col-md-12 pe-3 ps-3 mb-3 text-center">
+                    <div class="col-md-12 pe-3 ps-3 mb-3">
                         <label class="form-label">Description</label>
-                        <textarea class="form-control" placeholder="Enter salary head description" rows="1" name="SHDesc" cols="50" id="SHDesc"></textarea>
+                        <x-input-textarea name="description" placeholder="Enter salary head description"></x-input-textarea>
                     </div>
                     
                 <!-- journal form end -->
@@ -158,52 +177,5 @@
   </div><!-- /.modal -->
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
 
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Plugins js -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $("#formCheckBoxForm").hide();
-        $("#formCheckBoxForm2").hide();
-
-        $("#formCheckBox").click(function(){
-            $("#formCheckBoxForm").toggle();
-        });
-        $("#formCheckBox2").click(function(){
-            $("#formCheckBoxForm2").toggle();
-        });
-    });
- </script>
 @endsection

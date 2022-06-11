@@ -411,11 +411,11 @@
                               <label for="example-number-input" class="col-md-6 pe-4 col-form-label fs-5 text-end">Approved for
                                 Observation:</label>
                                 <div class="btn-group btn-group-sm p-2 col-md-2" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked>
+                                    <input type="radio"  class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked>
                                     <label class="btn btn-outline-success" for="btnradio4">Yes</label>
 
                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="btnradio5">No</label>
+                                    <label class="btn btn-outline-success text-danger" for="btnradio5">No</label>
                                 </div>
                             </div>
                           </div>
