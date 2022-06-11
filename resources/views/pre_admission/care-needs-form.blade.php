@@ -53,8 +53,6 @@
                                                                 data-toggle="tab">2nd part: Assessment</a></li>
                                                         <li class="w-100"><a href="#Personal_Care_Needs"
                                                                 data-toggle="tab">Personal Care Needs</a></li>
-                                                        <li class="w-100"><a href="#Personal_Care_Needs"
-                                                                data-toggle="tab">Personal Care Needs</a></li>
                                                         <li class="w-100"><a href="#Medical_history"
                                                                 data-toggle="tab">Medical history</a></li>
                                                         <li class="w-100"><a href="#Physical_Health_Needs"
@@ -162,77 +160,50 @@
                                                                     </div>
                                                                     <!-- end row -->
 
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check 
                                                                         label="Has the individual had a previous needs assessment?"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check name="If_so_has_a_copy_been_obtained"
                                                                         label="If so, has a copy been obtained?"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check 
                                                                         label="Psychological assessment" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check name="if_Yes_report_attached"
                                                                         label="if Yes, report attached" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check 
                                                                         label="Functional Assessment" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check 
                                                                         label="Sensory checklist" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check 
                                                                         label="Social Communication" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
+                                                                    <x-input-radio-or-check name="hh"
+                                                                        label="Therapy
+                                                                        assessment: OT,
+                                                                        SLT, Physio" :records="$careConstants::$therapyAssessment" multiline="true"/>
+                                                                    
 
-                                                                    <div class="row border-top py-2">
-                                                                        <div class="col-xl-12 col-sm-12">
-                                                                            <div class="m-0">
-                                                                                <h5 class="mb-4">Therapy
-                                                                                    assessment: OT,
-                                                                                    SLT, Physio</h5>
-                                                                                <div class="form-check d-flex">
-                                                                                    <div class="me-5">
-                                                                                        <input class="form-check-input"
-                                                                                            type="checkbox"
-                                                                                            name="formRadios">
-                                                                                        <label
-                                                                                            class="form-check-label">OT</label>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <input class="form-check-input "
-                                                                                            type="checkbox"
-                                                                                            name="formRadios">
-                                                                                        <label
-                                                                                            class="form-check-label me-5">
-                                                                                            SLT</label>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <input class="form-check-input"
-                                                                                            type="checkbox"
-                                                                                            name="formRadios">
-                                                                                        <label class="form-check-label">
-                                                                                            Physio</label>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                    <!-- end row -->
                                                                 </form>
                                                             </section>
                                                         </div>

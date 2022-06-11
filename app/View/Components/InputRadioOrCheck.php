@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Exception;
 use Illuminate\View\Component;
 
 class InputRadioOrCheck extends Component
@@ -15,15 +16,20 @@ class InputRadioOrCheck extends Component
     public $records;
     public string $wireModel;
     public string $secondaryInputWire;
+    public array $checked;
 
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @return Exception
      */
-    public function __construct($records, $label, $name = '', $isVertical = true, $multiple = false, $secondaryInputLabel = '', $type = 'radio', $wireModel = false)
+    public function __construct($records, $label = '', $name = '', $checked = false, $isVertical = true, $multiple = false, $secondaryInputLabel = '', $type = 'radio', $wireModel = false)
     {
-        $name                      = $wireModel ?: $name;
+        if (!$name and !$wireModel and !$label) {
+            return new Exception("Please, pass name or label or wireModel");
+        }
+
+        $name                      = $wireModel ?: ($name ?: convertLevelIntoName($label));
         $this->multiple            = $multiple;
         $this->name                = $multiple ? $name . '[]' : $name;
         $this->type                = $multiple ? 'checkbox' : $type;
@@ -33,6 +39,7 @@ class InputRadioOrCheck extends Component
         $this->secondaryInputLabel = $secondaryInputLabel;
         $this->wireModel           = $wireModel ? "name=$wireModel" : '';
         $this->secondaryInputWire = $secondaryInputLabel ? "name={$name}_secondary" : '';
+        $this->checked = $checked ? (is_array($checked) ? $checked : [$checked]) : [];
     }
 
     /**

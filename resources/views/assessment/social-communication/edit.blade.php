@@ -16,20 +16,7 @@
         }
     </style>
 @endsection
-
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1')
-        @endslot
-        @slot('title')
-        @endslot
-    @endcomponent
-    <div class="row mb-3">
-        <div class="col-6">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"><i
-                    class="fa fa-user"></i>PROFILE</button>
-        </div>
-    </div>
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">
@@ -124,7 +111,7 @@
                                                                             <label class="p-2">Collection
                                                                                 Date:</label>
                                                                             <x-input-text name="collection_date" type="date"
-                                                                                placeholder="mm/dd/yyyy">
+                                                                                placeholder="mm/dd/yyyy" value="{{$record->collection_date}}">
                                                                             </x-input-text>
                                                                         </div>
 
@@ -132,41 +119,16 @@
                                                                             <label class="p-2">Teacher: <span
                                                                                     class="text-danger text-bold">*</span></label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="$teachers"></x-input-select>
+                                                                                :records="$teachers" :selected="$record->teacher_id"></x-input-select>
                                                                         </div>
 
                                                                         <div class="col-lg-4 pull-left pb-2">
                                                                             <label class="p-2">Candidate ID:
                                                                                 <span
                                                                                     class="text-danger text-bold">*</span></label>
-                                                                            <select
-                                                                                class="form-control strip-tags select2 form-select"
-                                                                                id="StudentID" required="" name="StudentID">
-                                                                                <option selected="selected" value="">--
-                                                                                    Select --</option>
-                                                                                <option value="1">Aalliyah Tehzeeb Ahmed
-                                                                                </option>
-                                                                                <option value="2">abdullah-al-nafi antor
-                                                                                </option>
-                                                                                <option value="3">Abdullahil Baki</option>
-                                                                                <option value="4">Abdur Rahman Sajid
-                                                                                </option>
-                                                                                <option value="5">Abid Hossain Turjo
-                                                                                </option>
-                                                                                <option value="6">Abid Kabir Chowdhury
-                                                                                </option>
-                                                                                <option value="7">Abrar Ahosab Talha
-                                                                                </option>
-                                                                                <option value="8">Abrar Jawad Siam</option>
-                                                                                <option value="9">Abu Sufiyan</option>
-                                                                                <option value="10">Adib Akbar</option>
-                                                                                <option value="11">Adiba Atiar</option>
-                                                                                <option value="12">Adil Anaf</option>
-                                                                                <option value="13">Aditya Chakraborty
-                                                                                </option>
-                                                                                <option value="14">Adiyan Islam Danial
-                                                                                </option>
-                                                                            </select>
+                                                                            <x-input-select name="student_id"
+                                                                                            :records="$students" :selected="$record->student_id"></x-input-select>
+
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
@@ -923,7 +885,7 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check name="" label="Changes the style of commands or requests depending on who the child is speaking to and what the
-                                                                           child wants" :records="$constants::$socialCommunication"
+                                                                               child wants" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                             </section>
@@ -1116,7 +1078,7 @@
                                 <div class="row">
                                     <div class="col-lg-4 pull-left pb-2">
                                         <label class="p-2">Collection Date:</label>
-                                        <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
+                                        <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy" value="{{$record->collection_date}}">
                                         </x-input-text>
                                     </div>
 
@@ -1795,7 +1757,7 @@
                             </x-input-radio-or-check>
                             <!-- row end -->
                             <x-input-radio-or-check name="" label="Changes the style of commands or requests depending on who the child is speaking to and what the
-                                                          child wants" :records="$constants::$socialCommunication" :isVertical="false">
+                                                              child wants" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
 

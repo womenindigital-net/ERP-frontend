@@ -1,1 +1,13 @@
+1:migration
+2:set name in input component
+3:Data insert
+4:Data View 
+5:Data Edit
+
+
+secondaryInputValue Not come
+Image component 
+collapse form component
+Case History Teacher and Candidate
+
 

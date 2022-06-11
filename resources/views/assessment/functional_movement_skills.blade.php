@@ -21,11 +21,11 @@
 @slot('title')STUDENT QA @endslot
 @endcomponent
 
-<div class="row">
+<div class="row mb-3 mt-3">
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <div class="row mb-3">
+        <div class="row mb-3 mt-3">
           <div class="col-6">
             <h4 class="card-title">STUDENT QAS</h4>
           </div>
@@ -55,7 +55,7 @@
           <div class="table-responsive">
             <table class="table table-bordered w-100">
               <thead>
-                <tr class="table-primary ">
+                <tr class="table-primary">
                   <th>Collection Date</th>
                   <th>Student Name</th>
                   <th>Collected By</th>
@@ -70,8 +70,8 @@
                   <td>Ohidul Hassan</td>
                   <td>Create: Ohidul Hassan @ 2022-05-15 17:24:20</td>
                   <td>
-                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                      <i class="mdi mdi-eye"></i>
+                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                      <i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"></i>
                     </button>
                     <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
                         class="fas fa-check"></i>
@@ -118,8 +118,6 @@
               </nav>
             </div>
           </div>
-
-
         </div>
       </div>
     </div> <!-- end col -->
@@ -137,10 +135,10 @@
       <div class="modal-body">
         <div id="vertical-example" class="vertical-wizard">
           <!-- Seller Details -->
-          <h3>Case History</h3>
+          <h3>Fundamental Movement Skills</h3>
           <section>
-            <form>
-              <div class="row">
+            <form >
+              <div class="row mb-3 mt-3">
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
@@ -152,20 +150,7 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <select class="form-control strip-tags select2 form-select" id="Teacher" required="" name="TeacherID">
-                      <option value="">-- Select --</option>
-                      <option value="1">abulhasnat</option>
-                      <option value="2">nila01</option>
-                      <option value="3">Airins</option>
-                      <option value="4">AmalRozareo</option>
-                      <option value="5">anasbin</option>
-                      <option value="6">arupmandal</option>
-                      <option value="7">asadzaman</option>
-                      <option value="8">Badshah</option>
-                      <option value="9">BijoyRozareo</option>
-                      <option value="10">Chandan</option>
-                      <option value="11">dolonbishwash</option>
-                    </select>
+                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -186,7 +171,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row ">
                 <div class="col-lg-12">
                   <div class="mb-3">
                     <label for="verticalnav-phoneno-input">Description:</label>
@@ -206,17 +191,15 @@
           <!-- Company Document -->
           <h3>General</h3>
           <section>
-            <form>
-              <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                <thead>
-                  <tr>
-                    <th><img src="images/avatar-1.jpg" alt=""></th>
-                    <th>On the left is the Deep Squat test from the Functional Movement Screen.
+            <form >
+              <div id="" class="class="">
+                  <div class="row mb-3 mt-3">
+                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                    <div class="col-md-8">On the left is the Deep Squat test from the Functional Movement Screen.
                       Note that the stick is maintained vertically aligned with the feet, representing good mobility/stability through the trunk and shoulders.
-                      For the max score of “3”, this is the position you must achieve. On the right, the stick is well forward of the body, indicating deficits in mobility, stability, or both. Pls check 4 times :</th>
-                  </tr>
-                </thead>
-              </table>
+                      For the max score of “3”, this is the position you must achieve. On the right, the stick is well forward of the body, indicating deficits in mobility, stability, or both. Pls check 4 times :</div>
+                  </div>
+              </div>
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
@@ -266,26 +249,26 @@
                   </div>
                 </div>
               </div>
-              <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                <thead>
-                  <tr>
-                    <th><img src="images/avatar-1.jpg" alt=""></th>
-                    <th>	
-                      In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates</th>
-                  </tr>
-                </thead>
-              </table>
+              <div id="" class="">
+              
+                  <div class="row mb-3 mt-3">
+                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                    <div class="col-md-8">	
+                      In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates</div>
+                  </div>
+                
+              </div>
               <h5>Excessive hip rotation to clear the hurdle</h5>
-              <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                <thead>
-                  <tr>
-                    <th><img src="images/avatar-1.jpg" alt=""></th>
-                    <th>	
+              <div id="" class="">
+              
+                  <div class="row mb-3 mt-3">
+                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                    <div class="col-md-8">	
                       In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates 
-                    </th>
-                  </tr>
-                </thead>
-              </table>
+                    </div>
+                  </div>
+                
+              </div>
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">
@@ -310,16 +293,16 @@
           <h3>Foot</h3>
           <section>
             <div>
-              <form>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>To improve the stability of the feet, single-leg stance exercises with bare feet are useful.
-                        Shown here are diagonal leg whips on the left and rotational reaches on the right. Gently grip the ground with the toes. Keep a tall posture and limit trunk sway. Start with short, slow movements and gradually add the range of motion and speed as proficiency improves.</th>
-                    </tr>
-                  </thead>
-                </table>
+              <form >
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">To improve the stability of the feet, single-leg stance exercises with bare feet are useful.
+                        Shown here are diagonal leg whips on the left and rotational reaches on the right. Gently grip the ground with the toes. Keep a tall posture and limit trunk sway. Start with short, slow movements and gradually add the range of motion and speed as proficiency improves.</div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -361,15 +344,15 @@
           <h3>Ankle</h3>
           <section>
             <div>
-              <form>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>Ankle: The picture on the left shows optimal ankle flexion just before the heel rises during the walking stride. The picture on the right shows limited ankle flexion and is associated with an inefficient stride. </th>
-                    </tr>
-                  </thead>
-                </table>
+              <form >
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">Ankle: The picture on the left shows optimal ankle flexion just before the heel rises during the walking stride. The picture on the right shows limited ankle flexion and is associated with an inefficient stride. </div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -411,16 +394,16 @@
           <h3>Knee</h3>
           <section>
             <div>
-              <form>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>On the left, side stepping against the elastic band builds lateral hip stability and thus better control of knee motion. Ensure that the trunk doesn't sway.
-                        On the right, the medial pull of the elastic band adds challenge to lunges or single-leg squats. Ensure that the knee of the stance leg does not drift inward.</th>
-                    </tr>
-                  </thead>
-                </table>
+              <form >
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">On the left, side stepping against the elastic band builds lateral hip stability and thus better control of knee motion. Ensure that the trunk doesn't sway.
+                        On the right, the medial pull of the elastic band adds challenge to lunges or single-leg squats. Ensure that the knee of the stance leg does not drift inward.</div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -454,15 +437,15 @@
                     </div>
                   </div>
                 </div>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
-                        Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</th>
-                    </tr>
-                  </thead>
-                </table>
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
+                        Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -496,13 +479,12 @@
                     </div>
                   </div>
                 </div>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                    </tr>
-                  </thead>
-                </table>
+                <div id="" class="">
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -545,16 +527,16 @@
           <h3> Hip</h3>
           <section>
             <div>
-              <form>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>The single-leg squat variation shown on the left is a strong challenge to the hip stabilizers. The picture on the right shows excellent mobility of the right hip into extension during a lunge. This is also the position for stretch of the hip flexors of the right leg.
-                      </th>
-                    </tr>
-                  </thead>
-                </table>
+              <form >
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">The single-leg squat variation shown on the left is a strong challenge to the hip stabilizers. The picture on the right shows excellent mobility of the right hip into extension during a lunge. This is also the position for stretch of the hip flexors of the right leg.
+                      </div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -588,15 +570,15 @@
                     </div>
                   </div>
                 </div>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
-                        Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</th>
-                    </tr>
-                  </thead>
-                </table>
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
+                        Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -638,17 +620,17 @@
           <h3>Low Back</h3>
           <section>
             <div>
-              <form>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>Low Back: Walking lunges with a plate overhead demands control of the core.
+              <form >
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
                         Keep the core engaged throughout to limit trunk sway.
-                      </th>
-                    </tr>
-                  </thead>
-                </table>
+                      </div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -682,13 +664,13 @@
                     </div>
                   </div>
                 </div>
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                    </tr>
-                  </thead>
-                </table>
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -730,17 +712,17 @@
           <!-- Bank Details -->
           <h3>Mid Back</h3>
           <section>
-            <div class="row">
-              <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                <thead>
-                  <tr>
-                    <th><img src="images/avatar-1.jpg" alt=""></th>
-                    <th>Low Back: Walking lunges with a plate overhead demands control of the core.
+            <div class="row mb-3 mt-3">
+              <div id="" class="">
+              
+                  <div class="row mb-3 mt-3">
+                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                    <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
                       Keep the core engaged throughout to limit trunk sway.
-                    </th>
-                  </tr>
-                </thead>
-              </table>
+                    </div>
+                  </div>
+                
+              </div>
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
@@ -780,16 +762,16 @@
           <!-- Bank Details -->
           <h3>Shoulder </h3>
           <section>
-            <div class="row">
-              <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                <thead>
-                  <tr>
-                    <th><img src="images/avatar-1.jpg" alt=""></th>
-                    <th>Tight muscles around the shoulder blades can limit overhead motion. Here the foam roll is used to increase the extensibility of the teres major. 
-                    </th>
-                  </tr>
-                </thead>
-              </table>
+            <div class="row mb-3 mt-3">
+              <div id="" class="">
+              
+                  <div class="row mb-3 mt-3">
+                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                    <div class="col-md-8">Tight muscles around the shoulder blades can limit overhead motion. Here the foam roll is used to increase the extensibility of the teres major. 
+                    </div>
+                  </div>
+                
+              </div>
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
@@ -823,16 +805,16 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th><img src="images/avatar-1.jpg" alt=""></th>
-                      <th>Overhead squatting is a challenge to stability throughout the core and shoulder girdle. Ensure you have sufficient shoulder mobility to keep the weight vertically aligned with the feet, not in front of the body.
-                      </th>
-                    </tr>
-                  </thead>
-                </table>
+              <div class="row mb-3 mt-3">
+                <div id="" class="">
+                
+                    <div class="row mb-3 mt-3">
+                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      <div class="col-md-8">Overhead squatting is a challenge to stability throughout the core and shoulder girdle. Ensure you have sufficient shoulder mobility to keep the weight vertically aligned with the feet, not in front of the body.
+                      </div>
+                    </div>
+                  
+                </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
@@ -866,14 +848,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                    <thead>
-                      <tr>
-                        <th><img src="images/avatar-1.jpg" alt=""></th>
-                      </tr>
-                    </thead>
-                  </table>
+                <div class="row mb-3 mt-3">
+                  <div id="" class="">
+                  
+                      <div class="row mb-3 mt-3">
+                        <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                      </div>
+                    
+                  </div>
                   <!-- end row -->
                   <div class="row border-top py-2">
                     <div class="col-xl-12 col-sm-12">

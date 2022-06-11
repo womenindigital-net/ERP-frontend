@@ -19,18 +19,12 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('li_1')
-            DashBoard
+
         @endslot
         @slot('title')
-            STUDENT QAS
+
         @endslot
     @endcomponent
-
-    <div class="row">
-        <div class="col-6 mb-2">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"><i
-                    class="fa fa-user"></i>PROFILE</button>
-        </div>
         <div class="row">
             <div class="col-xl-12 p-0">
                 <div class="card">
@@ -628,10 +622,10 @@
     @section('script')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
+
         <!-- jquery step -->
         <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
 
         <!-- form wizard init -->
         <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
     @endsection
-@endsection

@@ -128,7 +128,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('sensory.checklist.for.child') }}">Sensory checklist for Child</a></li>
-                        <li><a href="{{ route('social.communication') }}">Social Communication</a></li>
+                        <li><a href="{{ route('social-communication.create') }}">Social Communication</a></li>
                         <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
                         <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
                         <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication

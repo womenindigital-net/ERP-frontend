@@ -112,6 +112,7 @@ class StudentController extends Controller
     {
         return view('pre_admission.appointment');
     }
+
     public function studentIncome()
     {
         $data = [
@@ -147,6 +148,7 @@ class StudentController extends Controller
 
         return view('pre_admission.care-needs-form', $data);
     }
+
     public function admissionAddStudent(): Factory|View|Application
     {
         $data = [
@@ -155,8 +157,6 @@ class StudentController extends Controller
 
         return view('admission.add_student', $data);
     }
-
-
 
     public function individualrisk(): Factory|View|Application
     {
@@ -167,7 +167,6 @@ class StudentController extends Controller
         return view('assessment.individual_risk_assessment_form', $data);
     }
 
-
     public function sensoryChecklistForChild(): Factory|View|Application
     {
         $data = [
@@ -176,14 +175,7 @@ class StudentController extends Controller
 
         return view('assessment.sensory-checklist-for-child', $data);
     }
-    public function socialCommunication(): Factory|View|Application
-    {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        ];
 
-        return view('assessment.Social-Communication', $data);
-    }
     public function occupationalTherapy(): Factory|View|Application
     {
         $data = [
@@ -192,6 +184,7 @@ class StudentController extends Controller
 
         return view('assessment.occupational-therapy', $data);
     }
+
     public function physioTherapy(): Factory|View|Application
     {
         $data = [
@@ -200,6 +193,7 @@ class StudentController extends Controller
 
         return view('assessment.physiotherapy', $data);
     }
+
     public function executiveFunctionTest(): Factory|View|Application
     {
         $data = [
@@ -208,6 +202,7 @@ class StudentController extends Controller
 
         return view('assessment.executive_function_test', $data);
     }
+
     public function autismBehaviorChecklist(): Factory|View|Application
     {
         $data = [
@@ -216,6 +211,7 @@ class StudentController extends Controller
 
         return view('assessment.autism_behavior_checklist', $data);
     }
+
     public function functionalCommunicationAssessment(): Factory|View|Application
     {
         $data = [
@@ -224,6 +220,7 @@ class StudentController extends Controller
 
         return view('assessment.functional_communication_assessment', $data);
     }
+
     public function sensoryChecklistForYoungAdult(): Factory|View|Application
     {
         $data = [
@@ -232,6 +229,7 @@ class StudentController extends Controller
 
         return view('assessment.sensory_checklist_for_young_adult', $data);
     }
+
     public function individualRiskAssessmentForm(): Factory|View|Application
     {
         $data = [
@@ -248,6 +246,7 @@ class StudentController extends Controller
         ];
         return view('student.dairy.incident-record', $data);
     }
+
     public function medicineAdmin(): Factory|View|Application
     {
         $data = [
@@ -266,7 +265,6 @@ class StudentController extends Controller
         return view('assessment.functional_movement_skills', $data);
     }
 
-
     public function studentList(): Factory|View|Application
     {
         $data = [
@@ -284,6 +282,7 @@ class StudentController extends Controller
 
         return view('student.dairy.trip-report-form', $data);
     }
+
     public function gymOutingEvaluation(): Factory|View|Application
     {
         $data = [
@@ -301,6 +300,7 @@ class StudentController extends Controller
 
         return view('student.dairy.ot-assessment', $data);
     }
+
     public function dramaDiary(): Factory|View|Application
     {
         $data = [
@@ -309,7 +309,6 @@ class StudentController extends Controller
 
         return view('student.co-curricular.drama-diary-evaluation', $data);
     }
-
 
     public function staffWorkplace(): Factory|View|Application
     {
@@ -332,6 +331,7 @@ class StudentController extends Controller
         ];
         return view('accounting.income.sale_voucher', $data);
     }
+
     public function studentReceivedPayment(): Factory|View|Application
     {
         $data = [
@@ -347,6 +347,7 @@ class StudentController extends Controller
         ];
         return view('program.assign-task', $data);
     }
+
     public function createItp(): Factory|View|Application
     {
         $data = [
@@ -354,6 +355,7 @@ class StudentController extends Controller
         ];
         return view('program.create-itp', $data);
     }
+
     public function stockReceive(): Factory|View|Application
     {
         $data = [
@@ -361,6 +363,7 @@ class StudentController extends Controller
         ];
         return view('stock-management.stock_receive', $data);
     }
+
     public function finishedGoods(): Factory|View|Application
     {
         $data = [
@@ -368,6 +371,7 @@ class StudentController extends Controller
         ];
         return view('stock-management.finished_goods', $data);
     }
+
     public function materialCallects(): Factory|View|Application
     {
         $data = [
@@ -375,6 +379,7 @@ class StudentController extends Controller
         ];
         return view('stock-management.material_callects', $data);
     }
+
     public function stockTransfer(): Factory|View|Application
     {
         $data = [
@@ -384,7 +389,6 @@ class StudentController extends Controller
     }
 
     public function taskCreate(): Factory|View|Application
-
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),

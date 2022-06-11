@@ -34,11 +34,10 @@
                                 class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-check"></i>
                             </button>
-                            <button type="button"
-                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                                data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                            <a href="{{ route('case-history.edit', $record->id) }}"
+                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-pencil"></i>
-                            </button>
+                            </a>
                             <button type="button"
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="bx bx-dollar"></i>

@@ -193,7 +193,9 @@
                                                             <p class="form-control m-0">Cut on a line</p>
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1">
+
                                                             <x-input-select name="teacher_id" :records="[]" />
+
                                                         </div>
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1">
                                                             <select id="formrow-inputState" class="form-select">
@@ -214,7 +216,9 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-textarea name='ert' rows='1' cols='35'></x-input-textarea>
+                                                            <x-input-textarea name='name' rows='1' cols='35'>
+                                                            </x-input-textarea>
+
                                                             <button class="btn btn-danger btn-rounded ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
