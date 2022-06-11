@@ -718,7 +718,6 @@
                                                                                                 type="checkbox"
                                                                                                 :records="$caseConstants::$necessaryThings"
                                                                                                 secondaryInputLabel="বিস্তারিত লিখুন"
-                                                                                                secondaryInputValue=""
                                                                                                 :isVertical="false"
                                                                                                 :multiple="true">
                                                                         </x-input-radio-or-check>

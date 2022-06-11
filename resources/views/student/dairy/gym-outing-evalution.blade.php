@@ -130,30 +130,15 @@
                   <div class="mb-3">
                     <label for="basicpill-firstname-input">Collection Date:</label>
                     <div class="input-group" id="datepicker2">
-                      <input type="date" class="form-control" placeholder="dd/mm/yyyy" data-date-format="dd/mm/yyyy">
-                      
+                      <x-input-text name="collection_date" type="date"
+                      placeholder="mm/dd/yyyy" />
                     </div><!-- input-group -->
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <select class="form-control select2 form-select">
-                      <option value="0">Select</option>
-                      <option value="1">abulhasnat</option>
-                      <option value="2">nila01</option>
-                      <option value="3">Airins</option>
-                      <option value="4">AmalRozareo</option>
-                      <option value="5">anasbin</option>
-                      <option value="6">arupmandal</option>
-                      <option value="7">asadzaman</option>
-                      <option value="8">Badshah</option>
-                      <option value="9">BijoyRozareo</option>
-                      <option value="10">Chandan</option>
-                      <option value="11">dolonbishwash</option>
-                      <option value="12">golamrabbani</option>
-                      <option value="13">jahinur</option>
-                    </select>
+                    <x-input-select name="teachaer_id" :records="[]" />
                   </div>
                 </div>
               </div>
@@ -163,31 +148,31 @@
           <h3> Gym</h3>
           <section>
             <form>
-                <x-input-radio-or-check name="" label="Treadmill(15-20 min) speed:5" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="treadmill" label="Treadmill(15-20 min) speed:5" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}
-                <x-input-radio-or-check name="" label="Cycling 5 min" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="cycling" label="Cycling 5 min" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}        
-                <x-input-radio-or-check name="" label="Butterfly(10x5) 24,36 kg" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="butterfly" label="Butterfly(10x5) 24,36 kg" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}  
-                <x-input-radio-or-check name="" label="Lat pull down (10x5) 24,36 kg" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="lat_pull_down" label="Lat pull down (10x5) 24,36 kg" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}   
-                <x-input-radio-or-check name="" label="Lat up (10x3), 12,24 kg" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="Lat_up" label="Lat up (10x3), 12,24 kg" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}  
-                <x-input-radio-or-check name="" label="Dumble (10x4)6,8,10 lb" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="dumble" label="Dumble (10x4)6,8,10 lb" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}    
-                <x-input-radio-or-check name="" label="Leg curl (10x4)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="Leg_curl" label="Leg curl (10x4)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}      
-                <x-input-radio-or-check name="" label="Vibration (10 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="vibration" label="Vibration (10 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}    
-                <x-input-radio-or-check name="" label="Spot jump (10x2)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="spot_jump" label="Spot jump (10x2)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}     
-                <x-input-radio-or-check name="" label="Free hand exercise (10-15 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="Free_hand_exercise" label="Free hand exercise (10-15 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}    
-                <x-input-radio-or-check name="" label="Ball throw (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="ball_throw" label="Ball throw (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}      
-                <x-input-radio-or-check name="" label="Basket ball throw (10)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="basket_ball_throw" label="Basket ball throw (10)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}
-                <x-input-radio-or-check name="" label="Ball Kick (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="ball_kick" label="Ball Kick (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}     
             </form>
             </section>
@@ -197,22 +182,22 @@
           <h3>Outing</h3>
           <section>
             <form>
-                <x-input-radio-or-check name="" label="Walking (20 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="walking" label="Walking (20 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}               
          
-                <x-input-radio-or-check name="" label="Running (15 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="running" label="Running (15 min)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}  
                 
-                <x-input-radio-or-check name="" label="height down jump (10)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="height_down_jump" label="height down jump (10)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}  
                 
-                <x-input-radio-or-check name="" label="Tennis ball throw (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="tennis_ball_throw" label="Tennis ball throw (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}  
                 
-                <x-input-radio-or-check name="" label="Tennis ball catch (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="tennis_ball_catch" label="Tennis ball catch (15)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}  
                 
-                <x-input-radio-or-check name="" label="Ball fielding practice (10)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
+                <x-input-radio-or-check name="ball_fielding_practice" label="Ball fielding practice (10)" :records="$gymoutingConstants::$assistance" secondaryInputLabel=""></x-input-radio-or-check>
                 {{-- end row --}}  
               
             </form>
@@ -231,9 +216,6 @@
 
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
-
-
 @endsection
 
 
