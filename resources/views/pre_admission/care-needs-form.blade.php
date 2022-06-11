@@ -53,6 +53,8 @@
                                                                 data-toggle="tab">2nd part: Assessment</a></li>
                                                         <li class="w-100"><a href="#Personal_Care_Needs"
                                                                 data-toggle="tab">Personal Care Needs</a></li>
+                                                        <li class="w-100"><a href="#Personal_Care_Needs"
+                                                                data-toggle="tab">Personal Care Needs</a></li>
                                                         <li class="w-100"><a href="#Medical_history"
                                                                 data-toggle="tab">Medical history</a></li>
                                                         <li class="w-100"><a href="#Physical_Health_Needs"
@@ -160,48 +162,43 @@
                                                                     </div>
                                                                     <!-- end row -->
 
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check name="hh"
                                                                         label="Has the individual had a previous needs assessment?"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="If_so_has_a_copy_been_obtained"
+                                                                    <x-input-radio-or-check name="if_so_has_a_copy_been_obtained"
                                                                         label="If so, has a copy been obtained?"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check name="hh"
                                                                         label="Psychological assessment" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="if_Yes_report_attached"
+                                                                    <x-input-radio-or-check name="if_yes_report_attached"
                                                                         label="if Yes, report attached" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check name="hh"
                                                                         label="Functional Assessment" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check name="hh"
                                                                         label="Sensory checklist" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
+
 
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check 
                                                                         label="Social Communication" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
-
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh" label="Therapy assessment: OT,
-                                                                        SLT, Physio" :records="$careConstants::$therapyAssessment" multiline="true"/>
-                                                                    
-
-                                                                    <!-- end row -->
+                                                                    <x-input-radio-or-check name="Therapy_assessment" label="Therapy assessment: OT, SLT, Physio" :records="$careConstants::$therapyAssessment" multiline="true"/>
                                                                 </form>
                                                             </section>
                                                         </div>
@@ -223,7 +220,7 @@
                                                                         label="Self-understanding" :records="$careConstants::$selfUnderstanding"
                                                                         :isVertical="false"></x-input-radio-or-check>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh" type="checkbox"
+                                                                    <x-input-radio-or-check name="eat_drink_swallow" type="checkbox"
                                                                         label="Eat /drink/ swallow" :records="$careConstants::$eatDrinking"
                                                                         :isVertical="false"></x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -232,7 +229,7 @@
                                                                             <div class="m-0">
                                                                                 <h5>How many fingers use to eat</h5>
                                                                                 <div class="mb-2">
-                                                                                    <x-input-text name="hello"
+                                                                                    <x-input-text name="hh"
                                                                                         placeholder="">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -262,7 +259,7 @@
                                                                         label="Washing and bathing" :records="$careConstants::$washingBathing"
                                                                         :isVertical="false"></x-input-radio-or-check>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh" type="checkbox"
+                                                                    <x-input-radio-or-check name="brushing_teeth" type="checkbox"
                                                                         label="Brushing teeth/mouth care" :records="$careConstants::$teethMouthCare"
                                                                         :isVertical="false"></x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -306,7 +303,7 @@
                                                                     <!-- end row -->
 
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check name="getting_up"
                                                                         label="Getting up/going to bed" :records="$careConstants::$yesNoHelp">
                                                                     </x-input-radio-or-check>
 
@@ -333,7 +330,7 @@
                                                                                     living
                                                                                 </h5>
                                                                                 <div class="mb-2">
-                                                                                    <x-input-text name="hello1"
+                                                                                    <x-input-text name="other_personal_care"
                                                                                         placeholder="">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -374,7 +371,7 @@
                                                                                 <h5>Details of current medical treatment
                                                                                 </h5>
                                                                                 <div class="mb-2">
-                                                                                    <x-input-text name="hello2"
+                                                                                    <x-input-text name="hh"
                                                                                         placeholder="">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -389,7 +386,7 @@
                                                                                     conditions
                                                                                 </h5>
                                                                                 <div class="mb-2">
-                                                                                    <x-input-text name="hello3"
+                                                                                    <x-input-text name="hh"
                                                                                         placeholder="">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -415,7 +412,7 @@
                                                                                 <h5>Vaccination records?</h5>
                                                                                 <div class="mt-3">
                                                                                     <div>
-                                                                                        <x-input-text name="collection_date"
+                                                                                        <x-input-text name="vaccination_records"
                                                                                             type="file">
                                                                                         </x-input-text>
                                                                                     </div>
@@ -430,7 +427,7 @@
                                                                             <div class="m-0">
                                                                                 <h5>More information</h5>
                                                                                 <div class="mb-2">
-                                                                                    <x-input-text name="hello4"
+                                                                                    <x-input-text name="hh"
                                                                                         placeholder="">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -444,7 +441,7 @@
                                                                                 <h5>Any other records, Please attach</h5>
                                                                                 <div class="mt-3">
                                                                                     <div>
-                                                                                        <x-input-text name="collection_date"
+                                                                                        <x-input-text name="any_other_records"
                                                                                             type="file">
                                                                                         </x-input-text>
                                                                                     </div>
@@ -458,7 +455,7 @@
                                                                             <div class="m-0">
                                                                                 <h5>Enter more info , if any</h5>
                                                                                 <div class="mb-2">
-                                                                                    <x-input-text name="hello5"
+                                                                                    <x-input-text name="enter_more_info"
                                                                                         placeholder="">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -524,7 +521,7 @@
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     {{-- end row --}}
-                                                                    <x-input-radio-or-check name="hh" type="checkbox"
+                                                                    <x-input-radio-or-check name="any_sensory_issues" type="checkbox"
                                                                         label="Any sensory issues? ( Tick, if the child has it)"
                                                                         :records="$careConstants::$sensoryIssue" :isVertical="false">
                                                                     </x-input-radio-or-check>
@@ -573,14 +570,14 @@
                                                                     <!-- end row -->
 
                                                                     <x-input-radio-or-check
-                                                                        name="is_able_to_understand_tense"
+                                                                        name="hh"
                                                                         label="Demonstrating respect for self & others"
                                                                         :records="$constants::$yesNoEn" secondaryInputLabel="Explain">
                                                                     </x-input-radio-or-check>
                                                                     {{-- end row --}}
 
                                                                     <x-input-radio-or-check
-                                                                        name="is_able_to_understand_tense"
+                                                                        name="Recognizing_Managing_basic_Emotions"
                                                                         label="Recognizing / Managing basic Emotions"
                                                                         :records="$constants::$yesNoEn"
                                                                         secondaryInputLabel="Give details, if any">
@@ -588,7 +585,7 @@
                                                                     {{-- end row --}}
 
                                                                     <x-input-radio-or-check
-                                                                        name="is_able_to_understand_tense"
+                                                                        name="hh"
                                                                         label="Transition and Changes" :records="$constants::$yesNoEn"
                                                                         secondaryInputLabel="Give details, if any">
                                                                     </x-input-radio-or-check>
@@ -601,7 +598,7 @@
                                                                     <!-- end row -->
 
                                                                     <x-input-radio-or-check
-                                                                        name="is_able_to_understand_tense"
+                                                                        name="hh"
                                                                         label="Additional information" :records="$constants::$yesNoEn"
                                                                         secondaryInputLabel="Give details, if any">
                                                                     </x-input-radio-or-check>
@@ -633,7 +630,7 @@
                                                                                     cancellation of the admission.</h5>
                                                                                 <div class="mt-3">
                                                                                     <div>
-                                                                                        <x-input-text name="hello7"
+                                                                                        <x-input-text name="hh"
                                                                                             placeholder="">
                                                                                         </x-input-text>
                                                                                     </div>
@@ -646,7 +643,7 @@
                                                                             <div class="m-0">
                                                                                 <h5>Name of parent/ guardian</h5>
                                                                                 <div class="mb-2">
-                                                                                    <x-input-text name="hello6"
+                                                                                    <x-input-text name="name_of_parent"
                                                                                         placeholder="">
                                                                                     </x-input-text>
                                                                                 </div>
