@@ -100,9 +100,10 @@
                           </div>
                           <x-input-radio-or-check
                             label="সমন্বয় দক্ষতা আছে কি? <br>(Join Coordination এর মাধ্যমে কাজ করা যেমন- doe / আটা দিয়ে রুটি বানানো বলে জোড়ে কিক দেয়া)"
-                            :records="$constants::$yesNo" :value={{ $caseHistory->has_adjustment_capability }}
-                            name="has_adjustment_capability" >
+                            :records="$constants::$yesNo" :checked="$caseHistory->has_adjustment_capability"
+                            name="has_adjustment_capability">
                           </x-input-radio-or-check>
+                          {{-- @dump($caseHistory); --}}
                           <!-- end row -->
                           <x-input-radio-or-check name="has_move_ability"
                             label="চলাফেরার ক্ষেত্রে ভারসাম্য আছে কি? <br>(যেমন-হাটার সময় পড়ে যাওয়া, হাটার সময় শরীর দোলানো, থপ থপ জোরে হাটা, বেখাপ্পা ভাবে হাটা)"
@@ -117,7 +118,7 @@
                           <!-- end row -->
                           <x-input-radio-or-check name="has_write_ability" label="লিখার পদ্ধতি ঠিক আছে কিনাঃ?"
                             :records="$caseConstants::$hasWriteAbilities" type="checkbox" :isVertical="false"
-                            :multiple="true">
+                            :multiple="true" :checked="$caseHistory->has_write_ability">
                           </x-input-radio-or-check>
 
                           <!-- end row -->
