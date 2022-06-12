@@ -133,14 +133,14 @@
                         <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
                         <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
                                 Assessment</a></li>
-                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement
+                        <li><a href="{{ route('functional-movement-skill.create') }}">Fundamental Movement
                                 Skills</a></li>
-                        <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
-                        <li><a href="{{ route('autism.behavior.checklist') }}">Autism Behavior Checklist (ABC)</a></li>
-                        <li><a href="{{ route('sensory.checklist.for.young.adult') }}">Sensory checklist for Young
+                        <li><a href="{{ route('executive-function.create') }}">Executive Function test</a></li>
+                        <li><a href="{{ route('autisum-behaviour.create') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('sensory-checklist-adult.create') }}">Sensory checklist for Young
                                 Adult</a>
                         </li>
-                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a>
+                        <li><a href="{{ route('individual-risk.create') }}">Individual risk assessment form</a>
                         </li>
                     </ul>
                 </li>

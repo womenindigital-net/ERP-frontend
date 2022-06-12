@@ -7,8 +7,17 @@ use App\Http\Controllers\StudentController;
 use App\Http\Livewire\AppointmentList;
 use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\AppointmentList;
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CaseHistoryController;
+use App\Http\Controllers\SensoryAdultController;
+use App\Http\Controllers\IndividualRiskController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
+use App\Http\Controllers\AutisumBhehaviourController;
+use App\Http\Controllers\ExecutiveFunctionController;
+use App\Http\Controllers\FunctionalMovementskillController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -16,6 +25,19 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
         'care-need' => CareNeedController::class,
+
+        'autisum-behaviour' => AutisumBhehaviourController::class,
+        'executive-function' => ExecutiveFunctionController::class,
+        'sensory-checklist-adult' => SensoryAdultController::class,
+        'individual-risk' => IndividualRiskController::class,
+        'functional-movement-skill' => FunctionalMovementskillController::class,
+
+
+
+
+
+        'assign-task' => AssignTaskController::class,
+
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
