@@ -18,14 +18,6 @@
 @endsection
 
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1')
-            DashBoard
-        @endslot
-        @slot('title')
-            STUDENT QA
-        @endslot
-    @endcomponent
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">
@@ -120,24 +112,8 @@
                                                                             <div class="mb-3">
                                                                                 <label
                                                                                     for="basicpill-lastname-input">Teacher:</label>
-                                                                                <select
-                                                                                    class="form-control select2 form-select">
-                                                                                    <option value="0">Select</option>
-                                                                                    <option value="1">abulhasnat</option>
-                                                                                    <option value="2">nila01</option>
-                                                                                    <option value="3">Airins</option>
-                                                                                    <option value="4">AmalRozareo</option>
-                                                                                    <option value="5">anasbin</option>
-                                                                                    <option value="6">arupmandal</option>
-                                                                                    <option value="7">asadzaman</option>
-                                                                                    <option value="8">Badshah</option>
-                                                                                    <option value="9">BijoyRozareo</option>
-                                                                                    <option value="10">Chandan</option>
-                                                                                    <option value="11">dolonbishwash
-                                                                                    </option>
-                                                                                    <option value="12">golamrabbani</option>
-                                                                                    <option value="13">jahinur</option>
-                                                                                </select>
+                                                                                    <x-input-select name="teacher_id"
+                                                                                    :records="[]" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-lg-4">
@@ -145,32 +121,8 @@
                                                                                 <label
                                                                                     for="basicpill-phoneno-input">Candidate
                                                                                     ID:</label>
-                                                                                <select
-                                                                                    class="form-control select2 form-select">
-                                                                                    <option value="0">Select</option>
-                                                                                    <option value="1">Aalliyah Tehzeeb Ahmed
-                                                                                    </option>
-                                                                                    <option value="2">abdullah-al-nafi antor
-                                                                                    </option>
-                                                                                    <option value="3">Abdullahil Baki
-                                                                                    </option>
-                                                                                    <option value="4">Abdur Rahman Sajid
-                                                                                    </option>
-                                                                                    <option value="5">Abid Hossain Turjo
-                                                                                    </option>
-                                                                                    <option value="6">Abid Kabir Chowdhury
-                                                                                    </option>
-                                                                                    <option value="7">Abrar Ahosab Talha
-                                                                                    </option>
-                                                                                    <option value="8">Abrar Jawad Siam
-                                                                                    </option>
-                                                                                    <option value="9">Abu Sufiyan</option>
-                                                                                    <option value="10">Adib Akbar</option>
-                                                                                    <option value="11">Adiba Atiar</option>
-                                                                                    <option value="12">Adil Anaf</option>
-                                                                                    <option value="13">Aditya Chakraborty
-                                                                                    </option>
-                                                                                </select>
+                                                                                    <x-input-select name="candidate_id"
+                                                                                    :records="[]" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-lg-12">
@@ -813,7 +765,7 @@
                                                             <section>
                                                                 <form>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check name="physical_Gross motor_Fine motor"
                                                                         label="Physical (Gross motor/ Fine motor)"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>

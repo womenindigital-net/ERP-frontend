@@ -17,14 +17,6 @@
 @endsection
 
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1')
-
-        @endslot
-        @slot('title')
-
-        @endslot
-    @endcomponent
         <div class="row">
             <div class="col-xl-12 p-0">
                 <div class="card">
@@ -86,46 +78,16 @@
                                                                         <div class="col-lg-4 pull-left pb-2">
                                                                             <label class="p-2">Teacher: <span
                                                                                     class="text-danger text-bold">*</span></label>
-                                                                            <select class="form-control strip-tags select2"
-                                                                                id="Teacher" required="" name="TeacherID">
-                                                                                <option value="">-- Select --</option>
-                                                                                <option value="169">abulhasnat</option>
-                                                                                <option value="173">nila01</option>
-                                                                                <option value="18">Airins</option>
-                                                                                <option value="97">AmalRozareo</option>
-                                                                                <option value="124">anasbin</option>
-                                                                                <option value="24">arupmandal</option>
-                                                                                <option value="145">asadzaman</option>
-                                                                            </select>
-                                                                            <span class="help-block text-bold"></span>
+                                                                                    <x-input-select name="teacher_id"
+                                                                                    :records="[]" />
                                                                         </div>
 
                                                                         <div class="col-lg-4 pull-left pb-2">
                                                                             <label class="p-2">Candidate ID:
                                                                                 <span
                                                                                     class="text-danger text-bold">*</span></label>
-                                                                            <select class="form-control strip-tags select2"
-                                                                                id="StudentID" required="" name="StudentID">
-                                                                                <option selected="selected" value="">--
-                                                                                    Select --</option>
-                                                                                <option value="245">Aalliyah Tehzeeb Ahmed
-                                                                                </option>
-                                                                                <option value="4">abdullah-al-nafi antor
-                                                                                </option>
-                                                                                <option value="91">Abdullahil Baki</option>
-                                                                                <option value="171">Abdur Rahman Sajid
-                                                                                </option>
-                                                                                <option value="281">Abid Hossain Turjo
-                                                                                </option>
-                                                                                <option value="272">Abid Kabir Chowdhury
-                                                                                </option>
-                                                                                <option value="98">Abrar Ahosab Talha
-                                                                                </option>
-                                                                                <option value="282">Abrar Jawad Siam
-                                                                                </option>
-                                                                                <option value="148">Abu Sufiyan</option>
-                                                                                <option value="116">Adib Akbar</option>
-                                                                            </select>
+                                                                                    <x-input-select name="candidate_id"
+                                                                                    :records="[]" />
                                                                         </div>
 
                                                                         <div class="col-lg-12 p-0 pb-2">
@@ -331,7 +293,8 @@
                                     </div>
                                     <div class="col-sm-12 col-md-6 text-end">
                                         <label style="display: inline-flex;align-items: center;">Search:
-                                            <input type="search" class="form-control form-control-sm" placeholder="">
+                                            <x-input-text name="search" type="search">
+                                            </x-input-text>
                                         </label>
                                     </div>
                                 </div>
@@ -448,37 +411,15 @@
                                         <div class="col-lg-4 pull-left pb-2">
                                             <label class="p-2">Teacher: <span
                                                     class="text-danger text-bold">*</span></label>
-                                            <select class="form-control strip-tags select2" id="Teacher" required=""
-                                                name="TeacherID">
-                                                <option value="">-- Select --</option>
-                                                <option value="169">abulhasnat</option>
-                                                <option value="173">nila01</option>
-                                                <option value="18">Airins</option>
-                                                <option value="97">AmalRozareo</option>
-                                                <option value="124">anasbin</option>
-                                                <option value="24">arupmandal</option>
-                                                <option value="145">asadzaman</option>
-                                            </select>
-                                            <span class="help-block text-bold"></span>
+                                                    <x-input-select name="teacher_id"
+                                                    :records="[]" />
                                         </div>
 
                                         <div class="col-lg-4 pull-left pb-2">
                                             <label class="p-2">Candidate ID: <span
                                                     class="text-danger text-bold">*</span></label>
-                                            <select class="form-control strip-tags select2" id="StudentID" required=""
-                                                name="StudentID">
-                                                <option selected="selected" value="">-- Select --</option>
-                                                <option value="245">Aalliyah Tehzeeb Ahmed</option>
-                                                <option value="4">abdullah-al-nafi antor</option>
-                                                <option value="91">Abdullahil Baki</option>
-                                                <option value="171">Abdur Rahman Sajid</option>
-                                                <option value="281">Abid Hossain Turjo</option>
-                                                <option value="272">Abid Kabir Chowdhury</option>
-                                                <option value="98">Abrar Ahosab Talha</option>
-                                                <option value="282">Abrar Jawad Siam</option>
-                                                <option value="148">Abu Sufiyan</option>
-                                                <option value="116">Adib Akbar</option>
-                                            </select>
+                                                    <x-input-select name="candidate_id"
+                                                    :records="[]" />
                                         </div>
 
                                         <div class="col-lg-12 p-0 pb-2">
