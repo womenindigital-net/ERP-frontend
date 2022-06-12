@@ -19,6 +19,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         '' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
+
         'autisum-behaviour' => AutisumBhehaviourController::class,
         'executive-function' => ExecutiveFunctionController::class,
         'sensory-checklist-adult' => SensoryAdultController::class,
@@ -27,6 +28,9 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
 
 
         
+
+
+        'assign-task' => AssignTaskController::class,
 
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
