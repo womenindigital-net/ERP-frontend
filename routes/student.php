@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CareNeedController;
 use App\Http\Controllers\CaseHistoryController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
@@ -14,6 +15,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         '' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
+        'care-need' => CareNeedController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
@@ -22,7 +24,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('appointment', AppointmentList::class)->name('student.appointment');
     //    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
-    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+//    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
     Route::get('admission/add-student', [StudentController::class, 'admissionAddStudent'])->name('admission.addStudent');
 

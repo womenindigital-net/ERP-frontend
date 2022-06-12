@@ -111,7 +111,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('student.appointment')}}">Appointment</a></li>
                         <li><a href="{{route('case-history.index')}}">Case History</a></li>
-                        <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
+                        <li><a href="{{ route('care-need.index') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
                     </ul>
                 </li>
