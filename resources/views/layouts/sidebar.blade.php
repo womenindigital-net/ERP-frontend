@@ -127,11 +127,11 @@
                         <span>Assessment</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('sensory.checklist.for.child') }}">Sensory checklist for Child</a></li>
+                        <li><a href="{{ route('sensory-checklist-child.create') }}">Sensory checklist for Child</a></li>
                         <li><a href="{{ route('social-communication.create') }}">Social Communication</a></li>
-                        <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
-                        <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
-                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
+                        <li><a href="{{ route('occupational-therapy.create') }}">Occupational Therapy</a></li>
+                        <li><a href="{{ route('physiotherapy.create') }}">Physiotherapy</a></li>
+                        <li><a href="{{ route('functional-communication.create') }}">Functional Communication
                                 Assessment</a></li>
                         <li><a href="{{ route('functional-movement-skill.create') }}">Fundamental Movement
                                 Skills</a></li>
@@ -168,10 +168,10 @@
                                     <a href="{{ route('ot.assessment') }}">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('student.dairy.incident-record') }}">Incident Record</a>
+                                    <a href="{{ route('incident-record.create') }}">Incident Record</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('student.dairy.medicine-admin') }}">Medicine admin</a>
+                                    <a href="{{ route('madicine-admin.create') }}">Medicine admin</a>
                                 </li>
                                 {{-- <li>
                                     <a href="student.dairy.score-calculation">Score Calculation</a>

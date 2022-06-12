@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AutisumBhehaviour;
-use App\Http\Requests\StoreAutisumBhehaviourRequest;
-use App\Http\Requests\UpdateAutisumBhehaviourRequest;
-use Carbon\Factory;
-use Illuminate\Console\Application;
+use App\Models\Physiotherapy;
+use App\Http\Requests\StorePhysiotherapyRequest;
+use App\Http\Requests\UpdatePhysiotherapyRequest;
 
-class AutisumBhehaviourController extends Controller
+class PhysiotherapyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,16 +29,16 @@ class AutisumBhehaviourController extends Controller
             'students' => []
         ];
 
-        return view('assessment.autism-behaviour.create', $data);
+        return view('assessment.physiotherapy.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAutisumBhehaviourRequest  $request
+     * @param  \App\Http\Requests\StorePhysiotherapyRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAutisumBhehaviourRequest $request)
+    public function store(StorePhysiotherapyRequest $request)
     {
         //
     }
@@ -48,10 +46,10 @@ class AutisumBhehaviourController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AutisumBhehaviour  $autisumBhehaviour
+     * @param  \App\Models\Physiotherapy  $physiotherapy
      * @return \Illuminate\Http\Response
      */
-    public function show(AutisumBhehaviour $autisumBhehaviour)
+    public function show(Physiotherapy $physiotherapy)
     {
         //
     }
@@ -59,10 +57,10 @@ class AutisumBhehaviourController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AutisumBhehaviour  $autisumBhehaviour
+     * @param  \App\Models\Physiotherapy  $physiotherapy
      * @return \Illuminate\Http\Response
      */
-    public function edit(AutisumBhehaviour $autisumBhehaviour)
+    public function edit(Physiotherapy $physiotherapy)
     {
         //
     }
@@ -70,11 +68,11 @@ class AutisumBhehaviourController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAutisumBhehaviourRequest  $request
-     * @param  \App\Models\AutisumBhehaviour  $autisumBhehaviour
+     * @param  \App\Http\Requests\UpdatePhysiotherapyRequest  $request
+     * @param  \App\Models\Physiotherapy  $physiotherapy
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAutisumBhehaviourRequest $request, AutisumBhehaviour $autisumBhehaviour)
+    public function update(UpdatePhysiotherapyRequest $request, Physiotherapy $physiotherapy)
     {
         //
     }
@@ -82,10 +80,10 @@ class AutisumBhehaviourController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AutisumBhehaviour  $autisumBhehaviour
+     * @param  \App\Models\Physiotherapy  $physiotherapy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AutisumBhehaviour $autisumBhehaviour)
+    public function destroy(Physiotherapy $physiotherapy)
     {
         //
     }
