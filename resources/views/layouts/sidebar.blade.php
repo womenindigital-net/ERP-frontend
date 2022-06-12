@@ -111,7 +111,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('student.appointment')}}">Appointment</a></li>
                         <li><a href="{{route('case-history.index')}}">Case History</a></li>
-                        <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
+                        <li><a href="{{ route('care-need.index') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
                     </ul>
                 </li>
@@ -133,14 +133,14 @@
                         <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
                         <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
                                 Assessment</a></li>
-                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement
+                        <li><a href="{{ route('functional-movement-skill.create') }}">Fundamental Movement
                                 Skills</a></li>
-                        <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
-                        <li><a href="{{ route('autism.behavior.checklist') }}">Autism Behavior Checklist (ABC)</a></li>
-                        <li><a href="{{ route('sensory.checklist.for.young.adult') }}">Sensory checklist for Young
+                        <li><a href="{{ route('executive-function.create') }}">Executive Function test</a></li>
+                        <li><a href="{{ route('autisum-behaviour.create') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('sensory-checklist-adult.create') }}">Sensory checklist for Young
                                 Adult</a>
                         </li>
-                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a>
+                        <li><a href="{{ route('individual-risk.create') }}">Individual risk assessment form</a>
                         </li>
                     </ul>
                 </li>
@@ -158,7 +158,7 @@
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('trip.report.form') }}">Trip report and Evaluation Form</a>
+                                    <a href="{{ route('trip.create') }}">Trip report and Evaluation Form</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('gym.outing.evaluation') }}">Gym and Outing Evaluation (D3cDT)
@@ -281,12 +281,15 @@
                             <a href="javascript: void(0);" class="has-arrow">Program Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li> <a href="{{ route('setup.program-setup.prescription') }}">Prescription</a></li>
-                                <li> <a href="{{ route('setup.program-setup.activity-create') }}">Activity create</a></li>
+                                <li> <a href="{{ route('setup.program-setup.activity-create') }}">Activity create</a>
+                                </li>
                                 <li> <a href="{{ route('setup.program-setup.tesk-create') }}">Task create</a></li>
 
-                                <li> <a href="{{ route('setup.program-setup.tesk-weight-setup') }}">Task Weight Setup</a></li>
+                                <li> <a href="{{ route('setup.program-setup.tesk-weight-setup') }}">Task Weight
+                                        Setup</a></li>
                                 <li> <a href="{{ route('setup.program-setup.course-setup') }}">Course Setup</a></li>
-                                <li> <a href="{{ route('setup.program-setup.attendence-card-setup') }}">Attendence card setup</a></li>
+                                <li> <a href="{{ route('setup.program-setup.attendence-card-setup') }}">Attendence card
+                                        setup</a></li>
 
                                 <li> <a href="{{ route('setup.program-setup.vocational-category-subcategory-setup') }}">Vocational
                                         Category and subcategory setup</a></li>
@@ -348,7 +351,8 @@
                                     <a href="{{ route('setup.vendor-list.supplier-setup') }}">Supplier Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.vendor-list.supplier-type-setup') }}">Supplier Type Setup</a>
+                                    <a href="{{ route('setup.vendor-list.supplier-type-setup') }}">Supplier Type
+                                        Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -381,13 +385,16 @@
                             <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.vocational-marking-category') }}">Vocational Marking Category</a>
+                                    <a href="{{ route('setup.vocational-marking-category') }}">Vocational Marking
+                                        Category</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.vocational-marking-subcategory') }}">Vocational Marking Sub Category</a>
+                                    <a href="{{ route('setup.vocational-marking-subcategory') }}">Vocational Marking Sub
+                                        Category</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.vocational-student-evolution') }}">Vocational Student Evolution</a>
+                                    <a href="{{ route('setup.vocational-student-evolution') }}">Vocational Student
+                                        Evolution</a>
                                 </li>
                             </ul>
                         </li>
@@ -415,19 +422,24 @@
                             <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_grade_setup') }}">Salary Grade Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_grade_setup') }}">Salary Grade
+                                        Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_step_setup') }}">Salary Step Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_step_setup') }}">Salary Step
+                                        Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_head_setup') }}">Salary Head Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_head_setup') }}">Salary Head
+                                        Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_package_setup') }}">Salary Package Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_package_setup') }}">Salary
+                                        Package Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_budget_setup') }}">Salary Budget Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_budget_setup') }}">Salary Budget
+                                        Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -452,13 +464,16 @@
                             <a href="javascript: void(0);" class="has-arrow">Accounting Mapping</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.accounting-mapping.account_mapping') }}">Accounting Mapping</a>
+                                    <a href="{{ route('setup.accounting-mapping.account_mapping') }}">Accounting
+                                        Mapping</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.accounting-mapping.accounting_year_setup') }}">Accounting Year Setup</a>
+                                    <a href="{{ route('setup.accounting-mapping.accounting_year_setup') }}">Accounting
+                                        Year Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.accounting-mapping.closing_account_setup') }}">Closing Accounting Setup</a>
+                                    <a href="{{ route('setup.accounting-mapping.closing_account_setup') }}">Closing
+                                        Accounting Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -483,7 +498,8 @@
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.year-end-close.year_end_stock_count') }}">Year End Stock Count</a>
+                                    <a href="{{ route('setup.year-end-close.year_end_stock_count') }}">Year End Stock
+                                        Count</a>
                                 </li>
                             </ul>
                         </li>
@@ -494,13 +510,16 @@
                                     <a href="{{ route('setup.other-settings.user') }}">User</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.academic_calendar') }}">Academic Calendar</a>
+                                    <a href="{{ route('setup.other-settings.academic_calendar') }}">Academic
+                                        Calendar</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.task_weight_setting') }}">Task Weight Setting</a>
+                                    <a href="{{ route('setup.other-settings.task_weight_setting') }}">Task Weight
+                                        Setting</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.user_permission_setup') }}">User Permission Setup</a>
+                                    <a href="{{ route('setup.other-settings.user_permission_setup') }}">User Permission
+                                        Setup</a>
                                 </li>
                             </ul>
                         </li>

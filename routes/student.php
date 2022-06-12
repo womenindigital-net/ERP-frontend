@@ -1,18 +1,28 @@
 <?php
 
+use App\Http\Controllers\AssignTaskController;
+use App\Http\Controllers\CareNeedController;
 use App\Http\Controllers\CaseHistoryController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
 use App\Http\Livewire\AppointmentList;
-use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
+
 use App\Http\Controllers\AssignTaskController;
 use App\Http\Controllers\CreateItpController;
 use App\Http\Controllers\AssignTeacherController;
 use App\Http\Controllers\RunMitpController;
 use App\Http\Controllers\NoticeBoardController;
+
+use App\Http\Controllers\TripController;
+use App\Http\Controllers\SensoryAdultController;
+use App\Http\Controllers\IndividualRiskController;
+
 use App\Http\Livewire\StudentIncome\StudentIncome;
+use App\Http\Controllers\AutisumBhehaviourController;
+use App\Http\Controllers\ExecutiveFunctionController;
+use App\Http\Controllers\FunctionalMovementskillController;
 
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
@@ -20,6 +30,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         '' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
+        'trip' => TripController::class,
+        'care-need' => CareNeedController::class,
+        'autisum-behaviour' => AutisumBhehaviourController::class,
+        'executive-function' => ExecutiveFunctionController::class,
+        'sensory-checklist-adult' => SensoryAdultController::class,
+        'individual-risk' => IndividualRiskController::class,
+        'functional-movement-skill' => FunctionalMovementskillController::class,
         'assign-task' => AssignTaskController::class,
         'create-itp' => CreateItpController::class,
         'assign-teacher' => AssignTeacherController::class,
@@ -35,6 +52,10 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     //    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
     Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+
+//    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+
+
     Route::get('admission/add-student', [StudentController::class, 'admissionAddStudent'])->name('admission.addStudent');
 
 

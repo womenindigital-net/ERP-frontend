@@ -113,8 +113,8 @@
                                                                         <div class="col-lg-4 pull-left pb-2">
                                                                             <label class="p-2">Teacher: <span
                                                                                     class="text-danger text-bold">*</span></label>
-                                                                            <x-input-select name="teacher_id"
-                                                                                :records="$teachers"></x-input-select>
+                                                                                    <x-input-select name="teacher_id"
+                                                                                    :records="[]" />
                                                                         </div>
 
                                                                         <div class="col-lg-4 pull-left pb-2">
@@ -1078,7 +1078,8 @@
                                     <div class="col-lg-4 pull-left pb-2">
                                         <label class="p-2">Teacher: <span
                                                 class="text-danger text-bold">*</span></label>
-                                        <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
+                                                <x-input-select name="teacher_id"
+                                                :records="[]" />
                                     </div>
 
                                     <div class="col-lg-4 pull-left pb-2">
