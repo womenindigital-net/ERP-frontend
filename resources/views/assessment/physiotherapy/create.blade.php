@@ -1054,50 +1054,49 @@
                         <h3>Visual Perception</h3>
                         <section>
                             <div>
-                           
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Visual Discrimination" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Visual Memory" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Visual Figure ground" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check label="Visual Spatial" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Oral Motor" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Sucking" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check label="Drooling" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Swollen" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Chewing" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check label="Choking" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Drinking" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
+                        
+                                <x-input-radio-or-check  label="Visual Discrimination" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Visual Memory" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Visual Figure ground" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check label="Visual Spatial" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Oral Motor" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Sucking" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check label="Drooling" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Swollen" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Chewing" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check label="Choking" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Drinking" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
                             </div>
                         </section>
 
@@ -1144,23 +1143,17 @@
                         <h3>Strength</h3>
                         <section>
                             <div>
-                           
-                                    <!-- end row -->
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Please explain strength
                                             area</label>
                                         <x-input-text name="please_explain " placeholder=""></x-input-text>
                                     </div>
-                                    <!-- end row -->
-                              
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3> Functional Gross Motor</h3>
                         <section>
                             <div>
-                               
-                                    <!-- end row -->
                                     <x-input-radio-or-check  label="Sitting" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
@@ -1182,15 +1175,12 @@
                                     <x-input-radio-or-check  label="Ball skill" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                              
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Transitional Movements</h3>
                         <section>
                             <div>
-                        
-                                    <!-- end row -->
                                     <x-input-radio-or-check  label="Prone to Supine" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
@@ -1212,14 +1202,12 @@
                                     <x-input-radio-or-check  label="Kneeling to stand:" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Fine motor Skill</h3>
                         <section>
                             <div>
-                                    <!-- end row -->
                                     <x-input-radio-or-check  label="Dominance" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <div class="mb-3">
@@ -1262,15 +1250,13 @@
                         <h3>Automatic Reaction</h3>
                         <section>
                             <div>
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Protective reactions" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Equilibrium reaction" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                            
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Protective reactions" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Equilibrium reaction" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
                             </div>
                         </section>
                         <!-- Bank Details -->
@@ -1278,23 +1264,20 @@
                         <section>
                             <div>
                            
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Tactile" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <x-input-radio-or-check label="Auditory" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Vestibular" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check  label="Proprioceptive" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-
-                                    <!-- end row -->
+                                <x-input-radio-or-check  label="Tactile" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <x-input-radio-or-check label="Auditory" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Vestibular" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
+                                <!-- end row -->
+                                <x-input-radio-or-check  label="Proprioceptive" :records="$constants::$yesNoEn">
+                                </x-input-radio-or-check>
+                                <!-- end row -->
                               
                             </div>
                         </section>
@@ -1333,7 +1316,6 @@
                                     <!-- end row -->
                                     <x-input-radio-or-check label="Bilateral integration" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
-                                    <!-- end row -->
                                     <!-- end row -->
                             </div>
                         </section>
@@ -1374,7 +1356,6 @@
                                     <x-input-text name="designation" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
-                                <!-- end row -->
                         </section>
                         <!-- Bank Details -->
                         <h3>Muscle Power</h3>

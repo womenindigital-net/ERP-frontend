@@ -29,12 +29,7 @@
           <div class="col-6">
             <h4 class="card-title">STUDENT QAS</h4>
           </div>
-          <div class="col-6 text-end mb-3">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-            data-bs-target=""><i class="fa fa-user"></i> Profile</button>
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-              data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
-          </div>
+        
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -150,24 +145,15 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
+                    <x-input-select name="teacher_id"
+                :records="[]" />
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-phoneno-input">Candidate ID:</label>
-                    <select class="form-control strip-tags select2 form-select" id="StudentID" required="" name="StudentID">
-                      <option selected="selected" value="">-- Select --</option>
-                      <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                      <option value="2">abdullah-al-nafi antor</option>
-                      <option value="3">Abdullahil Baki</option>
-                      <option value="4">Abdur Rahman Sajid</option>
-                      <option value="5">Abid Hossain Turjo</option>
-                      <option value="6">Abid Kabir Chowdhury</option>
-                      <option value="7">Abrar Ahosab Talha</option>
-                      <option value="8">Abrar Jawad Siam</option>
-                      <option value="9">Abu Sufiyan</option>
-                    </select>
+                    <x-input-select name="candidate_id"
+                :records="[]" />
                   </div>
                 </div>
               </div>
@@ -250,24 +236,20 @@
                 </div>
               </div>
               <div id="" class="">
-              
                   <div class="row mb-3 mt-3">
                     <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
                     <div class="col-md-8">	
                       In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates</div>
                   </div>
-                
               </div>
               <h5>Excessive hip rotation to clear the hurdle</h5>
               <div id="" class="">
-              
                   <div class="row mb-3 mt-3">
                     <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
                     <div class="col-md-8">	
                       In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates 
                     </div>
                   </div>
-                
               </div>
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
@@ -295,13 +277,11 @@
             <div>
               <form >
                 <div id="" class="">
-                
                     <div class="row mb-3 mt-3">
                       <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
                       <div class="col-md-8">To improve the stability of the feet, single-leg stance exercises with bare feet are useful.
                         Shown here are diagonal leg whips on the left and rotational reaches on the right. Gently grip the ground with the toes. Keep a tall posture and limit trunk sway. Start with short, slow movements and gradually add the range of motion and speed as proficiency improves.</div>
                     </div>
-                  
                 </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
@@ -396,13 +376,11 @@
             <div>
               <form >
                 <div id="" class="">
-                
                     <div class="row mb-3 mt-3">
                       <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
                       <div class="col-md-8">On the left, side stepping against the elastic band builds lateral hip stability and thus better control of knee motion. Ensure that the trunk doesn't sway.
                         On the right, the medial pull of the elastic band adds challenge to lunges or single-leg squats. Ensure that the knee of the stance leg does not drift inward.</div>
                     </div>
-                  
                 </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
@@ -438,13 +416,11 @@
                   </div>
                 </div>
                 <div id="" class="">
-                
                     <div class="row mb-3 mt-3">
                       <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
                       <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
                         Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
                     </div>
-                  
                 </div>
                 <!-- end row -->
                 <div class="row border-top py-2">

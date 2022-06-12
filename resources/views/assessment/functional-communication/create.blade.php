@@ -17,13 +17,6 @@
 @endsection
 
 @section('content')
-        
-          <div class="col-6  mb-3">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-              data-bs-target=""><i class="fa fa-user"></i> Profile</button>
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-              data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
-          </div>
           <div class="row">
               <div class="col-xl-12 p-0">
                   <div class="card">
@@ -719,36 +712,36 @@
                                             <td>Karishma Cultural</td>
                                             <td><small>Create: Karishma Cultural @ 2019-02-17 18:32:43</small></td>
                                             <td>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                                                    data-bs-toggle="modal" data-bs-target=".social-communication-view">
-                                                    <i class="mdi mdi-eye"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                                                    data-bs-toggle="modal" data-bs-target=".social-communication-view">
-                                                    <i class="mdi mdi-pencil"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="bx bx-dollar"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="fas fa-arrow-circle-right"></i>
-                                                </button>
-                                                <button type="button"
-                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
+                                              <button type="button"
+                                                  class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
+                                                  data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                                                  <i class="mdi mdi-eye"></i>
+                                              </button>
+                                              <button type="button"
+                                                  class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1">
+                                                  <i class="fas fa-check"></i>
+                                              </button>
+                                              <button type="button"
+                                                  class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
+                                                  <i class="fas fa-check"></i>
+                                              </button>
+                                              <button type="button"
+                                                  class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                                                  data-bs-toggle="modal" data-bs-target=".social-communication-view">
+                                                  <i class="mdi mdi-pencil"></i>
+                                              </button>
+                                              <button type="button"
+                                                  class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                  <i class="bx bx-dollar"></i>
+                                              </button>
+                                              <button type="button"
+                                                  class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                  <i class="fas fa-arrow-circle-right"></i>
+                                              </button>
+                                              <button type="button"
+                                                  class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                                  <i class="fas fa-trash-alt"></i>
+                                              </button>
                                             </td>
                                         </tr>
                                     </tbody>
