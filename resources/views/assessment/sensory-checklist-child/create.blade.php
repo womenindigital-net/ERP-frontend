@@ -14,12 +14,6 @@
 @endsection
 
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1')
-        @endslot
-        @slot('title')
-        @endslot
-    @endcomponent
     <div class="col-6">
         <h4 class="card-title">STUDENT QAS</h4>
     </div>
@@ -107,7 +101,6 @@
                                                         <div class="tab-pane" id="Sensory_Checklist">
                                                             <h3>Sensory Checklist</h3>
                                                             <section>
-                                                                <form>
                                                                     <div class="row">
                                                                         <div class="col-lg-4">
                                                                             <div class="mb-3">
@@ -152,70 +145,8 @@
                                                                                     <label
                                                                                         for="basicpill-phoneno-input">Candidate
                                                                                         ID:</label>
-                                                                                    <select
-                                                                                        class="form-control select2 form-select">
-                                                                                        <option value="0">
-                                                                                            Select
-                                                                                        </option>
-                                                                                        <option value="1">
-                                                                                            Aalliyah
-                                                                                            Tehzeeb
-                                                                                            Ahmed
-                                                                                        </option>
-                                                                                        <option value="2">
-                                                                                            abdullah-al-nafi
-                                                                                            antor
-                                                                                        </option>
-                                                                                        <option value="3">
-                                                                                            Abdullahil
-                                                                                            Baki
-                                                                                        </option>
-                                                                                        <option value="4">
-                                                                                            Abdur
-                                                                                            Rahman
-                                                                                            Sajid
-                                                                                        </option>
-                                                                                        <option value="5">
-                                                                                            Abid
-                                                                                            Hossain
-                                                                                            Turjo
-                                                                                        </option>
-                                                                                        <option value="6">
-                                                                                            Abid
-                                                                                            Kabir
-                                                                                            Chowdhury
-                                                                                        </option>
-                                                                                        <option value="7">
-                                                                                            Abrar
-                                                                                            Ahosab
-                                                                                            Talha
-                                                                                        </option>
-                                                                                        <option value="8">
-                                                                                            Abrar
-                                                                                            Jawad
-                                                                                            Siam
-                                                                                        </option>
-                                                                                        <option value="9">
-                                                                                            Abu
-                                                                                            Sufiyan
-                                                                                        </option>
-                                                                                        <option value="10">
-                                                                                            Adib
-                                                                                            Akbar
-                                                                                        </option>
-                                                                                        <option value="11">
-                                                                                            Adiba
-                                                                                            Atiar
-                                                                                        </option>
-                                                                                        <option value="12">
-                                                                                            Adil
-                                                                                            Anaf
-                                                                                        </option>
-                                                                                        <option value="13">
-                                                                                            Aditya
-                                                                                            Chakraborty
-                                                                                        </option>
-                                                                                    </select>
+                                                                                        <x-input-select name="candidate_id"
+                                                                                        :records="[]" />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -264,12 +195,11 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </form>
+                                                                
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Signs_Of_Tactile_Dysfunction">
                                                             <section>
-                                                                <form>
                                                                     <x-input-radio-or-check name="hypersensitivity_to_touch"
                                                                         label="Hypersensitivity To Touch (Tactile Defensiveness)"
                                                                         :records="$constants::$yesNoEn">
@@ -310,16 +240,6 @@
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="Complains_about_having_hair_brushed"
-                                                                        label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="complains_about_having_hair_brushed"
-                                                                        label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
                                                                     <x-input-radio-or-check name="Avoids_group_situations"
                                                                         label="Avoids group situations for fear of the unexpected touch"
                                                                         :records="$constants::$yesNoEn">
@@ -349,12 +269,6 @@
                                                                         label="Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Complains_about_having_hair_brushed"
-                                                                        label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check name="Bothered_by_rough_bed_sheets"
                                                                         label="Bothered by rough bed sheets (i.e., if old and 'bumpy')"
@@ -408,13 +322,7 @@
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
 
-                                                                    <x-input-radio-or-check name="A_raindrop_water_from_the_shower"
-                                                                        label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-
-                                                                    <x-input-radio-or-check name="Avoids_using_hands_for_play"
+                                                                    <x-input-radio-or-check 
                                                                         label="Avoids using hands for play"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
@@ -485,69 +393,65 @@
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                </form>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Hyposensitivity_To_Touch">
                                                             <section>
-                                                                <form>
-                                                                    <x-input-radio-or-check name="May_crave_touch"
-                                                                        label="May crave touch, needs to touch everything and everyone"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Is_not_aware_of_being_touched"
-                                                                        label="Is not aware of being touched/bumped unless done with extreme force or intensity"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Is_not_bothered_by_injuries"
-                                                                        label="Is not bothered by injuries, like cuts and bruises, and shows no distress with shots (may even say they love getting shots!)"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="May_not_be_aware_that_hands"
-                                                                        label="May not be aware that hands or face are dirty or feel his/her nose running"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="May_be_self-abusive"
-                                                                        label="May be self-abusive; pinching, biting, or banging his own head"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Mouths_objects_excessively"
-                                                                        label="Mouths objects excessively"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Frequently_hurts"
-                                                                        label="Frequently hurts other children or pets while playing"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Repeatedly_touches_surfaces"
-                                                                        label="Repeatedly touches surfaces or objects that are soothing (i.e., blanket)"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Seeks_out_surfaces"
-                                                                        label="Seeks out surfaces and textures that provide strong tactile feedback"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Thoroughly_enjoys"
-                                                                        label="Thoroughly enjoys and seeks out messy play"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check name="Craves_vibrating"
-                                                                        label="Craves vibrating or strong sensory input"
-                                                                        :records="$constants::$yesNoEn">
-                                                                    </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <!-- end row -->
-                                                                </form>
+                                                                <x-input-radio-or-check name="May_crave_touch"
+                                                                    label="May crave touch, needs to touch everything and everyone"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Is_not_aware_of_being_touched"
+                                                                    label="Is not aware of being touched/bumped unless done with extreme force or intensity"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Is_not_bothered_by_injuries"
+                                                                    label="Is not bothered by injuries, like cuts and bruises, and shows no distress with shots (may even say they love getting shots!)"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_not_be_aware_that_hands"
+                                                                    label="May not be aware that hands or face are dirty or feel his/her nose running"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_be_self-abusive"
+                                                                    label="May be self-abusive; pinching, biting, or banging his own head"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Mouths_objects_excessively"
+                                                                    label="Mouths objects excessively"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Frequently_hurts"
+                                                                    label="Frequently hurts other children or pets while playing"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Repeatedly_touches_surfaces"
+                                                                    label="Repeatedly touches surfaces or objects that are soothing (i.e., blanket)"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Seeks_out_surfaces"
+                                                                    label="Seeks out surfaces and textures that provide strong tactile feedback"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Thoroughly enjoys and seeks out messy play"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    label="Craves vibrating or strong sensory input"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
                                                             </section>
 
                                                         </div>
@@ -556,79 +460,75 @@
                                                             <h3>Poor Tactile Perception And
                                                                 Discrimination</h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Has_difficulty_with_fine_motor"
-                                                                            label="Has difficulty with fine motor tasks such as buttoning ,zipping,and fastening clothes"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="May_not_be_able_to_identify"
-                                                                            label="May not be able to identify which part of their body was touched if they were not looking"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Maybe_afraid_of_the_dark"
-                                                                            label="Maybe afraid of the dark"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="May_be_a_messy_dresser"
-                                                                            label="May be a messy dresser"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Looks_disheveled"
-                                                                            label="Looks disheveled" :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Does_not_notice_pants"
-                                                                            label="Does not notice pants are twisted"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Shirt_is_half_un_tucked"
-                                                                            label="Shirt is half un tucked"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Shoes_are_untied"
-                                                                            label="Shoes are untied" :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="One_pant_leg_is_up_and_one_is_down"
-                                                                            label="One pant leg is up and one is down"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Has_difficulty_using_scissors"
-                                                                            label="Has difficulty using scissors"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Crayons_or_silverware"
-                                                                            label="Crayons, or silverware"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Continues_to_mouth_objects"
-                                                                            label="Continues to mouth objects to explore them even after age two"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Has_difficulty_figuring_out"
-                                                                            label="Has difficulty figuring out physical characteristics of objects; shape, size, texture, . Temperature, weight, etc"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="May_not_be_able_to_identify"
-                                                                            label="May not be able to identify objects by feel, uses vision to help; such as, reaching into backpack or desk to retrieve an item Vestibular Sense: input from the inner ear about equilibrium, gravitational changes, movement experiences, and position in space."
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                    </form>
-                                                                </div>
+                                                                <x-input-radio-or-check name="Has_difficulty_with_fine_motor"
+                                                                    label="Has difficulty with fine motor tasks such as buttoning ,zipping,and fastening clothes"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_not_be_able_to_identify"
+                                                                    label="May not be able to identify which part of their body was touched if they were not looking"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Maybe afraid of the dark"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_be_a_messy_dresser"
+                                                                    label="May be a messy dresser"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Looks disheveled" :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Does not notice pants are twisted"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Shirt is half un tucked"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Shoes are untied" :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="One pant leg is up and one is down"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Has difficulty using scissors"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Crayons, or silverware"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Continues_to_mouth_objects"
+                                                                    label="Continues to mouth objects to explore them even after age two"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Has_difficulty_figuring_out"
+                                                                    label="Has difficulty figuring out physical characteristics of objects; shape, size, texture, . Temperature, weight, etc"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_not_be_able_to_identify"
+                                                                    label="May not be able to identify objects by feel, uses vision to help; such as, reaching into backpack or desk to retrieve an item Vestibular Sense: input from the inner ear about equilibrium, gravitational changes, movement experiences, and position in space."
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                    
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Signs_Of_Vestibular_Dysfunction">
@@ -636,92 +536,86 @@
                                                                 Hypersensitivity To Movement
                                                                 (Over-Responsive)</h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Avoids_dislikes_playground_equipment"
-                                                                            label="Avoids/dislikes playground equipment; i.e., swings, ladders, slides, or merry-go-rounds"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Prefers_sedentary_tasks"
-                                                                            label="Prefers sedentary tasks, moves slowly and cautiously, avoids taking risks, and may appear 'wimpy'"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Avoids_dislikes_elevators"
-                                                                            label="Avoids/dislikes elevators and escalators; may prefer sitting while they are on them or, actually get motion sickness from them"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="May_physically_cling_to_an_adult_they_trust"
-                                                                            label="May physically cling to an adult they trust"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="May_appear_terrified_offalling_even"
-                                                                            label="May appear terrified of falling even when there is no real risk of it"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Afraid_of_heights"
-                                                                            label="Afraid of heights, even the height of a curb or step"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Fearful_of_feet"
-                                                                            label="Fearful of feet leaving the ground"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Fearful_of_going_up"
-                                                                            label="Fearful of going up or down stairs or walking on uneven surfaces"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Afraid_of_being_tipped_upside_down"
-                                                                            label="Afraid of being tipped upside down, sideways or backwards; will strongly resist getting hair washed over the sink"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Startles_if_someone_else_moves_them"
-                                                                            label="Startles if someone else moves them; i.e., pushing his/her chair closer to the table"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="As_an_infant"
-                                                                            label="As an infant, may never have liked baby swings or jumpers"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="May_be_fearful_of"
-                                                                            label="May be fearful of, and have difficulty riding a bike, jumping, hopping, or balancing on one foot (especially if eyes are closed)"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="May_have_disliked_being_placed "
-                                                                            label="May have disliked being placed on stomach as an infant"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Loses_balance_easily"
-                                                                            label="Loses balance easily and may appear clumsy"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Fearful_of_activities"
-                                                                            label="Fearful of activities which require good balance"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Avoids_rapid_or_rotating_movements"
-                                                                            label="Avoids rapid or rotating movements"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-
-                                                                    </form>
-                                                                </div>
+                                                                <x-input-radio-or-check name="Avoids_dislikes_playground_equipment"
+                                                                    label="Avoids/dislikes playground equipment; i.e., swings, ladders, slides, or merry-go-rounds"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Prefers_sedentary_tasks"
+                                                                    label="Prefers sedentary tasks, moves slowly and cautiously, avoids taking risks, and may appear 'wimpy'"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Avoids_dislikes_elevators"
+                                                                    label="Avoids/dislikes elevators and escalators; may prefer sitting while they are on them or, actually get motion sickness from them"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_physically_cling_to_an_adult_they_trust"
+                                                                    label="May physically cling to an adult they trust"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_appear_terrified_offalling_even"
+                                                                    label="May appear terrified of falling even when there is no real risk of it"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Afraid of heights, even the height of a curb or step"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    label="Fearful of feet leaving the ground"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    label="Fearful of going up or down stairs or walking on uneven surfaces"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Afraid_of_being_tipped_upside_down"
+                                                                    label="Afraid of being tipped upside down, sideways or backwards; will strongly resist getting hair washed over the sink"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Startles_if_someone_else_moves_them"
+                                                                    label="Startles if someone else moves them; i.e., pushing his/her chair closer to the table"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="As_an_infant"
+                                                                    label="As an infant, may never have liked baby swings or jumpers"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_be_fearful_of"
+                                                                    label="May be fearful of, and have difficulty riding a bike, jumping, hopping, or balancing on one foot (especially if eyes are closed)"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="May_have_disliked_being_placed "
+                                                                    label="May have disliked being placed on stomach as an infant"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Loses balance easily and may appear clumsy"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Fearful of activities which require good balance"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check 
+                                                                    label="Avoids rapid or rotating movements"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane"
@@ -730,70 +624,66 @@
                                                                 Hyposensitivity To Movement
                                                                 (Under-Responsive)</h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="in_constant_motion"
-                                                                            label="in constant motion, can't seem to sit still"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Craves_fast"
-                                                                            label="Craves fast, spinning, and/or intense movement experiences"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="loves_being_tossed"
-                                                                            label="loves being tossed in the air"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Could_spin_for_hours"
-                                                                            label="Could spin for hours and never appear to be dizzy"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Loves_the_fast"
-                                                                            label="Loves the fast, intense, and/or scary rides at amusement parks"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Always_jumping_on_furniture"
-                                                                            label="Always jumping on furniture, trampolines, spinning in a swivel chair, or getting into upside down positions"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Loves_to_swing_as_high_as_possible"
-                                                                            label="Loves to swing as high as possible and for long periods of time"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Is_a_thrill-seeker"
-                                                                            label="Is a 'thrill-seeker' dangerous at times"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Always_running"
-                                                                            label="Always running, jumping, hopping etc. instead of walking"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Rocks_body"
-                                                                            label="Rocks body, shakes leg, or head while sitting"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <x-input-radio-or-check name="" label="demo"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
 
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="Likes_sudden"
-                                                                            label="Likes sudden or quick movements, such as, going over a big bump in the car or on a bike"
-                                                                            :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                    </form>
-                                                                </div>
+                                                                <x-input-radio-or-check
+                                                                    label="in constant motion, can't seem to sit still"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Craves_fast"
+                                                                    label="Craves fast, spinning, and/or intense movement experiences"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="loves_being_tossed"
+                                                                    label="loves being tossed in the air"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Could_spin_for_hours"
+                                                                    label="Could spin for hours and never appear to be dizzy"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Loves_the_fast"
+                                                                    label="Loves the fast, intense, and/or scary rides at amusement parks"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Always_jumping_on_furniture"
+                                                                    label="Always jumping on furniture, trampolines, spinning in a swivel chair, or getting into upside down positions"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Loves_to_swing_as_high_as_possible"
+                                                                    label="Loves to swing as high as possible and for long periods of time"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Is_a_thrill-seeker"
+                                                                    label="Is a 'thrill-seeker' dangerous at times"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Always_running"
+                                                                    label="Always running, jumping, hopping etc. instead of walking"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Rocks_body"
+                                                                    label="Rocks body, shakes leg, or head while sitting"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <x-input-radio-or-check name="" label="demo"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="Likes_sudden"
+                                                                    label="Likes sudden or quick movements, such as, going over a big bump in the car or on a bike"
+                                                                    :records="$constants::$yesNoEn">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane"
@@ -802,8 +692,6 @@
                                                                 Hyposensitivity To Movement
                                                                 (Under-Responsive)</h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="in_constant_motion"
                                                                             label="in constant motion, can't seem to sit still"
@@ -864,8 +752,6 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
-                                                                </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane"
@@ -874,8 +760,6 @@
                                                                 Hyposensitivity To Movement
                                                                 (Under-Responsive)</h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="in_constant_motion"
                                                                             label="in constant motion, can't seem to sit still"
@@ -937,8 +821,6 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
-                                                                </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane"
@@ -947,8 +829,6 @@
                                                                 Poor Muscle Tone And/Or Coordination
                                                             </h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="has_a_limp"
                                                                             label="has a limp, 'floppy' body"
@@ -1030,8 +910,6 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
-                                                                </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane"
@@ -1039,8 +917,6 @@
                                                             <h3> Signs Of Proprioceptive Dysfunction
                                                                 > Sensory Seeking Behaviors</h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="Seeks_out_jumping_bumping"
                                                                             label="Seeks out jumping, bumping, and crashing activities"
@@ -1131,8 +1007,6 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
-                                                                </div>
                                                             </section>
 
                                                         </div>
@@ -1142,8 +1016,6 @@
                                                                 > 2. Difficulty With "Grading Of
                                                                 Movement"</h3>
                                                             <section>
-                                                                <div>
-                                                                    <form>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="Misjudges_how_much_to_flex"
                                                                             label="Misjudges how much to flex and extend muscles during tasks/activities (i.e., putting arms into sleeves or climbing)"
@@ -1190,8 +1062,6 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
-                                                                </div>
                                                             </section>
 
                                                         </div>
@@ -1347,7 +1217,20 @@
                         <!-- Seller Details -->
                         <h3>Sensory Checklist</h3>
                         <section>
-                            <form>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="basicpill-firstname-input">Collection Date:</label>
+                                        <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
+                                        </x-input-text>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="basicpill-lastname-input">Teacher:</label>
+                                        <x-input-select name="teacher_id" :records="[]" />
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="mb-3">
@@ -1359,231 +1242,191 @@
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="basicpill-lastname-input">Teacher:</label>
-                                            <x-input-select name="teacher_id"
-                :records="[]" />
+                                            <x-input-select name="teacher_id" :records="[]" />
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="mb-3">
-                                                <label for="basicpill-firstname-input">Collection Date:</label>
-                                                <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy">
-                                                </x-input-text>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="mb-3">
-                                                <label for="basicpill-lastname-input">Teacher:</label>
-                                                <x-input-select name="teacher_id"
-                :records="[]" />
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="mb-3">
-                                                <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                                <select class="form-control select2 form-select">
-                                                    <option value="0">Select</option>
-                                                    <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                                                    <option value="2">abdullah-al-nafi antor</option>
-                                                    <option value="3">Abdullahil Baki</option>
-                                                    <option value="4">Abdur Rahman Sajid</option>
-                                                    <option value="5">Abid Hossain Turjo</option>
-                                                    <option value="6">Abid Kabir Chowdhury</option>
-                                                    <option value="7">Abrar Ahosab Talha</option>
-                                                    <option value="8">Abrar Jawad Siam</option>
-                                                    <option value="9">Abu Sufiyan</option>
-                                                    <option value="10">Adib Akbar</option>
-                                                    <option value="11">Adiba Atiar</option>
-                                                    <option value="12">Adil Anaf</option>
-                                                    <option value="13">Aditya Chakraborty</option>
-                                                </select>
-                                            </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-3">
+                                            <label for="basicpill-phoneno-input">Candidate ID:</label>
+                                            <x-input-select name="student_id" :records="[]" />
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </section>
 
                         <!-- Company Document -->
                         <h3>Signs Of Tactile Dysfunction</h3>
                         <section>
-                            <form>
-                                <x-input-radio-or-check name="" label="Hypersensitivity To Touch (Tactile Defensiveness)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Becomes fearful, anxious or aggressive with light or unexpected touch"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="As an infant, did/does not like to be held or cuddled; may arch back, cry, and pull away"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Distressed when diaper is being, or needs to be, changed" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Bothered by rough bed sheets (i.e., if old and 'bumpy')" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Avoids group situations for fear of the unexpected touch" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name="" label="Dislikes kisses, will 'wipe off' place where kissed"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Complains about having hair brushed; may be very picky about using a particular brush"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Bothered by rough bed sheets (i.e., if old and 'bumpy')" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Avoids group situations for fear of the unexpected touch" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name="" label="Dislikes kisses, will 'wipe off' place where kissed"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name="" label="Prefers hugs" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="May overreact to minor cuts, scrapes, and or bug bites" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Avoids touching certain textures of material (blankets, rugs, stuffed animals)"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name="hypersensitivity_to_touch" label="Hypersensitivity To Touch (Tactile Defensiveness)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="becomes_fearful_anxious_or_aggressive"
+                                label="Becomes fearful, anxious or aggressive with light or unexpected touch"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="as_infant_does_not_like_to_be_held_or_cuddled"
+                                label="As an infant, did/does not like to be held or cuddled; may arch back, cry, and pull away"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="distressed_when_diaper_is_being_or_needs_to_be_changed"
+                                label="Distressed when diaper is being, or needs to be, changed" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="appears_fearful_avoids_standing_close_proximity"
+                                label="Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="becomes_frightened_when_touched_from_behind"
+                                label="Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="complains_about_having_hair_brushed"
+                                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="Bothered by rough bed_sheets"
+                                label="Bothered by rough bed sheets (i.e., if old and 'bumpy')" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="complains_about_having_hair_brushed"
+                                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check 
+                                label="Avoids group situations for fear of the unexpected touch" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="complains_about_having_hair_brushed"
+                                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="resists_friendly_affectionate_touch_from_anyone"
+                                label="Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check  label="Dislikes kisses, will 'wipe off' place where kissed"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="appears_fearful_of_avoids_standing_close_proximity"
+                                label="Appears fearful of, or avoids standing in close proximity to other people or peers (especially in lines)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="becomes_frightened_when_touched_from_behind"
+                                label="Becomes frightened when touched from behind or by someone/something they can not see (such as under a blanket)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Complains about having hair brushed; may be very picky about using a particular brush"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Bothered by rough bed sheets (i.e., if old and 'bumpy')" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Avoids group situations for fear of the unexpected touch" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Resists friendly or affectionate touch from anyone besides parents or siblings (and sometimes them too!)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="" label="Dislikes kisses, will 'wipe off' place where kissed"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="" label="Prefers hugs" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="May overreact to minor cuts, scrapes, and or bug bites" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Avoids touching certain textures of material (blankets, rugs, stuffed animals)"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="Refuses to wear new or stiff clothes, clothes with rough textures, turtlenecks, jeans, hats, or belts, etc."
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Refuses to wear new or stiff clothes, clothes with rough textures, turtlenecks, jeans, hats, or belts, etc."
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name="" label="Avoids using hands for play" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name="" label="Avoids using hands for play" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="Yes No Avoids/dislikes/aversive to 'messy play', i.e., sand, mud, water, glue, glitter, playdoh, slime, shaving cream/funny foam etc."
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Yes No Avoids/dislikes/aversive to 'messy play', i.e., sand, mud, water, glue, glitter, playdoh, slime, shaving cream/funny foam etc."
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="Will be distressed by dirty hands and want to wipe or wash them frequently"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Will be distressed by dirty hands and want to wipe or wash them frequently"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name="" label="Excessively ticklish" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name="" label="Excessively ticklish" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="Distressed by seams in socks and may refuse to wear them" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Distressed by clothes rubbing on skin; may want to wear shorts and short sleeves year round, toddlers may prefer to be naked and pull diapers and clothes off constantly"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="May want to wear long sleeve shirts and long pants year-round to avoid having skin exposed"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Distressed by seams in socks and may refuse to wear them" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Distressed by clothes rubbing on skin; may want to wear shorts and short sleeves year round, toddlers may prefer to be naked and pull diapers and clothes off constantly"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="May want to wear long sleeve shirts and long pants year-round to avoid having skin exposed"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name="" label="Distressed about having face washed"
-                                    :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name="" label="Distressed about having face washed"
+                                :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="Distressed about having hair, toenails, or fingernails cut" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Distressed about having hair, toenails, or fingernails cut" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
 
-                                <x-input-radio-or-check name=""
-                                    label="Resists brushing teeth and is extremely fearful of the dentist"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name=""
-                                    label="Is a picky eater, only eating certain tastes and textures; mixed textures tend to be avoided as well as hot or cold foods; resists trying new foods"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name="" label="May refuse to walk barefoot on grass or sand"
-                                    :records="$constants::$yesNoEn"></x-input-radio-or-check>
-                                <!-- end row -->
-                                <x-input-radio-or-check name="" label="May walk on toes only" :records="$constants::$yesNoEn">
-                                </x-input-radio-or-check>
-                                <!-- end row -->
-                                <!-- end row -->
-                            </form>
+                            <x-input-radio-or-check name=""
+                                label="Resists brushing teeth and is extremely fearful of the dentist"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name=""
+                                label="Is a picky eater, only eating certain tastes and textures; mixed textures tend to be avoided as well as hot or cold foods; resists trying new foods"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="" label="May refuse to walk barefoot on grass or sand"
+                                :records="$constants::$yesNoEn"></x-input-radio-or-check>
+                            <!-- end row -->
+                            <x-input-radio-or-check name="" label="May walk on toes only" :records="$constants::$yesNoEn">
+                            </x-input-radio-or-check>
+                            <!-- end row -->
                         </section>
 
                         <!-- Bank Details -->
                         <h3>Hyposensitivity To Touch (Under-Responsive)</h3>
                         <section>
-                            <form>
                                 <x-input-radio-or-check name=""
                                     label="May crave touch, needs to touch everything and everyone" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
@@ -1626,14 +1469,11 @@
                                     :records="$constants::$yesNoEn"></x-input-radio-or-check>
                                 <!-- end row -->
                                 <!-- end row -->
-                            </form>
                         </section>
 
                         <!-- Bank Details -->
                         <h3>Poor Tactile Perception And Discrimination</h3>
                         <section>
-                            <div>
-                                <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check name=""
                                         label="Has difficulty with fine motor tasks such as buttoning ,zipping,and fastening clothes"
@@ -1684,15 +1524,11 @@
                                         label="May not be able to identify objects by feel, uses vision to help; such as, reaching into backpack or desk to retrieve an item Vestibular Sense: input from the inner ear about equilibrium, gravitational changes, movement experiences, and position in space."
                                         :records="$constants::$yesNoEn"></x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
-                            </div>
                         </section>
 
                         <!-- Bank Details -->
                         <h3>Signs Of Vestibular Dysfunction > Hypersensitivity To Movement (Over-Responsive)</h3>
                         <section>
-                            <div>
-                                <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check name=""
                                         label="Avoids/dislikes playground equipment; i.e., swings, ladders, slides, or merry-go-rounds"
@@ -1753,17 +1589,12 @@
                                     <x-input-radio-or-check name="" label="Avoids rapid or rotating movements"
                                         :records="$constants::$yesNoEn"></x-input-radio-or-check>
                                     <!-- end row -->
-
-                                </form>
-                            </div>
                         </section>
 
 
                         <!-- Bank Details -->
                         <h3>Signs Of Vestibular Dysfunction > Hyposensitivity To Movement (Under-Responsive)</h3>
                         <section>
-                            <div>
-                                <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check name="" label="in constant motion, can't seem to sit still"
                                         :records="$constants::$yesNoEn"></x-input-radio-or-check>
@@ -1810,16 +1641,12 @@
                                         label="Likes sudden or quick movements, such as, going over a big bump in the car or on a bike"
                                         :records="$constants::$yesNoEn"></x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
-                            </div>
                         </section>
 
 
                         <!-- Bank Details -->
                         <h3>Signs Of Vestibular Dysfunction > . Poor Muscle Tone And/Or Coordination</h3>
                         <section>
-                            <div>
-                                <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check name="" label="has a limp, 'floppy' body" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
@@ -1881,15 +1708,11 @@
                                     <x-input-radio-or-check name="" label="Difficulty learning exercise or dance steps"
                                         :records="$constants::$yesNoEn"></x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
-                            </div>
                         </section>
 
                         <!-- Bank Details -->
                         <h3> Signs Of Proprioceptive Dysfunction > Sensory Seeking Behaviors</h3>
                         <section>
-                            <div>
-                                <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check name=""
                                         label="Seeks out jumping, bumping, and crashing activities" :records="$constants::$yesNoEn">
@@ -1952,15 +1775,11 @@
                                     <x-input-radio-or-check name="" label="chews on pens, straws, shirt sleeves etc."
                                         :records="$constants::$yesNoEn"></x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
-                            </div>
                         </section>
 
                         <!-- Bank Details -->
                         <h3> Signs Of Proprioceptive Dysfunction > 2. Difficulty With "Grading Of Movement"</h3>
                         <section>
-                            <div>
-                                <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check name=""
                                         label="Misjudges how much to flex and extend muscles during tasks/activities (i.e., putting arms into sleeves or climbing)"
@@ -1997,8 +1816,6 @@
                                         label="plays with animals with too much force, often hurting them"
                                         :records="$constants::$yesNoEn"></x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
-                            </div>
                         </section>
                     </div>
                 </div>
