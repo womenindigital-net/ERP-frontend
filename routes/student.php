@@ -1,17 +1,12 @@
 <?php
 
+use App\Http\Controllers\AssignTaskController;
 use App\Http\Controllers\CareNeedController;
 use App\Http\Controllers\CaseHistoryController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
 use App\Http\Livewire\AppointmentList;
-use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\AppointmentList;
-use App\Http\Controllers\SetupController;
-use App\Http\Controllers\SocialController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\CaseHistoryController;
 use App\Http\Controllers\SensoryAdultController;
 use App\Http\Controllers\IndividualRiskController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
@@ -31,11 +26,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'sensory-checklist-adult' => SensoryAdultController::class,
         'individual-risk' => IndividualRiskController::class,
         'functional-movement-skill' => FunctionalMovementskillController::class,
-
-
-
-
-
         'assign-task' => AssignTaskController::class,
 
         //        'another' => \App\Http\Controllers\StudentController::class,
