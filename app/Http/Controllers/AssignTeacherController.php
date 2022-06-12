@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AssignTask;
-use App\Http\Requests\StoreAssignTaskRequest;
-use App\Http\Requests\UpdateAssignTaskRequest;
+use App\Models\AssignTeacher;
+use App\Http\Requests\StoreAssignTeacherRequest;
+use App\Http\Requests\UpdateAssignTeacherRequest;
 
-class AssignTaskController extends Controller
+class AssignTeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,21 +25,16 @@ class AssignTaskController extends Controller
      */
     public function create()
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'students' => []
-        ];
-
-        return view('program.assign-task.create', $data);
+        return view('program.assign-teacher.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAssignTaskRequest  $request
+     * @param  \App\Http\Requests\StoreAssignTeacherRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAssignTaskRequest $request)
+    public function store(StoreAssignTeacherRequest $request)
     {
         //
     }
@@ -47,10 +42,10 @@ class AssignTaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\AssignTeacher  $assignTeacher
      * @return \Illuminate\Http\Response
      */
-    public function show(AssignTask $assignTask)
+    public function show(AssignTeacher $assignTeacher)
     {
         //
     }
@@ -58,10 +53,10 @@ class AssignTaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\AssignTeacher  $assignTeacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(AssignTask $assignTask)
+    public function edit(AssignTeacher $assignTeacher)
     {
         //
     }
@@ -69,11 +64,11 @@ class AssignTaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAssignTaskRequest  $request
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Http\Requests\UpdateAssignTeacherRequest  $request
+     * @param  \App\Models\AssignTeacher  $assignTeacher
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAssignTaskRequest $request, AssignTask $assignTask)
+    public function update(UpdateAssignTeacherRequest $request, AssignTeacher $assignTeacher)
     {
         //
     }
@@ -81,10 +76,10 @@ class AssignTaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\AssignTeacher  $assignTeacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AssignTask $assignTask)
+    public function destroy(AssignTeacher $assignTeacher)
     {
         //
     }

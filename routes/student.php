@@ -7,7 +7,13 @@ use App\Http\Livewire\AppointmentList;
 use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\AssignTaskController;
+use App\Http\Controllers\CreateItpController;
+use App\Http\Controllers\AssignTeacherController;
+use App\Http\Controllers\RunMitpController;
+use App\Http\Controllers\NoticeBoardController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
+
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -15,6 +21,11 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
         'assign-task' => AssignTaskController::class,
+        'create-itp' => CreateItpController::class,
+        'assign-teacher' => AssignTeacherController::class,
+        'notice-board' => NoticeBoardController::class,
+        'run-mitp' => RunMitpController::class,
+
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
@@ -24,7 +35,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     //    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
     Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
-
     Route::get('admission/add-student', [StudentController::class, 'admissionAddStudent'])->name('admission.addStudent');
 
 

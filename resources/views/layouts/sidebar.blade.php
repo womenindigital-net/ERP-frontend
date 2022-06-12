@@ -233,11 +233,11 @@
                         <span>Program</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('program.assign-task')}}">Assign Task</a></li>
-                        <li><a href="program.create-itp">Create ITP</a></li>
-                        <li><a href="program.run-mitp">Run MITP</a></li>
-                        <li><a href="program.notice-board">Notice Board</a></li>
-                        <li><a href="program.assign-teacher"> Assign Teacher</a></li>
+                        <li><a href="{{ route('setup.program-setup.tesk-create')}}">Assign Task</a></li>
+                        <li><a href="{{route('create-itp.create')}}">Create ITP</a></li>
+                        <li><a href="{{route('run-mitp.create')}}">Run MITP</a></li>
+                        <li><a href="{{route('notice-board.create')}}">Notice Board</a></li>
+                        <li><a href="{{route('assign-teacher.create')}}"> Assign Teacher</a></li>
                         {{-- <li><a href="/">Score Calculator </a></li>
                         <li><a href="/p-create-task">Create Task </a></li>
                         <li><a href="/p-admission-request">Admission Request </a></li> --}}

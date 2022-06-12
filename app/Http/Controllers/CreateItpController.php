@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AssignTask;
-use App\Http\Requests\StoreAssignTaskRequest;
-use App\Http\Requests\UpdateAssignTaskRequest;
+use App\Models\CreateItp;
+use App\Http\Requests\StoreCreateItpRequest;
+use App\Http\Requests\UpdateCreateItpRequest;
 
-class AssignTaskController extends Controller
+class CreateItpController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,20 +26,20 @@ class AssignTaskController extends Controller
     public function create()
     {
         $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            // 'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => []
         ];
 
-        return view('program.assign-task.create', $data);
+        return view('program.create-itp.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAssignTaskRequest  $request
+     * @param  \App\Http\Requests\StoreCreateItpRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAssignTaskRequest $request)
+    public function store(StoreCreateItpRequest $request)
     {
         //
     }
@@ -47,10 +47,10 @@ class AssignTaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\CreateItp  $createItp
      * @return \Illuminate\Http\Response
      */
-    public function show(AssignTask $assignTask)
+    public function show(CreateItp $createItp)
     {
         //
     }
@@ -58,10 +58,10 @@ class AssignTaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\CreateItp  $createItp
      * @return \Illuminate\Http\Response
      */
-    public function edit(AssignTask $assignTask)
+    public function edit(CreateItp $createItp)
     {
         //
     }
@@ -69,11 +69,11 @@ class AssignTaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAssignTaskRequest  $request
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Http\Requests\UpdateCreateItpRequest  $request
+     * @param  \App\Models\CreateItp  $createItp
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAssignTaskRequest $request, AssignTask $assignTask)
+    public function update(UpdateCreateItpRequest $request, CreateItp $createItp)
     {
         //
     }
@@ -81,10 +81,10 @@ class AssignTaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\CreateItp  $createItp
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AssignTask $assignTask)
+    public function destroy(CreateItp $createItp)
     {
         //
     }
