@@ -37,67 +37,39 @@ STUDENT QA
                     </li>
                 </ul>
 
-                    <!-- Tab panes -->
-                    <div class="tab-content p-3 text-muted">
-                        <div class="tab-pane active" id="case-histroy" role="tabpanel">
-                            <div class="row">
-                                <div class="col-12">
-                                    <!-- Wizard container -->
-                                    <div class="wizard-container">
-                                        <div class="card_stap wizard-card row" data-color="red" id="wizard">
-                                            <div class="col-sm-3 col-md-3">
-                                                <div id="wizard-navigation">
-                                                    <ul class="wizard-navigation">
-                                                        <li class="w-100"><a href="#Social_Communication"
-                                                                data-toggle="tab">Incident
-                                                                Record step 1</a></li>
-                                                        <li class="w-100"><a href="#Pragmatic_Objective"
-                                                                data-toggle="tab">Incident
-                                                                Record step 2</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                <!-- Tab panes -->
+                <div class="tab-content p-3 text-muted">
+                    <div class="tab-pane active" id="case-histroy" role="tabpanel">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Wizard container -->
+                                <div class="wizard-container">
+                                    <div class="card_stap wizard-card row" data-color="red" id="wizard">
+                                        <div class="col-sm-3 col-md-3">
+                                            <div id="wizard-navigation">
+                                                <ul class="wizard-navigation">
+                                                    <li class="w-100"><a href="#Social_Communication"
+                                                            data-toggle="tab">Incident
+                                                            Record step 1</a></li>
+                                                    <li class="w-100"><a href="#Pragmatic_Objective"
+                                                            data-toggle="tab">Incident
+                                                            Record step 2</a>
+                                                    </li>
+                                                </ul>
                                             </div>
-                                            <div class="col-sm-9 col-md-9">
-                                                <form>
-                                                    <div class="tab-content">
-                                                        <div class="tab-pane" id="Social_Communication">
-                                                            <section>
-                                                                <div class="row">
-                                                                    <div class="col-lg-4">
-                                                                        <div class="mb-3">
-                                                                            <label
-                                                                                for="basicpill-firstname-input">Collection
-                                                                                Date:</label>
-                                                                            <div class="input-group" id="datepicker2">
-                                                                                <x-input-text name="date"
-                                                                                    placeholder="dd/mm/yyyy" type="date">
-                                                                                </x-input-text>
-                                                                            </div><!-- input-group -->
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="mb-3">
-                                                                            <label
-                                                                                for="basicpill-lastname-input">Teacher:</label>
-                                                                            <x-input-select name="teacher_id"
-                                                                                :records="[]" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            </section>
-                                                        </div>
-                                                        <div class="tab-pane" id="Pragmatic_Objective">
-                                                            <section>
-                                                                <x-input-radio-or-check  label="Incident Type"
-                                                                    :records="$incidentConstant::$incidentType">
-                                                                </x-input-radio-or-check>
-                                                                <div class="row border-top py-2">
-                                                                    <div class="form-check">
-                                                                        <div class="me-5 ">
-                                                                            <label class="form-check-label pb-2">Date and
-                                                                                Time</label>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9">
+                                            <form>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane" id="Social_Communication">
+                                                        <section>
+                                                            <div class="row">
+                                                                <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <label
+                                                                            for="basicpill-firstname-input">Collection
+                                                                            Date:</label>
+                                                                        <div class="input-group" id="datepicker2">
                                                                             <x-input-text name="date"
                                                                                 placeholder="dd/mm/yyyy" type="date">
                                                                             </x-input-text>
@@ -151,35 +123,15 @@ STUDENT QA
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row border-top py-2">
-                                                                <div class="col-xl-12 col-sm-12">
-                                                                    <div class="m-0">
-                                                                        <h5>Action Taken?</h5>
-                                                                        <div class="row">
-                                                                            <div class="form-check">
-                                                                                <div class="me-5 ">
-                                                                                    <input class="form-check-input"
-                                                                                        type="radio" name="formRadios">
-                                                                                    <label
-                                                                                        class="form-check-label">Yes</label>
-                                                                                </div>
-                                                                                <div class="me-5 ">
-                                                                                    <input class="form-check-input"
-                                                                                        type="radio" name="formRadios">
-                                                                                    <label
-                                                                                        class="form-check-label">No</label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <x-input-radio-or-check 
-                                                                    type="checkbox"
-                                                                    label="What is the Previous cause of Incident/Antecedent Behavior?"
-                                                                    :records="$incidentConstant::$activityType" :isVertical="false">
-                                                                </x-input-radio-or-check>
-                                                            </section>
-                                                        </div>
+                                                            <x-input-radio-or-check label="Action Taken?"
+                                                                :records="$constants::$yesNoEn" :isVertical="false">
+                                                            </x-input-radio-or-check>
+                                                            <x-input-radio-or-check type="checkbox"
+                                                                label="What is the Previous cause of Incident/Antecedent Behavior?"
+                                                                :records="$incidentConstant::$activityType"
+                                                                :isVertical="false">
+                                                            </x-input-radio-or-check>
+                                                        </section>
                                                     </div>
                                                 </div>
                                                 <div class="wizard-footer d-flex justify-content-between">

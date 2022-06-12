@@ -7,11 +7,6 @@
 @endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')STUDENT QA @endslot
-@endcomponent
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -227,7 +222,8 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <x-input-radio-or-check name="what_is_the_previous" type="checkbox"
+                                                            <x-input-radio-or-check name="what_is_the_previous"
+                                                                type="checkbox"
                                                                 label="What is the Previous cause of Incident/Antecedent Behavior?"
                                                                 :records="$incidentConstant::$activityType"
                                                                 :isVertical="false">
