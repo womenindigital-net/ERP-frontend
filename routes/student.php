@@ -6,12 +6,17 @@ use App\Http\Livewire\AppointmentList;
 use App\Http\Controllers\SetupController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AssignTaskController;
 use App\Http\Controllers\CaseHistoryController;
 use App\Http\Controllers\SensoryAdultController;
+use App\Http\Controllers\PhysiotherapyController;
 use App\Http\Controllers\IndividualRiskController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
 use App\Http\Controllers\AutisumBhehaviourController;
 use App\Http\Controllers\ExecutiveFunctionController;
+use App\Http\Controllers\OccupationalTherapyController;
+use App\Http\Controllers\SensoryChecklistChildController;
+use App\Http\Controllers\FunctionalCommunicationController;
 use App\Http\Controllers\FunctionalMovementskillController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
@@ -24,13 +29,15 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'executive-function' => ExecutiveFunctionController::class,
         'sensory-checklist-adult' => SensoryAdultController::class,
         'individual-risk' => IndividualRiskController::class,
-        'functional-movement-skill' => FunctionalMovementskillController::class,  
-
+        'functional-movement-skill' => FunctionalMovementskillController::class,
+        'functional-communication' => FunctionalCommunicationController::class,
+        'physiotherapy' => PhysiotherapyController::class,
+        'assign-task' => AssignTaskController::class,
+        'occupational-therapy' => OccupationalTherapyController::class,
+        'sensory-checklist-child' => SensoryChecklistChildController::class,
 
         
-
-
-        'assign-task' => AssignTaskController::class,
+        
 
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
