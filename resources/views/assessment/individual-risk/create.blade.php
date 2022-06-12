@@ -118,8 +118,7 @@
                                                                 </div>
                                                             </div>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="hh"
-                                                                label="Accident/ incident?"
+                                                            <x-input-radio-or-check label="Accident/incident?"
                                                                 :records="$IRAConstants::$accidentOrIncident">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
@@ -141,7 +140,8 @@
                                                                         <h5>Risk Rating (Overall risk level
                                                                             identified: 1-10 )</h5>
                                                                         <div class="mb-2">
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="risk_rating"
+                                                                                placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -152,7 +152,8 @@
                                                                     <div class="m-0">
                                                                         <h5>Action to Reduce Hazard</h5>
                                                                         <div class="mb-2">
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="action_to_reduce_hazard"
+                                                                                placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -163,18 +164,19 @@
                                                                     <div class="m-0">
                                                                         <h5>Level of risk (1-25)</h5>
                                                                         <div class="mb-2">
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="level_of_risk"
+                                                                                placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
-                                                            <x-input-radio-or-check name="hh" label="Likelihood"
+                                                            <x-input-radio-or-check label="Likelihood"
                                                                 :records="$IRAConstants::$likelihood">
                                                             </x-input-radio-or-check>
                                                             {{-- end row --}}
-                                                            <x-input-radio-or-check name="hh" label="Consequences"
+                                                            <x-input-radio-or-check label="Consequences"
                                                                 :records="$IRAConstants::$consu">
                                                             </x-input-radio-or-check>
                                                             {{-- end row --}}
@@ -184,7 +186,8 @@
                                                                     <div class="m-0">
                                                                         <h5>Staff signature</h5>
                                                                         <div class="mb-2">
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="staff_signature"
+                                                                                placeholder="">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -194,7 +197,8 @@
                                                                     <div class="m-0">
                                                                         <h5>Staff name</h5>
                                                                         <div class="mb-2">
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="staff_name"
+                                                                                placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -205,7 +209,8 @@
                                                                     <div class="m-0">
                                                                         <h5>Signature of support worker</h5>
                                                                         <div class="mb-2">
-                                                                            </x-input-text>
+                                                                            <x-input-text
+                                                                                name="signature_of_support_worker" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -215,7 +220,8 @@
                                                                     <div class="m-0">
                                                                         <h5>Support worker name</h5>
                                                                         <div class="mb-2">
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="support_worker_name"
+                                                                                placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>

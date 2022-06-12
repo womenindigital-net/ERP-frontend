@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title') @lang('translation.Starter_Page') @endsection
+@section('title')  @endsection
 @section('css')
 <style>
   .wizard .steps>ul>li a {
@@ -10,113 +10,153 @@
     padding-left: 5px !important;
   }
 </style>
-
 @endsection
 @section('content')
+
 <div class="row">
-  <div class="col-12">
+  <div class="col-xl-12 p-0">
     <div class="card">
-      <div class="card-body">
-        <div class="row mb-3">
-          <div class="col-6">
-            <h4 class="card-title">STUDENT QAS</h4>
+      <div class="card-body p-0">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#add" role="tab">
+              <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+              <span class="d-none d-sm-block">Add</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#list" role="tab">
+              <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+              <span class="d-none d-sm-block">List</span>
+            </a>
+          </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content text-muted">
+          <div class="tab-pane active" id="add" role="tabpanel">
+            <div class="row">
+              <div class="col-12">
+                <!-- Wizard container -->
+                <div class="wizard-container">
+                  <div class="card_stap wizard-card row" data-color="red" id="wizard">
+                    <div class="col-sm-3 col-md-3">
+                      <div id="wizard-navigation">
+                        <ul class="wizard-navigation">
+                          <li class="w-100"><a href="#SensoryChecklistYoungAdult" data-toggle="tab">Sensory Checklist - Young-Adult</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-sm-9 col-md-9">
+                      <form action="" method="POST">
+                        @csrf
+                        <div class="tab-content">
+                          <div class="tab-pane" id="SensoryChecklistYoungAdult">
+                            <section>
+                              <form>
+                                <div class="row">
+                                  <div class="col-lg-4">
+                                    <div class="mb-3">
+                                      <label for="basicpill-firstname-input">Collection Date:</label>
+                                      <x-input-text name="name" type="date" placeholder=""></x-input-text>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <div class="mb-3">
+                                      <label for="basicpill-lastname-input">Teacher:</label>
+                                      <x-input-select name="student_id" :records="[]" />
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <div class="mb-3">
+                                      <label for="basicpill-phoneno-input">Candidate ID:</label>
+                                      <x-input-select name="student_id"
+                                  :records="[]" />
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                            </section>
+                          </div>
+                          <div class="tab-pane" id=""></div>
+                          <div class="tab-pane" id=""></div>
+                          <div class="tab-pane" id=""></div>
+                          <div class="tab-pane" id=""></div>
+                          <div class="tab-pane" id=""></div>
+                          <div class="wizard-footer d-flex justify-content-between">
+                            <div class="pull-left">
+                              <input type='button' class='btn btn-primary waves-effect waves-light btn-previous'
+                                name='previous' value='Previous' />
+                            </div>
+                            <div class="pull-right">
+                              <input type='button' class='btn btn-primary waves-effect waves-light btn-next' name='next'
+                                value='Next' />
+                              <input type="submit" class='btn btn-finish btn-fill btn-danger' value='Finish' />
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div> <!-- wizard container -->
+              </div>
+            </div> <!-- end col -->
+            <!-- end row -->
           </div>
-          <div class="col-6 text-end  mb-3">
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-              data-bs-target=""><i class="fa fa-user"></i> Profile</button>
-            <button type="button" class="btn btn-outline-info waves-effect waves-light" data-bs-toggle="modal"
-              data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i>ADD</button>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                  class="form-control form-control-sm form-select form-select-sm">
-                  <option value="10">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select> entries
-              </label>
-            </div>
-            <div class="col-sm-12 col-md-6 text-end">
-              <label style="display: inline-flex;align-items: center;">Search:
-                <x-input-text type="search" name="name" placeholder=""></x-input-text>
-              </label>
-            </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-bordered w-100">
-              <thead>
-                <tr class="table-primary ">
-                  <th>Collection Date</th>
-                  <th>Student Name</th>
-                  <th>Collected By</th>
-                  <th>Log</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2022-05-22</td>
-                  <td>Abdullahil Baki</td>
-                  <td>Ohidul Hassan</td>
-                  <td>Create: Ohidul Hassan @ 2022-05-22 11:10:53</td>
-                  <td>
-                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                      data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                      <i class="mdi mdi-eye"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                        class="fas fa-check"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="fas fa-check"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                      data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                      <i class="mdi mdi-pencil"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="bx bx-dollar"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="fas fa-arrow-circle-right"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              Showing 1 to 2 of 2 entries
-            </div>
-            <div class="col-sm-12 col-md-6 text-end">
-              <nav>
-                <ul class="pagination" style="justify-content: end;">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
+          <div class="tab-pane" id="list" role="tabpanel">
+            <div class="table-responsive">
+              <table class="table table-bordered w-100">
+                <thead>
+                  <tr class="table-primary ">
+                    <th>Collection Date</th>
+                    <th>Student Name</th>
+                    <th>Collected By</th>
+                    <th>Log</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2022-05-22</td>
+                    <td>Abdullahil Baki</td>
+                    <td>Ohidul Hassan</td>
+                    <td>Create: Ohidul Hassan @ 2022-05-22 11:10:53</td>
+                    <td>
+                      <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
+                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                        <i class="mdi mdi-eye"></i>
+                      </button>
+                      <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                          class="fas fa-check"></i>
+                      </button>
+                      <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
+                        <i class="fas fa-check"></i>
+                      </button>
+                      <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                        <i class="mdi mdi-pencil"></i>
+                      </button>
+                      <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                        <i class="bx bx-dollar"></i>
+                      </button>
+                      <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                        <i class="fas fa-arrow-circle-right"></i>
+                      </button>
+                      <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-    </div> <!-- end col -->
-  </div> <!-- end row -->
+    </div>
+  </div>
 </div>
+
 <!--  Large modal example -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
   aria-hidden="true">
@@ -128,33 +168,7 @@
       </div>
       <div class="modal-body">
         <div id="vertical-example" class="vertical-wizard">
-          <!-- Seller Details -->
-          <h3>Sensory Checklist - Young-Adult</h3>
-          <section>
-            <form>
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="basicpill-firstname-input">Collection Date:</label>
-                    <x-input-text name="name" type="date" placeholder=""></x-input-text>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="basicpill-lastname-input">Teacher:</label>
-                    <x-input-select name="student_id" :records="[]" />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="basicpill-phoneno-input">Candidate ID:</label>
-                    <x-input-select name="student_id"
-                :records="[]" />
-                  </div>
-                </div>
-              </div>
-            </form>
-          </section>
+        
           <!-- Company Document -->
           <h3>TOUCH</h3>
           <section>
