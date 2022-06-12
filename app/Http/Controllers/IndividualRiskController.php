@@ -40,7 +40,7 @@ class IndividualRiskController extends Controller
      */
     public function store(StoreIndividualRiskRequest $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

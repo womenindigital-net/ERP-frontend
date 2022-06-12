@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OtAssessment;
-use App\Http\Requests\StoreOtAssessmentRequest;
-use App\Http\Requests\UpdateOtAssessmentRequest;
+use App\Models\GymAndOuting;
+use App\Http\Requests\StoreGymAndOutingRequest;
+use App\Http\Requests\UpdateGymAndOutingRequest;
 
-class OtAssessmentController extends Controller
+class GymAndOutingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,16 +25,16 @@ class OtAssessmentController extends Controller
      */
     public function create()
     {
-       return view('student.dairy.OT-Assessment.create');
+       return view('student.dairy.Gym-Outing-Evalution.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreOtAssessmentRequest  $request
+     * @param  \App\Http\Requests\StoreGymAndOutingRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOtAssessmentRequest $request)
+    public function store(StoreGymAndOutingRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class OtAssessmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\OtAssessment  $otAssessment
+     * @param  \App\Models\GymAndOuting  $gymAndOuting
      * @return \Illuminate\Http\Response
      */
-    public function show(OtAssessment $otAssessment)
+    public function show(GymAndOuting $gymAndOuting)
     {
         //
     }
@@ -53,10 +53,10 @@ class OtAssessmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\OtAssessment  $otAssessment
+     * @param  \App\Models\GymAndOuting  $gymAndOuting
      * @return \Illuminate\Http\Response
      */
-    public function edit(OtAssessment $otAssessment)
+    public function edit(GymAndOuting $gymAndOuting)
     {
         //
     }
@@ -64,11 +64,11 @@ class OtAssessmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateOtAssessmentRequest  $request
-     * @param  \App\Models\OtAssessment  $otAssessment
+     * @param  \App\Http\Requests\UpdateGymAndOutingRequest  $request
+     * @param  \App\Models\GymAndOuting  $gymAndOuting
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOtAssessmentRequest $request, OtAssessment $otAssessment)
+    public function update(UpdateGymAndOutingRequest $request, GymAndOuting $gymAndOuting)
     {
         //
     }
@@ -76,10 +76,10 @@ class OtAssessmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\OtAssessment  $otAssessment
+     * @param  \App\Models\GymAndOuting  $gymAndOuting
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OtAssessment $otAssessment)
+    public function destroy(GymAndOuting $gymAndOuting)
     {
         //
     }

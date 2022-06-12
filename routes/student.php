@@ -1,29 +1,35 @@
 <?php
 
-use App\Http\Controllers\AssignTeacherController;
-use App\Http\Controllers\CreateItpController;
-use App\Http\Controllers\IncidentRecordController;
-use App\Http\Controllers\MedicineAdminController;
-use App\Http\Controllers\NoticeBoardController;
-use App\Http\Controllers\RunMitpController;
-use App\Http\Controllers\AssignTaskController;
-use App\Http\Controllers\CareNeedController;
-use App\Http\Controllers\CaseHistoryController;
-use App\Http\Controllers\SocialController;
-use App\Http\Controllers\StudentController;
-use App\Http\Livewire\AppointmentList;
+use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\AppointmentList;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\SetupController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\RunMitpController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CareNeedController;
+use App\Http\Controllers\CreateItpController;
+use App\Http\Controllers\AssignTaskController;
+use App\Http\Controllers\CaseHistoryController;
+use App\Http\Controllers\NoticeBoardController;
+use App\Http\Controllers\GymAndOutingController;
+use App\Http\Controllers\OtAssessmentController;
 use App\Http\Controllers\SensoryAdultController;
+use App\Http\Controllers\AssignTeacherController;
+use App\Http\Controllers\MedicineAdminController;
+use App\Http\Controllers\IncidentRecordController;
 use App\Http\Controllers\PhysiotherapyController;
 use App\Http\Controllers\IndividualRiskController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
 use App\Http\Controllers\AutisumBhehaviourController;
 use App\Http\Controllers\ExecutiveFunctionController;
+use App\Http\Controllers\DramaDiaryEvaluationController;
 use App\Http\Controllers\OccupationalTherapyController;
 use App\Http\Controllers\SensoryChecklistChildController;
 use App\Http\Controllers\FunctionalCommunicationController;
 use App\Http\Controllers\FunctionalMovementskillController;
+use App\Http\Controllers\StaffAndWorkplaceInspectionController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -32,7 +38,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'social-communication' => SocialController::class,
         'madicine-admin' => MedicineAdminController::class,
         'incident-record' => IncidentRecordController::class,
-        'ot-assessment' => IncidentRecordController::class,
+        'ot-assessment' => OtAssessmentController::class,
         'trip' => TripController::class,
         'care-need' => CareNeedController::class,
         'autisum-behaviour' => AutisumBhehaviourController::class,
@@ -50,6 +56,9 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'assign-teacher' => AssignTeacherController::class,
         'notice-board' => NoticeBoardController::class,
         'run-mitp' => RunMitpController::class,
+        'gym-and-outing' => GymAndOutingController::class,
+        'drama-diary-evaluation' => DramaDiaryEvaluationController::class,
+        'staff-and-workplaceinspection' => StaffAndWorkplaceInspectionController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
@@ -60,7 +69,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
     Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
-//    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+    //    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
 
     Route::get('admission/add-student', [StudentController::class, 'admissionAddStudent'])->name('admission.addStudent');
@@ -72,7 +81,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
 
     Route::get('assessment/sensory-checklist-for-child', [StudentController::class, 'sensoryChecklistForChild'])->name('sensory.checklist.for.child');
 
-//    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
+    //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
+    //    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+    //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
+    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+
+
+    //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
     Route::get('assessment/social-communication', [SocialController::class, 'create']);
 
     Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');

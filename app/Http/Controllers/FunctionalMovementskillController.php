@@ -29,7 +29,7 @@ class FunctionalMovementskillController extends Controller
             'students' => []
         ];
 
-        return view('assessment.social-communication.create', $data);
+        return view('assessment.functional-movement-skill.create', $data);
     }
 
     /**
