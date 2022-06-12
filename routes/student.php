@@ -1,12 +1,13 @@
 <?php
-
-use App\Http\Controllers\CaseHistoryController;
-use App\Http\Controllers\SocialController;
-use App\Http\Controllers\StudentController;
-use App\Http\Livewire\AppointmentList;
 use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\AppointmentList;
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CaseHistoryController;
+use App\Http\Controllers\MedicineAdminController;
+use App\Http\Controllers\IncidentRecordController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
@@ -14,7 +15,9 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         '' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
-        'assign-task' => AssignTaskController::class,
+        'madicine-admin' => MedicineAdminController::class,
+        'incident-record' => IncidentRecordController::class,
+        'ot-assessment' => IncidentRecordController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
@@ -35,7 +38,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('assessment/sensory-checklist-for-child', [StudentController::class, 'sensoryChecklistForChild'])->name('sensory.checklist.for.child');
 
 //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
-//    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
 
     Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
     Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');
