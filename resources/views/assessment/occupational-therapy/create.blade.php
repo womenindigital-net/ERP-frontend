@@ -36,7 +36,6 @@
                                 </a>
                             </li>
                         </ul>
-
                         <!-- Tab panes -->
                         <div class="tab-content p-3 text-muted">
                             <div class="tab-pane active" id="case-histroy" role="tabpanel">
@@ -74,14 +73,12 @@
                                                                                 placeholder="mm/dd/yyyy">
                                                                             </x-input-text>
                                                                         </div>
-
                                                                         <div class="col-lg-4 pull-left pb-2">
                                                                             <label class="p-2">Teacher: <span
                                                                                     class="text-danger text-bold">*</span></label>
                                                                                     <x-input-select name="teacher_id"
                                                                                     :records="[]" />
                                                                         </div>
-
                                                                         <div class="col-lg-4 pull-left pb-2">
                                                                             <label class="p-2">Candidate ID:
                                                                                 <span
@@ -89,7 +86,6 @@
                                                                                     <x-input-select name="candidate_id"
                                                                                     :records="[]" />
                                                                         </div>
-
                                                                         <div class="col-lg-12 p-0 pb-2">
                                                                             <label
                                                                                 class="col-md-12 px-1">Description:</label>
@@ -136,11 +132,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check 
                                                                         label="Separate Home equipment" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check 
                                                                         label="Communication" :records="$therapyConstants::$communication">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
@@ -148,7 +144,7 @@
                                                             </div>
                                                             <div class="tab-pane" id="Muscle_Tone">
                                                                 <section>
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check
                                                                         label="Separate Home equipment" :records="$therapyConstants::$separateHomeEquipment">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
@@ -178,15 +174,15 @@
                                                                         </div>
                                                                     </div>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name" label="Lower Limbs"
+                                                                    <x-input-radio-or-check  label="Lower Limbs"
                                                                         :records="$therapyConstants::$lowerLimbs">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name" label="Trunk/neck"
+                                                                    <x-input-radio-or-check  label="Trunk/neck"
                                                                         :records="$therapyConstants::$trunkNeck">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name" label="Lower Limbs"
+                                                                    <x-input-radio-or-check  label="Lower Limbs"
                                                                         :records="$therapyConstants::$lowerLimbsTone">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
@@ -219,7 +215,7 @@
                                                             </div>
                                                             <div class="tab-pane" id="Range_of_movement">
                                                                 <section>
-                                                                    <x-input-radio-or-check name="name" label="Upper limbs"
+                                                                    <x-input-radio-or-check  label="Upper limbs"
                                                                         :records="$therapyConstants::$upperLimbs">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
@@ -232,14 +228,14 @@
                                                                                         <div class="me-5 ">
                                                                                             <label
                                                                                                 class="form-check-label pb-2">Left</label>
-                                                                                            <x-input-text name="name"
+                                                                                            <x-input-text name="left"
                                                                                                 placeholder="Left">
                                                                                             </x-input-text>
                                                                                         </div>
                                                                                         <div class="me-5 ">
                                                                                             <label
                                                                                                 class="form-check-label pb-2">Right</label>
-                                                                                            <x-input-text name="name"
+                                                                                            <x-input-text name="right"
                                                                                                 placeholder="Right">
                                                                                             </x-input-text>
                                                                                         </div>
@@ -249,7 +245,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name" label="Trunk/neck"
+                                                                    <x-input-radio-or-check  label="Trunk/neck"
                                                                         :records="$therapyConstants::$trunkNeckRange">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
@@ -461,17 +457,17 @@
                                     </div>
                                 </div>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Separate Home equipment" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check  label="Separate Home equipment" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Communication" :records="$therapyConstants::$communication">
+                                <x-input-radio-or-check label="Communication" :records="$therapyConstants::$communication">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                             </section>
 
                             <h3>Muscle Tone</h3>
                             <section>
-                                <x-input-radio-or-check name="name" label="Separate Home equipment" :records="$therapyConstants::$separateHomeEquipment">
+                                <x-input-radio-or-check  label="Separate Home equipment" :records="$therapyConstants::$separateHomeEquipment">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                                 <div class="row border-top py-2">
@@ -494,13 +490,13 @@
                                     </div>
                                 </div>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Lower Limbs" :records="$therapyConstants::$lowerLimbs">
+                                <x-input-radio-or-check label="Lower Limbs" :records="$therapyConstants::$lowerLimbs">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Trunk/neck" :records="$therapyConstants::$trunkNeck">
+                                <x-input-radio-or-check label="Trunk/neck" :records="$therapyConstants::$trunkNeck">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Lower Limbs" :records="$therapyConstants::$lowerLimbsTone">
+                                <x-input-radio-or-check label="Lower Limbs" :records="$therapyConstants::$lowerLimbsTone">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                                 <div class="row border-top py-2">
@@ -511,11 +507,11 @@
                                                 <div class="form-check">
                                                     <div class="me-5 ">
                                                         <label class="form-check-label pb-2">Left</label>
-                                                        <x-input-text name="name" placeholder="Left"></x-input-text>
+                                                        <x-input-text name="left" placeholder="Left"></x-input-text>
                                                     </div>
                                                     <div class="me-5 ">
                                                         <label class="form-check-label pb-2">Right</label>
-                                                        <x-input-text name="name" placeholder="Right"></x-input-text>
+                                                        <x-input-text name="right" placeholder="Right"></x-input-text>
                                                     </div>
                                                 </div>
                                             </div>
@@ -523,10 +519,9 @@
                                     </div>
                                 </div>
                             </section>
-
                             <h3>Range of movement</h3>
                             <section>
-                                <x-input-radio-or-check name="name" label="Upper limbs" :records="$therapyConstants::$upperLimbs">
+                                <x-input-radio-or-check  label="Upper limbs" :records="$therapyConstants::$upperLimbs">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                                 <div class="row border-top py-2">
@@ -537,11 +532,11 @@
                                                 <div class="form-check">
                                                     <div class="me-5 ">
                                                         <label class="form-check-label pb-2">Left</label>
-                                                        <x-input-text name="name" placeholder="Left"></x-input-text>
+                                                        <x-input-text name="left" placeholder="Left"></x-input-text>
                                                     </div>
                                                     <div class="me-5 ">
                                                         <label class="form-check-label pb-2">Right</label>
-                                                        <x-input-text name="name" placeholder="Right"></x-input-text>
+                                                        <x-input-text name="right" placeholder="Right"></x-input-text>
                                                     </div>
                                                 </div>
                                             </div>
@@ -549,7 +544,7 @@
                                     </div>
                                 </div>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Trunk/neck" :records="$therapyConstants::$trunkNeckRange">
+                                <x-input-radio-or-check label="Trunk/neck" :records="$therapyConstants::$trunkNeckRange">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                             </section>
