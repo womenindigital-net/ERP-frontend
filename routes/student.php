@@ -8,8 +8,6 @@ use App\Http\Controllers\StudentController;
 use App\Http\Livewire\AppointmentList;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
-
-use App\Http\Controllers\AssignTaskController;
 use App\Http\Controllers\CreateItpController;
 use App\Http\Controllers\AssignTeacherController;
 use App\Http\Controllers\RunMitpController;
@@ -53,7 +51,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
     Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
-//    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+    //    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
 
     Route::get('admission/add-student', [StudentController::class, 'admissionAddStudent'])->name('admission.addStudent');
@@ -65,8 +63,8 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
 
     Route::get('assessment/sensory-checklist-for-child', [StudentController::class, 'sensoryChecklistForChild'])->name('sensory.checklist.for.child');
 
-//    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
-//    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+    //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
+    //    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
 
     Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
     Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');
