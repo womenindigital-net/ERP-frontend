@@ -111,7 +111,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('student.appointment')}}">Appointment</a></li>
                         <li><a href="{{route('case-history.index')}}">Case History</a></li>
-                        <li><a href="{{ route('student.care-need-form') }}">Care Needs Form</a></li>
+                        <li><a href="{{ route('care-need.index') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
                     </ul>
                 </li>
@@ -133,14 +133,14 @@
                         <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
                         <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
                                 Assessment</a></li>
-                        <li><a href="{{ route('assessment.functional_movement_skills') }}">Fundamental Movement
+                        <li><a href="{{ route('functional-movement-skill.create') }}">Fundamental Movement
                                 Skills</a></li>
-                        <li><a href="{{ route('executive.function.test') }}">Executive Function test</a></li>
-                        <li><a href="{{ route('autism.behavior.checklist') }}">Autism Behavior Checklist (ABC)</a></li>
-                        <li><a href="{{ route('sensory.checklist.for.young.adult') }}">Sensory checklist for Young
+                        <li><a href="{{ route('executive-function.create') }}">Executive Function test</a></li>
+                        <li><a href="{{ route('autisum-behaviour.create') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('sensory-checklist-adult.create') }}">Sensory checklist for Young
                                 Adult</a>
                         </li>
-                        <li><a href="{{ route('individual.risk.assessment.form') }}">Individual risk assessment form</a>
+                        <li><a href="{{ route('individual-risk.create') }}">Individual risk assessment form</a>
                         </li>
                     </ul>
                 </li>

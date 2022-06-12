@@ -26,7 +26,9 @@ if (!function_exists('checkPermissions')) {
 
         $permissions = loggedInUserPermissions();
         foreach ($permissionName as $name) {
-            if (!$permissions->contains($name)) continue;
+            if (!$permissions->contains($name))
+                continue;
+
             return true;
         }
 
@@ -66,9 +68,9 @@ if (!function_exists('dataPerPage')) {
     }
 }
 
-if (!function_exists('convertLevelIntoName')){
+if (!function_exists('convertLevelIntoName')) {
     function convertLevelIntoName($label): string
     {
-        return strtolower(preg_replace("/[.',?]/", '', str_replace(' ', '_', trim($label))));
+        return preg_replace(['/\//', '/&|\s+|-/', '/\?|\.|,/', '/_{2}/'], ['_or_', '_', '', '_'], strtolower(trim($label)));
     }
 }
