@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AssignTask;
-use App\Http\Requests\StoreAssignTaskRequest;
-use App\Http\Requests\UpdateAssignTaskRequest;
+use App\Models\Trip;
+use App\Http\Requests\StoreTripRequest;
+use App\Http\Requests\UpdateTripRequest;
 
-class AssignTaskController extends Controller
+class TripController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,21 +25,16 @@ class AssignTaskController extends Controller
      */
     public function create()
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'students' => []
-        ];
-
-        return view('program.assign-task.create', $data);
+        return view('student.dairy.trip.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAssignTaskRequest  $request
+     * @param  \App\Http\Requests\StoreTripRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAssignTaskRequest $request)
+    public function store(StoreTripRequest $request)
     {
         //
     }
@@ -47,10 +42,10 @@ class AssignTaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function show(AssignTask $assignTask)
+    public function show(Trip $trip)
     {
         //
     }
@@ -58,10 +53,10 @@ class AssignTaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function edit(AssignTask $assignTask)
+    public function edit(Trip $trip)
     {
         //
     }
@@ -69,11 +64,11 @@ class AssignTaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAssignTaskRequest  $request
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Http\Requests\UpdateTripRequest  $request
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAssignTaskRequest $request, AssignTask $assignTask)
+    public function update(UpdateTripRequest $request, Trip $trip)
     {
         //
     }
@@ -81,10 +76,10 @@ class AssignTaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AssignTask  $assignTask
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AssignTask $assignTask)
+    public function destroy(Trip $trip)
     {
         //
     }

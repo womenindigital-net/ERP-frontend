@@ -140,15 +140,6 @@ class StudentController extends Controller
         return view('referral-form');
     }
 
-    public function careNeedForm(): Factory|View|Application
-    {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        ];
-
-        return view('pre_admission.care-needs-form', $data);
-    }
-
     public function admissionAddStudent(): Factory|View|Application
     {
         $data = [
@@ -395,5 +386,5 @@ class StudentController extends Controller
         ];
         return view('setup.program-setup.tesk-create', $data);
     }
-    
+
 }

@@ -24,14 +24,12 @@
             </div>
             <div class="modal-body">
               {{--  --}}
-  
             <div class="mb-3 row">
                 <label for="example-email-input" class="col-md-4 col-form-label text-center">Send To:</label>
                 <div class="col-md-8 pe-5">
                     <x-input-select name="send_to" :records="[]" />
                 </div>
             </div>
-
             {{--  --}}
             <div class="mb-3 row">
                 <label for="example-search-input" class="col-md-4 col-form-label text-center">Subject:</label>
@@ -40,7 +38,6 @@
                 </div>
             </div>
             {{--  --}}
-
             <div class="mb-3 row">
                 <label for="example-search-input" class="col-md-4 col-form-label text-center">Message:</label>
                 <div class="col-md-8 pe-5">
@@ -49,87 +46,106 @@
                     </form>
                 </div>
             </div>
-
-
-{{--  --}}
-
-<div class="container">
-    <div class="row">
-        <div class="row modal-footer">
-  
-            <div class="col-md-1">
-                <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-            </div>
-            <div class="col-md-1">
-                <button class="btn btn-success w-100">Save</button>
-            </div>
+            {{--  --}}
+            <div class="container">
+                <div class="row">
+                    <div class="row modal-footer">
+                        <div class="col-md-1">
+                            <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-success w-100">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>             
         </div>
     </div>
+ </div>
 </div>
-       
-                
-            </div>
-        </div>
-    </div>
-</div>
-
- 
-
 {{-- Add Content Modul Closd --}}
-    </div>
+</div>
 {{-- Data Table Start --}}
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
                     <h4 class="card-title"></h4>
-                  
-
-                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
-                            <tr>
-                                <th>Send to Type</th>
-                                <th>send By</th>
-                                <th>Subject</th>
-                                <th>Log</th>
-                                <th>Action</th>
-                                
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                              class="form-control form-control-sm form-select form-select-sm">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                            </select> entries
+                          </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <label style="display: inline-flex;align-items: center;">Search:
+                              <x-input-text type="search" name="search" />
+                          </label>
+                        </div>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table w-100 table-bordered">
+                          <thead>
+                            <tr class="table-primary">
+                              <tr>
+                                  <th>Send to Type</th>
+                                  <th>send By</th>
+                                  <th>Subject</th>
+                                  <th>Log</th>
+                                  <th>Action</th>
+                              </tr>
                             </tr>
-                        </thead>
-
-
-                        <tbody>
+                          </thead>
+                          <tbody>
                             <tr>
-                                <td>HR</td>
-                                <td>A.K.M Shahidullah</td>
-                                <td>Holiday Notice</td>
-                                <td>Create: A.K.M Shahidullah @ <br>2021-08-29 12:29:20
-                                    There is no update record.</td>
-                                   
-                                    <td class="text-center">
-                                        
-                                        <button type="button"
-                                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                            data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                                            <i class=" fas fa-eye"></i>
-                                        </button>
-                                        
-                                       
-                                    </td>
-                               
+                              <td>HR</td>
+                              <td>A.K.M Shahidullah</td>
+                              <td>Holiday Notice</td>
+                              <td>Create: A.K.M Shahidullah @ <br>2021-08-29 12:29:20
+                                  There is no update record.</td>
+                              <td class="text-center">
+                                  <button type="button"
+                                      class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
+                                      data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                      <i class=" fas fa-eye"></i>
+                                  </button>
+                              </td>
                             </tr>
-                           
- 
-                        </tbody>
-                    </table>
-
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <nav>
+                            <ul class="pagination" style="justify-content: end;">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
 {{-- Data Table Closed --}}
-
 <!--  Extra Large modal example -->
 <div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl">
