@@ -2,10 +2,10 @@
     <div class="row">
         <label class="col-2 col-form-label">Journals List</label>
         <div class="col-10">
-            <select class="form-select">
+            <select class="form-select" wire:model="filter">
                 <option>--Select--</option>
                 <option value="1">Approved Journals</option>
-                <option value="2" selected>All Journals</option>
+                <option value="0">Un Approval Journals</option>
             </select>
         </div>
     </div>
@@ -31,7 +31,7 @@
                         <td>{{$record->transaction_amount}}</td>
                         <td>{{$record->created_at}}</td>
                         <td>
-                            <button type="button" wire:click="view({{$record}})"
+                            <button type="button" wire:click="view({{$record}})" wire:key
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
                                 data-bs-toggle="modal" data-bs-target=".modal-view"> <i
                                     class="mdi mdi-eye"></i></button>
@@ -47,8 +47,8 @@
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-pencil"></i>
                             </button>
-                            <button type="button" class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light"
-                                id="sa-warning">
+                            <button type="button" wire:click="confirmDelete({{$record->id}})"
+                                    class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </td>
@@ -62,7 +62,7 @@
 
 @if (count($viewRecord))
 <!--  View Journal -->
-<div class="modal fade modal-view" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modal-view" tabindex="-1" role="dialog" aria-hidden="true" wire:ignore>
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -117,13 +117,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    @forelse ($reference['details'] as $detail )
+                                    @forelse ($viewRecord['details'] as $detail )
                                     <tr>
-                                        <td>{{ $detail->account_no}}</td>
-                                        <td>{{ $detail->account_particulars}}</td>
-                                        <td>{{ $detail->debit}}</td>
-                                        <td>{{ $detail->credit}}</td>
+                                        <td>{{ $detail['account_no']}}</td>
+                                        <td>{{ $detail['account_particulars']}}</td>
+                                        <td>{{ $detail['debit']}}</td>
+                                        <td>{{ $detail['credit']}}</td>
                                     </tr>
                                     @empty
                                     <tr>Empty</tr>

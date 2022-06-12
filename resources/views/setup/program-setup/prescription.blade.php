@@ -167,7 +167,7 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="mb-3">
-                    
+
                   </div>
                 </div>
               </div>
@@ -223,7 +223,7 @@
                               </div>
                           </div>
                       </div>
-                      
+
                       <div class="row">
                           <div class="col-12 p-0">
                               <div class="card">
@@ -259,7 +259,7 @@
                                                     </button>
                                                   </div>
                                               </div>
-                                              
+
                                           </div>
                                           <button data-repeater-create type="button" class="btn btn-success font-size-16 waves-effect waves-light"> Add</button>
                                       </form>
@@ -307,13 +307,6 @@
   <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
 
   <!-- Table Editable plugin -->
-  <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-  <!-- Sweet Alerts js -->
-  <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-  <!-- Sweet alert init js-->
-  <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
+  <script src="{{ asset('assets/libs/table-edits/table-edits.min.js') }}"></script>
+  <script src="{{ asset('assets/js/pages/table-editable.int.js') }}"></script>
 @endsection

@@ -9,7 +9,7 @@
 
 <!-- Sweet Alert-->
 
-<link href="{{ asset('assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endsection
 
 @section('content')
@@ -115,7 +115,7 @@
                                                             <x-input-text name="credit" placeholder="Credit" />
                                                             <button type="button"
                                                                 class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light removeBtn"
-                                                                id="sa-warning">
+                                                                id="">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                             {{-- <button type="button"
@@ -147,7 +147,6 @@
                             <!-- end row -->
                         </form>
                     </div>
-
                     <div class="tab-pane" id="journal_list" role="tabpanel">
                         <livewire:journal-list />
                     </div>
@@ -156,22 +155,12 @@
         </div>
     </div>
 </div>
-
-
-
 @endsection
 @section('script')
-
 <!-- form repeater js -->
 <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 <script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
 
 
-<!-- Sweet Alerts js -->
-<script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-<!-- Sweet alert init js-->
-<script src="{{ asset('assets/js/pages/sweet-alerts.init.js') }}"></script>
 {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-
-
 @endsection

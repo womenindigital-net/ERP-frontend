@@ -15,7 +15,7 @@
                         data-bs-target=".material-callects-modal-xl-add"> <i class="fas fa-plus-circle"></i>
                         Add</button>
                 </div>
-               
+
                 <div class="table-responsive">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -88,7 +88,7 @@
                             </ul>
                           </nav>
                         </div>
-                      </div>  
+                      </div>
                 </div>
             </div>
         </div>
@@ -232,11 +232,6 @@
 @endsection
 @section('script')
 <!-- form repeater js -->
-<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-<!-- Sweet Alerts js -->
-<script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-<!-- Sweet alert init js-->
-<script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
+<script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+<script src="{{ asset('assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection

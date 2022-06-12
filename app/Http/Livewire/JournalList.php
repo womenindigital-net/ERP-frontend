@@ -5,10 +5,10 @@ namespace App\Http\Livewire;
 use App\Http\Livewire\Traits\CommonListElements;
 use App\Repositories\JournalRepository;
 use App\Services\JournalService;
+use App\Utility\ProjectConstants;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Arr;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -18,6 +18,7 @@ class JournalList extends Component
 
     private JournalService $service;
     private JournalRepository $repo;
+    public string $filter = '';
 
     public array $viewRecord = [];
 
@@ -29,6 +30,7 @@ class JournalList extends Component
 
     public function view($record)
     {
+//        dd($record);
         $this->viewRecord = $record;
     }
 
@@ -38,10 +40,21 @@ class JournalList extends Component
         $this->dispatchBrowserEvent('notify');
     }
 
+    public function confirmDelete($recordId)
+    {
+        $data = [
+            'routeName' => route('journal.destroy', $recordId),
+        ];
+
+        $data = array_merge_recursive(ProjectConstants::$swalConfirmDeleteEvents, $data);
+
+        $this->dispatchBrowserEvent('swal', $data);
+    }
+
     public function render(): Factory|View|Application
     {
         $data = [
-            'records' => $this->repo->getListData($this->perPage, $this->search),
+            'records' => $this->repo->getListData($this->perPage, $this->search, $this->filter),
         ];
 
         return view('livewire.journal-list', $data);

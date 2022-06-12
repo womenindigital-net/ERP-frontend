@@ -11,8 +11,6 @@
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Responsive Table css -->
 <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -31,19 +29,19 @@
                   <li class="nav-item">
                       <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">
                           <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                          <span class="d-none d-sm-block">BudgetHead Setup</span>    
+                          <span class="d-none d-sm-block">BudgetHead Setup</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab">
                           <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                          <span class="d-none d-sm-block">BudgetHead List</span>    
+                          <span class="d-none d-sm-block">BudgetHead List</span>
                       </a>
                   </li>
               </ul>
               <!-- Tab panes -->
               <div class="tab-content text-muted">
-                  <div class="tab-pane active " id="home" role="tabpanel "> 
+                  <div class="tab-pane active " id="home" role="tabpanel ">
                         <div class="row">
                           <div class="col-xl-12">
                             <div class="card ms-0">
@@ -76,8 +74,8 @@
                                                                      <option value="10"> Accrued expenses </option>
                                                                      <option value="11"> Accrued Income </option>
                                                                      <option value="12"> Accrued Interest </option>
-                                                                     <option value="13"> Accrued paid leave </option>  
-                                                                  </select> 
+                                                                     <option value="13"> Accrued paid leave </option>
+                                                                  </select>
                                                                </div>
                                                               </div>
                                                            <div class="row mb-4">
@@ -85,7 +83,7 @@
                                                                 <h6>Parent</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <select class="form-control select2"> 
+                                                                <select class="form-control select2">
                                                                     <option value="0">Top</option>
                                                                     <option value="1">Direct Programme Expenses</option>
                                                                     <option value="2">Direct labour cost</option>
@@ -124,7 +122,7 @@
                                                                     <option value="35">Intellectual Property</option>
                                                                     <option value="36">Revenue from Jewelry Items</option>
                                                                     <option value="37">Beads necklace</option>
-                                                               </select> 
+                                                               </select>
                                                                </div>
                                                               </div>
                                                             <div class="row mb-4">
@@ -208,9 +206,9 @@
                           </tr>
                       </tbody>
                   </table>
-             
+
                   </div>
-              </div>     
+              </div>
           </div>
       </div>
   </div>
@@ -250,11 +248,4 @@
    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 
    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-   <!-- Sweet Alerts js -->
-   <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-   <!-- Sweet alert init js-->
-   <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
 @endsection

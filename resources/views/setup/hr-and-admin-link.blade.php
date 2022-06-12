@@ -11,8 +11,6 @@
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Responsive Table css -->
 <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 @component('components.breadcrumb')
@@ -28,13 +26,13 @@
                   <li class="nav-item">
                       <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">
                           <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                          <span class="d-none d-sm-block">Employee Setup</span>    
+                          <span class="d-none d-sm-block">Employee Setup</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab">
                           <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                          <span class="d-none d-sm-block">Employee List</span>    
+                          <span class="d-none d-sm-block">Employee List</span>
                       </a>
                   </li>
                   <li class="nav-item p-0 ms-2">
@@ -44,7 +42,7 @@
               </ul>
               <!-- Tab panes -->
               <div class="tab-content text-muted">
-                  <div class="tab-pane active " id="home" role="tabpanel "> 
+                  <div class="tab-pane active " id="home" role="tabpanel ">
                         <div class="row">
                           <div class="col-xl-12">
                             <div class="card ms-0">
@@ -54,55 +52,55 @@
                                         <li class="nav-item">
                                             <a class="nav-link active p-0" data-bs-toggle="tab" href="#home1" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                                <span class="d-none d-sm-block">Personal</span> 
+                                                <span class="d-none d-sm-block">Personal</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#profile1" role="tab">
                                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                                <span class="d-none d-sm-block">Photo & CV</span> 
+                                                <span class="d-none d-sm-block">Photo & CV</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#messages1" role="tab">
                                                 <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                                <span class="d-none d-sm-block"> Education</span>   
+                                                <span class="d-none d-sm-block"> Education</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#settings1" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                <span class="d-none d-sm-block">Experience</span>    
+                                                <span class="d-none d-sm-block">Experience</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#Language" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                <span class="d-none d-sm-block">Language</span>    
+                                                <span class="d-none d-sm-block">Language</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#Reference" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                <span class="d-none d-sm-block"> Reference</span>    
+                                                <span class="d-none d-sm-block"> Reference</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#Family" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                <span class="d-none d-sm-block">Family</span>    
+                                                <span class="d-none d-sm-block">Family</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#Organization" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                <span class="d-none d-sm-block">Organization</span>    
+                                                <span class="d-none d-sm-block">Organization</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link p-0" data-bs-toggle="tab" href="#Summery" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                <span class="d-none d-sm-block"> Summery</span>    
+                                                <span class="d-none d-sm-block"> Summery</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -137,7 +135,7 @@
                                                                   <option value="3">Md. Kutubuddin ..</option>
                                                                   <option value="4">Md. Amir Hossain</option>
                                                                   <option value="5">Nusrat Jahan</option>
-                                                                  <option value="6">Nur-Ul Amin</option> 
+                                                                  <option value="6">Nur-Ul Amin</option>
                                                                   <option value="7">Airin Shiddique</option>
                                                                   <option value="8">Nupur Nahar</option>
                                                                   <option value="9">Arup Mandal</option>
@@ -282,7 +280,7 @@
                                                                 <option value="0">--Select-</option>
                                                                 <option value="M">Married</option>
                                                                 <option value="UM">Unmarried</option>
-                                                                <option value="D">Divorce</option> 
+                                                                <option value="D">Divorce</option>
                                                               </select>
                                                              </div>
                                                            </div>
@@ -292,7 +290,7 @@
                                                             </div>
                                                              <div class="col-8">
                                                               <div class="input-group" id="datepicker1">
-                                                                <x-input-text name="date" type="date" placeholder="dd/mm/yyyy"></x-input-text> 
+                                                                <x-input-text name="date" type="date" placeholder="dd/mm/yyyy"></x-input-text>
                                                             </div>
                                                              </div>
                                                            </div>
@@ -301,7 +299,7 @@
                                                               <h6>Spouse Name</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <x-input-text name="Name" placeholder="Spouse Name"></x-input-text> 
+                                                              <x-input-text name="Name" placeholder="Spouse Name"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -309,7 +307,7 @@
                                                               <h6>Occupation</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <x-input-text name="Occupation" placeholder="Occupation"></x-input-text> 
+                                                              <x-input-text name="Occupation" placeholder="Occupation"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -322,7 +320,7 @@
                                                                 <option value="Islam">Islam</option>
                                                                 <option value="Hinduism">Hinduism</option>
                                                                 <option value="Buddhism">Buddhism</option>
-                                                                <option value="Christianity">Christianity</option> 
+                                                                <option value="Christianity">Christianity</option>
                                                               </select>
                                                              </div>
                                                            </div>
@@ -339,7 +337,7 @@
                                                               <h6>Passport No</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <x-input-text name="number" type="number" placeholder="Passport Number"></x-input-text> 
+                                                              <x-input-text name="number" type="number" placeholder="Passport Number"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -347,7 +345,7 @@
                                                               <h6>Personal Mobile</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <x-input-text name="number" placeholder="Enter Personal Mobile"></x-input-text> 
+                                                              <x-input-text name="number" placeholder="Enter Personal Mobile"></x-input-text>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -595,7 +593,7 @@
                                                                     <div class="col-8">
                                                                       <div class="form-check form-check-danger">
                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor5" >
-                                                                      </div>                                                        
+                                                                      </div>
                                                                     </div>
                                                               </div>
                                                               <div class="row mb-4">
@@ -637,7 +635,7 @@
                                                                   <x-input-text name="date" type="date" placeholder="dd/mm/yyyy"></x-input-text>
                                                                  </div>
                                                                </div>
-                                                            </div>   
+                                                            </div>
                                                           <div class="row mb-4">
                                                            <div class="col-4 d-flex align-items-center">
                                                              <h6>Type Id</h6>
@@ -744,7 +742,7 @@
                                                                 <div class="col-8">
                                                                   <div class="form-check form-check-danger">
                                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor5" >
-                                                                  </div>                                                        
+                                                                  </div>
                                                                 </div>
                                                           </div>
                                                           <div class="row mb-4">
@@ -754,7 +752,7 @@
                                                             <div class="col-8">
                                                              <select class="form-control select2 form-select">
                                                                <option value="0">--Select-</option>
-                                                               <option value="1">Facility Package title</option> 
+                                                               <option value="1">Facility Package title</option>
                                                              </select>
                                                             </div>
                                                           </div>
@@ -886,7 +884,7 @@
                                          </div>
                                         </div>
                                     </div>
-    
+
                                 </div>
                             </div>
                         </div>
@@ -943,9 +941,9 @@
                           </tr>
                       </tbody>
                   </table>
-             
+
                   </div>
-              </div>     
+              </div>
           </div>
       </div>
   </div>
@@ -985,11 +983,4 @@
    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 
    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-   <!-- Sweet Alerts js -->
-   <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-   <!-- Sweet alert init js-->
-   <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
 @endsection

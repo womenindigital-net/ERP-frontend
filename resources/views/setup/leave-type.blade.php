@@ -12,9 +12,6 @@
 
 <!-- DataTables -->
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -224,7 +221,7 @@
                         <label class="form-label">Max Carry Cash Day</label>
                         <x-input-text name="number" type="number" placeholder="Enter Max Carry Cash Day here"></x-input-text>
                     </div>
-                    </div>  
+                    </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
@@ -272,7 +269,7 @@
               <button type="button" class="btn  btn-outline-danger" data-bs-dismiss="modal"> Close</button>
               <button type="button" class="btn  btn-outline-success" data-bs-dismiss="modal"> Save</button>
           </div>
-                                
+
          </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -315,11 +312,4 @@
     <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
 @endsection

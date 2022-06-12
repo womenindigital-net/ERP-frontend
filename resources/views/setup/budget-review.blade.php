@@ -20,8 +20,6 @@
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Responsive Table css -->
 <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -40,19 +38,19 @@
                   <li class="nav-item">
                       <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">
                           <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                          <span class="d-none d-sm-block">Budget Review Setup</span>    
+                          <span class="d-none d-sm-block">Budget Review Setup</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab">
                           <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                          <span class="d-none d-sm-block">Budget Review List</span>    
+                          <span class="d-none d-sm-block">Budget Review List</span>
                       </a>
                   </li>
               </ul>
               <!-- Tab panes -->
               <div class="tab-content text-muted">
-                  <div class="tab-pane active " id="home" role="tabpanel "> 
+                  <div class="tab-pane active " id="home" role="tabpanel ">
                         <div class="row">
                           <div class="col-xl-12">
                             <div class="card ms-0">
@@ -83,7 +81,7 @@
                                                                      <option value="8"> Accrued Commissions </option>
                                                                      <option value="9">ICT Section</option>
                                                                      <option value="10">Programme</option>
-                                                                  </select> 
+                                                                  </select>
                                                                </div>
                                                               </div>
                                                            <div class="row mb-4">
@@ -94,7 +92,7 @@
                                                                 <div class="input-group" id="datepicker1">
                                                                     <input type="text" class="form-control" placeholder="dd M, yyyy"
                                                                         data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                
+
                                                                     <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                                                 </div>
                                                                </div>
@@ -125,7 +123,7 @@
                                                                 <div class="input-group" id="datepicker1">
                                                                     <input type="text" class="form-control" placeholder="dd M, yyyy"
                                                                         data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                
+
                                                                     <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                                                                 </div>
                                                                </div>
@@ -134,7 +132,7 @@
                                                       </div>
                                                    </div>
                                                  </div>
-                                               </div> 
+                                               </div>
                                              </div>
                                              <div class="row">
                                               <div class="col-lg-5">
@@ -148,7 +146,7 @@
                                                       <div><h5>Reviewed Amount</h5></div>
                                                       <div><span id="totlRqstdAmnt" class="purchaseInfo ms-2 border p-1">1</span></div>
                                                   </div>
-                                              </div>                             
+                                              </div>
                                            </div>
                                            <table  class="table table-bordered mt-5 p-0 dt-responsive w-100">
                                             <thead>
@@ -176,9 +174,9 @@
                                                   <td class="p-0"><input type="number" class="form-control border-0"></td>
                                                   <td></td>
                                                 </tr>
-                                               
+
                                             </tbody>
-                                          </table> 
+                                          </table>
                                          <div class="row">
                                             <div class="col-lg-8">
                                                 <div class="mb-3 mt-4 ">
@@ -203,9 +201,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>                             
+                                            </div>
                                          </div>
-                                         
+
                                              <div class="row d-flex justify-content-end mt-4">
                                               <div class="col-2">
                                                   <button class="btn btn-danger w-100" data-bs-dismiss="modal">reset</button>
@@ -263,9 +261,9 @@
                           </tr>
                       </tbody>
                     </table>
-             
+
                   </div>
-              </div>     
+              </div>
           </div>
       </div>
   </div>
@@ -302,14 +300,6 @@
    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
 
    <!-- Table Editable plugin -->
-   <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-   <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-   <!-- Sweet Alerts js -->
-   <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-   <!-- Sweet alert init js-->
-   <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
+   <script src="{{ asset('assets/libs/table-edits/table-edits.min.js') }}"></script>
+   <script src="{{ asset('assets/js/pages/table-editable.int.js') }}"></script>
 @endsection

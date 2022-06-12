@@ -57,7 +57,7 @@
                                                         <option value="5">Office Store</option>
                                                     </select>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="mb-3 row">
@@ -65,9 +65,9 @@
                                                 <div class="col-md-9">
                                                     <input type="date" class="form-control" id="horizontal-firstname-input" placeholder="dd/mm/yyyy ">
                                                 </div>
-                                            </div>   
+                                            </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                   </form>
                                 <div class="col-12">
                                     <h4 class="card-title">Assign Tasks</h4>
@@ -114,8 +114,8 @@
                                                 </div>
                                                 <div class=" col-3 p-0 pb-1">
                                                   <select id="formrow-inputState" class="form-select">
-                                                    <option value="0">Select</option> 
-                                                  </select> 
+                                                    <option value="0">Select</option>
+                                                  </select>
                                                 </div>
                                                 <div class=" col-2 p-0 pb-1">
                                                     <input type="text" class="form-control"/>
@@ -126,13 +126,13 @@
                                                       <i class="fas fa-trash-alt"></i>
                                                   </button>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </div>
                                        <div class="">
                                         <button data-repeater-create type="button" class="btn btn-outline-info waves-effect waves-light mt-3 me-5 mt-lg-0"><i class="fa fa-plus"></i> Add</button>
                                        </div>
                                     </form>
-                                    <div class="row justify-content-center">        
+                                    <div class="row justify-content-center">
                                         <div class="col-lg-6">
                                             <div class="row mb-2">
                                                 <label for="horizontal-firstname-input" class="col-3 text-end col-form-label">Note</label>
@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
-                                        <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Reset</button> 
+                                        <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Reset</button>
                                     </div>
                                 </div>
                               </div>
@@ -189,7 +189,7 @@
               </div>
           </div>
       </div>
-  </div> 
+  </div>
 </div>
 @endsection
 @section('script')
@@ -229,13 +229,7 @@
     <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 
     <!-- Plugins js -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-
-    <!-- Sweet Alerts js -->
-    <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <!-- Sweet alert init js-->
-    <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
+    <script src="{{ asset('assets/libs/dropzone/dropzone.min.js') }}"></script>
 <script>
     $(document).ready(function(){
         $("#formCheckBoxForm").hide();

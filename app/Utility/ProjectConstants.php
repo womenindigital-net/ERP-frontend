@@ -39,6 +39,14 @@ final class ProjectConstants
     const IN_SPECIAL_OCCASION = "In special occasion";
     const DONT_DO_AT_ALL = "Don't do at all";
 
+    const SWAL_CONFIRM_DELETE_TYPE = 'confirm';
+    const SWAL_CONFIRM_DELETE_METHOD = 'delete';
+
+    public static array $swalConfirmDeleteEvents = [
+        'type' => self::SWAL_CONFIRM_DELETE_TYPE,
+        'method' => self::SWAL_CONFIRM_DELETE_METHOD,
+    ];
+
     public static array $genders = [
         self::GENDER_MALE   => 'Male',
         self::GENDER_FEMALE => 'Female',

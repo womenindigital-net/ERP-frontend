@@ -14,8 +14,6 @@
 <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
 <!-- DataTables -->
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <style>
     .click{
@@ -249,7 +247,7 @@
                     </x-input-radio-or-check>
                     {{-- end row --}}
                   </form>
-                </section>   
+                </section>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -271,7 +269,7 @@ tree.querySelectorAll("ul").forEach(function(el,key,parent){
     elm.addEventListener("click", function(event)
     {
         if (elm === event.target || elm === event.target.parentNode){
-        
+
             if(el.classList.contains('collapse')){
                 el.classList.add("expand");
                 el.classList.remove("collapse");
@@ -282,9 +280,9 @@ tree.querySelectorAll("ul").forEach(function(el,key,parent){
                 el.classList.remove("expand");
                 x.classList.remove("bi-folder-minus");
                 x.classList.add("bi-folder-plus");
-            }    
-        }    
-    },false);    
+            }
+        }
+    },false);
 });
 }
 </script>
@@ -317,16 +315,9 @@ tree.querySelectorAll("ul").forEach(function(el,key,parent){
 <!-- Table Editable plugin -->
 <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 
-<script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-<!-- Sweet Alerts js -->
-<script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-<!-- Sweet alert init js-->
-<script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
+<script src="{{ asset('assets/js/pages/table-editable.int.js') }}"></script>
 <!-- apexcharts -->
-<script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
 <!-- dashboard init -->
 <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>

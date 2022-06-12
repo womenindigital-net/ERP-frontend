@@ -3,7 +3,6 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
     @component('components.breadcrumb')
@@ -31,7 +30,7 @@
                                             <div class="col-md-8">
                                                 <input class="form-control ms-5 mt-3 mb-3" type="text" placeholder="Enter Certificate Name Here" id="example-text-input">
                                             </div>
-                                        </div>   
+                                        </div>
                                     </div>
                                     <div class="p-0 mb-2">
                                         <div class="col-12 d-flex">
@@ -44,7 +43,7 @@
                                                     <label class="btn btn-outline-danger" for="btnradio5">Training</label>
                                                 </div>
                                             </div>
-                                        </div>   
+                                        </div>
                                     </div>
                                     <div class="p-0">
                                         <div class="col-12 d-flex">
@@ -52,7 +51,7 @@
                                             <div class="col-md-8">
                                                 <input class="form-control ms-5" type="text" placeholder="EnterCertificate Note Here" id="example-text-input">
                                             </div>
-                                        </div>   
+                                        </div>
                                     </div>
                                     <div class="row modal-footer">
                                         <div class="col-md-1">
@@ -92,7 +91,7 @@
                                         data-bs-toggle="modal" data-bs-toggle="modal" ">
                                          <i class="fas fa-check"></i>
                                     </button>
-                                   
+
                                     <button type="button"
                                         class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
                                         data-bs-toggle="modal" data-bs-toggle="modal" ">
@@ -132,7 +131,7 @@
             </div>
         </div> <!-- end col -->
  </div> <!-- end row -->
- 
+
     <!--  Extra Large modal example -->
  <div class="modal fade student-income-modal-xl-view" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -169,15 +168,15 @@
                         <div class="row modal-footer">
                             <div class="col-md-1">
                                 <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-                            </div>  
-                        </div> 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div> <!-- journal form end -->
-      </div><!-- /.modal-content --> 
-  </div><!-- /.modal-dialog -->                       
-</div><!-- /.modal -->                            
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 @endsection
 @section('script')
@@ -188,12 +187,6 @@
 <!-- Datatable init js -->
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 <script>
- 
-<script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
- 
-<script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
     $(document).ready(function(){
         $(".hide").hide();
       $("#container").click(function(){

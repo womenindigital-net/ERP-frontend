@@ -121,10 +121,10 @@ class JournalController extends Controller
      *
      * @param  Journal  $journal
      *
-     * @return Response
+     * @return bool|null
      */
-    public function destroy(Journal $journal)
+    public function destroy(Journal $journal): ?bool
     {
-        dd($journal);
+        return $journal->delete();
     }
 }

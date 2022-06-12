@@ -11,8 +11,6 @@
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Responsive Table css -->
 <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -31,19 +29,19 @@
                   <li class="nav-item">
                       <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">
                           <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                          <span class="d-none d-sm-block">Budget Template Setup</span>    
+                          <span class="d-none d-sm-block">Budget Template Setup</span>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab">
                           <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                          <span class="d-none d-sm-block">Budget Template List</span>    
+                          <span class="d-none d-sm-block">Budget Template List</span>
                       </a>
                   </li>
               </ul>
               <!-- Tab panes -->
               <div class="tab-content text-muted">
-                  <div class="tab-pane active " id="home" role="tabpanel "> 
+                  <div class="tab-pane active " id="home" role="tabpanel ">
                         <div class="row">
                           <div class="col-xl-12">
                             <div class="card ms-0">
@@ -74,7 +72,7 @@
                                                                      <option value="8"> Accrued Commissions </option>
                                                                      <option value="9">ICT Section</option>
                                                                      <option value="10">Programme</option>
-                                                                  </select> 
+                                                                  </select>
                                                                </div>
                                                               </div>
                                                          </div>
@@ -99,7 +97,7 @@
                                                       </div>
                                                    </div>
                                                  </div>
-                                               </div> 
+                                               </div>
                                              </div>
                                              <div class="row">
                                               <div class="col-12 p-0">
@@ -121,7 +119,7 @@
                                                               </div>
                                                               <div data-repeater-list="group-a">
                                                                   <div data-repeater-item class="row">
-              
+
                                                                       <div  class="col-lg-4 d-flex p-0 pe-1 pb-1">
                                                                           <span class="pe-2 pb-1">01</span>
                                                                           <select id="formrow-inputState" class="form-select">
@@ -144,15 +142,15 @@
                                                                               <option value="4">Savlon::1028</option>
                                                                               <option value="5">Vim Botal::1024</option>
                                                                           </select>
-                                                                      </div> 
+                                                                      </div>
                                                                       <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
                                                                         <input type="text" class="form-control" >
                                                                         <button class="btn btn-danger ms-2">
                                                                             <i class="fas fa-trash-alt"></i>
                                                                         </button>
-                                                                    </div>                  
+                                                                    </div>
                                                                   </div>
-                                                                  
+
                                                               </div>
                                                               <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
                                                           </form>
@@ -216,9 +214,9 @@
                           </tr>
                       </tbody>
                   </table>
-             
+
                   </div>
-              </div>     
+              </div>
           </div>
       </div>
   </div>
@@ -258,11 +256,4 @@
    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 
    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-   <!-- Sweet Alerts js -->
-   <script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-   <!-- Sweet alert init js-->
-   <script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
 @endsection

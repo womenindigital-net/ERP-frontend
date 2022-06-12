@@ -16,9 +16,6 @@
 
 <!-- DataTables -->
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<!-- Sweet Alert-->
-<link href="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -115,16 +112,9 @@
 <!-- Table Editable plugin -->
 <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 
-<script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-<!-- Sweet Alerts js -->
-<script src="{{ URL::asset('/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
-
-<!-- Sweet alert init js-->
-<script src="{{ URL::asset('/assets/js/pages/sweet-alerts.init.js') }}"></script>
-
+<script src="{{ asset('assets/js/pages/table-editable.int.js') }}"></script>
 <!-- apexcharts -->
-<script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
 <!-- dashboard init -->
 <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
