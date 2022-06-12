@@ -161,11 +161,11 @@
                                     <a href="{{ route('trip.create') }}">Trip report and Evaluation Form</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('gym.outing.evaluation') }}">Gym and Outing Evaluation (D3cDT)
+                                    <a href="{{ route('gym-and-outing.create') }}">Gym and Outing Evaluation (D3cDT)
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('ot.assessment') }}">OT assessment in computer trainee</a>
+                                    <a href="{{ route('ot-assessment.create') }}">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('incident-record.create') }}">Incident Record</a>
@@ -184,7 +184,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('student.co-curricular.drama-diary-evaluation') }}">Drama Diary
+                                <li> <a href="{{ route('drama-diary-evaluation.create') }}">Drama Diary
                                         Evaluation</a>
                                 </li>
                             </ul>
@@ -195,7 +195,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('student.employment.staff_and_workplace_inspecation_tool') }}">কর্মী
+                                <li> <a href="{{ route('staff-and-workplaceinspection.create') }}">কর্মী
                                         ও কর্মস্থল পরিদর্শন টুল</a>
                                 </li>
                             </ul>

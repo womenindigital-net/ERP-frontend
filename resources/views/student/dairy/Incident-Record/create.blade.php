@@ -50,10 +50,10 @@
                                                     <ul class="wizard-navigation">
                                                         <li class="w-100"><a href="#Social_Communication"
                                                                 data-toggle="tab">Incident
-                                                                Record</a></li>
+                                                                Record step 1</a></li>
                                                         <li class="w-100"><a href="#Pragmatic_Objective"
                                                                 data-toggle="tab">Incident
-                                                                Record</a>
+                                                                Record step 2</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -90,7 +90,7 @@
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
                                                             <section>
-                                                                <x-input-radio-or-check name="" label="Incident Type"
+                                                                <x-input-radio-or-check  label="Incident Type"
                                                                     :records="$incidentConstant::$incidentType">
                                                                 </x-input-radio-or-check>
                                                                 <div class="row border-top py-2">
@@ -146,7 +146,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <x-input-radio-or-check name="what_is_the_previous"
+                                                                <x-input-radio-or-check 
                                                                     type="checkbox"
                                                                     label="What is the Previous cause of Incident/Antecedent Behavior?"
                                                                     :records="$incidentConstant::$activityType" :isVertical="false">
