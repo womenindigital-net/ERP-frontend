@@ -1,19 +1,8 @@
 @extends('layouts.master')
-@section('title')
-    @lang('translation.Starter_Page')
-@endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 @endsection
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1')
-            Dashboard
-        @endslot
-        @slot('title')
-            STUDENT QAS
-        @endslot
-    @endcomponent
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">
@@ -57,7 +46,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form>
+                                                <form action="{{route('gym-and-outing.store')}}" method="POST">
+                                                    @csrf
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
                                                             <section>
@@ -79,12 +69,12 @@
                                                                             <div class="mb-3">
                                                                                 <label
                                                                                     for="basicpill-lastname-input">Teacher:</label>
-                                                                                <x-input-select name="teachaer_id"
+                                                                                <x-input-select name="teacher_id"
                                                                                     :records="[]" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                
+
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
@@ -94,7 +84,7 @@
                                                                         :records="$gymoutingConstants::$assistance" secondaryInputLabel="">
                                                                     </x-input-radio-or-check>
                                                                     {{-- end row --}}
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Cycling 5 min" :records="$gymoutingConstants::$assistance"
                                                                         secondaryInputLabel=""></x-input-radio-or-check>
                                                                     {{-- end row --}}
@@ -144,7 +134,7 @@
                                                                         label="Ball Kick (15)" :records="$gymoutingConstants::$assistance"
                                                                         secondaryInputLabel=""></x-input-radio-or-check>
                                                                     {{-- end row --}}
-                                                                
+
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Outing">
@@ -180,7 +170,7 @@
                                                                     </x-input-radio-or-check>
                                                                     {{-- end row --}}
 
-                                                                
+
                                                             </section>
                                                         </div>
                                                     </div>

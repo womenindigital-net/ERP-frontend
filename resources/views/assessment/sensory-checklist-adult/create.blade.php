@@ -1,12 +1,10 @@
 @extends('layouts.master')
-@section('title') @endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 <style>
   .wizard .steps>ul>li a {
     padding-right: 0 !important;
   }
-
   .wizard .steps>ul>li a {
     padding-left: 5px !important;
   }
@@ -58,12 +56,11 @@
                       </div>
                     </div>
                     <div class="col-sm-9 col-md-9">
-                      <form action="" method="POST">
+                      <form action="{{route('sensory-checklist-adult.store')}}" method="POST">
                         @csrf
                         <div class="tab-content">
                           <div class="tab-pane" id="SensoryChecklistYoungAdult">
                             <section>
-                              <form>
                                 <div class="row">
                                   <div class="col-lg-4">
                                     <div class="mb-3">
@@ -84,7 +81,6 @@
                                     </div>
                                   </div>
                                 </div>
-                              </form>
                             </section>
                           </div>
                           <div class="tab-pane" id="TOUCH">
@@ -207,7 +203,6 @@
                           </div>
                           <div class="tab-pane" id="AUDITORYLISTENING">
                             <section>
-                              <form>
                                 <x-input-radio-or-check name="hearing_loud_sounds—car_horns"
                                   label="Hearing loud sounds—car horns, sirens, loud music or TV"
                                   :records="$sensoryChecklistConstant::$young"></x-input-radio-or-check>

@@ -1,15 +1,10 @@
 @extends('layouts.master')
-
-@section('title')
-    @lang('translation.Starter_Page')
-@endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
     <style>
         .wizard .steps>ul>li a {
             padding-right: 0 !important;
         }
-
         .wizard .steps>ul>li a {
             padding-left: 5px !important;
         }
@@ -61,7 +56,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-9 col-md-9">
-                                                    <form>
+                                                    <form action="{{route('occupational-therapy.store')}}" method="POST">
+                                                        @csrf
                                                         <div class="tab-content">
                                                             <div class="tab-pane" id="Occupational_Therapy">
                                                                 <section>
@@ -132,11 +128,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Separate Home equipment" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Communication" :records="$therapyConstants::$communication">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->

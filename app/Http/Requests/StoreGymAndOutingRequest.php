@@ -11,9 +11,9 @@ class StoreGymAndOutingRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,30 @@ class StoreGymAndOutingRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            "collection_date"        => 'nullable',
+            "teacher_id"             => 'nullable',
+            "treadmill"              => 'nullable',
+            "cycling_5_min"          => 'nullable',
+            "butterfly"              => 'nullable',
+            "lat_pull_down"          => 'nullable',
+            "lat_up"                 => 'nullable',
+            "dumble"                 => 'nullable',
+            "Leg_curl"               => 'nullable',
+            "vibration"              => 'nullable',
+            "spot_jump"              => 'nullable',
+            "Free_hand_exercise"     => 'nullable',
+            "ball_throw"             => 'nullable',
+            "basket_ball_throw"      => 'nullable',
+            "ball_kick"              => 'nullable',
+            "walking"                => 'nullable',
+            "running"                => 'nullable',
+            "height_down_jump"       => 'nullable',
+            "tennis_ball_throw"      => 'nullable',
+            "tennis_ball_catch"      => 'nullable',
+            "ball_fielding_practice" => 'nullable',
         ];
     }
 }

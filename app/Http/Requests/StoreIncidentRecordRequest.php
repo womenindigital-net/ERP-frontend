@@ -11,9 +11,9 @@ class StoreIncidentRecordRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,17 @@ class StoreIncidentRecordRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
+        //        dd($this->request->all());
         return [
-            //
+            "date"                                                          => 'nullable',
+            "teacher_id"                                                    => 'nullable',
+            "incident_type"                                                 => 'nullable',
+            "setting"                                                       => 'nullable',
+            "duration"                                                      => 'nullable',
+            "action_taken"                                                  => 'nullable',
+            "what_is_the_previous_cause_of_incident_or_antecedent_behavior" => 'nullable',
         ];
     }
 }

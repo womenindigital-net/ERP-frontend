@@ -1,16 +1,10 @@
 @extends('layouts.master')
-
-@section('title')
-@lang('translation.Starter_Page')
-@endsection
-
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 <style>
     .wizard .steps>ul>li a {
         padding-right: 0 !important;
     }
-
     .wizard .steps>ul>li a {
         padding-left: 5px !important;
     }

@@ -25,7 +25,6 @@ class IncidentRecordController extends Controller
      */
     public function create()
     {
-        
         return view('student.dairy.Incident-Record.create');
     }
 

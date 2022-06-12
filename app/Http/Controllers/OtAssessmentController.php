@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\OtAssessment;
 use App\Http\Requests\StoreOtAssessmentRequest;
 use App\Http\Requests\UpdateOtAssessmentRequest;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class OtAssessmentController extends Controller
 {
@@ -21,7 +24,7 @@ class OtAssessmentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -36,7 +39,7 @@ class OtAssessmentController extends Controller
      */
     public function store(StoreOtAssessmentRequest $request)
     {
-        //
+
     }
 
     /**

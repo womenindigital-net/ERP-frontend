@@ -11,9 +11,9 @@ class StoreOccupationalTherapyRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,19 @@ class StoreOccupationalTherapyRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            "collection_date"         => 'nullable',
+            "teacher_id"              => 'nullable',
+            "candidate_id"            => 'nullable',
+            "separate_home_equipment" => 'nullable',
+            "communication"           => 'nullable',
+            "left"                    => 'nullable',
+            "right"                   => 'nullable',
+            "lower_limbs"             => 'nullable',
+            "trunk_or_neck"           => 'nullable',
+            "upper_limbs"             => 'nullable',
         ];
     }
 }

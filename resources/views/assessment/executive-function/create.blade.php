@@ -1,28 +1,17 @@
 @extends('layouts.master')
-@section('title')
-    @lang('translation.Starter_Page')
-@endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
     <style>
-        .wizard .steps>ul>li a {
+        .wizard .steps > ul > li a {
             padding-right: 0 !important;
         }
 
-        .wizard .steps>ul>li a {
+        .wizard .steps > ul > li a {
             padding-left: 5px !important;
         }
     </style>
 @endsection
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1')
-            DashBoard
-        @endslot
-        @slot('title')
-            Student Qa
-        @endslot
-    @endcomponent
     <div class="col-6">
         <h4 class="card-title">STUDENT QAS</h4>
     </div>
@@ -50,165 +39,187 @@
                         <div class="tab-pane active" id="case-histroy" role="tabpanel">
                             <div class="row">
                                 <div class="col-12">
-                                    <!-- Wizard container -->
-                                    <div class="wizard-container">
-                                        <div class="card_stap wizard-card row" data-color="red" id="wizard">
-                                            <div class="col-sm-3 col-md-3">
-                                                <div id="wizard-navigation">
-                                                    <ul class="wizard-navigation">
-                                                        <li class="w-100"><a href="#Social_Communication"
-                                                                data-toggle="tab">Executive Function Test</a></li>
-                                                        <li class="w-100"><a href="#Pragmatic_Objective"
-                                                                data-toggle="tab">Self-Test</a>
-                                                        </li>
-                                                    </ul>
+                                    <form action="{{route('executive-function.store')}}" method="POST">
+                                        <!-- Wizard container -->
+                                        <div class="wizard-container">
+                                            <div class="card_stap wizard-card row" data-color="red" id="wizard">
+                                                <div class="col-sm-3 col-md-3">
+                                                    <div id="wizard-navigation">
+                                                        <ul class="wizard-navigation">
+                                                            <li class="w-100"><a href="#Social_Communication"
+                                                                                 data-toggle="tab">Executive Function
+                                                                    Test</a></li>
+                                                            <li class="w-100"><a href="#Pragmatic_Objective"
+                                                                                 data-toggle="tab">Self-Test</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-9 col-md-9">
-                                                <form>
-                                                    <div class="tab-content">
-                                                        <div class="tab-pane" id="Social_Communication">
-                                                            <section>
-                                                                <form>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <div class="mb-3">
-                                                                                <label
-                                                                                    for="basicpill-firstname-input">Collection
-                                                                                    Date:</label>
-                                                                                <x-input-text type="date" name="date"
-                                                                                    placeholder="mm/dd/yyyy"></x-input-text>
+                                                <div class="col-sm-9 col-md-9">
+                                                    <form>
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane" id="Social_Communication">
+                                                                <section>
+                                                                    <form action="{{route('executive-function.store')}}"
+                                                                          method="POST">
+                                                                        @csrf
+                                                                        <div class="row">
+                                                                            <div class="col-lg-4">
+                                                                                <div class="mb-3">
+                                                                                    <label
+                                                                                        for="basicpill-firstname-input">Collection
+                                                                                        Date:</label>
+                                                                                    <x-input-text type="date"
+                                                                                                  name="date"
+                                                                                                  placeholder="mm/dd/yyyy"></x-input-text>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-lg-4">
-                                                                            <div class="mb-3">
-                                                                                <label
-                                                                                    for="basicpill-lastname-input">Teacher:</label>
+                                                                            <div class="col-lg-4">
+                                                                                <div class="mb-3">
+                                                                                    <label
+                                                                                        for="basicpill-lastname-input">Teacher:</label>
                                                                                     1:37
-                                                                                    <x-input-select name="teacher_id" :records="[]" />
+                                                                                    <x-input-select name="teacher_id"
+                                                                                                    :records="[]"/>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-4">
+                                                                                <div class="mb-3">
+                                                                                    <label
+                                                                                        for="basicpill-phoneno-input">Candidate
+                                                                                        ID:</label>
+                                                                                    <x-input-select name="candidate_id"
+                                                                                                    :records="[]"/>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-lg-4">
-                                                                            <div class="mb-3">
-                                                                                <label
-                                                                                    for="basicpill-phoneno-input">Candidate
-                                                                                    ID:</label>
-                                                                                    <x-input-select name="candidate_id" :records="[]" />
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-                                                            </section>
-                                                        </div>
-                                                        <div class="tab-pane" id="Pragmatic_Objective">
-                                                            <section>
-                                                                <div>
-                                                                    <form>
+                                                                    </form>
+                                                                </section>
+                                                            </div>
+                                                            <div class="tab-pane" id="Pragmatic_Objective">
+                                                                <section>
+                                                                    <div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="have_trouble_getting"
+                                                                        <x-input-radio-or-check
+                                                                            name="have_trouble_getting"
                                                                             label="Have trouble getting started or initiating tasks."
                                                                             :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="start_tasks_with_enthusiasm"
+                                                                        <x-input-radio-or-check
+                                                                            name="start_tasks_with_enthusiasm"
                                                                             label="Start tasks with enthusiasm but lose interest quickly."
                                                                             :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="find_it_hard"
-                                                                            label="Find it hard to do things that aren't necessary or highly stimulating."
-                                                                            :records="$executiveConstants::$oftenOrNot">
+                                                                                                label="Find it hard to do things that aren't necessary or highly stimulating."
+                                                                                                :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="become_absorbed_in_things"
+                                                                        <x-input-radio-or-check
+                                                                            name="become_absorbed_in_things"
                                                                             label="Become absorbed in things or tasks that interest me—sometimes to the point of
                                                                                    forgetting about people around me or other obligations."
                                                                             :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="have_trouble_following_conversations" label="Have trouble following conversations because I am distracted or because I am trying
+                                                                        <x-input-radio-or-check
+                                                                            name="have_trouble_following_conversations"
+                                                                            label="Have trouble following conversations because I am distracted or because I am trying
                                                                                    to remember what I wanted to say."
                                                                             :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="forget_things"
-                                                                            label="Forget things, even when they are important to me."
-                                                                            :records="$executiveConstants::$oftenOrNot">
+                                                                                                label="Forget things, even when they are important to me."
+                                                                                                :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="At_least_once_a_day" label="At least once a day, lose or misplace items—for example, keys, wallet, purse, or cell
-                                                                                         phone." :records="$executiveConstants::$agreeOrNot">
+                                                                        <x-input-radio-or-check
+                                                                            name="At_least_once_a_day"
+                                                                            label="At least once a day, lose or misplace items—for example, keys, wallet, purse, or cell
+                                                                                         phone."
+                                                                            :records="$executiveConstants::$agreeOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="consistently_forget_appointments"
+                                                                        <x-input-radio-or-check
+                                                                            name="consistently_forget_appointments"
                                                                             label="Consistently forget appointments and, when I do remember, I often am late."
                                                                             :records="$executiveConstants::$agreeOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="Cant_seem_to_get" label="Can't seem to get a handle on clutter, my personal space is messy and has piles of
+                                                                        <x-input-radio-or-check name="Cant_seem_to_get"
+                                                                                                label="Can't seem to get a handle on clutter, my personal space is messy and has piles of
                                                                                          papers and miscellaneous items."
-                                                                            :records="$executiveConstants::$agreeOrNot">
+                                                                                                :records="$executiveConstants::$agreeOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="have_difficulty_figuring" label="Have difficulty figuring out what is most important or what I should start with given
+                                                                        <x-input-radio-or-check
+                                                                            name="have_difficulty_figuring" label="Have difficulty figuring out what is most important or what I should start with given
                                                                                      a list of things to do."
                                                                             :records="$executiveConstants::$agreeOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check name="waste_time_trying"
-                                                                            label="Waste time trying to decide what to do first."
+                                                                                                label="Waste time trying to decide what to do first."
+                                                                                                :records="$executiveConstants::$oftenOrNot">
+                                                                        </x-input-radio-or-check>
+                                                                        <!-- end row -->
+                                                                        <!-- end row -->
+                                                                        <x-input-radio-or-check
+                                                                            name="become_frustrated_when_things"
+                                                                            label="Become frustrated when things don’t go as planned and can quickly become angry. I
+                                                                                      often let go of my anger as quickly as it came."
                                                                             :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="become_frustrated_when_things"
-                                                                            label="Become frustrated when things don’t go as planned and can quickly become angry. I
-                                                                                      often let go of my anger as quickly as it came." :records="$executiveConstants::$oftenOrNot">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check name="have_trouble_completing"
+                                                                        <x-input-radio-or-check
+                                                                            name="have_trouble_completing"
                                                                             label="Have trouble completing multiple-step tasks and moving from one task to another."
                                                                             :records="$executiveConstants::$agreeOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="I_will_do_it_later"
+                                                                        <x-input-radio-or-check
+                                                                            name="I_will_do_it_later"
                                                                             label="I say “I will do it later” and then forget all about it."
                                                                             :records="$executiveConstants::$oftenOrNot">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                    </form>
-                                                                </div>
-                                                            </section>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="wizard-footer d-flex justify-content-between">
-                                                        <div class="pull-left">
-                                                            <input type='button'
-                                                                class='btn btn-primary waves-effect waves-light btn-previous'
-                                                                name='previous' value='Previous' />
+
+                                                        <div class="wizard-footer d-flex justify-content-between">
+                                                            <div class="pull-left">
+                                                                <input type='button'
+                                                                       class='btn btn-primary waves-effect waves-light btn-previous'
+                                                                       name='previous' value='Previous'/>
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <input type='button'
+                                                                       class='btn btn-primary waves-effect waves-light btn-next'
+                                                                       name='next' value='Next'/>
+                                                                <input type="submit"
+                                                                       class='btn btn-finish btn-fill btn-danger'
+                                                                       value='Finish'/>
+                                                            </div>
                                                         </div>
-                                                        <div class="pull-right">
-                                                            <input type='button'
-                                                                class='btn btn-primary waves-effect waves-light btn-next'
-                                                                name='next' value='Next' />
-                                                            <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                                wire:click='save' value='Finish' />
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> <!-- wizard container -->
+                                        </div> <!-- wizard container -->
                                 </div>
                             </div> <!-- end col -->
                         </div>
@@ -217,7 +228,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                            class="form-control form-control-sm form-select form-select-sm">
+                                                                                                           class="form-control form-control-sm form-select form-select-sm">
                                             <option value="10">10</option>
                                             <option value="25">25</option>
                                             <option value="50">50</option>
@@ -234,55 +245,55 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered w-100">
                                     <thead>
-                                        <tr class="table-primary">
-                                            <th>Collection Date</th>
-                                            <th>Student Name</th>
-                                            <th>Collected By</th>
-                                            <th>Log</th>
-                                            <th>Action</th>
-                                        </tr>
+                                    <tr class="table-primary">
+                                        <th>Collection Date</th>
+                                        <th>Student Name</th>
+                                        <th>Collected By</th>
+                                        <th>Log</th>
+                                        <th>Action</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>2022-05-16</td>
-                                            <td>Abdur Rahman Sajid</td>
-                                            <td>Ohidul Hassan</td>
-                                            <td>
-                                                <small>Create: Ohidul Hassan @ 2022-05-16 16:38:29</small>
-                                            </td>
-                                            <td>
-                                                <button type="button"
+                                    <tr>
+                                        <td>2022-05-16</td>
+                                        <td>Abdur Rahman Sajid</td>
+                                        <td>Ohidul Hassan</td>
+                                        <td>
+                                            <small>Create: Ohidul Hassan @ 2022-05-16 16:38:29</small>
+                                        </td>
+                                        <td>
+                                            <button type="button"
                                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
                                                     data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                                                    <i class="mdi mdi-eye"></i>
-                                                </button>
-                                                <button type="button"
+                                                <i class="mdi mdi-eye"></i>
+                                            </button>
+                                            <button type="button"
                                                     class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button type="button"
                                                     class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button type="button"
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button type="button"
                                                     class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
                                                     data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                                                    <i class="mdi mdi-pencil"></i>
-                                                </button>
-                                                <button type="button"
+                                                <i class="mdi mdi-pencil"></i>
+                                            </button>
+                                            <button type="button"
                                                     class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="bx bx-dollar"></i>
-                                                </button>
-                                                <button type="button"
+                                                <i class="bx bx-dollar"></i>
+                                            </button>
+                                            <button type="button"
                                                     class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                    <i class="fas fa-arrow-circle-right"></i>
-                                                </button>
-                                                <button type="button"
+                                                <i class="fas fa-arrow-circle-right"></i>
+                                            </button>
+                                            <button type="button"
                                                     class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -312,7 +323,6 @@
                             <!-- end row -->
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -322,7 +332,7 @@
 
     <!--  Large modal example -->
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
+         aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -339,21 +349,22 @@
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="basicpill-firstname-input">Collection Date:</label>
-                                            <x-input-text name="collection_date" type="date" placeholder=""></x-input-text>
+                                            <x-input-text name="collection_date" type="date"
+                                                          placeholder=""></x-input-text>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="basicpill-lastname-input">Teacher:</label>
                                             <x-input-select name="teacher_id"
-                :records="[]" />
+                                                            :records="[]"/>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="basicpill-phoneno-input">Candidate ID:</label>
                                             <x-input-select name="candidate_id"
-                :records="[]" />
+                                                            :records="[]"/>
                                         </div>
                                     </div>
                                 </div>
@@ -366,11 +377,13 @@
                                 <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check
-                                        label="Have trouble getting started or initiating tasks." :records="$executiveConstants::$oftenOrNot">
+                                        label="Have trouble getting started or initiating tasks."
+                                        :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <x-input-radio-or-check
-                                        label="Start tasks with enthusiasm but lose interest quickly." :records="$executiveConstants::$oftenOrNot">
+                                        label="Start tasks with enthusiasm but lose interest quickly."
+                                        :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <x-input-radio-or-check
@@ -380,7 +393,8 @@
                                     <!-- end row -->
                                     <!-- end row -->
                                     <x-input-radio-or-check name="become_absorbed" label="Become absorbed in things or tasks that interest me—sometimes to the point of
-                                        forgetting about people around me or other obligations." :records="$executiveConstants::$oftenOrNot">
+                                        forgetting about people around me or other obligations."
+                                                            :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
@@ -390,7 +404,8 @@
                                     <!-- end row -->
                                     <!-- end row -->
                                     <x-input-radio-or-check
-                                        label="Forget things, even when they are important to me." :records="$executiveConstants::$oftenOrNot">
+                                        label="Forget things, even when they are important to me."
+                                        :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
@@ -415,12 +430,14 @@
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <x-input-radio-or-check
-                                        label="Waste time trying to decide what to do first." :records="$executiveConstants::$oftenOrNot">
+                                        label="Waste time trying to decide what to do first."
+                                        :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
                                     <x-input-radio-or-check name="become_frustrated_when_things_dont_go" label="Become frustrated when things don’t go as planned and can quickly become angry. I
-                                        often let go of my anger as quickly as it came." :records="$executiveConstants::$oftenOrNot">
+                                        often let go of my anger as quickly as it came."
+                                                            :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
@@ -431,7 +448,8 @@
                                     <!-- end row -->
                                     <!-- end row -->
                                     <x-input-radio-or-check
-                                        label="I say “I will do it later” and then forget all about it." :records="$executiveConstants::$oftenOrNot">
+                                        label="I say “I will do it later” and then forget all about it."
+                                        :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->

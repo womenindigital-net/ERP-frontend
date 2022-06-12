@@ -6,7 +6,6 @@
         .wizard .steps>ul>li a {
             padding-right: 0 !important;
         }
-
         .wizard .steps>ul>li a {
             padding-left: 5px !important;
         }
@@ -96,7 +95,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form>
+                                                <form action="{{route('sensory-checklist-child.store')}}" method="POST">
+                                                    @csrf
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Sensory_Checklist">
                                                             <h3>Sensory Checklist</h3>
@@ -175,7 +175,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                
+
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Signs_Of_Tactile_Dysfunction">
@@ -302,7 +302,7 @@
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
 
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Avoids using hands for play"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
@@ -422,7 +422,7 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Thoroughly enjoys and seeks out messy play"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -450,7 +450,7 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Maybe afraid of the dark"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -460,35 +460,35 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Looks disheveled" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Does not notice pants are twisted"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Shirt is half un tucked"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Shoes are untied" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="One pant leg is up and one is down"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Has difficulty using scissors"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Crayons, or silverware"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -508,7 +508,7 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                    
+
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Signs_Of_Vestibular_Dysfunction">
@@ -541,7 +541,7 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Afraid of heights, even the height of a curb or step"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -581,17 +581,17 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Loses balance easily and may appear clumsy"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Fearful of activities which require good balance"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Avoids rapid or rotating movements"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -615,17 +615,17 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="loves being tossed in the air"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Could spin for hours and never appear to be dizzy"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Loves the fast, intense, and/or scary rides at amusement parks"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -640,7 +640,7 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Is a 'thrill-seeker' dangerous at times"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -732,8 +732,8 @@
                                                                 Hyposensitivity To Movement
                                                                 (Under-Responsive)</h3>
                                                             <section>
-                                                                        
-                                                                <x-input-radio-or-check 
+
+                                                                <x-input-radio-or-check
                                                                     label="in constant motion, can't seem to sit still"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -768,17 +768,17 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Is a 'thrill-seeker' dangerous at times"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Always running, jumping, hopping etc. instead of walking"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Rocks body, shakes leg, or head while sitting"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -884,8 +884,8 @@
                                                             <h3> Signs Of Proprioceptive Dysfunction
                                                                 > Sensory Seeking Behaviors</h3>
                                                             <section>
-                                                                        
-                                                                <x-input-radio-or-check 
+
+                                                                <x-input-radio-or-check
                                                                     label="Seeks out jumping, bumping, and crashing activities"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -934,12 +934,12 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="loves 'roughhousing' and tackling/wrestling games"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check
                                                                     label="Frequently falls on floor intentionally"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -983,7 +983,7 @@
                                                                 > 2. Difficulty With "Grading Of
                                                                 Movement"</h3>
                                                             <section>
-                                                                
+
                                                                 <x-input-radio-or-check name="misjudges_how_much_to_flex"
                                                                     label="Misjudges how much to flex and extend muscles during tasks/activities (i.e., putting arms into sleeves or climbing)"
                                                                     :records="$constants::$yesNoEn">
@@ -1245,7 +1245,7 @@
                                 label="Complains about having hair brushed; may be very picky about using a particular brush"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="avoids group situations for fear of the unexpected touch" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
@@ -1295,7 +1295,7 @@
                                 label="A raindrop, water from the shower, or wind blowing on the skin may feel like torture and produce adverse and avoidance reactions"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="May overreact to minor cuts, scrapes, and or bug bites" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
@@ -1327,7 +1327,7 @@
                             </x-input-radio-or-check>
                             <!-- end row -->
 
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Distressed by seams in socks and may refuse to wear them" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
@@ -1345,12 +1345,12 @@
                             </x-input-radio-or-check>
                             <!-- end row -->
 
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Distressed about having hair, toenails, or fingernails cut" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
 
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Resists brushing teeth and is extremely fearful of the dentist"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1369,11 +1369,11 @@
                         <!-- Bank Details -->
                         <h3>Hyposensitivity To Touch (Under-Responsive)</h3>
                         <section>
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="May crave touch, needs to touch everything and everyone" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Is not aware of being touched/bumped unless done with extreme force or intensity"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1381,18 +1381,18 @@
                                 label="Is not bothered by injuries, like cuts and bruises, and shows no distress with shots (may even say they love getting shots!)"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="May not be aware that hands or face are dirty or feel his/her nose running"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="May be self-abusive; pinching, biting, or banging his own head"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check  label="Mouths objects excessively" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Frequently hurts other children or pets while playing" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
@@ -1400,7 +1400,7 @@
                                 label="Repeatedly touches surfaces or objects that are soothing (i.e., blanket)"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Seeks out surfaces and textures that provide strong tactile feedback"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1415,7 +1415,7 @@
                         <!-- Bank Details -->
                         <h3>Poor Tactile Perception And Discrimination</h3>
                         <section>
-                                    
+
                             <x-input-radio-or-check name="has_difficulty"
                                 label="Has difficulty with fine motor tasks such as buttoning ,zipping,and fastening clothes"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
@@ -1470,7 +1470,7 @@
                         <!-- Bank Details -->
                         <h3>Signs Of Vestibular Dysfunction > Hypersensitivity To Movement (Over-Responsive)</h3>
                         <section>
-                            
+
                             <x-input-radio-or-check name="avoids_dislikes"
                                 label="Avoids/dislikes playground equipment; i.e., swings, ladders, slides, or merry-go-rounds"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
@@ -1486,18 +1486,18 @@
                             <x-input-radio-or-check label="May physically cling to an adult they trust"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="May appear terrified of falling even when there is no real risk of it"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Afraid of heights, even the height of a curb or step" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check  label="Fearful of feet leaving the ground"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Fearful of going up or down stairs or walking on uneven surfaces"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1509,7 +1509,7 @@
                                 label="Startles if someone else moves them; i.e., pushing his/her chair closer to the table"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="As an infant, may never have liked baby swings or jumpers"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1539,7 +1539,7 @@
                             <x-input-radio-or-check  label="In constant motion, can't seem to sit still"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Craves fast, spinning, and/or intense movement experiences"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1547,11 +1547,11 @@
                                 :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Could spin for hours and never appear to be dizzy" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Loves the fast, intense, and/or scary rides at amusement parks"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1559,14 +1559,14 @@
                                 label="Always jumping on furniture, trampolines, spinning in a swivel chair, or getting into upside down positions"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Loves to swing as high as possible and for long periods of time"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check  label="Is a 'thrill-seeker' dangerous at times"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Always running, jumping, hopping etc. instead of walking"
                                 :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
@@ -1596,15 +1596,15 @@
                                 label="Difficulty simultaneously lifting head, arms, and legs off the floor while lying on stomach ('superman' position)"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Often sits in a 'W sit' position on the floor to stabilize body"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Fatigues easily! __ compensates for 'looseness' by grasping objects tightly"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Difficulty turning doorknobs, handles, opening and closing items"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1631,7 +1631,7 @@
                                 label="Poor fine motor skills; difficulty using 'tools', such as pencils, silverware, combs, scissors etc."
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="May appear ambidextrous, frequently switching hands for coloring, cutting, writing etc.; does not have an established hand preference/dominance by 4 or 5 years old"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1651,18 +1651,18 @@
                         <h3> Signs Of Proprioceptive Dysfunction > Sensory Seeking Behaviors</h3>
                         <section>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Seeks out jumping, bumping, and crashing activities" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check  label="Stomps feet when walking" :records="$constants::$yesNoEn">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Kicks his/her feet on floor or chair while sitting at desk/table"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Bites or sucks on fingers and/or frequently cracks his/her knuckles"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
@@ -1717,7 +1717,7 @@
                         <!-- Bank Details -->
                         <h3> Signs Of Proprioceptive Dysfunction > 2. Difficulty With "Grading Of Movement"</h3>
                         <section>
-                            
+
                             <x-input-radio-or-check name="misjudges_how_much"
                                 label="Misjudges how much to flex and extend muscles during tasks/activities (i.e., putting arms into sleeves or climbing)"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
@@ -1726,11 +1726,11 @@
                                 label="Difficulty regulating pressure when writing/drawing; may be too light to see or so hard the tip"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Kicks his/her feet on floor or chair while sitting at desk/table"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check
                                 label="Written work is messy and he/she often rips the paper when erasing"
                                 :records="$constants::$yesNoEn"></x-input-radio-or-check>
                             <!-- end row -->

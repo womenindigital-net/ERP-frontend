@@ -11,9 +11,9 @@ class StoreExecutiveFunctionRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,26 @@ class StoreExecutiveFunctionRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            "date"                                 => 'nullable',
+            "teacher_id"                           => 'nullable',
+            "candidate_id"                         => 'nullable',
+            "have_trouble_getting"                 => 'nullable',
+            "start_tasks_with_enthusiasm"          => 'nullable',
+            "find_it_hard"                         => 'nullable',
+            "become_absorbed_in_things"            => 'nullable',
+            "have_trouble_following_conversations" => 'nullable',
+            "forget_things"                        => 'nullable',
+            "At_least_once_a_day"                  => 'nullable',
+            "consistently_forget_appointments"     => 'nullable',
+            "Cant_seem_to_get"                     => 'nullable',
+            "have_difficulty_figuring"             => 'nullable',
+            "waste_time_trying"                    => 'nullable',
+            "become_frustrated_when_things"        => 'nullable',
+            "have_trouble_completing"              => 'nullable',
+            "I_will_do_it_later"                   => 'nullable',
         ];
     }
 }

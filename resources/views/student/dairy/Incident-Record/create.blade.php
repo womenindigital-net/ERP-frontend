@@ -1,22 +1,9 @@
 @extends('layouts.master')
-
-@section('title')
-@lang('translation.Starter_Page')
-@endsection
-
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 @endsection
 
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1')
-DashBoard
-@endslot
-@slot('title')
-STUDENT QA
-@endslot
-@endcomponent
 <div class="row">
     <div class="col-xl-12 p-0">
         <div class="card">
@@ -59,7 +46,8 @@ STUDENT QA
                                             </div>
                                         </div>
                                         <div class="col-sm-9 col-md-9">
-                                            <form>
+                                            <form action="{{route('incident-record.store')}}" method="POST">
+                                                @csrf
                                                 <div class="tab-content">
                                                     <div class="tab-pane" id="Social_Communication">
                                                         <section>
@@ -145,7 +133,7 @@ STUDENT QA
                                                             class='btn btn-primary waves-effect waves-light btn-next'
                                                             name='next' value='Next' />
                                                         <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                            wire:click='save' value='Finish' />
+                                                            value='Finish' />
                                                     </div>
                                                 </div>
                                             </form>

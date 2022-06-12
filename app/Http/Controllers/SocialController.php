@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SocialRequest;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -46,10 +47,11 @@ class SocialController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param SocialRequest $request
+     *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(SocialRequest $request)
     {
         //
     }
@@ -86,8 +88,9 @@ class SocialController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
+     *
      * @return Response
      */
     public function update(Request $request, $id)

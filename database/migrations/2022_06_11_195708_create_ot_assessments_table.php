@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        // ToDo: mismatch with validation
         Schema::create('ot_assessments', function (Blueprint $table) {
             $table->id();
             $table->string('bath')->nullable();

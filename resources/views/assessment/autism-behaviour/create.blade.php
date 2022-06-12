@@ -1,5 +1,4 @@
 @extends('layouts.master')
-@section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 
@@ -7,15 +6,13 @@
   .wizard .steps>ul>li a {
     padding-right: 0 !important;
   }
-
   .wizard .steps>ul>li a {
     padding-left: 5px !important;
   }
 </style>
-
 @endsection
-@section('content')
 
+@section('content')
 <div class="row">
   <div class="col-xl-12 p-0">
     <div class="card">
@@ -57,7 +54,7 @@
                       </div>
                     </div>
                     <div class="col-sm-9 col-md-9">
-                      <form action="" method="POST">
+                      <form action="{{route('autisum-behaviour.store')}}" method="POST">
                         @csrf
                         <div class="tab-content">
                           <div class="tab-pane" id="AutismBehaviorChecklist">
@@ -97,12 +94,10 @@
                                     </div>
                                   </div>
                                 </div>
-                              </form>
                             </section>
                           </div>
                           <div class="tab-pane" id="SensoryBehaviors">
                             <section>
-                              <form>
                                 <x-input-radio-or-check name="poor_use_of_visual_discrimination_when_learning"
                                   label="Poor use of visual discrimination when learning"
                                   :records="$constants::$autismBehaviorCheck">
@@ -143,12 +138,10 @@
                                   :records="$constants::$autismBehaviorCheck">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
-                              </form>
                             </section>
                           </div>
                           <div class="tab-pane" id="RelatingBehaviors">
                             <section>
-                              <form>
                                 <x-input-radio-or-check name="whirls_self_for_long_periods_of_time"
                                   label="Whirls self for long periods of time"
                                   :records="$constants::$autismBehaviorCheck">
@@ -214,12 +207,10 @@
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                                 <!-- end row -->
-                              </form>
                             </section>
                           </div>
                           <div class="tab-pane" id="BodyandObjectUseBehaviors">
                             <section>
-                              <form>
                                 <x-input-radio-or-check name="whirls_self_for_long_periods_time"
                                   label="Whirls self for long periods of time"
                                   :records="$constants::$autismBehaviorCheck">
@@ -281,12 +272,10 @@
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                                 <!-- end row -->
-                              </form>
                             </section>
                           </div>
                           <div class="tab-pane" id="LanguageBehaviors">
                             <section>
-                              <form>
                                 <x-input-radio-or-check name="does_not_follow_simple_commands_given_once"
                                   label="Does not follow simple commands given once"
                                   :records="$constants::$autismBehaviorCheck">
@@ -352,7 +341,7 @@
                                   :records="$constants::$autismBehaviorCheck">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="strong_reactions_changes_in_routine-environment"
+                                <x-input-radio-or-check name="strong_reactions_changes_in_routine_environment"
                                   label="Strong reactions to changes in routine-environment"
                                   :records="$constants::$autismBehaviorCheck">
                                 </x-input-radio-or-check>
@@ -401,7 +390,6 @@
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                                 <!-- end row -->
-                              </form>
                             </section>
                           </div>
                           <div class="wizard-footer d-flex justify-content-between">

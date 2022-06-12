@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,8 +14,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('incident_records', function (Blueprint $table) {
+        Schema::create('incident_records', function(Blueprint $table)
+        {
             $table->id();
+            $table->string('date')->nullable();
+            $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->string('incident_type')->nullable();
+            $table->string('setting')->nullable();
+            $table->string('duration')->nullable();
+            $table->string('action_taken')->nullable();
+            $table->string('what_is_the_previous_cause_of_incident_or_antecedent_behavior')->nullable();
             $table->timestamps();
         });
     }
