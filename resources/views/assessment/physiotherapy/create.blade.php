@@ -97,14 +97,14 @@
                                                         <div class="tab-pane" id="Social_Communication">
 
                                                             <section>
-                                                                <form>
+                                                            
                                                                     <div class="row">
                                                                         <div class="col-lg-4">
                                                                             <div class="mb-3">
                                                                                 <label
                                                                                     for="basicpill-firstname-input">Collection
                                                                                     Date:</label>
-                                                                                <x-input-text name="name" placeholder="">
+                                                                                <x-input-text name="collention_date" placeholder="Collection Date">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
@@ -140,140 +140,138 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </form>
+                                                               
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
-
                                                             <section>
-                                                                <form>
+                                                                
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Birth history</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="birth_history" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Before birth</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="before_birth" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Pregnancy</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="pregnancy" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">During Birth</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="during_birth" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Delivery</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="delivery" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">After Birth</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="after_birth" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">History</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="history" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check
                                                                         label="Medication Treatment" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check
                                                                         label="Any present medicines" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Home equipment</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="home_equipment" placeholder="Home equipment">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
-                                                                </form>
+                                                              
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="PERSONAL">
-
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                  
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Visual Discrimination" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check
                                                                             label="Visual Memory" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Visual Figure ground" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Visual Spatial" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Oral Motor" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Sucking"
+                                                                        <x-input-radio-or-check label="Sucking"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Drooling"
+                                                                        <x-input-radio-or-check  label="Drooling"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Swollen"
+                                                                        <x-input-radio-or-check  label="Swollen"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Chewing"
+                                                                        <x-input-radio-or-check  label="Chewing"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Choking"
+                                                                        <x-input-radio-or-check  label="Choking"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Drinking"
+                                                                        <x-input-radio-or-check  label="Drinking"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
+                                                              
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -281,29 +279,29 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                   
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Eating"
+                                                                        <x-input-radio-or-check label="Eating"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Brushing teeth" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Dressing"
+                                                                        <x-input-radio-or-check  label="Dressing"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Toilet"
+                                                                        <x-input-radio-or-check  label="Toilet"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Bathing"
+                                                                        <x-input-radio-or-check  label="Bathing"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Does The Child attend school?"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
@@ -311,16 +309,17 @@
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">If Yes, Enter school
                                                                                 name</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="enter_your_name" placeholder="Enter school
+                                                                            name">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Leisure/ Play: activities of interest."
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
+                                                               
                                                                 </div>
                                                             </section>
 
@@ -329,17 +328,15 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
                                                                         <!-- end row -->
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Please explain
                                                                                 strength area</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="please_explain_strength_area" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                    </form>
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -347,37 +344,36 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Sitting"
+                                                                        <x-input-radio-or-check label="Sitting"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Crawling"
+                                                                        <x-input-radio-or-check  label="Crawling"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Standing"
+                                                                        <x-input-radio-or-check label="Standing"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Walking"
+                                                                        <x-input-radio-or-check label="Walking"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Jumping"
+                                                                        <x-input-radio-or-check  label="Jumping"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Running"
+                                                                        <x-input-radio-or-check label="Running"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Ball skill" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
+                                                                
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -385,37 +381,37 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                   
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Prone to Supine" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Continuous Rolling" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Lying to Sit" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Box sit to stand" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Jumping"
+                                                                        <x-input-radio-or-check label="Jumping"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Cross sit to stand" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Kneeling to stand:" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
+                                                                  
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -423,60 +419,60 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                   
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Dominance" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Reach"
+                                                                        <x-input-radio-or-check  label="Reach"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Release"
+                                                                        <x-input-radio-or-check  label="Release"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Symmetrical use" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Bilateral use" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check
                                                                             label="In-hand manipulation" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Eye hand co-ordination"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Transfer"
+                                                                        <x-input-radio-or-check  label="Transfer"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Writing skill" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                    </form>
+                                                                   
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -484,18 +480,18 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                    
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Protective reactions" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Equilibrium reaction" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                    </form>
+                                                                
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -503,29 +499,26 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                   
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Tactile"
+                                                                        <x-input-radio-or-check  label="Tactile"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Auditory"
+                                                                        <x-input-radio-or-check  label="Auditory"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Vestibular" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check
                                                                             label="Proprioceptive" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-
-                                                                        <!-- end row -->
-                                                                    </form>
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -533,69 +526,67 @@
 
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                          
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Attention" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Problem Solving" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Able to Follow instruction"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name" label="Memory"
+                                                                        <x-input-radio-or-check label="Memory"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Perceptual Motor" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check
                                                                             label="Body Awareness" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Body Co-ordination" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Bilateral integration"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                    </form>
                                                                 </div>
                                                             </section>
 
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent_D">
-
                                                             <section>
-                                                                <form>
+                                                  
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Problem List</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="problam_list" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Treatment plan</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="treatment_plan" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
@@ -603,90 +594,85 @@
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Treatment plan
                                                                             implementation details</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="treatment_plann" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Progress</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="progress" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <!-- end row -->
-                                                                </form>
                                                             </section>
-
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent_E">
                                                             <h3>Signature</h3>
                                                             <section>
-                                                                <form>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Therapist
                                                                             Signature</label>
-                                                                        <x-input-text name="name" type="file"
+                                                                        <x-input-text name="therapist_signature" type="file"
                                                                             placeholder=""></x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Designation and
                                                                             organizations name</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="designation" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <!-- end row -->
-                                                                </form>
+                                                           
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="mp">
                                                             <h3>Muscle Power</h3>
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check
                                                                             label="Upper limbs" :records="$physiotherapyConstants::$limbs">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Lower Limbs" :records="$physiotherapyConstants::$limbs">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Trunk/neck</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="trunk" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
-                                                                        <!-- end row -->
-                                                                    </form>
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -694,84 +680,84 @@
                                                             <h3>Muscle Tone</h3>
                                                             <section>
                                                                 <div>
-                                                                    <form>
+                                                                    
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Upper limbs" :records="$physiotherapyConstants::$limbsTone">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check name="name"
+                                                                        <x-input-radio-or-check 
                                                                             label="Lower Limbs" :records="$physiotherapyConstants::$limbsTone">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
 
 
                                                                         <!-- end row -->
-                                                                    </form>
+                                                                  
                                                                 </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Be">
                                                             <section>
-                                                                <form>
+                                                              
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name" label="Independence"
+                                                                    <x-input-radio-or-check label="Independence"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check 
                                                                         label="Social interaction" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check 
                                                                         label="Social Communication" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check 
                                                                         label="Interpersonal" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
-                                                                </form>
+                                                           
                                                             </section>
 
                                                         </div>
                                                         <div class="tab-pane" id="DA">
                                                             <section>
-                                                                <form>
+                                                             
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="physical_Gross motor_Fine motor"
+                                                                    <x-input-radio-or-check name="physical_Gross_motor_Fine_motor"
                                                                         label="Physical (Gross motor/ Fine motor)"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name" label="Cognitive"
+                                                                    <x-input-radio-or-check  label="Cognitive"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -779,31 +765,30 @@
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">If yes write
                                                                             below</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="if_yes" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Behavioral</label>
-                                                                        <x-input-text name="name" placeholder="">
+                                                                        <x-input-text name="behavioral" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name"
+                                                                    <x-input-radio-or-check 
                                                                         label="Communication" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name" label="Social"
+                                                                    <x-input-radio-or-check  label="Social"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="name" label="Emotional"
+                                                                    <x-input-radio-or-check label="Emotional"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                </form>
+                                                             
                                                             </section>
                                                         </div>
                                                     </div>
@@ -951,7 +936,7 @@
                                     <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="basicpill-firstname-input">Collection Date:</label>
-                                            <x-input-text name="name" placeholder=""></x-input-text>
+                                            <x-input-text name="collection_date" placeholder=""></x-input-text>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
@@ -1009,112 +994,110 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            
                         </section>
 
                         <!-- Company Document -->
                         <h3>General</h3>
                         <section>
-                            <form>
+                            
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Birth history</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="birth_history"  placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Before birth</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="before_birth" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Pregnancy</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="pregnancy" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">During Birth</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="during_birth"  placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Delivery</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="delivery" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">After Birth</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="after_birth" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">History</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="history"  placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Medication Treatment" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check  label="Medication Treatment" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
-                                <x-input-radio-or-check name="name" label="Any present medicines" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check  label="Any present medicines" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label class="form-label">Home equipment</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="home_equipment" placeholder=""></x-input-text>
                                 </div>
                                 <!-- end row -->
-                            </form>
+                          
                         </section>
 
                         <!-- Bank Details -->
                         <h3>Visual Perception</h3>
                         <section>
                             <div>
-                                <form>
+                           
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Visual Discrimination" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Visual Discrimination" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Visual Memory" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Visual Memory" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Visual Figure ground" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Visual Figure ground" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Visual Spatial" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check label="Visual Spatial" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Oral Motor" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Oral Motor" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Sucking" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Sucking" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Drooling" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check label="Drooling" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Swollen" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Swollen" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Chewing" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Chewing" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Choking" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check label="Choking" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Drinking" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Drinking" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
-                                    <!-- end row -->
-                                </form>
                             </div>
                         </section>
 
@@ -1122,37 +1105,37 @@
                         <h3>Activities of Daily living</h3>
                         <section>
                             <div>
-                                <form>
+                               
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Eating" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Eating" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Brushing teeth" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Brushing teeth" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Dressing" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Dressing" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Toilet" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Toilet" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Bathing" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Bathing" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Does The Child attend school?"
+                                    <x-input-radio-or-check  label="Does The Child attend school?"
                                         :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">If Yes, Enter school
                                             name</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="if_yes" placeholder=""></x-input-text>
                                     </div>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Leisure/ Play: activities of interest."
+                                    <x-input-radio-or-check  label="Leisure/ Play: activities of interest."
                                         :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
+                               
                             </div>
                         </section>
 
@@ -1161,385 +1144,352 @@
                         <h3>Strength</h3>
                         <section>
                             <div>
-                                <form>
+                           
                                     <!-- end row -->
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Please explain strength
                                             area</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="please_explain " placeholder=""></x-input-text>
                                     </div>
                                     <!-- end row -->
-                                </form>
+                              
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3> Functional Gross Motor</h3>
                         <section>
                             <div>
-                                <form>
+                               
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Sitting" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Sitting" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Crawling" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Crawling" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Standing" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Standing" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Walking" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Walking" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Jumping" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Jumping" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Running" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Running" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Ball skill" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Ball skill" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
+                              
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Transitional Movements</h3>
                         <section>
                             <div>
-                                <form>
+                        
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Prone to Supine" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Prone to Supine" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Continuous Rolling" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Continuous Rolling" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Lying to Sit" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Lying to Sit" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Box sit to stand" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Box sit to stand" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Jumping" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Jumping" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Cross sit to stand" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Cross sit to stand" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Kneeling to stand:" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Kneeling to stand:" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
+
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Fine motor Skill</h3>
                         <section>
                             <div>
-                                <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Dominance" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Dominance" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Left</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="left" placeholder=""></x-input-text>
                                     </div>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Right</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="right" placeholder=""></x-input-text>
                                     </div>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Reach" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Reach" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Release" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check label="Release" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Symmetrical use" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Symmetrical use" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Bilateral use" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Bilateral use" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="In-hand manipulation" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="In-hand manipulation" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Eye hand co-ordination" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Transfer" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Eye hand co-ordination" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Writing skill" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Transfer" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                </form>
+                                    <!-- end row -->
+                                    <x-input-radio-or-check  label="Writing skill" :records="$constants::$yesNoEn">
+                                    </x-input-radio-or-check>
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Automatic Reaction</h3>
                         <section>
                             <div>
-                                <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Protective reactions" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Protective reactions" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Equilibrium reaction" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Equilibrium reaction" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                </form>
+                            
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Sensory Skill (Normal /Hypo response)</h3>
                         <section>
                             <div>
-                                <form>
+                           
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Tactile" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Tactile" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Auditory" :records="$constants::$yesNoEn">
-                                    </x-input-radio-or-check>
-                                    <!-- end row -->
-                                    <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Vestibular" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check label="Auditory" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Proprioceptive" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Vestibular" :records="$constants::$yesNoEn">
+                                    </x-input-radio-or-check>
+                                    <!-- end row -->
+                                    <!-- end row -->
+                                    <x-input-radio-or-check  label="Proprioceptive" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
 
                                     <!-- end row -->
-                                </form>
+                              
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Cognitive Skills</h3>
                         <section>
                             <div>
-                                <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Attention" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Attention" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Problem Solving" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Problem Solving" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Able to Follow instruction"
+                                    <x-input-radio-or-check  label="Able to Follow instruction"
                                         :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Memory" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Memory" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Perceptual Motor" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Perceptual Motor" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Body Awareness" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Body Awareness" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Body Co-ordination" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check  label="Body Co-ordination" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Bilateral integration" :records="$constants::$yesNoEn">
+                                    <x-input-radio-or-check label="Bilateral integration" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
                                     <!-- end row -->
-                                </form>
                             </div>
                         </section>
-
                         <h3> Treatment</h3>
                         <section>
-                            <form>
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Problem List</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="problem_list" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Treatment plan</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="Treatment_plan" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Treatment plan
                                         implementation details</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="Treatment_plan_implementation" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Progress</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="progress" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
-                                <!-- end row -->
-                            </form>
                         </section>
-
                         <h3>Signature</h3>
                         <section>
-                            <form>
+                            
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Therapist Signature</label>
-                                    <x-input-text name="name" type="file" placeholder=""></x-input-text>
+                                    <x-input-text name="signature" type="file" placeholder=""></x-input-text>
                                 </div>
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Designation and
                                         organizations name</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="designation" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <!-- end row -->
-                            </form>
                         </section>
-
                         <!-- Bank Details -->
                         <h3>Muscle Power</h3>
                         <section>
                             <div>
-                                <form>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Upper limbs" :records="$physiotherapyConstants::$limbs">
+                                    <x-input-radio-or-check label="Upper limbs" :records="$physiotherapyConstants::$limbs">
                                     </x-input-radio-or-check>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Left</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="left" placeholder=""></x-input-text>
                                     </div>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Right</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="right" placeholder=""></x-input-text>
                                     </div>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Lower Limbs" :records="$physiotherapyConstants::$limbs">
+                                    <x-input-radio-or-check label="Lower Limbs" :records="$physiotherapyConstants::$limbs">
                                     </x-input-radio-or-check>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Left</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="left" placeholder=""></x-input-text>
                                     </div>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Right</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="right" placeholder=""></x-input-text>
                                     </div>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Trunk/neck</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="trank" placeholder=""></x-input-text>
                                     </div>
-
                                     <!-- end row -->
-                                </form>
                             </div>
                         </section>
                         <!-- Bank Details -->
                         <h3>Muscle Tone</h3>
                         <section>
                             <div>
-                                <form>
-                                    <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Upper limbs" :records="$physiotherapyConstants::$limbsTone">
+                            <!-- end row -->
+                                    <x-input-radio-or-check  label="Upper limbs" :records="$physiotherapyConstants::$limbsTone">
                                     </x-input-radio-or-check>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Left</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="left" placeholder=""></x-input-text>
                                     </div>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Right</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="right" placeholder=""></x-input-text>
                                     </div>
                                     <!-- end row -->
-                                    <x-input-radio-or-check name="name" label="Lower Limbs" :records="$physiotherapyConstants::$limbsTone">
+                                    <x-input-radio-or-check  label="Lower Limbs" :records="$physiotherapyConstants::$limbsTone">
                                     </x-input-radio-or-check>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Left</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="left" placeholder=""></x-input-text>
                                     </div>
                                     <div class="mb-3">
                                         <label for="formrow-firstname-input" class="form-label">Right</label>
-                                        <x-input-text name="name" placeholder=""></x-input-text>
+                                        <x-input-text name="right" placeholder=""></x-input-text>
                                     </div>
-
-
                                     <!-- end row -->
-                                </form>
                             </div>
                         </section>
-
-
-
                         <h3>Behavior</h3>
                         <section>
-                            <form>
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Independence" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check label="Independence" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Social interaction" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check label="Social interaction" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Social Communication" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check label="Social Communication" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Interpersonal" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check label="Interpersonal" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
-                            </form>
+             
                         </section>
-
-
-
                         <h3>Domain Area</h3>
                         <section>
-                            <form>
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Physical (Gross motor/ Fine motor)"
+                                <x-input-radio-or-check name="physical_gross_motor_fine_motor" label="Physical (Gross motor/ Fine motor)"
                                     :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Cognitive" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check  label="Cognitive" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">If yes write below</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="if_yes" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Behavioral</label>
-                                    <x-input-text name="name" placeholder=""></x-input-text>
+                                    <x-input-text name="behavioral" placeholder=""></x-input-text>
                                 </div>
                                 <!-- row end -->
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Communication" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check   label="Communication" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Social" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check  label="Social" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
-                                <x-input-radio-or-check name="name" label="Emotional" :records="$constants::$yesNoEn">
+                                <x-input-radio-or-check  label="Emotional" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
-                            </form>
                         </section>
-
-
-
-
                     </div>
                 </div>
             </div><!-- /.modal-content -->
