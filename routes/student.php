@@ -7,6 +7,7 @@ use App\Http\Livewire\AppointmentList;
 use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\TripController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
@@ -14,6 +15,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         '' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
+        'trip' => TripController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
