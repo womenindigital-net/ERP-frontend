@@ -14,6 +14,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         '' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
+        'assign-task' => AssignTaskController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
