@@ -2,6 +2,15 @@
 
 use App\Http\Livewire\CaseHistory;
 
+
+
+use App\Http\Controllers\AssignTeacherController;
+use App\Http\Controllers\CreateItpController;
+use App\Http\Controllers\IncidentRecordController;
+use App\Http\Controllers\MedicineAdminController;
+use App\Http\Controllers\NoticeBoardController;
+use App\Http\Controllers\RunMitpController;
+
 use App\Http\Controllers\AssignTaskController;
 use App\Http\Controllers\CareNeedController;
 use App\Http\Controllers\CaseHistoryController;
@@ -9,15 +18,9 @@ use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
 use App\Http\Livewire\AppointmentList;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\SetupController;
 
-use App\Http\Controllers\MedicineAdminController;
-use App\Http\Controllers\IncidentRecordController;
-
-use App\Http\Controllers\CreateItpController;
-use App\Http\Controllers\AssignTeacherController;
-use App\Http\Controllers\RunMitpController;
-use App\Http\Controllers\NoticeBoardController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\SensoryAdultController;
 use App\Http\Controllers\PhysiotherapyController;
@@ -29,7 +32,6 @@ use App\Http\Controllers\OccupationalTherapyController;
 use App\Http\Controllers\SensoryChecklistChildController;
 use App\Http\Controllers\FunctionalCommunicationController;
 use App\Http\Controllers\FunctionalMovementskillController;
-
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -79,7 +81,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('assessment/sensory-checklist-for-child', [StudentController::class, 'sensoryChecklistForChild'])->name('sensory.checklist.for.child');
 
 //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
-    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+    Route::get('assessment/social-communication', [SocialController::class, 'create']);
 
     Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
     Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');
