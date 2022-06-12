@@ -258,7 +258,7 @@
                                                                     label="Identifies feelings (I'm happy.)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false" />
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check name="explains_feelings"
                                                                     label="Explains feelings (I'm happy because it's my birthday)n"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -377,8 +377,8 @@
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check 
-                                                                    label="Ability to employ Theory of Mind (presuppostion)"
+                                                                <x-input-radio-or-check name="ability_to_employee"
+                                                                    label="Ability to employ theory of mind (presuppostion)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                             </section>
@@ -397,7 +397,7 @@
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check 
+                                                                <x-input-radio-or-check name="truthfulness_of_information"
                                                                     label="Truthfulness of information (grandiosity)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -1195,11 +1195,11 @@
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check  label="Identifies feelings (I'm happy.)" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check name="identifies_feelings"  label="Identifies feelings (I'm happy.)" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check  label="Explains feelings (I'm happy because it's my birthday)n"
+                            <x-input-radio-or-check name="explains_feelings"  label="Explains feelings (I'm happy because it's my birthday)n"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
@@ -1217,7 +1217,7 @@
                             <x-input-radio-or-check  label="Blames others" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check name="provides_perinent"
                                 label="Provides pertinent information on request (2 or 3 of the following: name, address, phone, birthdate)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
@@ -1278,7 +1278,7 @@
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check 
+                            <x-input-radio-or-check name="ability_to_order" 
                                 label="Ability to order information appropriately (new info follows old)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
@@ -1304,7 +1304,7 @@
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check  label="Ability to employ Theory of Mind (presuppostion)"
+                            <x-input-radio-or-check name="ability_to_employ" label="Ability to employ Theory of Mind (presuppostion)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1322,7 +1322,7 @@
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check  label="Truthfulness of information (grandiosity)"
+                            <x-input-radio-or-check name="truthfulness_of_info"  label="Truthfulness of information (grandiosity)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
