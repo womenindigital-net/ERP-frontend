@@ -38,23 +38,211 @@
                     </li>
                 </ul>
 
-                <!-- Tab panes -->
-                <div class="tab-content p-3 text-muted">
-                    <div class="tab-pane active" id="case-histroy" role="tabpanel">
-                        <div class="row">
-                            <div class="col-12">
-                                <!-- Wizard container -->
-                                <div class="wizard-container">
-                                    <div class="card_stap wizard-card row" data-color="red" id="wizard">
-                                        <div class="col-sm-3 col-md-3">
-                                            <div id="wizard-navigation">
-                                                <ul class="wizard-navigation">
-                                                    <li class="w-100"><a href="#Social_Communication"
-                                                            data-toggle="tab">Individual Risk Assessment Form</a></li>
-                                                    <li class="w-100"><a href="#Pragmatic_Objective"
-                                                            data-toggle="tab">Risk Assessment</a>
-                                                    </li>
-                                                </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content p-3 text-muted">
+                        <div class="tab-pane active" id="case-histroy" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Wizard container -->
+                                    <div class="wizard-container">
+                                        <div class="card_stap wizard-card row" data-color="red" id="wizard">
+                                            <div class="col-sm-3 col-md-3">
+                                                <div id="wizard-navigation">
+                                                    <ul class="wizard-navigation">
+                                                        <li class="w-100"><a href="#Social_Communication"
+                                                                data-toggle="tab">Individual Risk Assessment Form</a></li>
+                                                        <li class="w-100"><a href="#Pragmatic_Objective"
+                                                                data-toggle="tab">Risk Assessment</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-9 col-md-9">
+                                                <form>
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane" id="Social_Communication">
+
+                                                            <section>
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4">
+                                                                            <div class="mb-3">
+                                                                                <label
+                                                                                    for="basicpill-firstname-input">Collection
+                                                                                    Date:</label>
+                                                                                <x-input-text name="collection_date"
+                                                                                    type="date" placeholder="mm/dd/yyyy">
+                                                                                </x-input-text>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="mb-3">
+                                                                                <label
+                                                                                    for="basicpill-lastname-input">Teacher:</label>
+                                                                                    <x-input-select name="student_id"
+                                                                                    :records="[]" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="mb-3">
+                                                                                <label
+                                                                                    for="basicpill-phoneno-input">Candidate
+                                                                                    ID:</label>
+                                                                                    <x-input-select name="student_id"
+                                                                                    :records="[]" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Pragmatic_Objective">
+
+                                                            <section>
+                                                                <form>
+                                                                    <x-input-radio-or-check name="hazar_spotted/Type" type="checkbox"
+                                                                        label="Hazard spotted/Type" :records="$IRAConstants::$riskAssessment"
+                                                                        :isVertical="false"></x-input-radio-or-check>
+                                                                    <!-- end row -->
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Cause of Hazzard</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="causeof_hazzard"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end row -->
+                                                                    <x-input-radio-or-check 
+                                                                        label="Accident/ incident?" :records="$IRAConstants::$accidentOrIncident">
+                                                                    </x-input-radio-or-check>
+                                                                    <!-- end row -->
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Possible Concerns</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="possible_concerns"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Risk Rating (Overall risk level
+                                                                                    identified: 1-10 )</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="name"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Action to Reduce Hazard</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="name"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Level of risk (1-25)</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="name"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <x-input-radio-or-check name="hh" label="Likelihood"
+                                                                        :records="$IRAConstants::$likelihood">
+                                                                    </x-input-radio-or-check>
+                                                                    {{-- end row --}}
+                                                                    <x-input-radio-or-check name="hh" label="Consequences"
+                                                                        :records="$IRAConstants::$consu">
+                                                                    </x-input-radio-or-check>
+                                                                    {{-- end row --}}
+
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Staff signature</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="name"
+                                                                                        placeholder="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Staff name</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="name"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Signature of support worker</h5>
+                                                                                <div class="mb-2">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                            <div class="m-0">
+                                                                                <h5>Support worker name</h5>
+                                                                                <div class="mb-2">
+                                                                                    <x-input-text name="name"
+                                                                                        placeholder=""></x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wizard-footer d-flex justify-content-between">
+                                                        <div class="pull-left">
+                                                            <input type='button'
+                                                                class='btn btn-primary waves-effect waves-light btn-previous'
+                                                                name='previous' value='Previous' />
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <input type='button'
+                                                                class='btn btn-primary waves-effect waves-light btn-next'
+                                                                name='next' value='Next' />
+                                                            <input type="submit" class='btn btn-finish btn-fill btn-danger'
+                                                                wire:click='save' value='Finish' />
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="col-sm-9 col-md-9">

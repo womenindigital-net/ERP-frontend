@@ -157,14 +157,14 @@
                                                                                         <div class="me-5 ">
                                                                                             <label
                                                                                                 class="form-check-label pb-2">Left</label>
-                                                                                            <x-input-text name="name"
+                                                                                            <x-input-text name="left"
                                                                                                 placeholder="Left">
                                                                                             </x-input-text>
                                                                                         </div>
                                                                                         <div class="me-5 ">
                                                                                             <label
                                                                                                 class="form-check-label pb-2">Right</label>
-                                                                                            <x-input-text name="name"
+                                                                                            <x-input-text name="right"
                                                                                                 placeholder="Right">
                                                                                             </x-input-text>
                                                                                         </div>
@@ -195,14 +195,14 @@
                                                                                         <div class="me-5 ">
                                                                                             <label
                                                                                                 class="form-check-label pb-2">Left</label>
-                                                                                            <x-input-text name="name"
+                                                                                            <x-input-text name="left"
                                                                                                 placeholder="Left">
                                                                                             </x-input-text>
                                                                                         </div>
                                                                                         <div class="me-5 ">
                                                                                             <label
                                                                                                 class="form-check-label pb-2">Right</label>
-                                                                                            <x-input-text name="name"
+                                                                                            <x-input-text name="right"
                                                                                                 placeholder="Right">
                                                                                             </x-input-text>
                                                                                         </div>
@@ -478,11 +478,11 @@
                                                 <div class="form-check">
                                                     <div class="me-5 ">
                                                         <label class="form-check-label pb-2">Left</label>
-                                                        <x-input-text name="name" placeholder="Left"></x-input-text>
+                                                        <x-input-text name="left" placeholder="Left"></x-input-text>
                                                     </div>
                                                     <div class="me-5 ">
                                                         <label class="form-check-label pb-2">Right</label>
-                                                        <x-input-text name="name" placeholder="Right"></x-input-text>
+                                                        <x-input-text name="right" placeholder="Right"></x-input-text>
                                                     </div>
                                                 </div>
                                             </div>
