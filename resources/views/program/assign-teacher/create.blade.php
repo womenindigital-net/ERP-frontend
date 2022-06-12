@@ -140,7 +140,7 @@
                             </div>
                             <div class="col-2 d-flex align-items-center">
                                 <div class="form-check ">
-                                    <x-input-radio-or-check name='' :records="['Select All']" label="" type="checkbox">
+                                    <x-input-radio-or-check name='select' :records="['Select All']" type="checkbox">
                                     </x-input-radio-or-check>
                                 </div>
                             </div>

@@ -24,8 +24,8 @@ class NoticeBoardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+         return view('program.notice-board.create');
     }
 
     /**

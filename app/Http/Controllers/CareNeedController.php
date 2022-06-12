@@ -5,23 +5,38 @@ namespace App\Http\Controllers;
 use App\Models\CareNeed;
 use App\Http\Requests\StoreCareNeedRequest;
 use App\Http\Requests\UpdateCareNeedRequest;
+use App\Repositories\UserRepository;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class CareNeedController extends Controller
 {
+    private UserRepository $userRepo;
+
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepo = $userRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
-    public function index()
+    public function index(): View|Factory|Application
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('pre_admission.care-needs-form', $data);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function create()
     {
