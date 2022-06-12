@@ -168,10 +168,10 @@
                                     <a href="{{ route('ot.assessment') }}">OT assessment in computer trainee</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('student.dairy.incident-record') }}">Incident Record</a>
+                                    <a href="{{ route('incident-record.create') }}">Incident Record</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('student.dairy.medicine-admin') }}">Medicine admin</a>
+                                    <a href="{{ route('madicine-admin.create') }}">Medicine admin</a>
                                 </li>
                                 {{-- <li>
                                     <a href="student.dairy.score-calculation">Score Calculation</a>
