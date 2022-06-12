@@ -127,11 +127,11 @@
                         <span>Assessment</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('sensory.checklist.for.child') }}">Sensory checklist for Child</a></li>
+                        <li><a href="{{ route('sensory-checklist-child.create') }}">Sensory checklist for Child</a></li>
                         <li><a href="{{ route('social-communication.create') }}">Social Communication</a></li>
-                        <li><a href="{{ route('occupational.therapy') }}">Occupational Therapy</a></li>
-                        <li><a href="{{ route('physio.therapy') }}">Physiotherapy</a></li>
-                        <li><a href="{{ route('functional.communication.assessment') }}">Functional Communication
+                        <li><a href="{{ route('occupational-therapy.create') }}">Occupational Therapy</a></li>
+                        <li><a href="{{ route('physiotherapy.create') }}">Physiotherapy</a></li>
+                        <li><a href="{{ route('functional-communication.create') }}">Functional Communication
                                 Assessment</a></li>
                         <li><a href="{{ route('functional-movement-skill.create') }}">Fundamental Movement
                                 Skills</a></li>

@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\AppointmentList;
@@ -18,14 +19,17 @@ use App\Http\Controllers\SensoryAdultController;
 use App\Http\Controllers\AssignTeacherController;
 use App\Http\Controllers\MedicineAdminController;
 use App\Http\Controllers\IncidentRecordController;
+use App\Http\Controllers\PhysiotherapyController;
 use App\Http\Controllers\IndividualRiskController;
 use App\Http\Livewire\StudentIncome\StudentIncome;
 use App\Http\Controllers\AutisumBhehaviourController;
 use App\Http\Controllers\ExecutiveFunctionController;
 use App\Http\Controllers\DramaDiaryEvaluationController;
+use App\Http\Controllers\OccupationalTherapyController;
+use App\Http\Controllers\SensoryChecklistChildController;
+use App\Http\Controllers\FunctionalCommunicationController;
 use App\Http\Controllers\FunctionalMovementskillController;
 use App\Http\Controllers\StaffAndWorkplaceInspectionController;
-
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -42,6 +46,11 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'sensory-checklist-adult' => SensoryAdultController::class,
         'individual-risk' => IndividualRiskController::class,
         'functional-movement-skill' => FunctionalMovementskillController::class,
+        'functional-communication' => FunctionalCommunicationController::class,
+        'physiotherapy' => PhysiotherapyController::class,
+        'assign-task' => AssignTaskController::class,
+        'occupational-therapy' => OccupationalTherapyController::class,
+        'sensory-checklist-child' => SensoryChecklistChildController::class,
         'assign-task' => AssignTaskController::class,
         'create-itp' => CreateItpController::class,
         'assign-teacher' => AssignTeacherController::class,
@@ -73,7 +82,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('assessment/sensory-checklist-for-child', [StudentController::class, 'sensoryChecklistForChild'])->name('sensory.checklist.for.child');
 
 //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
-    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+    Route::get('assessment/social-communication', [SocialController::class, 'create']);
 
     Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
     Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');

@@ -156,7 +156,7 @@
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
                                                             <section>
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Interaction with adults " :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -166,7 +166,7 @@
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="two"
+                                                                <x-input-radio-or-check 
                                                                     label="Interaction with younger children"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -176,73 +176,73 @@
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Negotiating deals"
+                                                                <x-input-radio-or-check  label="Negotiating deals"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Taking turns"
+                                                                <x-input-radio-or-check  label="Taking turns"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to interact with many individuals simultaneously"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to establish multiple friendships"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Knowing when to persist or let go of an idea"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Interpreting facial expressions and voices"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Understanding the rules of the game"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Expressing various appropriate expressions"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Receiving and giving gifts" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Understanding sharing and the concept of give and take"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Participation in group activities"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Passive tendencies"
+                                                                <x-input-radio-or-check  label="Passive tendencies"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Aggressive tendencies" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Responsiveness"
+                                                                <x-input-radio-or-check  label="Responsiveness"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to handle being “left out”"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -251,37 +251,37 @@
                                                         <div class="tab-pane" id="PERSONAL">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Expresses feelings"
+                                                                <x-input-radio-or-check  label="Expresses feelings"
                                                                     :records="$constants::$socialCommunication" :isVertical="false" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check name="identifies_feelings"
                                                                     label="Identifies feelings (I'm happy.)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false" />
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check name="explains_feelings"
                                                                     label="Explains feelings (I'm happy because it's my birthday)n"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Provides excuses or reasons" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Offers an opinion with support"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Complains"
+                                                                <x-input-radio-or-check  label="Complains"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Blames others"
+                                                                <x-input-radio-or-check  label="Blames others"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Provides pertinent information on request (2 or 3 of the following: name, address, phone, birthdate)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -290,37 +290,37 @@
                                                         <div class="tab-pane" id="Topic_Maintenance">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to establish a topic" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to maintain topic relevancy"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to change a topic using signals"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to change a topic using verbal means"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Relevancy of information" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to interrupt appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to terminate the conversation"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -329,32 +329,32 @@
                                                         <div class="tab-pane" id="Conversational_Structure">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to initiate a conversation"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to establish a conversation outside of the interest area"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to acknowledge others in conversation"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to delete redundant information appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to order information appropriately (new info follows old)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Use of pedantic speech" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -363,22 +363,22 @@
                                                         <div class="tab-pane" id="Word_Structure">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use generals/specifics"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Pronoun use"
+                                                                <x-input-radio-or-check  label="Pronoun use"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Use of word referents" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
-                                                                    label="Ability to employ Theory of Mind (presuppostion)"
+                                                                <x-input-radio-or-check name="ability_to_employee"
+                                                                    label="Ability to employ theory of mind (presuppostion)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                             </section>
@@ -387,27 +387,27 @@
                                                             <!-- Bank Details -->
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Lie, ambiguous, confusing information share"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Provides relevant information" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check name="truthfulness_of_information"
                                                                     label="Truthfulness of information (grandiosity)"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to establish joint activity"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Tendency to present personal opinions as factual"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -416,17 +416,17 @@
                                                         <div class="tab-pane" id="Repair_Structures">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Requests clarification as needed"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Spontaneously provides additional information"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Requests repetition of information for clarification purposes"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -434,36 +434,36 @@
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent">
                                                             <section>
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Looks at speaker when called" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Delay of response"
+                                                                <x-input-radio-or-check  label="Delay of response"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to label information appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to describe objects appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to describe events appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to state facts appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to provide clarification appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -472,26 +472,26 @@
                                                         <div class="tab-pane" id="Functional_Intent_B">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Makes polite requests" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Makes choices"
+                                                                <x-input-radio-or-check  label="Makes choices"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Gives description of an object wanted"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Expresses a specific personal need"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Requests help"
+                                                                <x-input-radio-or-check  label="Requests help"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                             </section>
@@ -499,42 +499,42 @@
                                                         <div class="tab-pane" id="Functional_Intent_C">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request information appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request permission appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request yes-no responses appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use Wh-Questions appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request an action of another appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request clarification appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request attention appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request help appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -544,32 +544,32 @@
                                                         <div class="tab-pane" id="Functional_Intent_D">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use appropriate rate of speech"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use appropriate tone of voice"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use appropriate pitch"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use appropriate loudness"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to comprehend implied meanings via tone of voice"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to comprehend implied meanings via inflectional cues"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -579,12 +579,12 @@
                                                         <div class="tab-pane" id="Functional_Intent_E">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to state his opinion using appropriate means"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Ability to disagree"
+                                                                <x-input-radio-or-check  label="Ability to disagree"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                             </section>
@@ -592,42 +592,42 @@
                                                         <div class="tab-pane" id="Functional_Intent_F">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to shift the style of conversation according to person"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to shift the style of conversation according to the setting"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to shift the style of conversation according to humor"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to engage a listener appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use politeness" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Appropriateness to the situation"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize other’s moods"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to differentiate requests from demands"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -636,11 +636,11 @@
                                                         <div class="tab-pane" id="Functional_Intent_G">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Comprehends humor"
+                                                                <x-input-radio-or-check  label="Comprehends humor"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Uses humor appropriately" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -649,15 +649,15 @@
                                                         <div class="tab-pane" id="Functional_Intent_H">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Provides greetings"
+                                                                <x-input-radio-or-check  label="Provides greetings"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Uses greetings"
+                                                                <x-input-radio-or-check  label="Uses greetings"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to acknowledge the presence of another individual"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -667,32 +667,32 @@
                                                         <div class="tab-pane" id="Functional_Intent_I">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to solve problems affecting himself"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to solve problems affecting others"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize problems affecting others"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize problems affecting himself"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to establish cause-effect"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use conflict-resolution"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -701,12 +701,12 @@
                                                         <div class="tab-pane" id="Functional_Intent_J">
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Uses language to deceive" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Lies"
+                                                                <x-input-radio-or-check  label="Lies"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                             </section>
@@ -721,47 +721,47 @@
                                                                             with other students.</b></h3>
                                                                 </div>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to respond appropriately to teacher requests"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to reorient to academic agenda appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to obtain teacher’s attention appropriately"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to request clarification from teacher"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to participate in classroom discussions"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to interact with classroom peers"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to paraphrase text" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to summarize a story providing key information"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to respond to questions requiring inferential reasoning"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -777,55 +777,55 @@
                                                                             non-verbal means.</b></h3>
                                                                 </div>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize “personal space” boundaries"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to touch appropriatel"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Comprehends facial expression"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Comprehends eye gaze"
+                                                                <x-input-radio-or-check  label="Comprehends eye gaze"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Comprehends gestures"
+                                                                <x-input-radio-or-check  label="Comprehends gestures"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Comprehends body language" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use facial expression"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use eye gaze" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use gestures" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use body language" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use eye contact" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -842,22 +842,22 @@
                                                                             perspective taking.</b></h3>
                                                                 </div>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize another’s viewpoints"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize another’s interests"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize another’s feelings"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to demonstrate concern for another’s problems"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -867,17 +867,17 @@
 
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Gives directions to play a game"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Gives directions to make something"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name="" label="Changes the style of commands or requests depending on who the child is speaking to and what the
+                                                                <x-input-radio-or-check  label="Changes the style of commands or requests depending on who the child is speaking to and what the
                                                                                child wants" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -888,37 +888,37 @@
 
                                                             <section>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize personal emotional states"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to recognize emotional states in others"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to express personal emotional state"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Perfectionist quality" :records="$constants::$socialCommunication"
                                                                     :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to use appropriate self-control"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Ability to lose a game graciously"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check 
                                                                     label="Degree of anxiety in social settings"
                                                                     :records="$constants::$socialCommunication" :isVertical="false">
                                                                 </x-input-radio-or-check>
@@ -1113,76 +1113,76 @@
                         <!-- Company Document -->
                         <h3>Pragmatic Objective</h3>
                         <section>
-                            <x-input-radio-or-check name="" label="Interaction with adults " :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Interaction with adults " :records="$constants::$socialCommunication"
                                 :isVertical="false"></x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Interaction with age-appropriate peers"
+                            <x-input-radio-or-check  label="Interaction with age-appropriate peers"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Interaction with younger children" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Interaction with younger children" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Waiting for a response from peers" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Waiting for a response from peers" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Negotiating deals" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Negotiating deals" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Taking turns" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Taking turns" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to interact with many individuals simultaneously"
+                            <x-input-radio-or-check  label="Ability to interact with many individuals simultaneously"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to establish multiple friendships"
+                            <x-input-radio-or-check  label="Ability to establish multiple friendships"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Knowing when to persist or let go of an idea"
+                            <x-input-radio-or-check  label="Knowing when to persist or let go of an idea"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Interpreting facial expressions and voices"
+                            <x-input-radio-or-check  label="Interpreting facial expressions and voices"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Understanding the rules of the game" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Understanding the rules of the game" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Expressing various appropriate expressions"
+                            <x-input-radio-or-check  label="Expressing various appropriate expressions"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Receiving and giving gifts" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Receiving and giving gifts" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Understanding sharing and the concept of give and take"
+                            <x-input-radio-or-check  label="Understanding sharing and the concept of give and take"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Participation in group activities" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Participation in group activities" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Passive tendencies" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Passive tendencies" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Aggressive tendencies" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Aggressive tendencies" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Responsiveness" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Responsiveness" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to handle being “left out”" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to handle being “left out”" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1191,33 +1191,33 @@
                         <h3>PERSONAL</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Expresses feelings" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Expresses feelings" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Identifies feelings (I'm happy.)" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check name="identifies_feelings"  label="Identifies feelings (I'm happy.)" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Explains feelings (I'm happy because it's my birthday)n"
+                            <x-input-radio-or-check name="explains_feelings"  label="Explains feelings (I'm happy because it's my birthday)n"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Provides excuses or reasons" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Provides excuses or reasons" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Offers an opinion with support" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Offers an opinion with support" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Complains" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Complains" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Blames others" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Blames others" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check name="provides_perinent"
                                 label="Provides pertinent information on request (2 or 3 of the following: name, address, phone, birthdate)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
@@ -1228,31 +1228,31 @@
                         <h3>Topic Maintenance</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to establish a topic" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to establish a topic" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to maintain topic relevancy" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to maintain topic relevancy" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to change a topic using signals"
+                            <x-input-radio-or-check  label="Ability to change a topic using signals"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to change a topic using verbal means"
+                            <x-input-radio-or-check  label="Ability to change a topic using verbal means"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Relevancy of information" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Relevancy of information" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to interrupt appropriately" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to interrupt appropriately" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to terminate the conversation"
+                            <x-input-radio-or-check  label="Ability to terminate the conversation"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1261,29 +1261,29 @@
                         <h3>Conversational Structure</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to initiate a conversation" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to initiate a conversation" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Ability to establish a conversation outside of the interest area" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to acknowledge others in conversation"
+                            <x-input-radio-or-check  label="Ability to acknowledge others in conversation"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to delete redundant information appropriately"
+                            <x-input-radio-or-check  label="Ability to delete redundant information appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check name="ability_to_order" 
                                 label="Ability to order information appropriately (new info follows old)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Use of pedantic speech" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Use of pedantic speech" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1293,18 +1293,18 @@
                         <h3>Word Structure</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use generals/specifics" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use generals/specifics" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Pronoun use" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Pronoun use" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Use of word referents" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Use of word referents" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to employ Theory of Mind (presuppostion)"
+                            <x-input-radio-or-check name="ability_to_employ" label="Ability to employ Theory of Mind (presuppostion)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1314,23 +1314,23 @@
                         <h3>Manner/Effectiveness</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Lie, ambiguous, confusing information share"
+                            <x-input-radio-or-check  label="Lie, ambiguous, confusing information share"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Provides relevant information" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Provides relevant information" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Truthfulness of information (grandiosity)"
+                            <x-input-radio-or-check name="truthfulness_of_info"  label="Truthfulness of information (grandiosity)"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to establish joint activity" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to establish joint activity" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Tendency to present personal opinions as factual"
+                            <x-input-radio-or-check  label="Tendency to present personal opinions as factual"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1339,15 +1339,15 @@
                         <h3>Repair Structures</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Requests clarification as needed" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Requests clarification as needed" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Spontaneously provides additional information"
+                            <x-input-radio-or-check  label="Spontaneously provides additional information"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Requests repetition of information for clarification purposes" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
@@ -1355,31 +1355,31 @@
 
                         <h3>Functional Intent > A.Responsiveness</h3>
                         <section>
-                            <x-input-radio-or-check name="" label="Looks at speaker when called" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Looks at speaker when called" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Delay of response" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Delay of response" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to label information appropriately"
+                            <x-input-radio-or-check  label="Ability to label information appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to describe objects appropriately"
+                            <x-input-radio-or-check  label="Ability to describe objects appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to describe events appropriately"
+                            <x-input-radio-or-check  label="Ability to describe events appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to state facts appropriately" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to state facts appropriately" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to provide clarification appropriately"
+                            <x-input-radio-or-check  label="Ability to provide clarification appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1387,57 +1387,57 @@
                         <h3>Functional Intent > B.INSTRUMENTAL – States needs</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Makes polite requests" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Makes polite requests" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Makes choices" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Makes choices" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Gives description of an object wanted"
+                            <x-input-radio-or-check  label="Gives description of an object wanted"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Expresses a specific personal need" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Expresses a specific personal need" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Requests help" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Requests help" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
 
                         <h3>Functional Intent > C. Requesting</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request information appropriately"
+                            <x-input-radio-or-check  label="Ability to request information appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request permission appropriately"
+                            <x-input-radio-or-check  label="Ability to request permission appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request yes-no responses appropriately"
+                            <x-input-radio-or-check  label="Ability to request yes-no responses appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use Wh-Questions appropriately"
+                            <x-input-radio-or-check  label="Ability to use Wh-Questions appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request an action of another appropriately"
+                            <x-input-radio-or-check  label="Ability to request an action of another appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request clarification appropriately"
+                            <x-input-radio-or-check  label="Ability to request clarification appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request attention appropriately"
+                            <x-input-radio-or-check  label="Ability to request attention appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request help appropriately"
+                            <x-input-radio-or-check  label="Ability to request help appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1446,27 +1446,27 @@
                         <h3>Functional Intent > D. Prosody</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use appropriate rate of speech"
+                            <x-input-radio-or-check  label="Ability to use appropriate rate of speech"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use appropriate tone of voice"
+                            <x-input-radio-or-check  label="Ability to use appropriate tone of voice"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use appropriate pitch" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use appropriate pitch" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use appropriate loudness" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use appropriate loudness" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to comprehend implied meanings via tone of voice"
+                            <x-input-radio-or-check  label="Ability to comprehend implied meanings via tone of voice"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Ability to comprehend implied meanings via inflectional cues" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
@@ -1476,11 +1476,11 @@
                         <h3>Functional Intent > E. Protests</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to state his opinion using appropriate means"
+                            <x-input-radio-or-check  label="Ability to state his opinion using appropriate means"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to disagree" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to disagree" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1489,38 +1489,38 @@
                         <h3> Functional Intent > F. Style of Conversation</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Ability to shift the style of conversation according to person" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Ability to shift the style of conversation according to the setting"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Ability to shift the style of conversation according to humor" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to engage a listener appropriately"
+                            <x-input-radio-or-check  label="Ability to engage a listener appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use politeness" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use politeness" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Appropriateness to the situation" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Appropriateness to the situation" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize other’s moods" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to recognize other’s moods" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to differentiate requests from demands"
+                            <x-input-radio-or-check  label="Ability to differentiate requests from demands"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1529,11 +1529,11 @@
                         <h3>Functional Intent > G. Humor</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Comprehends humor" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Comprehends humor" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Uses humor appropriately" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Uses humor appropriately" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1542,14 +1542,14 @@
                         <h3>Functional Intent > H. Greetings/Acknowledgements</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Provides greetings" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Provides greetings" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Uses greetings" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Uses greetings" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Ability to acknowledge the presence of another individual" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
@@ -1559,27 +1559,27 @@
                         <h3>Functional Intent > I. Problem Solving</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to solve problems affecting himself"
+                            <x-input-radio-or-check  label="Ability to solve problems affecting himself"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to solve problems affecting others"
+                            <x-input-radio-or-check  label="Ability to solve problems affecting others"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize problems affecting others"
+                            <x-input-radio-or-check  label="Ability to recognize problems affecting others"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize problems affecting himself"
+                            <x-input-radio-or-check  label="Ability to recognize problems affecting himself"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to establish cause-effect" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to establish cause-effect" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use conflict-resolution" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use conflict-resolution" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1587,11 +1587,11 @@
                         <h3>Functional Intent > J. Deceit</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Uses language to deceive" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Uses language to deceive" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Lies" :records="$constants::$socialCommunication" :isVertical="false">
+                            <x-input-radio-or-check  label="Lies" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
 
@@ -1604,39 +1604,39 @@
                                         with other students.</b></h3>
                             </div>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to respond appropriately to teacher requests"
+                            <x-input-radio-or-check  label="Ability to respond appropriately to teacher requests"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to reorient to academic agenda appropriately"
+                            <x-input-radio-or-check  label="Ability to reorient to academic agenda appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to obtain teacher’s attention appropriately"
+                            <x-input-radio-or-check  label="Ability to obtain teacher’s attention appropriately"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to request clarification from teacher"
+                            <x-input-radio-or-check  label="Ability to request clarification from teacher"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to participate in classroom discussions"
+                            <x-input-radio-or-check  label="Ability to participate in classroom discussions"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to interact with classroom peers"
+                            <x-input-radio-or-check  label="Ability to interact with classroom peers"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to paraphrase text" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to paraphrase text" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to summarize a story providing key information"
+                            <x-input-radio-or-check  label="Ability to summarize a story providing key information"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name=""
+                            <x-input-radio-or-check 
                                 label="Ability to respond to questions requiring inferential reasoning" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
@@ -1650,47 +1650,47 @@
                                         non-verbal means.</b></h3>
                             </div>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize “personal space” boundaries"
+                            <x-input-radio-or-check  label="Ability to recognize “personal space” boundaries"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to touch appropriatel" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to touch appropriatel" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Comprehends facial expression" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Comprehends facial expression" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Comprehends eye gaze" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Comprehends eye gaze" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Comprehends gestures" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Comprehends gestures" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Comprehends body language" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Comprehends body language" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use facial expression" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use facial expression" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use eye gaze" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use eye gaze" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use gestures" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use gestures" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use body language" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use body language" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use eye contact" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to use eye contact" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1704,19 +1704,19 @@
                                         perspective taking.</b></h3>
                             </div>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize another’s viewpoints"
+                            <x-input-radio-or-check  label="Ability to recognize another’s viewpoints"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize another’s interests"
+                            <x-input-radio-or-check  label="Ability to recognize another’s interests"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize another’s feelings"
+                            <x-input-radio-or-check  label="Ability to recognize another’s feelings"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to demonstrate concern for another’s problems"
+                            <x-input-radio-or-check  label="Ability to demonstrate concern for another’s problems"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1725,15 +1725,15 @@
                         <h3> REGULATORY - Gives commands</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Gives directions to play a game" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Gives directions to play a game" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Gives directions to make something" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Gives directions to make something" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Changes the style of commands or requests depending on who the child is speaking to and what the
+                            <x-input-radio-or-check  label="Changes the style of commands or requests depending on who the child is speaking to and what the
                                                               child wants" :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                         </section>
@@ -1742,31 +1742,31 @@
                         <h3>Social-Emotional</h3>
                         <section>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize personal emotional states"
+                            <x-input-radio-or-check  label="Ability to recognize personal emotional states"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to recognize emotional states in others"
+                            <x-input-radio-or-check  label="Ability to recognize emotional states in others"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to express personal emotional state"
+                            <x-input-radio-or-check  label="Ability to express personal emotional state"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Perfectionist quality" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Perfectionist quality" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to use appropriate self-control"
+                            <x-input-radio-or-check  label="Ability to use appropriate self-control"
                                 :records="$constants::$socialCommunication" :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Ability to lose a game graciously" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Ability to lose a game graciously" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                             <!-- row end -->
-                            <x-input-radio-or-check name="" label="Degree of anxiety in social settings" :records="$constants::$socialCommunication"
+                            <x-input-radio-or-check  label="Degree of anxiety in social settings" :records="$constants::$socialCommunication"
                                 :isVertical="false">
                             </x-input-radio-or-check>
                         </section>

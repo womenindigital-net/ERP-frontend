@@ -117,7 +117,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check name="hh"
+                                                                    <x-input-radio-or-check 
                                                                         label="Accident/ incident?" :records="$IRAConstants::$accidentOrIncident">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
