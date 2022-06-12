@@ -1,11 +1,16 @@
 <?php
 
+use App\Http\Livewire\CaseHistory;
+
+
+
 use App\Http\Controllers\AssignTeacherController;
 use App\Http\Controllers\CreateItpController;
 use App\Http\Controllers\IncidentRecordController;
 use App\Http\Controllers\MedicineAdminController;
 use App\Http\Controllers\NoticeBoardController;
 use App\Http\Controllers\RunMitpController;
+
 use App\Http\Controllers\AssignTaskController;
 use App\Http\Controllers\CareNeedController;
 use App\Http\Controllers\CaseHistoryController;
@@ -13,6 +18,9 @@ use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StudentController;
 use App\Http\Livewire\AppointmentList;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\SetupController;
+
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\SensoryAdultController;
 use App\Http\Controllers\PhysiotherapyController;
