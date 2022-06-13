@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CareNeed;
 use App\Http\Requests\StoreCareNeedRequest;
 use App\Http\Requests\UpdateCareNeedRequest;
+use App\Repositories\CareNeedRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -13,10 +14,12 @@ use Illuminate\Contracts\View\View;
 class CareNeedController extends Controller
 {
     private UserRepository $userRepo;
+    private CareNeedRepository $careRepo;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository, CareNeedRepository $careNeedRepository)
     {
         $this->userRepo = $userRepository;
+        $this->careRepo = $careNeedRepository;
     }
 
     /**
@@ -30,7 +33,7 @@ class CareNeedController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
 
-        return view('pre_admission.care-needs-form', $data);
+        return view('pre_admission.care-need.create', $data);
     }
 
     /**
@@ -51,7 +54,9 @@ class CareNeedController extends Controller
      */
     public function store(StoreCareNeedRequest $request)
     {
-        //
+        $this->careRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

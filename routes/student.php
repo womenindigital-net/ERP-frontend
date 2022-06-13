@@ -67,7 +67,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('appointment', AppointmentList::class)->name('student.appointment');
     //    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
-    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+    // Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
     //    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 

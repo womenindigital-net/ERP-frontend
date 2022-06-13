@@ -10,7 +10,7 @@ Image component
 collapse form component
 Case History Teacher and Candidate
 
-\ /:s
+\ /:
 
 multiStep form
 -----------------
@@ -37,4 +37,3 @@ http://127.0.0.1:8000/student/dairy/ot-assessment (multiStep Done)
 http://127.0.0.1:8000/student/incident-record/create (name,multiStep Done)
 http://127.0.0.1:8000/student/student/co-curricular/drama-diary-evaluation (name,multiStep not Complete) 
 http://127.0.0.1:8000/student/student/employment/-staff-and_workplace-inspecation-tool (name,multiStep not Complete) 
-
