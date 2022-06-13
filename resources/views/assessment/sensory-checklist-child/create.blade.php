@@ -89,84 +89,77 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-sm-9 col-md-9">
-                                            <form action="{{ route('sensory-checklist-child.store') }}" method="POST">
-                                                @csrf
-                                                <div class="tab-content">
-                                                    <div class="tab-pane" id="Sensory_Checklist">
-                                                        <section>
-                                                            <div class="row">
-                                                                <div class="col-lg-4">
-                                                                    <div class="mb-3">
-                                                                        <label
-                                                                            for="basicpill-firstname-input">Collection
-                                                                            Date:</label>
-                                                                        <x-input-text name="collection_date" type="date"
-                                                                            placeholder="mm/dd/yyyy">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-4">
-                                                                    <div class="mb-3">
-                                                                        <label
-                                                                            for="basicpill-lastname-input">Teacher:</label>
-                                                                        <x-input-select name="teacher_id"
-                                                                            :records="[]" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-4">
-                                                                    <div class="mb-3">
-                                                                        <label for="basicpill-phoneno-input">Candidate
-                                                                            ID:</label>
-                                                                        <x-input-select name="candidate_id"
-                                                                            :records="[]" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="mb-3">
-                                                                        <label
-                                                                            for="verticalnav-phoneno-input">Description:</label>
-                                                                        <p>Sensory checklist
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-12">
-                                                                    <div class="mb-3">
-                                                                        <label
-                                                                            for="verticalnav-email-input">Instruction:</label>
-                                                                        <p>Parents can use
-                                                                            this checklist
-                                                                            to identify
-                                                                            potential
-                                                                            sensory
-                                                                            challenges for
-                                                                            their Child. The
-                                                                            checklist is
-                                                                            designed to
-                                                                            target specific
-                                                                            areas of
-                                                                            potential
-                                                                            dysfunction and
-                                                                            to give you an
-                                                                            opportunity to
-                                                                            look at child’s
-                                                                            environment and
-                                                                            assess potential
-                                                                            triggers for
-                                                                            challenging
-                                                                            behaviors. Read
-                                                                            the statements
-                                                                            and put a check
-                                                                            mark or an X
-                                                                            next to any
-                                                                            statements that
-                                                                            are true.
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                    </div> <!-- wizard container -->
+                                </div>
+                            </div> <!-- end col -->
+                        </div>
+                        <div class="tab-pane " id="case-histroy_list" role="tabpanel">
+                            <!-- form start -->
+                            <div class="table-responsive">
+                                <table class="table table-bordered w-100">
+                                    <thead>
+                                        <tr class="table-primary">
+                                            <th>Collection Date</th>
+                                            <th>Student Name</th>
+                                            <th>Collected By</th>
+                                            <th>Log</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2022-03-29</td>
+                                            <td>Ashfaq Sadi</td>
+                                            <td>Nurjahan Dipa</td>
+                                            <td>
+                                                <small>
+                                                    <span>Create: Nurjahan Dipa @ 2022-03-29
+                                                        16:04:41</span><br />
+                                                    <span>Update: Ohidul Hassan @ 2022-04-12
+                                                        11:36:44</span>
+                                                </small>
+                                            </td>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
+                                                    data-bs-toggle="modal" data-bs-toggle="modal"
+                                                    data-bs-target=".bs-example-modal-lg">
+                                                    <i class="mdi mdi-eye"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                                                    data-bs-toggle="modal" data-bs-toggle="modal"
+                                                    data-bs-target=".bs-example-modal-lg">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                    <i class="bx bx-dollar"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                    <i class="fas fa-arrow-circle-right"></i>
+                                                </button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                    </div>
 
                                                         </section>
                                                     </div>

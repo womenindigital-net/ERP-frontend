@@ -86,6 +86,28 @@
               </tbody>
             </table>
           </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              Showing 1 to 2 of 2 entries
+            </div>
+            <div class="col-sm-12 col-md-6 text-end">
+              <nav>
+                <ul class="pagination" style="justify-content: end;">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </div> <!-- end col -->
@@ -456,21 +478,21 @@
                   </div>
                 </div>
                 <div class="row mb-3 mt-3">                  
-                  <div class="row mb-3 mt-3">
-                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                  </div>
-                  <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <x-input-radio-or-check name="functional_movement_shoulder_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                          </div>
-                        </div>
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                </div>
+              <!-- end row -->
+              <div class="row border-top py-2">
+                <div class="col-xl-12 col-sm-12">
+                  <div class="m-0">
+                    <div class="form-check d-flex">
+                      <div class="me-5">
+                        <x-input-radio-or-check name="functional_movement_shoulder_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -489,5 +511,11 @@
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
 
+
+<!-- jquery step -->
+<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
+
+<!-- form wizard init -->
+<script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
 
 @endsection
