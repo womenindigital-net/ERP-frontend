@@ -55,7 +55,6 @@
                                             <form>
                                                 <div class="tab-content">
                                                     <div class="tab-pane" id="Social_Communication">
-
                                                         <section>
                                                             <form>
                                                                 <div class="row">
@@ -245,9 +244,7 @@
                                             @csrf
                                             <div class="tab-content">
                                                 <div class="tab-pane" id="Social_Communication">
-
                                                     <section>
-
                                                         <div class="row">
                                                             <div class="col-lg-4">
                                                                 <div class="mb-3">
@@ -277,9 +274,7 @@
                                                     </section>
                                                 </div>
                                                 <div class="tab-pane" id="Pragmatic_Objective">
-
                                                     <section>
-
                                                         <x-input-radio-or-check name="hazar_spotted/Type"
                                                             type="checkbox" label="Hazard spotted/Type"
                                                             :records="$IRAConstants::$riskAssessment"
@@ -366,7 +361,7 @@
                                                                     <h5>Staff signature</h5>
                                                                     <div class="mb-2">
                                                                         <x-input-text name="staff_signature"
-                                                                            placeholder="">
+                                                                                      placeholder=""></x-input-text>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -405,7 +400,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     </section>
                                                 </div>
                                             </div>
@@ -420,7 +414,7 @@
                                                         class='btn btn-primary waves-effect waves-light btn-next'
                                                         name='next' value='Next' />
                                                     <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                        wire:click='save' value='Finish' />
+                                                        value='Finish' />
                                                 </div>
                                             </div>
                                         </form>
@@ -529,10 +523,8 @@
                     <!-- end row -->
                 </div>
             </div>
-
         </div>
     </div>
-</div>
 </div>
 
 <!-- end col -->

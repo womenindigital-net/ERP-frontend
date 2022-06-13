@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\DramaDiaryEvaluation;
-use App\Http\Requests\StoreDramaDiaryEvaluationRequest;
+use App\Http\Requests\DramaDiaryEvaluationRequest;
 use App\Http\Requests\UpdateDramaDiaryEvaluationRequest;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class DramaDiaryEvaluationController extends Controller
 {
@@ -21,7 +24,7 @@ class DramaDiaryEvaluationController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -31,10 +34,11 @@ class DramaDiaryEvaluationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDramaDiaryEvaluationRequest  $request
+     * @param  \App\Http\Requests\DramaDiaryEvaluationRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDramaDiaryEvaluationRequest $request)
+    public function store(DramaDiaryEvaluationRequest $request)
     {
         //
     }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\StaffAndWorkplaceInspection;
-use App\Http\Requests\StoreStaffAndWorkplaceInspectionRequest;
+use App\Http\Requests\StaffAndWorkplaceInspectionRequest;
 use App\Http\Requests\UpdateStaffAndWorkplaceInspectionRequest;
 
 class StaffAndWorkplaceInspectionController extends Controller
@@ -31,10 +31,11 @@ class StaffAndWorkplaceInspectionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreStaffAndWorkplaceInspectionRequest  $request
+     * @param  \App\Http\Requests\StaffAndWorkplaceInspectionRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreStaffAndWorkplaceInspectionRequest $request)
+    public function store(StaffAndWorkplaceInspectionRequest $request)
     {
         //
     }

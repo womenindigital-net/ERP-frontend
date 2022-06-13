@@ -1,16 +1,10 @@
 @extends('layouts.master')
-
-@section('title')
-    @lang('translation.Starter_Page')
-@endsection
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
     <style>
         .wizard .steps>ul>li a {
             padding-right: 0 !important;
         }
-
         .wizard .steps>ul>li a {
             padding-left: 5px !important;
         }
@@ -92,7 +86,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form>
+                                                <form action="{{route('physiotherapy.store')}}" method="POST">
+                                                    @csrf
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
                                                             <section>
@@ -138,7 +133,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                               
+
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
@@ -206,14 +201,14 @@
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
-                                                              
+
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="PERSONAL">
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Visual Discrimination" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -223,17 +218,17 @@
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Visual Figure ground" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Visual Spatial" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Oral Motor" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -267,7 +262,7 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                              
+
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -279,7 +274,7 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Brushing teeth" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -295,7 +290,7 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Does The Child attend school?"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
@@ -308,12 +303,12 @@
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Leisure/ Play: activities of interest."
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                               
+
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -360,11 +355,11 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Ball skill" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                
+
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -372,19 +367,19 @@
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Prone to Supine" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Continuous Rolling" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Lying to Sit" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Box sit to stand" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -392,11 +387,11 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Cross sit to stand" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Kneeling to stand:" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -407,7 +402,7 @@
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Dominance" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
@@ -431,11 +426,11 @@
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Symmetrical use" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Bilateral use" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -443,7 +438,7 @@
                                                                             label="In-hand manipulation" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Eye hand co-ordination"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
@@ -454,7 +449,7 @@
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Writing skill" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -465,11 +460,11 @@
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Protective reactions" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Equilibrium reaction" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -490,7 +485,7 @@
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Vestibular" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -506,16 +501,16 @@
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Attention" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Problem Solving" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Able to Follow instruction"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
@@ -526,7 +521,7 @@
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Perceptual Motor" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
@@ -536,12 +531,12 @@
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Body Co-ordination" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Bilateral integration"
                                                                             :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
@@ -624,7 +619,7 @@
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Lower Limbs" :records="$physiotherapyConstants::$limbs">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
@@ -652,7 +647,7 @@
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Upper limbs" :records="$physiotherapyConstants::$limbsTone">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
@@ -668,7 +663,7 @@
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check 
+                                                                        <x-input-radio-or-check
                                                                             label="Lower Limbs" :records="$physiotherapyConstants::$limbsTone">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
@@ -694,17 +689,17 @@
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Social interaction" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Social Communication" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Interpersonal" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -739,7 +734,7 @@
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check 
+                                                                    <x-input-radio-or-check
                                                                         label="Communication" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -750,7 +745,7 @@
                                                                     <x-input-radio-or-check label="Emotional"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
-                                                             
+
                                                             </section>
                                                         </div>
                                                     </div>
@@ -765,7 +760,7 @@
                                                                 class='btn btn-primary waves-effect waves-light btn-next'
                                                                 name='next' value='Next' />
                                                             <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                                wire:click='save' value='Finish' />
+                                                                value='Finish' />
                                                         </div>
                                                     </div>
                                                 </form>
@@ -856,12 +851,11 @@
                             <!-- end row -->
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!--  Large modal example -->
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
@@ -872,11 +866,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <form>
                     <div id="vertical-example" class="vertical-wizard">
                         <!-- Seller Details -->
                         <h3>Sensory Checklist</h3>
                         <section>
-                            <form>
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="mb-3">
@@ -939,13 +933,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            
                         </section>
 
                         <!-- Company Document -->
                         <h3>General</h3>
                         <section>
-                            
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Birth history</label>
                                     <x-input-text name="birth_history"  placeholder=""></x-input-text>
@@ -992,14 +984,13 @@
                                     <x-input-text name="home_equipment" placeholder=""></x-input-text>
                                 </div>
                                 <!-- end row -->
-                          
+
                         </section>
 
                         <!-- Bank Details -->
                         <h3>Visual Perception</h3>
                         <section>
                             <div>
-                        
                                 <x-input-radio-or-check  label="Visual Discrimination" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
@@ -1049,7 +1040,6 @@
                         <h3>Activities of Daily living</h3>
                         <section>
                             <div>
-                               
                                     <!-- end row -->
                                     <x-input-radio-or-check  label="Eating" :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
@@ -1079,10 +1069,9 @@
                                         :records="$constants::$yesNoEn">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                               
+
                             </div>
                         </section>
-
 
                         <!-- Bank Details -->
                         <h3>Strength</h3>
@@ -1208,7 +1197,7 @@
                         <h3>Sensory Skill (Normal /Hypo response)</h3>
                         <section>
                             <div>
-                           
+
                                 <x-input-radio-or-check  label="Tactile" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
@@ -1223,7 +1212,7 @@
                                 <x-input-radio-or-check  label="Proprioceptive" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
-                              
+
                             </div>
                         </section>
                         <!-- Bank Details -->
@@ -1290,7 +1279,7 @@
                         </section>
                         <h3>Signature</h3>
                         <section>
-                            
+
                                 <div class="mb-3">
                                     <label for="formrow-firstname-input" class="form-label">Therapist Signature</label>
                                     <x-input-text name="signature" type="file" placeholder=""></x-input-text>
@@ -1382,7 +1371,7 @@
                                 <x-input-radio-or-check label="Interpersonal" :records="$constants::$yesNoEn">
                                 </x-input-radio-or-check>
                                 <!-- end row -->
-             
+
                         </section>
                         <h3>Domain Area</h3>
                         <section>
@@ -1417,6 +1406,7 @@
                                 <!-- end row -->
                         </section>
                     </div>
+                    </form>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

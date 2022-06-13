@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SensoryAdult;
-use App\Http\Requests\StoreSensoryAdultRequest;
+use App\Http\Requests\SensoryAdultRequest;
 use App\Http\Requests\UpdateSensoryAdultRequest;
 
 class SensoryAdultController extends Controller
@@ -35,10 +35,11 @@ class SensoryAdultController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreSensoryAdultRequest  $request
+     * @param  \App\Http\Requests\SensoryAdultRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSensoryAdultRequest $request)
+    public function store(SensoryAdultRequest $request)
     {
         //
     }
