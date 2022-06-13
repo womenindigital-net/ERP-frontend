@@ -102,9 +102,7 @@
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="me-5 ">
-                                                                        <label class="form-check-label pb-2">Duration (
-                                                                            in
-                                                                            Minutes)</label>
+                                                                        <label class="form-check-label pb-2">Duration ( in Minutes)</label>
                                                                         <x-input-text name="duration"
                                                                             placeholder="duration">
                                                                         </x-input-text>
@@ -118,7 +116,7 @@
                                                                                     name="previous_causes"
                                                                 label="What is the Previous cause of Incident/Antecedent Behavior?"
                                                                 :records="$incidentConstant::$activityType"
-                                                                :isVertical="false">
+                                                                :isVertical="false" multiple="true">
                                                             </x-input-radio-or-check>
                                                         </section>
                                                     </div>

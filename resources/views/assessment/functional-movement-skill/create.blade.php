@@ -456,21 +456,21 @@
                   </div>
                 </div>
                 <div class="row mb-3 mt-3">                  
-                  <div class="row mb-3 mt-3">
-                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                  </div>
-                  <!-- end row -->
-                  <div class="row border-top py-2">
-                    <div class="col-xl-12 col-sm-12">
-                      <div class="m-0">
-                        <div class="form-check d-flex">
-                          <div class="me-5">
-                            <x-input-radio-or-check name="functional_movement_shoulder_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                          </div>
-                        </div>
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                </div>
+              <!-- end row -->
+              <div class="row border-top py-2">
+                <div class="col-xl-12 col-sm-12">
+                  <div class="m-0">
+                    <div class="form-check d-flex">
+                      <div class="me-5">
+                        <x-input-radio-or-check name="functional_movement_shoulder_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>

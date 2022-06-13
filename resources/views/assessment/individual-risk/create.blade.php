@@ -96,7 +96,7 @@
                                                                 <x-input-radio-or-check name="hazar_spotted/Type"
                                                                     type="checkbox" label="Hazard spotted/Type"
                                                                     :records="$IRAConstants::$riskAssessment"
-                                                                    :isVertical="false"></x-input-radio-or-check>
+                                                                    :isVertical="false" multiple="true"></x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <div class="row border-top py-2">
                                                                     <div class="col-xl-12 col-sm-12">
