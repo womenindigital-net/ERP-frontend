@@ -71,16 +71,12 @@
                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                             <thead>
                                 <tr>
-                                    <th class="">Student Name</th>
+                                    <th>Student Name</th>
                                     <th>Card Number</th>
                                     <th>Log</th>
                                     <th>Action</th>
-    
-    
                                 </tr>
                             </thead>
-    
-    
                             <tbody>
                                 <tr>
                                     <td>System </td>

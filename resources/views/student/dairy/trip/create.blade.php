@@ -97,7 +97,6 @@
                                                             data-toggle="tab">Signature</a></li>
                                                     <li class="w-100"><a href="#TripEvaluationSignature"
                                                             data-toggle="tab">Trip Evaluation Signature</a></li>
-
                                                 </ul>
                                             </div>
                                         </div>
@@ -236,7 +235,7 @@
                                                                         সাজেশন দিবেন?</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="trip_description"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div><!-- input-group -->
                                                                 </div>
@@ -333,8 +332,7 @@
                                                                     আলাদা রুম না থাকে তবে বিকল্প
                                                                     সমাধানঃ</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="for_room_alternative_solution"
-                                                                        placeholder="">
+                                                                    <x-input-text name="for_room_alternative_solution">
                                                                     </x-input-text>
                                                                 </div><!-- input-group -->
                                                             </div>
@@ -602,8 +600,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="enter_the_details"
-                                                                        placeholder="">
+                                                                    <x-input-text name="enter_the_details">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -622,8 +619,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="wakeup_morning_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="wakeup_morning_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -632,8 +628,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="wakeup_morning_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="wakeup_morning_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -647,8 +642,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="bed_arrangement_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="bed_arrangement_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -657,8 +651,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="bed_arrangement_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="bed_arrangement_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -672,8 +665,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="teeth_brash_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="teeth_brash_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -682,8 +674,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="teeth_brash_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="teeth_brash_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -698,8 +689,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="hand_face_washing_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="hand_face_washing_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -709,8 +699,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="hand_face_washing_time_secondary"
-                                                                        placeholder="">
+                                                                        name="hand_face_washing_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -724,8 +713,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="changing_cloth_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="changing_cloth_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -734,8 +722,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="changing_cloth_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="changing_cloth_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -749,8 +736,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="hair_combing_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="hair_combing_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -759,8 +745,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="hair_combing_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="hair_combing_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -776,8 +761,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="snakes_cooking_eat_or_in_table_time"
-                                                                        placeholder="">
+                                                                        name="snakes_cooking_eat_or_in_table_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -787,8 +771,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="snakes_cooking_eat_or_in_table_time_secondary"
-                                                                        placeholder="">
+                                                                        name="snakes_cooking_eat_or_in_table_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -804,8 +787,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="cleaning_pleat_or_glass_or_put_in_wash_place_time"
-                                                                        placeholder="">
+                                                                        name="cleaning_pleat_or_glass_or_put_in_wash_place_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -815,8 +797,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="cleaning_pleat_or_glass_or_put_in_wash_place_time_secondary"
-                                                                        placeholder="">
+                                                                        name="cleaning_pleat_or_glass_or_put_in_wash_place_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -831,8 +812,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="clean_up_table_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="clean_up_table_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -841,8 +821,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="clean_up_table_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="clean_up_table_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -858,7 +837,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="reading_time" placeholder="">
+                                                                    <x-input-text name="reading_time" >
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -867,8 +846,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="reading_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="reading_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -881,8 +859,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="hand_writing_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="hand_writing_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -891,8 +868,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="hand_writing_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="hand_writing_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -905,8 +881,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="drawing_picture_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="drawing_picture_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -915,8 +890,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="drawing_picture_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="drawing_picture_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -927,8 +901,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="reading_paper_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="reading_paper_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -937,8 +910,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="reading_paper_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="reading_paper_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -952,8 +924,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="listening_song_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="listening_song_time">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -961,8 +932,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="listening_song_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="listening_song_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -976,8 +946,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="computer_practice_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="computer_practice_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -987,8 +956,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="computer_practice_time_secondary"
-                                                                        placeholder="">
+                                                                        name="computer_practice_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -1007,7 +975,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="list_for_marketing_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1018,7 +986,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="list_for_marketing_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1035,7 +1003,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="marketing_with_mother_and_father_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                 </div>
@@ -1045,7 +1013,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="marketing_with_mother_and_father_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                 </div>
@@ -1061,7 +1029,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="helping_mother_for_cutting_and_cooking_food_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1072,7 +1040,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="helping_mother_for_cutting_and_cooking_food_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1089,7 +1057,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="creating_menu_or_recognize_food_using_image_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1100,7 +1068,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="creating_menu_or_recognize_food_using_image_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1122,7 +1090,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="washing_cloth_and_drying_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1133,7 +1101,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="washing_cloth_and_drying_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1148,7 +1116,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="clean_up_himself_room_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1159,7 +1127,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="clean_up_himself_room_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1174,7 +1142,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="folding_cloth_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1185,7 +1153,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="folding_cloth_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1202,7 +1170,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="tidy_wardrobe_or_cotton_drawer_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1213,7 +1181,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="tidy_wardrobe_or_cotton_drawer_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1228,7 +1196,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="iron_cloth_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1238,7 +1206,7 @@
                                                                         লিখুন</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="iron_cloth_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1253,7 +1221,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="cutting_nails_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1264,7 +1232,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="cutting_nails_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1279,7 +1247,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="hair_cutting_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1289,7 +1257,7 @@
                                                                         লিখুন</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="hair_cutting_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1302,7 +1270,7 @@
                                                                 <div class="mb-3">
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="shave_time" placeholder="">
+                                                                        <x-input-text name="shave_time" >
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1312,7 +1280,7 @@
                                                                         লিখুন</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="shave_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1333,8 +1301,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="give_plate_glass_on_the_table_will_help_time"
-                                                                        placeholder="">
+                                                                        name="give_plate_glass_on_the_table_will_help_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1344,8 +1311,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="give_plate_glass_on_the_table_will_help_time_secondary"
-                                                                        placeholder="">
+                                                                        name="give_plate_glass_on_the_table_will_help_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1361,8 +1327,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="give_water_in_glass_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="give_water_in_glass_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1372,8 +1337,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="give_water_in_glass_time_secondary"
-                                                                        placeholder="">
+                                                                        name="give_water_in_glass_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1391,8 +1355,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="bring_food_from_the_kitchen_to_the_table_time"
-                                                                        placeholder="">
+                                                                        name="bring_food_from_the_kitchen_to_the_table_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1402,8 +1365,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="bring_food_from_the_kitchen_to_the_table_time_secondary"
-                                                                        placeholder="">
+                                                                        name="bring_food_from_the_kitchen_to_the_table_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1421,8 +1383,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="sit_on_the_table_or_mat_and_eat_with_everyone_time"
-                                                                        placeholder="">
+                                                                        name="sit_on_the_table_or_mat_and_eat_with_everyone_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1432,8 +1393,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="sit_on_the_table_or_mat_and_eat_with_everyone_time_secondary"
-                                                                        placeholder="">
+                                                                        name="sit_on_the_table_or_mat_and_eat_with_everyone_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1451,8 +1411,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="eat_with_your_own_hands_or_spoon_time"
-                                                                        placeholder="">
+                                                                        name="eat_with_your_own_hands_or_spoon_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1462,8 +1421,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="eat_with_your_own_hands_or_spoon_time_secondary"
-                                                                        placeholder="">
+                                                                        name="eat_with_your_own_hands_or_spoon_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1480,8 +1438,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="table_or_mat_will_help_clean_time"
-                                                                        placeholder="">
+                                                                        name="table_or_mat_will_help_clean_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1491,8 +1448,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="table_or_mat_will_help_clean_time_secondary"
-                                                                        placeholder="">
+                                                                        name="table_or_mat_will_help_clean_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1513,7 +1469,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="rest_in_bed_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1523,7 +1479,7 @@
                                                                         লিখুন</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="rest_in_bed_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1540,7 +1496,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="reading_story_book_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1551,7 +1507,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="reading_story_book_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1568,7 +1524,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="listening_song_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1579,7 +1535,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="listening_song_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1596,7 +1552,7 @@
                                                                     <label for="basicpill-firstname-input">সময়</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="playing_video_game_time"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1607,7 +1563,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="playing_video_game_time_secondary"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -1627,8 +1583,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="going_for_walk_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="going_for_walk_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1637,8 +1592,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="going_for_walk_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="going_for_walk_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1654,8 +1608,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="water_in_tub_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="water_in_tub_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1664,8 +1617,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="water_in_tub_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="water_in_tub_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1683,8 +1635,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="going_to_play_in_roof_or_playground_time"
-                                                                        placeholder="">
+                                                                        name="going_to_play_in_roof_or_playground_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1694,8 +1645,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="going_to_play_in_roof_or_playground_time_secondary"
-                                                                        placeholder="">
+                                                                        name="going_to_play_in_roof_or_playground_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1711,8 +1661,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="play_favorite_game_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="play_favorite_game_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1722,8 +1671,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="play_favorite_game_time_secondary"
-                                                                        placeholder="">
+                                                                        name="play_favorite_game_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1741,8 +1689,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="visiting_house_or_favorite_place_or_shopping_time"
-                                                                        placeholder="">
+                                                                        name="visiting_house_or_favorite_place_or_shopping_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1752,8 +1699,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="visiting_house_or_favorite_place_or_shopping_time_secondary"
-                                                                        placeholder="">
+                                                                        name="visiting_house_or_favorite_place_or_shopping_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1773,8 +1719,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="Make_sherbet_or_tea_or_snakes_time"
-                                                                        placeholder="">
+                                                                        name="Make_sherbet_or_tea_or_snakes_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1784,8 +1729,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="Make_sherbet_or_tea_or_snakes_time_secondary"
-                                                                        placeholder="">
+                                                                        name="Make_sherbet_or_tea_or_snakes_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1801,8 +1745,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="guest_reception_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="guest_reception_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1811,8 +1754,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="guest_reception_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="guest_reception_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1830,8 +1772,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="spending_time_with_brother_sister_time"
-                                                                        placeholder="">
+                                                                        name="spending_time_with_brother_sister_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1841,8 +1782,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="spending_time_with_brother_sister_time_secondary"
-                                                                        placeholder="">
+                                                                        name="spending_time_with_brother_sister_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1862,8 +1802,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="reading_book_and_hand_writing_time"
-                                                                        placeholder="">
+                                                                        name="reading_book_and_hand_writing_time">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -1872,8 +1811,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="reading_book_and_hand_writing_time_secondary"
-                                                                        placeholder="">
+                                                                        name="reading_book_and_hand_writing_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -1888,8 +1826,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="constructive_game_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="constructive_game_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1899,8 +1836,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="constructive_game_time_secondary"
-                                                                        placeholder="">
+                                                                        name="constructive_game_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1916,8 +1852,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="computer_practice_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="computer_practice_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1927,8 +1862,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="computer_practice_time_secondary"
-                                                                        placeholder="">
+                                                                        name="computer_practice_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1944,7 +1878,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="home_work_time" placeholder="">
+                                                                    <x-input-text name="home_work_time" >
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1953,8 +1887,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="home_work_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="home_work_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -1971,8 +1904,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="packing_the_bag_for_the_next_day_time"
-                                                                        placeholder="">
+                                                                        name="packing_the_bag_for_the_next_day_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1982,8 +1914,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="packing_the_bag_for_the_next_day_time_secondary"
-                                                                        placeholder="">
+                                                                        name="packing_the_bag_for_the_next_day_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -1998,8 +1929,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="watching_tv_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="watching_tv_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2008,8 +1938,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="watching_tv_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="watching_tv_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -2024,8 +1953,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="dairy_writing_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="dairy_writing_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2034,8 +1962,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="dairy_writing_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="dairy_writing_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
@@ -2055,8 +1982,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_give_plate_glass_on_the_table_will_help_time"
-                                                                        placeholder="">
+                                                                        name="night_give_plate_glass_on_the_table_will_help_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2066,8 +1992,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_give_plate_glass_on_the_table_will_help_time_secondary"
-                                                                        placeholder="">
+                                                                        name="night_give_plate_glass_on_the_table_will_help_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2083,8 +2008,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="night_Give_water_in_glass_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="night_Give_water_in_glass_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2094,8 +2018,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_Give_water_in_glass_time_secondary"
-                                                                        placeholder="">
+                                                                        name="night_Give_water_in_glass_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2113,8 +2036,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_bring_food_from_the_kitchen_to_the_table_time"
-                                                                        placeholder="">
+                                                                        name="night_bring_food_from_the_kitchen_to_the_table_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2124,8 +2046,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_bring_food_from_the_kitchen_to_the_table_time_secondary"
-                                                                        placeholder="">
+                                                                        name="night_bring_food_from_the_kitchen_to_the_table_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2143,8 +2064,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_sit_on_table_or_mat_and_eat_with_everyone_time"
-                                                                        placeholder="">
+                                                                        name="night_sit_on_table_or_mat_and_eat_with_everyone_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2154,8 +2074,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_sit_on_table_or_mat_and_eat_with_everyone_time_secondary"
-                                                                        placeholder="">
+                                                                        name="night_sit_on_table_or_mat_and_eat_with_everyone_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2173,8 +2092,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_sit_on_the_table_or_mat_and_eat_with_everyone_time"
-                                                                        placeholder="">
+                                                                        name="night_sit_on_the_table_or_mat_and_eat_with_everyone_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2184,8 +2102,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_sit_on_the_table_or_mat_and_eat_with_everyone_time_secondary"
-                                                                        placeholder="">
+                                                                        name="night_sit_on_the_table_or_mat_and_eat_with_everyone_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2203,8 +2120,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_eat_with_your_own_hands_or_spoon_time"
-                                                                        placeholder="">
+                                                                        name="night_eat_with_your_own_hands_or_spoon_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2214,15 +2130,14 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_eat_with_your_own_hands_or_spoon_time_secondary"
-                                                                        placeholder="">
+                                                                        name="night_eat_with_your_own_hands_or_spoon_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="afterdinner">
+                                                     <div class="tab-pane" id="afterdinner">
                                                         <section>
                                                             <x-input-radio-or-check name="night_eating_medicine"
                                                                 label="ঔষদ খাওয়া/ খাওয়ানো (যখন প্রয়োজন)"
@@ -2230,27 +2145,26 @@
                                                                 secondaryInputLabel="সাজেশন">
                                                             </x-input-radio-or-check>
                                                             {{-- end row --}}
-
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="night_eating_medicine_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="night_eating_medicine_time">
                                                                     </x-input-text>
                                                                 </div>
+                                                             </div>
                                                                 <!-- input-group -->
-                                                            </div>
+                                                           
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="night_eating_medicine_time_secondary"
-                                                                        placeholder="">
+                                                                        name="night_eating_medicine_time_secondary">
                                                                     </x-input-text>
-                                                                </div>
-                                                                <!-- input-group -->
+                                                                </div> 
                                                             </div>
+                                                                <!-- input-group -->
+                                                         
 
                                                             <x-input-radio-or-check name="night_teeth_brash"
                                                                 label="দাঁত ব্রাশ করবে"
@@ -2262,8 +2176,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="night_teeth_brash_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="night_teeth_brash_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2272,14 +2185,11 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text
-                                                                        name="night_teeth_brash_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="night_teeth_brash_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
                                                             </div>
-
                                                             <x-input-radio-or-check name="night_changing_cloth"
                                                                 label="ড্রেস চেঞ্জ করবে/ রাতে শোবার ড্রেস পরবে"
                                                                 :records="$tripReportConstants::$help"
@@ -2290,8 +2200,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="night_changing_cloth_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="night_changing_cloth_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2300,16 +2209,13 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text
-                                                                        name="night_changing_cloth_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="night_changing_cloth_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
                                                             </div>
-
-                                                            <x-input-radio-or-check name="put_to_bed
-                                                                label=" বিছানা করা/ করে দেওয়া"
+                                                            <x-input-radio-or-check name="put_to_bed"
+                                                                label="বিছানা করা/ করে দেওয়া"
                                                                 :records="$tripReportConstants::$help"
                                                                 secondaryInputLabel="সাজেশন">
                                                             </x-input-radio-or-check>
@@ -2318,7 +2224,7 @@
                                                             <div class="mb-3">
                                                                 <label for="">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="put_to_bed_time" placeholder="">
+                                                                    <x-input-text name="put_to_bed_time" >
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2327,25 +2233,21 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="put_to_bed_time_secondary"
-                                                                        placeholder="">
+                                                                    <x-input-text name="put_to_bed_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
-                                                            </div>
-
+                                                            </div> 
                                                             <x-input-radio-or-check name="hanging_mosquito_nets"
                                                                 label="মশারি খাটানো/টাঙ্গানো"
                                                                 :records="$tripReportConstants::$help"
                                                                 secondaryInputLabel="সাজেশন">
                                                             </x-input-radio-or-check>
                                                             {{-- end row --}}
-
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="hanging_mosquito_nets_time"
-                                                                        placeholder="">
+                                                                    <x-input-text name="hanging_mosquito_nets_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2355,8 +2257,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="hanging_mosquito_nets_time_secondary"
-                                                                        placeholder="">
+                                                                        name="hanging_mosquito_nets_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2374,8 +2275,7 @@
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="turn_off_the_lights_and_go_to_bed_time"
-                                                                        placeholder="">
+                                                                        name="turn_off_the_lights_and_go_to_bed_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2385,8 +2285,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="turn_off_the_lights_and_go_to_bed_time_secondary"
-                                                                        placeholder="">
+                                                                        name="turn_off_the_lights_and_go_to_bed_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2400,7 +2299,7 @@
                                                                     Team</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text name="special_educator_team"
-                                                                        type="file" placeholder="">
+                                                                        type="file" >
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2409,8 +2308,7 @@
                                                                 <label for="basicpill-firstname-input">Special Educator
                                                                     Team Name</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="special_educator_team_name"
-                                                                        placeholder="">
+                                                                    <x-input-text name="special_educator_team_name">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2419,7 +2317,7 @@
                                                                 <label for="basicpill-firstname-input">Guardian</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text name="special_educator_team"
-                                                                        type="file" placeholder="">
+                                                                        type="file">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2428,7 +2326,7 @@
                                                                 <label for="basicpill-firstname-input">Guardian
                                                                     Name</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="guardian_name" placeholder="">
+                                                                    <x-input-text name="guardian_name">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2437,7 +2335,7 @@
                                                                 <label for="basicpill-firstname-input">Note, If
                                                                     any</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="note_if_any" placeholder="">
+                                                                    <x-input-text name="note_if_any" >
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2450,8 +2348,7 @@
                                                                 <div class="mb-3">
                                                                     <label for="basicpill-firstname-input">স্বাক্ষর-
                                                                         টিচার</label>
-                                                                    <x-input-text name="signature_teacher" type="file"
-                                                                        placeholder="">
+                                                                    <x-input-text name="signature_teacher" type="file">
                                                                     </x-input-text>
                                                                     <!-- input-group -->
                                                                 </div>
@@ -2461,7 +2358,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="signature_teacher_name_or_designation"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -2471,7 +2368,7 @@
                                                                         এর স্বাক্ষর</label>
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text name="supervisor_signature"
-                                                                            type="file" placeholder="">
+                                                                            type="file" >
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->
@@ -2482,7 +2379,7 @@
                                                                     <div class="input-group" id="datepicker2">
                                                                         <x-input-text
                                                                             name="supervisor_signature_name_or_designation"
-                                                                            placeholder="">
+>
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- input-group -->

@@ -4,12 +4,6 @@
 @section('css')@endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') Utility @endslot
-@slot('title') Students list @endslot
-@endcomponent
-{{-- code --}}
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -31,18 +25,18 @@
                     </div>
                     <div class="col-sm-12 col-md-6 text-end">
                         <label style="display: inline-flex;align-items: center;">Search:
-                            <input type="search" class="form-control form-control-sm" placeholder="">
+                         <input type="search" class="form-control form-control-sm" placeholder="">
                         </label>
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table w-100">
+                    <table class="table table-bordered w-100">
                         <thead>
-                            <tr>
+                            <tr class="table-primary">
                                 <th>Name & ID
                                     <span>
-                                        <i class="dripicons-arrow-thin-down"></i>
-                                        <i class="dripicons-arrow-thin-up"></i>
+                                     <i class="dripicons-arrow-thin-down"></i>
+                                     <i class="dripicons-arrow-thin-up"></i>
                                     </span>
                                 </th>
                                 <th>DOA</th>
@@ -98,7 +92,6 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </td>
-
                             </tr>
                             <tr>
                                 <td><a href="student.student_profile.profile">demo</a></td>
@@ -110,37 +103,30 @@
                                 <td>61</td>
                                 <td>2011/</td>
                                 <td>
-                                    <button type="button"
-                                        class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="mdi mdi-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                     <i class="mdi mdi-eye"></i>
                                     </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                                            class="fas fa-check"></i>
+                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> 
+                                     <i class="fas fa-check"></i>
                                     </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                                            class="fas fa-check"></i>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
+                                        <i class="fas fa-check"></i>
                                     </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="mdi mdi-pencil"></i>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                      <i class="mdi mdi-pencil"></i>
                                     </button>
                                     <button type="button"
                                         class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                         <i class="bx bx-dollar"></i>
                                     </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
-                                        data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" prescription>
-                                        <i class="fas fa-arrow-circle-right"></i>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1"
+                                      data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" prescription>
+                                      <i class="fas fa-arrow-circle-right"></i>
                                     </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                        <i class="fas fa-trash-alt"></i>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                      <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </td>
-
                             </tr>
                         </tbody>
                     </table>
@@ -211,7 +197,6 @@
                                     <div class="col-md-8" id="datepicker2">
                                         <x-input-text name="date_of_assesment" type="date" placeholder="mm/dd/yyyy">
                                         </x-input-text>
-
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -221,7 +206,6 @@
                                         </x-input-text>
                                     </div>
                                 </div>
-
                                 <div class="mb-3 row">
                                     <label for="example-password-input" class="col-md-4 col-form-label">Present
                                         Address:</label>
@@ -288,18 +272,8 @@
                                     <label class="col-md-4 col-form-label">Status:</label>
                                     <div class="col-md-8">
                                         <div class="mb-3">
-                                          <select class="form-control select2 form-select">
-                                            <option value="0">Select</option>
-                                            <option value="0">Student Status</option>
-                                            <option value="1">New</option>
-                                            <option value="2">Regular</option>
-                                            <option value="3">Part Time</option>
-                                            <option value="4">Drop-Out</option>
-                                            <option value="5">Discontinued</option>
-                                            <option value="6">Wages Employment</option>
-                                            <option value="7">Sheltered Employment</option>
-                                            <option value="8">Self Employment</option>
-                                          </select>
+                                            <x-input-select name="student_id"
+                                            :records="[]" />
                                         </div>
                                       </div>
                                     </div>
@@ -307,14 +281,8 @@
                                     <label class="col-md-4 col-form-label">Stage:</label>
                                     <div class="col-md-8">
                                         <div class="mb-3">
-                                            <select class="form-control select2 form-select">
-                                              <option value="0">Select</option>
-                                              <option value="1">Student Stage</option>
-                                              <option value="2">Pre-Vocational</option>
-                                              <option value="3">Vocational</option>
-                                              <option value="4">independent</option>
-                                              <option value="5">Internship</option>
-                                            </select>
+                                            <x-input-select name="student_id"
+                :records="[]" />
                                           </div>
                                     </div>
                                 </div>
