@@ -412,9 +412,9 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table w-100">
+                                <table class="table table-bordered w-100">
                                     <thead>
-                                        <tr>
+                                        <tr class="table-primary">
                                             <th>Name & ID
                                                 <span>
                                                     <i class="dripicons-arrow-thin-down"></i>

@@ -36,9 +36,9 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table w-100">
+                    <table class="table table-bordered w-100">
                         <thead>
-                            <tr>
+                            <tr class="table-primary">
                                 <th>Name & ID
                                     <span>
                                         <i class="dripicons-arrow-thin-down"></i>
@@ -98,7 +98,6 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </td>
-
                             </tr>
                             <tr>
                                 <td><a href="student.student_profile.profile">demo</a></td>
@@ -288,18 +287,8 @@
                                     <label class="col-md-4 col-form-label">Status:</label>
                                     <div class="col-md-8">
                                         <div class="mb-3">
-                                          <select class="form-control select2 form-select">
-                                            <option value="0">Select</option>
-                                            <option value="0">Student Status</option>
-                                            <option value="1">New</option>
-                                            <option value="2">Regular</option>
-                                            <option value="3">Part Time</option>
-                                            <option value="4">Drop-Out</option>
-                                            <option value="5">Discontinued</option>
-                                            <option value="6">Wages Employment</option>
-                                            <option value="7">Sheltered Employment</option>
-                                            <option value="8">Self Employment</option>
-                                          </select>
+                                            <x-input-select name="student_id"
+                                            :records="[]" />
                                         </div>
                                       </div>
                                     </div>
@@ -307,14 +296,8 @@
                                     <label class="col-md-4 col-form-label">Stage:</label>
                                     <div class="col-md-8">
                                         <div class="mb-3">
-                                            <select class="form-control select2 form-select">
-                                              <option value="0">Select</option>
-                                              <option value="1">Student Stage</option>
-                                              <option value="2">Pre-Vocational</option>
-                                              <option value="3">Vocational</option>
-                                              <option value="4">independent</option>
-                                              <option value="5">Internship</option>
-                                            </select>
+                                            <x-input-select name="student_id"
+                :records="[]" />
                                           </div>
                                     </div>
                                 </div>
