@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\IndividualRisk;
-use App\Http\Requests\StoreIndividualRiskRequest;
+use App\Http\Requests\IndividualRiskRequest;
 use App\Http\Requests\UpdateIndividualRiskRequest;
 
 class IndividualRiskController extends Controller
@@ -35,12 +35,13 @@ class IndividualRiskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreIndividualRiskRequest  $request
+     * @param  \App\Http\Requests\IndividualRiskRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreIndividualRiskRequest $request)
+    public function store(IndividualRiskRequest $request)
     {
-        dd($request->all());
+
     }
 
     /**

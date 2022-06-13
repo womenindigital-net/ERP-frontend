@@ -13,8 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('individual_risks', function (Blueprint $table) {
+        Schema::create('individual_risks', function(Blueprint $table)
+        {
             $table->id();
+            $table->string('collection_date')->nullable();
+            $table->foreignIdFor(\App\Models\Student::class, 'student_id')->nullable()->constrained('students')->cascadeOnDelete();
+            $table->string('causeof_hazzard')->nullable();
+            $table->string('possible_concerns')->nullable();
+            $table->string('risk_rating')->nullable();
+            $table->string('action_to_reduce_hazard')->nullable();
+            $table->string('level_of_risk')->nullable();
+            $table->string('likelihood')->nullable();
+            $table->string('consequences')->nullable();
+            $table->string('staff_signature')->nullable();
+            $table->string('staff_name')->nullable();
+            $table->string('signature_of_support_worker')->nullable();
+            $table->string('support_worker_name')->nullable();
             $table->timestamps();
         });
     }

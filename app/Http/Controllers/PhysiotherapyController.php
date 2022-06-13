@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Physiotherapy;
-use App\Http\Requests\StorePhysiotherapyRequest;
+use App\Http\Requests\PhysiotherapyRequest;
 use App\Http\Requests\UpdatePhysiotherapyRequest;
 
 class PhysiotherapyController extends Controller
@@ -35,10 +35,11 @@ class PhysiotherapyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePhysiotherapyRequest  $request
+     * @param  \App\Http\Requests\PhysiotherapyRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePhysiotherapyRequest $request)
+    public function store(PhysiotherapyRequest $request)
     {
         //
     }
@@ -72,7 +73,7 @@ class PhysiotherapyController extends Controller
      * @param  \App\Models\Physiotherapy  $physiotherapy
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePhysiotherapyRequest $request, Physiotherapy $physiotherapy)
+    public function update(PhysiotherapyRequest $request, Physiotherapy $physiotherapy)
     {
         //
     }

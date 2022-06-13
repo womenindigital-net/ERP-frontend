@@ -71,6 +71,6 @@ if (!function_exists('dataPerPage')) {
 if (!function_exists('convertLevelIntoName')) {
     function convertLevelIntoName($label): string
     {
-        return preg_replace(['/\//', '/&|\s+|-/', '/\?|\.|,|\'|’|“/', '/_{2}/'], ['_or_', '_', '', '_'], strtolower(trim($label)));
+        return preg_replace(['/\//', '/&|\s+|-/', '/\?|\.|,|\'|’|“|:/', '/_{2}/'], ['_or_', '_', '', '_'], strtolower(trim($label)));
     }
 }

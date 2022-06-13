@@ -1,9 +1,4 @@
 @extends('layouts.master')
-
-@section('title')
-    @lang('translation.Starter_Page')
-@endsection
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 @endsection
@@ -51,7 +46,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form>
+                                                <form method="post" action="{{route('drama-diary-evaluation.store')}}">
+                                                    @csrf
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
                                                             <section>
@@ -70,7 +66,7 @@
                                                                         <div class="mb-3">
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
-                                                                            <x-input-select name="teachar_id"
+                                                                            <x-input-select name="teacher_id"
                                                                                 :records="[]" />
                                                                         </div>
                                                                     </div>

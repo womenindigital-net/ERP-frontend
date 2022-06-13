@@ -1,9 +1,4 @@
 @extends('layouts.master')
-
-@section('title')
-    @lang('translation.Starter_Page')
-@endsection
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 @endsection
@@ -51,7 +46,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form>
+                                                <form method="post" action="{{route('staff-and-workplaceinspection.store')}}">
+                                                    @csrf
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
                                                             <section>
@@ -230,7 +226,7 @@
                                                                     <div class="col-xl-12 col-sm-12">
                                                                         <div class="m-0">
                                                                             <h5 class="mb-4">তারিখ</h5>
-                                                                            <x-input-text type="date" name="dtae">
+                                                                            <x-input-text type="date" name="date">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -250,7 +246,7 @@
                                                                 class='btn btn-primary waves-effect waves-light btn-next'
                                                                 name='next' value='Next' />
                                                             <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                                wire:click='save' value='Finish' />
+                                                                value='Finish' />
                                                         </div>
                                                     </div>
                                                 </form>
