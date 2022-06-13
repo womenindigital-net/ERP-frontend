@@ -1,16 +1,10 @@
 @extends('layouts.master')
-
-@section('title')
-    @lang('translation.Starter_Page')
-@endsection
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
     <style>
         .wizard .steps>ul>li a {
             padding-right: 0 !important;
         }
-
         .wizard .steps>ul>li a {
             padding-left: 5px !important;
         }
@@ -76,7 +70,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form>
+                                                <form method="post" action="{{route('functional-communication.store')}}">
+                                                    @csrf
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
                                                             <section>
@@ -123,7 +118,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
@@ -866,7 +860,7 @@
                                                                 class='btn btn-primary waves-effect waves-light btn-next'
                                                                 name='next' value='Next' />
                                                             <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                                wire:click='save' value='Finish' />
+                                                                value='Finish' />
                                                         </div>
                                                     </div>
                                                 </form>

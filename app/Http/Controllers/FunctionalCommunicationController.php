@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FunctionalCommunication;
-use App\Http\Requests\StoreFunctionalCommunicationRequest;
+use App\Http\Requests\FunctionalCommunicationRequest;
 use App\Http\Requests\UpdateFunctionalCommunicationRequest;
 
 class FunctionalCommunicationController extends Controller
@@ -35,10 +35,11 @@ class FunctionalCommunicationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreFunctionalCommunicationRequest  $request
+     * @param  \App\Http\Requests\FunctionalCommunicationRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFunctionalCommunicationRequest $request)
+    public function store(FunctionalCommunicationRequest $request)
     {
         //
     }
@@ -72,7 +73,7 @@ class FunctionalCommunicationController extends Controller
      * @param  \App\Models\FunctionalCommunication  $functionalCommunication
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFunctionalCommunicationRequest $request, FunctionalCommunication $functionalCommunication)
+    public function update(FunctionalCommunicationRequest $request, FunctionalCommunication $functionalCommunication)
     {
         //
     }

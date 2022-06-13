@@ -22,7 +22,10 @@ use App\Utility\BreadcrumbsMappingConstants;
 use App\Utility\IndividualRiskAssessmentForm;
 use App\Utility\OccupationalTherapyConstants;
 use App\Utility\individual_risk_assessment_form;
+use App\Utility\FunctionalMovementSkillsConstents;
 use App\Utility\MitpConstent;
+
+
 
 
 
@@ -72,6 +75,7 @@ class ViewServiceProvider extends ServiceProvider
         View::share('mitpConstent', MitpConstent::class);
         View::share('caseConstants', CaseHistoryConstants::class);
         View::share('staffAndWork', StaffAndWorkPlace::class);
+        View::share('movementSkillsConstants', FunctionalMovementSkillsConstents::class);
         /*
         View::share('careConstants', CareNeedsFormConstants::class);
         View::share('functionalConstants', FunctionalMovement::class);
