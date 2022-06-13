@@ -1,511 +1,535 @@
 @extends('layouts.master')
-
-@section('title') @lang('translation.Starter_Page') @endsection
-
 @section('css')
-<style>
-  .wizard .steps>ul>li a{
-    padding-right: 0 !important;
-  }
-  .wizard .steps>ul>li a{
-    padding-left: 5px !important;
-  }
-</style>
-
+    <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
+    <style>
+        .wizard .steps>ul>li a {
+            padding-right: 0 !important;
+        }
+        .wizard .steps>ul>li a {
+            padding-left: 5px !important;
+        }
+    </style>
 @endsection
 
 @section('content')
+    <div class="row">
+        <div class="col-xl-12 p-0">
+            <div class="card">
+                <div class="card-body p-0">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
+                                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                <span class="d-none d-sm-block">Add</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
+                                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                <span class="d-none d-sm-block">List</span>
+                            </a>
+                        </li>
+                    </ul>
 
-<div class="row mb-3 mt-3">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-body">
-        <div class="row mb-3 mt-3">
-          <div class="col-6">
-            <h4 class="card-title">STUDENT QAS</h4>
-          </div>
-        
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                  class="form-control form-control-sm form-select form-select-sm">
-                  <option value="10">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select> entries
-              </label>
+                    <!-- Tab panes -->
+                    <div class="tab-content p-3 text-muted">
+                        <div class="tab-pane active" id="case-histroy" role="tabpanel">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Wizard container -->
+                                    <div class="wizard-container">
+                                        <div class="card_stap wizard-card row" data-color="red" id="wizard">
+                                            <div class="col-sm-3 col-md-3">
+                                                <div id="wizard-navigation">
+                                                    <ul class="wizard-navigation">
+                                                        <li class="w-100"><a href="#Social_Communication"
+                                                                data-toggle="tab">General</a></li>
+                                                        <li class="w-100"><a href="#Pragmatic_Objective"
+                                                                data-toggle="tab">Foot</a>
+                                                        </li>
+                                                        <li class="w-100"><a href="#PERSONAL"
+                                                                data-toggle="tab">Ankle</a></li>
+                                                        <li class="w-100"><a href="#Topic_Maintenance"
+                                                                data-toggle="tab">Knee</a></li>
+                                                        <li class="w-100"><a href="#Conversational_Structure"
+                                                                data-toggle="tab">Hip</a></li>
+                                                        <li class="w-100"><a href="#Word_Structure"
+                                                                data-toggle="tab">Low Back</a></li>
+                                                        <li class="w-100"><a href="#Manner_Effectiveness"
+                                                                data-toggle="tab">Mid Back</a></li>
+                                                        <li class="w-100"><a href="#Repair_Structures"
+                                                                data-toggle="tab">Shoulder</a></li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-9 col-md-9">
+                                                <form method="post" action="{{route('functional-communication.store')}}">
+                                                    @csrf
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane" id="Social_Communication">
+                                                            <h3>Fundamental Movement Skills</h3>
+                                                            <section>
+                                                                <div class="row mb-3 mt-3">
+                                                                  <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                      <label for="basicpill-firstname-input">Collection Date:</label>
+                                                                      <div class="input-group" id="datepicker2">
+                                                                        <input type="date" class="form-control" placeholder="dd M, yyyy">
+                                                                      </div><!-- input-group -->
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                      <label for="basicpill-lastname-input">Teacher:</label>
+                                                                      <x-input-select name="teacher_id" :records="[]" />
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                      <label for="basicpill-phoneno-input">Candidate ID:</label>
+                                                                      <x-input-select name="candidate_id" :records="[]" />
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="row ">
+                                                                  <div class="col-lg-12">
+                                                                    <div class="mb-3">
+                                                                      <label for="verticalnav-phoneno-input">Description:</label>
+                                                                     <p>Sensory checklist</p>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="col-lg-12">
+                                                                    <div class="mb-3">
+                                                                      <label for="verticalnav-email-input">Instruction:</label>
+                                                                    <p>Parents can use this checklist to identify potential sensory challenges for their Child. The checklist is designed to target specific areas of potential dysfunction and to give you an opportunity to look at child’s environment and assess potential triggers for challenging behaviors. Read the statements and put a check mark or an X next to any statements that are true.</p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Pragmatic_Objective">
+                                                            <h3>General</h3>
+                                                            <section>
+                                                                    <div class="row mb-3 mt-3">
+                                                                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                      <div class="col-md-8">On the left is the Deep Squat test from the Functional Movement Screen.
+                                                                        Note that the stick is maintained vertically aligned with the feet, representing good mobility/stability through the trunk and shoulders.
+                                                                        For the max score of “3”, this is the position you must achieve. On the right, the stick is well forward of the body, indicating deficits in mobility, stability, or both. Pls check 4 times :</div>
+                                                                    </div>
+                                                                <!-- end row -->
+                                                                <div class="row border-top py-2">
+                                                                  <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                      <div class="form-check d-flex">
+                                                                        <div class="me-5">
+                                                                          <x-input-radio-or-check name="functional_movement_general_1" :records="$movementSkillsConstants::$accidentOrIncident" />
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="row border-top py-2">
+                                                                  <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                      <div class="form-check d-flex">
+                                                                        <div class="me-5">
+                                                                          <x-input-radio-or-check name="functional_movement_general_2" :records="$movementSkillsConstants::$accidentOrIncident" />
+                                                                        </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div id="" class="">
+                                                                    <div class="row mb-3 mt-3">
+                                                                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                      <div class="col-md-8">	
+                                                                        In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates</div>
+                                                                    </div>
+                                                                </div>
+                                                                <h5>Excessive hip rotation to clear the hurdle</h5>
+                                                                <div id="" class="">
+                                                                    <div class="row mb-3 mt-3">
+                                                                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                      <div class="col-md-8">	
+                                                                        In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates 
+                                                                      </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row border-top py-2">
+                                                                  <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                      <h5>Poor control of trunk indicated by the tilting stick?</h5>
+                                                                      <div class="form-check d-flex">
+                                                                        <div class="me-5">
+                                                                          <x-input-radio-or-check name="functional_movement_general_3" :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="PERSONAL">
+                                                            <h3>Foot</h3>
+                                                            <section>
+                                                              <div>
+                                                                <form >
+                                                                  <div id="" class="">
+                                                                      <div class="row mb-3 mt-3">
+                                                                        <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                        <div class="col-md-8">To improve the stability of the feet, single-leg stance exercises with bare feet are useful.
+                                                                          Shown here are diagonal leg whips on the left and rotational reaches on the right. Gently grip the ground with the toes. Keep a tall posture and limit trunk sway. Start with short, slow movements and gradually add the range of motion and speed as proficiency improves.</div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_foot_1" :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                              </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Topic_Maintenance">
+                                                            <h3>Ankle</h3>
+                                                            <section>
+                                                              <div>
+                                                                <div class="row mb-3 mt-3">
+                                                                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                  <div class="col-md-8">Ankle: The picture on the left shows optimal ankle flexion just before the heel rises during the walking stride. The picture on the right shows limited ankle flexion and is associated with an inefficient stride. </div>
+                                                                </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_ankle_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                              </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Conversational_Structure">
+                                                            <h3>Knee</h3>
+                                                            <section>
+                                                              <div>
+                                                                  <div id="" class="">
+                                                                      <div class="row mb-3 mt-3">
+                                                                        <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                        <div class="col-md-8">On the left, side stepping against the elastic band builds lateral hip stability and thus better control of knee motion. Ensure that the trunk doesn't sway.
+                                                                          On the right, the medial pull of the elastic band adds challenge to lunges or single-leg squats. Ensure that the knee of the stance leg does not drift inward.</div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_knee_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div id="" class="">
+                                                                      <div class="row mb-3 mt-3">
+                                                                        <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                        <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
+                                                                          Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_knee_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="row mb-3 mt-3">
+                                                                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                  </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_knee_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                              </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Word_Structure">
+                                                            <h3> Hip</h3>
+                                                            <section>
+                                                              <div>
+                                                                <div class="row mb-3 mt-3">
+                                                                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                  <div class="col-md-8">The single-leg squat variation shown on the left is a strong challenge to the hip stabilizers. The picture on the right shows excellent mobility of the right hip into extension during a lunge. This is also the position for stretch of the hip flexors of the right leg.
+                                                                  </div>
+                                                                </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_hip_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="row mb-3 mt-3">
+                                                                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                    <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
+                                                                      Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
+                                                                  </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_hip_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                              </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Manner_Effectiveness">
+                                                            <h3>Low Back</h3>
+                                                            <section>
+                                                              <div>
+                                                                  <div class="row mb-3 mt-3">
+                                                                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                    <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
+                                                                      Keep the core engaged throughout to limit trunk sway.
+                                                                    </div>
+                                                                  </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_low_back_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="row mb-3 mt-3">
+                                                                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                  </div>
+                                                                  <!-- end row -->
+                                                                  <div class="row border-top py-2">
+                                                                    <div class="col-xl-12 col-sm-12">
+                                                                      <div class="m-0">
+                                                                        <div class="form-check d-flex">
+                                                                          <div class="me-5">
+                                                                            <x-input-radio-or-check name="functional_movement_low_back_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                              </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Repair_Structures">
+                                                            <h3>Mid Back</h3>
+                                                            <section>
+                                                              <div class="row mb-3 mt-3">
+                                                                <div class="row mb-3 mt-3">
+                                                                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                  <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
+                                                                    Keep the core engaged throughout to limit trunk sway.
+                                                                  </div>
+                                                                </div>
+                                                                <!-- end row -->
+                                                                <div class="row border-top py-2">
+                                                                  <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                      <div class="form-check d-flex">
+                                                                        <div class="me-5">
+                                                                          <x-input-radio-or-check name="functional_movement_mid_back_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="tab-pane" id="Functional_Intent">
+                                                           <h3>Shoulder </h3>
+                                                                <section>
+                                                                  <div class="row mb-3 mt-3">
+                                                                    <div class="row mb-3 mt-3">
+                                                                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                      <div class="col-md-8">Tight muscles around the shoulder blades can limit overhead motion. Here the foam roll is used to increase the extensibility of the teres major. 
+                                                                      </div>
+                                                                    </div>
+                                                                    <!-- end row -->
+                                                                    <div class="row border-top py-2">
+                                                                      <div class="col-xl-12 col-sm-12">
+                                                                        <div class="m-0">
+                                                                          <div class="form-check d-flex">
+                                                                            <div class="me-5">
+                                                                              <x-input-radio-or-check name="functional_movement_shoulder_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="row mb-3 mt-3">
+                                                                      <div class="row mb-3 mt-3">
+                                                                        <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                        <div class="col-md-8">Overhead squatting is a challenge to stability throughout the core and shoulder girdle. Ensure you have sufficient shoulder mobility to keep the weight vertically aligned with the feet, not in front of the body.
+                                                                        </div>
+                                                                      </div>
+                                                                      <!-- end row -->
+                                                                      <div class="row border-top py-2">
+                                                                        <div class="col-xl-12 col-sm-12">
+                                                                          <div class="m-0">
+                                                                            <div class="form-check d-flex">
+                                                                              <div class="me-5">
+                                                                                <x-input-radio-or-check name="functional_movement_shoulder_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="row mb-3 mt-3">                  
+                                                                      <div class="row mb-3 mt-3">
+                                                                        <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                                                                      </div>
+                                                                    <!-- end row -->
+                                                                    <div class="row border-top py-2">
+                                                                      <div class="col-xl-12 col-sm-12">
+                                                                        <div class="m-0">
+                                                                          <div class="form-check d-flex">
+                                                                            <div class="me-5">
+                                                                              <x-input-radio-or-check name="functional_movement_shoulder_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </section>
+                                                        </div>
+
+                                                    
+                                                    </div>
+                                                    <div class="wizard-footer d-flex justify-content-between">
+                                                        <div class="pull-left">
+                                                            <input type='button'
+                                                                class='btn btn-primary waves-effect waves-light btn-previous'
+                                                                name='previous' value='Previous' />
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <input type='button'
+                                                                class='btn btn-primary waves-effect waves-light btn-next'
+                                                                name='next' value='Next' />
+                                                            <input type="submit" class='btn btn-finish btn-fill btn-danger'
+                                                                value='Finish' />
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> <!-- wizard container -->
+                                </div>
+                            </div> <!-- end col -->
+                        </div>
+                        <div class="tab-pane " id="case-histroy_list" role="tabpanel">
+                            <!-- form start -->
+                            <div class="table-responsive">
+                                <table class="table table-bordered w-100">
+                                    <thead>
+                                        <tr class="table-primary">
+                                            <th>Collection Date</th>
+                                            <th>Student Name</th>
+                                            <th>Collected By</th>
+                                            <th>Log</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2022-05-15</td>
+                                            <td>Abid Hossain Turjo</td>
+                                            <td>Ohidul Hassan</td>
+                                            <td>Create: Ohidul Hassan @ 2022-05-15 17:24:20</td>
+                                            <td>
+                                              <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                                <i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"></i>
+                                              </button>
+                                              <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                                  class="fas fa-check"></i>
+                                              </button>
+                                              <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                                  class="fas fa-check"></i>
+                                              </button>
+                                              <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                                                <i class="mdi mdi-pencil"></i>
+                                              </button>
+                                              <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                <i class="bx bx-dollar"></i>
+                                              </button>
+                                              <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                <i class="fas fa-arrow-circle-right"></i>
+                                              </button>
+                                              <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                                <i class="fas fa-trash-alt"></i>
+                                              </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-6 text-end">
-              <label style="display: inline-flex;align-items: center;">Search:
-                <x-input-text type="search" name="search" />
-              </label>
-            </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-bordered w-100">
-              <thead>
-                <tr class="table-primary">
-                  <th>Collection Date</th>
-                  <th>Student Name</th>
-                  <th>Collected By</th>
-                  <th>Log</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2022-05-15</td>
-                  <td>Abid Hossain Turjo</td>
-                  <td>Ohidul Hassan</td>
-                  <td>Create: Ohidul Hassan @ 2022-05-15 17:24:20</td>
-                  <td>
-                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="mdi mdi-eye" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                        class="fas fa-check"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                        class="fas fa-check"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
-                      <i class="mdi mdi-pencil"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="bx bx-dollar"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                      <i class="fas fa-arrow-circle-right"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              Showing 1 to 2 of 2 entries
-            </div>
-            <div class="col-sm-12 col-md-6 text-end">
-              <nav>
-                <ul class="pagination" style="justify-content: end;">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
         </div>
-      </div>
-    </div> <!-- end col -->
-  </div> <!-- end row -->
-</div>
-<!--  Large modal example -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="myLargeModalLabel"> Fundamental Movement Skills</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div id="vertical-example" class="vertical-wizard">
-          <!-- Seller Details -->
-          <h3>Fundamental Movement Skills</h3>
-          <section>
-              <div class="row mb-3 mt-3">
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="basicpill-firstname-input">Collection Date:</label>
-                    <div class="input-group" id="datepicker2">
-                      <input type="date" class="form-control" placeholder="dd M, yyyy">
-                    </div><!-- input-group -->
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="basicpill-lastname-input">Teacher:</label>
-                    <x-input-select name="teacher_id" :records="[]" />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="basicpill-phoneno-input">Candidate ID:</label>
-                    <x-input-select name="candidate_id" :records="[]" />
-                  </div>
-                </div>
-              </div>
-              <div class="row ">
-                <div class="col-lg-12">
-                  <div class="mb-3">
-                    <label for="verticalnav-phoneno-input">Description:</label>
-                   <p>Sensory checklist</p>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="mb-3">
-                    <label for="verticalnav-email-input">Instruction:</label>
-                  <p>Parents can use this checklist to identify potential sensory challenges for their Child. The checklist is designed to target specific areas of potential dysfunction and to give you an opportunity to look at child’s environment and assess potential triggers for challenging behaviors. Read the statements and put a check mark or an X next to any statements that are true.</p>
-                  </div>
-                </div>
-              </div>
-          </section>
-
-          <!-- Company Document -->
-          <h3>General</h3>
-          <section>
-                  <div class="row mb-3 mt-3">
-                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                    <div class="col-md-8">On the left is the Deep Squat test from the Functional Movement Screen.
-                      Note that the stick is maintained vertically aligned with the feet, representing good mobility/stability through the trunk and shoulders.
-                      For the max score of “3”, this is the position you must achieve. On the right, the stick is well forward of the body, indicating deficits in mobility, stability, or both. Pls check 4 times :</div>
-                  </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <x-input-radio-or-check name="functional_movement_general_1" :records="$movementSkillsConstants::$accidentOrIncident" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <x-input-radio-or-check name="functional_movement_general_2" :records="$movementSkillsConstants::$accidentOrIncident" />
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div id="" class="">
-                  <div class="row mb-3 mt-3">
-                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                    <div class="col-md-8">	
-                      In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates</div>
-                  </div>
-              </div>
-              <h5>Excessive hip rotation to clear the hurdle</h5>
-              <div id="" class="">
-                  <div class="row mb-3 mt-3">
-                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                    <div class="col-md-8">	
-                      In these pictures, the Hurdle Step evaluates mobility of the right hip and stability of the trunk and left leg. Optimal execution is shown on the left. The picture on the right demonstrates 
-                    </div>
-                  </div>
-              </div>
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <h5>Poor control of trunk indicated by the tilting stick?</h5>
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <x-input-radio-or-check name="functional_movement_general_3" :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-          </section>
-          <!-- Bank Details -->
-          <h3>Foot</h3>
-          <section>
-            <div>
-              <form >
-                <div id="" class="">
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">To improve the stability of the feet, single-leg stance exercises with bare feet are useful.
-                        Shown here are diagonal leg whips on the left and rotational reaches on the right. Gently grip the ground with the toes. Keep a tall posture and limit trunk sway. Start with short, slow movements and gradually add the range of motion and speed as proficiency improves.</div>
-                    </div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_foot_1" :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-           
-            </div>
-          </section>
-
-          <!-- Bank Details -->
-          <h3>Ankle</h3>
-          <section>
-            <div>
-              <div class="row mb-3 mt-3">
-                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                <div class="col-md-8">Ankle: The picture on the left shows optimal ankle flexion just before the heel rises during the walking stride. The picture on the right shows limited ankle flexion and is associated with an inefficient stride. </div>
-              </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_ankle_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </section>
-          <!-- Bank Details -->
-          <h3>Knee</h3>
-          <section>
-            <div>
-                <div id="" class="">
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">On the left, side stepping against the elastic band builds lateral hip stability and thus better control of knee motion. Ensure that the trunk doesn't sway.
-                        On the right, the medial pull of the elastic band adds challenge to lunges or single-leg squats. Ensure that the knee of the stance leg does not drift inward.</div>
-                    </div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_knee_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="" class="">
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
-                        Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
-                    </div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_knee_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mb-3 mt-3">
-                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_knee_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </section>
-          <!-- Bank Details -->
-          <h3> Hip</h3>
-          <section>
-            <div>
-              <div class="row mb-3 mt-3">
-                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                <div class="col-md-8">The single-leg squat variation shown on the left is a strong challenge to the hip stabilizers. The picture on the right shows excellent mobility of the right hip into extension during a lunge. This is also the position for stretch of the hip flexors of the right leg.
-                </div>
-              </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_hip_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mb-3 mt-3">
-                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                  <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
-                    Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_hip_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </section>
-          <!-- Bank Details -->
-          <h3>Low Back</h3>
-          <section>
-            <div>
-                <div class="row mb-3 mt-3">
-                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                  <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
-                    Keep the core engaged throughout to limit trunk sway.
-                  </div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_low_back_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mb-3 mt-3">
-                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_low_back_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </section>
-          <!-- Bank Details -->
-          <h3>Mid Back</h3>
-          <section>
-            <div class="row mb-3 mt-3">
-              <div class="row mb-3 mt-3">
-                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
-                  Keep the core engaged throughout to limit trunk sway.
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <x-input-radio-or-check name="functional_movement_mid_back_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Bank Details -->
-          <h3>Shoulder </h3>
-          <section>
-            <div class="row mb-3 mt-3">
-              <div class="row mb-3 mt-3">
-                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                <div class="col-md-8">Tight muscles around the shoulder blades can limit overhead motion. Here the foam roll is used to increase the extensibility of the teres major. 
-                </div>
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <x-input-radio-or-check name="functional_movement_shoulder_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row mb-3 mt-3">
-                <div class="row mb-3 mt-3">
-                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                  <div class="col-md-8">Overhead squatting is a challenge to stability throughout the core and shoulder girdle. Ensure you have sufficient shoulder mobility to keep the weight vertically aligned with the feet, not in front of the body.
-                  </div>
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <x-input-radio-or-check name="functional_movement_shoulder_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mb-3 mt-3">                  
-                <div class="row mb-3 mt-3">
-                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <x-input-radio-or-check name="functional_movement_shoulder_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    </div>
+    <!-- end col -->
+    <!-- end row -->
 
 @endsection
 
 @section('script')
-
-<!-- jquery step -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
+    <!-- jquery step -->
 <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
 
 <!-- form wizard init -->
@@ -517,5 +541,4 @@
 
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
 @endsection
