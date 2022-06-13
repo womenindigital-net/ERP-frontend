@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('setting')->nullable();
             $table->string('duration')->nullable();
             $table->string('action_taken')->nullable();
-            $table->string('what_is_the_previous_cause_of_incident_or_antecedent_behavior')->nullable();
+            $table->json('previous_causes')->nullable();
             $table->timestamps();
         });
     }
