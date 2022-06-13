@@ -67,7 +67,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('appointment', AppointmentList::class)->name('student.appointment');
     //    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
     Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
-    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
+    // Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
     //    Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
 
@@ -84,13 +84,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
     //    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
     //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
-    Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
+    // Route::get('assessment/social-communication', [\App\Http\Controllers\SocialController::class, 'create']);
 
 
     //    Route::get('assessment/social-communication', [StudentController::class, 'socialCommunication'])->name('social.communication');
-    Route::get('assessment/social-communication', [SocialController::class, 'create']);
+    // Route::get('assessment/social-communication', [SocialController::class, 'create']);
 
-    Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
+    // Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
     Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');
     Route::get('assessment/executive-function-test', [StudentController::class, 'executiveFunctionTest'])->name('executive.function.test');
     Route::get('assessment/autism-behavior-checklist', [StudentController::class, 'autismBehaviorChecklist'])->name('autism.behavior.checklist');

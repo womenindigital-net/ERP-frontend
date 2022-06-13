@@ -59,7 +59,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('caseConstants', CaseHistoryConstants::class);
         });
 
-        View::composer(['pre_admission.care-needs-form'], function ($view) {
+        View::composer(['pre_admission.care-need.create'], function ($view) {
             $view->with('careConstants', CareNeedsFormConstants::class);
         });
         View::share('therapyConstants', OccupationalTherapyConstants::class);

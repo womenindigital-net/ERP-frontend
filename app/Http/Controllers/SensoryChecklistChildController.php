@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\SensoryChecklistChild;
 use App\Http\Requests\StoreSensoryChecklistChildRequest;
 use App\Http\Requests\UpdateSensoryChecklistChildRequest;
+use App\Traits\OnlyStore;
 
 class SensoryChecklistChildController extends Controller
 {
+    use OnlyStore;
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +42,7 @@ class SensoryChecklistChildController extends Controller
      */
     public function store(StoreSensoryChecklistChildRequest $request)
     {
-        //
+        store($request->validated());
     }
 
     /**
