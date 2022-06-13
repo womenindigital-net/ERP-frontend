@@ -16,11 +16,6 @@
 
 @section('content')
 
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')STUDENT QA @endslot
-@endcomponent
-
 <div class="row mb-3 mt-3">
   <div class="col-12">
     <div class="card">
@@ -43,7 +38,7 @@
             </div>
             <div class="col-sm-12 col-md-6 text-end">
               <label style="display: inline-flex;align-items: center;">Search:
-                <input type="search" class="form-control form-control-sm" placeholder="">
+                <x-input-text type="search" name="search" />
               </label>
             </div>
           </div>
@@ -132,7 +127,6 @@
           <!-- Seller Details -->
           <h3>Fundamental Movement Skills</h3>
           <section>
-            <form >
               <div class="row mb-3 mt-3">
                 <div class="col-lg-4">
                   <div class="mb-3">
@@ -145,15 +139,13 @@
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-lastname-input">Teacher:</label>
-                    <x-input-select name="teacher_id"
-                :records="[]" />
+                    <x-input-select name="teacher_id" :records="[]" />
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="mb-3">
                     <label for="basicpill-phoneno-input">Candidate ID:</label>
-                    <x-input-select name="candidate_id"
-                :records="[]" />
+                    <x-input-select name="candidate_id" :records="[]" />
                   </div>
                 </div>
               </div>
@@ -171,41 +163,24 @@
                   </div>
                 </div>
               </div>
-            </form>
           </section>
 
           <!-- Company Document -->
           <h3>General</h3>
           <section>
-            <form >
-              <div id="" class="class="">
                   <div class="row mb-3 mt-3">
                     <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
                     <div class="col-md-8">On the left is the Deep Squat test from the Functional Movement Screen.
                       Note that the stick is maintained vertically aligned with the feet, representing good mobility/stability through the trunk and shoulders.
                       For the max score of “3”, this is the position you must achieve. On the right, the stick is well forward of the body, indicating deficits in mobility, stability, or both. Pls check 4 times :</div>
                   </div>
-              </div>
               <!-- end row -->
               <div class="row border-top py-2">
                 <div class="col-xl-12 col-sm-12">
                   <div class="m-0">
                     <div class="form-check d-flex">
                       <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 1: Can do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 1: Can not do </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 2: Can do </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 2: Can not do </label>
+                        <x-input-radio-or-check name="functional_movement_general_1" :records="$movementSkillsConstants::$accidentOrIncident" />
                       </div>
                     </div>
                   </div>
@@ -216,22 +191,8 @@
                   <div class="m-0">
                     <div class="form-check d-flex">
                       <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 3: Can do</label>
+                        <x-input-radio-or-check name="functional_movement_general_2" :records="$movementSkillsConstants::$accidentOrIncident" />
                       </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 3: Can not do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 4: Can do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 4: Can not do</label>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -257,20 +218,14 @@
                     <h5>Poor control of trunk indicated by the tilting stick?</h5>
                     <div class="form-check d-flex">
                       <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Can do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Can Not do</label>
+                        <x-input-radio-or-check name="functional_movement_general_3" :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </form>
+          
           </section>
-
           <!-- Bank Details -->
           <h3>Foot</h3>
           <section>
@@ -289,34 +244,13 @@
                     <div class="m-0">
                       <div class="form-check d-flex">
                         <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do  </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 4: Can not Do</label>
+                          <x-input-radio-or-check name="functional_movement_foot_1" :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </form>
+           
             </div>
           </section>
 
@@ -324,57 +258,28 @@
           <h3>Ankle</h3>
           <section>
             <div>
-              <form >
-                <div id="" class="">
-                
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">Ankle: The picture on the left shows optimal ankle flexion just before the heel rises during the walking stride. The picture on the right shows limited ankle flexion and is associated with an inefficient stride. </div>
-                    </div>
-                  
-                </div>
+              <div class="row mb-3 mt-3">
+                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                <div class="col-md-8">Ankle: The picture on the left shows optimal ankle flexion just before the heel rises during the walking stride. The picture on the right shows limited ankle flexion and is associated with an inefficient stride. </div>
+              </div>
                 <!-- end row -->
                 <div class="row border-top py-2">
                   <div class="col-xl-12 col-sm-12">
                     <div class="m-0">
                       <div class="form-check d-flex">
                         <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do Try</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
+                          <x-input-radio-or-check name="functional_movement_ankle_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </form>
             </div>
           </section>
-
           <!-- Bank Details -->
           <h3>Knee</h3>
           <section>
             <div>
-              <form >
                 <div id="" class="">
                     <div class="row mb-3 mt-3">
                       <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
@@ -388,28 +293,7 @@
                     <div class="m-0">
                       <div class="form-check d-flex">
                         <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
+                          <x-input-radio-or-check name="functional_movement_knee_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                         </div>
                       </div>
                     </div>
@@ -428,409 +312,174 @@
                     <div class="m-0">
                       <div class="form-check d-flex">
                         <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="" class="">
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                    </div>
-                  
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do Try</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </section>
-
-
-          <!-- Bank Details -->
-          <h3> Hip</h3>
-          <section>
-            <div>
-              <form >
-                <div id="" class="">
-                
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">The single-leg squat variation shown on the left is a strong challenge to the hip stabilizers. The picture on the right shows excellent mobility of the right hip into extension during a lunge. This is also the position for stretch of the hip flexors of the right leg.
-                      </div>
-                    </div>
-                  
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="" class="">
-                
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
-                        Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
-                    </div>
-                  
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </section>
-
-          <!-- Bank Details -->
-          <h3>Low Back</h3>
-          <section>
-            <div>
-              <form >
-                <div id="" class="">
-                
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
-                        Keep the core engaged throughout to limit trunk sway.
-                      </div>
-                    </div>
-                  
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="" class="">
-                
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                    </div>
-                  
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </section>
-
-
-          <!-- Bank Details -->
-          <h3>Mid Back</h3>
-          <section>
-            <div class="row mb-3 mt-3">
-              <div id="" class="">
-              
-                  <div class="row mb-3 mt-3">
-                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                    <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
-                      Keep the core engaged throughout to limit trunk sway.
-                    </div>
-                  </div>
-                
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 1: Can Do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 1: Can not Do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 2: Can DO</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 2: Can not DO</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 3: Can Do </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 3: Can not DO</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Bank Details -->
-          <h3>Shoulder </h3>
-          <section>
-            <div class="row mb-3 mt-3">
-              <div id="" class="">
-              
-                  <div class="row mb-3 mt-3">
-                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                    <div class="col-md-8">Tight muscles around the shoulder blades can limit overhead motion. Here the foam roll is used to increase the extensibility of the teres major. 
-                    </div>
-                  </div>
-                
-              </div>
-              <!-- end row -->
-              <div class="row border-top py-2">
-                <div class="col-xl-12 col-sm-12">
-                  <div class="m-0">
-                    <div class="form-check d-flex">
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 1: Can Do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 1: Can not Do</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 2: Can DO</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 2: Can not DO</label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 3: Can Do </label>
-                      </div>
-                      <div class="me-5">
-                        <input class="form-check-input" type="radio" name="formRadios">
-                        <label class="form-check-label">Try 3: Can not DO</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row mb-3 mt-3">
-                <div id="" class="">
-                
-                    <div class="row mb-3 mt-3">
-                      <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
-                      <div class="col-md-8">Overhead squatting is a challenge to stability throughout the core and shoulder girdle. Ensure you have sufficient shoulder mobility to keep the weight vertically aligned with the feet, not in front of the body.
-                      </div>
-                    </div>
-                  
-                </div>
-                <!-- end row -->
-                <div class="row border-top py-2">
-                  <div class="col-xl-12 col-sm-12">
-                    <div class="m-0">
-                      <div class="form-check d-flex">
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 1: Can not Do</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 2: Can not DO</label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can Do </label>
-                        </div>
-                        <div class="me-5">
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label">Try 3: Can not DO</label>
+                          <x-input-radio-or-check name="functional_movement_knee_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="row mb-3 mt-3">
-                  <div id="" class="">
-                  
-                      <div class="row mb-3 mt-3">
-                        <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                </div>
+                <!-- end row -->
+                <div class="row border-top py-2">
+                  <div class="col-xl-12 col-sm-12">
+                    <div class="m-0">
+                      <div class="form-check d-flex">
+                        <div class="me-5">
+                          <x-input-radio-or-check name="functional_movement_knee_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                        </div>
                       </div>
-                    
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </section>
+          <!-- Bank Details -->
+          <h3> Hip</h3>
+          <section>
+            <div>
+              <div class="row mb-3 mt-3">
+                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                <div class="col-md-8">The single-leg squat variation shown on the left is a strong challenge to the hip stabilizers. The picture on the right shows excellent mobility of the right hip into extension during a lunge. This is also the position for stretch of the hip flexors of the right leg.
+                </div>
+              </div>
+                <!-- end row -->
+                <div class="row border-top py-2">
+                  <div class="col-xl-12 col-sm-12">
+                    <div class="m-0">
+                      <div class="form-check d-flex">
+                        <div class="me-5">
+                          <x-input-radio-or-check name="functional_movement_hip_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                  <div class="col-md-8">	The single-leg squat with medial rotation. This exercise challenges hip and knee stability. Do not let the knee of the stance leg drift inward.
+                    Start with short, slow movements and gradually add range of motion and speed as proficiency improves.</div>
+                </div>
+                <!-- end row -->
+                <div class="row border-top py-2">
+                  <div class="col-xl-12 col-sm-12">
+                    <div class="m-0">
+                      <div class="form-check d-flex">
+                        <div class="me-5">
+                          <x-input-radio-or-check name="functional_movement_hip_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </section>
+          <!-- Bank Details -->
+          <h3>Low Back</h3>
+          <section>
+            <div>
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                  <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
+                    Keep the core engaged throughout to limit trunk sway.
+                  </div>
+                </div>
+                <!-- end row -->
+                <div class="row border-top py-2">
+                  <div class="col-xl-12 col-sm-12">
+                    <div class="m-0">
+                      <div class="form-check d-flex">
+                        <div class="me-5">
+                          <x-input-radio-or-check name="functional_movement_low_back_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                </div>
+                <!-- end row -->
+                <div class="row border-top py-2">
+                  <div class="col-xl-12 col-sm-12">
+                    <div class="m-0">
+                      <div class="form-check d-flex">
+                        <div class="me-5">
+                          <x-input-radio-or-check name="functional_movement_low_back_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </section>
+          <!-- Bank Details -->
+          <h3>Mid Back</h3>
+          <section>
+            <div class="row mb-3 mt-3">
+              <div class="row mb-3 mt-3">
+                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                <div class="col-md-8">Low Back: Walking lunges with a plate overhead demands control of the core.
+                  Keep the core engaged throughout to limit trunk sway.
+                </div>
+              </div>
+              <!-- end row -->
+              <div class="row border-top py-2">
+                <div class="col-xl-12 col-sm-12">
+                  <div class="m-0">
+                    <div class="form-check d-flex">
+                      <div class="me-5">
+                        <x-input-radio-or-check name="functional_movement_mid_back_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Bank Details -->
+          <h3>Shoulder </h3>
+          <section>
+            <div class="row mb-3 mt-3">
+              <div class="row mb-3 mt-3">
+                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                <div class="col-md-8">Tight muscles around the shoulder blades can limit overhead motion. Here the foam roll is used to increase the extensibility of the teres major. 
+                </div>
+              </div>
+              <!-- end row -->
+              <div class="row border-top py-2">
+                <div class="col-xl-12 col-sm-12">
+                  <div class="m-0">
+                    <div class="form-check d-flex">
+                      <div class="me-5">
+                        <x-input-radio-or-check name="functional_movement_shoulder_1" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3 mt-3">
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
+                  <div class="col-md-8">Overhead squatting is a challenge to stability throughout the core and shoulder girdle. Ensure you have sufficient shoulder mobility to keep the weight vertically aligned with the feet, not in front of the body.
+                  </div>
+                </div>
+                <!-- end row -->
+                <div class="row border-top py-2">
+                  <div class="col-xl-12 col-sm-12">
+                    <div class="m-0">
+                      <div class="form-check d-flex">
+                        <div class="me-5">
+                          <x-input-radio-or-check name="functional_movement_shoulder_2" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3 mt-3">                  
+                  <div class="row mb-3 mt-3">
+                    <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image" class="w-100"></div>
                   </div>
                   <!-- end row -->
                   <div class="row border-top py-2">
@@ -838,28 +487,7 @@
                       <div class="m-0">
                         <div class="form-check d-flex">
                           <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">Try 1: Can Do</label>
-                          </div>
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">Try 1: Can not Do</label>
-                          </div>
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">Try 2: Can DO</label>
-                          </div>
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">Try 2: Can not DO</label>
-                          </div>
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">Try 3: Can Do </label>
-                          </div>
-                          <div class="me-5">
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">Try 3: Can not DO</label>
+                            <x-input-radio-or-check name="functional_movement_shoulder_3" :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                           </div>
                         </div>
                       </div>
@@ -876,8 +504,6 @@
 @endsection
 
 @section('script')
-
-
 <!-- jquery step -->
 <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
 
