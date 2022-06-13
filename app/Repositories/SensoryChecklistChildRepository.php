@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\SensoryChecklistChild;
 
-class SensoryChecklistChildRepositiry extends BaseRepository
+class SensoryChecklistChildRepository extends BaseRepository
 {
     protected string $model = SensoryChecklistChild::class;
 }

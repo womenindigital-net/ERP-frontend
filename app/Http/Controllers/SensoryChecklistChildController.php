@@ -2,14 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\UserRepository;
 use App\Models\SensoryChecklistChild;
 use App\Http\Requests\StoreSensoryChecklistChildRequest;
 use App\Http\Requests\UpdateSensoryChecklistChildRequest;
-use App\Traits\OnlyStore;
+use App\Repositories\SensoryChecklistChildRepository;
 
 class SensoryChecklistChildController extends Controller
 {
-    use OnlyStore;
+    
+    private UserRepository $userRepo;
+    private SensoryChecklistChildRepository $sensoryRepo;
+
+    public function __construct(UserRepository $userRepository, SensoryChecklistChildRepository $Repository)
+    {
+        $this->userRepo = $userRepository;
+        $this->sensoryRepo = $Repository;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
