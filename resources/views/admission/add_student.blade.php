@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 @endsection
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1')
-            Utility
-        @endslot
-        @slot('title')
-            Student_Table
-        @endslot
-    @endcomponent
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">

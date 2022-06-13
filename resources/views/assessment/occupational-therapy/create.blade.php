@@ -63,20 +63,22 @@
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Collection
                                                                         Date:</label>
-                                                                    <x-input-text name="collection_date" type="date"
+                                                                    <x-input-text name="date" type="date"
                                                                         placeholder="mm/dd/yyyy">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Teacher: <span
                                                                             class="text-danger text-bold">*</span></label>
-                                                                    <x-input-select name="teacher_id" :records="[]" />
+                                                                    <x-input-select name="teacher_id"
+                                                                        :records="['1'=> 'one']" />
                                                                 </div>
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Candidate ID:
                                                                         <span
                                                                             class="text-danger text-bold">*</span></label>
-                                                                    <x-input-select name="candidate_id" :records="[]" />
+                                                                    <x-input-select name="candidate_id"
+                                                                        :records="['1'=> 'one']" />
                                                                 </div>
                                                                 <div class="col-lg-12 p-0 pb-2">
                                                                     <label class="col-md-12 px-1">Description:</label>

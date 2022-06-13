@@ -10,7 +10,7 @@ use App\Repositories\SensoryChecklistChildRepository;
 
 class SensoryChecklistChildController extends Controller
 {
-    
+
     private UserRepository $userRepo;
     private SensoryChecklistChildRepository $sensoryRepo;
 
@@ -53,7 +53,9 @@ class SensoryChecklistChildController extends Controller
      */
     public function store(StoreSensoryChecklistChildRequest $request)
     {
-        store($request->validated());
+        $this->sensoryRepo->store($request->validated());
+
+        return redirect()->back();
     }
 
     /**

@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\OccupationalTherapy;
 use App\Http\Requests\OccupationalTherapyRequest;
 use App\Http\Requests\UpdateOccupationalTherapyRequest;
+use App\Repositories\OccupationalTherapyRepository;
 
 class OccupationalTherapyController extends Controller
 {
+
+    private OccupationalTherapyRepository $occupationalRepo;
+
+    public function __construct(OccupationalTherapyRepository $occupationalRepo)
+    {
+        $this->occupationalRepo = $occupationalRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +23,6 @@ class OccupationalTherapyController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -39,8 +46,8 @@ class OccupationalTherapyController extends Controller
      */
     public function store(OccupationalTherapyRequest $request)
     {
-        
-        dd($request->validated());
+        $this->occupationalRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**

@@ -91,13 +91,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     // Route::get('assessment/social-communication', [SocialController::class, 'create']);
 
     // Route::get('assessment/occupational-therapy', [StudentController::class, 'occupationalTherapy'])->name('occupational.therapy');
-    Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');
+    // Route::get('assessment/physiotherapy', [StudentController::class, 'physioTherapy'])->name('physio.therapy');
     Route::get('assessment/executive-function-test', [StudentController::class, 'executiveFunctionTest'])->name('executive.function.test');
     Route::get('assessment/autism-behavior-checklist', [StudentController::class, 'autismBehaviorChecklist'])->name('autism.behavior.checklist');
     Route::get('assessment/functional-communication-assessment', [StudentController::class, 'functionalCommunicationAssessment'])->name('functional.communication.assessment');
     Route::get('assessment/functional_movement_skills', [StudentController::class, 'functionalMovementskill'])->name('assessment.functional_movement_skills');
     Route::get('assessment/sensory-checklist-for-young-adult', [StudentController::class, 'sensoryChecklistForYoungAdult'])->name('sensory.checklist.for.young.adult');
-    Route::get('assessment/individual-risk-assessment-form', [StudentController::class, 'individualRiskAssessmentForm'])->name('individual.risk.assessment.form');
+    // Route::get('assessment/individual-risk-assessment-form', [StudentController::class, 'individualRiskAssessmentForm'])->name('individual.risk.assessment.form');
 
     // Route::get('', [StudentController::class, ''])->name('');
     Route::get('student-list', [StudentController::class, 'studentList'])->name('student.list');
