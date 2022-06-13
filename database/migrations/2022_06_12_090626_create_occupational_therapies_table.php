@@ -13,8 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('occupational_therapies', function(Blueprint $table)
-        {
+        Schema::create('occupational_therapies', function (Blueprint $table) {
             $table->id();
             $table->string('collection_date')->nullable();
             $table->string('teacher_id')->nullable();

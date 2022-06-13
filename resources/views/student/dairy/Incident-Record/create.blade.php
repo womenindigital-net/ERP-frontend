@@ -118,7 +118,8 @@
                                                                                     name="previous_causes"
                                                                 label="What is the Previous cause of Incident/Antecedent Behavior?"
                                                                 :records="$incidentConstant::$activityType"
-                                                                :isVertical="false">
+                                                                :isVertical="false"
+                                                                :multiple="true">
                                                             </x-input-radio-or-check>
                                                         </section>
                                                     </div>

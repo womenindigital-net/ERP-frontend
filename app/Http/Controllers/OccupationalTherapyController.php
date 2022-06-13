@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OccupationalTherapy;
-use App\Http\Requests\StoreOccupationalTherapyRequest;
+use App\Http\Requests\OccupationalTherapyRequest;
 use App\Http\Requests\UpdateOccupationalTherapyRequest;
 
 class OccupationalTherapyController extends Controller
@@ -28,7 +28,6 @@ class OccupationalTherapyController extends Controller
         $data = [
             'students' => []
         ];
-
         return view('assessment.occupational-therapy.create', $data);
     }
 
@@ -38,9 +37,10 @@ class OccupationalTherapyController extends Controller
      * @param  \App\Http\Requests\StoreOccupationalTherapyRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOccupationalTherapyRequest $request)
+    public function store(OccupationalTherapyRequest $request)
     {
-        //
+        
+        dd($request->validated());
     }
 
     /**
