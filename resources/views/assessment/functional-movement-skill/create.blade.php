@@ -86,6 +86,28 @@
               </tbody>
             </table>
           </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              Showing 1 to 2 of 2 entries
+            </div>
+            <div class="col-sm-12 col-md-6 text-end">
+              <nav>
+                <ul class="pagination" style="justify-content: end;">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </div> <!-- end col -->
@@ -489,5 +511,11 @@
 <!-- form wizard init -->
 <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
 
+
+<!-- jquery step -->
+<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
+
+<!-- form wizard init -->
+<script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
 
 @endsection
