@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\IncidentRecord;
-use App\Http\Requests\StoreIncidentRecordRequest;
+use App\Http\Requests\IncidentRecordRequest;
 use App\Http\Requests\UpdateIncidentRecordRequest;
 
 class IncidentRecordController extends Controller
@@ -31,10 +31,11 @@ class IncidentRecordController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreIncidentRecordRequest  $request
+     * @param  \App\Http\Requests\IncidentRecordRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreIncidentRecordRequest $request)
+    public function store(IncidentRecordRequest $request)
     {
         //
     }
@@ -68,7 +69,7 @@ class IncidentRecordController extends Controller
      * @param  \App\Models\IncidentRecord  $incidentRecord
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateIncidentRecordRequest $request, IncidentRecord $incidentRecord)
+    public function update(IncidentRecordRequest $request, IncidentRecord $incidentRecord)
     {
         //
     }

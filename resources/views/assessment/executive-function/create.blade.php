@@ -344,7 +344,6 @@
                         <!-- Seller Details -->
                         <h3> Executive Function Test</h3>
                         <section>
-                            <form>
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="mb-3">
@@ -368,13 +367,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
                         </section>
                         <!-- Bank Details -->
                         <h3>Self-Test</h3>
                         <section>
                             <div>
-                                <form>
                                     <!-- end row -->
                                     <x-input-radio-or-check
                                         label="Have trouble getting started or initiating tasks."
@@ -452,8 +449,6 @@
                                         :records="$executiveConstants::$oftenOrNot">
                                     </x-input-radio-or-check>
                                     <!-- end row -->
-                                    <!-- end row -->
-                                </form>
                             </div>
                         </section>
                         <!-- end row -->

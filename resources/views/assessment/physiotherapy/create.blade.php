@@ -27,13 +27,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">physiotherapy</span>
+                                <span class="d-none d-sm-block">Add</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">Physiotherapy List</span>
+                                <span class="d-none d-sm-block">List</span>
                             </a>
                         </li>
                     </ul>
@@ -95,9 +95,7 @@
                                                 <form>
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
-
                                                             <section>
-                                                            
                                                                     <div class="row">
                                                                         <div class="col-lg-4">
                                                                             <div class="mb-3">
@@ -145,7 +143,6 @@
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
                                                             <section>
-                                                                
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Birth history</label>
@@ -215,7 +212,6 @@
                                                         <div class="tab-pane" id="PERSONAL">
                                                             <section>
                                                                 <div>
-                                                                  
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check 
                                                                             label="Visual Discrimination" :records="$constants::$yesNoEn">
@@ -276,10 +272,8 @@
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Topic_Maintenance">
-
                                                             <section>
                                                                 <div>
-                                                                   
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check label="Eating"
                                                                             :records="$constants::$yesNoEn">
@@ -322,10 +316,8 @@
                                                                
                                                                 </div>
                                                             </section>
-
                                                         </div>
                                                         <div class="tab-pane" id="Conversational_Structure">
-
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
@@ -341,7 +333,6 @@
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Word_Structure">
-
                                                             <section>
                                                                 <div>
                                                                         <!-- end row -->
@@ -378,10 +369,8 @@
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Manner_Effectiveness">
-
                                                             <section>
                                                                 <div>
-                                                                   
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check 
                                                                             label="Prone to Supine" :records="$constants::$yesNoEn">
@@ -411,15 +400,12 @@
                                                                             label="Kneeling to stand:" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                  
                                                                 </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Repair_Structures">
-
                                                             <section>
                                                                 <div>
-                                                                   
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check 
                                                                             label="Dominance" :records="$constants::$yesNoEn">
@@ -472,15 +458,12 @@
                                                                             label="Writing skill" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
-                                                                   
                                                                 </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent">
-
                                                             <section>
                                                                 <div>
-                                                                    
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check 
                                                                             label="Protective reactions" :records="$constants::$yesNoEn">
@@ -491,15 +474,12 @@
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <!-- end row -->
-                                                                
                                                                 </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent_B">
-
                                                             <section>
                                                                 <div>
-                                                                   
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check  label="Tactile"
                                                                             :records="$constants::$yesNoEn">
@@ -523,10 +503,8 @@
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent_C">
-
                                                             <section>
                                                                 <div>
-                          
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check 
                                                                             label="Attention" :records="$constants::$yesNoEn">
@@ -571,11 +549,9 @@
                                                                         <!-- end row -->
                                                                 </div>
                                                             </section>
-
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent_D">
                                                             <section>
-                                                  
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Problem List</label>
@@ -609,7 +585,6 @@
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Functional_Intent_E">
-                                                            <h3>Signature</h3>
                                                             <section>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
@@ -627,14 +602,11 @@
                                                                     </div>
                                                                     <!-- row end -->
                                                                     <!-- end row -->
-                                                           
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="mp">
-                                                            <h3>Muscle Power</h3>
                                                             <section>
                                                                 <div>
-                                                                
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check
                                                                             label="Upper limbs" :records="$physiotherapyConstants::$limbs">
@@ -677,10 +649,8 @@
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="mt">
-                                                            <h3>Muscle Tone</h3>
                                                             <section>
                                                                 <div>
-                                                                    
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check 
                                                                             label="Upper limbs" :records="$physiotherapyConstants::$limbsTone">
@@ -713,16 +683,11 @@
                                                                             <x-input-text name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
-
-
-                                                                        <!-- end row -->
-                                                                  
                                                                 </div>
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Be">
                                                             <section>
-                                                              
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check label="Independence"
                                                                         :records="$constants::$yesNoEn">
@@ -743,13 +708,10 @@
                                                                         label="Interpersonal" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
-                                                           
                                                             </section>
-
                                                         </div>
                                                         <div class="tab-pane" id="DA">
                                                             <section>
-                                                             
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check name="physical_Gross_motor_Fine_motor"
                                                                         label="Physical (Gross motor/ Fine motor)"
@@ -815,23 +777,6 @@
                         </div>
                         <div class="tab-pane " id="case-histroy_list" role="tabpanel">
                             <!-- form start -->
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                            class="form-control form-control-sm form-select form-select-sm">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select> entries
-                                    </label>
-                                </div>
-                                <div class="col-sm-12 col-md-6 text-end">
-                                    <label style="display: inline-flex;align-items: center;">Search:
-                                        <input type="search" class="form-control form-control-sm" placeholder="Search">
-                                    </label>
-                                </div>
-                            </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered w-100">
                                     <thead>
@@ -1481,10 +1426,4 @@
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
-
-    <!-- jquery step -->
-    <script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
-
-    <!-- form wizard init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
 @endsection
