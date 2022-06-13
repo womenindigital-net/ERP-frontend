@@ -90,7 +90,7 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="Teacher_id"
-                                                                                :records="[]" />
+                                                                                :records="['1'=>'one']" />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-4">
@@ -98,7 +98,7 @@
                                                                             <label for="basicpill-phoneno-input">Candidate
                                                                                 ID:</label>
                                                                             <x-input-select name="candidate_i"
-                                                                                :records="[]" />
+                                                                                :records="['1'=>'one']" />
                                                                         </div>
                                                                     </div>
                                                                 </div>

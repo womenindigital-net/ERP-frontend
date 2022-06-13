@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\IndividualRisk;
 use App\Http\Requests\IndividualRiskRequest;
 use App\Http\Requests\UpdateIndividualRiskRequest;
+use App\Repositories\IndividualRiskRepositories;
 
 class IndividualRiskController extends Controller
 {
+
+    private IndividualRiskRepositories $indRiskRepo;
+
+    public function __construct(IndividualRiskRepositories $indRiskRepo)
+    {
+        $this->indRiskRepo = $indRiskRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +50,8 @@ class IndividualRiskController extends Controller
      */
     public function store(IndividualRiskRequest $request)
     {
-
+        $this->indRiskRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**

@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\ExecutiveFunction;
 use App\Http\Requests\StoreExecutiveFunctionRequest;
 use App\Http\Requests\UpdateExecutiveFunctionRequest;
+use App\Repositories\ExecutiveFunctionRepository;
 
 class ExecutiveFunctionController extends Controller
 {
+
+    private ExecutiveFunctionRepository $executiveRepo;
+
+    public function __construct(ExecutiveFunctionRepository $executiveRepo)
+    {
+        $this->executiveRepo = $executiveRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +49,8 @@ class ExecutiveFunctionController extends Controller
      */
     public function store(StoreExecutiveFunctionRequest $request)
     {
-        //
+        $this->executiveRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**

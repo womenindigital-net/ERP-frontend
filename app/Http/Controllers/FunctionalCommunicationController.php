@@ -41,7 +41,7 @@ class FunctionalCommunicationController extends Controller
      */
     public function store(FunctionalCommunicationRequest $request)
     {
-        //
+        dd($request);
     }
 
     /**

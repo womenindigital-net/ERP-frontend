@@ -50,8 +50,6 @@
                           <li class="w-100"><a href="#AUDITORYLISTENING" data-toggle="tab">AUDITORY/LISTENING</a></li>
                           <li class="w-100"><a href="#VISION" data-toggle="tab">VISION</a></li>
                           <li class="w-100"><a href="#TASTEANDSMELL" data-toggle="tab">TASTE AND SMELL</a></li>
-                          <li class="w-100"><a href="#" data-toggle="tab"></a></li>
-                          <li class="w-100"><a href="#" data-toggle="tab"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -71,13 +69,13 @@
                                   <div class="col-lg-4">
                                     <div class="mb-3">
                                       <label for="basicpill-lastname-input">Teacher:</label>
-                                      <x-input-select name="student_id" :records="[]" />
+                                      <x-input-select name="student_id" :records="['1'=>'one']" />
                                     </div>
                                   </div>
                                   <div class="col-lg-4">
                                     <div class="mb-3">
                                       <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                      <x-input-select name="student_id" :records="[]" />
+                                      <x-input-select name="student_id" :records="['1'=>'one']" />
                                     </div>
                                   </div>
                                 </div>

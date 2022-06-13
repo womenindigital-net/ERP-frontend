@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\FunctionalMovementskill;
 use App\Http\Requests\StoreFunctionalMovementskillRequest;
 use App\Http\Requests\UpdateFunctionalMovementskillRequest;
+use App\Repositories\FunctionalMovementSkillRepository;
 
 class FunctionalMovementskillController extends Controller
 {
+
+    private FunctionalMovementSkillRepository $funMoveSkillRepo;
+
+    public function __construct(FunctionalMovementSkillRepository $funMoveSkillRepo)
+    {
+        $this->funMoveSkillRepo = $funMoveSkillRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +48,8 @@ class FunctionalMovementskillController extends Controller
      */
     public function store(StoreFunctionalMovementskillRequest $request)
     {
-        //
+        $this->funMoveSkillRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**

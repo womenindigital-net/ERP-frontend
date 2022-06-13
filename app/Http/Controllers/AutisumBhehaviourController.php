@@ -5,11 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\AutisumBhehaviour;
 use App\Http\Requests\StoreAutisumBhehaviourRequest;
 use App\Http\Requests\UpdateAutisumBhehaviourRequest;
+use App\Repositories\AutisumBehaviourRepository;
 use Carbon\Factory;
 use Illuminate\Console\Application;
 
 class AutisumBhehaviourController extends Controller
 {
+
+    private AutisumBehaviourRepository $autisumRepo;
+
+    public function __construct(AutisumBehaviourRepository $autisumRepo)
+    {
+        $this->autisumRepo = $autisumRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +51,8 @@ class AutisumBhehaviourController extends Controller
      */
     public function store(StoreAutisumBhehaviourRequest $request)
     {
-        //
+        $this->autisumRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**

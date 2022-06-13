@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\SensoryAdult;
 use App\Http\Requests\SensoryAdultRequest;
 use App\Http\Requests\UpdateSensoryAdultRequest;
+use App\Repositories\SensoryChecklistAdultRepository;
 
 class SensoryAdultController extends Controller
 {
+
+    private SensoryChecklistAdultRepository $sensoryAdultRepo;
+
+    public function __construct(SensoryChecklistAdultRepository $sensoryAdultRepo)
+    {
+        $this->sensoryAdultRepo = $sensoryAdultRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +50,8 @@ class SensoryAdultController extends Controller
      */
     public function store(SensoryAdultRequest $request)
     {
-        //
+        $this->sensoryAdultRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**
