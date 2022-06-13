@@ -97,7 +97,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('assessment/functional-communication-assessment', [StudentController::class, 'functionalCommunicationAssessment'])->name('functional.communication.assessment');
     Route::get('assessment/functional_movement_skills', [StudentController::class, 'functionalMovementskill'])->name('assessment.functional_movement_skills');
     Route::get('assessment/sensory-checklist-for-young-adult', [StudentController::class, 'sensoryChecklistForYoungAdult'])->name('sensory.checklist.for.young.adult');
-    Route::get('assessment/individual-risk-assessment-form', [StudentController::class, 'individualRiskAssessmentForm'])->name('individual.risk.assessment.form');
+    // Route::get('assessment/individual-risk-assessment-form', [StudentController::class, 'individualRiskAssessmentForm'])->name('individual.risk.assessment.form');
 
     // Route::get('', [StudentController::class, ''])->name('');
     Route::get('student-list', [StudentController::class, 'studentList'])->name('student.list');
