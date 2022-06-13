@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
-
 <style>
   .wizard .steps>ul>li a {
     padding-right: 0 !important;
@@ -54,8 +53,7 @@
                       </div>
                     </div>
                     <div class="col-sm-9 col-md-9">
-                      <form action="{{route('autisum-behaviour.store')}}" method="POST">
-                        @csrf
+                      <form>
                         <div class="tab-content">
                           <div class="tab-pane" id="AutismBehaviorChecklist">
                             <section>
