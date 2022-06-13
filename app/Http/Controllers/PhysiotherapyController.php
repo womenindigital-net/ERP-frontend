@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Physiotherapy;
 use App\Http\Requests\PhysiotherapyRequest;
 use App\Http\Requests\UpdatePhysiotherapyRequest;
+use App\Repositories\PhysiotherapyRepository;
 
 class PhysiotherapyController extends Controller
 {
+    private PhysiotherapyRepository $phyRepo;
+
+    public function __construct(PhysiotherapyRepository $phyRepo)
+    {
+        $this->phyRepo = $phyRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +48,8 @@ class PhysiotherapyController extends Controller
      */
     public function store(PhysiotherapyRequest $request)
     {
-        //
+        $this->phyRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**

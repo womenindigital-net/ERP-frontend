@@ -2,7 +2,7 @@
 
 // namespace App\Repositories;
 
-// use App\Models\SocileCommunication;
+// use App\Models\SocialCommunication;
 
 // class SensoryChecklistChildRepositiry extends BaseRepository
 // {

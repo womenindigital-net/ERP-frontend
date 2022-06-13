@@ -15,8 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('functional_communications', function(Blueprint $table)
-        {
+        Schema::create('functional_communications', function (Blueprint $table) {
             $table->id();
             $table->string('date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
@@ -53,10 +52,10 @@ return new class extends Migration
             $table->string('demonstrates_unusual_facial_expressions_secondary')->nullable();
             $table->string('shows_little_variation_in_facial_expressions')->nullable();
             $table->string('shows_little_variation_in_facial_expressions_secondary')->nullable();
-            $table->string('has_difficulty_understanding_facial_expressions_or_body_language')->nullable();
-            $table->string('has_difficulty_understanding_facial_expressions_or_body_language_secondary')->nullable();
-            $table->string('use_inappropriate_body_orientation_or_proximity_in_interaction')->nullable();
-            $table->string('use_inappropriate_body_orientation_or_proximity_in_interaction_secondary')->nullable();
+            $table->string('expressions_or_body_language')->nullable();
+            $table->string('expressions_or_body_language_secondary')->nullable();
+            $table->string('orientation_or_proximity_in_interaction')->nullable();
+            $table->string('orientation_or_proximity_in_interaction_secondary')->nullable();
             $table->string('eye_contact_is_fleeting')->nullable();
             $table->string('eye_contact_is_fleeting_secondary')->nullable();
             $table->string('does_not_use_eye_contact')->nullable();
@@ -65,8 +64,8 @@ return new class extends Migration
             $table->string('repeats_words_or_phrases_or_sentences_secondary')->nullable();
             $table->string('Has_difficulties_using')->nullable();
             $table->string('Has_difficulties_using_secondary')->nullable();
-            $table->string('has_difficulty_understanding_or_using_humor_appropriately')->nullable();
-            $table->string('has_difficulty_understanding_or_using_humor_appropriately_secondary')->nullable();
+            $table->string('or_using_humor_appropriately')->nullable();
+            $table->string('or_using_humor_appropriately_secondary')->nullable();
             $table->string('demonstrate_literal_use_and_understanding_of_language')->nullable();
             $table->string('demonstrate_literal_use_and_understanding_of_language_secondary')->nullable();
             $table->string('has_difficulty_with_multiple_meaning_words')->nullable();
