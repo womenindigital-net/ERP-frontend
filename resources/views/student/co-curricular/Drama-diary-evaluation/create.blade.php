@@ -46,7 +46,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form method="post" action="{{route('drama-diary-evaluation.store')}}">
+                                                <form method="post" action="{{ route('drama-diary-evaluation.store') }}">
                                                     @csrf
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
@@ -67,7 +67,7 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="[]" />
+                                                                                :records="['1' => 'one']" />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-4">
@@ -93,17 +93,19 @@
                                                         <div class="tab-pane" id="Pragmatic_Objective">
                                                             <section>
                                                                 <!-- Start row -->
-                                                                <x-input-radio-or-check name="understanding_the_character" label="চরিত্র বুঝতে পারা"
-                                                                    :records="$diaryConstant::$diaryType"
+                                                                <x-input-radio-or-check name="understanding_the_character"
+                                                                    label="চরিত্র বুঝতে পারা" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="being_able_to_understand_the_character_and_act"
+                                                                <x-input-radio-or-check
+                                                                    name="being_able_to_understand_the_character_and_act"
                                                                     label="চরিত্র বুঝে অভিনয় করতে পারা" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="say_three_lines_clearly_about_yourself"
+                                                                <x-input-radio-or-check
+                                                                    name="say_three_lines_clearly_about_yourself"
                                                                     label="নিজের সম্পর্কে তিন লাইন স্পষ্ট করে বলবে"
                                                                     :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
@@ -115,18 +117,20 @@
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="the_vowel_will_be_pronounced_clearly"
+                                                                <x-input-radio-or-check
+                                                                    name="the_vowel_will_be_pronounced_clearly"
                                                                     label="স্বরধনি স্পষ্ট করে উচ্চারণ করবে"
                                                                     :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="be_able_to_memorize" label="মুখস্থ করতে পারা"
-                                                                    :records="$diaryConstant::$diaryType"
+                                                                <x-input-radio-or-check name="be_able_to_memorize"
+                                                                    label="মুখস্থ করতে পারা" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="being_able_to_speak_with_open_mouth"
+                                                                <x-input-radio-or-check
+                                                                    name="being_able_to_speak_with_open_mouth"
                                                                     label="মুখ খুলে কথা বলতে পারা" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
@@ -136,23 +140,27 @@
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="being_able_to_tell_a_minute_story"
+                                                                <x-input-radio-or-check
+                                                                    name="being_able_to_tell_a_minute_story"
                                                                     label="১/২ মিনিটের গল্প বলতে পারা" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="being_able_to_bring_variation_in_words"
+                                                                <x-input-radio-or-check
+                                                                    name="being_able_to_bring_variation_in_words"
                                                                     label="কথায় Variation আনতে পারা" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="being_able_to_speak_in_regional_tenses_or_other_accents"
+                                                                <x-input-radio-or-check
+                                                                    name="being_able_to_speak_in_regional_tenses_or_other_accents"
                                                                     label="আঞ্চলিক টানে বা অন্য অচ্চারনে কথা বলতে পারা"
                                                                     :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="after_listening_to_the_dialogue_of_the_coartist_he_will_give_his_own_dialogue"
+                                                                <x-input-radio-or-check
+                                                                    name="after_listening_to_the_dialogue_of_the_coartist_he_will_give_his_own_dialogue"
                                                                     label="সহশিল্পির ডায়লগ শুনে নিজের ডায়লগ দিবে"
                                                                     :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
@@ -191,13 +199,13 @@
                                                         <div class="tab-pane" id="Outing">
                                                             <section>
                                                                 <!-- Start row -->
-                                                                <x-input-radio-or-check name="hold_attention" label="মনোযোগ ধরে রাখা"
-                                                                    :records="$diaryConstant::$diaryType"
+                                                                <x-input-radio-or-check name="hold_attention"
+                                                                    label="মনোযোগ ধরে রাখা" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="presentation" label="প্রেজেন্টেশান"
-                                                                    :records="$diaryConstant::$diaryType"
+                                                                <x-input-radio-or-check name="presentation"
+                                                                    label="প্রেজেন্টেশান" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
@@ -206,7 +214,8 @@
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name="will_take_part_in_the_play_with_everyone"
+                                                                <x-input-radio-or-check
+                                                                    name="will_take_part_in_the_play_with_everyone"
                                                                     label="সবার সাথে নাটকে অংশ নিবে" :records="$diaryConstant::$diaryType"
                                                                     secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                                 </x-input-radio-or-check>

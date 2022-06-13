@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DramaDiaryEvaluation;
-use App\Http\Requests\DramaDiaryEvaluationRequest;
-use App\Http\Requests\UpdateDramaDiaryEvaluationRequest;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use App\Models\DramaDiaryEvaluation;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
+use App\Http\Requests\DramaDiaryEvaluationRequest;
+use App\Repositories\DramaDiaryEvaluationRepository;
+use App\Http\Requests\UpdateDramaDiaryEvaluationRequest;
 
 class DramaDiaryEvaluationController extends Controller
 {
+    private DramaDiaryEvaluationRepository $dramaDiaryRepo;
+
+    public function __construct(DramaDiaryEvaluationRepository $dramaDiaryRepo)
+    {
+        $this->dramaDiaryRepo = $dramaDiaryRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +48,9 @@ class DramaDiaryEvaluationController extends Controller
      */
     public function store(DramaDiaryEvaluationRequest $request)
     {
-        //
+        // $this->dramaDiaryRepo->store($request->validated());
+        // return redirect()->back();
+        dd($request);
     }
 
     /**

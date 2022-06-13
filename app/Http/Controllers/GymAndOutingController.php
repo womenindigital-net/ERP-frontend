@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\GymAndOuting;
+use App\Repositories\GymAndOutingRepository;
 use App\Http\Requests\StoreGymAndOutingRequest;
 use App\Http\Requests\UpdateGymAndOutingRequest;
 
 class GymAndOutingController extends Controller
 {
+    private GymAndOutingRepository $gymandoutingRepo;
+
+    public function __construct(GymAndOutingRepository $gymandoutingRepo)
+    {
+        $this->gymandoutingRepo = $gymandoutingRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,8 +43,10 @@ class GymAndOutingController extends Controller
      */
     public function store(StoreGymAndOutingRequest $request)
     {
-        //
+        $this->gymandoutingRepo->store($request->validated());
+        return redirect()->back();
     }
+  
 
     /**
      * Display the specified resource.

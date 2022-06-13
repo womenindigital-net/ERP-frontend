@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\OtAssessment;
+use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\Factory;
+use App\Repositories\OtAssessmentRepository;
 use App\Http\Requests\StoreOtAssessmentRequest;
 use App\Http\Requests\UpdateOtAssessmentRequest;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 
 class OtAssessmentController extends Controller
 {
+    private OtAssessmentRepository $otAssessmentRepo;
+
+    public function __construct(OtAssessmentRepository $otAssessmentRepo)
+    {
+        $this->otAssessmentRepo = $otAssessmentRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +46,7 @@ class OtAssessmentController extends Controller
      */
     public function store(StoreOtAssessmentRequest $request)
     {
-
+        dd($request);
     }
 
     /**

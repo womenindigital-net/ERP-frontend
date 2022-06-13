@@ -59,7 +59,7 @@
                                                                                     Date:</label>
                                                                                 <div class="input-group"
                                                                                     id="datepicker2">
-                                                                                    <x-input-text name="collection_date"
+                                                                                    <x-input-text name="date"
                                                                                         type="date"
                                                                                         placeholder="mm/dd/yyyy" />
                                                                                 </div><!-- input-group -->
@@ -70,7 +70,7 @@
                                                                                 <label
                                                                                     for="basicpill-lastname-input">Teacher:</label>
                                                                                 <x-input-select name="teacher_id"
-                                                                                    :records="[]" />
+                                                                                    :records="['1'=>'one']" />
                                                                             </div>
                                                                         </div>
                                                                     </div>

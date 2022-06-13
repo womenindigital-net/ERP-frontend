@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\IncidentRecord;
 use App\Http\Requests\IncidentRecordRequest;
+use App\Repositories\IncidentRecordRepository;
 use App\Http\Requests\UpdateIncidentRecordRequest;
 
 class IncidentRecordController extends Controller
 {
+    private IncidentRecordRepository $incidentRcordRepo;
+
+    public function __construct(IncidentRecordRepository $incidentRcordRepo)
+    {
+        $this->incidentRcordRepo = $incidentRcordRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +44,8 @@ class IncidentRecordController extends Controller
      */
     public function store(IncidentRecordRequest $request)
     {
-        //
+        $this->incidentRcordRepo->store($request->validated());
+        return redirect()->back();
     }
 
     /**

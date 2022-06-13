@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\StaffAndWorkplaceInspection;
 use App\Http\Requests\StaffAndWorkplaceInspectionRequest;
+use App\Repositories\StaffAndWorkplaceinspectionRepository;
 use App\Http\Requests\UpdateStaffAndWorkplaceInspectionRequest;
 
 class StaffAndWorkplaceInspectionController extends Controller
 {
+     private StaffAndWorkplaceinspectionRepository $stafAndWorkRepo;
+
+    public function __construct(StaffAndWorkplaceinspectionRepository $stafAndWorkRepo)
+    {
+        $this->stafAndWorkRepo = $stafAndWorkRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +44,10 @@ class StaffAndWorkplaceInspectionController extends Controller
      */
     public function store(StaffAndWorkplaceInspectionRequest $request)
     {
-        //
+        //  $this->stafAndWorkRepo->store($request->validated());
+        //  return redirect()->back();
+         dd($request);
+
     }
 
     /**
