@@ -2137,7 +2137,6 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                     {{-- Problam --}}
                                                      <div class="tab-pane" id="afterdinner">
                                                         <section>
                                                             <x-input-radio-or-check name="night_eating_medicine"
@@ -2152,8 +2151,9 @@
                                                                     <x-input-text name="night_eating_medicine_time">
                                                                     </x-input-text>
                                                                 </div>
+                                                             </div>
                                                                 <!-- input-group -->
-                                                            </div>
+                                                           
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
@@ -2161,9 +2161,10 @@
                                                                     <x-input-text
                                                                         name="night_eating_medicine_time_secondary">
                                                                     </x-input-text>
-                                                                </div>
-                                                                <!-- input-group -->
+                                                                </div> 
                                                             </div>
+                                                                <!-- input-group -->
+                                                         
 
                                                             <x-input-radio-or-check name="night_teeth_brash"
                                                                 label="দাঁত ব্রাশ করবে"
@@ -2213,9 +2214,8 @@
                                                                 </div>
                                                                 <!-- input-group -->
                                                             </div>
-
-                                                            <x-input-radio-or-check name="put_to_bed
-                                                                label=" বিছানা করা/ করে দেওয়া"
+                                                            <x-input-radio-or-check name="put_to_bed"
+                                                                label="বিছানা করা/ করে দেওয়া"
                                                                 :records="$tripReportConstants::$help"
                                                                 secondaryInputLabel="সাজেশন">
                                                             </x-input-radio-or-check>
@@ -2237,7 +2237,7 @@
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
-                                                            </div>
+                                                            </div> 
                                                             <x-input-radio-or-check name="hanging_mosquito_nets"
                                                                 label="মশারি খাটানো/টাঙ্গানো"
                                                                 :records="$tripReportConstants::$help"
@@ -2292,7 +2292,6 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    {{-- Problam --}}
                                                     <div class="tab-pane" id="Signature">
                                                         <section>
                                                             <div class="mb-3">
