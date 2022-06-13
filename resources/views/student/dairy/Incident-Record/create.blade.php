@@ -115,6 +115,7 @@
                                                                 :records="$constants::$yesNoEn" :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <x-input-radio-or-check type="checkbox"
+                                                                                    name="previous_causes"
                                                                 label="What is the Previous cause of Incident/Antecedent Behavior?"
                                                                 :records="$incidentConstant::$activityType"
                                                                 :isVertical="false">
