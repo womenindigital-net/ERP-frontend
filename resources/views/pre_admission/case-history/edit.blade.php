@@ -43,7 +43,7 @@
                                 <label for="basicpill-firstname-input">Collection
                                   Date:</label>
                                 <div class="input-group" id="datepicker2">
-                                  <x-input-text name="sample" type="date" name="date" placeholder="mm/dd/yyyy"
+                                  <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"
                                     value="{{ $caseHistory->date }}">
                                   </x-input-text>
                                 </div><!-- input-group -->
@@ -51,16 +51,18 @@
                             </div>
                             <div class="col-lg-4">
                               <div class="mb-3">
-                                <label for="basicpill-lastname-input">Teacher:</label>
-                                <x-input-select name="sample" :records="$teachers" name="teacher_id" :selected="" >
+                                <label>Teacher:</label>
+                                <x-input-select :records="$teachers" name="teacher_id"
+                                  :selected="$caseHistory->teacher_id">
                                 </x-input-select>
                               </div>
                             </div>
                             <div class="col-lg-4">
                               <div class="mb-3">
-                                <label for="basicpill-phoneno-input">Candidate
+                                <label>Candidate
                                   ID:</label>
-                                <x-input-select name="sample" :records="$students" name="student_id">
+                                <x-input-select :records="$students" name="student_id"
+                                  :selected="$caseHistory->student_id">
                                 </x-input-select>
                               </div>
                             </div>
@@ -70,14 +72,14 @@
                             <div class="col-lg-6">
                               <div class="mb-3">
                                 <label for="verticalnav-phoneno-input">Phone</label>
-                                <x-input-text name="phone">
+                                <x-input-text name="phone" value="{{ $caseHistory->phone }}">
                                 </x-input-text>
                               </div>
                             </div>
                             <div class="col-lg-6">
                               <div class="mb-3">
                                 <label for="verticalnav-email-input">Email</label>
-                                <x-input-text name="email">
+                                <x-input-text name="email" value="{{ $caseHistory->email }}">
                                 </x-input-text>
                               </div>
                             </div>
@@ -86,61 +88,12 @@
                             <div class="col-lg-12">
                               <div class="mb-3">
                                 <label for="verticalnav-address-input">Address</label>
-                                <x-input-textarea name="address">{{ $caseHistory->address }}</x-input-textarea>
+                                <x-input-textarea name="address" value="{{ $caseHistory->address }}"></x-input-textarea>
                               </div>
                             </div>
                           </div>
                         </section>
                       </div>
-                      {{-- <div class="tab-pane" id="caseHistoryInit">
-                        <section>
-                          <div class="row">
-                            <div class="col-lg-4">
-                              <div class="mb-3">
-                                <label for="basicpill-firstname-input">Collection
-                                  Date:</label>
-                                <p class="form-control">{{ $caseHistory->date }}</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-4">
-                              <div class="mb-3">
-                                <label for="basicpill-lastname-input">Teacher:</label>
-                                <p class="form-control">{{ $caseHistory->teacher->name ?? 'name Not found' }}</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-4">
-                              <div class="mb-3">
-                                <label for="basicpill-phoneno-input">Candidate
-                                  ID:</label>
-                                <p class="form-control">{{ $caseHistory->studnet->name ?? 'Name Not found' }}</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-phoneno-input">Phone</label>
-                                <p class="form-control">{{ $caseHistory->phone }}</p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-email-input">Email</label>
-                                <p class="form-control">{{ $caseHistory->email }}</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="mb-3">
-                                <label for="verticalnav-address-input">Address</label>
-                                <p class="form-control"></p>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-                      </div> --}}
                       <div class="tab-pane" id="referralInformation">
                         <section>
                           <div class="row">

@@ -86,6 +86,8 @@ class CaseHistoryController extends Controller
     public function show(CaseHistory $caseHistory)
     {
         $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
             'caseHistory' => $this->caseHistory = $caseHistory,
         ];
         // dd($data['caseHistory']);
@@ -131,6 +133,8 @@ class CaseHistoryController extends Controller
      */
     public function destroy(CaseHistory $caseHistory)
     {
-        //
+        $this->service->delete($caseHistory->id);
+        return redirect()->back();
+
     }
 }

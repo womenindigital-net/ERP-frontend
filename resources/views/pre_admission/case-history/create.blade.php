@@ -898,7 +898,7 @@
                         <!-- end row -->
                     </div>
                     <div class="tab-pane" id="case-history_list" role="tabpanel">
-                        <livewire:case-history-list />
+                        <livewire:case-history-list/>
                     </div>
                 </div>
             </div>
