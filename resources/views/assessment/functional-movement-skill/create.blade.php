@@ -5,7 +5,6 @@
   .wizard .steps>ul>li a {
     padding-right: 0 !important;
   }
-
   .wizard .steps>ul>li a {
     padding-left: 5px !important;
   }

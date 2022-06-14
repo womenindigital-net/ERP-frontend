@@ -204,7 +204,7 @@
                                                                     label="Memorizing the information" :records="$otassessmentConstants::$maintain"
                                                                     secondaryInputLabel=""></x-input-radio-or-check>
 
-                                                                <x-input-radio-or-check name="awareness_of_risk_&_hazard"
+                                                                <x-input-radio-or-check name="awareness_of_risk_hazard"
                                                                     label="Awareness of Risk & hazard" :records="$otassessmentConstants::$maintain"
                                                                     secondaryInputLabel=""></x-input-radio-or-check>
 
