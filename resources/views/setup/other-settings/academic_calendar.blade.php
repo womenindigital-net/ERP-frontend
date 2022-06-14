@@ -5,8 +5,6 @@
 @endsection
 @section('content')
 @component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') Academic Calendar  @endslot
 @endcomponent
 <div class="row">
   <div class="col-12">
@@ -129,16 +127,13 @@
                     <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
                       <div class="col-md-6">
                           <label class="form-label">Event Name</label>
-                          <x-input-text name="name" placeholder="Enter Event Name Here">
+                          <x-input-text name="event_name" placeholder="Enter Event Name Here">
                         </x-input-text>
                       </div>
                       <div class="col-md-6">
                           <label class="form-label">Event Type</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Academic Calendar</option>
-                            <option value="2">Parsonal</option>
-                        </select>
+                          <x-input-select name="event_type"
+                            :records="[]" />
                       </div>
                     </div>
                     <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
@@ -168,13 +163,8 @@
                     <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
                         <div class="col-md-6">
                             <label class="form-label">Event Type</label>
-                            <select id="formrow-inputState" class="form-select">
-                              <option value="0">Select</option>
-                              <option value="1">Meeting</option>
-                              <option value="2">Working Elsewhere</option>
-                              <option value="3">Out Of Office</option>
-                              <option value="3">Busy</option>
-                          </select>
+                            <x-input-select name="event_type"
+                            :records="[]" />
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Event Duration</label>
@@ -189,8 +179,8 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
                 <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
+              </div>
             </div>
-                </div>
 
           </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->

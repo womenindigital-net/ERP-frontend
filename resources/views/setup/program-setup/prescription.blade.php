@@ -3,28 +3,9 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-  type="text/css" />
-<link href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') MEDICINE ADMINS @endslot
-@endcomponent
-
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -101,7 +82,6 @@
       <div class="modal-body p-0">
           <!-- Seller Details -->
           <section>
-            <form>
               <div class="row">
                 <div class="col-lg-4">
                     <div class="mb-3">
@@ -119,55 +99,55 @@
                   </div>
                   <div class="col-lg-12">
                     <h2 class=" text-center mb-4">Raw Material Lists</h2>
-                <form class="repeater" enctype="multipart/form-data">
-                    <div data-repeater-list="group-a">
-                        <div data-repeater-item class="row">
-                            <div class="mb-3 col-lg-2">
-                                <label for="name">Name</label>
-                                <x-input-text name="hello1" placeholder="">
-                                </x-input-text>
-                            </div>
 
-                            <div class="mb-3 col-lg-2">
-                                <label for="email">Email</label>
-                                <x-input-text name="hello1" placeholder="">
-                                </x-input-text>
-                            </div>
 
-                            <div class="mb-3 col-lg-2">
-                                <label for="subject">Subject</label>
-                                <x-input-text name="hello1" placeholder="">
-                                </x-input-text>
-                            </div>
+                  <form class="repeater" enctype="multipart/form-data">
+                      <div data-repeater-list="group-a">
+                          <div data-repeater-item class="row">
+                              <div class="mb-3 col-lg-2">
+                                  <label for="name">Name</label>
+                                  <x-input-text name="hello1" placeholder="">
+                                  </x-input-text>
+                              </div>
 
-                            <div class="mb-3 col-lg-2">
-                                <label for="resume">Resume</label>
-                                <x-input-text name="hello1" placeholder="">
-                                </x-input-text>
-                            </div>
+                              <div class="mb-3 col-lg-2">
+                                  <label for="email">Email</label>
+                                  <x-input-text name="hello1" placeholder="">
+                                  </x-input-text>
+                              </div>
 
-                            <div class="mb-3 col-lg-2">
-                                <label for="message">Message</label>
-                                <x-input-textarea name="hello1" placeholder="">
-                                </x-input-textarea>
-                            </div>
+                              <div class="mb-3 col-lg-2">
+                                  <label for="subject">Subject</label>
+                                  <x-input-text name="hello1" placeholder="">
+                                  </x-input-text>
+                              </div>
 
-                            <div class="col-lg-2 align-self-center">
-                                <div class="d-grid">
-                                    <input data-repeater-delete type="button" class="btn btn-primary" value="Delete" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add" />
-                </form>
+                              <div class="mb-3 col-lg-2">
+                                  <label for="resume">Resume</label>
+                                  <x-input-text name="hello1" placeholder="">
+                                  </x-input-text>
+                              </div>
+
+                              <div class="mb-3 col-lg-2">
+                                  <label for="message">Message</label>
+                                  <x-input-textarea name="hello1" placeholder="">
+                                  </x-input-textarea>
+                              </div>
+
+                              <div class="col-lg-2 align-self-center">
+                                  <div class="d-grid">
+                                      <input data-repeater-delete type="button" class="btn btn-primary" value="Delete" />
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add" />
                   </div>
               </div>
 
               <div class="row">
                 <div class="col-lg-12">
                   <div class="mb-3">
-
                   </div>
                 </div>
               </div>
@@ -197,15 +177,8 @@
                           <div class="col-md-4">
                             <div class="mb-3">
                               <label for="basicpill-lastname-input">Student:</label>
-                              <select class="form-control form-control">
-                                <option>--Select--</option>
-                                <option value="AK">Alaska</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="CA">California</option>
-                                <option value="NV">Nevada</option>
-                                <option value="OR">Oregon</option>
-                                <option value="WA">Washington</option>
-                              </select>
+                              <x-input-select name="student_id"
+                :records="[]" />
                             </div>
                           </div>
                           <div class="col-md-4">
@@ -242,7 +215,7 @@
                                               </div>
                                           </div>
                                           <div data-repeater-list="group-a">
-                                              <div data-repeater-item class="row">
+                                              <div data-repeater-item class="row removeRow">
                                                   <div class="col-lg-4 p-0 pe-1 ps-2 pb-1 ">
                                                     <x-input-text name="hello1" placeholder="">
                                                     </x-input-text>
@@ -254,7 +227,7 @@
                                                   <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
                                                     <x-input-text name="hello1" placeholder="">
                                                     </x-input-text>
-                                                    <button class="btn btn-danger btn-rounded me-3 ms-2">
+                                                    <button class="btn btn-danger btn-rounded me-3 ms-2 removeBtn">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                   </div>
@@ -281,32 +254,10 @@
 @endsection
 
 @section('script')
-  <!-- form advanced init -->
-  <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
   <!-- form repeater js -->
   <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
   <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-  <!-- Required datatable js -->
-  <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-  <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-
-  <!-- Datatable init js -->
-  <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
   <!-- Init js -->
   <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-  <!-- Table Editable plugin -->
-  <script src="{{ asset('assets/libs/table-edits/table-edits.min.js') }}"></script>
-  <script src="{{ asset('assets/js/pages/table-editable.int.js') }}"></script>
 @endsection

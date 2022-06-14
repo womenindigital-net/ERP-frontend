@@ -2,18 +2,9 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title')Courses @endslot
-    @endcomponent
-    {{-- code  --}}
-
- 
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -162,23 +153,22 @@
                                         </div>
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div data-repeater-list="group-a">
-                                                <div data-repeater-item class="row mb-1">
+                                                <div data-repeater-item class="row mb-1 removeRow">
                                                     <div class=" col-lg-4"> 
-                                                        <x-input-text name="hh"  placeholder="Enter Your Name">
+                                                        <x-input-text name="heading" >
                                                         </x-input-text> 
                                                     </div>
                                                     <div class=" col-lg-4 px-1">
-                                                        <select class="form-select">
-                                                            <option>--Select--</option>
-                                                            <option>1000 :: Current Assets</option>
-                                                            <option>1010 :: Cash Operating Account </option>
-                                                            <option>1020 :: Cash Debitors </option>
-                                                            <option>1030 :: Petty Cash </option>
-                                                        </select>
+                                                        <x-input-select name="account_id"
+                                                        :records="[]" />
+
                                                     </div>                                                                  
-                                                    <div class=" col-lg-4">
-                                                        <x-input-text type="number" name="hh"  placeholder="Enter amount">
+                                                    <div class=" col-lg-4 d-flex">
+                                                        <x-input-text type="number" name="amount" >
                                                         </x-input-text> 
+                                                        <button class="btn btn-danger btn-rounded me-3 ms-2 removeBtn">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </button>
                                                     </div>                                                                  
                                                 </div>
                                             </div>
@@ -213,12 +203,12 @@
                         <div class="row pb-3">
                             <div class="col-6">
                                 <label class="col-form-label">Course / Service Name</label>
-                                <x-input-text type="number" name="hh"  placeholder="" readonly>
+                                <x-input-text type="number" name="courswe_service_name"  placeholder="" readonly>
                                 </x-input-text>
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Duration</label>
-                                <x-input-text type="number" name="hh"  placeholder="" readonly>
+                                <x-input-text type="number" name="duration"  placeholder="" readonly>
                                 </x-input-text>
                             </div>
                             <div class="col-6">
@@ -227,7 +217,7 @@
                             </div>
                             <div class="col-6">
                                 <label class="col-form-label">Description:</label>
-                                <x-input-text type="number" rows="1" name="hh"  placeholder="" readonly>
+                                <x-input-text type="number" rows="1" name="description"  placeholder="" readonly>
                                 </x-input-text>
                             </div>
                             
@@ -239,7 +229,7 @@
                                     <div class="card-body">
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div data-repeater-list="group-a">
-                                                <div data-repeater-item class="row mb-1">
+                                                <div data-repeater-item class="row mb-1 ">
                                                     <div class=" col-lg-4">   
                                                          <input type="text" readonly id="name" name="untyped-input" class="form-control" />
                                                     </div>
@@ -268,20 +258,6 @@
 </div><!-- /.modal -->
 @endsection
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $(".hide").hide();
-      $("#container").click(function(){
-        $(".hide").toggle();
-      });
-    });
-</script>
 
 <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 

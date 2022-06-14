@@ -2,16 +2,9 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title')TASK ACTIVITIES @endslot
-    @endcomponent
- 
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -124,12 +117,9 @@
 
                                 <label class="col-4 col-form-label">Activity</label>
                                 <div class="col-8">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>General Play</option>
-                                        <option>Organized Play</option>
-                                        <option>Balance Beam</option>
-                                    </select>
+                                    <x-input-select name="student_id"
+                :records="[]" />
+
                                 </div>
                             
                             </div>
@@ -137,13 +127,9 @@
 
                                 <label class="col-4 col-form-label">Domain Weight</label>
                                 <div class="col-8">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>Domain - Distribution structure</option>
-                                        <option>Section B : Preparatory framework</option>
-                                        <option>Section C: Steps of the work process</option>
-                                        <option>Section D : Assessment package</option>
-                                    </select>
+                                    <x-input-select name="student_id"
+                :records="[]" />
+
                                 </div>
                             
                             </div>
@@ -156,7 +142,7 @@
                                     <div class="card-body">
                                         <form class="repeater" enctype="multipart/form-data">
                                             <div data-repeater-list="group-a">
-                                                <div data-repeater-item class="row mt-3">
+                                                <div data-repeater-item class="row mt-3 removeRow">
 
                                                     <div class=" col-lg-6 d-flex row">
                                                         <div class="col-4">
@@ -167,18 +153,18 @@
                                                             </x-input-text>
                                                         </div>
                                                     </div>
-                                                    <div class=" col-lg-4 d-flex row">
+                                                    <div class=" col-lg-6 d-flex row">
                                                         <div class="col-4">
                                                             <label for="name" class="">Type</label>
                                                         </div>
-                                                        <div class="col-7">
-                                                            <select class="form-select">
-                                                                <option>--Select--</option>
-                                                                <option>Pre-Vocational</option>
-                                                                <option>Vocational</option>
-                                                                <option>Independent</option>
-                                                                <option>Karishma</option>
-                                                            </select>
+                                                        <div class="col-8 d-flex">
+                                                            <x-input-select name="student_id"
+                                                            :records="[]" />
+                                                            <div>
+                                                                <button class="btn btn-danger ms-2 removeBtn">
+                                                                    <i class="fas fa-trash-alt"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>                                                                  
                                                 </div>
@@ -283,20 +269,6 @@
 </div><!-- /.modal -->
 @endsection
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $(".hide").hide();
-      $("#container").click(function(){
-        $(".hide").toggle();
-      });
-    });
-</script>
 
 <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 
