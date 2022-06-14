@@ -52,7 +52,7 @@
                                                             দক্ষতা</a></li>
                                                     <li class="w-100"><a href="#LearningSkills" data-toggle="tab">শেখার
                                                             দক্ষতা</a></li>
-                                                    <li class="w-100"><a href="#Self-reliance"
+                                                    <li class="w-100"><a href="#SelfReliance"
                                                             data-toggle="tab">স্বনির্ভরতা</a>
                                                     </li>
                                                 </ul>
@@ -872,6 +872,210 @@
                                                                 </div>
                                                             </section>
                                                         </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="SelfReliance">
+                                                        <section>
+                                                            <div>
+                                                                <p>আপনার সন্তানের মাঝে নিচের বিষয়গুলির নিয়ে কোন অসুবিধা
+                                                                    পরিলক্ষন করেছেন কি? করে থাকলে,
+                                                                    কমেন্টে বিস্তারিত
+                                                                    লিখুন। এই বিষয়গুলি মুলত স্কুলে যাওয়ার বয়সের জন্য
+                                                                    প্রযোজ্যঃ</p>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_irrelevant_work_during_meal'
+                                                                    label="খাওয়াদাওয়ার সময় বিশ্রী/বেমানান কাজ করে কিনা যেটা পিতামাতার জন্য বিরক্তি সৃষ্টি করে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_scream_during_wearing_cloth'
+                                                                    label="কাপড় পরিধানঃ বেশি কান্নাকাটি/ চিৎকার করে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='how_you_will_describe_you_child'
+                                                                    type="checkbox"
+                                                                    label="আপনি আপনার শিশুকে কি ভাবে বর্ণনা করবেন?"
+                                                                    :records="$caseConstants::$howToDiscriveYourChild"
+                                                                    :isVertical="false" :multiple="true">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='bath' label="গোসল"
+                                                                    type="checkbox" :records="$caseConstants::$bath"
+                                                                    secondaryInputLabel="বিস্তারিত লিখুন"
+                                                                    :isVertical="false" :multiple="true">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='necessary_things'
+                                                                    label="প্রয়োজনীয় জিনিস" type="checkbox"
+                                                                    :records="$caseConstants::$necessaryThings"
+                                                                    secondaryInputLabel="বিস্তারিত লিখুন"
+                                                                    :isVertical="false" :multiple="true">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_have_the_navigation_capability'
+                                                                    label="দিক নির্ণয়ের দক্ষতা আছে কি?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='play' label="খেলা"
+                                                                    type="checkbox" :records="$caseConstants::$game"
+                                                                    :isVertical="false" :multiple="true">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='mobility' label="মবিলিটি"
+                                                                    type="checkbox" :records="$caseConstants::$mobility"
+                                                                    :isVertical="false" :multiple="true">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_like_routine'
+                                                                    label="রুটিন পছন্দ করে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_accept_routing_change'
+                                                                    label="রুটিনে কোন পরিবর্তন মেনে নেয় কি?রুটিন পছন্দ করে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_like_new_situation'
+                                                                    label="নতুন পরিস্থিতি পছন্দ করে?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='can_not_obey_regularity'
+                                                                    label="ধারাবাহিক নির্দেশ ঠিক মত পালন করতে পারে না"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_get_angry_quickly'
+                                                                    label="মেজাজ খুব তাড়াতাড়ি পরিবর্তিত হয়"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_get_disappointed_quickly'
+                                                                    label="সহজে হতাশাগ্রস্থ হয়"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_stop_working'
+                                                                    label="কাজ করা বন্ধ করে দেয়"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='can_stay_longer_if_needed'
+                                                                    label="অস্থিরতা আছে কি?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='can_stay_longer_if_needed'
+                                                                    label="একজায়গায় ঠিক মত বসতে পারে (পরিবেশ - পরিস্থিতির প্রয়োজনে দীর্ঘ সময় বসে থাকা )"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_have_tremendous_behaviors_at_home'
+                                                                    label="বাসায় ধ্বংসাত্মক বা আক্রমণাত্মক ব্যাবহার আছে কি?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='seems_like_not_interested_in_playing'
+                                                                    label="খেলাধুলায় মনে হয় মনোযোগ নেই, শুধু বসে থাকে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_have_time_sense'
+                                                                    label="আপনার সন্তানের সময় সম্পর্কে জ্ঞান আছে কি?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='doest_have_knowledge_problem_about_day_monty_and_time'
+                                                                    label="দিন, মাস ও সময় জ্ঞান অর্জনে সমস্যা আছে কি?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='response'
+                                                                    label="সারা প্রদান"
+                                                                    :records="$caseConstants::$answerTheCall">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='day_dreamer'
+                                                                    label="দিবাস্বপ্নচারী মনে হয় । ঘোরের মধ্যে থাকা, কল্পনার জগতে থাকে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_move_in_one_place'
+                                                                    label="এক জায়গায় ঘোরে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_move'
+                                                                    label="ঘোরাঘুরি করে" :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_move_all_time'
+                                                                    label="সবসময়ই নড়াচড়া বা চলাফেরার মধ্যে থাকে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_like_to_sit_straight'
+                                                                    label="সোজা হয়ে বসতে পছন্দ করে কি?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='is_expert_play_with_ball'
+                                                                    label="বল নিয়ে খেলার ক্ষেত্রে পারদর্শী"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_ignore_playing_with_ball'
+                                                                    label="বল নিয়ে যে কোন ধরনের খেলা এড়িয়ে চলে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_like_to_destroy'
+                                                                    label="ভাংচুর করতে পছন্দ করে (জিনিষ পত্র নষ্ট করে )"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='does_run_in_wrong_way'
+                                                                    label="বেমানান ভঙ্গিতে দৌঁড়ায়"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='does_height_movement_be_careful_when_going_down_stairs'
+                                                                    label="উচ্চতা, নড়াচড়া, সিঁড়ি দিয়ে নামার ক্ষেত্রে সাবধান থাকে"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='try_to_ignore_task'
+                                                                    label="কাজ এড়িয়ে চলতে চায়"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check
+                                                                    name='which_kind_of_task_he_try_to_skip'
+                                                                    label="কোন ধরনের কাজ এড়িয়ে চলে?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name='lost_again_and_again'
+                                                                    label="বার বার হারিয়ে যায়?"
+                                                                    :records="$constants::$yesNo">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                            </div>
+                                                        </section>
                                                     </div>
                                                     <div class="wizard-footer d-flex justify-content-between">
                                                         <div class="pull-left">

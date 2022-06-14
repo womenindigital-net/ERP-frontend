@@ -86,6 +86,8 @@ class CaseHistoryController extends Controller
     public function show(CaseHistory $caseHistory)
     {
         $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
             'caseHistory' => $this->caseHistory = $caseHistory,
         ];
         // dd($data['caseHistory']);
@@ -117,9 +119,11 @@ class CaseHistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCaseHistoryRequest $request, CaseHistory $caseHistory)
+    public function update(CaseHistoryRequest $request, CaseHistory $caseHistory)
     {
-        //
+        $this->caseRepo->update($caseHistory, $request->validated());
+        Session::flash('success', 'Updated');
+        return redirect()->back();
     }
 
     /**

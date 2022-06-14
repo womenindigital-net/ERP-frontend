@@ -42,20 +42,28 @@
                               <div class="mb-3">
                                 <label for="basicpill-firstname-input">Collection
                                   Date:</label>
-                                <p class="form-control">{{ $caseHistory->date }}</p>
+                                <div class="input-group" id="datepicker2">
+                                  <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"
+                                    value="{{ $caseHistory->date }}">
+                                  </x-input-text>
+                                </div><!-- input-group -->
                               </div>
                             </div>
                             <div class="col-lg-4">
                               <div class="mb-3">
-                                <label for="basicpill-lastname-input">Teacher:</label>
-                                <p class="form-control">{{ $caseHistory->teacher->name ?? 'name Not found' }}</p>
+                                <label>Teacher:</label>
+                                <x-input-select :records="$teachers" name="teacher_id"
+                                  :selected="$caseHistory->teacher_id">
+                                </x-input-select>
                               </div>
                             </div>
                             <div class="col-lg-4">
                               <div class="mb-3">
-                                <label for="basicpill-phoneno-input">Candidate
+                                <label>Candidate
                                   ID:</label>
-                                <p class="form-control">{{ $caseHistory->studnet->name ?? 'Name Not found' }}</p>
+                                <x-input-select :records="$students" name="student_id"
+                                  :selected="$caseHistory->student_id">
+                                </x-input-select>
                               </div>
                             </div>
                           </div>
@@ -64,13 +72,15 @@
                             <div class="col-lg-6">
                               <div class="mb-3">
                                 <label for="verticalnav-phoneno-input">Phone</label>
-                                <p class="form-control">{{ $caseHistory->phone }}</p>
+                                <x-input-text name="phone" value="{{ $caseHistory->phone }}">
+                                </x-input-text>
                               </div>
                             </div>
                             <div class="col-lg-6">
                               <div class="mb-3">
                                 <label for="verticalnav-email-input">Email</label>
-                                <p class="form-control">{{ $caseHistory->email }}</p>
+                                <x-input-text name="email" value="{{ $caseHistory->email }}">
+                                </x-input-text>
                               </div>
                             </div>
                           </div>
@@ -78,7 +88,7 @@
                             <div class="col-lg-12">
                               <div class="mb-3">
                                 <label for="verticalnav-address-input">Address</label>
-                                <p class="form-control">{{ $caseHistory->address }}</p>
+                                <x-input-textarea name="address" value="{{ $caseHistory->address }}"></x-input-textarea>
                               </div>
                             </div>
                           </div>

@@ -26,6 +26,12 @@ class CaseHistoryList extends Component
         $this->dispatchBrowserEvent('notify');
     }
 
+    public function delete($id): void
+    {
+        $this->caseRepo->delete($id);
+        $this->dispatchBrowserEvent('notify');
+    }
+
     public function render()
     {
         $data = [
