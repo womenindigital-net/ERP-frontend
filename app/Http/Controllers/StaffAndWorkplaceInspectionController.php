@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use App\Models\StaffAndWorkplaceInspection;
 use App\Http\Requests\StaffAndWorkplaceInspectionRequest;
 use App\Repositories\StaffAndWorkplaceinspectionRepository;
@@ -46,8 +47,8 @@ class StaffAndWorkplaceInspectionController extends Controller
     {
         //  $this->stafAndWorkRepo->store($request->validated());
         //  return redirect()->back();
+        Session::flash('success');
          dd($request);
-
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use App\Models\DramaDiaryEvaluation;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Foundation\Application;
 use App\Http\Requests\DramaDiaryEvaluationRequest;
 use App\Repositories\DramaDiaryEvaluationRepository;
@@ -50,6 +51,7 @@ class DramaDiaryEvaluationController extends Controller
     {
         // $this->dramaDiaryRepo->store($request->validated());
         // return redirect()->back();
+        Session::flash('success');
         dd($request);
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GymAndOuting;
+use Illuminate\Support\Facades\Session;
 use App\Repositories\GymAndOutingRepository;
 use App\Http\Requests\StoreGymAndOutingRequest;
 use App\Http\Requests\UpdateGymAndOutingRequest;
@@ -44,6 +45,7 @@ class GymAndOutingController extends Controller
     public function store(StoreGymAndOutingRequest $request)
     {
         $this->gymandoutingRepo->store($request->validated());
+        Session::flash('success');
         return redirect()->back();
     }
   
