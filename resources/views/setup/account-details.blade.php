@@ -3,10 +3,6 @@
 @section('css')
 @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') ACCOUNTING @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -34,7 +30,7 @@
           </div>
           <div class="col-sm-12 col-md-6 text-end">
             <label style="display: inline-flex;align-items: center;">Search:
-              <input type="search" class="form-control form-control-sm" placeholder="">
+             <x-input-text type="search" name="search"/>
             </label>
           </div>
         </div>
@@ -59,7 +55,7 @@
                 <td class="col-4">Create: Shamima Shikder @ 2020-12-22 15:03:12
                   Update: Ohidul Hassan @ 2022-05-12 13:11:49</td>
                 <td>
-                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">
                     <i class="mdi mdi-eye"></i>
                   </button>
                   <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
@@ -112,7 +108,7 @@
   </div> <!-- end col -->
 </div> <!-- end row -->
 <!--  Extra Large modal example -->
-  <div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
+<div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
               <div class="modal-header">
@@ -127,19 +123,19 @@
                   <div class="col-md-12">
                     <div class="mb-3">
                         <label class="form-label">Account No :</label>
-                        <x-input-text name="Account No" placeholder="Account No" type="number"></x-input-text>
+                        <x-input-text name="account_no" placeholder="Account No" type="number"></x-input-text>
                     </div>
                   </div>  
                   <div class="col-md-12">
                     <div class="mb-3">
                         <label class="form-label">Account Name :</label>
-                        <x-input-text name="Account Name" placeholder="Account Name"></x-input-text>
+                        <x-input-text name="account_name" placeholder="Account Name"></x-input-text>
                     </div>
                   </div>  
                   <div class="col-md-12">
                     <div class="mb-3">
                         <label class="form-label">Initial Balance :</label>
-                        <x-input-text type="number" name="Initial Balance" placeholder="Initial Balance"></x-input-text>
+                        <x-input-text type="number" name="initial_balance" placeholder="Initial Balance"></x-input-text>
                     </div>
                   </div>  
                   {{-- Show Cause Description --}}
@@ -147,7 +143,7 @@
                     <div class="mb-3">
                         <label class="form-label">Show Cause Description</label>
                           <div class="col-md-12">
-                            <x-input-textarea name="Description" placeholder="Description"></x-input-textarea>
+                            <x-input-textarea name="description"></x-input-textarea>
                           </div>
                     </div>
                 </div> 
@@ -161,7 +157,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
  <!-- center modal -->                                          
- <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
      <div class="modal-dialog modal-dialog-centered">
          <div class="modal-content">
              <div class="modal-header">

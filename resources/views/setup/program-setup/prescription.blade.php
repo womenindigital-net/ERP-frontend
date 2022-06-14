@@ -3,19 +3,7 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-  type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-  type="text/css" />
-<link href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
@@ -82,7 +70,6 @@
             </tr>
           </tbody>
         </table>
-
       </div>
     </div>
   </div> <!-- end col -->
@@ -106,14 +93,14 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescription Name:</label>
-                      <x-input-text name="hello1" placeholder="">
+                      <x-input-text name="hello1" placeholder="Prescription Name">
                       </x-input-text>
                     </div>
                   </div>
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescribe By:</label>
-                      <x-input-text name="hello1" placeholder="">
+                      <x-input-text name="hello1" placeholder="Prescribe By">
                       </x-input-text>
                     </div>
                   </div>

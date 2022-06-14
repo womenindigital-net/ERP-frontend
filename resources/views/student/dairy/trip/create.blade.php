@@ -2152,8 +2152,7 @@
                                                                     </x-input-text>
                                                                 </div>
                                                              </div>
-                                                                <!-- input-group -->
-                                                           
+                                                         <!-- input-group -->
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>

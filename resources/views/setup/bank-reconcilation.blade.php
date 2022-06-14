@@ -58,7 +58,6 @@
                             <label class="col-2 col-form-label me-5"></label>
                             <div class="col-6 ms-5 mb-4">
                                 <x-input-text value="Company Amount: Bank Amount:" name="date" placeholder="mm/dd/yyyy"></x-input-text>
-                              
                             </div>
                         </div>
                         <div class="row">
@@ -103,7 +102,7 @@
                         </div> 
                     </div>
                 <!--  Extra Large modal example -->
-                <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+             <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -119,34 +118,20 @@
                                                 <div class="row">
                                                     <div class="col-lg-4">
                                                         <div class="mb-3 text-center">
-                                                            <label for="formrow-inputState" class="form-label">Project </label>
-                                                            <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">Select</option>
-                                                                <option value="1">Governing Office</option>
-                                                                <option value="2">Operations</option>
-                                                                <option value="3">Administration</option>
-                                                                <option value="4">Finance and Accounts Section</option>
-                                                                <option value="6">Procurement Section</option>
-                                                                <option value="7">Inventory Management</option>
-                                                                <option value="8">Stock maintenance</option>
-                                                                <option value="9">ICT Section</option>
-                                                                <option value="10">Programme</option>
-                                                                <option value="11">Core Programme</option>
-                                                                <option value="12">Computer Section</option>
-                                                                <option value="13">Jewelry Section</option>
-                                                            </select>
+                                                            <label for="formrow-inputState" class="form-label">Project</label>
+                                                            <x-input-select name="project_id" :records="[]" />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="mb-3 text-center">
                                                             <label for="formrow-inputState" class="form-label">Trans. Amount</label>
-                                                            <x-input-text type="number" name="date" placeholder="mm/dd/yyyy"></x-input-text>
+                                                            <x-input-text type="number" name="amount_date" placeholder="mm/dd/yyyy"></x-input-text>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="mb-3 text-center">
                                                             <label for="formrow-inputState" class="form-label">Voucher Date</label>
-                                                            <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
+                                                            <x-input-text type="voucher_date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -154,13 +139,13 @@
                                                     <div class="col-lg-8">
                                                         <div class="mb-3 text-center">
                                                             <label for="formrow-inputZip" class="form-label ">Particulars</label>
-                                                            <x-input-text name="Particulars" placeholder="Particulars"></x-input-text>
+                                                            <x-input-text name="particulars" placeholder="Particulars"></x-input-text>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="mb-3 text-center">
                                                             <label for="formrow-inputZip" class="form-label">Reference</label>
-                                                            <x-input-text name="Reference" placeholder="Reference If Any"></x-input-text>
+                                                            <x-input-text name="reference" placeholder="Reference If Any"></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -185,16 +170,16 @@
                                             <div data-repeater-list="group-a">
                                                 <div data-repeater-item="" class="row ms-1">
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <x-input-text name="Acc. Number" type="number" placeholder="Acc. Number"></x-input-text>
+                                                        <x-input-text name="account_number" type="number" placeholder="Acc. Number"></x-input-text>
                                                     </div>
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <x-input-text name="Acc. Particular" placeholder="Acc. Particular"></x-input-text>
+                                                        <x-input-text name="account_particular" placeholder="Acc. Particular"></x-input-text>
                                                     </div>
                                                     <div class=" col p-0 pe-1 pb-1">
-                                                        <x-input-text name="Debit" type="number" placeholder="Debit"></x-input-text>
+                                                        <x-input-text name="debit" type="number" placeholder="Debit"></x-input-text>
                                                     </div>
                                                     <div class=" col p-0  pb-1 me-4 d-flex">
-                                                        <x-input-text name="Credit" type="number" placeholder="Credit"></x-input-text>
+                                                        <x-input-text name="credit" type="number" placeholder="Credit"></x-input-text>
                                                         <button class="btn btn-outline-danger waves-effect waves-light ms-2">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button>

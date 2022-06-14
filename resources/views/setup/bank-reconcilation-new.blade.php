@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Tabs_&_Accordions') @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') Dashboard @endslot
-@slot('title') Bank Reconciliation New @endslot
-@endcomponent
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -25,28 +21,20 @@
                                 <div class="col-6 d-flex">
                                     <label class="col-2 col-form-label">Form</label>
                                     <div class="col-6 mb-4">
-                                        <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
+                                        <x-input-text type="date" name="form_date" placeholder="mm/dd/yyyy"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex">
                                     <label for="example-date-input" class="col-md-4 col-form-label">To</label>
                                     <div class="col-md-6">
-                                        <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
+                                        <x-input-text type="date" name="to_date" placeholder="mm/dd/yyyy"></x-input-text>
                                     </div>
                                 </div>
                             </div>    
                             <div class="col-6 d-flex">
                                 <label class="col-2 col-form-label">Bank</label>
                                 <div class="col-6 mb-4">
-                                    <select name="StudentID"  class="form-control strip-tags form-control section2 form-select" id="StudentID" required="">
-                                             <option value="0">Select</option>
-                                             <option value="1">1050001::Bank - Brac Bank (A/c # 1555204025093001)</option>
-                                             <option value="2">1050002::Bank - Mutual Trust Bank</option>
-                                             <option value="3">1050003::Bank - SCB (01-1308636-01)</option>
-                                             <option value="4">1050004::Bank-The City Bank Ltd (3101829023001)</option>
-                                             <option value="5">1050005::Bank - FSIB Ltd. (010311100012296)</option>
-                                             <option value="6">1210004::First Security Islami Bank Ltd</option>
-                                    </select>
+                                    <x-input-select name="bank" :records="[]" />
                                 </div>
                                 <div class="col-md-4 ms-2">
                                     <button type="button" class="btn btn-outline-info  waves-light w-100" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Show</button>
