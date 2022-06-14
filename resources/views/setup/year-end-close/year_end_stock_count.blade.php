@@ -1,22 +1,8 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Tabs_&_Accordions') @endsection
 @section('css')
-    <link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Responsive Table css -->
-    <link href="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') Dashboard @endslot
-@slot('title') STOCK COUNT ADJUST @endslot
-@endcomponent
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -48,14 +34,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-md-4 col-form-label ">Warehouse</label>
                                                 <div class="col-md-6">
-                                                    <select class="form-select">
-                                                        <option value="0">Select</option>
-                                                        <option value="1">Canteen Logistic Materials</option>
-                                                        <option value="2">Canteen Raw material</option>
-                                                        <option value="3">Office Outlet</option>
-                                                        <option value="4">Office Programme</option>
-                                                        <option value="5">Office Store</option>
-                                                    </select>
+                                                    <x-input-select name="warehouse_id"
+                                                     :records="[]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -90,39 +70,24 @@
                                             </div>
                                         </div>
                                         <div data-repeater-list="group-a">
-                                            <div data-repeater-item class="row">
-                                                <div  class="col-1 d-flex p-0 ps-4 pb-1">
+                                            <div data-repeater-item class="row removeRow">
+                                                <div  class="col-1 d-flex  ps-4 pb-1">
                                                     <label>01</label>
                                                 </div>
-                                                <div class=" col-3 p-0 pb-1">
-                                                  <select id="formrow-inputState" class="form-select">
-                                                    <option value="0">Select</option>
-                                                    <option value="1">Basic</option>
-                                                    <option value="2">Gross Salary</option>
-                                                    <option value="3">Late Deduction Salary</option>
-                                                    <option value="4">House Rent</option>
-                                                    <option value="5">Medical Allowance</option>
-                                                    <option value="6">Advance</option>
-                                                    <option value="7">Fooding</option>
-                                                    <option value="8">Transport</option>
-                                                    <option value="9">AIT</option>
-                                                    <option value="10">PF</option>
-                                                    <option value="11">Overtime</option>
-                                                    <option value="12">Arrear</option>
-                                                    <option value="13">Absent</option>
-                                                  </select>
+                                                <div class=" col-3  pb-1">
+                                                    <x-input-select name="student_id"
+                                                    :records="[]" />
                                                 </div>
-                                                <div class=" col-3 p-0 pb-1">
-                                                  <select id="formrow-inputState" class="form-select">
-                                                    <option value="0">Select</option>
-                                                  </select>
+                                                <div class=" col-3  pb-1">
+                                                    <x-input-select name="student_id"
+                                                    :records="[]" />
                                                 </div>
-                                                <div class=" col-2 p-0 pb-1">
+                                                <div class=" col-2  pb-1">
                                                     <input type="text" class="form-control"/>
                                                 </div>
-                                                <div class="col-3 p-0 pb-1 align-self-center d-flex">
+                                                <div class="col-3  pb-1 align-self-center d-flex">
                                                     <input type="number" class="form-control"/>
-                                                    <button class="btn btn-outline-danger waves-effect waves-light">
+                                                    <button class="btn btn-outline-danger waves-effect waves-light removeBtn">
                                                       <i class="fas fa-trash-alt"></i>
                                                   </button>
                                                 </div>
@@ -161,7 +126,7 @@
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead>
-                                        <tr>
+                                        <tr class="table-primary">
                                             <th>Warehouse</th>
                                             <th>Count Date</th>
                                             <th>Counted By</th>
@@ -193,54 +158,8 @@
 </div>
 @endsection
 @section('script')
-    <!-- form advanced init -->
-    <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-
     <!-- form repeater js -->
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 
     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-
-    {{-- Table --}}
-
-    <!-- Responsive Table js -->
-    <script src="{{ URL::asset('/assets/libs/rwd-table/rwd-table.min.js') }}"></script>
-
-    <!-- Init js -->
-    <script src="{{ URL::asset('/assets/js/pages/table-responsive.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
-
-    <!-- Required datatable js -->
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Plugins js -->
-    <script src="{{ asset('assets/libs/dropzone/dropzone.min.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $("#formCheckBoxForm").hide();
-        $("#formCheckBoxForm2").hide();
-
-        $("#formCheckBox").click(function(){
-            $("#formCheckBoxForm").toggle();
-        });
-        $("#formCheckBox2").click(function(){
-            $("#formCheckBoxForm2").toggle();
-        });
-    });
- </script>
 @endsection

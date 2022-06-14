@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Tabs_&_Accordions') @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') Dashboard @endslot
-@slot('title') ACC YEAR SETUP @endslot
-@endcomponent
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -34,19 +30,22 @@
                                       <div class="row mb-1 p-2">
                                           <label for="horizontal-firstname-input" class="col-sm-4 col-form-label">Account Year Name</label>
                                           <div class="col-sm-8">
-                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Store Name Here ">
+                                            <x-input-text name="year_id" class="form-control" placeholder="Account year here">
+                                            </x-input-text>
                                           </div>
                                       </div>
                                       <div class="row mb-1 p-2">
                                           <label for="horizontal-firstname-input" class="col-sm-4 col-form-label">Account Year Start</label>
                                           <div class="col-sm-8">
-                                              <input type="date" class="form-control" id="horizontal-firstname-input" placeholder="dd/mm/yyyy ">
+                                            <x-input-text name="year_start" type="date" class="form-control" >
+                                            </x-input-text>
                                           </div>
                                       </div>
                                       <div class="row p-2">
                                           <label for="horizontal-firstname-input" class="col-sm-4 col-form-label">Account Year End</label>
                                           <div class="col-sm-8">
-                                              <input type="date" class="form-control" id="horizontal-firstname-input" placeholder="dd/mm/yyyy ">
+                                            <x-input-text name="year_end" type="date" class="form-control" >
+                                            </x-input-text>
                                           </div>
                                       </div>
                                       <div class="row justify-content-end">
@@ -72,14 +71,14 @@
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead>
-                                        <tr>
+                                        <tr class="table-primary">
                                             <th>Accounting Year Name</th>
                                             <th>Accounting Year Start</th>
                                             <th>Accounting Year End</th>
                                             <th>Log</th>
                                             <th>Action</th>
                                         </tr>
-                                      </thead>
+                                    </thead>
                                     <tbody>
                                       <tr>
                                         <td>Acc-Year-2021-2022</td>

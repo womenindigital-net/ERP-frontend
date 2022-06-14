@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Tabs_&_Accordions') @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') Dashboard @endslot
-@slot('title') user role  @endslot
-@endcomponent
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -31,73 +27,76 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12 d-flex">
-                                            <div class="col-md-6">
-                                              <label style="display: inline-flex;align-items: center;">Role Name 
-                                                <x-input-text name="name" placeholder="Role Name Here">
+                                            <div class="col-md-5 d-flex" >
+                                              <label class="col-2 d-flex align-items-center">Role Name </label>
+                                                <x-input-text name="role_name" placeholder="Role Name Here">
                                                 </x-input-text>
-                                              </label>
                                             </div>
                                             <div class="col-md-6 text-end">
                                               <label style="display: inline-flex;align-items: center;">Description
-                                                <x-input-text name="description" placeholder="Role Description Here">
+                                                <x-input-text name="role_description" placeholder="Role Description Here">
                                                 </x-input-text>
                                               </label>
                                             </div>
                                         </div>
                                     </div>
                                     <h5>All Products </h5>
-                                          <div class="table-responsive">
-                                            <table class="table w-100 table-bordered">
-                                              <thead>
-                                                <tr class="table-primary">
-                                                  <th>SL</th>
-                                                  <th>Module Name</th>
-                                                  <th>Form Name</th>
-                                                  <th> <span>Can View ? <br></span>
-                                                    <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></span></th>
-                                                  <th> <span>Can Add ? <br> </span>
-                                                    <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></span></th>
-                                                  <th><span>Can Edit ? <br></span>
-                                                    <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></th></span>
-                                                  <th><span>Can Delete ? <br></span>
-                                                <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></span></th>
-                                                </tr>
-                                              </thead>
-                                              <tbody>
-                                                <tr>
-                                                  <td>1</td>
-                                                  <td>Pre-Admission</td>
-                                                  <td>CARE needs - Part 1 (PA1OT)</td>
-                                                  <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
-                                                  <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
-                                                  <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
-                                                  <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </div>
-                                          <div class="row">
-                                            <div class="col-sm-12 col-md-6">
-                                              Showing 1 to 2 of 2 entries
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 text-end">
-                                              <nav>
-                                                <ul class="pagination" style="justify-content: end;">
-                                                  <li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                  </li>
-                                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                  <li class="page-item active">
-                                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                  </li>
-                                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                  <li class="page-item">
-                                                    <a class="page-link" href="#">Next</a>
-                                                  </li>
-                                                </ul>
-                                              </nav>
-                                            </div>
-                                          </div>
+                                    <div class="table-responsive">
+                                      <table class="table w-100 table-bordered">
+                                        <thead>
+                                          <tr class="table-primary">
+                                            <th>SL</th>
+                                            <th>Module Name</th>
+                                            <th>Form Name</th>
+                                            <th> <span>Can View ? <br></span>
+                                              <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></span>
+                                            </th>
+                                            <th> <span>Can Add ? <br> </span>
+                                              <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></span>
+                                            </th>
+                                            <th><span>Can Edit ? <br></span>
+                                              <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></span>
+                                            </th>
+                                            <th><span>Can Delete ? <br></span>
+                                              <span>Select All<input class="form-check-input me-5" id="container" type="checkbox" name="container"></span>
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>1</td>
+                                            <td>Pre-Admission</td>
+                                            <td>CARE needs - Part 1 (PA1OT)</td>
+                                            <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
+                                            <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
+                                            <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
+                                            <td><input class="form-check-input me-5" id="container" type="checkbox" name="container"></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-12 col-md-6">
+                                        Showing 1 to 2 of 2 entries
+                                      </div>
+                                      <div class="col-sm-12 col-md-6 text-end">
+                                        <nav>
+                                          <ul class="pagination" style="justify-content: end;">
+                                            <li class="page-item disabled">
+                                              <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active">
+                                              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                              <a class="page-link" href="#">Next</a>
+                                            </li>
+                                          </ul>
+                                        </nav>
+                                      </div>
+                                    </div>
                                 </div>
                                     <!-- end card body -->
                             </div>
@@ -127,7 +126,7 @@
                                             </div>
                                           </div>
                                           <div class="table-responsive">
-                                            <table class="table table-borderd w-100">
+                                            <table class="table table-bordered w-100">
                                               <thead>
                                                 <tr class="table-primary">
                                                     <th>Job No</th>
@@ -148,11 +147,10 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
-                                                    <td></td>
                                                     <td>Yes</td>
                                                     <td>Create: sk paul @ 2018-09-17 00:00:00
                                                         Update: Shonod Digital @ 2018-11-13 18:10:08 </td>
-                                                  <td>
+                                                    <td>
                                                     <button type="button"
                                                     class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                                     <i class="mdi mdi-pencil"></i>
