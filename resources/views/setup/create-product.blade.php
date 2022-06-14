@@ -6,11 +6,6 @@
 
 @section('content')
 
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')ACCOUNTING > PRODUCT @endslot
-@endcomponent
-
 <div class="row">
   <div class="col-xl-12">
       <div class="card">
@@ -51,7 +46,7 @@
                                                                 <h6>Code</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                 <x-input-text name="Code" type="number" placeholder="Product code here"></x-input-text>
+                                                                 <x-input-text name="code" type="number" placeholder="Product code here"></x-input-text>
                                                                 <datalist id="ItemCode" class="ItemCode">
                                                                   <option>AB-001</option>
                                                                   <option>AC-001</option>
@@ -75,7 +70,7 @@
                                                               <h6>Description</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <x-input-textarea name="Description" placeholder="Product code here"></x-input-textarea>
+                                                              <x-input-textarea name="description" placeholder="Product code here"></x-input-textarea>
                                                              </div>
                                                           </div>
                                                            <div class="row mb-4">
@@ -83,19 +78,7 @@
                                                                 <h6>Category</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <select class="form-control select2 form-select">
-                                                                  <option value="0">--Select-</option>
-                                                                  <option value="1">4 Water Purifier 6 Fire Exti</option>
-                                                                  <option value="2">AC (11)</option>
-                                                                  <option value="3">Angel Chef Hot Kitchen</option>
-                                                                  <option value="4">Anklet</option>
-                                                                  <option value="5">Annual Anniversary</option>
-                                                                  <option value="6">Annual Anniversary of PFDA - V</option>
-                                                                  <option value="7">antivirus</option>
-                                                                  <option value="8">antivirus</option>
-                                                                  <option value="9">Art Finished Goods</option>
-                                                                  <option value="10">Art Raw Materials</option>
-                                                                </select>
+                                                                <x-input-select name="category" :records="[]" />
                                                                </div>
                                                             </div>
                                                             <div class="row mb-4">
@@ -103,7 +86,7 @@
                                                                 <h6>Reorder Quantity</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <x-input-text name="Code" type="number" placeholder="Reorder Quantity Here"></x-input-text>
+                                                                <x-input-text name="reorder_quantit" type="number" placeholder="Reorder Quantity Here"></x-input-text>
                                                                </div>
                                                             </div>
                                                       </div>
@@ -169,17 +152,7 @@
                                                                <h6>Type</h6>
                                                              </div>
                                                               <div class="col-8">
-                                                               <select class="form-control select2 form-select">
-                                                                 <option value="0">Select</option>
-                                                                 <option value="1">Inventory item</option>
-                                                                 <option value="2">Non-inventory item</option>
-                                                                 <option value="3">Other charges</option>
-                                                                 <option value="4">Sub total</option>
-                                                                 <option value="5">Group</option>   
-                                                                 <option value="6">Discount</option>
-                                                                 <option value="7">Fixed asset</option> 
-                                                                 <option value="8">Inhouse production</option>
-                                                               </select>
+                                                                <x-input-select name="type" :records="[]" />
                                                               </div>
                                                            </div>
                                                           <div class="row mb-4">
@@ -187,22 +160,7 @@
                                                                <h6>Measurement</h6>
                                                              </div>
                                                               <div class="col-8">
-                                                               <select class="form-control select2 form-select">
-                                                                 <option value="0">--Select-</option>
-                                                                 <option value="1">bottol</option>
-                                                                 <option value="2">Bundle</option>
-                                                                 <option value="3">Can</option>
-                                                                 <option value="4">CAT Veg Portion</option>
-                                                                 <option value="5">DAY</option>
-                                                                 <option value="6">DOZEN</option>
-                                                                 <option value="7">FUEL</option>
-                                                                 <option value="8">GOJ</option>
-                                                                 <option value="9">Gram</option>
-                                                                 <option value="10">Kilogram</option>
-                                                                 <option value="11">LINE</option>
-                                                                 <option value="12">Litter</option>
-                                                                 <option value="13">Meter</option>
-                                                               </select>
+                                                                <x-input-select name="measuremen" :records="[]" />
                                                               </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -210,7 +168,7 @@
                                                               <h6>Image</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <x-input-text name="Image" type="file" placeholder="Product name here"></x-input-text>
+                                                              <x-input-text name="image" type="file" placeholder="Product name here"></x-input-text>
                                                              </div>
                                                            </div>
                                                      </div>
@@ -257,64 +215,48 @@
                                                             <form class="repeater" enctype="multipart/form-data">
                                                                 <div class="row">
                                                                     <div class="col-lg-2 p-0 pe-1">
-                                                                        <label for="name">SL</label>
-                                                                        <label for="name">P. Category</label>
+                                                                        <label for="sl">SL</label>
+                                                                        <label for="p_category">P. Category</label>
                                                                     </div>
                                                                     <div class="col-lg-2 p-0 pe-1">
                                                                         <label for="product">Product</label>
                                                                     </div>
                                                                     <div class="col-lg-2 p-0 pe-1">
-                                                                        <label for="product">Measure Unit</label>
+                                                                        <label for="measure_unit">Measure Unit</label>
                                                                     </div>
                                                                     <div class="col-lg-2 p-0 pe-1">
-                                                                        <label for="quality">	Quantity</label>
+                                                                        <label for="quality">Quantity</label>
                                                                     </div>
                                                                     <div class="col-lg-2 p-0 pe-1">
-                                                                        <label for="total">Price</label>
+                                                                        <label for="price">Price</label>
                                                                     </div>
                                                                     <div class="col-lg-2 p-0 pe-1">
-                                                                        <label for="total">Cost Price</label>
+                                                                        <label for="cost_price">Cost Price</label>
                                                                     </div>
                                                                 </div>
                                                                 <div data-repeater-list="group-a">
-                                                                    <div data-repeater-item class="row">
+                                                                    <div data-repeater-item class="row removeRow">
                 
                                                                         <div  class="col-lg-2 d-flex p-0 pe-1 pb-1">
                                                                             <span class="pe-2 pb-1">01</span>
-                                                                            <select id="formrow-inputState" class="form-select">
-                                                                                <option value="">--Select--</option>
-                                                                                <option value="1">Canteen Raw Material</option>
-                                                                                <option value="1">Canteen Raw Material</option>
-                                                                                <option value="1">Canteen Raw Material</option>
-                                                                                <option value="1">Canteen Raw Material</option>
-                                                                                <option value="1">Canteen Raw Material</option>
-                                                                                <option value="1">Canteen Raw Material</option>
-                                                                                <option value="1">Canteen Raw Material</option>
-                                                                            </select>
+                                                                            <x-input-select name="p_category" :records="[]" />
                                                                         </div>
                                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                                            <select id="formrow-inputState" class="form-select">
-                                                                                <option selected="">--Select--</option>
-                                                                                <option value="1">Garbage Poly::1031</option>
-                                                                                <option value="1">Hand Wash::1027</option>
-                                                                                <option value="3">Napkin Tissue::1025</option>
-                                                                                <option value="4">Savlon::1028</option>
-                                                                                <option value="5">Vim Botal::1024</option>
-                                                                            </select>
+                                                                          <x-input-select name="product" :records="[]" />
                                                                         </div>
                                                                         <div  class=" col-lg-2 p-0 pe-1 pb-1">
-                                                                          <x-input-text name="category" ></x-input-text>
+                                                                          <x-input-text name="measure_unit" ></x-input-text>
                                                                         </div>
                 
                                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                                          <x-input-text name="Price" type="number"></x-input-text>
+                                                                          <x-input-text name="qualaty" type="number"></x-input-text>
                                                                         </div>
                                                                         <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                                                          <x-input-text name="Price" type="number"></x-input-text>
+                                                                          <x-input-text name="price" type="number"></x-input-text>
                                                                         </div>
                                                                         <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                                          <x-input-text name="Price" type="number"></x-input-text>
-                                                                            <button class="btn btn-outline-danger ms-2">
+                                                                          <x-input-text name="cost_price" type="number"></x-input-text>
+                                                                            <button class="btn btn-outline-danger ms-2 removeBtn">
                                                                                 <i class="fas fa-trash-alt"></i>
                                                                             </button>
                                                                         </div>

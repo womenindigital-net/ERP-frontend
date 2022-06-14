@@ -2,10 +2,6 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')VOCATIONAL MARKING SUB CATEGORIES @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -116,18 +112,11 @@
               <div class="col-md-12 d-flex">
                 <div class="col-md-6 mb-3 text-center">
                     <label class="form-label">Sub Category Name</label>
-                    <x-input-text name="Name" placeholder=" Sub Category Name Here"></x-input-text>
+                    <x-input-text name="sub_category_name" placeholder=" Sub Category Name Here"></x-input-text>
                 </div>
                 <div class="col-md-6 ms-2  mb-3 text-center">
                     <label class="form-label">Category Name</label>
-                    <select id="formrow-inputState" class="form-select">
-                        <option value="0">Select</option>
-                        <option value="1">Computer training</option>
-                        <option value="2">Painting</option>
-                        <option value="3">Paper work</option>
-                        <option value="4">Carpet Slipper</option>
-                        <option value="5">Photography</option>
-                    </select>
+                    <x-input-select name="category_name" :records="[]" />
                 </div>
               </div>  
               <!-- journal form end -->

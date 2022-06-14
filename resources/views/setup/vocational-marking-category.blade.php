@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')VOCATIONAL MARKING CATEGORY @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -116,13 +112,13 @@
                         <div class="card-body p-0">
                             <form class="repeater" enctype="multipart/form-data">
                                 <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="row">
+                                    <div data-repeater-item class="row removeRow">
                                         <div class="col-lg-12 p-0 pe-4 ps-2 pe-2 pb-1 align-self-center d-flex">
                                             <div class="col-lg-4 p-0 pt-2 ms-5">
                                                 <label for="product">Category Name</label>
                                             </div>
-                                            <x-input-text name="Name" placeholder="Category Name Here"></x-input-text>
-                                            <button class="btn btn-outline-danger waves-effect waves-light me- ms-4 ">
+                                            <x-input-text name="category_name" placeholder="Category Name Here"></x-input-text>
+                                            <button class="btn btn-outline-danger waves-effect waves-light me- ms-4 removeBtn">
                                               <i class="fas fa-trash-alt"></i>
                                           </button>
                                         </div>

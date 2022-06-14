@@ -50,10 +50,10 @@
                             </div>
                           <div class="d-flex justify-content-center ">
                             <div class="me-2"> 
-                                <button class="btn btn-danger waves-effect waves-light" type="submit">RESET</button>
+                                <button class="btn btn-outline-danger waves-effect waves-light" type="submit">RESET</button>
                             </div>
                             <div class="ms-2">
-                                <button class="btn btn-success waves-effect waves-light" type="submit">SAVE</button>
+                                <button class="btn btn-outline-success waves-effect waves-light" type="submit">SAVE</button>
                             </div>
                           </div>
                          </div>
