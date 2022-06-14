@@ -30,7 +30,8 @@
                                 class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-check"></i>
                             </button>
-                            <a href="{{ route('case-history.edit', $record->id) }}"
+                            <a href="{{ route('case-history.edit', $record->id) }}" target="_blank"
+                                rel="noopener noreferrer"
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-pencil"></i>
                             </a>
@@ -42,10 +43,9 @@
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </button>
-                            <button type="button"
-                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
+
+                            <button wire:click="delete({{$record->id}})" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                <i class="fas fa-trash-alt"></i></button>
                         </td>
                     </tr>
                     @endforeach

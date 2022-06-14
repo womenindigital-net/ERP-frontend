@@ -3,23 +3,10 @@
 @section('title') @lang('translation.Starter_Page') @endsection
 
 @section('css')
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
 
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
-
 @section('content')
 
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')HRMS > LEAVE TYPE @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -145,14 +132,14 @@
                       <div class="col-md-4">
                           <div class="mb-3">
                               <label class="form-label">Name</label>
-                              <x-input-text name="Name"  placeholder="Enter Name here"></x-input-text>
+                              <x-input-text name="name"  placeholder="Enter Name here"></x-input-text>
                           </div>
                       </div>
                       <div class="col-md-8">
                         <div class="mb-3">
                           <label class="form-label">Description</label>
                           <div>
-                            <x-input-textarea name="Description"  placeholder=""></x-input-textarea>
+                            <x-input-textarea name="description"  placeholder=""></x-input-textarea>
                           </div>
                       </div>
                       </div>
@@ -176,7 +163,7 @@
                     <div class="col-md-4">
                       <div class="mb-3">
                         <label class="form-label">Calculation Interval</label>
-                        <x-input-text name="number" type="number" placeholder="Enter Calculation Interval"></x-input-text>
+                        <x-input-text name="calculation_interval" type="number" placeholder="Enter Calculation Interval"></x-input-text>
                     </div>
                     </div>
                     <div class="col-md-4">
@@ -213,13 +200,13 @@
                     <div class="col-md-4">
                       <div class="mb-3">
                         <label class="form-label">Leave TTL</label>
-                        <x-input-text name="number" type="number" placeholder="Enter Leave TTL here"></x-input-text>
+                        <x-input-text name="leave_ttl" type="number" placeholder="Enter Leave TTL here"></x-input-text>
                     </div>
                     </div>
                     <div class="col-md-4">
                       <div class="mb-4">
                         <label class="form-label">Max Carry Cash Day</label>
-                        <x-input-text name="number" type="number" placeholder="Enter Max Carry Cash Day here"></x-input-text>
+                        <x-input-text name="max_carry_cash_day" type="number" placeholder="Enter Max Carry Cash Day here"></x-input-text>
                     </div>
                     </div>
                 </div>
@@ -276,40 +263,5 @@
 @endsection
 
 @section('script')
- <!-- form advanced init -->
- <script src="{{ URL::asset('/assets/js/pages/form-advanced.init.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
- <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 
-
-<!-- jquery step -->
-<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
-
-<!-- form wizard init -->
-<script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
-{{-- Form --}}
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-    <!-- Table Editable plugin -->
-    <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
-
-    <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 @endsection

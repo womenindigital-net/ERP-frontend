@@ -33,38 +33,31 @@
                                             <div class="row mb-1">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Checkbook Name</label>
                                                 <div class="col-sm-9">
-                                                  <x-input-text name="Checkbook Name" placeholder="Checkbook Name"></x-input-text>
+                                                  <x-input-text name="checkbook_name" placeholder="Checkbook Name"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Bank Account</label>
                                                 <div class="col-sm-9">
-                                                <select rows="3" class="form-control select2 form-select strip-tags input-border"       id="BankAccount"  name="BankAccount">
-                                                    <option selected="selected" value="0">Select</option>
-                                                    <option value="1">1050001::Bank - Brac Bank (A/c # 1555204025093001)</option>
-                                                    <option value="2">1050002::Bank - Mutual Trust Bank</option>
-                                                    <option value="3">1050003::Bank - SCB (01-1308636-01)</option>
-                                                    <option value="4">1050004::Bank-The City Bank Ltd (3101829023001)</option>
-                                                    <option value="5">1050005::Bank - FSIB Ltd. (010311100012296)</option>
-                                                </select>
+                                                  <x-input-select name="bank_account" :records="[]" />
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Start Page</label>
                                                 <div class="col-sm-9">
-                                                  <x-input-text name="Start Page" placeholder="Enter Start Page"></x-input-text>
+                                                  <x-input-text name="start_page" placeholder="Enter Start Page"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">End Page</label>
                                                 <div class="col-sm-9">
-                                                  <x-input-text name="End Page" placeholder="Enter End Page"></x-input-text>
+                                                  <x-input-text name="end_page" placeholder="Enter End Page"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Creation Date</label>
                                                 <div class="col-sm-9">
-                                                  <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
+                                                  <x-input-text type="date" name="creation_date" placeholder="mm/dd/yyyy"></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="row justify-content-end">

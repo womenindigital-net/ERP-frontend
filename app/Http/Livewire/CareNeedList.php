@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Repositories\CareNeedRepository;
 use Livewire\Component;
+use Livewire\WithPagination;
+use App\Repositories\CareNeedRepository;
+use App\Http\Livewire\Traits\CommonListElements;
 
 class CareNeedList extends Component
 {
-
+    use WithPagination, CommonListElements;
     private CareNeedRepository $careRepo;
     public $reportList;
 
@@ -22,9 +24,17 @@ class CareNeedList extends Component
         $this->dispatchBrowserEvent('notify');
     }
 
+    public function delete($id)
+    {
+        $this->careRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
+    }
 
     public function render()
     {
-        return view('livewire.care-need-list');
+        $data = [
+            'records' => $this->careRepo->getListData($this->perPage, $this->search),
+        ];
+        return view('livewire.care-need-list', $data);
     }
 }

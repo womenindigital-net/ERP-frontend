@@ -48,8 +48,9 @@ class OtAssessmentController extends Controller
      */
     public function store(OtAssessmentRequest $request)
     {
+        $this->otAssessmentRepo->store($request->validated());
         Session::flash('success');
-        dd($request);
+        return redirect()->back();
     }
 
     /**

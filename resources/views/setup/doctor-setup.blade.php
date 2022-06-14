@@ -4,12 +4,8 @@
 @section('css')
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
+
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title')Doctor Setup @endslot
-    @endcomponent
-    {{-- code  --}}
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -32,7 +28,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 text-end">
                           <label style="display: inline-flex;align-items: center;">Search:
-                            <input type="search" class="form-control form-control-sm" placeholder="">
+                            <x-input-text type="search" name="search"/>
                           </label>
                         </div>
                       </div>
@@ -106,9 +102,8 @@
                       </div>
                 </div>
             </div>
-        </div> <!-- end col -->
-    </div> <!-- end row -->
-
+      </div> <!-- end col -->
+   </div> <!-- end row -->
 <!-- sample modal content -->
 <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -124,13 +119,13 @@
                             <div class="col-6 d-flex">
                                 <label for="example-text-input" class="col-2 col-form-label">Dr Name</label>
                                 <div class="col-10">
-                                    <x-input-text name="Name" placeholder="Doctor Name"></x-input-text>
+                                    <x-input-text name="doctor_name" placeholder="Doctor Name"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
                                 <label for="example-text-input" class="col-2 col-form-label">Organization</label>
                                 <div class="col-10">
-                                    <x-input-text name="Organization" placeholder="Organization"></x-input-text>
+                                    <x-input-text name="organization" placeholder="Organization"></x-input-text>
                                 </div>
                             </div>
                         </div>
@@ -138,20 +133,20 @@
                             <div class="col-6 d-flex">
                                 <label for="example-date-input" class="col-2 col-form-label">Contact</label>
                                 <div class="col-10">
-                                    <x-input-text name="Contact" placeholder="Contact"></x-input-text>
+                                    <x-input-text name="contact" placeholder="Contact"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
                                 <label class="col-2 col-form-label">Address</label>
                                 <div class="col-10">
-                                    <x-input-text name="Address" placeholder="Address"></x-input-text>
+                                    <x-input-text name="address" placeholder="Address"></x-input-text>
                                 </div>
                             </div>
                         </div>
                         <div class="row pb-3 d-flex">
                             <label class="col-1 col-form-label">Experties</label>
                             <div class="col-11">
-                                <x-input-textarea name="Experties"></x-input-textarea>
+                                <x-input-textarea name="experties"></x-input-textarea>
                             </div>
                         </div>
                         
@@ -165,8 +160,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
 @endsection
 @section('script')
-
 @endsection

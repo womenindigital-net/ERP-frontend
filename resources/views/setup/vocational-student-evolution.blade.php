@@ -4,10 +4,6 @@
 
 @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')VOCATIONAL STUDENT EVALUTIONS @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -35,7 +31,7 @@
             </div>
             <div class="col-sm-12 col-md-6 text-end">
               <label style="display: inline-flex;align-items: center;">Search:
-                <input type="search" class="form-control form-control-sm" placeholder="">
+                <x-input-text type="search" name="search" />
               </label>
             </div>
           </div>
@@ -119,26 +115,10 @@
                   <!-- journal form start -->  
                   <div class="col-md-12 d-flex">
                     <div class="col-md-6 pe-2  mb-3">
-                        <label class="form-label">Select Name</label>
-                        <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select Name</option>
-                            <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                            <option value="2">abdullah-al-nafi antor</option>
-                            <option value="3">Abdullahil Baki</option>
-                            <option value="4">Abdur Rahman Sajid</option>
-                            <option value="5">Abid Hossain Turjo</option>
-                            <option value="5">Abid Kabir Chowdhury</option>
-                            <option value="6">Abrar Ahosab Talha</option>
-                            <option value="7">Abrar Jawad Siam</option>
-                            <option value="8">Abu Sufiyan</option>
-                            <option value="9">Adib Akbar</option>
-                            <option value="10">Adiba Atiar</option>
-                            <option value="11">Adil Anaf</option>
-                            <option value="12">Aditya Chakraborty</option>
-                            
-                        </select>
+                      <label class="form-label">Select Name</label>
+                      <x-input-select name="select_name" :records="[]" />
                     </div>
-                    <div class="col-md-6 mb-3 ps-2 text-center">
+                    <div class="col-md-6 mb-3 ps-2 ">
                         <label class="form-label">Select Date</label>
                         <x-input-text name="Date" type="date" placeholder="dd/mm/yyyy"></x-input-text>
                     </div>
@@ -148,100 +128,88 @@
                       <form class="repeater" enctype="multipart/form-data">
                           <div class="row">
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Category Name</label>
+                                  <label for="category_name">Category Name</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Sub Category</label>
+                                  <label for="sub_category">Sub Category</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="total">No of Production</label>
+                                  <label for="no_of_production">No of Production</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Target</label>
+                                  <label for="target">Target</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Wastage</label>
+                                  <label for="wastage">Wastage</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="total">Time Taken</label>
+                                  <label for="time_taken">Time Taken</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Work Quality</label>
+                                  <label for="work_quality">Work Quality</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Delivery Complete</label>
+                                  <label for="delivery_complete">Delivery Complete</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="total">Follow Ins.</label>
+                                  <label for="follow_ins">Follow Ins.</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Generalizatio</label>
+                                  <label for="generalization">Generalization</label>
                               </div>
                               <div class="col-1 p-0  text-center">
-                                  <label for="product">Adaption</label>
+                                  <label for="adaption">Adaption</label>
                               </div>
                               <div class="col-1 p-0 ">
-                                  <label for="total">Remarks</label>
+                                  <label for="remarks">Remarks</label>
                               </div>
                           </div>
                           <div data-repeater-list="group-a">
-                              <div data-repeater-item class="row">
+                              <div data-repeater-item class="row removeRow">
                                   <div  class="col-1 d-flex p-0 ps-2  pb-1 align-items-center">
-                                      <select id="formrow-inputState" class="form-select">
-                                          <option value="0">Select</option>
-                                          <option value="1">Carpet Slipper</option>
-                                          <option value="2">Computer Training</option>
-                                          <option value="3">Painting</option>
-                                          <option value="4">Paper Work</option>
-                                          <option value="5">Photography</option>
-                                      </select>
+                                    <x-input-select name="category_name" :records="[]" />
                                   </div>
                                   <div class=" col-1 p-0  pb-1">
-                                      <select id="formrow-inputState" class="form-select">
-                                        <option value="0">Select</option>
-                                      </select>
+                                  <x-input-select name="sub_category" :records="[]" />
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="no_of_production" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="target" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="wastage" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="time_taken" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="work_quality" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="delivery_complete" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="follow_ins" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="generalization" type="number"></x-input-text>
                                   </div>
                                   <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text>
+                                      <x-input-text name="adaption" type="number"></x-input-text>
                                   </div>
                                   <div class="col-1 p-0 pb-1 align-self-center d-flex">
-                                    <x-input-text name="text" type="text"></x-input-text>
-                                      <button class="btn btn-outline-danger waves-effect waves-light">
+                                    <x-input-text name="remarks" type="text"></x-input-text>
+                                      <button class="btn btn-outline-danger waves-effect waves-light removeBtn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                   </div>
                               </div> 
                           </div>
-                         <div class="">
                           <button data-repeater-create type="button" class="btn btn-outline-info waves-effect waves-light mt-3 me-5  mt-lg-0"><i class="fa fa-plus"></i> Add</button>
-                         </div>
                       </form>
                   </div>
-                      
                   <!-- journal form end -->
                  </div>
               <div class="modal-footer">
@@ -255,6 +223,5 @@
 @section('script')
     <!-- form repeater js -->
     <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
     <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection

@@ -63,13 +63,10 @@
             </tr>
           </tbody>
         </table>
-
       </div>
     </div>
   </div> <!-- end col -->
 </div> <!-- end row -->
-
-
 <!--  Large modal example -->
 <div class="modal fade bs-example-modal55-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
   aria-hidden="true">
@@ -86,14 +83,14 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescription Name:</label>
-                      <x-input-text name="hello1" placeholder="">
+                      <x-input-text name="hello1" placeholder="Prescription Name">
                       </x-input-text>
                     </div>
                   </div>
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Prescribe By:</label>
-                      <x-input-text name="hello1" placeholder="">
+                      <x-input-text name="hello1" placeholder="Prescribe By">
                       </x-input-text>
                     </div>
                   </div>
@@ -144,7 +141,6 @@
                       <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add" />
                   </div>
               </div>
-
               <div class="row">
                 <div class="col-lg-12">
                   <div class="mb-3">
@@ -161,7 +157,6 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
     <!--  Edit Journal -->
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
@@ -177,8 +172,7 @@
                           <div class="col-md-4">
                             <div class="mb-3">
                               <label for="basicpill-lastname-input">Student:</label>
-                              <x-input-select name="student_id"
-                :records="[]" />
+                              <x-input-select name="student_id" :records="[]" />
                             </div>
                           </div>
                           <div class="col-md-4">

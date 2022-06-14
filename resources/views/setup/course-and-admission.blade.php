@@ -1,10 +1,6 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')Course @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -15,8 +11,7 @@
           </div>
           <div class="col-6 text-end">
             <button type="button" class="btn btn-outline-info waves-effect waves-light "
-            data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view"> <i
-                class="fas fa-plus-circle"></i> Add</button>
+            data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view"><i class="fas fa-plus-circle"></i> Add</button>
           </div>
         </div>
         <div class="row">
@@ -31,8 +26,7 @@
             </label>
           </div>
           <div class="col-sm-12 col-md-6 text-end">
-            <label style="display: inline-flex;align-items: center;">Search:
-              <input type="search" class="form-control form-control-sm" placeholder="">
+            <label style="display: inline-flex;align-items: center;">Search: <x-input-text type="search" name="search"/>
             </label>
           </div>
         </div>
@@ -112,40 +106,24 @@
               <div class="col-md-12 d-flex">
                 <div class="col-md-6 mb-3 text-center">
                     <label class="form-label">Course / Service Name</label>
-                    <x-input-text name="Course"  placeholder="Course Name Here"></x-input-text>
+                    <x-input-text name="course_service_name"  placeholder="Course Name Here"></x-input-text>
                 </div>
                 <div class="col-md-6 ms-2  mb-3 text-center">
                     <label class="form-label">Duration</label>
-                    <x-input-text name="Duration"  placeholder="Duration In Month ex:6"></x-input-text>
+                    <x-input-text name="duration"  placeholder="Duration In Month ex:6"></x-input-text>
                 </div>
               </div>  
               {{--  Cash Acc / Description  --}}
               <div class="col-md-12 d-flex">
                 <div class="col-md-6 mb-3 text-center">
                     <label class="form-label">Cash Acc:</label>
-                    <select name="CreditAcc" id="CreditAcc" class="form-control select2 form-select strip-tags" required="">
-                        <option value="0">Select</option>
-                        <option value="1"> 1561003 :: 10 Stations </option>
-                        <option value="2"> 6205 :: 1st January New Year event </option>
-                        <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
-                        <option value="4"> 1200 :: Accounts Receivable </option>
-                        <option value="5"> 7550002 :: Accounts Staff Salary </option>
-                        <option value="6"> 2130 :: Accrued accounts payable </option>
-                        <option value="7"> 2220 :: Accrued Commissions </option>
-                        <option value="8"> 2200 :: Accrued Compensation </option>
-                        <option value="9"> 2260 :: Accrued expenses </option>
-                        <option value="10"> 1450 :: Accrued Income </option>
-                        <option value="11"> 2240 :: Accrued Interest </option>
-                        <option value="12"> 2270 :: Accrued paid leave </option>
-                        <option value="13"> 2210 :: Accrued Payroll </option>
-                    </select>
+                    <x-input-select name="cash_acc" :records="[]" />
                 </div>
                 <div class="col-md-6 ms-2  mb-3 text-center">
                     <label class="form-label">Description:</label>
-                    <x-input-textarea name="Description"  placeholder="Description"></x-input-textarea>
+                    <x-input-textarea name="description" ></x-input-textarea>
                 </div>
               </div>    
-          <div class="row">
             <div class="col-12 p-0">
                 <div class="card">
                     <div class="card-body p-0">
@@ -162,45 +140,16 @@
                                 </div>
                             </div>
                             <div data-repeater-list="group-a">
-                                <div data-repeater-item class="row">
-                                    <div  class="col-lg-4 d-flex p-0 ps-4 pe-2 pb-1 align-items-center">
-                                        <select id="formrow-inputState" class="form-select">
-                                          <option value="0">Select</option>
-                                          <option value="1"> 1561003 :: 10 Stations </option>
-                                          <option value="2"> 6205 :: 1st January New Year event </option>
-                                          <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
-                                          <option value="4"> 1200 :: Accounts Receivable </option>
-                                          <option value="5"> 7550002 :: Accounts Staff Salary </option>
-                                          <option value="6"> 2130 :: Accrued accounts payable </option>
-                                          <option value="7"> 2220 :: Accrued Commissions </option>
-                                          <option value="8"> 2200 :: Accrued Compensation </option>
-                                          <option value="9"> 2260 :: Accrued expenses </option>
-                                          <option value="10"> 1450 :: Accrued Income </option>
-                                          <option value="11"> 2240 :: Accrued Interest </option>
-                                          <option value="12"> 2270 :: Accrued paid leave </option>
-                                          <option value="13"> 2210 :: Accrued Payroll </option>   
-                                        </select>
+                                <div data-repeater-item class="row removeRow">
+                                    <div  class="col-lg-4 p-0  ps-4 pe-2 pb-1 align-items-center">
+                                      <x-input-select name="amount" :records="[]" />
                                     </div>
                                     <div class=" col-lg-4 p-0 pe-2 ps-2 pb-1">
-                                        <select id="formrow-inputState" class="form-select">
-                                          <option value="1">Select</option>
-                                          <option value="2"> 6205 :: 1st January New Year event </option>
-                                          <option value="3"> 8560 :: Accounting /Tally/ Audit/Legal expenses </option>
-                                          <option value="4"> 1200 :: Accounts Receivable </option>
-                                          <option value="5"> 7550002 :: Accounts Staff Salary </option>
-                                          <option value="6"> 2130 :: Accrued accounts payable </option>
-                                          <option value="7"> 2220 :: Accrued Commissions </option>
-                                          <option value="8"> 2200 :: Accrued Compensation </option>
-                                          <option value="9"> 2260 :: Accrued expenses </option>
-                                          <option value="10"> 1450 :: Accrued Income </option>
-                                          <option value="11"> 2240 :: Accrued Interest </option>
-                                          <option value="12"> 2270 :: Accrued paid leave </option>
-                                          <option value="13"> 2210 :: Accrued Payroll </option>  
-                                        </select>
+                                      <x-input-select name="select" :records="[]" />
                                     </div>
                                     <div class="col-lg-4 p-0 pe-4 ps-2 pe-2 pb-1 align-self-center d-flex">
                                       <x-input-text name="Amount" type="number"  placeholder="Amount"></x-input-text>
-                                        <button class="btn btn-outline-danger waves-effect waves-light ms-2">
+                                        <button class="btn btn-outline-danger waves-effect waves-light ms-2 removeBtn">
                                           <i class="fas fa-trash-alt"></i>
                                       </button>
                                     </div>
@@ -213,9 +162,8 @@
                     </div>
                 </div>
             </div>
-          </div>
               <!-- journal form end -->
-              </div>
+        </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
             <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 

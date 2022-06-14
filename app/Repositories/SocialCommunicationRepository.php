@@ -4,7 +4,7 @@
 
 // use App\Models\SocialCommunication;
 
-// class SensoryChecklistChildRepositiry extends BaseRepository
+// class SocialCommunicationRepository extends BaseRepository
 // {
-//     protected string $model = SensoryChecklistChild::class;
+//     protected string $model = SocialCommunication::class;
 // }

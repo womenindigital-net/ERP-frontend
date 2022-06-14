@@ -1,27 +1,11 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<!-- DataTables -->
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/spectrum-colorpicker/spectrum-colorpicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet"
-    type="text/css">
-<link href="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.css') }}" rel="stylesheet"
-    type="text/css" />
-<link href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
 
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') COMPANIES @endslot
-@endcomponent
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -63,42 +47,42 @@
                                                             <label for="example-search-input"
                                                                 class="col-md-4 col-form-label">Mobile</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Mobile"  placeholder="Mobile"></x-input-text>
+                                                                <x-input-text name="mobile"  placeholder="Mobile"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-email-input"
                                                                 class="col-md-4 col-form-label">Address 1</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Address 1"  placeholder="Address 1"></x-input-text>
+                                                                <x-input-text name="address_1"  placeholder="Address 1"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-email-input"
                                                                 class="col-md-4 col-form-label">City</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Address 1"  placeholder="City Name Here"></x-input-text>
+                                                                <x-input-text name="city"  placeholder="City Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-5 row">
                                                             <label for="example-url-input"
                                                                 class="col-md-4 col-form-label">State</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Address 1"  placeholder="State Name Here"></x-input-text>
+                                                                <x-input-text name="state"  placeholder="State Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-text-input"
-                                                                class="col-md-4 col-form-label">Phone1</label>
+                                                                class="col-md-4 col-form-label">Phone 1</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Phone"  placeholder="Phone One Here"></x-input-text>
+                                                                <x-input-text name="phone_1"  placeholder="Phone One Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-search-input"
                                                                 class="col-md-4 col-form-label">Email</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Email"  placeholder="Enter Email Address Here"></x-input-text>
+                                                                <x-input-text name="email"  placeholder="Enter Email Address Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -108,12 +92,7 @@
                                                         <div class="mb-5 mt-3 row">
                                                             <label class="col-md-4 col-form-label">Select</label>
                                                             <div class="col-md-8">
-                                                                <select class="form-select">
-                                                                    <option>Select</option>
-                                                                    <option>Organization</option>
-                                                                    <option>Individual (In House)</option>
-                                                                    <option>Individual (Out Sider)r</option>
-                                                                </select>
+                                                                <x-input-select name="select" :records="[]" />
                                                             </div>
                                                         </div>
                                                         {{-- Address --}}
@@ -121,7 +100,7 @@
                                                             <label for="example-search-input"
                                                                 class="col-md-4 col-form-label">Address</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Address"  placeholder="Enter Address Here"></x-input-text>
+                                                                <x-input-text name="address"  placeholder="Enter Address Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         {{-- Zip Code --}}
@@ -129,7 +108,7 @@
                                                             <label for="example-search-input"
                                                                 class="col-md-4 col-form-label">Zip Code</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text type="number" name="Zip Code"  placeholder="Zip Code"></x-input-text>
+                                                                <x-input-text type="number" name="zip_code"  placeholder="Zip Code"></x-input-text>
                                                             </div>
                                                         </div>
                                                         {{-- Country --}}
@@ -137,7 +116,7 @@
                                                             <label for="example-search-input"
                                                                 class="col-md-4 col-form-label">Country</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Country"  placeholder="Country Name Here"></x-input-text>
+                                                                <x-input-text name="country"  placeholder="Country Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         {{-- Phone2 --}}
@@ -145,7 +124,7 @@
                                                             <label for="example-search-input"
                                                                 class="col-md-4 col-form-label">Phone2 </label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Phone"  placeholder="Phone Two Here"></x-input-text>
+                                                                <x-input-text name="phone_2"  placeholder="Phone Two Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -163,7 +142,7 @@
                                                             <h5>Advanced</h5>
                                                         </label>
                                                         <div class="col-md-4">
-                                                            <x-input-text name="Phone"  placeholder="Advanced Amount"></x-input-text>
+                                                            <x-input-text name="advance"  placeholder="Advanced Amount"></x-input-text>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <h5 class="mb-5">Is Active &nbsp;
@@ -277,7 +256,6 @@
                                               </nav>
                                             </div>
                                           </div>
-                                  
                                     </div>
                                 </div>
                             </div> <!-- end col -->
@@ -290,25 +268,5 @@
 </div>
 @endsection
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-
-
-<!-- jquery step -->
-<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
-
-<!-- form wizard init -->
-<script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-
-{{-- Form --}}
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/bootstrap-touchspin/bootstrap-touchspin.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 
 @endsection

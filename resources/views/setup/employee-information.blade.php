@@ -5,12 +5,6 @@
 @endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')HRMS > EMPLOYEE @endslot
-@endcomponent
-
 <div class="row">
   <div class="col-xl-12">
       <div class="card">
@@ -34,7 +28,6 @@
                     data-bs-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> ADD</button>
                   </li>
               </ul>
-
               <!-- Tab panes -->
               <div class="tab-content text-muted">
                   <div class="tab-pane active " id="home" role="tabpanel "> 
@@ -114,7 +107,7 @@
                                                                 <h6>Employee Code</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter code hare.. ">
+                                                                <x-input-text placeholder="Enter code hare" name="employee_code" />
                                                                </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -122,19 +115,7 @@
                                                                 <h6>User ID</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <select class="form-control select2 form-select">
-                                                                  <option value="0">--Select-</option>
-                                                                  <option value="1">Sajida Rahman</option>
-                                                                  <option value="2">Nurjahan Dipa</option>
-                                                                  <option value="3">Md. Kutubuddin ..</option>
-                                                                  <option value="4">Md. Amir Hossain</option>
-                                                                  <option value="5">Nusrat Jahan</option>
-                                                                  <option value="6">Nur-Ul Amin</option> 
-                                                                  <option value="7">Airin Shiddique</option>
-                                                                  <option value="8">Nupur Nahar</option>
-                                                                  <option value="9">Arup Mandal</option>
-                                                                  <option value="10">Safwat Nasif</option>
-                                                                </select>
+                                                                <x-input-select name="user_id" :records="[]" />
                                                                </div>
                                                             </div>
                                                            <div class="row mb-4">
@@ -144,20 +125,7 @@
                                                                <div class="col-8">
                                                                 <div class="form-check d-flex">
                                                                   <div class="me-4">
-                                                                    <input class="form-check-input" type="radio" name="formRadios">
-                                                                    <label class="form-check-label">Male</label>
-                                                                  </div>
-                                                                  <div class="me-4">
-                                                                    <input class="form-check-input" type="radio" name="formRadios">
-                                                                    <label class="form-check-label">Female</label>
-                                                                  </div>
-                                                                  <div class="me-4">
-                                                                    <input class="form-check-input" type="radio" name="formRadios">
-                                                                    <label class="form-check-label"> Other</label>
-                                                                  </div>
-                                                                  <div>
-                                                                    <input class="form-check-input" type="radio" name="formRadios">
-                                                                    <label class="form-check-label">N/A</label>
+                                                                    <x-input-select name="gender" :records="[]" />
                                                                   </div>
                                                                 </div>
                                                                </div>
@@ -168,16 +136,14 @@
                                                               </div>
                                                                <div class="col-4">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                  <x-input-text type="date" name="dob"/>
                                                               </div>
                                                                </div>
                                                               <div class="col-2 d-flex align-items-center">
                                                                 <h6>Age</h6>
                                                               </div>
                                                                <div class="col-4">
-                                                                <input type="number" class="form-control" id="horizontal-firstname-input" ">
+                                                                 <x-input-text type="date" name="age"/>
                                                                </div>
                                                             </div>
                                                             <div class="row mb-4">
@@ -187,11 +153,11 @@
                                                                <div class="col-9">
                                                                 <div class="input-group" >
                                                                        <!-- EmpFName -->
-                                                                       <input type="text" class="form-control col-4"  placeholder="Frist Name">
+                                                                       <input type="first_name" class="form-control col-4"  placeholder="Frist Name">
                                                                       <!-- EmpMName -->
-                                                                      <input type="text" class="form-control col-4"  placeholder="Middle Name">
+                                                                      <input type="middle_name" class="form-control col-4"  placeholder="Middle Name">
                                                                       <!-- EmpLName -->
-                                                                      <input type="text" class="form-control col-4" placeholder="Last Name">
+                                                                      <input type="last_name" class="form-control col-4" placeholder="Last Name">
                                                                 </div>
                                                                </div>
                                                             </div>
@@ -200,7 +166,7 @@
                                                                 <h6>Full Name in Bangla</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Bangla name hare.. ">
+                                                                <x-input-text  name="full_name_in_bangla" placeholder="Enter Bangla name hare.. "/>
                                                                </div>
                                                             </div>
                                                            <div class="row mb-4">
@@ -208,7 +174,7 @@
                                                               <h6>Fathers Name</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Fathere hare.. ">
+                                                              <x-input-text  name="father_name" placeholder="Enter Father Name Hare"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -216,7 +182,7 @@
                                                               <h6>Mothers Name</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Mothers Name hare.. ">
+                                                              <x-input-text  name="mother_name" placeholder="Enter Mother Name Hare"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -224,8 +190,7 @@
                                                               <h6>Present Address</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <textarea id="textarea" class="form-control"  rows="2"
-                                                              placeholder="Present Address"></textarea>
+                                                              <x-input-textarea  name="present_address"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -233,8 +198,7 @@
                                                               <h6>Permanent Address</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <textarea id="textarea" class="form-control"  rows="2"
-                                                              placeholder="Permanent Address"></textarea>
+                                                              <x-input-textarea  name="permanent_address"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -242,7 +206,7 @@
                                                               <h6>Phone</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="phone number">
+                                                              <x-input-text name="phone" placeholder="Enter Your Phone Number"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -250,7 +214,7 @@
                                                               <h6>Mobile</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Mobile number ">
+                                                              <x-input-text name="mobile" placeholder="Enter Your Mobile Number"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -258,17 +222,7 @@
                                                               <h6>Blood Group</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="A(+)">A(+)</option>
-                                                                <option value="A(-)">A(-)</option>
-                                                                <option value="B(+)">B(+)</option>
-                                                                <option value="B(-)">B(-)</option>
-                                                                <option value="O(+)">O(+)</option>
-                                                                <option value="O(-)">O(-)</option>
-                                                                <option value="AB(+)">AB(+)</option>
-                                                                <option value="AB(-)">AB(-)</option> 
-                                                              </select>
+                                                              <x-input-select name="blood_group" :records="[]" />
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -276,12 +230,7 @@
                                                               <h6>Marital Status</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="M">Married</option>
-                                                                <option value="UM">Unmarried</option>
-                                                                <option value="D">Divorce</option> 
-                                                              </select>
+                                                              <x-input-select name="marital_status" :records="[]" />
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -290,9 +239,7 @@
                                                             </div>
                                                              <div class="col-8">
                                                               <div class="input-group" id="datepicker1">
-                                                                <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                    data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                               <x-input-text type="date" name="marriage_date"/>
                                                             </div>
                                                              </div>
                                                            </div>
@@ -301,7 +248,7 @@
                                                               <h6>Spouse Name</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Spouse Name">  
+                                                              <x-input-text name="spouse_name" placeholder="Spouse Name"/>  
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -309,7 +256,7 @@
                                                               <h6>Occupation</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Occupation">  
+                                                              <x-input-text name="occupation" placeholder="Occupation"/>  
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -317,13 +264,7 @@
                                                               <h6>Religion</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="Islam">Islam</option>
-                                                                <option value="Hinduism">Hinduism</option>
-                                                                <option value="Buddhism">Buddhism</option>
-                                                                <option value="Christianity">Christianity</option> 
-                                                              </select>
+                                                              <x-input-select name="religion" :records="[]" />
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -331,7 +272,7 @@
                                                               <h6>Nationality</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Nationality here">  
+                                                              <x-input-text placeholder="Enter Nationality here" name="nationality"/>  
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -339,7 +280,7 @@
                                                               <h6>Passport No</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Passport No here">  
+                                                              <x-input-text type="number" name="passport_no" placeholder="Enter Passport No here"/>  
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -347,7 +288,7 @@
                                                               <h6>Personal Mobile</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Personal Mobile">  
+                                                              <x-input-text name="personal_mobile" placeholder="Enter Personal Mobile"/>  
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -355,7 +296,7 @@
                                                               <h6>Personal Email1</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Personal Email1">  
+                                                              <x-input-text name="personal_email_1" placeholder="Personal Email 1"/>  
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -363,7 +304,7 @@
                                                               <h6>National ID</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="National ID">  
+                                                              <x-input-text type="number" name="national_id" placeholder="National ID"/>  
                                                              </div>
                                                            </div>
                                                       </div>
@@ -382,14 +323,7 @@
                                                                <h6>Department</h6>
                                                              </div>
                                                               <div class="col-8">
-                                                               <select class="form-control select2 form-select">
-                                                                 <option value="0">--Select-</option>
-                                                                 <option value="1">Pre-Vocational</option>
-                                                                 <option value="2">Admin</option>
-                                                                 <option value="3">Angel Chef</option>
-                                                                 <option value="4">Program</option>
-                                                                 <option value="5">Canteen</option>
-                                                               </select>
+                                                                <x-input-select name="department" :records="[]" />
                                                               </div>
                                                            </div>
                                                           <div class="row mb-4">
@@ -397,19 +331,7 @@
                                                                <h6>Section</h6>
                                                              </div>
                                                               <div class="col-8">
-                                                               <select class="form-control select2 form-select">
-                                                                 <option value="0">--Select-</option>
-                                                                 <option value="1">sadf</option>
-                                                                 <option value="2">Bakery</option>
-                                                                 <option value="3">Purchage</option>
-                                                                 <option value="4">Security</option>
-                                                                 <option value="5">Maintaince</option>
-                                                                 <option value="6">Kitchen</option>
-                                                                 <option value="7">Beads</option>
-                                                                 <option value="8">Vocational</option>
-                                                                 <option value="9">Block</option>
-                                                                 <option value="10">Tie-Dye</option>
-                                                               </select>
+                                                                <x-input-select name="sectiont" :records="[]" />
                                                               </div>
                                                            </div>
                                                           <div class="row mb-4">
@@ -417,27 +339,14 @@
                                                                <h6>Designation</h6>
                                                              </div>
                                                               <div class="col-8">
-                                                               <select class="form-control select2 form-select">
-                                                                 <option value="0">--Select-</option>
-                                                                 <option value="3">HR Manager</option>
-                                                                 <option value="4">Accounts Manager</option>
-                                                                 <option value="5">Principal & Program Maneger</option>
-                                                                 <option value="6">Bakery Manager</option>
-                                                                 <option value="7">Senior Program Specialist</option>
-                                                                 <option value="8">Assistant Program Officer</option>
-                                                                 <option value="9">Trainee Program Officer</option>
-                                                                 <option value="10">Junior Program Officer</option>
-                                                                 <option value="11">Physiotherapist</option>
-                                                                 <option value="12">Bakery Manager</option>
-                                                               </select>
-                                                              </div>
+                                                                <x-input-select name="designation" :records="[]" />
                                                            </div>
                                                            <div class="row mb-4">
                                                             <div class="col-4 d-flex align-items-center">
                                                               <h6>Route</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder=" ">
+                                                              <x-input-text name="route" placeholder="Route"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -445,15 +354,7 @@
                                                               <h6>Week End</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="2">Full Time</option>
-                                                                <option value="3">Therapy</option>
-                                                                <option value="4">Part time Employee (Cultural)</option>
-                                                                <option value="5">Part time emplyee (Morning)</option>
-                                                                <option value="6">Part time emplyee (Morning) -2</option>
-                                                                <option value="7">Cricket</option>
-                                                              </select>
+                                                              <x-input-select name="week_end" :records="[]" />
                                                              </div>
                                                             </div>
                                                            <div class="row mb-4">
@@ -461,11 +362,7 @@
                                                               <h6>Attendance Policy</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="1">Common_Policy</option>>
-                                                                <option value="2">Bakery_Policy</option>
-                                                              </select>
+                                                              <x-input-select name="attendance_policy" :records="[]" />
                                                              </div>
                                                             </div>
                                                            <div class="row mb-4">
@@ -473,13 +370,7 @@
                                                               <h6>Leave Package</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="1">Test Leave Package</option>
-                                                                <option value="2">Test Package 2</option>
-                                                                <option value="3">Leave_Male</option>
-                                                                <option value="4">Leave_Female</option>
-                                                              </select>
+                                                              <x-input-select name="leave_package" :records="[]" />
                                                              </div>
                                                             </div>
                                                            <div class="row mb-4">
@@ -487,20 +378,7 @@
                                                               <h6>Salary Pak Id</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="1">Chairperson (Entry Step)</option>
-                                                                <option value="2">Chairperson (1-1)</option>
-                                                                <option value="3">Chairperson (1-2)</option>
-                                                                <option value="4">Chairperson (1-3)</option>
-                                                                <option value="5">Chairperson (1-4)</option>
-                                                                <option value="6">Chairperson (1-5)</option>
-                                                                <option value="7">Chairperson (1-6)</option>
-                                                                <option value="8">Chairperson (1-7)</option>
-                                                                <option value="9">Chairperson (1-8)</option>
-                                                                <option value="10">Chairperson (1-9)</option>
-                                                                <option value="11">Chairperson (1-10)</option>
-                                                              </select>
+                                                              <x-input-select name="salary_pak-id" :records="[]" />
                                                              </div>
                                                             </div>
                                                             <div class="row mb-4">
@@ -509,9 +387,7 @@
                                                               </div>
                                                                <div class="col-8">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                  <x-input-text name="sal_pak_eff_date" placeholder="dd/mm/yyyy"/>
                                                               </div>
                                                                </div>
                                                              </div>
@@ -520,11 +396,7 @@
                                                                 <h6>Bonus Package</h6>
                                                               </div>
                                                                <div class="col-8">
-                                                                <select class="form-control select2 form-select">
-                                                                  <option value="0">--Select-</option>
-                                                                  <option value="1">Eid Bonus</option>
-                                                                  <option value="2">test bonus</option>
-                                                                </select>
+                                                                <x-input-select name="bonus_package" :records="[]" />
                                                                </div>
                                                               </div>
                                                               <div class="row mb-4">
@@ -532,22 +404,7 @@
                                                                   <h6>Project Name</h6>
                                                                 </div>
                                                                  <div class="col-8">
-                                                                  <select class="form-control select2 form-select">
-                                                                    <option value="0">--Select-</option>
-                                                                    <option value="1">Administration</option>
-                                                                    <option value="2">Angel Chef Bakery</option>
-                                                                    <option value="3">Art, Crafts  and Paintings</option>
-                                                                    <option value="4">Art, Crafts  and Paintings</option>
-                                                                    <option value="5">Computer Section</option>
-                                                                    <option value="6">Core Programme</option>
-                                                                    <option value="7">Cricket</option>
-                                                                    <option value="8">Dance</option>
-                                                                    <option value="9">Drama</option>
-                                                                    <option value="10">Employment</option>
-                                                                    <option value="11">Finance and Accounts Section</option>
-                                                                    <option value="12">Food Catering</option>
-                                                                    <option value="13">Food Catering</option>
-                                                                  </select>
+                                                                  <x-input-select name="project_name" :records="[]" />
                                                                  </div>
                                                               </div>
                                                               <div class="row mb-4">
@@ -555,9 +412,7 @@
                                                                   <h6>Budget Name</h6>
                                                                 </div>
                                                                  <div class="col-8">
-                                                                  <select class="form-control select2 form-select">
-                                                                    <option value="0">--Select-</option>
-                                                                  </select>
+                                                                  <x-input-select name="budget_name" :records="[]" />
                                                                  </div>
                                                               </div>
                                                               <div class="row mb-4">
@@ -565,9 +420,7 @@
                                                                   <h6>Budget Head</h6>
                                                                 </div>
                                                                  <div class="col-8">
-                                                                  <select class="form-control select2 form-select">
-                                                                    <option value="0">--Select-</option>
-                                                                  </select>
+                                                                  <x-input-select name="budget_head" :records="[]" />
                                                                  </div>
                                                               </div>
                                                               <div class="row mb-4">
@@ -575,9 +428,7 @@
                                                                   <h6>Budget Sub Head</h6>
                                                                 </div>
                                                                  <div class="col-8">
-                                                                  <select class="form-control select2 form-select">
-                                                                    <option value="0">--Select-</option>
-                                                                  </select>
+                                                                  <x-input-select name="budget_sub_name" :records="[]" />
                                                                  </div>
                                                               </div>
                                                               <div class="row mb-4">
@@ -585,9 +436,7 @@
                                                                   <h6>Budget Account</h6>
                                                                 </div>
                                                                  <div class="col-8">
-                                                                  <select class="form-control select2 form-select">
-                                                                    <option value="0">--Select-</option>
-                                                                  </select>
+                                                                  <x-input-select name="budget_account" :records="[]" />
                                                                  </div>
                                                               </div>
                                                               <div class="row mb-4">
@@ -605,19 +454,7 @@
                                                                   <h6>Reporting To</h6>
                                                                 </div>
                                                                  <div class="col-8">
-                                                                  <select class="form-control select2 form-select">
-                                                                    <option value="0">--Select-</option>
-                                                                    <option value="1">Test Muhammad Employee</option>
-                                                                    <option value="3">Sahanaj  Akter</option>
-                                                                    <option value="5">Ashiqur Rahman Majumder</option>
-                                                                    <option value="6">Md. Kutub Uddin</option>
-                                                                    <option value="7">Arup  Mandal</option>
-                                                                    <option value="8">Md. Rizwanur Rahman</option>
-                                                                    <option value="9">Angon  Rahman</option>
-                                                                    <option value="10">Tausif  Alam</option>
-                                                                    <option value="11">Parvez Parvez Ahmad</option>
-                                                                    <option value="12">Mariam  Begum</option>
-                                                                  </select>
+                                                                  <x-input-select name="reporting_to" :records="[]" />
                                                                  </div>
                                                               </div>
                                                            <div class="row mb-4">
@@ -626,9 +463,7 @@
                                                              </div>
                                                               <div class="col-8">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                    <x-input-text type="date" name="joining_date" placeholder="Joining Date"/>
                                                                  </div>
                                                                </div>
                                                               </div>
@@ -638,9 +473,7 @@
                                                              </div>
                                                               <div class="col-8">
                                                                 <div class="input-group" id="datepicker1">
-                                                                  <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                      data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                  <x-input-text type="date" name="confirm_due_date" placeholder="Confirm Due Date"/>
                                                                  </div>
                                                                </div>
                                                             </div>   
@@ -649,12 +482,7 @@
                                                              <h6>Type Id</h6>
                                                            </div>
                                                             <div class="col-8">
-                                                              <select class="form-control select2 form-select">
-                                                                <option value="0">--Select-</option>
-                                                                <option value="1">Regular</option>
-                                                                <option value="2">Md.Aminul Islam</option>
-                                                                <option value="3">Ohidulhasan</option>
-                                                              </select>
+                                                              <x-input-select name="type_id" :records="[]" />
                                                             </div>
                                                           </div>
                                                           <div class="row mb-4">
@@ -680,9 +508,7 @@
                                                             </div>
                                                              <div class="col-8">
                                                                <div class="input-group" id="datepicker1">
-                                                                 <input type="text" class="form-control" placeholder="dd M, yyyy"
-                                                                     data-date-format="dd M, yyyy" data-date-container='#datepicker1' data-provide="datepicker">
-                                                                 <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                                <x-input-text type="date" name="next_valuation_date" placeholder="Next Valuation Date"/>
                                                                 </div>
                                                               </div>
                                                            </div>
@@ -691,7 +517,7 @@
                                                              <h6>Valuation Interval</h6>
                                                            </div>
                                                             <div class="col-8">
-                                                             <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="phone number">
+                                                              <x-input-text type="date" name="valuation_interval" placeholder="Valuation Interval"/>
                                                             </div>
                                                           </div>
                                                           <div class="row mb-4">
@@ -699,15 +525,7 @@
                                                               <h6>Employee Status</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                               <select class="form-control select2 form-select">
-                                                                 <option value="0">--Select-</option>
-                                                                 <option value="A">Active and eligible for normal salary</option>
-                                                                 <option value="S">Suspended</option>
-                                                                 <option value="T">Terminated</option>
-                                                                 <option value="L">Resigned/Left</option>
-                                                                 <option value="R">Retired</option>
-                                                                 <option value="C">Closed</option>
-                                                               </select>
+                                                              <x-input-select name="employee_status" :records="[]" />
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -715,7 +533,7 @@
                                                               <h6>Card No</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter card number here ">
+                                                              <x-input-text type="number" name="card_no"  placeholder="Enter card number here"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -723,7 +541,7 @@
                                                               <h6>Bank Acc No</h6>
                                                             </div>
                                                              <div class="col-8">
-                                                              <input type="number" class="form-control" id="horizontal-firstname-input" placeholder="Enter Bank acc no here">
+                                                              <x-input-text type="number" name="bank_acc_no" placeholder="Enter Bank acc no here"/>
                                                              </div>
                                                            </div>
                                                            <div class="row mb-4">
@@ -758,10 +576,7 @@
                                                              <h6>Faciliy Pack Id</h6>
                                                            </div>
                                                             <div class="col-8">
-                                                             <select class="form-control select2 form-select">
-                                                               <option value="0">--Select-</option>
-                                                               <option value="1">Facility Package title</option> 
-                                                             </select>
+                                                              <x-input-select name="faciliy_pack_id" :records="[]" />
                                                             </div>
                                                           </div>
                                                      </div>
@@ -778,7 +593,7 @@
                                                   <button class="btn btn-success w-100">Save</button>
                                               </div>
                                             </div>
-                                        </div>
+                                        </div></div>
                                         <div class="tab-pane" id="profile1" role="tabpanel">
                                             <div class="">
                                                <h5 class="ms-3">Employee Photo & CV</h5><hr>

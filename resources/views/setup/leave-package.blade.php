@@ -8,10 +8,6 @@
 
 @section('content')
 
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')HRMS > LEAVE PACKAGE @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -113,7 +109,7 @@
                       <div class="col-md-3">
                           <div class="mb-3">
                               <label class="form-label">Package Name</label>
-                              <x-input-text name="Name" placeholder="Enter Package Name here">
+                              <x-input-text name="package_name" placeholder="Enter Package Name here">
                               </x-input-text>
                           </div>
                       </div>
@@ -121,7 +117,7 @@
                         <div class="mb-3">
                           <label class="form-label">Description</label>
                           <div>
-                            <x-input-textarea name="Description" placeholder="Description">
+                            <x-input-textarea name="description" placeholder="Description">
                             </x-input-textarea-outline>
                           </div>
                       </div>
@@ -158,23 +154,17 @@
                                   <div class="row">  
                                   </div>
                                     <div data-repeater-list="group-a">
-                                      <div data-repeater-item class="row">
+                                      <div data-repeater-item class="row removeRow">
                                         <div class="col-md-3">
                                           <div class="mb-3">
                                             <label for="basicpill-lastname-input">Leave Type</label>
-                                            <select class="form-control select2 form-select">
-                                              <option value="0">--Select-</option>
-                                              <option value="1">Test Leave</option>
-                                              <option value="2">Sick Leave</option>
-                                              <option value="3">Maternity Leave</option>
-                                              <option value="4">Paternity Leave</option>    
-                                            </select>
+                                            <x-input-select name="leave_type" :records="[]" />
                                           </div>
                                         </div>
                                         <div class="col-md-2">
                                           <div class="mb-3">
                                               <label class="form-label">Max. Amount</label>
-                                              <x-input-text name="Amount" type="number" placeholder="Enter Max. Amount here">
+                                              <x-input-text name="max_amount" type="number" placeholder="Enter Max. Amount here">
                                               </x-input-text>
                                           </div>
                                         </div>
@@ -209,7 +199,7 @@
                                           </div>
                                         </div>
                                         <div class="col-md-1">
-                                          <button class="btn btn-outline-danger  ms-2">
+                                          <button class="btn btn-outline-danger  ms-2 removeBtn">
                                             <i class="fas fa-trash-alt"></i>
                                           </button>
                                         </div>

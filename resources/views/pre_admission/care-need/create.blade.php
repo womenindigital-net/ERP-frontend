@@ -48,7 +48,7 @@
                                                     <li class="w-100"><a href="#Physical_Health_Needs"
                                                             data-toggle="tab">Physical Health Needs</a>
                                                     </li>
-                                                    <li class="w-100"><a href="#Social Needs" data-toggle="tab">Social
+                                                    <li class="w-100"><a href="#Social_Needs" data-toggle="tab">Social
                                                             Needs</a></li>
                                                     <li class="w-100"><a href="#Signature"
                                                             data-toggle="tab">Signature</a></li>
@@ -81,7 +81,7 @@
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
                                                                         <label>Candidate ID:</label>
-                                                                        <x-input-select :records="['1'=>'roy']"
+                                                                        <x-input-select :records="$students"
                                                                             name="student_id">
                                                                         </x-input-select>
                                                                     </div>
@@ -650,7 +650,7 @@
                             </div>
                         </div> <!-- end col -->
                     </div>
-                    <div class="tab-pane " id="case-histroy_list" role="tabpanel">
+                    <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                         <!-- form start -->
                         <livewire:care-need-list>
                             <!-- end row -->

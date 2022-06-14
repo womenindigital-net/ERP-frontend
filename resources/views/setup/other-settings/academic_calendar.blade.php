@@ -1,4 +1,4 @@
-@extends('layouts.master')
+academic_calendar@extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
 

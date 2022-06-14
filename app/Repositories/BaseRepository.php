@@ -2,13 +2,14 @@
 
 namespace App\Repositories;
 
+use App\Traits\OnlyDelete;
 use App\Traits\OnlyStore;
 use App\Traits\OnlyUpdate;
 use Illuminate\Database\Eloquent\Model;
 
 class BaseRepository
 {
-    use OnlyStore, OnlyUpdate;
+    use OnlyStore, OnlyUpdate, OnlyDelete;
 
     public function getData($ids = false)
     {

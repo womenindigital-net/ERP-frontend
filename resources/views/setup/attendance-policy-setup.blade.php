@@ -124,19 +124,19 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label class="form-label">Policy Name</label>
-                        <x-input-text name="Name" placeholder="Enter Policy Name Here"></x-input-text>
+                        <x-input-text name="policy_name" placeholder="Enter Policy Name Here"></x-input-text>
                     </div>
                 </div>
                 <div class="col-md-4">
                   <div class="mb-3">
                     <label class="form-label">Over Time Start Grace</label>
-                    <x-input-text name="Number" placeholder="Enter time in minute"></x-input-text>
+                    <x-input-text name="over_time_start_grace" placeholder="Enter time in minute"></x-input-text>
                 </div>
                 </div>
                 <div class="col-md-4">
                   <div class="mb-3">
                     <label class="form-label">Arrival Grace</label>
-                    <x-input-text name="Number" placeholder="Enter arrival grace in minute"></x-input-text>
+                    <x-input-text name="arrival_grace" placeholder="Enter arrival grace in minute"></x-input-text>
                 </div>
                 </div>
             </div>
@@ -144,21 +144,21 @@
               <div class="col-md-4">
                   <div class="mb-3">
                     <label class="form-label">Lunch Break:</label>
-                    <x-input-text name="Number" placeholder="Lunch Break in minute"></x-input-text>
+                    <x-input-text name="lunch_break" placeholder="Lunch Break in minute"></x-input-text>
                   </div>
               </div>
               <div class="col-md-4">
                 <div class="mb-3">
                   <label class="form-label">Lunch Time</label>
                   <div class="input-group" id="timepicker-input-group3">
-                    <x-input-text name="time" type="time"></x-input-text>
+                    <x-input-text name="lunch_time" type="time"></x-input-text>
                   </div>
               </div>
               </div>
               <div class="col-md-4">
                 <div class="mb-3">
                   <label class="form-label">Working Hour </label>
-                  <x-input-text name="Number" placeholder="Enter working hour"></x-input-text>
+                  <x-input-text name="working_hour" placeholder="Enter working hour"></x-input-text>
               </div>
               </div>
           </div>
@@ -168,7 +168,7 @@
                   <div>
                     <label class="form-label">Sun In</label>
                     <div class="input-group" id="timepicker-input-group3">
-                      <x-input-text name="time" type="time"></x-input-text>
+                      <x-input-text name="sun_in" type="time"></x-input-text>
                     </div>
                 </div>
                 </div>
@@ -177,7 +177,7 @@
               <div class="mb-3">
                 <label class="form-label">Sun Out</label>
                   <div class="input-group" id="timepicker-input-group3">
-                    <x-input-text name="time" type="time"></x-input-text>
+                    <x-input-text name="sun_out" type="time"></x-input-text>
                   </div>
             </div>
             </div>
@@ -198,7 +198,7 @@
                 <div>
                   <label class="form-label">Mon In</label>
                   <div class="input-group" id="timepicker-input-group3">
-                    <x-input-text name="time" type="time"></x-input-text>
+                    <x-input-text name="mon_in" type="time"></x-input-text>
                   </div>
               </div>
               </div>
@@ -207,7 +207,7 @@
             <div class="mb-3">
               <label class="form-label">Mon Out</label>
               <div class="input-group" id="timepicker-input-group3">
-                <x-input-text name="time" type="time"></x-input-text>
+                <x-input-text name="mon-out" type="time"></x-input-text>
               </div>
           </div>
           </div>
@@ -228,7 +228,7 @@
               <div>
                 <label class="form-label">Thu In</label>
                 <div class="input-group" id="timepicker-input-group3">
-                  <x-input-text name="time" type="time"></x-input-text>
+                  <x-input-text name="thu_in" type="time"></x-input-text>
                 </div>
               </div>
             </div>
@@ -237,7 +237,7 @@
           <div class="mb-3">
             <label class="form-label">Thu Out</label>
               <div class="input-group" id="timepicker-input-group3">
-                <x-input-text name="time" type="time"></x-input-text>
+                <x-input-text name="thu_out" type="time"></x-input-text>
               </div>
         </div>
         </div>
@@ -258,7 +258,7 @@
             <div>
               <label class="form-label">Wed in</label>
               <div class="input-group" id="timepicker-input-group3">
-                <x-input-text name="time" type="time"></x-input-text>
+                <x-input-text name="wed_in" type="time"></x-input-text>
               </div>
             </div>
           </div>
@@ -267,7 +267,7 @@
         <div class="mb-3">
           <label class="form-label">Wed Out</label>
               <div class="input-group" id="timepicker-input-group3">
-                <x-input-text name="time" type="time"></x-input-text>
+                <x-input-text name="wed_out" type="time"></x-input-text>
               </div>
         </div>
       </div>
@@ -288,7 +288,7 @@
             <div>
               <label class="form-label">Thu In</label>
               <div class="input-group" id="timepicker-input-group3">
-                <x-input-text name="time" type="time"></x-input-text>
+                <x-input-text name="thu_in" type="time"></x-input-text>
               </div>
             </div>
           </div>
@@ -297,7 +297,7 @@
         <div class="mb-3">
           <label class="form-label">Thu Out</label>
             <div class="input-group" id="timepicker-input-group3">
-              <x-input-text name="time" type="time"></x-input-text>
+              <x-input-text name="thu_out" type="time"></x-input-text>
             </div>
       </div>
       </div>
@@ -318,7 +318,7 @@
         <div>
           <label class="form-label">Fri In</label>
           <div class="input-group" id="timepicker-input-group3">
-            <x-input-text name="time" type="time"></x-input-text>
+            <x-input-text name="fri_in" type="time"></x-input-text>
           </div>
         </div>
       </div>
@@ -327,7 +327,7 @@
     <div class="mb-3">
       <label class="form-label">Fri out</label>
           <div class="input-group" id="timepicker-input-group3">
-            <x-input-text name="time" type="time"></x-input-text>
+            <x-input-text name="fri_out" type="time"></x-input-text>
           </div>
     </div>
   </div>
@@ -348,7 +348,7 @@
         <div>
           <label class="form-label">Sat In</label>
           <div class="input-group" id="timepicker-input-group3">
-            <x-input-text name="time" type="time"></x-input-text>
+            <x-input-text name="sat_in" type="time"></x-input-text>
           </div>
         </div>
       </div>
@@ -357,7 +357,7 @@
     <div class="mb-3">
         <label class="form-label">Sat Out</label>
             <div class="input-group" id="timepicker-input-group3">
-              <x-input-text name="time" type="time"></x-input-text>
+              <x-input-text name="sat_out" type="time"></x-input-text>
             </div>
       </div>
   </div>
@@ -386,32 +386,30 @@
   <div class="col-md-4">
     <div class="mb-3">
       <label class="form-label">Deduct in minute</label>
-      <x-input-text name="number" type="number" placeholder="Enter Deduct in minute "></x-input-text>
+      <x-input-text name="deduct_in_minute" type="number" placeholder="Enter Deduct in minute "></x-input-text>
   </div>
   </div>
 </div>
-          <div class="row">
-            <div class="col-md-10">
-                <div class="mb-3">
-                  <label class="form-label">Policy Desc</label>
-                  <div>
-                    <x-input-textarea name="number" placeholder=""></x-input-textarea>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>            <!-- journal form end -->
-        <div class="modal-footer">
-            <button type="button" class="btn  btn-outline-danger" data-bs-dismiss="modal"> Close</button>
-            <button type="button" class="btn  btn-outline-success" data-bs-dismiss="modal"> Save</button>
+<div class="row">
+  <div class="col-md-10">
+      <div class="mb-3">
+        <label class="form-label">Policy Desc</label>
+        <div>
+          <x-input-textarea name="policy_desc"></x-input-textarea>
         </div>
-    </div><!-- /.modal-content -->
+      </div>
+  </div>
+</div>
+</div>            <!-- journal form end -->
+<div class="modal-footer">
+    <button type="button" class="btn  btn-outline-danger" data-bs-dismiss="modal"> Close</button>
+    <button type="button" class="btn  btn-outline-success" data-bs-dismiss="modal"> Save</button>
+</div>
+</div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 @endsection
-
 @section('script')
-
 
 @endsection

@@ -5,12 +5,6 @@
 @endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') UI Elements @endslot
-@slot('title')SUPPLIER @endslot
-@endcomponent
-
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -50,37 +44,37 @@
                                                         <div class="mb-5 row">
                                                             <label for="example-search-input" class="col-md-4 col-form-label text-end">Contact Person</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name=" Person" type="search" placeholder="Contact Person Name Here"></x-input-text>
+                                                                <x-input-text name="contact_person" type="search" placeholder="Contact Person Name Here"></x-input-text>
                                                             </div>
                                                          </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-email-input" class="col-md-4 col-form-label text-end">Address 1</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name=" Person" type="email" placeholder="Enter Address Here"></x-input-text>
+                                                                <x-input-text name="address_1" type="email" placeholder="Enter Address Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-email-input" class="col-md-4 col-form-label text-end">City</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="City" placeholder="City Name Here"></x-input-text>
+                                                                <x-input-text name="city" placeholder="City Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-5 row">
                                                             <label for="example-url-input" class="col-md-4 col-form-label text-end">State</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="State" placeholder="State Name Here"></x-input-text>
+                                                                <x-input-text name="state" placeholder="State Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-text-input" class="col-md-4 col-form-label text-end">Phone 1</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Phone" placeholder="Phone One Here"></x-input-text>
+                                                                <x-input-text name="phone" placeholder="Phone One Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-search-input" class="col-md-4 col-form-label text-end">Fax</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Fax" placeholder="Enter  Fax Here"></x-input-text>
+                                                                <x-input-text name="fax" placeholder="Enter Fax Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -90,42 +84,13 @@
                                                         <div class="mb-2  row">
                                                             <label class="col-md-4 col-form-label text-end">Type</label>
                                                             <div class="col-md-8">
-                                                                <select class="form-select">
-                                                                    <option value="1">Whole Sell</option>
-                                                                    <option value="2">supplier type 1</option>
-                                                                    <option value="3">Row material Supplier</option>
-                                                                    <option value="4">In House Supplier</option>
-                                                                    <option value="5">Vegetable Supplier</option>
-                                                                    <option value="6">Fruits Supplier</option>
-                                                                    <option value="7">Meet Supplier</option>
-                                                                    <option value="8">Chicken Supplier</option>
-                                                                    <option value="9">Direct  Cash</option>
-                                                                    <option value="10">Boost-up Vendor</option>
-                                                                    <option value="11">Musical Instruments Suppliers</option>
-                                                                    <option value="12">Nabil Printeres</option>
-                                                                    <option value="13">Chandan Kumar Karmarker</option>
-                                                                    <option value="14">Chandan Kumar Karmarker</option>
-                                                                    <option value="15">Chandan Kumar Karmarker</option>
-                                                                    <option value="16">ASAP Heathy FOOd Ltd.</option>
-                                                                    <option value="17">M/S.R.N Enterprise</option>
-                                                                    <option value="18">North End (pvt) Ltd.</option>
-                                                                    <option value="19">Misanur Rahman (M/s. Sami Varietiese Stor)</option>
-                                                                    <option value="20">Mozir & Company</option>
-                                                                    <option value="21">Md. Harun Mia (Abdullah Trander)</option>
-                                                                    <option value="22">PRAYAS  International Ltd.</option>
-                                                                    <option value="23">Md. Shakil Hossain</option>
-                                                                    <option value="24">Md. Shakil Hossain(Saba Electronic)</option>
-                                                                    <option value="25">Nabil Printers</option>
-                                                                    <option value="26">M/s. Taher Enterprise</option>
-                                                                    <option value="27">FM Plastic Industries Ltd.</option>
-                                                                    <option value="28">Rijaul islam (Mini sauce pran)</option>
-                                                                </select>
+                                                                <x-input-select name="type" :records="[]" />
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <label for="example-text-input" class="col-md-4 col-form-label text-end">Designation</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Designation" placeholder="Enter designation here"></x-input-text>
+                                                                <x-input-text name="designation" placeholder="Enter designation here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <br><br>
@@ -133,34 +98,34 @@
                                                         <div class="mb-2 row">
                                                             <label for="example-search-input" class="col-md-4 col-form-label text-end">Address</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Designation" placeholder="Enter  Address two Here"></x-input-text>
+                                                                <x-input-text name="address" placeholder="Enter  Address two Here"></x-input-text>
                                                             </div>
                                                         </div> 
                                                         {{-- Zip Code --}}
                                                         <div class="mb-2 row">
                                                             <label for="example-search-input" class="col-md-4 col-form-label text-end ">Zip Code</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Zip Code" type="number" placeholder="Enter Zip code here"></x-input-text>
+                                                                <x-input-text name="zip_code" type="number" placeholder="Enter Zip code here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         {{-- Country --}}
                                                         <div class="mb-5 row">
                                                             <label for="example-search-input text-end" class="col-md-4 col-form-label text-end">Country</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Country" placeholder="Country Name Here"></x-input-text>
+                                                                <x-input-text name="country" placeholder="Country Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         {{-- Phone2 --}}
                                                         <div class="mb-2 row">
                                                             <label for="example-search-input" class="col-md-4 col-form-label text-end">Phone2 </label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Country" type="number" placeholder="Phone Two Here"></x-input-text>
+                                                                <x-input-text name="phone_2" type="number" placeholder="Phone Two Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
                                                             <label for="example-search-input" class="col-md-4 col-form-label text-end">Email</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="Country" placeholder="Email Address Here"></x-input-text>
+                                                                <x-input-text name="email" placeholder="Email Address Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -169,11 +134,9 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="mb-2 row">
-                                                        <label for="example-search-input" class="col-md-2 col-form-label text-end ps-5">Note
-
-                                                        </label>
+                                                        <label for="example-search-input" class="col-md-2 col-form-label text-end ps-5">Note</label>
                                                         <div class="col-md-6">
-                                                            <x-input-text name="Country" placeholder="Note is any"></x-input-text>
+                                                            <x-input-text name="note"></x-input-text>
                                                         </div>
                                                         <div class="form-check col-md-3 ms-5">
                                                             <label class="form-check-label ms-3" for="formCheck2">
@@ -187,10 +150,10 @@
                                             {{-- note end  --}}
                                         <div class="d-flex justify-content-end ">
                                             <div class="me-2"> 
-                                                <button class="btn btn-danger waves-effect waves-light" type="submit">RESET</button>
+                                                <button class="btn btn-outline-danger waves-effect waves-light" type="submit">RESET</button>
                                             </div>
                                             <div class="ms-2">
-                                                <button class="btn btn-success waves-effect waves-light" type="submit">SAVE</button>
+                                                <button class="btn btn-outline-success waves-effect waves-light" type="submit">SAVE</button>
                                             </div>
                                         </div>
                             </form>      
@@ -201,32 +164,74 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                            <thead>
-                                                <tr>
-                                                    <th class=""> Name</th>
-                                                    <th class=""> Description</th>
-                                                    <th class=""> Log</th>
-                                                    <th class=""> Action</th>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                              <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                                                  class="form-control form-control-sm form-select form-select-sm">
+                                                  <option value="10">10</option>
+                                                  <option value="25">25</option>
+                                                  <option value="50">50</option>
+                                                  <option value="100">100</option>
+                                                </select> entries
+                                              </label>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 text-end">
+                                              <label style="display: inline-flex;align-items: center;">Search:
+                                                  <x-input-text type="search" name="search" />
+                                              </label>
+                                            </div>
+                                          </div>
+                                          <div class="table-responsive">
+                                            <table class="table w-100 table-bordered">
+                                              <thead>
+                                                <tr class="table-primary">
+                                                  <th> Name</th>
+                                                  <th> Description</th>
+                                                  <th> Log</th>
+                                                  <th> Action</th>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
+                                              </thead>
+                                              <tbody>
                                                 <tr>
-                                                    <td>Whole Sell</td>
-                                                    <td></td>
-                                                    <td>Create: Shonod Digital @ 2018-12-01 17:51:02
-                                                        There is no update record</td>
-                                                 <td>
-                                                     <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                      <i class="mdi mdi-pencil"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                                      <i class="fas fa-trash-alt"></i>
-                                                    </button> 
-                                                 </td>
+                                                  <tr>
+                                                      <td>Whole Sell</td>
+                                                      <td></td>
+                                                      <td>Create: Shonod Digital @ 2018-12-01 17:51:02
+                                                          There is no update record</td>
+                                                   <td>
+                                                       <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                        <i class="mdi mdi-pencil"></i>
+                                                      </button>
+                                                      <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                      </button> 
+                                                   </td>
                                                 </tr>
-                                            </tbody>
-                                        </table>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                              Showing 1 to 2 of 2 entries
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 text-end">
+                                              <nav>
+                                                <ul class="pagination" style="justify-content: end;">
+                                                  <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                  </li>
+                                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                  <li class="page-item active">
+                                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                  </li>
+                                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                  <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                  </li>
+                                                </ul>
+                                              </nav>
+                                            </div>
+                                          </div>
                                     </div>
                                 </div>
                             </div> <!-- end col -->

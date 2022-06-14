@@ -38,7 +38,7 @@
           </div>
           <div class="col-sm-12 col-md-6 text-end">
             <label style="display: inline-flex;align-items: center;">Search:
-              <input type="search" class="form-control form-control-sm" placeholder="">
+              <x-input-text type="search" name="search"/>
             </label>
           </div>
         </div>
@@ -112,12 +112,10 @@
             </nav>
           </div>
         </div>
-
       </div>
     </div>
   </div> <!-- end col -->
 </div> <!-- end row -->
-
 <!--  Large modal example -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
   aria-hidden="true">
@@ -135,15 +133,7 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                       <label for="basicpill-lastname-input">Student:</label>
-                      <select class="form-control form-select">
-                        <option>Select</option>
-                        <option value="AK">Alaska</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="CA">California</option>
-                        <option value="NV">Nevada</option>
-                        <option value="OR">Oregon</option>
-                        <option value="WA">Washington</option>
-                      </select>
+                      <x-input-select name="student_id" :records="[]" />
                     </div>
                   </div>
                 <div class="col-lg-4">
