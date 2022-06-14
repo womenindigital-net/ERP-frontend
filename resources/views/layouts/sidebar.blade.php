@@ -93,8 +93,7 @@
                         <li><a href="{{route('stock-assign')}}">Stock Assign</a></li>
                         <li><a href="{{route('stock-out')}}">Stock Out</a></li>
                         <li><a href="{{route('stock-hand-report')}}">Stock On Hand Report</a></li>
-                        <li><a href="{{route('stock-product-report')}}">Location Wise Product Report</a>
-                        </li>
+                        <li><a href="{{route('stock-product-report')}}">Location Wise Product Report</a></li>
                         <li><a href="{{route('stock-reorder-report')}}">Stock Reorder Report</a></li>
                         {{-- <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li> --}}
                         <li><a href="{{route('product-analysis-report')}}">Report::Product Analysis</a></li>
@@ -110,8 +109,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('student.appointment')}}">Appointment</a></li>
-                        <li><a href="{{route('case-history.index')}}">Case History</a></li>
-                        <li><a href="{{ route('care-need.index') }}">Care Needs Form</a></li>
+                        <li><a href="{{route('case-history.create')}}">Case History</a></li>
+                        <li><a href="{{ route('care-need.create') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
                     </ul>
                 </li>

@@ -4,10 +4,6 @@
 
 @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')task weight setting @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -104,76 +100,42 @@
                     <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
                       <div class="col-md-6 d-flex">
                           <label class="form-label col-2">Domain</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Section B : Preparatory framework</option>
-                            <option value="2">Section E:  Domain 01 - Physical development</option>
-                            <option value="3">Section F:  Domain 02 : Intellectual / cognitive development</option>
-                            <option value="4">Section G : Domain 03 - Emotional development</option>
-                            <option value="5">Section H : Domain 04 - Social and ethical development</option>
-                            <option value="6">Section I: Independent skills</option>
-                        </select>
+                          <div class="col-6">
+                            <x-input-select name="domain_id"
+                :records="[]" />
+                          </div>
                       </div>
                       <div class="col-md-6 d-flex">
                           <label class="form-label col-2">Sub-Domain</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Definitions</option>
-                            <option value="2">Ethical Values</option>
-                            <option value="3">Independent Daily Living Skills</option>
-                            <option value="4">Intrapersonal</option>
-                            <option value="5">Leisure &amp; Recreation</option>
-                            <option value="6">Motor Planning</option>
-                            <option value="7">Planning of Family</option>
-                            <option value="8">Self development</option>
-                            <option value="9">Sensory Skills</option>
-                            <option value="10">Skill Development planner</option>
-                        </select>
+                          <div class="col-6">
+                            <x-input-select name="sub_domain_id"
+                :records="[]" />
+                          </div>
                       </div>
                     </div>
                     <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
                       <div class="col-md-6 d-flex">
                           <label class="form-label col-2">Area</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Appreciating diversity</option>
-                            <option value="2">Banking</option>
-                            <option value="3">Basic Safety Rules</option>
-                            <option value="4">Behavior Management</option>
-                            <option value="5">Budgeting &amp Planning</option>
-                            <option value="6">Communication Skills</option>
-                            <option value="7">Creativity</option><option value="494">Empathy</option>
-                            <option value="8">Eye Movements</option>
-                            <option value="9">Fine Motor Skills</option>
-                            <option value="10">Functional Academic Skills</option>
-                        </select>
+                          <div class="col-6">
+                            <x-input-select name="area_type"
+                :records="[]" />
+                          </div>
                       </div>
                       <div class="col-md-6 d-flex">
                           <label class="form-label col-2">Activity</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Accept family diversity</option>
-                            <option value="2">Accept formal/official decision</option>
-                            <option value="3">Accept inability of family</option>
-                            <option value="4">Accept inability of others</option>
-                            <option value="5">Accept inability of self</option>
-                            <option value="6">accept others opinion</option>
-                            <option value="7">Accept situation / Environment</option>
-                            <option value="8">Acceptance of new family members / relatives</option>
-                            <option value="9">Acceptance of own fault short coming</option>
-                            <option value="10">Activities to Improve Visual Perception</option>
-                        </select>
+                          <div class="col-6">
+                            <x-input-select name="activity_id"
+                :records="[]" />
+                          </div>
                       </div>
                     </div>
                     <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
                       <div class="col-md-6 d-flex">
                           <label class="form-label col-2">Activity Type</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">A</option>
-                            <option value="2">B</option>
-                            <option value="3">C</option>
-                        </select>
+                          <div class="col-6">
+                            <x-input-select name="activity_type"
+                :records="[]" />
+                          </div>
                       </div>
                     </div>
                 <!-- journal form end -->

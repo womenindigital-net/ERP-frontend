@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\IncidentRecord;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\IncidentRecordRequest;
 use App\Repositories\IncidentRecordRepository;
 use App\Http\Requests\UpdateIncidentRecordRequest;
@@ -45,6 +46,7 @@ class IncidentRecordController extends Controller
     public function store(IncidentRecordRequest $request)
     {
         $this->incidentRcordRepo->store($request->validated());
+        Session::flash('success');
         return redirect()->back();
     }
 

@@ -2,8 +2,6 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
-    
 @endsection
 
 @section('content')
@@ -33,13 +31,8 @@
                         <div class="mb-3 row m-auto">
                             <div class="col-lg-6">
                                 <label class="form-label">Categories</label>
-                                <input type="text" class="form-control" list="categories_list" />
-                                <datalist id="categories_list">
-                                <option>Volvo</option>
-                                <option>Saab</option>
-                                <option>Mercedes</option>
-                                <option>Audi</option>
-                                </datalist>
+                                <x-input-select name="category_id"
+                :records="[]" />
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Sub Categories</label>
@@ -66,7 +59,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 text-end">
                               <label style="display: inline-flex;align-items: center;">Search:
-                                <input type="search" class="form-control form-control-sm" placeholder="">
+                                <input type="search" name="search" class="form-control form-control-sm" placeholder="">
                               </label>
                             </div>
                           </div>
@@ -139,8 +132,6 @@
 
             </div>
         </div>
-
-
 @endsection
 @section('script')
 @endsection

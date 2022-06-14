@@ -2,18 +2,9 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title') ACADEMIC CALENDAR @endslot
-    @endcomponent
-    {{-- code  --}}
-
- 
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -21,7 +12,6 @@
                     <div class="d-flex justify-content-end pb-5">
                         <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".text-add-or-edit">Add</button>
                     </div>
-
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                           <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -114,7 +104,6 @@
                           </nav>
                         </div>
                       </div>
-
                 </div>
             </div>
         </div> <!-- end col -->
@@ -135,16 +124,13 @@
                         <div class="row pb-3">
                             <div class="col-6 mb-3">
                                 <label class="form-label">Event Name</label>
-                                <x-input-text name="hello" placeholder="">
+                                <x-input-text name="event_name" placeholder="">
                                 </x-input-text>
                             </div>
                             <div class="col-6 mb-3">
                                 <label class="form-label">Event Type</label>
-                                <select class="form-select">
-                                    <option>--Select--</option>
-                                    <option>Academic Calendar</option>
-                                    <option>Personal</option>
-                                </select>
+                                <x-input-select name="event_type_id"
+                :records="[]" />
                             </div>
                             <div class="col-6 ">
                                 <label class="form-label">Area</label>
@@ -157,23 +143,15 @@
                             <div class="col-6 mb-3">
                                 <label class=" col-form-label">Activity</label>
                                 <div class="">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>General Play</option>
-                                        <option>Organized Play</option>
-                                        <option>Balance Beam</option>
-                                    </select>
+                                    <x-input-select name="activity_id"
+                :records="[]" />
                                 </div>
                             </div>
                             <div class="col-6 mb-3">
                                 <label class="col-form-label">Activity Type</label>
                                 <div class="">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>A</option>
-                                        <option>B</option>
-                                        <option>C</option>
-                                    </select>
+                                    <x-input-select name="activity_type-id"
+                :records="[]" />
                                 </div>
                             </div>
                         </div>
@@ -303,22 +281,4 @@
 
 @endsection
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $(".hide").hide();
-      $("#container").click(function(){
-        $(".hide").toggle();
-      });
-    });
-</script>
-
-<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection

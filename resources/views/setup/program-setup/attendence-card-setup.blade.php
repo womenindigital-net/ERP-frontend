@@ -2,17 +2,10 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
     
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title') Student_attendance_card_setup @endslot
-    @endcomponent
-    {{-- code  --}}
         <div class="card">
             <div class="card-body">
                 <!-- Nav tabs -->
@@ -36,22 +29,12 @@
                         <div class="mb-3 row m-auto">
                             <div class="col-lg-6">
                                 <label class="form-label">Student</label>
-                                <select class="form-select">
-                                    <option>--Select--</option>
-                                    <option>Alamin Islam</option>
-                                    <option>SAFWAT NASIF</option>
-                                    <option>Md. Moinul Islam Supta</option>
-                                    <option>Rumi Akhter</option>
-                                    <option>abdullah-al-nafi antor</option>
-                                    <option>Md. Shakib Khan</option>
-                                    <option>SARRAJ SARWAR</option>
-                                    <option>Humaira Sultana</option>
-                                    <option>Tabassum Mehejbeen Liana</option>
-                                </select>
+                                <x-input-select name="student_id"
+                                :records="[]" />
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label"> Card Number</label>
-                                <x-input-text type="number" name="hh"  placeholder="Enter amount">
+                                <x-input-text type="number" name="card_number"  placeholder="Enter amount">
                                 </x-input-text> 
                             </div>
                         </div>
@@ -74,7 +57,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 text-end">
                               <label style="display: inline-flex;align-items: center;">Search:
-                                <x-input-text type="search" type="number" name="hh"  placeholder="Enter amount">
+                                <x-input-text type="search" type="number" name="search"  placeholder="Enter amount">
                                 </x-input-text> 
                               </label>
                             </div>

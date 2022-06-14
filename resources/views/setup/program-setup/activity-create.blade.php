@@ -2,7 +2,6 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -11,9 +10,6 @@
         @slot('li_1') Utility @endslot
         @slot('title')TASK WEIGHT SETTINGS @endslot
     @endcomponent
-    {{-- code  --}}
-
- 
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -23,7 +19,8 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
-                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                          <label style="display: inline-flex;align-items: center;"> Show
+                             <select name="length"
                               class="form-control form-control-sm form-select form-select-sm">
                               <option value="10">10</option>
                               <option value="25">25</option>
@@ -129,56 +126,42 @@
                             <div class="col-6 row mb-3">
                                 <label class="col-4 col-form-label">Domain</label>
                                 <div class="col-8">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>Section B : Preparatory framework</option>
-                                        <option>Section E:  Domain 01 - Physical development</option>
-                                        <option>Section F:  Domain 02 : Intellectual / cognitive development</option>
-                                        <option>Section G : Domain 03 - Emotional development</option>
-                                    </select>
+                                    <x-input-select name="student_id"
+                :records="[]" />
+
                                 </div>
                             
                             </div>
                             <div class="col-6 row mb-3">
                                 <label class="col-4 col-form-label">Sub-Domain</label>
                                 <div class="col-8">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>Definitions</option>
-                                    </select>
+                                    <x-input-select name="student_id"
+                :records="[]" />
+
                                 </div>
                             </div>
                             <div class="col-6 row mb-3">
                                 <label class="col-4 col-form-label">Area</label>
                                 <div class="col-8">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>Gross Motor Skills</option>
-                                        <option>Fine Motor Skills</option>
-                                        <option>Oral-motor activities</option>
-                                    </select>
+                                    <x-input-select name="student_id"
+                :records="[]" />
+
                                 </div>
                             </div>
                             <div class="col-6 row mb-3">
                                 <label class="col-4 col-form-label">Activity</label>
                                 <div class="col-8">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>General Play</option>
-                                        <option>Organized Play</option>
-                                        <option>Balance Beam</option>
-                                    </select>
+                                    <x-input-select name="student_id"
+                :records="[]" />
+
                                 </div>
                             </div>
                             <div class="col-6 row mb-3">
                                 <label class="col-4 col-form-label">Activity Type</label>
                                 <div class="col-8">
-                                    <select class="form-select">
-                                        <option>--Select--</option>
-                                        <option>A</option>
-                                        <option>B</option>
-                                        <option>C</option>
-                                    </select>
+                                    <x-input-select name="student_id"
+                :records="[]" />
+
                                 </div>
                             </div>
                         </div>
@@ -308,22 +291,4 @@
 
 @endsection
 @section('script')
-<!-- Required datatable js -->
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $(".hide").hide();
-      $("#container").click(function(){
-        $(".hide").toggle();
-      });
-    });
-</script>
-
-<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
-<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection
