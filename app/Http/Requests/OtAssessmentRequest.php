@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreOtAssessmentRequest extends FormRequest
+class OtAssessmentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -50,7 +50,7 @@ class StoreOtAssessmentRequest extends FormRequest
             "interest_of_work"             => 'nullable',
             "information_receives_ability" => 'nullable',
             "memorizing_the_information"   => 'nullable',
-            "awareness_of_risk_&_hazard"   => 'nullable',
+            "awareness_of_risk_hazard"   => 'nullable',
             "working_table"                => 'nullable',
             "Keyboard_and_mouse"           => 'nullable',
             "monitor_place"                => 'nullable',

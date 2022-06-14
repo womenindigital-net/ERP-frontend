@@ -17,11 +17,10 @@
                     <td>Nurjahan Dipa</td>
                     <td>Create: Nurjahan Dipa @ 2022-04-13 12:32:20</td>
                     <td>
-                        <button type="button"
-                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"
-                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">
+                        <a href="{{ route('care-need.show', '1') }}" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                             <i class="mdi mdi-eye"></i>
-                        </button>
+                        </a>
                         <button type="button"
                             class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1">
                             <i class="fas fa-check"></i>

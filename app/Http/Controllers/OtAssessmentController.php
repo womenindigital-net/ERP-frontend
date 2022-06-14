@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OtAssessmentRequest;
 use App\Models\OtAssessment;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -45,7 +46,7 @@ class OtAssessmentController extends Controller
      * @param  \App\Http\Requests\StoreOtAssessmentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOtAssessmentRequest $request)
+    public function store(OtAssessmentRequest $request)
     {
         Session::flash('success');
         dd($request);

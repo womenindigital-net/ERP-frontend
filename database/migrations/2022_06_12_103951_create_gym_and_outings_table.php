@@ -14,9 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gym_and_outings', function(Blueprint $table)
-        {
+        Schema::create('gym_and_outings', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_approved')->default(0);
             $table->string('collection_date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->string('treadmill')->nullable();
