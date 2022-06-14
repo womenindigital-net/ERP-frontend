@@ -25,10 +25,4 @@ class CaseHistoryService
         $record = CaseHistory::findOrFail($recordId);
         $this->repo->update($record, $validate);
     }
-    public function delete($id)
-    {
-        $id = CaseHistory::findOrFail($id);
-        $this->repo->delete($id);
-        // dd($id);
-    }
 }

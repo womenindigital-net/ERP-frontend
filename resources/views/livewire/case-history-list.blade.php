@@ -43,13 +43,9 @@
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </button>
-                            <form action="{{ route('case-history.destroy', $record->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"><i
-                                        class="fas fa-trash-alt"></i></button>
-                            </form>
+
+                            <button wire:click="delete({{$record->id}})" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                <i class="fas fa-trash-alt"></i></button>
                         </td>
                     </tr>
                     @endforeach

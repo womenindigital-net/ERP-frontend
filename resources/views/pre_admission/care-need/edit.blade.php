@@ -36,9 +36,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-sm-9 col-md-9 apply-view-only">
-                                    <form action="{{route('care-need.store')}}" method="POST">
+                                <div class="col-sm-9 col-md-9">
+                                    <form action="{{route('care-need.update', $record->id)}}" method="POST">
                                         @csrf
+                                        @method('PUT')
                                         <div class="tab-content">
                                             <div class="tab-pane" id="case_history_init">
                                                 <section>

@@ -10,18 +10,21 @@ use Illuminate\Support\Facades\Session;
 use App\Repositories\CareNeedRepository;
 use App\Http\Requests\StoreCareNeedRequest;
 use App\Http\Requests\UpdateCareNeedRequest;
+use App\Repositories\StudentRepository;
 use Illuminate\Contracts\Foundation\Application;
 
 class CareNeedController extends Controller
 {
     private UserRepository $userRepo;
     private CareNeedRepository $careRepo;
+    private StudentRepository $studentRepo;
     public $careNeed;
 
-    public function __construct(UserRepository $userRepository, CareNeedRepository $careNeedRepository)
+    public function __construct(StudentRepository $studentRepo, UserRepository $userRepository, CareNeedRepository $careNeedRepository)
     {
         $this->userRepo = $userRepository;
         $this->careRepo = $careNeedRepository;
+        $this->studentRepo = $studentRepo;
     }
 
     /**
@@ -31,6 +34,7 @@ class CareNeedController extends Controller
      */
     public function index(): View|Factory|Application
     {
+        //
     }
 
     /**
@@ -42,6 +46,7 @@ class CareNeedController extends Controller
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('pre_admission.care-need.create', $data);
@@ -69,7 +74,9 @@ class CareNeedController extends Controller
     public function show(CareNeed $careNeed)
     {
         $data = [
-            'careNeed' => $this->careNeed = $careNeed,
+            'record' => $this->careNeed = $careNeed,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
         // dd($data['caseHistory']);
         return view('pre_admission.care-need.view', $data);
@@ -83,7 +90,13 @@ class CareNeedController extends Controller
      */
     public function edit(CareNeed $careNeed)
     {
-        //
+        $data = [
+            'record' => $this->careNeed = $careNeed,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        // dd($data['caseHistory']);
+        return view('pre_admission.care-need.edit', $data);
     }
 
     /**
@@ -93,9 +106,11 @@ class CareNeedController extends Controller
      * @param  \App\Models\CareNeed  $careNeed
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCareNeedRequest $request, CareNeed $careNeed)
+    public function update(StoreCareNeedRequest $request, CareNeed $careNeed)
     {
-        //
+        $this->careRepo->update($careNeed, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

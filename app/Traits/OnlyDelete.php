@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 trait OnlyDelete
 {
-    public function delete($obj): void
+    public function delete($id): void
     {
-        $obj->delete();
+        $data = $this->model::findOrFail($id);
+        $data->delete();
     }
 }

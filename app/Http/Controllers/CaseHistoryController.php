@@ -119,9 +119,11 @@ class CaseHistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCaseHistoryRequest $request, CaseHistory $caseHistory)
+    public function update(CaseHistoryRequest $request, CaseHistory $caseHistory)
     {
-        //
+        $this->caseRepo->update($caseHistory, $request->validated());
+        Session::flash('success', 'Updated');
+        return redirect()->back();
     }
 
     /**
@@ -133,8 +135,6 @@ class CaseHistoryController extends Controller
      */
     public function destroy(CaseHistory $caseHistory)
     {
-        $this->service->delete($caseHistory->id);
-        return redirect()->back();
-
+        //
     }
 }

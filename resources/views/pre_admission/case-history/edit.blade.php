@@ -32,8 +32,9 @@
                   </div>
                 </div>
                 <div class="col-sm-9 col-md-9">
-                  <form action="{{ route('case-history.store') }}" method="POST">
+                  <form action="{{ route('case-history.update', $caseHistory->id) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="tab-content">
                       <div class="tab-pane" id="caseHistoryInit">
                         <section>
