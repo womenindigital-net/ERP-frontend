@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('ot_assessments', function(Blueprint $table)
         {
             $table->id();
+            $table->boolean('is_approved')->default(0);
             $table->string('date')->nullable();
             $table->foreignIdFor(\App\Models\User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->string('type_of_disability')->nullable();
