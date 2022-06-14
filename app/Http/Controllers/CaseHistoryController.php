@@ -42,13 +42,7 @@ class CaseHistoryController extends Controller
      */
     public function index(): View
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'students' => $this->studentRepo->getData(),
-            'records' => $this->caseRepo->getListData($perPage = ProjectConstants::DATA_PER_PAGE, $search = ''),
-        ];
-
-        return view('case-history', $data);
+        //
     }
 
     /**
@@ -58,7 +52,12 @@ class CaseHistoryController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'records' => $this->caseRepo->getListData($perPage = ProjectConstants::DATA_PER_PAGE, $search = ''),
+        ];
+        return view('pre_admission.case-history.create', $data);
     }
 
     /**
@@ -73,10 +72,8 @@ class CaseHistoryController extends Controller
 
         // dd($request->validated()['child_description']);
         $this->service->store($request->validated());
-
         Session::flash('success');
-
-        return redirect()->route('case-history.index');
+        return redirect()->back();
     }
 
     /**
@@ -92,7 +89,7 @@ class CaseHistoryController extends Controller
             'caseHistory' => $this->caseHistory = $caseHistory,
         ];
         // dd($data['caseHistory']);
-        return view('case-history-view', $data);
+        return view('pre_admission.case-history.view', $data);
     }
 
     /**
