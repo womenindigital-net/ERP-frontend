@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\CareNeed;
+use Illuminate\Contracts\View\View;
+use App\Repositories\UserRepository;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\CareNeedRepository;
 use App\Http\Requests\StoreCareNeedRequest;
 use App\Http\Requests\UpdateCareNeedRequest;
-use App\Repositories\CareNeedRepository;
-use App\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 
 class CareNeedController extends Controller
 {
     private UserRepository $userRepo;
     private CareNeedRepository $careRepo;
+    public $careNeed;
 
     public function __construct(UserRepository $userRepository, CareNeedRepository $careNeedRepository)
     {
@@ -29,11 +31,6 @@ class CareNeedController extends Controller
      */
     public function index(): View|Factory|Application
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        ];
-
-        return view('pre_admission.care-need.create', $data);
     }
 
     /**
@@ -43,7 +40,11 @@ class CareNeedController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+
+        return view('pre_admission.care-need.create', $data);
     }
 
     /**
@@ -67,7 +68,11 @@ class CareNeedController extends Controller
      */
     public function show(CareNeed $careNeed)
     {
-        //
+        $data = [
+            'careNeed' => $this->careNeed = $careNeed,
+        ];
+        // dd($data['caseHistory']);
+        return view('pre_admission.care-need.view', $data);
     }
 
     /**
