@@ -126,6 +126,10 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Communication"
+                                                            :records="$constants::$yesNoEn">
+                                                            </x-input-radio-or-check>
+                                                            <!-- row end -->
+                                                            <x-input-radio-or-check label="Communication"
                                                                 :records="$therapyConstants::$communication">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
@@ -133,8 +137,8 @@
                                                     </div>
                                                     <div class="tab-pane" id="Muscle_Tone">
                                                         <section>
-                                                            <x-input-radio-or-check label="Separate Home equipment"
-                                                                :records="$therapyConstants::$separateHomeEquipment">
+                                                            <x-input-radio-or-check label="Upper limbs"
+                                                                :records="$therapyConstants::$lowerLimbs">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <div class="row border-top py-2">

@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\UserRepository;
 use App\Models\FunctionalMovementskill;
+use App\Repositories\StudentRepository;
 use App\Http\Requests\FunctionalMovementskillRequest;
-use App\Http\Requests\UpdateFunctionalMovementskillRequest;
 use App\Repositories\FunctionalMovementSkillRepository;
+use App\Http\Requests\UpdateFunctionalMovementskillRequest;
 
 class FunctionalMovementskillController extends Controller
 {
 
     private FunctionalMovementSkillRepository $funMoveSkillRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(FunctionalMovementSkillRepository $funMoveSkillRepo)
+    public function __construct(FunctionalMovementSkillRepository $funMoveSkillRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->funMoveSkillRepo = $funMoveSkillRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
     /**
      * Display a listing of the resource.
@@ -34,7 +40,8 @@ class FunctionalMovementskillController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.functional-movement-skill.create', $data);
@@ -61,7 +68,13 @@ class FunctionalMovementskillController extends Controller
      */
     public function show(FunctionalMovementskill $functionalMovementskill)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $functionalMovementskill,
+        ];
+
+        return view('assessment.functional-movement-skill.view', $data);
     }
 
     /**

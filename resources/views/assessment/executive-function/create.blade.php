@@ -74,7 +74,7 @@
                                                                             for="basicpill-lastname-input">Teacher:</label>
                                                                         1:37
                                                                         <x-input-select name="teacher_id"
-                                                                            :records="['1'=>'one']" />
+                                                                            :records="$teachers" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
@@ -82,7 +82,7 @@
                                                                         <label for="basicpill-phoneno-input">Candidate
                                                                             ID:</label>
                                                                         <x-input-select name="candidate_id"
-                                                                            :records="['1'=>'one']" />
+                                                                            :records="$students" />
                                                                     </div>
                                                                 </div>
                                                             </div>
