@@ -98,4 +98,46 @@ final class ProjectConstants
         self::IN_SPECIAL_OCCASION => 'In special occasion',
         self::DONT_DO_AT_ALL => "Don't do at all",
     ];
+
+    // Salary Head Setup
+    
+    const OTHER_PAYMENT = 'Other Payment';
+    const  SALARY_HEAD  = 'Salary head';
+
+        public static array $salaryHead = [
+        self:: OTHER_PAYMENT => 'Other Payment',
+        self:: SALARY_HEAD  => 'Salary head',
+    ];
+
+        
+    const ADDITIVE  = 'Additive';
+    const DEDUCTIVE = 'Deductive';
+
+    public static array $setup = [
+        self:: ADDITIVE  => 'Additive',
+        self:: DEDUCTIVE => 'Deductive',
+    ];
+
+            
+    const HOURLY  = 'Hourly';
+    const DAILY = ' Daily';
+    const MONTHLY = 'Monthly';
+
+    public static array $payType = [
+        self:: HOURLY  => 'Hourly',
+        self:: DAILY => 'Daily',
+        self:: MONTHLY => 'Monthly',
+    ];
+
+    const BASIC  = 'Basic';
+    const GROSS = 'Gross';
+    const NET_SALARY = 'Net Salary';
+
+    public static array $deduct = [
+        self:: BASIC   => 'Basic',
+        self:: GROSS => 'Gross',
+        self:: NET_SALARY => 'Net Salary',
+    ];
 }
+
+

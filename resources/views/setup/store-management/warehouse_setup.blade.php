@@ -7,14 +7,6 @@
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title') WAREHOUSE @endslot
-    @endcomponent
-    {{-- code  --}}
-
- 
         <div class="card">
             <div class="card-body">
 
@@ -40,38 +32,31 @@
                         <div class="row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-9">
-                                <x-input-text name="Name" pleceholder="Enter your name"></x-input-text>
+                                <x-input-text name="name" pleceholder="Enter your name"></x-input-text>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Location</label>
                             <div class="col-sm-9">
-                                <x-input-text name="Location" pleceholder="Enter your Location"></x-input-text>
+                                <x-input-text name="location" pleceholder="Enter your Location"></x-input-text>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Store type</label>
                             <div class="col-sm-9">
-                                <select class="form-select">
-                                    <option>Select</option>
-                                    <option>....</option>
-
-                                </select>
+                                <x-input-select name="store_type" :records="[]" />
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Description</label>
                             <div class="col-sm-9">
-                                <x-input-textarea name="Description"></x-input-textarea>
+                                <x-input-textarea name="description"></x-input-textarea>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Managed by</label>
                             <div class="col-sm-9">
-                                <select class="form-select">
-                                    <option>Select</option>
-                                    <option>....</option>
-                                </select>
+                                <x-input-select name="managed_by" :records="[]" />
                             </div>
                         </div>
                         <div class="d-flex  flex-wrap float-end gap-2">
@@ -94,7 +79,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6 text-end">
                                   <label style="display: inline-flex;align-items: center;">Search:
-                                    <input type="search" class="form-control form-control-sm" placeholder="">
+                                    <x-input-text type="search" name="search" />
                                   </label>
                                 </div>
                               </div>
