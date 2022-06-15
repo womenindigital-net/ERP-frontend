@@ -542,24 +542,6 @@
                                                     <div class="tab-pane" id="Functional_Intent">
                                                         <section>
                                                             <div>
-
-                                                                <!-- end row -->
-                                                                <x-input-radio-or-check label="Protective reactions"
-                                                                    :records="$constants::$yesNoEn">
-                                                                </x-input-radio-or-check>
-                                                                <!-- end row -->
-                                                                <x-input-radio-or-check label="Equilibrium reaction"
-                                                                    :records="$constants::$yesNoEn">
-                                                                </x-input-radio-or-check>
-                                                                <!-- end row -->
-                                                                <!-- end row -->
-
-                                                            </div>
-                                                        </section>
-                                                    </div>
-                                                    <div class="tab-pane" id="Functional_Intent_B">
-                                                        <section>
-                                                            <div>
                                                                 <!--end row -->
                                                                 <x-input-radio-or-check
                                                                     label="Demonstrates pragmatic difficulties despite adequate scores on standardized tests"
@@ -818,11 +800,10 @@
                                                                     secondaryInputLabel="Excessive:">
                                                                 </x-input-radio-or-check>
                                                                 <!--end row -->
-
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Functional_Intent_C">
+                                                    <div class="tab-pane" id="Functional_Intent_B">
                                                         <section>
                                                             <div>
                                                                 <!--end row -->
@@ -980,7 +961,6 @@
 </div>
 <!-- end col -->
 <!-- end row -->
-
 @endsection
 
 @section('script')

@@ -24,7 +24,9 @@ class SensoryAdultRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name"                                             => 'nullable',
+            
+            "collection_date"                                  => 'nullable',
+            "teacher_id"                                       => 'nullable',
             "student_id"                                       => 'nullable',
             "being_touched_on_some_body_parts"                 => 'nullable',
             "hugs_and_cuddles"                                 => 'nullable',
