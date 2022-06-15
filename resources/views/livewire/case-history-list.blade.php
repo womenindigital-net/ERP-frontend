@@ -44,7 +44,8 @@
                                 <i class="fas fa-arrow-circle-right"></i>
                             </button>
 
-                            <button wire:click="delete({{$record->id}})" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                            <button wire:click="confirmDelete({{$record->id}})"
+                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                                 <i class="fas fa-trash-alt"></i></button>
                         </td>
                     </tr>

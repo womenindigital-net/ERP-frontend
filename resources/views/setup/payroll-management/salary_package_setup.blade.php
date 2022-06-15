@@ -4,10 +4,6 @@
 
 @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') SALARY PACKAGE  @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -33,7 +29,7 @@
           </div>
           <div class="col-sm-12 col-md-6 text-end">
             <label style="display: inline-flex;align-items: center;">Search:
-              <input type="search" class="form-control form-control-sm" placeholder="">
+              <x-input-text type="search" name="search"/>
             </label>
           </div>
         </div>
@@ -132,294 +128,157 @@
                     <div class="col-md-12 d-flex">
                       <div class="col-md-4 mb-3">
                           <label class="form-label">Package Name</label>
-                          <x-input-text name="Package Name" placeholder="Enter Head Name Here" ></x-input-text>
+                          <x-input-text name="package_name" placeholder="Enter Head Name Here" ></x-input-text>
                       </div>
                       <div class="col-md-4 ms-2 mb-3">
                           <label class="form-label">Description</label>
-                          <x-input-textarea name="Description"></x-input-textarea>
+                          <x-input-textarea name="description"></x-input-textarea>
                       </div>
                       <div class="col-md-4 ms-2 pe-3 mb-3">
                           <label class="form-label">Grade Name</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Grade 1</option>
-                            <option value="2">Grade 2</option>
-                            <option value="3">Grade 3</option>
-                            <option value="4">Grade 4</option>
-                            <option value="5">Grade 5</option>
-                            <option value="6">Grade 6</option>
-                            <option value="7">Grade 7</option>
-                            <option value="8">Grade 8</option>
-                            <option value="9">Grade 9</option>
-                            <option value="10">Grade 10</option>
-                            <option value="11">Grade 11</option>
-                            <option value="12">Grade 12</option>
-                            <option value="13">Grade 13</option>
-                          </select>
+                         <x-input-select name="grade_name" :records="[]" />
                       </div>
                     </div>
                
                     <div class="col-md-12 d-flex">
                       <div class="col-md-6  mb-3">
                           <label class="form-label">Step Name</label>
-                          <select id="formrow-inputState" class="form-select">
-                              <option value="0">Select</option>
-                              <option value="1">Probation Period</option>
-                              <option value="2">Entry Step</option>
-                              <option value="3">Step 1</option>
-                              <option value="4">Step 2</option>
-                              <option value="5">Step 3</option>
-                              <option value="6">Step 4</option>
-                              <option value="7">Step 5</option>
-                              <option value="8">Step 6</option>
-                              <option value="9">Step 7</option>
-                              <option value="10">Step 8</option>
-                              <option value="11">Step 9</option>
-                              <option value="12">Step 10</option>
-                          </select>
+                          <x-input-select name="step_name" :records="[]" />
                       </div>
                       <div class="col-md-6 ps-2 mb-3">
                           <label class="form-label">Curnc Id</label>
-                          <select id="formrow-inputState" class="form-select">
-                              <option value="0">Select</option>
-                              <option value="1">Bangladeshi Taka</option>
-                              <option value="2">USD</option>
-                          </select>
+                          <x-input-select name="curnc_id" :records="[]" />
                       </div>
                     </div>
                     <div class="col-md-8 d-flex">
                         <div class="col-md-4 mb-2">
-                            <h5 class="mb-3">Will Convert</h5>
-                            <div class="">
-                                <input class="form-check-input" type="radio" name="formRadios">
-                                <label class="form-check-label pe-3">Yes</label>
-                                <input class="form-check-input" type="radio" name="formRadios">
-                                <label class="form-check-label">No</label>
-                              </div>
+                              <x-input-radio-or-check  label="Will Convert" :records="$constants::$yesNoEn"/>
                         </div>
                         <div class="col-md-5 mb-2">
-                            <h5 class="mb-4">Pay Type</h5>
-                            <div class="">
-                                <input class="form-check-input" type="radio" name="formRadios">
-                                <label class="form-check-label pe-3">Hourly</label>
-                                <input class="form-check-input" type="radio" name="formRadios">
-                                <label class="form-check-label pe-3">Daily</label>
-                                <input class="form-check-input" type="radio" name="formRadios">
-                                <label class="form-check-label">Monthly</label>
-                              </div>
+                            <x-input-radio-or-check class="justify-content-center" label="Pay Type" :records="$constants::$payType"/>
                         </div>
                       </div>
                       <div class="col-md-12 d-flex">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Over Time Amt</label>
-                            <x-input-text name="number" type="number"  placeholder="Over Time Amt Per Hours" ></x-input-text>
+                            <x-input-text name="over_time_amt" type="number"  placeholder="Over Time Amt Per Hours" ></x-input-text>
                         </div>
-                        <div class="col-md-4 ms-2 pb-5 text-center">
-                            <label class="form-label ">Overtime in Percent of</label> <br>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label pe-3">Yes</label>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">No</label>
-                            <select id="formrow-inputState" class="form-select ">
-                              <option value="0">Select</option>
-                            </select>
+                        <div class="col-md-4 pb-5 text-center">
+                            <x-input-radio-or-check class="me-5" label="Overtime in Percent of" :records="$constants::$yesNoEn"/>
+                            <x-input-select name="overtime" :records="[]"/>
                         </div>
                         <div class="col-md-4 ms-2 pe-3 mb-3">
                             <label class="form-label">Bonus Salary Head</label>
-                            <select id="formrow-inputState" class="form-select">
-                              <option value="0">Select</option>
-                              <option value="1">Basic</option>
-                              <option value="2">Gross Salary</option>
-                              <option value="3">Late Deduction Salary</option>
-                              <option value="4">House Rent</option>
-                              <option value="5">Medical Allowance</option>
-                              <option value="6">Advance</option>
-                              <option value="7">Fooding</option>
-                              <option value="8">Transport</option>
-                              <option value="9">AIT</option>
-                              <option value="10">PF</option>
-                              <option value="11">Overtime</option>
-                              <option value="12">Arrear</option>
-                              <option value="13">Absent</option>
-                            </select>
+                            <x-input-select name="bonus_salary_head" :records="[]"/>
                         </div>
                       </div>
                       <div class="col-md-12 d-flex">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Attendance Bonus Amt</label>
-                            <x-input-text name="number" type="number"  placeholder="Enter Attendance Bonus Amt" ></x-input-text>
+                            <x-input-text name="attendance_bonus_amt" type="number"  placeholder="Enter Attendance Bonus Amt" ></x-input-text>
                         </div>
-                        <div class="col-md-4 ms-2 pb-5 text-center">
-                            <label class="form-label ">Bonus In Percent</label><br>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label pe-3">Yes</label>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">No</label>
+                        <div class="col-md-4 text-center">
+                            <x-input-radio-or-check class="" label="Bonus In Percent" :records="$constants::$yesNoEn"/>
                         </div>
                         <div class="col-md-4 ms-2 pe-3 mb-3">
                             <label class="form-label">Bonus Salary Head</label>
-                            <select id="formrow-inputState" class="form-select">
-                              <option value="0">Select</option>
-                            </select>
+                            <x-input-select name="bonus_salary_head" :records="[]"/>
                         </div>
                       </div>
                       <div class="col-md-12 d-flex">
                         <div class="col-md-3 pe-2 mb-3">
                             <label class="form-label">Late Count</label>
-                            <x-input-text name="number" type="number"  placeholder="Enter Late Count In Da" ></x-input-text> 
+                            <x-input-text name="late_count" type="number"  placeholder="Enter Late Count In Da" ></x-input-text> 
                         </div>
                         <div class="col-md-3 mb-3">
                             <label class="form-label">Salary Deduction Days</label>
-                            <x-input-text name="number" type="number"  placeholder="Enter late sal count here" ></x-input-text> 
+                            <x-input-text name="salary_deduction_days" type="number"  placeholder="Enter late sal count here" ></x-input-text> 
                         </div>
                         <div class="col-md-3 ms-2 pe-3 mb-3">
                           <label class="form-label">Late Sal Head</label>
-                          <select id="formrow-inputState" class="form-select">
-                            <option value="0">Select</option>
-                            <option value="1">Medicine</option>
-                            <option value="2">Bakery assets</option>
-                            <option value="3">Anklet</option>
-                            <option value="4">Jewelerry Raw Materials</option>
-                            <option value="5">Paperwork Raw Materials</option>
-                            <option value="6">Paperwork Finished Goods</option>
-                            <option value="7">Block Raw Materials</option>
-                            <option value="8">Canteen Raw Material</option>
-                            <option value="9">Canteen Finished Goods</option>
-                            <option value="10">Tie-dye Raw Materials</option>
-                            <option value="11">Bakery Raw Materials</option>
-                            <option value="12">Angel Chef Hot Kitchen</option>
-                          </select>
+                          <x-input-select name="late_sal_head" :records="[]"/>
                       </div>
                         <div class="col-md-3 ms-2 pb-5">
-                            <label class="form-label ">Deduct Head</label><br>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label pe-3">Basic</label>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label pe-3">Gross</label>
-                            <input class="form-check-input" type="radio" name="formRadios">
-                            <label class="form-check-label">Net Salary</label>
+                            <x-input-radio-or-check class="" label="Deduct Head" :records="$constants::$deduct"/>
                         </div>
                       </div>
                       <div class="col-md-12 d-flex">
                         <div class="col-md-4 ms-2 pb-5">
-                          <label class="form-label ">Is Auto Gross Calc</label><br>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label pe-3">Yes</label>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label pe-3">No</label>
+                          <x-input-radio-or-check class="justify-content-center" label="Is Auto Gross Calc" :records="$constants::$yesNoEn"/>
                       </div>
                         <div class="col-md-4 pe-2 mb-3">
                             <label class="form-label">Gross Salary</label>
-                            <x-input-text name="number" type="number"  placeholder="Enter Total Gross Salary Here" ></x-input-text> 
+                            <x-input-text name="gross_salary" type="number"  placeholder="Enter Total Gross Salary Here" ></x-input-text> 
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Net Salary</label>
-                            <x-input-text name="number" type="number"  placeholder="Enter Total Salary Here" ></x-input-text> 
+                            <x-input-text name="net_salary" type="number"  placeholder="Enter Total Salary Here" ></x-input-text> 
                         </div>
                       </div>
                       <div class="col-md-12 d-flex">
                         <div class="col-md-4 ms-2 pb-5">
-                          <label class="form-label ">Is Comp Facility</label><br>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label pe-3">Yes</label>
-                          <input class="form-check-input" type="radio" name="formRadios">
-                          <label class="form-check-label pe-3">No</label>
+                          <x-input-radio-or-check class="justify-content-center" label="Is Comp Facility" :records="$constants::$yesNoEn"/>
                       </div>
                       <div class="col-md-4 ms-2 pe-3 mb-3">
                         <label class="form-label">Facility Package</label>
-                        <select id="formrow-inputState" class="form-select">
-                          <option value="0">Select</option>
-                        </select>
-                    </div>
+                        <x-input-select name="facility_package" :records="[]"/>
+                     </div>
                       </div>
                       <div class="col-12">
                         <h4 class="card-title">Assign Tasks</h4>
                         <form class="repeater" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-1 p-0 pe-4  text-center">
-                                    <label for="product">SL</label>
+                                    <label for="sl">SL</label>
                                 </div>
                                 <div class="col-2 p-0  text-center">
-                                    <label for="product">Salary Head</label>
+                                    <label for="salary_head">Salary Head</label>
                                 </div>
                                 <div class="col-1 p-0  text-center">
-                                    <label for="total">Pay Amount</label>
+                                    <label for="pay_amount">Pay Amount</label>
                                 </div>
                                 <div class="col-1 p-0 ps-3">
                                     <label for="product">Is Percent</label>
                                 </div>
                                 <div class="col-2 p-0 text-center ">
-                                    <label for="product">Percent Field</label>
+                                    <label for="percrnt_field">Percent Field</label>
                                 </div>
                                 <div class="col-2 p-0 text-center">
-                                    <label for="total">Basic/Provident</label>
+                                    <label for="basic_provident">Basic/Provident</label>
                                 </div>
                                 <div class="col-2 p-0 text-center ">
-                                    <label for="product">PF Company</label>
+                                    <label for="pf_company">PF Company</label>
                                 </div>
                                 <div class="col-1 p-0 text-center">
-                                    <label for="product">Total</label>
+                                    <label for="total">Total</label>
                                 </div>
                             </div>
                             <div data-repeater-list="group-a">
-                                <div data-repeater-item class="row">
+                                <div data-repeater-item class="row removeRow">
                                     <div  class="col-1 d-flex p-0  pb-1 ps-4">
                                         <label>01</label>
                                     </div>
                                     <div class=" col-2 p-0 pe-3 pb-1">
-                                      <select id="formrow-inputState" class="form-select">
-                                        <option value="0">Select</option>
-                                        <option value="1">Basic</option>
-                                        <option value="2">Gross Salary</option>
-                                        <option value="3">Late Deduction Salary</option>
-                                        <option value="4">House Rent</option>
-                                        <option value="5">Medical Allowance</option>
-                                        <option value="6">Advance</option>
-                                        <option value="7">Fooding</option>
-                                        <option value="8">Transport</option>
-                                        <option value="9">AIT</option>
-                                        <option value="10">PF</option>
-                                        <option value="11">Overtime</option>
-                                        <option value="12">Arrear</option>
-                                        <option value="13">Absent</option>
-                                      </select>
+                                      <x-input-select name="salary_head" :records="[]"/>
                                     </div>
                                     <div class=" col-1 p-0 pb-1">
-                                      <x-input-text name="number" type="number"></x-input-text> 
+                                      <x-input-text name="pay_amount" type="number"></x-input-text> 
                                     </div>
                                     <div class=" col-1 p-0 pb-1 ps-5">
                                       <input type="checkbox" class="form-check-input">
                                     </div>
                                     <div class=" col-2 p-0 pb-1">
-                                      <select id="formrow-inputState" class="form-select">
-                                        <option value="0">Select</option>
-                                        <option value="1">Basic</option>
-                                        <option value="2">Gross Salary</option>
-                                        <option value="3">Late Deduction Salary</option>
-                                        <option value="4">House Rent</option>
-                                        <option value="5">Medical Allowance</option>
-                                        <option value="6">Advance</option>
-                                        <option value="7">Fooding</option>
-                                        <option value="8">Transport</option>
-                                        <option value="9">AIT</option>
-                                        <option value="10">PF</option>
-                                        <option value="11">Overtime</option>
-                                        <option value="12">Arrear</option>
-                                        <option value="13">Absent</option>
-                                      </select> 
+                                      <x-input-select name="percrnt_field" :records="[]"/>
                                     </div>
                                     <div class=" col-2 p-0 pb-1 ps-3">
-                                      <select id="formrow-inputState" class="form-select">
-                                        <option value="1">Basic</option>
-                                        <option value="2">Provident</option>
-                                      </select>
+                                      <x-input-select name="basic_provident" :records="[]"/>
                                     </div>
                                     <div class=" col-1 p-0 pb-1 ps-3 pe-3">
-                                      <x-input-text name="number" type="number"></x-input-text> 
+                                      <x-input-text name="pf_company" type="number"></x-input-text> 
                                     </div>
                                     <div class="col-2 p-0 pb-1 pe-3 align-self-center d-flex">
-                                      <x-input-text name="number" type="number"></x-input-text> 
-                                        <button class="btn btn-outline-danger waves-effect waves-light">
+                                      <x-input-text name="total" type="number"></x-input-text> 
+                                        <button class="btn btn-outline-danger waves-effect waves-light removeBtn">
                                           <i class="fas fa-trash-alt"></i>
                                       </button>
                                     </div>

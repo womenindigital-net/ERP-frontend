@@ -63,7 +63,7 @@
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Collection
                                                                         Date:</label>
-                                                                    <x-input-text name="date" type="date"
+                                                                    <x-input-text name="collection_date" type="date"
                                                                         placeholder="mm/dd/yyyy">
                                                                     </x-input-text>
                                                                 </div>
@@ -71,14 +71,14 @@
                                                                     <label class="p-2">Teacher: <span
                                                                             class="text-danger text-bold">*</span></label>
                                                                     <x-input-select name="teacher_id"
-                                                                        :records="['1'=> 'one']" />
+                                                                        :records="$teachers" />
                                                                 </div>
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Candidate ID:
                                                                         <span
                                                                             class="text-danger text-bold">*</span></label>
                                                                     <x-input-select name="candidate_id"
-                                                                        :records="['1'=> 'one']" />
+                                                                        :records="$students" />
                                                                 </div>
                                                                 <div class="col-lg-12 p-0 pb-2">
                                                                     <label class="col-md-12 px-1">Description:</label>
@@ -103,7 +103,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Medication
                                                                                         Treatment </label>
-                                                                                    <x-input-text name="collection_date"
+                                                                                    <x-input-text name="medication_treatment"
                                                                                         placeholder="Medication Treatment">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -111,7 +111,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Any
                                                                                         present medicines</label>
-                                                                                    <x-input-text name="collection_date"
+                                                                                    <x-input-text name="any_present_medicines"
                                                                                         placeholder="Any present medicines">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -126,6 +126,10 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Communication"
+                                                            :records="$constants::$yesNoEn">
+                                                            </x-input-radio-or-check>
+                                                            <!-- row end -->
+                                                            <x-input-radio-or-check label="Communication"
                                                                 :records="$therapyConstants::$communication">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
@@ -133,8 +137,8 @@
                                                     </div>
                                                     <div class="tab-pane" id="Muscle_Tone">
                                                         <section>
-                                                            <x-input-radio-or-check label="Separate Home equipment"
-                                                                :records="$therapyConstants::$separateHomeEquipment">
+                                                            <x-input-radio-or-check label="Upper limbs"
+                                                                :records="$therapyConstants::$lowerLimbs">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <div class="row border-top py-2">
@@ -263,7 +267,7 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                     <livewire:occupational-therapy-list/>
+                        <livewire:occupational-therapy-list />
                         <!-- end row -->
                     </div>
                 </div>

@@ -1,19 +1,21 @@
 <div>
-    <div class="table-responsive">
-        <table class="table table-bordered w-100">
-            <thead>
-                <tr class="table-primary ">
-                    <th>Collection Date</th>
-                    <th>Student Name</th>
-                    <th>Collected By</th>
-                    <th>Log</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($records as $record)
+    <x-record-list :records="$records">
+        {{-- @dd($records); --}}
+        <div class="table-responsive">
+            <table class="table table-bordered w-100">
+                <thead>
+                    <tr class="table-primary ">
+                        <th>Collection Date</th>
+                        <th>Student Name</th>
+                        <th>Collected By</th>
+                        <th>Log</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($records as $record)
                     <tr>
-                        <td>{{ $record->date }}</td>
+                        <td>{{ $record->collection_date }}</td>
                         <td></td>
                         <td></td>
                         <td>{{ $record->created_at }}</td>
@@ -46,8 +48,9 @@
                             </button>
                         </td>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </x-record-list>
 </div>

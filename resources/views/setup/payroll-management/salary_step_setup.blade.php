@@ -4,10 +4,6 @@
 
 @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') SALARY GRADE  @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -34,7 +30,7 @@
             </div>
             <div class="col-sm-12 col-md-6 text-end">
               <label style="display: inline-flex;align-items: center;">Search:
-                <input type="search" class="form-control form-control-sm" placeholder="">
+                <x-input-text type="search" name="search"/>
               </label>
             </div>
           </div>
@@ -109,49 +105,51 @@
   </div> <!-- end col -->
 </div> <!-- end row -->
 <!--  Extra Large modal example -->
-    <div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title text-primary">Add Salary Step</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-            <div class="modal-body">
-                  <!-- journal form start -->  
-              <div class="row">
-                <div class="col-12 p-0">
-                    <div class="card">
-                        <div class="card-body p-0">
-                            <form class="repeater" enctype="multipart/form-data">
-                                <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="row">
-                                        <div class="col-lg-12 p-0 pe-4 ps-2 pe-2 pb-1 align-self-center d-flex">
-                                            <div class="col-lg-4 p-0 pt-2 ms-5">
-                                                <label for="product">Step Name</label>
-                                            </div>
-                                            <x-input-text name="Name" pleceholder="Grade Name Here"></x-input-text>
-                                            <button class="btn btn-outline-danger waves-effect waves-light me- ms-4 ">
-                                              <i class="fas fa-trash-alt"></i>
-                                          </button>
-                                        </div>
-                                    </div> 
+<div class="modal fade material-callects-modal-xl-view" id="" tabindex="-2" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title text-primary">Add Salary Step</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        <div class="modal-body">
+              <!-- journal form start -->  
+          <div class="row">
+            <div class="col-12 p-0">
+                <div class="card">
+                    <div class="card-body p-0">
+                      <form class="repeater" enctype="multipart/form-data">
+                        <div data-repeater-list="group-a">
+                            <div data-repeater-item class="row removeRow">
+                                <div class="col-lg-12 pb-1 align-self-center d-flex">
+                                    <div class="col-lg-2 p-0 pt-2 ms-5">
+                                        <label for="product">Step Name</label>
+                                    </div>
+                                  <div class="col-lg-8 p-0 d-flex gap-3 ">
+                                    <x-input-text name="step_name" placeholder="Step Name Here"/>
+                                    <button class="btn btn-outline-danger waves-effect waves-light  removeBtn ">
+                                      <i class="fas fa-trash-alt"></i>
+                                  </button>
+                                  </div>
                                 </div>
-                               <div class="col-md-3 ms-5">
-                                <button data-repeater-create type="button" class="btn btn-outline-info waves-effect waves-light mt-3 ms-1  mt-lg-0"><i class="fa fa-plus"></i> Add</button>
-                               </div>
-                            </form>
+                            </div> 
                         </div>
+                       <div class="col-md-3 ms-5">
+                        <button data-repeater-create type="button" class="btn btn-outline-info waves-effect waves-light mt-3 ms-1  mt-lg-0"><i class="fa fa-plus"></i> Add</button>
+                       </div>
+                    </form>
                     </div>
                 </div>
-              </div>  
-              <!-- journal form end -->
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
-              <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
-          </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+          </div>  
+          <!-- journal form end -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
+          <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
+      </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 @endsection
 @section('script')

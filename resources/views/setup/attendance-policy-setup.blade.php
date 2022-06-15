@@ -6,11 +6,6 @@
 @endsection
 
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title')HRMS > ATTDN POLICY @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">

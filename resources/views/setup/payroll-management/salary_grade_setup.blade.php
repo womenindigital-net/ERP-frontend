@@ -4,10 +4,6 @@
 
 @endsection
 @section('content')
-@component('components.breadcrumb')
-@slot('li_1') DashBoard @endslot
-@slot('title') SALARY GRADE  @endslot
-@endcomponent
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -35,7 +31,7 @@
           </div>
           <div class="col-sm-12 col-md-6 text-end">
             <label style="display: inline-flex;align-items: center;">Search:
-              <input type="search" class="form-control form-control-sm" placeholder="">
+              <x-input-text  type="search" name="search"/>
             </label>
           </div>
         </div>
@@ -124,15 +120,17 @@
                         <div class="card-body p-0">
                             <form class="repeater" enctype="multipart/form-data">
                                 <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="row">
-                                        <div class="col-lg-12 p-0 pe-4 ps-2 pe-2 pb-1 align-self-center d-flex">
-                                            <div class="col-lg-4 p-0 pt-2 ms-5">
+                                    <div data-repeater-item class="row removeRow">
+                                        <div class="col-lg-12 pb-1 align-self-center d-flex">
+                                            <div class="col-lg-2 p-0 pt-2 ms-5">
                                                 <label for="product">Grade Name</label>
                                             </div>
-                                            <input type="text" class="form-control align-self-start" placeholder="Grade Name Here"/>
-                                            <button class="btn btn-outline-danger waves-effect waves-light me- ms-4 ">
+                                          <div class="col-lg-8 p-0 d-flex gap-3 ">
+                                            <x-input-text name="grade_name" placeholder="Grade Name Here"/>
+                                            <button class="btn btn-outline-danger waves-effect waves-light  removeBtn ">
                                               <i class="fas fa-trash-alt"></i>
                                           </button>
+                                          </div>
                                         </div>
                                     </div> 
                                 </div>

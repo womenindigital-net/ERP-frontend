@@ -26,7 +26,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-9 col-md-9">
-                                    <form action="{{route('gym-and-outing.update')}}" method="POST">
+                                    <form action="{{route('gym-and-outing.update', $record->id)}}" method="POST">
                                         @method('PUT')
                                         @csrf
                                         <div class="tab-content">

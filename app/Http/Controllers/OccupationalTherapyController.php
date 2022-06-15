@@ -3,18 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\OccupationalTherapy;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\OccupationalTherapyRequest;
-use App\Http\Requests\UpdateOccupationalTherapyRequest;
 use App\Repositories\OccupationalTherapyRepository;
+use App\Http\Requests\UpdateOccupationalTherapyRequest;
 
 class OccupationalTherapyController extends Controller
 {
 
     private OccupationalTherapyRepository $occupationalRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(OccupationalTherapyRepository $occupationalRepo)
+    public function __construct(OccupationalTherapyRepository $occupationalRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->occupationalRepo = $occupationalRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
     /**
      * Display a listing of the resource.
@@ -33,7 +40,8 @@ class OccupationalTherapyController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
         return view('assessment.occupational-therapy.create', $data);
     }
@@ -47,6 +55,7 @@ class OccupationalTherapyController extends Controller
     public function store(OccupationalTherapyRequest $request)
     {
         $this->occupationalRepo->store($request->validated());
+        Session::flash('success');
         return redirect()->back();
     }
 
@@ -58,7 +67,12 @@ class OccupationalTherapyController extends Controller
      */
     public function show(OccupationalTherapy $occupationalTherapy)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $occupationalTherapy,
+        ];
+        return view('assessment.occupational-therapy.view', $data);
     }
 
     /**

@@ -3,18 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExecutiveFunction;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
+use App\Repositories\ExecutiveFunctionRepository;
 use App\Http\Requests\StoreExecutiveFunctionRequest;
 use App\Http\Requests\UpdateExecutiveFunctionRequest;
-use App\Repositories\ExecutiveFunctionRepository;
 
 class ExecutiveFunctionController extends Controller
 {
 
     private ExecutiveFunctionRepository $executiveRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(ExecutiveFunctionRepository $executiveRepo)
+    public function __construct(ExecutiveFunctionRepository $executiveRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->executiveRepo = $executiveRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
 
     /**
@@ -35,7 +41,8 @@ class ExecutiveFunctionController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.executive-function.create', $data);
@@ -61,7 +68,13 @@ class ExecutiveFunctionController extends Controller
      */
     public function show(ExecutiveFunction $executiveFunction)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $executiveFunction,
+        ];
+
+        return view('assessment.executive-function.view', $data);
     }
 
     /**

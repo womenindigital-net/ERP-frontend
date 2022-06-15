@@ -12,7 +12,6 @@
     }
 </style>
 @endsection
-
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -111,7 +110,7 @@
                                                                         <label
                                                                             for="basicpill-lastname-input">Teacher:</label>
                                                                         <x-input-select name="teacher_id"
-                                                                            :records="['1'=> 'ok']" />
+                                                                            :records="$teachers"/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
@@ -119,7 +118,7 @@
                                                                         <label for="basicpill-phoneno-input">Candidate
                                                                             ID:</label>
                                                                         <x-input-select name="student_id"
-                                                                            :records="['1'=> 'ok']" />
+                                                                            :records="$students"/>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -439,6 +438,11 @@
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
+                                                            <x-input-radio-or-check
+                                                            label="Has a preference and craving for excessively spicy, sweet, sour, or salty foods"
+                                                            :records="$constants::$yesNoEn">
+                                                        </x-input-radio-or-check>
+                                                        <!-- end row -->
                                                         </section>
 
                                                     </div>
@@ -448,7 +452,7 @@
                                                             <x-input-radio-or-check
                                                                 name="Has_difficulty_with_fine_motor"
                                                                 label="Has difficulty with fine motor tasks such as buttoning ,zipping,and fastening clothes"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn" secondaryInputLabel="Give details, if any">                                                                >
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
                                                             <x-input-radio-or-check name="May_not_be_able_to_identify"
@@ -1048,7 +1052,7 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                        <livewire:sensory-check-list-child-list\>
+                        {{-- <livewire:sensory-check-list-child-list> --}}
                     </div>
                 </div>
 

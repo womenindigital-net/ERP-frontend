@@ -3,10 +3,6 @@
 @section('css')
 @endsection
 @section('content')
-    @component('components.breadcrumb')
-        @slot('li_1') Utility @endslot
-        @slot('title')  MEASURE UNIT @endslot
-    @endcomponent
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">
@@ -39,26 +35,19 @@
                             <div class="col-12 d-flex p-2">
                                 <label for="example-text-input" class="col-md-4 col-form-label">Small Unit</label>
                                 <div class="col-md-8">
-                                    <select class="form-control select2 form-select">
-                                        <option>Select</option>
-                                        <option value="1">Gram</option>
-                                        <option value="2">Meter</option>
-                                        <option value="3">Litter</option>
-                                        <option value="4">Minute</option>
-                                        <option value="5">Piece</option>
-                                    </select>
+                                  <x-input-select name="small_unit" :records="[]" />
                                 </div>
                             </div>
                             <div class="col-12 d-flex p-2">
                                 <label for="example-text-input" class="col-md-4 col-form-label">Unit Factor</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="name" placeholder="Store Name Here"></x-input-text>
+                                    <x-input-text name="unit_factor" placeholder="Store Name Here"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-12 d-flex p-2">
                                 <label for="example-text-input" class="col-md-4 col-form-label">Description</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="name" placeholder="Enter Description Here"></x-input-text>
+                                    <x-input-text name="descripiton" placeholder="Enter Description Here"></x-input-text>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -81,7 +70,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6 text-end">
                                   <label style="display: inline-flex;align-items: center;">Search:
-                                    <input type="search" class="form-control form-control-sm" placeholder="">
+                                    <x-input-text type="search"name="search"/>
                                   </label>
                                 </div>
                               </div>
