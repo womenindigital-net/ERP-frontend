@@ -78,7 +78,7 @@
                                                                         <span
                                                                             class="text-danger text-bold">*</span></label>
                                                                     <x-input-select name="candidate_id"
-                                                                        :records="['1'=> 'one']" />
+                                                                        :records="$students" />
                                                                 </div>
                                                                 <div class="col-lg-12 p-0 pb-2">
                                                                     <label class="col-md-12 px-1">Description:</label>

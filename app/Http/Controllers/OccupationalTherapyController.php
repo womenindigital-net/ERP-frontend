@@ -65,7 +65,12 @@ class OccupationalTherapyController extends Controller
      */
     public function show(OccupationalTherapy $occupationalTherapy)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $occupationalTherapy,
+        ];
+        return view('assessment.occupational-therapy.view', $data);
     }
 
     /**
