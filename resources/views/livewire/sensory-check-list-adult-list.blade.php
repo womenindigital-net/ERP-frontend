@@ -19,8 +19,8 @@
                             <td></td>
                             <td>{{ $record->created_at }}</td>
                             <td>
-                                 <a href="{{ route('sensory-checklist-adult.show', $record->id) }}"
-                                    target="_blank" rel="noopener noreferrer"
+                                <a href="{{ route('sensory-checklist-adult.show', $record->id) }}" target="_blank"
+                                    rel="noopener noreferrer"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                                     <i class="mdi mdi-eye"></i>
                                 </a>
@@ -28,8 +28,8 @@
                                     class="btn btn-sm btn-{{ $record->is_approved ? 'danger' : 'info' }} btn-rounded waves-effect waves-light mb-2 me-1">
                                     <i class="fas fa-check"></i>
                                 </button>
-                                <a href="{{ route('sensory-checklist-adult.edit', $record->id) }}"
-                                    target="_blank" rel="noopener noreferrer"
+                                <a href="{{ route('sensory-checklist-adult.edit', $record->id) }}" target="_blank"
+                                    rel="noopener noreferrer"
                                     class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                     <i class="mdi mdi-pencil"></i>
                                 </a>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\SensoryAdult;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\SensoryAdultRequest;
 use App\Http\Requests\UpdateSensoryAdultRequest;
 use App\Repositories\SensoryChecklistAdultRepository;
@@ -11,10 +14,15 @@ class SensoryAdultController extends Controller
 {
 
     private SensoryChecklistAdultRepository $sensoryAdultRepo;
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $records;
 
-    public function __construct(SensoryChecklistAdultRepository $sensoryAdultRepo)
+    public function __construct(SensoryChecklistAdultRepository $sensoryAdultRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->sensoryAdultRepo = $sensoryAdultRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
 
     /**
@@ -34,8 +42,9 @@ class SensoryAdultController extends Controller
      */
     public function create()
     {
-        $data = [
-            'students' => []
+         $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.sensory-checklist-adult.create', $data);
@@ -51,6 +60,7 @@ class SensoryAdultController extends Controller
     public function store(SensoryAdultRequest $request)
     {
         $this->sensoryAdultRepo->store($request->validated());
+        Session::flash('success');
         return redirect()->back();
     }
 
@@ -62,7 +72,13 @@ class SensoryAdultController extends Controller
      */
     public function show(SensoryAdult $sensoryAdult)
     {
-        //
+        dd($sensoryAdult);
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->records = $sensoryAdult,
+        ];
+        return view('assessment.sensory-checklist-adult.view', $data);
     }
 
     /**

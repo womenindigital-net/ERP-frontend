@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
+use App\Models\Student;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -16,8 +18,9 @@ return new class extends Migration
         Schema::create('sensory_adults', function(Blueprint $table)
         {
             $table->id();
-            $table->string('name')->nullable();
-            $table->foreignIdFor(\App\Models\User::class, 'student_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->string('collection_date')->nullable();
+            $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->foreignIdFor(Student::class, 'student_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->string('being_touched_on_some_body_parts')->nullable();
             $table->string('hugs_and_cuddles')->nullable();
             $table->string('certain_clothing')->nullable();

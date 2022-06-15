@@ -63,19 +63,19 @@
                                   <div class="col-lg-4">
                                     <div class="mb-3">
                                       <label for="basicpill-firstname-input">Collection Date:</label>
-                                      <x-input-text name="name" type="date" placeholder=""></x-input-text>
+                                      <x-input-text name="collection_date" type="date" placeholder=""></x-input-text>
                                     </div>
                                   </div>
                                   <div class="col-lg-4">
                                     <div class="mb-3">
                                       <label for="basicpill-lastname-input">Teacher:</label>
-                                      <x-input-select name="student_id" :records="['1'=>'one']" />
+                                      <x-input-select name="teacher_id" :records="$teachers" />
                                     </div>
                                   </div>
                                   <div class="col-lg-4">
                                     <div class="mb-3">
                                       <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                      <x-input-select name="student_id" :records="['1'=>'one']" />
+                                      <x-input-select name="student_id" :records="$students" />
                                     </div>
                                   </div>
                                 </div>
