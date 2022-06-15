@@ -3,18 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\OccupationalTherapy;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
 use App\Http\Requests\OccupationalTherapyRequest;
-use App\Http\Requests\UpdateOccupationalTherapyRequest;
 use App\Repositories\OccupationalTherapyRepository;
+use App\Http\Requests\UpdateOccupationalTherapyRequest;
 
 class OccupationalTherapyController extends Controller
 {
 
     private OccupationalTherapyRepository $occupationalRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(OccupationalTherapyRepository $occupationalRepo)
+    public function __construct(OccupationalTherapyRepository $occupationalRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->occupationalRepo = $occupationalRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
     /**
      * Display a listing of the resource.
@@ -33,7 +39,8 @@ class OccupationalTherapyController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
         return view('assessment.occupational-therapy.create', $data);
     }

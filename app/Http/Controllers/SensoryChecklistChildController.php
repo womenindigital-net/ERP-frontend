@@ -4,21 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Repositories\UserRepository;
 use App\Models\SensoryChecklistChild;
+use App\Repositories\StudentRepository;
+use App\Repositories\SensoryChecklistChildRepository;
 use App\Http\Requests\StoreSensoryChecklistChildRequest;
 use App\Http\Requests\UpdateSensoryChecklistChildRequest;
-use App\Repositories\SensoryChecklistChildRepository;
 
 class SensoryChecklistChildController extends Controller
 {
 
     private UserRepository $userRepo;
     private SensoryChecklistChildRepository $sensoryRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(UserRepository $userRepository, SensoryChecklistChildRepository $Repository)
+    public function __construct(UserRepository $userRepository, SensoryChecklistChildRepository $Repository,  StudentRepository $studentRepository)
     {
-        $this->userRepo = $userRepository;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
         $this->sensoryRepo = $Repository;
-    }
+    }   
 
 
     /**
@@ -39,7 +43,8 @@ class SensoryChecklistChildController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.sensory-checklist-child.create', $data);

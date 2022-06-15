@@ -70,7 +70,7 @@
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Teacher: <span
                                                                             class="text-danger text-bold">*</span></label>
-                                                                    <x-input-select name="teacher_id"
+                                                                    <x-input-select name="$teachers"
                                                                         :records="['1'=> 'one']" />
                                                                 </div>
                                                                 <div class="col-lg-4 pull-left pb-2">

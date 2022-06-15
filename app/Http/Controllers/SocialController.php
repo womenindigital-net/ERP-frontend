@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SocialRequest;
-use App\Repositories\UserRepository;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Contracts\View\View;
+use App\Http\Requests\SocialRequest;
+use App\Repositories\UserRepository;
+use Illuminate\Contracts\View\Factory;
+use App\Repositories\StudentRepository;
+use Illuminate\Contracts\Foundation\Application;
 
 class SocialController extends Controller
 {
     private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->userRepo = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
 
     /**
@@ -38,7 +42,7 @@ class SocialController extends Controller
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'students' => []
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.social-communication.create', $data);
