@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Utility\ProjectConstants;
 use App\Repositories\CaseHistoryRepository;
 use App\Http\Livewire\Traits\CommonListElements;
 
@@ -12,7 +13,6 @@ class CaseHistoryList extends Component
     use WithPagination, CommonListElements;
 
     private CaseHistoryRepository $caseRepo;
-
     public $reportList;
 
     public function boot(CaseHistoryRepository $caseHistRepo)
@@ -26,10 +26,15 @@ class CaseHistoryList extends Component
         $this->dispatchBrowserEvent('notify');
     }
 
-    public function delete($id): void
+    public function confirmDelete($recordId)
     {
-        $this->caseRepo->delete($id);
-        $this->dispatchBrowserEvent('notify');
+        $data = [
+            'routeName' => route('case-history.destroy', $recordId),
+        ];
+
+        $data = array_merge_recursive(ProjectConstants::$swalConfirmDeleteEvents, $data);
+
+        $this->dispatchBrowserEvent('swal', $data);
     }
 
     public function render()

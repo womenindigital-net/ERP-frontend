@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\OccupationalTherapy;
 use App\Repositories\UserRepository;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\OccupationalTherapyRequest;
 use App\Repositories\OccupationalTherapyRepository;
 use App\Http\Requests\UpdateOccupationalTherapyRequest;
@@ -54,6 +55,7 @@ class OccupationalTherapyController extends Controller
     public function store(OccupationalTherapyRequest $request)
     {
         $this->occupationalRepo->store($request->validated());
+        Session::flash('success');
         return redirect()->back();
     }
 

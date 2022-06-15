@@ -653,7 +653,8 @@
                                                                     <x-input-radio-or-check
                                                                         name='does_lose_different_things_from_bags_regularly'
                                                                         label="সে কি নিয়মিত পেন্সিল বক্স থেকে বিভিন্ন্য আইটেম বা স্কুল ব্যাগ থেকে বিভিন্ন জিনিষ হারায়?"
-                                                                        :records="$constants::$yesNo" secondaryInputLabel="আপনার সন্তানের মাঝে নিচের বিষয়গুলির নিয়ে কোন অসুবিধা পরিলক্ষন করেছেন কি? করে থাকলে, কমেন্টে বিস্তারিত লিখুন। এই বিষয়গুলি মুলত স্কুলে যাওয়ার বয়সের জন্য প্রযোজ্যঃ"
+                                                                        :records="$constants::$yesNo"
+                                                                        secondaryInputLabel="আপনার সন্তানের মাঝে নিচের বিষয়গুলির নিয়ে কোন অসুবিধা পরিলক্ষন করেছেন কি? করে থাকলে, কমেন্টে বিস্তারিত লিখুন। এই বিষয়গুলি মুলত স্কুলে যাওয়ার বয়সের জন্য প্রযোজ্যঃ"
                                                                         :isVertical="false" :multiple="true">
                                                                     </x-input-radio-or-check>
                                                                 </div>

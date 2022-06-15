@@ -133,8 +133,8 @@ class CaseHistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CaseHistory $caseHistory)
+    public function destroy(CaseHistory $caseHistory): ?bool
     {
-        //
+        return $caseHistory->delete();
     }
 }

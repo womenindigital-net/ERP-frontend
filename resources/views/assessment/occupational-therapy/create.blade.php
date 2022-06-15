@@ -63,14 +63,14 @@
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Collection
                                                                         Date:</label>
-                                                                    <x-input-text name="date" type="date"
+                                                                    <x-input-text name="collection_date" type="date"
                                                                         placeholder="mm/dd/yyyy">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Teacher: <span
                                                                             class="text-danger text-bold">*</span></label>
-                                                                    <x-input-select name="$teachers"
+                                                                    <x-input-select name="teacher_id"
                                                                         :records="$teachers" />
                                                                 </div>
                                                                 <div class="col-lg-4 pull-left pb-2">
@@ -103,7 +103,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Medication
                                                                                         Treatment </label>
-                                                                                    <x-input-text name="collection_date"
+                                                                                    <x-input-text name="medication_treatment"
                                                                                         placeholder="Medication Treatment">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -111,7 +111,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Any
                                                                                         present medicines</label>
-                                                                                    <x-input-text name="collection_date"
+                                                                                    <x-input-text name="any_present_medicines"
                                                                                         placeholder="Any present medicines">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -267,7 +267,7 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                     <livewire:occupational-therapy-list/>
+                        <livewire:occupational-therapy-list />
                         <!-- end row -->
                     </div>
                 </div>

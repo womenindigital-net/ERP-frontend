@@ -1052,7 +1052,7 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                        <livewire:sensory-check-list-child-list\>
+                        {{-- <livewire:sensory-check-list-child-list> --}}
                     </div>
                 </div>
 

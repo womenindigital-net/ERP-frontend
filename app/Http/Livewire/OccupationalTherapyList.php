@@ -11,24 +11,24 @@ class OccupationalTherapyList extends Component
 {
     use WithPagination, CommonListElements;
 
-    private OccupationalTherapyRepository $otAssessmentRepo;
+    private OccupationalTherapyRepository $occupationTherapyRepo;
     public $reportList;
 
-    public function boot(OccupationalTherapyRepository $otAssessmentRepo)
+    public function boot(OccupationalTherapyRepository $occupationTherapyRepo)
     {
-        $this->otAssessmentRepo = $otAssessmentRepo;
+        $this->occupationTherapyRepo = $occupationTherapyRepo;
     }
 
     public function toggleApprove($recordId)
     {
-        $this->otAssessmentRepo->toggleColumn($recordId, 'is_approved');
+        $this->occupationTherapyRepo->toggleColumn($recordId, 'is_approved');
         $this->dispatchBrowserEvent('notify');
     }
     public function render()
     {
         $data = [
-            'records' => $this->otAssessmentRepo->getListData($this->perPage, $this->search),
+            'records' => $this->occupationTherapyRepo->getListData($this->perPage, $this->search),
         ];
-        return view('livewire.occupational-therapy-list',$data );
+        return view('livewire.occupational-therapy-list', $data);
     }
 }

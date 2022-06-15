@@ -18,12 +18,16 @@ return new class extends Migration
             $table->string('collection_date')->nullable();
             $table->string('teacher_id')->nullable();
             $table->string('candidate_id')->nullable();
+            $table->string('medication_treatment')->nullable();
+            $table->string('any_present_medicines')->nullable();
             $table->string('separate_home_equipment')->nullable();
             $table->string('communication')->nullable();
             $table->string('left')->nullable();
             $table->string('right')->nullable();
             $table->string('lower_limbs')->nullable();
             $table->string('trunk_or_neck')->nullable();
+            $table->string('trunk_or_neck_left')->nullable();
+            $table->string('trunk_or_neck_right')->nullable();
             $table->string('upper_limbs')->nullable();
             $table->timestamps();
         });
