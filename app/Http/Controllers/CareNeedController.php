@@ -78,7 +78,6 @@ class CareNeedController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-        // dd($data['caseHistory']);
         return view('pre_admission.care-need.view', $data);
     }
 
@@ -95,7 +94,6 @@ class CareNeedController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-        // dd($data['caseHistory']);
         return view('pre_admission.care-need.edit', $data);
     }
 

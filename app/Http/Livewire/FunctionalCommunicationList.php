@@ -9,7 +9,7 @@ use App\Repositories\FunctionalCommunicationRepository;
 
 class FunctionalCommunicationList extends Component
 {
-     use WithPagination, CommonListElements;
+    use WithPagination, CommonListElements;
 
     private FunctionalCommunicationRepository $functionalCommunicationRepo;
     public $reportList;
@@ -29,6 +29,6 @@ class FunctionalCommunicationList extends Component
         $data = [
             'records' => $this->functionalCommunicationRepo->getListData($this->perPage, $this->search),
         ];
-        return view('livewire.functional-communication-list',$data);
+        return view('livewire.functional-communication-list', $data);
     }
 }

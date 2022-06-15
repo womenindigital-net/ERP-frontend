@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\IndividualRisk;
 use App\Repositories\UserRepository;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\IndividualRiskRequest;
 use App\Repositories\IndividualRiskRepositories;
 use App\Http\Requests\UpdateIndividualRiskRequest;
@@ -16,8 +17,8 @@ class IndividualRiskController extends Controller
     private UserRepository $userRepo;
     private StudentRepository $studentRepo;
     public $record;
-    
-    public function __construct(IndividualRiskRepositories $indRiskRepo,UserRepository $userRepository, StudentRepository $studentRepository)
+
+    public function __construct(IndividualRiskRepositories $indRiskRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->userRepo    = $userRepository;
         $this->studentRepo = $studentRepository;
@@ -41,7 +42,7 @@ class IndividualRiskController extends Controller
      */
     public function create()
     {
-       $data = [
+        $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
@@ -58,8 +59,8 @@ class IndividualRiskController extends Controller
      */
     public function store(IndividualRiskRequest $request)
     {
-        // dd($request);
         $this->indRiskRepo->store($request->validated());
+        Session::flash('success', 'Saved');
         return redirect()->back();
     }
 
@@ -71,7 +72,7 @@ class IndividualRiskController extends Controller
      */
     public function show(IndividualRisk $individualRisk)
     {
-         $data = [
+        $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
             'record' => $this->record = $individualRisk,
@@ -87,7 +88,12 @@ class IndividualRiskController extends Controller
      */
     public function edit(IndividualRisk $individualRisk)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $individualRisk,
+        ];
+        return view('assessment.individual-risk.edit', $data);
     }
 
     /**
@@ -97,9 +103,11 @@ class IndividualRiskController extends Controller
      * @param  \App\Models\IndividualRisk  $individualRisk
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateIndividualRiskRequest $request, IndividualRisk $individualRisk)
+    public function update(IndividualRiskRequest $request, IndividualRisk $individualRisk)
     {
-        //
+        $this->indRiskRepo->update($individualRisk, $request->validated());
+        Session::flash('success', 'Updated');
+        return redirect()->back();
     }
 
     /**

@@ -70,13 +70,13 @@
                                   <div class="col-lg-4">
                                     <div class="mb-3">
                                       <label for="basicpill-lastname-input">Teacher:</label>
-                                      <x-input-select name="teacher_id" :records="['1'=>'one']" />
+                                      <x-input-select name="teacher_id" :records="$teachers" />
                                     </div>
                                   </div>
                                   <div class="col-lg-4">
                                     <div class="mb-3">
                                       <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                      <x-input-select name="student_id" :records="['1'=>'one']" />
+                                      <x-input-select name="student_id" :records="$students" />
                                     </div>
                                   </div>
                                 </div>

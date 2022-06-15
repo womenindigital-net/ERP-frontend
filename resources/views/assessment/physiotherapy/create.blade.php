@@ -772,7 +772,8 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                        <livewire:physiotherapy-list/>
+                        {{--
+                        <livewire:physiotherapy-list /> --}}
                     </div>
                 </div>
             </div>

@@ -69,8 +69,6 @@ class CaseHistoryController extends Controller
      */
     public function store(CaseHistoryRequest $request)
     {
-
-        // dd($request->validated()['child_description']);
         $this->service->store($request->validated());
         Session::flash('success');
         return redirect()->back();
@@ -90,7 +88,6 @@ class CaseHistoryController extends Controller
             'students' => $this->studentRepo->getData(),
             'caseHistory' => $this->caseHistory = $caseHistory,
         ];
-        // dd($data['caseHistory']);
         return view('pre_admission.case-history.view', $data);
     }
 

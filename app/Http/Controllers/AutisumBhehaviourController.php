@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Factory;
 use App\Models\AutisumBhehaviour;
+use Illuminate\Console\Application;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\AutisumBehaviourRepository;
 use App\Http\Requests\StoreAutisumBhehaviourRequest;
 use App\Http\Requests\UpdateAutisumBhehaviourRequest;
-use App\Repositories\AutisumBehaviourRepository;
-use Carbon\Factory;
-use Illuminate\Console\Application;
 
 class AutisumBhehaviourController extends Controller
 {
 
     private AutisumBehaviourRepository $autisumRepo;
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(AutisumBehaviourRepository $autisumRepo)
+
+    public function __construct(AutisumBehaviourRepository $autisumRepo, StudentRepository $studentRepo, UserRepository $userRepository)
     {
+        $this->userRepo = $userRepository;
+        $this->studentRepo = $studentRepo;
         $this->autisumRepo = $autisumRepo;
     }
 
@@ -37,7 +46,8 @@ class AutisumBhehaviourController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.autism-behaviour.create', $data);
@@ -52,6 +62,7 @@ class AutisumBhehaviourController extends Controller
     public function store(StoreAutisumBhehaviourRequest $request)
     {
         $this->autisumRepo->store($request->validated());
+        Session::flash('success');
         return redirect()->back();
     }
 
@@ -63,7 +74,12 @@ class AutisumBhehaviourController extends Controller
      */
     public function show(AutisumBhehaviour $autisumBhehaviour)
     {
-        //
+        $data = [
+            'record' => $this->record = $autisumBhehaviour,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('assessment.autism-behaviour.view', $data);
     }
 
     /**
@@ -74,7 +90,12 @@ class AutisumBhehaviourController extends Controller
      */
     public function edit(AutisumBhehaviour $autisumBhehaviour)
     {
-        //
+        $data = [
+            'record' => $this->record = $autisumBhehaviour,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('assessment.autism-behaviour.edit', $data);
     }
 
     /**
@@ -86,7 +107,9 @@ class AutisumBhehaviourController extends Controller
      */
     public function update(UpdateAutisumBhehaviourRequest $request, AutisumBhehaviour $autisumBhehaviour)
     {
-        //
+        $this->autisumRepo->update($autisumBhehaviour, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

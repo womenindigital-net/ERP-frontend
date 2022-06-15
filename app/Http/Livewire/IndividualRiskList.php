@@ -16,7 +16,7 @@ class IndividualRiskList extends Component
 
     public function boot(IndividualRiskRepositories $individualRiskRepo)
     {
-        $this->individualRiskRepo= $individualRiskRepo;
+        $this->individualRiskRepo = $individualRiskRepo;
     }
 
     public function toggleApprove($recordId)
@@ -25,11 +25,17 @@ class IndividualRiskList extends Component
         $this->dispatchBrowserEvent('notify');
     }
 
+    public function delete($id)
+    {
+        $this->individualRiskRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
+    }
+
     public function render()
     {
         $data = [
             'records' => $this->individualRiskRepo->getListData($this->perPage, $this->search),
         ];
-        return view('livewire.individual-risk-list',$data);
+        return view('livewire.individual-risk-list', $data);
     }
 }
