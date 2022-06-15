@@ -62,7 +62,8 @@
                                                     <li class="w-100"><a href="#Sensory_Skill" data-toggle="tab"> Sensory Skill (Normal/Hypo response)</a></li>
                                                     <li class="w-100"><a href="#Visual_Perception" data-toggle="tab">Visual Perception</a></li>
                                                     <li class="w-100"><a href="#Activities_of_Daily_living" data-toggle="tab"> Activities of Daily living (ADL’s)</a></li>
-                                                    <li class="w-100"><a href="#Strength" data-toggle="tab">Signature</a></li>
+                                                    <li class="w-100"><a href="#Strength" data-toggle="tab">Strength</a></li>
+                                                    <li class="w-100"><a href="#Signature" data-toggle="tab">Signature</a></li>
                                                     <li class="w-100"><a href="#Cognitive_Skills" data-toggle="tab"> Cognitive Skills</a></li>
                                                     <li class="w-100"><a href="#Treatment_Plan" data-toggle="tab">Treatment Plan</a></li>
 
@@ -496,7 +497,7 @@
                                                             <!-- row end -->
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id=" Visual_Perception">
+                                                    <div class="tab-pane" id="Visual_Perception">
                                                         <section>
                                                             <x-input-radio-or-check label="Visual Discrimination"
                                                                 :records="$constants::$yesNoEn">
@@ -548,7 +549,7 @@
                                                             <!-- row end -->
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id=" Activities_of_Daily_living">
+                                                    <div class="tab-pane" id="Activities_of_Daily_living">
                                                         <section>
                                                             <x-input-radio-or-check label="Eating"
                                                                 :records="$constants::$yesNoEn">
@@ -625,7 +626,7 @@
                                                             <!-- row end -->
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id=" Strength">
+                                                    <div class="tab-pane" id="Strength">
                                                         <section>
                                                             <x-input-radio-or-check label="Physical (Gross motor/Fine motor)"
                                                                 :records="$constants::$yesNoEn">
@@ -697,135 +698,201 @@
                                                             <!-- row end -->
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id=" Signature">
+                                                    <div class="tab-pane" id="Signature">
                                                         <section>
-                                                            <x-input-radio-or-check label="hh"
+                                                            <div class="row border-top py-2">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Therapist Signature</label>
+                                                                                    <x-input-text type="file" name="therapist_signature"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- row end -->
+                                                            <div class="row py-2 pt-0">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">
+                                                                                        Designation and organizations name</label>
+                                                                                    <x-input-text name="designation_organization"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- row end -->
+                                                            <div class="row py-2 pt-0">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Supervisor’s Signature</label>
+                                                                                    <x-input-text type="file" name="supervisor_signature"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- row end -->
+                                                            <div class="row border-top py-2">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Designation and organizations name</label>
+                                                                                    <x-input-text name="designation_name"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- row end -->
+                                                        </section>
+                                                    </div>
+                                                    <div class="tab-pane" id="Cognitive_Skills">
+                                                        <section>
+                                                            <x-input-radio-or-check label="Attention"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         
                                                         
-                                                            <x-input-radio-or-check label="hh"
+                                                            <x-input-radio-or-check label="Problem Solving"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         
                                                         
-                                                            <x-input-radio-or-check label="hh"
+                                                            <x-input-radio-or-check label="Able to Follow instruction"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         
                                                         
-                                                            <x-input-radio-or-check label="hh"
+                                                            <div class="row border-top py-2">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Memory</label>
+                                                                                    <x-input-text name="memory"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- row end -->
+                                                        
+                                                        
+                                                            <x-input-radio-or-check label="Perceptual Motor"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         
                                                         
-                                                            <x-input-radio-or-check label="hh"
+                                                            <x-input-radio-or-check label="Body Awareness"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         
                                                         
-                                                            <x-input-radio-or-check label="hh"
+                                                            <x-input-radio-or-check label="Body Co-ordination"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
+
+                                                            <x-input-radio-or-check label="Bilateral Integration"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id=" Cognitive_Skills">
+                                                    <div class="tab-pane" id="Treatment_Plan">
                                                         <section>
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
+                                                            <div class="row border-top py-2">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Problem List</label>
+                                                                                    <x-input-text name="problem_list"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
+                                                            <div class="row border-top py-2">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Treatment Plan & Implementation</label>
+                                                                                    <x-input-text name="treatment_plan"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        </section>
-                                                    </div>
-                                                    <div class="tab-pane" id=" Treatment_Plan">
-                                                        <section>
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
-                                                        
-                                                        
-                                                            <x-input-radio-or-check label="hh"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
+                                                            <div class="row border-top py-2">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Progress</label>
+                                                                                    <x-input-text name="progress"
+                                                                                        placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <!-- row end -->
                                                         </section>
                                                     </div>

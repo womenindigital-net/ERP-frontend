@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Physiotherapy;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
 use App\Http\Requests\PhysiotherapyRequest;
-use App\Http\Requests\UpdatePhysiotherapyRequest;
 use App\Repositories\PhysiotherapyRepository;
+use App\Http\Requests\UpdatePhysiotherapyRequest;
 
 class PhysiotherapyController extends Controller
 {
     private PhysiotherapyRepository $phyRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(PhysiotherapyRepository $phyRepo)
+    public function __construct(PhysiotherapyRepository $phyRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->phyRepo = $phyRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
     /**
      * Display a listing of the resource.
@@ -33,7 +39,8 @@ class PhysiotherapyController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.physiotherapy.create', $data);
@@ -60,7 +67,13 @@ class PhysiotherapyController extends Controller
      */
     public function show(Physiotherapy $physiotherapy)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $physiotherapy,
+        ];
+
+        return view('assessment.executive-function.view', $data);
     }
 
     /**
