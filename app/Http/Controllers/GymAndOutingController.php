@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\GymAndOuting;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\GymAndOutingRepository;
 use App\Http\Requests\StoreGymAndOutingRequest;
@@ -10,11 +12,17 @@ use App\Http\Requests\UpdateGymAndOutingRequest;
 
 class GymAndOutingController extends Controller
 {
-    private GymAndOutingRepository $gymandoutingRepo;
+    private GymAndOutingRepository $gymAndOutingRepo;
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $record;
+    
 
-    public function __construct(GymAndOutingRepository $gymandoutingRepo)
+    public function __construct(GymAndOutingRepository $gymAndOutingRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
-        $this->gymandoutingRepo = $gymandoutingRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
+        $this->gymAndOutingRepo = $gymAndOutingRepo;
     }
     /**
      * Display a listing of the resource.
@@ -33,7 +41,11 @@ class GymAndOutingController extends Controller
      */
     public function create()
     {
-       return view('student.dairy.Gym-Outing-Evalution.create');
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.dairy.Gym-Outing-Evalution.create', $data);
     }
 
     /**
@@ -44,11 +56,11 @@ class GymAndOutingController extends Controller
      */
     public function store(StoreGymAndOutingRequest $request)
     {
-        $this->gymandoutingRepo->store($request->validated());
+        $this->gymAndOutingRepo->store($request->validated());
         Session::flash('success');
         return redirect()->back();
     }
-  
+
 
     /**
      * Display the specified resource.
@@ -58,7 +70,12 @@ class GymAndOutingController extends Controller
      */
     public function show(GymAndOuting $gymAndOuting)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $gymAndOuting,
+        ];
+        return view('student.dairy.Gym-Outing-Evalution.view', $data);
     }
 
     /**
