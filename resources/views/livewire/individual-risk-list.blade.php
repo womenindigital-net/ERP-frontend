@@ -19,7 +19,7 @@
                             <td></td>
                             <td>{{ $record->created_at }}</td>
                             <td>
-                               <a href="{{ route('incident-record.show', $record->id) }}" target="_blank"
+                                <a href="{{ route('individual-risk.show', $record->id) }}" target="_blank"
                                     rel="noopener noreferrer"
                                     class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                                     <i class="mdi mdi-eye"></i>

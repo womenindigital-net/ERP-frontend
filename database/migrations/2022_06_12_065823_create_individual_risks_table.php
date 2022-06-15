@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
+use App\Models\Student;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -17,10 +19,13 @@ return new class extends Migration
         {
             $table->id();
             $table->string('collection_date')->nullable();
-            $table->foreignIdFor(\App\Models\Student::class, 'student_id')->nullable()->constrained('students')->cascadeOnDelete();
-            $table->string('causeof_hazzard')->nullable();
+            $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->foreignIdFor(Student::class, 'student_id')->nullable()->constrained('students')->cascadeOnDelete();
+            $table->string('hazard_spotted')->nullable();
+            $table->string('accident_or_incident')->nullable();
             $table->string('possible_concerns')->nullable();
             $table->string('risk_rating')->nullable();
+            $table->string('causeof_hazzard')->nullable();
             $table->string('action_to_reduce_hazard')->nullable();
             $table->string('level_of_risk')->nullable();
             $table->string('likelihood')->nullable();

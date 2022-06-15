@@ -25,9 +25,12 @@ class IndividualRiskRequest extends FormRequest
     {
         return [
             "collection_date"             => 'nullable',
+            "teacher_id"                  => 'nullable',
             "student_id"                  => 'nullable',
-            "causeof_hazzard"             => 'nullable',
+            "hazard_spotted"              => 'nullable',
+            "accident_or_incident"        => 'nullable',
             "possible_concerns"           => 'nullable',
+            "causeof_hazzard"             => 'nullable',
             "risk_rating"                 => 'nullable',
             "action_to_reduce_hazard"     => 'nullable',
             "level_of_risk"               => 'nullable',

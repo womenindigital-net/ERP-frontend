@@ -38,7 +38,7 @@
                                                                 <label for="basicpill-firstname-input">Collection
                                                                     Date:</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="date" type="date"
+                                                                    <x-input-text name="collection_date" type="date"
                                                                         placeholder="mm/dd/yyyy"
                                                                         value="{{ $record->collection_date }}" />
                                                                 </div><!-- input-group -->

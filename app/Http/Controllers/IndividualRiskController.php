@@ -3,17 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\IndividualRisk;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
 use App\Http\Requests\IndividualRiskRequest;
-use App\Http\Requests\UpdateIndividualRiskRequest;
 use App\Repositories\IndividualRiskRepositories;
+use App\Http\Requests\UpdateIndividualRiskRequest;
 
 class IndividualRiskController extends Controller
 {
 
     private IndividualRiskRepositories $indRiskRepo;
-
-    public function __construct(IndividualRiskRepositories $indRiskRepo)
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $record;
+    
+    public function __construct(IndividualRiskRepositories $indRiskRepo,UserRepository $userRepository, StudentRepository $studentRepository)
     {
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
         $this->indRiskRepo = $indRiskRepo;
     }
 
@@ -34,8 +41,9 @@ class IndividualRiskController extends Controller
      */
     public function create()
     {
-        $data = [
-            'students' => []
+       $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.individual-risk.create', $data);
@@ -50,6 +58,7 @@ class IndividualRiskController extends Controller
      */
     public function store(IndividualRiskRequest $request)
     {
+        // dd($request);
         $this->indRiskRepo->store($request->validated());
         return redirect()->back();
     }
@@ -62,7 +71,12 @@ class IndividualRiskController extends Controller
      */
     public function show(IndividualRisk $individualRisk)
     {
-        //
+         $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $individualRisk,
+        ];
+        return view('assessment.individual-risk.show', $data);
     }
 
     /**

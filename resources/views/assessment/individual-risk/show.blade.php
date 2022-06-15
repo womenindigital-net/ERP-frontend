@@ -17,21 +17,6 @@
         <div class="col-xl-12 p-0">
             <div class="card">
                 <div class="card-body p-0">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
-                                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Add</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
-                                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">List</span>
-                            </a>
-                        </li>
-                    </ul>
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="case-histroy" role="tabpanel">
@@ -39,7 +24,7 @@
                                 <div class="col-12">
                                     <!-- Wizard container -->
                                     <div class="wizard-container">
-                                        <div class="card_stap wizard-card row" data-color="red" id="wizard">
+                                        <div class="card_stap  wizard-card row" data-color="red" id="wizard">
                                             <div class="col-sm-3 col-md-3">
                                                 <div id="wizard-navigation">
                                                     <ul class="wizard-navigation">
@@ -51,9 +36,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-9 col-md-9">
-                                                <form action="{{ route('individual-risk.store') }}" method="POST">
-                                                    @csrf
+                                            <div class="col-sm-9 col-md-9 apply-view-only">
+                                                <form action="">
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="Social_Communication">
                                                             <section>
@@ -64,7 +48,8 @@
                                                                                 for="basicpill-firstname-input">Collection
                                                                                 Date:</label>
                                                                             <x-input-text name="collection_date" type="date"
-                                                                                placeholder="mm/dd/yyyy">
+                                                                                placeholder="mm/dd/yyyy"
+                                                                                value="{{ $record->collection_date }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -73,7 +58,7 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="$teachers" />
+                                                                                :records="$teachers" :selected="$record->teacher_id" />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-4">
@@ -81,7 +66,7 @@
                                                                             <label for="basicpill-phoneno-input">Candidate
                                                                                 ID:</label>
                                                                             <x-input-select name="student_id"
-                                                                                :records="$students" />
+                                                                                :records="$students" :selected="$record->student_id" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -91,7 +76,7 @@
                                                             <section>
                                                                 <x-input-radio-or-check name="hazard_spotted"
                                                                     type="checkbox" label="Hazard spotted/Type"
-                                                                    :records="$IRAConstants::$riskAssessment" :isVertical="false" :multiple="true">
+                                                                    :records="$IRAConstants::$riskAssessment" :isVertical="false" :checked="$record->hazard_spotted">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <div class="row border-top py-2">
@@ -100,7 +85,8 @@
                                                                             <h5>Cause of Hazzard</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="causeof_hazzard"
-                                                                                    placeholder="">
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->causeof_hazzard }}">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
@@ -108,7 +94,7 @@
                                                                 </div>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check label="Accident/ incident?"
-                                                                    :records="$IRAConstants::$accidentOrIncident">
+                                                                    :records="$IRAConstants::$accidentOrIncident" :checked="$record->accident_or_incident">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <div class="row border-top py-2">
@@ -117,7 +103,8 @@
                                                                             <h5>Possible Concerns</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="possible_concerns"
-                                                                                    placeholder="">
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->possible_concerns }}">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
@@ -130,7 +117,8 @@
                                                                                 identified: 1-10 )</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="risk_rating"
-                                                                                    placeholder="">
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->risk_rating }}">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
@@ -142,7 +130,8 @@
                                                                             <h5>Action to Reduce Hazard</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="action_to_reduce_hazard"
-                                                                                    placeholder="">
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->action_to_reduce_hazard }}">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
@@ -154,19 +143,21 @@
                                                                             <h5>Level of risk (1-25)</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="level_of_risk"
-                                                                                    placeholder="">
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->level_of_risk }}">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
 
-                                                                <x-input-radio-or-check label="Likelihood"
-                                                                    :records="$IRAConstants::$likelihood">
+                                                                <x-input-radio-or-check name="likelihood" label="Likelihood"
+                                                                    :records="$IRAConstants::$likelihood" :checked="$record->likelihood">
                                                                 </x-input-radio-or-check>
                                                                 {{-- end row --}}
-                                                                <x-input-radio-or-check label="Consequences"
-                                                                    :records="$IRAConstants::$consu">
+                                                                <x-input-radio-or-check name="consequences"
+                                                                    label="Consequences" :records="$IRAConstants::$consu"
+                                                                    :checked="$record->consequences">
                                                                 </x-input-radio-or-check>
                                                                 {{-- end row --}}
 
@@ -176,7 +167,8 @@
                                                                             <h5>Staff signature</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="staff_signature"
-                                                                                    placeholder="" />
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->staff_signature }}" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -187,7 +179,8 @@
                                                                             <h5>Staff name</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="staff_name"
-                                                                                    placeholder="">
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->staff_name }}">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
@@ -199,7 +192,8 @@
                                                                             <h5>Signature of support worker</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text
-                                                                                    name="signature_of_support_worker" />
+                                                                                    name='signature_of_support_worker'
+                                                                                    value="{{ $record->signature_of_support_worker }}" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -210,7 +204,8 @@
                                                                             <h5>Support worker name</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="support_worker_name"
-                                                                                    placeholder="">
+                                                                                    placeholder=""
+                                                                                    value="{{ $record->support_worker_name }}">
                                                                                 </x-input-text>
                                                                             </div>
                                                                         </div>
@@ -239,9 +234,6 @@
                                     </div> <!-- wizard container -->
                                 </div>
                             </div> <!-- end col -->
-                        </div>
-                        <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                            <livewire:individual-risk-list />
                         </div>
                     </div>
                 </div>
