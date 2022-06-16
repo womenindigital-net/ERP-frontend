@@ -19,6 +19,12 @@ class GymAndOutingList extends Component
         $this->gymAndOutRepo = $gymAndOutRepo;
     }
 
+    public function delete($id)
+    {
+        $this->gymAndOutRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
+    }
+
     public function toggleApprove($recordId)
     {
         $this->gymAndOutRepo->toggleColumn($recordId, 'is_approved');

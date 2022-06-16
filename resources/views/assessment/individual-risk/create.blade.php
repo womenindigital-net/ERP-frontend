@@ -169,7 +169,6 @@
                                                                     :records="$IRAConstants::$consu">
                                                                 </x-input-radio-or-check>
                                                                 {{-- end row --}}
-
                                                                 <div class="row border-top py-2">
                                                                     <div class="col-xl-12 col-sm-12">
                                                                         <div class="m-0">

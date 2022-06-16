@@ -23,10 +23,9 @@ class OccupationalTherapyRequest extends FormRequest
      */
     public function rules(): array
     {
-        dd($this->request->all());
         return [
 
-            "date"                    => 'nullable',
+            "collection_date"         => 'nullable',
             "teacher_id"              => 'nullable',
             "candidate_id"            => 'nullable',
             "separate_home_equipment" => 'nullable',
