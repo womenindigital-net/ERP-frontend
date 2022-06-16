@@ -54,7 +54,6 @@ class OccupationalTherapyController extends Controller
      */
     public function store(OccupationalTherapyRequest $request)
     {
-        dd($request->validated());
         $this->occupationalRepo->store($request->validated());
         Session::flash('success');
         return redirect()->back();

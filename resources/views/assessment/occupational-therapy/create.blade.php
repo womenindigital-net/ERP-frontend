@@ -129,7 +129,8 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Medication
                                                                                         Treatment </label>
-                                                                                    <x-input-text name="collection_date"
+                                                                                    <x-input-text
+                                                                                        name="medication_treatment"
                                                                                         placeholder="Medication Treatment">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -137,7 +138,8 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Any
                                                                                         present medicines</label>
-                                                                                    <x-input-text name="collection_date"
+                                                                                    <x-input-text
+                                                                                        name="separate_home_equipment"
                                                                                         placeholder="Any present medicines">
                                                                                     </x-input-text>
                                                                                 </div>
@@ -175,7 +177,8 @@
                                                                                 <div class="me-5 ">
                                                                                     <label
                                                                                         class="form-check-label pb-2">Left</label>
-                                                                                    <x-input-text name="left"
+                                                                                    <x-input-text
+                                                                                        name="upper_limbs_left"
                                                                                         placeholder="Left">
                                                                                     </x-input-text>
                                                                                 </div>

@@ -15,7 +15,7 @@
                 <tbody>
                     @foreach ($records as $record)
                     <tr>
-                        <td>{{ $record->collection_date }}</td>
+                        <td>{{ $record->date }}</td>
                         <td></td>
                         <td></td>
                         <td>{{ $record->created_at }}</td>
