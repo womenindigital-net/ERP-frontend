@@ -37,8 +37,6 @@ return new class extends Migration
             $table->string('functional_movement_shoulder_1')->nullable();
             $table->string('functional_movement_shoulder_2')->nullable();
             $table->string('functional_movement_shoulder_3')->nullable();
-            $table->string('previous')->nullable();
-            $table->string('save')->nullable();
             $table->timestamps();
         });
     }

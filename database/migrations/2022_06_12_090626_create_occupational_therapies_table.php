@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
+use App\Models\Student;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,9 +17,9 @@ return new class extends Migration
     {
         Schema::create('occupational_therapies', function (Blueprint $table) {
             $table->id();
-            $table->string('collection_date')->nullable();
-            $table->string('teacher_id')->nullable();
-            $table->string('candidate_id')->nullable();
+            $table->string('date')->nullable();
+            $table->foreignIdFor(User::class, 'teacher_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignIdFor(Student::class, 'candidate_id')->constrained('students')->cascadeOnDelete();
             $table->string('medication_treatment')->nullable();
             $table->string('any_present_medicines')->nullable();
             $table->string('separate_home_equipment')->nullable();
@@ -34,9 +36,6 @@ return new class extends Migration
             $table->string('problem_list')->nullable();
             $table->string('treatment_plan')->nullable();
             $table->string('progress')->nullable();
-            $table->string('previous')->nullable();
-            $table->string('next')->nullable();
-            
             $table->timestamps();
         });
     }

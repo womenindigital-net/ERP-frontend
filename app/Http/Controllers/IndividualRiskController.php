@@ -59,6 +59,7 @@ class IndividualRiskController extends Controller
      */
     public function store(IndividualRiskRequest $request)
     {
+        
         $this->indRiskRepo->store($request->validated());
         Session::flash('success', 'Saved');
         return redirect()->back();

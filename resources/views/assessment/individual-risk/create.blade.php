@@ -63,7 +63,7 @@
                                                                             <label
                                                                                 for="basicpill-firstname-input">Collection
                                                                                 Date:</label>
-                                                                            <x-input-text name="collection_date" type="date"
+                                                                            <x-input-text name="date" type="date"
                                                                                 placeholder="mm/dd/yyyy">
                                                                             </x-input-text>
                                                                         </div>

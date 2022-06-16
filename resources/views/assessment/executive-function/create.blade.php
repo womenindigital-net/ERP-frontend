@@ -62,9 +62,9 @@
                                                                     <div class="mb-3">
                                                                         <label>Collection
                                                                             Date:</label>
-                                                                        <x-input-text type="date" name="date"
-                                                                            placeholder="mm/dd/yyyy">
-                                                                        </x-input-text>
+                                                                            <x-input-text type="date" name="date"
+                                                                                placeholder="mm/dd/yyyy">
+                                                                            </x-input-text>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">

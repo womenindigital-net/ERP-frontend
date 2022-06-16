@@ -210,7 +210,7 @@
                                 label="Does not use toys appropriately" :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check name="sometimes_shows_no_startle response_to_loud noise"
+                              <x-input-radio-or-check name="sometimes_shows_no_startle_response_to_loud_noise"
                                 label="Sometimes shows no “startle response” to ”loud noise”"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
