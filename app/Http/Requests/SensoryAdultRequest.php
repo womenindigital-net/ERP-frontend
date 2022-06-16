@@ -24,7 +24,7 @@ class SensoryAdultRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
+
             "collection_date"                                  => 'nullable',
             "teacher_id"                                       => 'nullable',
             "student_id"                                       => 'nullable',
@@ -33,6 +33,7 @@ class SensoryAdultRequest extends FormRequest
             "certain_clothing"                                 => 'nullable',
             "clothing"                                         => 'nullable',
             "getting_hands"                                    => 'nullable',
+            "grooming_activities_such"                         => 'nullable',
             "taking_bath"                                      => 'nullable',
             "getting_toweled_dry"                              => 'nullable',
             "trying_new_foods"                                 => 'nullable',
@@ -40,7 +41,7 @@ class SensoryAdultRequest extends FormRequest
             "walking_barefoot"                                 => 'nullable',
             "activities"                                       => 'nullable',
             "high_risk_play"                                   => 'nullable',
-            "Fine_motor_tasks"                                 => 'nullable',
+            "fine_motor_tasks"                                 => 'nullable',
             "activities_requiring"                             => 'nullable',
             "eating_crunchy_foods"                             => 'nullable',
             "smooth_creamy_foods"                              => 'nullable',
@@ -64,7 +65,7 @@ class SensoryAdultRequest extends FormRequest
             "singing_alone"                                    => 'nullable',
             "learning_to_read_or_reading"                      => 'nullable',
             "looking_at_shiny_spinning"                        => 'nullable',
-            "activities_that_require_eye-hand"                 => 'nullable',
+            "activities_that_require_eye_hand"                 => 'nullable',
             "tasks_requiring_visual_analysis"                  => 'nullable',
             "activities_that_require_discriminating"           => 'nullable',
             "visually_busy_places"                             => 'nullable',
