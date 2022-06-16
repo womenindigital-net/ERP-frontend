@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('hand_function')->nullable();
             $table->string('grasp')->nullable();
             $table->string('manipulation')->nullable();
-            $table->string('opposition')->nullable();
+            $table->string('opp_one')->nullable();
             $table->string('sitting_habit_in_specific')->nullable();
             $table->string('keep_attention')->nullable();
             $table->string('follow_instruction')->nullable();
@@ -45,6 +45,7 @@ return new class extends Migration
             $table->string('information_receives_ability')->nullable();
             $table->string('memorizing_the_information')->nullable();
             $table->string('awareness_of_risk_hazard')->nullable();
+            $table->string('opposition_two')->nullable();
             $table->string('working_table')->nullable();
             $table->string('Keyboard_and_mouse')->nullable();
             $table->string('monitor_place')->nullable();

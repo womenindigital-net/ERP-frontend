@@ -17,7 +17,7 @@ return new class extends Migration
     {
         Schema::create('occupational_therapies', function (Blueprint $table) {
             $table->id();
-            $table->string('date')->nullable();
+            $table->string('collection_date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->constrained('users')->cascadeOnDelete();
             $table->foreignIdFor(Student::class, 'candidate_id')->constrained('students')->cascadeOnDelete();
             $table->string('medication_treatment')->nullable();

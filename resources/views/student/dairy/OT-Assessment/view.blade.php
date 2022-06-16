@@ -7,22 +7,6 @@
         <div class="col-xl-12 p-0">
             <div class="card">
                 <div class="card-body p-0">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
-                                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Add</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
-                                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">List</span>
-                            </a>
-                        </li>
-                    </ul>
-
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="case-histroy" role="tabpanel">
@@ -56,9 +40,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form action="{{ route('ot-assessment.store') }}" method="POST">
-                                                    @csrf
-                                                    <div class="tab-content">
+                                                <form>
+                                                    <div class="tab-content apply-view-only">
                                                         <div class="tab-pane" id="Occupational_Therapy">
                                                             <section>
                                                                 <div class="row">
@@ -68,7 +51,8 @@
                                                                                 for="basicpill-firstname-input">Collection
                                                                                 Date:</label>
                                                                             <div class="input-group" id="datepicker2">
-                                                                                <x-input-text type="date" name="date" />
+                                                                                <x-input-text type="date" name="date"
+                                                                                    value="{{ $record->date }}" />
                                                                             </div><!-- input-group -->
                                                                         </div>
                                                                     </div>
@@ -77,7 +61,7 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="$teachers"  />
+                                                                                :records="$teachers" :selected="$record->teacher_id" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -91,14 +75,16 @@
                                                                             <label class="form-check-label pb-2">Type of
                                                                                 disability</label>
                                                                             <x-input-text name="type_of_disability"
-                                                                                placeholder="">
+                                                                                placeholder=""
+                                                                                value="{{ $record->type_of_disability }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="me-5 ">
                                                                             <label class="form-check-label pb-2">Educational
                                                                                 Status</label>
                                                                             <x-input-text name="educational_status"
-                                                                                placeholder="">
+                                                                                placeholder=""
+                                                                                value="{{ $record->educational_status }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -109,60 +95,74 @@
                                                             <section>
                                                                 <x-input-radio-or-check name="sitting_posture_maintain"
                                                                     label="Sitting posture maintain" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->sitting_posture_maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="oint_mobility_shoulder"
                                                                     label="oint mobility shoulder" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->oint_mobility_shoulder">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="elbow" label="Elbow"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel=""
+                                                                    :checked="$record->elbow">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="wrist" label="Wrist"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel=""
+                                                                    :checked="$record->wrist">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="finger" label="Finger"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel=""
+                                                                    :checked="$record->finger">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="body_flexibility"
                                                                     label="Body flexibility (Trunk)" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->body_flexibility">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="dynamic_balance_maintain"
                                                                     label="Dynamic balance maintain" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->dynamic_balance_maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="eye_hand_co_ordination"
                                                                     label="Eye hand co ordination to press the key board button"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel=""
+                                                                    :checked="$record->eye_hand_co_ordination">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="mouse_operater"
                                                                     label="Mouse operater" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->mouse_operater">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="muscle_strength_in_hand"
                                                                     label="Muscle strength in hand and finger"
-                                                                    :records="$otassessmentConstants::$strength" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$strength" secondaryInputLabel=""
+                                                                    :checked="$record->muscle_strength_in_hand">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="hand_function"
                                                                     label="Hand function" :records="$otassessmentConstants::$ability"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->hand_function">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="grasp" label="Grasp"
-                                                                    :records="$otassessmentConstants::$ability" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$ability" secondaryInputLabel=""
+                                                                    :checked="$record->grasp">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="manipulation"
                                                                     label="Manipulation" :records="$otassessmentConstants::$ability"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->manipulation">
+                                                                </x-input-radio-or-check>
 
-                                                                <x-input-radio-or-check name="opp_one" label="Opposition"
-                                                                    :records="$otassessmentConstants::$ability" secondaryInputLabel="">
+                                                                <x-input-radio-or-check name="opp_one"
+                                                                    label="Opposition" :records="$otassessmentConstants::$ability"
+                                                                    secondaryInputLabel="" :checked="$record->opp_one">
                                                                 </x-input-radio-or-check>
 
                                                             </section>
@@ -171,45 +171,55 @@
                                                             <section>
                                                                 <x-input-radio-or-check name="sitting_habit_in_specific"
                                                                     label="Sitting habit in specific place"
-                                                                    :records="$otassessmentConstants::$time" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$time" secondaryInputLabel=""
+                                                                    :checked="$record->sitting_habit_in_specific">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="keep_attention"
                                                                     label="Keep attention/concentration to work"
-                                                                    :records="$constants::$yesNoEn" secondaryInputLabel="">
+                                                                    :records="$constants::$yesNoEn" secondaryInputLabel=""
+                                                                    :checked="$record->keep_attention">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="follow_instruction"
                                                                     label="Follow instruction" :records="$otassessmentConstants::$follow"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->follow_instruction">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="response_skill"
                                                                     label="Response skill" :records="$otassessmentConstants::$response"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->response_skill">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="understand_or_follow"
                                                                     label="Understand or follow the work sequence"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel=""
+                                                                    :checked="$record->understand_or_follow">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="interest_of_work"
                                                                     label="Interest of work" :records="$otassessmentConstants::$show"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->interest_of_work">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="information_receives_ability"
                                                                     label="Information receives ability" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->information_receives_ability">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="memorizing_the_information"
                                                                     label="Memorizing the information" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->memorizing_the_information">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="awareness_of_risk_hazard"
                                                                     label="Awareness of Risk & hazard" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->awareness_of_risk_hazard">
+                                                                </x-input-radio-or-check>
 
-                                                                <x-input-radio-or-check name="opposition_two" label="Opposition"
-                                                                    :records="$otassessmentConstants::$appropriate" secondaryInputLabel="">
+                                                                <x-input-radio-or-check name="opposition_two"
+                                                                    label="Opposition" :records="$otassessmentConstants::$appropriate"
+                                                                    secondaryInputLabel="" :checked="$record->opposition_two">
                                                                 </x-input-radio-or-check>
 
                                                             </section>
@@ -218,24 +228,29 @@
                                                             <section>
                                                                 <x-input-radio-or-check name="working_table"
                                                                     label="Working table/ desk" :records="$otassessmentConstants::$appropriate"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->working_table">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="Keyboard_and_mouse"
                                                                     label="Keyboard and mouse place" :records="$otassessmentConstants::$appropriate"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->Keyboard_and_mouse">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="monitor_place"
                                                                     label="Monitor place" :records="$otassessmentConstants::$appropriate"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->monitor_place">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="cpu"
                                                                     label="CPU, Stabilizer, and multi pluck place"
-                                                                    :records="$otassessmentConstants::$appropriate" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$appropriate" secondaryInputLabel=""
+                                                                    :checked="$record->cpu">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="communication_style"
                                                                     label="Communication Style" :records="$otassessmentConstants::$sign"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    secondaryInputLabel="" :checked="$record->communication_style">
+                                                                </x-input-radio-or-check>
 
                                                             </section>
                                                         </div>
@@ -247,7 +262,8 @@
                                                                             <label class="form-check-label pb-2">Therapist
                                                                                 comment’s/ advice:</label>
                                                                             <x-input-text name="therapist_comments"
-                                                                                placeholder="">
+                                                                                placeholder=""
+                                                                                value="{{ $record->therapist_comments }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -258,14 +274,16 @@
                                                                             <label class="form-check-label pb-2">Signature
                                                                                 of Therapist</label>
                                                                             <x-input-text type="file"
-                                                                                name="signature_of_therapist" />
+                                                                                name="signature_of_therapist"
+                                                                                value="{{ $record->signature_of_therapist }}" />
                                                                         </div>
                                                                         <div class="me-5 ">
                                                                             <label class="form-check-label pb-2">Name
                                                                                 and
                                                                                 date</label>
                                                                             <x-input-text name="name_and_date"
-                                                                                placeholder="">
+                                                                                placeholder=""
+                                                                                value="{{ $record->name_and_date }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="me-5 ">
@@ -273,7 +291,8 @@
                                                                                 class="form-check-label pb-2">Organization
                                                                                 Name</label>
                                                                             <x-input-text name="organization_Name"
-                                                                                placeholder="">
+                                                                                placeholder=""
+                                                                                value="{{ $record->organization_Name }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -283,20 +302,22 @@
                                                                         <div class="me-5 ">
                                                                             <label class="form-check-label pb-2">Signature
                                                                                 of Supervisor</label>
-                                                                            <input class="form-control" type="file"
-                                                                                id="formFile"
-                                                                                name="signature_of_supervisor">
+                                                                            <x-input-text class="form-control" type="file"
+                                                                                id="formFile" name="signature_of_supervisor"
+                                                                                value="{{ $record->signature_of_supervisor }}" />
                                                                         </div>
                                                                         <div class="me-5 ">
                                                                             <label
                                                                                 class="form-check-label pb-2">Name</label>
-                                                                            <x-input-text name="name" placeholder="">
+                                                                            <x-input-text name="name" placeholder=""
+                                                                                value="{{ $record->name }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <div class="me-5 ">
                                                                             <label
                                                                                 class="form-check-label pb-2">Designation</label>
-                                                                            <x-input-text name="designation" placeholder="">
+                                                                            <x-input-text name="designation" placeholder=""
+                                                                                value="{{ $record->designation }}">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -324,9 +345,6 @@
                                     </div> <!-- wizard container -->
                                 </div>
                             </div> <!-- end col -->
-                        </div>
-                        <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                           <livewire:ot-assessment-list/>
                         </div>
                     </div>
 

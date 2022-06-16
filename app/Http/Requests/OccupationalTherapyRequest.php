@@ -25,7 +25,7 @@ class OccupationalTherapyRequest extends FormRequest
     {
         return [
 
-            "date"         => 'nullable',
+            "collection_date"         => 'nullable',
             "teacher_id"              => 'nullable',
             "candidate_id"            => 'nullable',
             "separate_home_equipment" => 'nullable',
