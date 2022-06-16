@@ -67,7 +67,7 @@
                                 <div class="col-lg-4">
                                   <div class="mb-3">
                                     <label for="basicpill-firstname-input">Collection Date:</label>
-                                    <input type="date" class="form-control" placeholder="dd,M,yyyy">
+                                    <x-input-text type="date" name="collection_date" class="form-control" placeholder="dd,mm,yyyy"/>
                                   </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -501,8 +501,6 @@
                                   </div>
                             </section>
                           </div>
-
-
                         </div>
                         <div class="wizard-footer d-flex justify-content-between">
                           <div class="pull-left">

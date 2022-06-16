@@ -436,7 +436,6 @@
                                                     <div class="tab-pane" id="Repair_Structures">
                                                         <section>
                                                             <div>
-
                                                                 <!--end row -->
                                                                 <x-input-radio-or-check
                                                                     label="has an excellent rote memory with poor comprehension"

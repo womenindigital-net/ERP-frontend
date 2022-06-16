@@ -66,7 +66,6 @@
                                                     <li class="w-100"><a href="#Signature" data-toggle="tab">Signature</a></li>
                                                     <li class="w-100"><a href="#Cognitive_Skills" data-toggle="tab"> Cognitive Skills</a></li>
                                                     <li class="w-100"><a href="#Treatment_Plan" data-toggle="tab">Treatment Plan</a></li>
-
                                                 </ul>
                                             </div>
                                         </div>
@@ -78,15 +77,15 @@
                                                         <section>
                                                             <div class="row">
                                                                 <div class="col-lg-4 pull-left pb-2">
-                                                                    <label class="p-2">Collection
-                                                                        Date:</label>
-                                                                    <x-input-text name="date" type="date"
+                                                                    <label class="p-2">Collection Date:</label>
+                                                                    <x-input-text name="collection_date" type="date"
                                                                         placeholder="mm/dd/yyyy">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <div class="col-lg-4 pull-left pb-2">
                                                                     <label class="p-2">Teacher: <span
-                                                                            class="text-danger text-bold">*</span></label>
+                                                                      class="text-danger text-bold">*</span>
+                                                                    </label>
                                                                     <x-input-select name="$teachers"
                                                                         :records="$teachers" />
                                                                 </div>
@@ -793,8 +792,6 @@
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                        
-                                                        
                                                             <div class="row border-top py-2">
                                                                 <div class="col-xl-12 col-sm-12">
                                                                     <div class="m-0">

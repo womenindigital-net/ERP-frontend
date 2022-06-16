@@ -202,6 +202,6 @@ class SetupController extends Controller
     {
         return view('setup.other-settings.user_permission_setup');
     }
-    
-    
-}
+
+}            
+

@@ -80,13 +80,12 @@
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
                                                                         <label for="basicpill-phoneno-input">Candidate
-                                                                            ID:</label>
+                                                                         ID:</label>
                                                                         <x-input-select name="candidate_id"
                                                                             :records="$students" />
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="Pragmatic_Objective">
@@ -273,9 +272,7 @@
     </div>
 </div>
 <!-- end col -->
-<!-- end row -->
 @endsection
-
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
