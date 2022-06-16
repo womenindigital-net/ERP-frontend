@@ -42,7 +42,7 @@ class SensoryAdultController extends Controller
      */
     public function create()
     {
-         $data = [
+        $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
@@ -70,13 +70,12 @@ class SensoryAdultController extends Controller
      * @param  \App\Models\SensoryAdult  $sensoryAdult
      * @return \Illuminate\Http\Response
      */
-    public function show(SensoryAdult $sensoryAdult)
+    public function show(SensoryAdult $sensory_checklist_adult)
     {
-        dd($sensoryAdult);
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'record' => $this->records = $sensoryAdult,
+            'record' => $this->records = $sensory_checklist_adult,
         ];
         return view('assessment.sensory-checklist-adult.view', $data);
     }
