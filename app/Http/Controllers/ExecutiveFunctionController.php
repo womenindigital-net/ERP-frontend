@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExecutiveFunction;
 use App\Repositories\UserRepository;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Repositories\ExecutiveFunctionRepository;
 use App\Http\Requests\StoreExecutiveFunctionRequest;
 use App\Http\Requests\UpdateExecutiveFunctionRequest;
@@ -57,6 +58,7 @@ class ExecutiveFunctionController extends Controller
     public function store(StoreExecutiveFunctionRequest $request)
     {
         $this->executiveRepo->store($request->validated());
+        Session::flash('success');
         return redirect()->back();
     }
 
@@ -85,7 +87,12 @@ class ExecutiveFunctionController extends Controller
      */
     public function edit(ExecutiveFunction $executiveFunction)
     {
-        //
+        $data = [
+            'record' => $this->careNeed = $executiveFunction,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('assessment.executive-function.edit', $data);
     }
 
     /**
@@ -95,9 +102,11 @@ class ExecutiveFunctionController extends Controller
      * @param  \App\Models\ExecutiveFunction  $executiveFunction
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateExecutiveFunctionRequest $request, ExecutiveFunction $executiveFunction)
+    public function update(StoreExecutiveFunctionRequest $request, ExecutiveFunction $executiveFunction)
     {
-        //
+        $this->executiveRepo->update($executiveFunction, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

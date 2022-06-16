@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
+use App\Models\Student;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -13,13 +15,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('functional_movementskills', function(Blueprint $table)
-        {
+        Schema::create('functional_movementskills', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignIdFor(\App\Models\User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->string('collection_date')->nullable();
-            $table->string('candidate_id')->nullable();
+            $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->foreignIdFor(Student::class, 'candidate_id')->constrained('students')->cascadeOnDelete();
             $table->string('functional_movement_general_1')->nullable();
             $table->string('functional_movement_general_2')->nullable();
             $table->string('functional_movement_general_3')->nullable();

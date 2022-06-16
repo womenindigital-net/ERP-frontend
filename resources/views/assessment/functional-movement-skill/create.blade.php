@@ -5,6 +5,7 @@
   .wizard .steps>ul>li a {
     padding-right: 0 !important;
   }
+
   .wizard .steps>ul>li a {
     padding-left: 5px !important;
   }
@@ -67,19 +68,19 @@
                                 <div class="col-lg-4">
                                   <div class="mb-3">
                                     <label for="basicpill-firstname-input">Collection Date:</label>
-                                    <x-input-text type="date" name="collection_date" class="form-control" placeholder="dd,mm,yyyy"/>
+                                    <x-input-text type="date" name="collection_date" placeholder="dd,mm,yyyy" />
                                   </div>
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="mb-3">
                                     <label for="basicpill-lastname-input">Teacher:</label>
-                                    <x-input-select name="teacher_id" :records="$teachers"/>
+                                    <x-input-select name="teacher_id" :records="$teachers" />
                                   </div>
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="mb-3">
                                     <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                    <x-input-select name="candidate_id" :records="$students"/>
+                                    <x-input-select name="candidate_id" :records="$students" />
                                   </div>
                                 </div>
                               </div>
@@ -522,7 +523,7 @@
           </div>
           <div class="tab-pane " id="case-histroy_list" role="tabpanel">
             <!-- form start -->
-           <livewire:functional-movement-skill-list/>
+            <livewire:functional-movement-skill-list />
             <!-- end row -->
           </div>
         </div>
