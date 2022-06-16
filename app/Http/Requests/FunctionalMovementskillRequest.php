@@ -43,8 +43,6 @@ class FunctionalMovementskillRequest extends FormRequest
             "functional_movement_shoulder_1" => 'nullable',
             "functional_movement_shoulder_2" => 'nullable',
             "functional_movement_shoulder_3" => 'nullable',
-            "functional_movement_shoulder_3" => 'previous',
-            "save" => 'previous',
         ];
     }
 }

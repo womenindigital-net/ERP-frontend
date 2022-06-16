@@ -54,6 +54,7 @@ class OccupationalTherapyController extends Controller
      */
     public function store(OccupationalTherapyRequest $request)
     {
+        dd($request->all());
         $this->occupationalRepo->store($request->validated());
         Session::flash('success');
         return redirect()->back();
@@ -83,7 +84,12 @@ class OccupationalTherapyController extends Controller
      */
     public function edit(OccupationalTherapy $occupationalTherapy)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $occupationalTherapy,
+        ];
+        return view('assessment.occupational-therapy.edit', $data);
     }
 
     /**
