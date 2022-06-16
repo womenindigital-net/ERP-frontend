@@ -3,7 +3,7 @@
         <div class="table-responsive">
             <table class="table table-bordered w-100">
                 <thead>
-                    <tr class="table-primary ">
+                    <tr class="table-primary">
                         <th>Collection Date</th>
                         <th>Student Name</th>
                         <th>Collected By</th>
@@ -14,21 +14,22 @@
                 <tbody>
                     @foreach ($records as $record)
                     <tr>
-                        <td>{{ $record->collection_date }}</td>
-                        <td>{{ $record->student->name ??"nameNotFound" }}</td>
+                        <td>{{ $record->date }}</td>
+                        <td>{{ $record->student->name }}</td>
                         <td></td>
-                        <td>{{ $record->created_at }}</td>
+                        <td><small>{{ $record->created_at }}</small></td>
                         <td>
-                            <a href="{{ route('sensory-checklist-adult.show', $record->id) }}" target="_blank"
+                            <a href="{{ route('autisum-behaviour.show', $record->id) }}" target="_blank"
                                 rel="noopener noreferrer"
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-eye"></i>
                             </a>
-                            <button type="button" wire:click="toggleApprove({{ $record->id }})"
-                                class="btn btn-sm btn-{{ $record->is_approved ? 'danger' : 'info' }} btn-rounded waves-effect waves-light mb-2 me-1">
+                            <button type="button" wire:click="toggleApprove({{$record->id}})"
+                                class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-check"></i>
                             </button>
-                            <a href="{{ route('sensory-checklist-adult.edit', $record->id) }}" target="_blank"
+
+                            <a href="{{ route('autisum-behaviour.edit', $record->id) }}" target="_blank"
                                 rel="noopener noreferrer"
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-pencil"></i>

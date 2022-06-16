@@ -15,8 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sensory_adults', function(Blueprint $table)
-        {
+        Schema::create('sensory_adults', function (Blueprint $table) {
             $table->id();
             $table->string('collection_date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
@@ -26,6 +25,7 @@ return new class extends Migration
             $table->string('certain_clothing')->nullable();
             $table->string('clothing')->nullable();
             $table->string('getting_hands')->nullable();
+            $table->string('grooming_activities_such')->nullable();
             $table->string('taking_bath')->nullable();
             $table->string('getting_toweled_dry')->nullable();
             $table->string('trying_new_foods')->nullable();
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('walking_barefoot')->nullable();
             $table->string('activities')->nullable();
             $table->string('high_risk_play')->nullable();
-            $table->string('Fine_motor_tasks')->nullable();
+            $table->string('fine_motor_tasks')->nullable();
             $table->string('activities_requiring')->nullable();
             $table->string('eating_crunchy_foods')->nullable();
             $table->string('smooth_creamy_foods')->nullable();
@@ -57,7 +57,7 @@ return new class extends Migration
             $table->string('singing_alone')->nullable();
             $table->string('learning_to_read_or_reading')->nullable();
             $table->string('looking_at_shiny_spinning')->nullable();
-            $table->string('activities_that_require_eye')->nullable();
+            $table->string('activities_that_require_eye_hand')->nullable();
             $table->string('tasks_requiring_visual_analysis')->nullable();
             $table->string('activities_that_require_discriminating')->nullable();
             $table->string('visually_busy_places')->nullable();
