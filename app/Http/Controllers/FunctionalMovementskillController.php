@@ -69,12 +69,12 @@ class FunctionalMovementskillController extends Controller
      * @param  \App\Models\FunctionalMovementskill  $functionalMovementskill
      * @return \Illuminate\Http\Response
      */
-    public function show(FunctionalMovementskill $functionalMovementskill)
+    public function show(FunctionalMovementskill $functional_movement_skill)
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'record' => $this->record = $functionalMovementskill,
+            'record' => $this->record = $functional_movement_skill,
         ];
 
         return view('assessment.functional-movement-skill.view', $data);
