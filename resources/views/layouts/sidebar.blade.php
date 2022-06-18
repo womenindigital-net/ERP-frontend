@@ -359,7 +359,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Customer List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.customers-list.customer-reg') }}">Customer Reg.</a>
+                                    <a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer Reg.</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.customers-list.customer-type.create') }}">Customer Type</a>
                                 </li>
                             </ul>
                         </li>
@@ -506,18 +509,18 @@
                             <a href="javascript: void(0);" class="has-arrow">Other Settings</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.other-settings.user') }}">User</a>
+                                    <a href="{{ route('setup.other-settings.user.create') }}">User</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.academic_calendar') }}">Academic
+                                    <a href="{{ route('setup.other-settings.academic-calender.create') }}">Academic
                                         Calendar</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.task_weight_setting') }}">Task Weight
+                                    <a href="{{ route('setup.other-settings.task-weight-settings.create') }}">Task Weight
                                         Setting</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.user_permission_setup') }}">User Permission
+                                    <a href="{{ route('setup.other-settings.user-permission-setup.create') }}">User Permission
                                         Setup</a>
                                 </li>
                             </ul>
