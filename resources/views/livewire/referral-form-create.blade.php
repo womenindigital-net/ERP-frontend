@@ -9,44 +9,32 @@
                 <div id="vertical-example" class="vertical-wizard">
                     <!-- Seller Details -->
                     <section>
-                        <form>
+                        <form wire:submit.prevent="submit" id="ReferralCreateForm">
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-firstname-input">Collection Date:</label>
-                                        <x-input-text wireModel="collection_date" type="date" placeholder="mm/dd/yyyy">
+                                        <x-input-text wireModel="date" type="date" placeholder="mm/dd/yyyy">
                                         </x-input-text><!-- input-group -->
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-lastname-input">Teacher:</label>
-                                        <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
+                                        <x-input-select wireModel="teacher_id" :records="$teachers"></x-input-select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                        <select class="form-control select2-search-disable">
-                                            <option>--Select--</option>
-                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                <option value="AK">Alaska</option>
-                                                <option value="HI">Hawaii</option>
-                                            </optgroup>
-                                            <optgroup label="Pacific Time Zone">
-                                                <option value="CA">California</option>
-                                                <option value="NV">Nevada</option>
-                                                <option value="OR">Oregon</option>
-                                                <option value="WA">Washington</option>
-                                            </optgroup>
-                                        </select>
+                                        <x-input-select wireModel="candidate_id" :records="$students"></x-input-select>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="basicpill-phoneno-input">Referral To Dr.</label>
-                                        <x-input-select name="doctor_id" :records="$doctors"></x-input-select>
+                                        <x-input-select wireModel="doctor_id" :records="$doctors"></x-input-select>
                                     </div>
                                 </div>
                                 <div class="col-lg-8">
@@ -63,7 +51,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="basicpill-phoneno-input">Address</label>
-                                    <textarea name="" class="form-control" id="" readonly rows="1"></textarea>
+                                    <textarea class="form-control" readonly rows="1"></textarea>
                                 </div>
                             </div>
 
@@ -89,7 +77,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-danger waves-effect" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-outline-primary waves-effect waves-light">Referral</button>
+                <button type="button" wire:click="save()"
+                    class="btn btn-outline-primary waves-effect waves-light">Referral</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

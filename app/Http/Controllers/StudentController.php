@@ -134,11 +134,11 @@ class StudentController extends Controller
         return view('case-history', $data);
     }*/
 
-    public function referralForm(): Factory|View|Application
-    {
+    // public function referralForm(): Factory|View|Application
+    // {
 
-        return view('referral-form');
-    }
+    //     return view('referral-form');
+    // }
 
     public function admissionAddStudent(): Factory|View|Application
     {

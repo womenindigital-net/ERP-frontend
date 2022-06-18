@@ -2,27 +2,63 @@
 
 namespace App\Http\Livewire;
 
-use App\Repositories\DoctorRepository;
-use App\Repositories\UserRepository;
 use Livewire\Component;
+use App\Repositories\UserRepository;
+use App\Repositories\DoctorRepository;
+use App\Repositories\ReferralRepository;
+use App\Repositories\StudentRepository;
 
 class ReferralFormCreate extends Component
 {
     private UserRepository $userRepo;
     private DoctorRepository $doctorRepo;
+    private StudentRepository $studentRepo;
+    private ReferralRepository $referralRepo;
 
-    public function boot(UserRepository $userRepo, DoctorRepository $doctorRepo)
+
+    public string $date = '';
+    public string $teacher_id = '';
+    public string $candidate_id = '';
+    public string $doctor_id = '';
+
+    public function boot(UserRepository $userRepo, StudentRepository $studentRepo, DoctorRepository $doctorRepo, ReferralRepository $referralRepo)
     {
         $this->userRepo = $userRepo;
         $this->doctorRepo = $doctorRepo;
+        $this->studentRepo = $studentRepo;
+        $this->referralRepo = $referralRepo;
     }
 
+    protected array $rules = [
+        'date' => 'required',
+        'teacher_id' => 'required',
+        'candidate_id' => 'required',
+        'doctor_id' => 'required',
+    ];
+
+    /**
+     * @throws ValidationException
+     */
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+
+    public function save()
+    {
+        $this->referralRepo->store($this->validate());
+        $this->dispatchBrowserEvent('notifyr');
+        $this->dispatchBrowserEvent("close-modal");
+        $this->dispatchBrowserEvent("reset-form", ["formName" => "ReferralCreateForm"]);
+    }
 
     public function render()
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'doctors' => $this->doctorRepo->getData(),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('livewire.referral-form-create', $data);
