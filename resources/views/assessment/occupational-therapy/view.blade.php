@@ -118,7 +118,7 @@
                                                                                         Treatment </label>
                                                                                     <x-input-text
                                                                                         name="medication_treatment"
-                                                                                        placeholder="Medication Treatment">
+                                                                                        placeholder="Medication Treatment" value="{{ $record->medication_treatment}}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                                 <div class="me-5 ">
@@ -127,7 +127,7 @@
                                                                                         present medicines</label>
                                                                                     <x-input-text
                                                                                         name="any_present_medicines"
-                                                                                        placeholder="Any present medicines">
+                                                                                        placeholder="Any present medicines" value="{{ $record->any_present_medicines}}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -137,15 +137,15 @@
                                                             </div>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Separate Home equipment"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn" :checked="$record->separate_home_equipment">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Communication"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn" :checked="$record->communication">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Communication"
-                                                                :records="$therapyConstants::$communication">
+                                                                :records="$therapyConstants::$communication"  :checked="$record->communication" >
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -153,7 +153,7 @@
                                                     <div class="tab-pane" id="Muscle_Tone">
                                                         <section>
                                                             <x-input-radio-or-check label="Upper limbs"
-                                                                :records="$therapyConstants::$lowerLimbs">
+                                                                :records="$therapyConstants::$lowerLimbs"  :checked="$record->upper_limbs">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <div class="row border-top py-2">
@@ -165,14 +165,14 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Left</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="Left">
+                                                                                        placeholder="Left" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                                 <div class="me-5 ">
                                                                                     <label
                                                                                         class="form-check-label pb-2">Right</label>
                                                                                     <x-input-text name="right"
-                                                                                        placeholder="Right">
+                                                                                        placeholder="Right" value="{{ $record->right }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -182,15 +182,15 @@
                                                             </div>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Lower Limbs"
-                                                                :records="$therapyConstants::$lowerLimbs">
+                                                                :records="$therapyConstants::$lowerLimbs"  :checked="$record->lower_limbs">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Trunk/neck"
-                                                                :records="$therapyConstants::$trunkNeck">
+                                                                :records="$therapyConstants::$trunkNeck"  :checked="$record->trunk_or_neck">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Lower Limbs"
-                                                                :records="$therapyConstants::$lowerLimbsTone">
+                                                                :records="$therapyConstants::$lowerLimbsTone"  :checked="$record->lower_limbs">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <div class="row py-2 pt-0">
@@ -202,14 +202,14 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Left</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="Left">
+                                                                                        placeholder="Left" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                                 <div class="me-5 ">
                                                                                     <label
                                                                                         class="form-check-label pb-2">Right</label>
                                                                                     <x-input-text name="right"
-                                                                                        placeholder="Right">
+                                                                                        placeholder="Right" value="{{ $record->right }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -218,7 +218,7 @@
                                                                 </div>
                                                             </div>
                                                             <x-input-radio-or-check label="Upper Limbs"
-                                                                :records="$therapyConstants::$trunkNeck">
+                                                                :records="$therapyConstants::$trunkNeck"  :checked="$record->upper_limbs">
                                                             </x-input-radio-or-check>
                                                             <div class="row py-2 pt-0">
                                                                 <div class="col-xl-12 col-sm-12">
@@ -229,14 +229,14 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Left</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="Left">
+                                                                                        placeholder="Left" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                                 <div class="me-5 ">
                                                                                     <label
                                                                                         class="form-check-label pb-2">Right</label>
                                                                                     <x-input-text name="right"
-                                                                                        placeholder="Right">
+                                                                                        placeholder="Right" value="{{ $record->right }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -250,7 +250,7 @@
                                                     <div class="tab-pane" id="Range_of_movement">
                                                         <section>
                                                             <x-input-radio-or-check label="Upper limbs"
-                                                                :records="$therapyConstants::$upperLimbs">
+                                                                :records="$therapyConstants::$upperLimbs"  :checked="$record->upper_limbs">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <div class="row border-top py-2">
@@ -263,14 +263,14 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Left</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="Left">
+                                                                                        placeholder="Left" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                                 <div class="me-5 ">
                                                                                     <label
                                                                                         class="form-check-label pb-2">Right</label>
                                                                                     <x-input-text name="right"
-                                                                                        placeholder="Right">
+                                                                                        placeholder="Right" value="{{ $record->right }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -280,50 +280,50 @@
                                                             </div>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check label="Lower limbs"
-                                                                :records="$therapyConstants::$upperLimbs">
+                                                                :records="$therapyConstants::$upperLimbs"  :checked="$record->lower_limbs">
                                                             </x-input-radio-or-check>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="Functional_gross_motor">
                                                         <section>
                                                             <x-input-radio-or-check label="Sitting"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Sitting">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Standing"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Standing">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Ball skill"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->ball_skill">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Crawling"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Crawling">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Walking"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Walking">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Running"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Running">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Jumping"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Jumping">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -331,48 +331,48 @@
                                                     <div class="tab-pane" id="Transitional_movement">
                                                         <section>
                                                             <x-input-radio-or-check label="Rolling supine to prone"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->rolling_supine_to_prone">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Continuous Rolling"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->continuous_Rolling">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Box sit to stand"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->box_sit_to_stand">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Kneeling to stand"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->kneeling_to_stand">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Prone to Supine"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->prone_to_supine">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Lying to Sit"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->lying_to_Sit">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Cross sit to stand"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->cross_sit_to_stand">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
                                                             <x-input-radio-or-check label="Rolling supine to prone"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->rolling_supine_to_prone">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -382,63 +382,63 @@
                                                     <div class="tab-pane" id="Fine_motor_skil">
                                                         <section>
                                                             <x-input-radio-or-check label="Dominance"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Dominance">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Reach"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Reach">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Grasp type"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->grasp_type">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Release"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Release">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Symmetrical use"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->symmetrical_use">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Bilateral use"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->bilateral_use">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="In-hand manipulation"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->In_hand_manipulation">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
                                                             <x-input-radio-or-check label="Eye hand co-ordination"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->eye_hand_co_ordination">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
                                                             <x-input-radio-or-check label="Transfer"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->transfer">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
                                                             <x-input-radio-or-check label="Writing skills"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->writing_skills">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
                                                             <x-input-radio-or-check label="Grasp type"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->grasp_type">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -446,13 +446,13 @@
                                                     <div class="tab-pane" id="Automatic_reaction">
                                                         <section>
                                                             <x-input-radio-or-check label="Protective reactions"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->protective_reactions">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Equilibrium reaction"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->equilibrium_reaction">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -460,37 +460,37 @@
                                                     <div class="tab-pane" id="Sensory_Skill">
                                                         <section>
                                                             <x-input-radio-or-check label="Tactile"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->tactile">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Visual"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Visual">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Auditory"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Auditory">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Vestibular"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->vestibular">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Proprioceptive"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->proprioceptive">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Vestibular"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->vestibular">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -498,25 +498,25 @@
                                                     <div class="tab-pane" id="Visual_Perception">
                                                         <section>
                                                             <x-input-radio-or-check label="Visual Discrimination"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Visual_discrimination">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Visual Memory"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Visual_Memory">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Visual Figure ground"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->visual_figure_ground">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Visual Spatial"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->visual_spatial">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
@@ -530,7 +530,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Behavior</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->behavior }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -542,7 +542,7 @@
 
 
                                                             <x-input-radio-or-check label="Social interaction"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->social_interaction">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -550,38 +550,38 @@
                                                     <div class="tab-pane" id="Activities_of_Daily_living">
                                                         <section>
                                                             <x-input-radio-or-check label="Eating"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->Eating">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Brushing teeth"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->brushing_teeth">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Dressing"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->dressing">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Toilet"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->toilet">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Bathing"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->bathing">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check
                                                                 label="Does the child attend school?"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->does_the_child_attend_school">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
@@ -595,7 +595,7 @@
                                                                                         class="form-check-label pb-2">Any
                                                                                         more information</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -616,7 +616,7 @@
                                                                                         class="form-check-label pb-2">Leisure/Play:
                                                                                         activities of interest</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -631,7 +631,7 @@
                                                         <section>
                                                             <x-input-radio-or-check
                                                                 label="Physical (Gross motor/Fine motor)"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->physical">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
@@ -645,7 +645,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Cognitive</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -665,7 +665,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Behavioral</label>
                                                                                     <x-input-text name="left"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->left }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -677,25 +677,25 @@
 
 
                                                             <x-input-radio-or-check label="Communication"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->communication">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Social"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->social">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="ADL’s"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->adl’s">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Emotional"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->emotional">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -713,7 +713,7 @@
                                                                                         Signature</label>
                                                                                     <x-input-text type="file"
                                                                                         name="therapist_signature"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->therapist_signature }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -734,7 +734,7 @@
                                                                                         name</label>
                                                                                     <x-input-text
                                                                                         name="designation_organization"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->designation_organization }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -754,7 +754,7 @@
                                                                                         Signature</label>
                                                                                     <x-input-text type="file"
                                                                                         name="supervisor_signature"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->supervisor_signature }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -774,7 +774,7 @@
                                                                                         and organizations name</label>
                                                                                     <x-input-text
                                                                                         name="designation_name"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->designation_name }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -788,19 +788,19 @@
                                                     <div class="tab-pane" id="Cognitive_Skills">
                                                         <section>
                                                             <x-input-radio-or-check label="Attention"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->attention">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Problem Solving"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->problem_solving">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Able to Follow instruction"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->able_to_follow_instruction">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <div class="row border-top py-2">
@@ -812,7 +812,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Memory</label>
                                                                                     <x-input-text name="memory"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->memory }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -824,24 +824,24 @@
 
 
                                                             <x-input-radio-or-check label="Perceptual Motor"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->perceptual_motor">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Body Awareness"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->body_awareness">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
                                                             <x-input-radio-or-check label="Body Co-ordination"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->body_co_ordination">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
                                                             <x-input-radio-or-check label="Bilateral Integration"
-                                                                :records="$constants::$yesNoEn">
+                                                                :records="$constants::$yesNoEn"  :checked="$record->bilateral_integration">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                         </section>
@@ -858,7 +858,7 @@
                                                                                         class="form-check-label pb-2">Problem
                                                                                         List</label>
                                                                                     <x-input-text name="problem_list"
-                                                                                        placeholder="">
+                                                                                        placeholder="" value="{{ $record->problem_list}}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -877,7 +877,7 @@
                                                                                         class="form-check-label pb-2">Treatment
                                                                                         Plan & Implementation</label>
                                                                                     <x-input-text name="treatment_plan"
-                                                                                        placeholder="">
+                                                                                        placeholder=""  value="{{ $record->treatment_plan }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>
@@ -895,7 +895,7 @@
                                                                                     <label
                                                                                         class="form-check-label pb-2">Progress</label>
                                                                                     <x-input-text name="progress"
-                                                                                        placeholder="">
+                                                                                        placeholder=""  value="{{ $record->progress }}">
                                                                                     </x-input-text>
                                                                                 </div>
                                                                             </div>

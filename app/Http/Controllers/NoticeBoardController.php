@@ -25,7 +25,7 @@ class NoticeBoardController extends Controller
      */
     public function create()
     { 
-         return view('program.notice-board.create');
+         return view('program.notice-board.main');
     }
 
     /**
