@@ -120,7 +120,11 @@ class SetupController extends Controller
     }
     public function customerReg()
     {
-        return view('setup.customers-list.customer-reg');
+        return view('setup.customers-list.customer-reg.create');
+    }
+    public function customerType()
+    {
+        return view('setup.customers-list.customer-Type.create');
     }
     public function courseAdmission()
     {
@@ -192,19 +196,19 @@ class SetupController extends Controller
     }
     public function otherUser()
     {
-        return view('setup.other-settings.user');
+        return view('setup.other-settings.user.create');
     }
     public function academicCalendar()
     {
-        return view('setup.other-settings.academic_calendar');
+        return view('setup.other-settings.academic-calender.create');
     }
     public function taskWeight()
     {
-        return view('setup.other-settings.task_weight_setting');
+        return view('setup.other-settings.task-weight-settings.create');
     }
     public function userPermission()
     {
-        return view('setup.other-settings.user_permission_setup');
+        return view('setup.other-settings.user-permission-setup.create');
     }
 
 }            

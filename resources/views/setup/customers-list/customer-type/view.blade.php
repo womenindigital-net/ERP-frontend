@@ -37,6 +37,8 @@
                             <div class="col-xl-6">
                                 <div class="card">
                                     <div class="card-body">
+                                       
+                        
                                         <form>
                                             <div class="row mb-4">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Type Name</label>
