@@ -79,7 +79,7 @@
                                                             <x-input-radio-or-check name="treadmill"
                                                                 label="Treadmill(15-20 min) speed:5"
                                                                 :records="$gymoutingConstants::$assistance"
-                                                                secondaryInputLabel="">
+                                                                secondaryInputLabel="" >
                                                             </x-input-radio-or-check>
                                                             {{-- end row --}}
                                                             <x-input-radio-or-check label="Cycling 5 min"

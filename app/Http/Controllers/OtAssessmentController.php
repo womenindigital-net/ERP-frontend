@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\OtAssessmentRequest;
 use App\Models\OtAssessment;
 use Illuminate\Contracts\View\View;
+use App\Repositories\UserRepository;
 use Illuminate\Contracts\View\Factory;
+use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\OtAssessmentRequest;
 use App\Repositories\OtAssessmentRepository;
 use App\Http\Requests\StoreOtAssessmentRequest;
 use App\Http\Requests\UpdateOtAssessmentRequest;
@@ -15,10 +17,15 @@ use Illuminate\Contracts\Foundation\Application;
 class OtAssessmentController extends Controller
 {
     private OtAssessmentRepository $otAssessmentRepo;
+     private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $records;
 
-    public function __construct(OtAssessmentRepository $otAssessmentRepo)
+    public function __construct(OtAssessmentRepository $otAssessmentRepo,UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->otAssessmentRepo = $otAssessmentRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
     /**
      * Display a listing of the resource.
@@ -37,7 +44,11 @@ class OtAssessmentController extends Controller
      */
     public function create()
     {
-       return view('student.dairy.OT-Assessment.create');
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+       return view('student.dairy.OT-Assessment.create',$data);
     }
 
     /**
@@ -59,9 +70,14 @@ class OtAssessmentController extends Controller
      * @param  \App\Models\OtAssessment  $otAssessment
      * @return \Illuminate\Http\Response
      */
-    public function show(OtAssessment $otAssessment)
+    public function show(OtAssessment $ot_assessment)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->records = $ot_assessment,
+        ];
+        return view('student.dairy.OT-Assessment.view', $data);
     }
 
     /**

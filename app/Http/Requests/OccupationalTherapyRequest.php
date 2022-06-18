@@ -25,7 +25,7 @@ class OccupationalTherapyRequest extends FormRequest
     {
         return [
 
-            "collection_date"         => 'nullable',
+            "date"                    => 'nullable',
             "teacher_id"              => 'nullable',
             "candidate_id"            => 'nullable',
             "separate_home_equipment" => 'nullable',
@@ -40,10 +40,6 @@ class OccupationalTherapyRequest extends FormRequest
             "problem_list"            => 'nullable',
             "treatment_plan"          => 'nullable',
             "progress"                => 'nullable',
-            "previous"                => 'nullable',
-            "next"                    => 'nullable',
-            
-
         ];
     }
 }

@@ -14,12 +14,14 @@
                 <tbody>
                     @foreach ($records as $record)
                     <tr>
-                        <td>{{ $record->collection_date }}</td>
-                        <td>{{ $record->student->name ?? "nameNotfound" }}</td>
+                        <td>{{ $record->date }}</td>
+                        <td>{{ $record->student->name ?? 'nameNotFound'}}</td>
                         <td></td>
-                        <td>{{ $record->created_at }}</td>
                         <td>
-                            <a href="{{ route('functional-movement-skill.show', $record->id) }}" target="_blank"
+                            <small>{{ $record->created_at }}</small>
+                        </td>
+                        <td>
+                            <a href="{{ route('executive-function.show', $record->id) }}" target="_blank"
                                 rel="noopener noreferrer"
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-eye"></i>
@@ -29,7 +31,7 @@
                                 <i class="fas fa-check"></i>
                             </button>
 
-                            <a href="{{ route('functional-movement-skill.edit', $record->id) }}" target="_blank"
+                            <a href="{{ route('executive-function.edit', $record->id) }}" target="_blank"
                                 rel="noopener noreferrer"
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-pencil"></i>
@@ -51,5 +53,6 @@
                 </tbody>
             </table>
         </div>
+        <!-- end row -->
     </x-record-list>
 </div>

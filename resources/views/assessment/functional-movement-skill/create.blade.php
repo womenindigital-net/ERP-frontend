@@ -5,6 +5,7 @@
   .wizard .steps>ul>li a {
     padding-right: 0 !important;
   }
+
   .wizard .steps>ul>li a {
     padding-left: 5px !important;
   }
@@ -66,27 +67,27 @@
                               <div class="row mb-3 mt-3">
                                 <div class="col-lg-4">
                                   <div class="mb-3">
-                                    <label for="basicpill-firstname-input">Collection Date:</label>
-                                    <x-input-text type="date" name="collection_date" class="form-control" placeholder="dd,mm,yyyy"/>
+                                    <label>Collection Date:</label>
+                                    <x-input-text type="date" name="collection_date" placeholder="dd,mm,yyyy" />
                                   </div>
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="mb-3">
-                                    <label for="basicpill-lastname-input">Teacher:</label>
-                                    <x-input-select name="teacher_id" :records="$teachers"/>
+                                    <label>Teacher:</label>
+                                    <x-input-select name="teacher_id" :records="$teachers" />
                                   </div>
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="mb-3">
-                                    <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                    <x-input-select name="candidate_id" :records="$students"/>
+                                    <label>Candidate ID:</label>
+                                    <x-input-select name="candidate_id" :records="$students" />
                                   </div>
                                 </div>
                               </div>
                               <div class="row ">
                                 <div class="col-lg-12">
                                   <div class="mb-3">
-                                    <label for="verticalnav-phoneno-input">Description:</label>
+                                    <label>Description:</label>
                                     <p>Sensory checklist</p>
                                   </div>
                                 </div>
@@ -117,30 +118,10 @@
                                   stick is well forward of the body, indicating deficits in mobility, stability, or
                                   both. Pls check 4 times :</div>
                               </div>
+                              <x-input-radio-or-check name="functional_movement_general_1"
+                                :records="$movementSkillsConstants::$accidentOrIncident" />
                               <!-- end row -->
                               <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                  <div class="m-0">
-                                    <div class="form-check d-flex">
-                                      <div class="me-5">
-                                        <x-input-radio-or-check name="functional_movement_general_1"
-                                          :records="$movementSkillsConstants::$accidentOrIncident" />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row border-top py-2">
-                                <div class="col-xl-12 col-sm-12">
-                                  <div class="m-0">
-                                    <div class="form-check d-flex">
-                                      <div class="me-5">
-                                        <x-input-radio-or-check name="functional_movement_general_2"
-                                          :records="$movementSkillsConstants::$accidentOrIncident" />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                                 <div id="" class="">
                                   <div class="row mb-3 mt-3">
                                     <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
@@ -151,7 +132,10 @@
                                       picture on the right demonstrates</div>
                                   </div>
                                 </div>
-                                <h5>Excessive hip rotation to clear the hurdle</h5>
+                                <x-input-radio-or-check name="functional_movement_general_2"
+                                  label="Excessive hip rotation to clear the hurdle"
+                                  :records="$movementSkillsConstants::$accidentOrIncident" />
+                                <!-- end row -->
                                 <div id="" class="">
                                   <div class="row mb-3 mt-3">
                                     <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
@@ -163,19 +147,9 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <h5>Poor control of trunk indicated by the tilting stick?</h5>
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_general_3"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <x-input-radio-or-check name="functional_movement_general_3"
+                                  label="Poor control of trunk indicated by the tilting stick?"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
                             </section>
                           </div>
                           <div class="tab-pane" id="PERSONAL">
@@ -194,47 +168,25 @@
                                       as proficiency improves.</div>
                                   </div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_foot_1"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_foot_1"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentTwo" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
                             </section>
                           </div>
                           <div class="tab-pane" id="Topic_Maintenance">
                             <h3>Ankle</h3>
                             <section>
-                              <div>
-                                <div class="row mb-3 mt-3">
-                                  <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
-                                      class="w-100"></div>
-                                  <div class="col-md-8">Ankle: The picture on the left shows optimal ankle flexion just
-                                    before the heel rises during the walking stride. The picture on the right shows
-                                    limited ankle flexion and is associated with an inefficient stride. </div>
-                                </div>
-                                <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_ankle_1"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                              <div class="row mb-3 mt-3">
+                                <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
+                                    class="w-100"></div>
+                                <div class="col-md-8">Ankle: The picture on the left shows optimal ankle flexion just
+                                  before the heel rises during the walking stride. The picture on the right shows
+                                  limited ankle flexion and is associated with an inefficient stride. </div>
                               </div>
+                              <x-input-radio-or-check name="functional_movement_ankle_1"
+                                :records="$movementSkillsConstants::$accidentOrIncidentThree" />
+                              <!-- end row -->
                             </section>
                           </div>
                           <div class="tab-pane" id="Conversational_Structure">
@@ -253,19 +205,9 @@
                                     </div>
                                   </div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_knee_1"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_knee_1"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                                 <div id="" class="">
                                   <div class="row mb-3 mt-3">
                                     <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
@@ -277,36 +219,16 @@
                                       proficiency improves.</div>
                                   </div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_knee_2"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_knee_2"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                                 <div class="row mb-3 mt-3">
                                   <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
                                       class="w-100"></div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_knee_3"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_knee_3"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
                             </section>
                           </div>
@@ -323,19 +245,9 @@
                                     stretch of the hip flexors of the right leg.
                                   </div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_hip_1"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_hip_1"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                                 <div class="row mb-3 mt-3">
                                   <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
                                       class="w-100"></div>
@@ -345,19 +257,9 @@
                                     Start with short, slow movements and gradually add range of motion and speed as
                                     proficiency improves.</div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_hip_2"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_hip_2"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
                             </section>
                           </div>
@@ -373,36 +275,16 @@
                                     Keep the core engaged throughout to limit trunk sway.
                                   </div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_low_back_1"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_low_back_1"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                                 <div class="row mb-3 mt-3">
                                   <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
                                       class="w-100"></div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_low_back_2"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_low_back_2"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
                             </section>
                           </div>
@@ -418,19 +300,9 @@
                                     Keep the core engaged throughout to limit trunk sway.
                                   </div>
                                 </div>
+                                <x-input-radio-or-check name="functional_movement_mid_back_1"
+                                  :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                 <!-- end row -->
-                                <div class="row border-top py-2">
-                                  <div class="col-xl-12 col-sm-12">
-                                    <div class="m-0">
-                                      <div class="form-check d-flex">
-                                        <div class="me-5">
-                                          <x-input-radio-or-check name="functional_movement_mid_back_1"
-                                            :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
                             </section>
                           </div>
@@ -467,37 +339,17 @@
                                       weight vertically aligned with the feet, not in front of the body.
                                     </div>
                                   </div>
+                                  <x-input-radio-or-check name="functional_movement_shoulder_2"
+                                    :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                   <!-- end row -->
-                                  <div class="row border-top py-2">
-                                    <div class="col-xl-12 col-sm-12">
-                                      <div class="m-0">
-                                        <div class="form-check d-flex">
-                                          <div class="me-5">
-                                            <x-input-radio-or-check name="functional_movement_shoulder_2"
-                                              :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
                                   <div class="row mb-3 mt-3">
                                     <div class="row mb-3 mt-3">
                                       <div class="col-md-4"><img src="{{ asset('images/avatar-19.jpg') }}" alt="image"
                                           class="w-100"></div>
                                     </div>
+                                    <x-input-radio-or-check name="functional_movement_shoulder_3"
+                                      :records="$movementSkillsConstants::$accidentOrIncidentThree" />
                                     <!-- end row -->
-                                    <div class="row border-top py-2">
-                                      <div class="col-xl-12 col-sm-12">
-                                        <div class="m-0">
-                                          <div class="form-check d-flex">
-                                            <div class="me-5">
-                                              <x-input-radio-or-check name="functional_movement_shoulder_3"
-                                                :records="$movementSkillsConstants::$accidentOrIncidentThree" />
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
                                   </div>
                             </section>
                           </div>
@@ -522,7 +374,7 @@
           </div>
           <div class="tab-pane " id="case-histroy_list" role="tabpanel">
             <!-- form start -->
-           <livewire:functional-movement-skill-list/>
+            <livewire:functional-movement-skill-list />
             <!-- end row -->
           </div>
         </div>
