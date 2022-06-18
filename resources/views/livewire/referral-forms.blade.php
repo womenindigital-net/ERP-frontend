@@ -21,9 +21,5 @@
 
 
 
-    <!--  Large modal example -->
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
-        <livewire:referral-form-create />
-    </div><!-- /.modal -->
+
 </div>

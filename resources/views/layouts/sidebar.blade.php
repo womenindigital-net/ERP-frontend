@@ -111,7 +111,7 @@
                         <li><a href="{{ route('student.appointment')}}">Appointment</a></li>
                         <li><a href="{{ route('case-history.create')}}">Case History</a></li>
                         <li><a href="{{ route('care-need.create') }}">Care Needs Form</a></li>
-                        <li><a href="{{ route('referral.index') }}">Referral Form</a></li>
+                        <li><a href="{{ route('referral.list') }}">Referral Form</a></li>
                     </ul>
                 </li>
                 <li>
@@ -516,11 +516,13 @@
                                         Calendar</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.task-weight-settings.create') }}">Task Weight
+                                    <a href="{{ route('setup.other-settings.task-weight-settings.create') }}">Task
+                                        Weight
                                         Setting</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.other-settings.user-permission-setup.create') }}">User Permission
+                                    <a href="{{ route('setup.other-settings.user-permission-setup.create') }}">User
+                                        Permission
                                         Setup</a>
                                 </li>
                             </ul>

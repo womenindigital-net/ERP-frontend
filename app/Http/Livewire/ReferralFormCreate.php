@@ -29,6 +29,29 @@ class ReferralFormCreate extends Component
         $this->referralRepo = $referralRepo;
     }
 
+    protected $listeners = ['show-referral' => 'showReferral'];
+
+    public function showReferral($infos = [], $mode = 'create', $recordId = 0)
+    {
+        if (!count($infos)) {
+            $class = new \ReflectionClass($this);
+            foreach ($class->getProperties() as $property) {
+                if ($property->isPublic() && $property->class === get_class($this)) {
+                    $this->{$property->name} = '';
+                }
+            }
+        } else {
+            foreach ($infos as $key => $val) {
+                $this->{$key} = $val;
+            }
+        }
+
+
+        $this->mode = $mode;
+        $this->recordId = $recordId;
+    }
+
+
     protected array $rules = [
         'date' => 'required',
         'teacher_id' => 'required',
