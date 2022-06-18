@@ -56,7 +56,11 @@ class SetupController extends Controller
     }
     public function companySetup()
     {
-        return view('setup.company-setup.company-setup');
+        $data = [
+            // 'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => []
+        ];
+        return view('setup.company-setup.create', $data);
     }
     public function projectSetup()
     {

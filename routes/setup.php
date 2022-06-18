@@ -21,7 +21,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('program-setup/attendence-card-setup', [SetupController::class, 'attendenceCardSetup'])->name('setup.program-setup.attendence-card-setup');
     // Setup->> Program Setup
     // setup ->> Company Setup
-    Route::get('company-setup/company-setup', [SetupController::class, 'companySetup'])->name('setup.company-setup.company-setup');
+    Route::get('company-setup/company-setup', [SetupController::class, 'companySetup'])->name('setup.company-setup.create');
     //setup ->> project setup 
     Route::get('project-setup/project-setup', [SetupController::class, 'projectSetup'])->name('setup.project-setup.project-setup');
     //setup ->> Doctor setup

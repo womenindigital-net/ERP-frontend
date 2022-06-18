@@ -273,7 +273,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Company Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('setup.company-setup.company-setup') }}">Company Setup</a></li>
+                                <li> <a href="{{ route('setup.company-setup.create') }}">Company Setup</a></li>
                             </ul>
                         </li>
                         <li>
