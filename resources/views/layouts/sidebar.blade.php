@@ -108,10 +108,10 @@
                         <span>Pre Admission</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{route('student.appointment')}}">Appointment</a></li>
-                        <li><a href="{{route('case-history.create')}}">Case History</a></li>
+                        <li><a href="{{ route('student.appointment')}}">Appointment</a></li>
+                        <li><a href="{{ route('case-history.create')}}">Case History</a></li>
                         <li><a href="{{ route('care-need.create') }}">Care Needs Form</a></li>
-                        <li><a href="{{ route('student.referral-form') }}">Referral Form</a></li>
+                        <li><a href="{{ route('referral.index') }}">Referral Form</a></li>
                     </ul>
                 </li>
                 <li>
