@@ -48,7 +48,6 @@ class CareNeedController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-
         return view('pre_admission.care-need.create', $data);
     }
 
