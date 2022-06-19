@@ -25,12 +25,9 @@ class AssignTaskController extends Controller
      */
     public function create()
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'students' => []
-        ];
+        
 
-        return view('program.assign-task.create', $data);
+        return view('program.assign-task.create',);
     }
 
     /**
