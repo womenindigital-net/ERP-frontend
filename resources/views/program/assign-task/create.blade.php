@@ -213,7 +213,7 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-textarea name='name' rows='1' cols='35'>
+                                                            <x-input-textarea name='comment' rows='1' cols='35'>
                                                             </x-input-textarea>
 
                                                             <button class="btn btn-danger btn-rounded ms-2">
@@ -1120,16 +1120,16 @@
                                     </div>
                                     <!-- Single item  -->
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading27">
+                                        <h2 class="accordion-header" id="heading28">
                                             <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse27"
-                                                aria-expanded="false" aria-controls="collapse27">
+                                                data-bs-toggle="collapse" data-bs-target="#collapse28"
+                                                aria-expanded="false" aria-controls="collapse28">
                                                 Section I: Independent skills > Household maintenance skills > Home
                                                 Maintenance > Self development
                                             </button>
                                         </h2>
-                                        <div id="collapse27" class="accordion-collapse collapse"
-                                            aria-labelledby="heading27" data-bs-parent="#accordionExample">
+                                        <div id="collapse28" class="accordion-collapse collapse"
+                                            aria-labelledby="heading28" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
@@ -1150,16 +1150,16 @@
                                     </div>
                                     <!-- Single item  -->
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading28">
+                                        <h2 class="accordion-header" id="heading29">
                                             <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse28"
-                                                aria-expanded="false" aria-controls="collapse28">
+                                                data-bs-toggle="collapse" data-bs-target="#collapse29"
+                                                aria-expanded="false" aria-controls="collapse29">
                                                 Section I: Independent skills > Household maintenance skills > Cleaning
                                                 & Washing Chores > Self development
                                             </button>
                                         </h2>
-                                        <div id="collapse28" class="accordion-collapse collapse"
-                                            aria-labelledby="heading28" data-bs-parent="#accordionExample">
+                                        <div id="collapse29" class="accordion-collapse collapse"
+                                            aria-labelledby="heading29" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
@@ -1215,16 +1215,16 @@
                                     </div>
                                     <!-- Single item  -->
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading29">
+                                        <h2 class="accordion-header" id="heading30">
                                             <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse29"
-                                                aria-expanded="false" aria-controls="collapse29">
+                                                data-bs-toggle="collapse" data-bs-target="#collapse30"
+                                                aria-expanded="false" aria-controls="collapse30">
                                                 Section I: Independent skills > Household maintenance skills > Telephone
                                                 Skills > Self development
                                             </button>
                                         </h2>
-                                        <div id="collapse29" class="accordion-collapse collapse"
-                                            aria-labelledby="heading29" data-bs-parent="#accordionExample">
+                                        <div id="collapse30" class="accordion-collapse collapse"
+                                            aria-labelledby="heading30" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
