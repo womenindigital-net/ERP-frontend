@@ -18,17 +18,22 @@ class ReferralFormList extends Component
         $this->referralRepo = $referralRepo;
     }
 
-    public function show($date = [], $mode = 'create', $recordId = 0)
+    public function toggleApprove($recordId)
     {
+        $this->referralRepo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
+    }
 
-        $this->recordId = $recordId;
-        $this->emit('show-referral', $date, $mode, $recordId);
+    public function delete($id)
+    {
+        $this->referralRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
     }
 
     public function render()
     {
         $data = [
-            'records' => $this->referralRepo->getListData($this->perPage, $this->search)
+            'records' => $this->referralRepo->getListData($this->perPage, $this->search),
         ];
 
         return view('livewire.referral-form-list', $data)->extends('layouts.master')->section('content');

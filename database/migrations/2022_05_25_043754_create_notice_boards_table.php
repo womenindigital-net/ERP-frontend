@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('send_to')->nullable();
             $table->string('sub')->nullable();
             $table->string('area')->nullable();
-            $table->text('notice');
+            $table->text('notice')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
             $table->softDeletes();
