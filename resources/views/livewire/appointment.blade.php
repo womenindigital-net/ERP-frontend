@@ -9,7 +9,7 @@
                         </div>
                         <div class="col-6 text-end">
                             <button type="button" class="btn btn-primary waves-effect waves-light"
-                                data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" wire:click="show()"
+                                data-bs-toggle="modal" data-bs-target="#modalxl" wire:click="show()"
                                 wire:key>Add</button>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
         </div> <!-- end col -->
     </div> <!-- end row -->
 
-    <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true" wire:ignore>
+    <div class="modal" id="modalxl" tabindex="1" role="dialog" aria-hidden="true" wire:ignore>
         <livewire:student-create />
     </div>
 </div>

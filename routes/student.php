@@ -29,8 +29,9 @@ use App\Http\Controllers\OccupationalTherapyController;
 use App\Http\Controllers\SensoryChecklistChildController;
 use App\Http\Controllers\FunctionalCommunicationController;
 use App\Http\Controllers\FunctionalMovementskillController;
-use App\Http\Controllers\ReferralController;
 use App\Http\Controllers\StaffAndWorkplaceInspectionController;
+use App\Http\Livewire\ReferralFormList;
+use App\Http\Livewire\ReferralForms;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -59,13 +60,18 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'gym-and-outing' => GymAndOutingController::class,
         'drama-diary-evaluation' => DramaDiaryEvaluationController::class,
         'staff-and-workplaceinspection' => StaffAndWorkplaceInspectionController::class,
-        'referral' => ReferralController::class,
+        // 'referral' => ReferralController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
     //    Route::get('appointment', [StudentController::class, 'appointment'])->name('student.appointment');
     Route::get('student-income', StudentIncome::class)->name('student.income');
     Route::get('appointment', AppointmentList::class)->name('student.appointment');
+    Route::get('referral', ReferralFormList::class)->name('referral.list');
+
+
+
+
     //    Route::get('case-history', [StudentController::class, 'caseHistory'])->name('student.case-history');
     // Route::get('referral-form', [StudentController::class, 'referralForm'])->name('student.referral-form');
     // Route::get('care-needs-form', [StudentController::class, 'careNeedForm'])->name('student.care-need-form');
