@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('income_histories', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\Income::class)->constrained('incomes')->cascadeOnDelete();
             $table->string('type');
             $table->double('amount', 8, 2);
             $table->json('info')->nullable();

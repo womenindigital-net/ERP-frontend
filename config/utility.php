@@ -74,3 +74,20 @@ if (!function_exists('convertLevelIntoName')) {
         return preg_replace(['/\//', '/&|\s+|-/', '/\?|\.|,|\'|’|“|:/', '/_{2}/'], ['_or_', '_', '', '_'], strtolower(trim($label)));
     }
 }
+
+if (!function_exists('extractNecessaryFieldsFromData')) {
+    function extractNecessaryFieldsFromData($data, array $fields): array
+    {
+        $fields = implode('|', $fields);
+
+        $custom = [];
+        foreach ($data as $key => $value) {
+            if (preg_match(("/\b($fields)\b/"), $key)) {
+                $custom[$key] = $value;
+                unset($data[$key]);
+            }
+        }
+
+        return [$custom, $data];
+    }
+}

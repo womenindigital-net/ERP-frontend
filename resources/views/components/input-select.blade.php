@@ -1,4 +1,4 @@
-<div class="wrapper_{{$name}}">
+<div {{ $attributes->merge(['class' => "wrapper_$name"]) }}>
     <select class="form-select @error($name) is-invalid @enderror" name="{{$name}}" id="{{$id}}" {{$required}}
         {{$multiple}} {{$wireModel}}>
         <option value="">--Select--</option>

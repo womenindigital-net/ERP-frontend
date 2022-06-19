@@ -11,7 +11,7 @@ class BaseRepository
 {
     use OnlyStore, OnlyUpdate, OnlyDelete;
 
-    public function getData($ids = false)
+    public function getData($ids = false, array $columns = [])
     {
         if ($ids) {
             return $this->model::find($ids);

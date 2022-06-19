@@ -36,7 +36,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('student-income.create') }}">Student Income</a></li>
-                        <li><a href="{{route('sale-voucher')}}">Sale Voucher</a></li>
+                        <li><a href="{{route('sale-voucher.create')}}">Sale Voucher</a></li>
                         <li><a href="{{route('donation-and-other')}}">Donation And Other</a></li>
                     </ul>
                 </li>

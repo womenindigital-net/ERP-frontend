@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignIdFor(Category::class, 'parent_category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('type', 10)->nullable()->comment('action', 'inactive');
             $table->timestamps();
             $table->softDeletes();
         });

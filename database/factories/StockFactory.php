@@ -2,6 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\Project;
+use App\Models\Stock;
+use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +20,18 @@ class StockFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+        $projectId   = Project::inRandomOrder()->first()->id;
+        $productId   = Product::inRandomOrder()->first()->id;
+        $warehouseId = Warehouse::inRandomOrder()->first()->id;
+
+        $mapping = [
+            'project_id'   => $projectId,
+            'product_id'   => $productId,
+            'warehouse_id' => $warehouseId,
         ];
+
+        if (!Stock::where($mapping)->first()) {
+            return array_merge(['qty' => rand(20, 100)], $mapping);
+        }
     }
 }

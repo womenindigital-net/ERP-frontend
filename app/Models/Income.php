@@ -19,8 +19,18 @@ class Income extends Model
         return $this->hasOne(StudentIncome::class);
     }
 
+    public function saleIncome(): HasOne
+    {
+        return $this->hasOne(SaleIncome::class);
+    }
+
     public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class);
+    }
+
+    public function history(): HasOne
+    {
+        return $this->hasOne(IncomeHistory::class);
     }
 }

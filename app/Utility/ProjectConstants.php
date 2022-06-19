@@ -42,6 +42,14 @@ final class ProjectConstants
     const SWAL_CONFIRM_DELETE_TYPE = 'confirm';
     const SWAL_CONFIRM_DELETE_METHOD = 'delete';
 
+    const STATUS_ACTIVE = 'active';
+    const STATUS_INACTIVE = 'inactive';
+
+    public static array $statuses = [
+        self::STATUS_ACTIVE => 'Active',
+        self::STATUS_INACTIVE => 'Inactive',
+    ];
+
     public static array $swalConfirmDeleteEvents = [
         'type' => self::SWAL_CONFIRM_DELETE_TYPE,
         'method' => self::SWAL_CONFIRM_DELETE_METHOD,
@@ -100,7 +108,7 @@ final class ProjectConstants
     ];
 
     // Salary Head Setup
-    
+
     const OTHER_PAYMENT = 'Other Payment';
     const  SALARY_HEAD  = 'Salary head';
 
@@ -109,7 +117,7 @@ final class ProjectConstants
         self:: SALARY_HEAD  => 'Salary head',
     ];
 
-        
+
     const ADDITIVE  = 'Additive';
     const DEDUCTIVE = 'Deductive';
 
@@ -118,7 +126,7 @@ final class ProjectConstants
         self:: DEDUCTIVE => 'Deductive',
     ];
 
-            
+
     const HOURLY  = 'Hourly';
     const DAILY = ' Daily';
     const MONTHLY = 'Monthly';

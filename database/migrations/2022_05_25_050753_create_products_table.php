@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->double('selling_price', 8, 2)->nullable();
             $table->double('making_cost', 8, 2)->nullable();
-            $table->string('expired_at')->nullable();
+            $table->string('expires_at')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->double('current_price')->nullable();
             $table->timestamps();

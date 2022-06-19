@@ -21,6 +21,12 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             StudentSeeder::class,
             PaymentMethodSeeder::class,
+            WarehouseSeeder::class,
+            CategorySeeder::class,
+            UnitSeeder::class,
+            ProductSeeder::class,
+            CustomerSeeder::class,
+            StockSeeder::class,
         ]);
     }
 }

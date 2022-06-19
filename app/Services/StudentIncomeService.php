@@ -70,6 +70,7 @@ class StudentIncomeService
         }
 
         $income['amount'] = array_sum(array_column($validate['details'], 'amount'));
+        $income['type'] = 'student';
 
         return [$validate, $income];
     }

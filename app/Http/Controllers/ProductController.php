@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Category;
 use App\Models\Product;
+use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
+    private ProductRepository $repo;
+
+    public function __construct(ProductRepository $repository)
+    {
+        $this->repo = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -82,5 +91,10 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function getProductsAccordingCategory(Category $category)
+    {
+        return $this->repo->getDataAccordingRelation($category->id);
     }
 }

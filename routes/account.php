@@ -5,17 +5,20 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\SaleVoucherController;
 use App\Http\Controllers\StockController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
+        'sale-voucher' => SaleVoucherController::class,
     ]);
+
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
 
 //    Route::get('journal', [JournalController::class, 'index'])->name('journal');
-    Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');
+//    Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');
     Route::get('donation-and-other', [IncomeController::class, 'donationAndOther'])->name('donation-and-other');
 
     Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');

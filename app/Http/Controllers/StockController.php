@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStockRequest;
 use App\Http\Requests\UpdateStockRequest;
 use App\Models\Stock;
+use App\Repositories\StockRepository;
 
 class StockController extends Controller
 {
+    private StockRepository $repo;
+
+    public function __construct(StockRepository $repository)
+    {
+        $this->repo = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -137,5 +145,10 @@ class StockController extends Controller
     public function stockProductAnalysisReport()
     {
         return view('inventory-management.product_analysis_report');
+    }
+
+    public function getDetailAccordingly()
+    {
+        return $this->repo->getDetailAccordingly();
     }
 }
