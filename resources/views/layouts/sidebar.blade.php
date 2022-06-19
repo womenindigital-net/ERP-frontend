@@ -24,7 +24,7 @@
                 <li class="menu-title">Accounting</li>
 
                 <li>
-                    <a href="{{route('journal.index')}}" class="waves-effect">
+                    <a href="{{ route('journal.index') }}" class="waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span>Journal</span>
                     </a>
@@ -36,8 +36,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('student.income') }}">Student Income</a></li>
-                        <li><a href="{{route('sale-voucher')}}">Sale Voucher</a></li>
-                        <li><a href="{{route('donation-and-other')}}">Donation And Other</a></li>
+                        <li><a href="{{ route('sale-voucher') }}">Sale Voucher</a></li>
+                        <li><a href="{{ route('donation-and-other') }}">Donation And Other</a></li>
                     </ul>
                 </li>
                 <li>
@@ -46,18 +46,18 @@
                         <span>Payment </span>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="{{route('requisition')}}">Requisition</a></li>
-                        <li><a href="{{route('purchase-order')}}">Purchase Order</a></li>
-                        <li><a href="{{route('purchase-return')}}">Purchase Return</a></li>
-                        <li><a href="{{route('payment-supplier')}}">Supplier Payment</a></li>
+                        <li><a href="{{ route('requisition') }}">Requisition</a></li>
+                        <li><a href="{{ route('purchase-order') }}">Purchase Order</a></li>
+                        <li><a href="{{ route('purchase-return') }}">Purchase Return</a></li>
+                        <li><a href="{{ route('payment-supplier') }}">Supplier Payment</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="{{route('direct-payment-add')}}">Payment Add</a>
+                                    <a href="{{ route('direct-payment-add') }}">Payment Add</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('cash-payment-list')}}">Cash Payment List</a>
+                                    <a href="{{ route('cash-payment-list') }}">Cash Payment List</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('advance.payment.list') }}">Advance Payment
@@ -77,11 +77,11 @@
                         <span>Stock Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{route('stock-receive')}}">Stock Receive</a></li>
-                        <li><a href="{{route('finished-goods')}}">Finished Goods</a></li>
-                        <li><a href="{{route('material-collect')}}">Material Collects</a></li>
-                        <li><a href="{{route('stock-transfer')}}">Stock Transfer</a></li>
-                        <li><a href="{{route('stock-count')}}">Stock Count</a></li>
+                        <li><a href="{{ route('stock-receive') }}">Stock Receive</a></li>
+                        <li><a href="{{ route('finished-goods') }}">Finished Goods</a></li>
+                        <li><a href="{{ route('material-collect') }}">Material Collects</a></li>
+                        <li><a href="{{ route('stock-transfer') }}">Stock Transfer</a></li>
+                        <li><a href="{{ route('stock-count') }}">Stock Count</a></li>
                     </ul>
                 </li>
                 <li>
@@ -90,13 +90,13 @@
                         <span>Inventory Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{route('stock-assign')}}">Stock Assign</a></li>
-                        <li><a href="{{route('stock-out')}}">Stock Out</a></li>
-                        <li><a href="{{route('stock-hand-report')}}">Stock On Hand Report</a></li>
-                        <li><a href="{{route('stock-product-report')}}">Location Wise Product Report</a></li>
-                        <li><a href="{{route('stock-reorder-report')}}">Stock Reorder Report</a></li>
+                        <li><a href="{{ route('stock-assign') }}">Stock Assign</a></li>
+                        <li><a href="{{ route('stock-out') }}">Stock Out</a></li>
+                        <li><a href="{{ route('stock-hand-report') }}">Stock On Hand Report</a></li>
+                        <li><a href="{{ route('stock-product-report') }}">Location Wise Product Report</a></li>
+                        <li><a href="{{ route('stock-reorder-report') }}">Stock Reorder Report</a></li>
                         {{-- <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li> --}}
-                        <li><a href="{{route('product-analysis-report')}}">Report::Product Analysis</a></li>
+                        <li><a href="{{ route('product-analysis-report') }}">Report::Product Analysis</a></li>
                     </ul>
                 </li>
 
@@ -108,8 +108,8 @@
                         <span>Pre Admission</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('student.appointment')}}">Appointment</a></li>
-                        <li><a href="{{ route('case-history.create')}}">Case History</a></li>
+                        <li><a href="{{ route('student.appointment') }}">Appointment</a></li>
+                        <li><a href="{{ route('case-history.create') }}">Case History</a></li>
                         <li><a href="{{ route('care-need.create') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('referral.create') }}">Referral Form</a></li>
                     </ul>
@@ -126,7 +126,8 @@
                         <span>Assessment</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('sensory-checklist-child.create') }}">Sensory checklist for Child</a></li>
+                        <li><a href="{{ route('sensory-checklist-child.create') }}">Sensory checklist for Child</a>
+                        </li>
                         <li><a href="{{ route('social-communication.create') }}">Social Communication</a></li>
                         <li><a href="{{ route('occupational-therapy.create') }}">Occupational Therapy</a></li>
                         <li><a href="{{ route('physiotherapy.create') }}">Physiotherapy</a></li>
@@ -135,7 +136,8 @@
                         <li><a href="{{ route('functional-movement-skill.create') }}">Fundamental Movement
                                 Skills</a></li>
                         <li><a href="{{ route('executive-function.create') }}">Executive Function test</a></li>
-                        <li><a href="{{ route('autisum-behaviour.create') }}">Autism Behavior Checklist (ABC)</a></li>
+                        <li><a href="{{ route('autisum-behaviour.create') }}">Autism Behavior Checklist (ABC)</a>
+                        </li>
                         <li><a href="{{ route('sensory-checklist-adult.create') }}">Sensory checklist for Young
                                 Adult</a>
                         </li>
@@ -150,7 +152,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
-                            <a href="{{ route('student.list') }}">Students</a>
+                            <a href="{{ route('student.create') }}">Students</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Dairy
@@ -164,7 +166,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('ot-assessment.create') }}">OT assessment in computer trainee</a>
+                                    <a href="{{ route('ot-assessment.create') }}">OT assessment in computer
+                                        trainee</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('incident-record.create') }}">Incident Record</a>
@@ -189,7 +192,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{('student.student-attendance')}}">Student Attendence</a>
+                            <a href="{{ 'student.student-attendance' }}">Student Attendence</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
@@ -232,11 +235,11 @@
                         <span>Program</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('assign-task.create')}}">Assign Task</a></li>
-                        <li><a href="{{route('create-itp.create')}}">Create ITP</a></li>
-                        <li><a href="{{route('run-mitp.create')}}">Run MITP</a></li>
-                        <li><a href="{{route('notice-board.create')}}">Notice Board</a></li>
-                        <li><a href="{{route('assign-teacher.create')}}"> Assign Teacher</a></li>
+                        <li><a href="{{ route('assign-task.create') }}">Assign Task</a></li>
+                        <li><a href="{{ route('create-itp.create') }}">Create ITP</a></li>
+                        <li><a href="{{ route('run-mitp.create') }}">Run MITP</a></li>
+                        <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li>
+                        <li><a href="{{ route('assign-teacher.create') }}"> Assign Teacher</a></li>
                         {{-- <li><a href="/">Score Calculator </a></li>
                         <li><a href="/p-create-task">Create Task </a></li>
                         <li><a href="/p-admission-request">Admission Request </a></li> --}}
@@ -280,17 +283,20 @@
                             <a href="javascript: void(0);" class="has-arrow">Program Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li> <a href="{{ route('setup.program-setup.prescription') }}">Prescription</a></li>
-                                <li> <a href="{{ route('setup.program-setup.activity-create') }}">Activity create</a>
+                                <li> <a href="{{ route('setup.program-setup.activity-create') }}">Activity
+                                        create</a>
                                 </li>
                                 <li> <a href="{{ route('setup.program-setup.tesk-create') }}">Task create</a></li>
 
                                 <li> <a href="{{ route('setup.program-setup.tesk-weight-setup') }}">Task Weight
                                         Setup</a></li>
                                 <li> <a href="{{ route('setup.program-setup.course-setup') }}">Course Setup</a></li>
-                                <li> <a href="{{ route('setup.program-setup.attendence-card-setup') }}">Attendence card
+                                <li> <a href="{{ route('setup.program-setup.attendence-card-setup') }}">Attendence
+                                        card
                                         setup</a></li>
 
-                                <li> <a href="{{ route('setup.program-setup.vocational-category-subcategory-setup') }}">Vocational
+                                <li> <a
+                                        href="{{ route('setup.program-setup.vocational-category-subcategory-setup') }}">Vocational
                                         Category and subcategory setup</a></li>
                                 <li> <a href="{{ route('setup.program-setup.academic-calender-create') }}">Academic
                                         Celender Create</a>
@@ -359,10 +365,12 @@
                             <a href="javascript: void(0);" class="has-arrow">Customer List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer Reg.</a>
+                                    <a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer
+                                        Reg.</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.customers-list.customer-type.create') }}">Customer Type</a>
+                                    <a href="{{ route('setup.customers-list.customer-type.create') }}">Customer
+                                        Type</a>
                                 </li>
                             </ul>
                         </li>
@@ -391,7 +399,8 @@
                                         Category</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.vocational-marking-subcategory') }}">Vocational Marking Sub
+                                    <a href="{{ route('setup.vocational-marking-subcategory') }}">Vocational Marking
+                                        Sub
                                         Category</a>
                                 </li>
                                 <li>
@@ -407,7 +416,8 @@
                                     <a href="{{ route('setup.employee-information') }}">Employee information </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.attendance-policy-setup') }}">Attendance policy setup</a>
+                                    <a href="{{ route('setup.attendance-policy-setup') }}">Attendance policy
+                                        setup</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('setup.leave-type') }}">Leave Type</a>
@@ -424,7 +434,8 @@
                             <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_grade_setup') }}">Salary Grade
+                                    <a href="{{ route('setup.payroll-management.salary_grade_setup') }}">Salary
+                                        Grade
                                         Setup</a>
                                 </li>
                                 <li>
@@ -440,7 +451,8 @@
                                         Package Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_budget_setup') }}">Salary Budget
+                                    <a href="{{ route('setup.payroll-management.salary_budget_setup') }}">Salary
+                                        Budget
                                         Setup</a>
                                 </li>
                             </ul>
@@ -500,7 +512,8 @@
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.year-end-close.year_end_stock_count') }}">Year End Stock
+                                    <a href="{{ route('setup.year-end-close.year_end_stock_count') }}">Year End
+                                        Stock
                                         Count</a>
                                 </li>
                             </ul>

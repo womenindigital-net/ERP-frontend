@@ -9,6 +9,7 @@ use App\Repositories\UserRepository;
 use Illuminate\Contracts\View\Factory;
 use App\Repositories\ProjectRepository;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Repositories\CaseHistoryRepository;
@@ -20,16 +21,13 @@ class StudentController extends Controller
     use WithPagination, CommonListElements;
 
     private UserRepository $userRepo;
-    private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
-    private CaseHistoryRepository $caseRepo;
+    public $record;
 
-    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository, CaseHistoryRepository $caseHistoryRepository)
+    public function __construct(UserRepository $userRepo, StudentRepository $studentRepo)
     {
-        $this->userRepo = $userRepository;
-        $this->projectRepo = $projectRepository;
-        $this->studentRepo = $studentRepository;
-        $this->caseRepo = $caseHistoryRepository;
+        $this->userRepo = $userRepo;
+        $this->studentRepo = $studentRepo;
     }
 
     /**
@@ -39,7 +37,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('pre_admission.appointment');
+       //
     }
 
     /**
@@ -48,9 +46,15 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {  
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+
+        return view('student.students.create', $data);
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -60,7 +64,9 @@ class StudentController extends Controller
      */
     public function store(StoreStudentRequest $request)
     {
-        //
+        $this->studentRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -71,7 +77,11 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        $data = [
+            'record' => $this->record = $student,
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.students.view', $data);
     }
 
     /**
@@ -82,7 +92,11 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        $data = [
+            'record' => $this->record = $student,
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.students.edit', $data);
     }
 
     /**
@@ -94,7 +108,9 @@ class StudentController extends Controller
      */
     public function update(UpdateStudentRequest $request, Student $student)
     {
-        //
+        $this->studentRepo->update($student, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -107,6 +123,22 @@ class StudentController extends Controller
     {
         //
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function appointment()
     {
@@ -386,5 +418,4 @@ class StudentController extends Controller
         ];
         return view('setup.program-setup.tesk-create', $data);
     }
-
 }
