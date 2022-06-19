@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('end_date')->nullable();
             $table->string('instruction')->nullable();
             $table->string('teacher_id')->nullable();
-            $table->string('name')->nullable();
+            $table->string('comment')->nullable();
             $table->string('organized_play')->nullable();
             $table->string('jumping_jacks')->nullable();
             $table->string('fitness_physical_activity')->nullable();
