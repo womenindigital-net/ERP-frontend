@@ -14,7 +14,6 @@
                         data-bs-target=".bs-example-modal-xl"><i class="fas fa-plus-circle"></i>
                         Add</button>
                 </div>
-
                 <div class="table-responsive">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -193,9 +192,7 @@
                                                             <p class="form-control m-0">Cut on a line</p>
                                                         </div>
                                                         <div class="col-lg-2 p-0 pe-1 pb-1">
-
                                                             <x-input-select name="teacher_id" :records="[]" />
-
                                                         </div>
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1">
                                                             <select id="formrow-inputState" class="form-select">
@@ -254,20 +251,20 @@
                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox">
+                                                    <input class="form-check-input" type="checkbox" name="organized_play[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Kick a large stationary ball with a 2-step start Type:
                                                         Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox">
+                                                    <input class="form-check-input" type="checkbox" name="organized_play[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Catch a large ball Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox">
+                                                    <input class="form-check-input" type="checkbox" name="organized_play[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Squat while maintaining balance Type: Vocational
                                                     </label>
@@ -291,7 +288,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="balance_beam[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         tiptoes Type: Vocational
                                                     </label>
@@ -315,7 +312,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="jumping_jacks[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Have the student jump so that the legs spread apart and the
                                                         hands clap above the head and then jump again so the feet go
@@ -342,14 +339,14 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="fitness_physical_activity[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Throw at a target Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="fitness_physical_activity[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Participate in structured activities: Races, Obstacle Course,
                                                         Group Games, Sports Teams, Individual Sports, Drill Exercises
@@ -375,14 +372,14 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="adaptations[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Backward Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="adaptations[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Sideways Type: Vocational
                                                     </label>
@@ -406,21 +403,21 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="fundamental_movement_exercisel[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Shoulder Blades: Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="fundamental_movement_exercisel[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Shoulder Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="fundamental_movement_exercisel[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Low Back Type: Pre-Vocational
                                                     </label>
@@ -444,35 +441,35 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="yoga[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Standup Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="yoga[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Mountain Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="yoga[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Cobra Pose Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="yoga[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Vajrasana Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="yoga[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Podmasana Type: Pre-Vocational
                                                     </label>
@@ -496,48 +493,46 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="craft_activities[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         hole punch tasks Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="craft_activities[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Sewing/ needlework Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="craft_activities[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         jewelry making Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="craft_activities[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         gluing activity Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="craft_activities[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Knitting Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="craft_activities[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Sewing/ needlework Type: Vocational
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -555,24 +550,20 @@
                                         <div id="collapsenine" class="accordion-collapse collapse"
                                             aria-labelledby="headingnine" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="assertiveness[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Maintain dairy Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="assertiveness[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Describe Particular situation elaborately Type: Vocational
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -591,19 +582,16 @@
                                         <div id="collapseten" class="accordion-collapse collapse"
                                             aria-labelledby="headingten" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="functional_reading_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Read newspaper and news on television Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="functional_reading_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Read application forms Type: Vocational
                                                     </label>
@@ -628,12 +616,9 @@
                                         <div id="collapseeleven" class="accordion-collapse collapse"
                                             aria-labelledby="headingeleven" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="money_management_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Exchange money (Coins/Bills) for money or equal value Type:
                                                         Vocational
@@ -641,20 +626,18 @@
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="money_management_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Money/change Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="money_management_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Basic understanding of the value of money Type: Vocational
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -673,12 +656,9 @@
                                         <div id="collapsetwelve" class="accordion-collapse collapse"
                                             aria-labelledby="headingtwelve" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="shaving_routing[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Starting & finishing Type: Vocational
                                                     </label>
@@ -701,12 +681,9 @@
                                         <div id="collapse13" class="accordion-collapse collapse"
                                             aria-labelledby="heading13" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="basic_first_aid_knowledge[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Follow an emergency plan Type: Vocational
                                                     </label>
@@ -729,34 +706,27 @@
                                         <div id="collapse14" class="accordion-collapse collapse"
                                             aria-labelledby="heading14" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="meal_preparation_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Open/Close containers and/or fasteners Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="meal_preparation_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Clear a table Type: Pre-Vocational
-
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="meal_preparation_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Participate in preparing foods Type: Pre-Vocational
-
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -775,17 +745,13 @@
                                         <div id="collapse15" class="accordion-collapse collapse"
                                             aria-labelledby="heading15" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="serving_food[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Serve self food Type: Pre-Vocational
                                                     </label>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -803,26 +769,23 @@
                                         <div id="collapse16" class="accordion-collapse collapse"
                                             aria-labelledby="heading16" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-
-
-
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="self_awareness_intrapersonal[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Make small decisions independently Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="self_awareness_intrapersonal[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Communicate personal strengths Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="self_awareness_intrapersonal[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Recognize personal strengths Type: Vocational
                                                     </label>
@@ -846,7 +809,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3"  name="self_esteem_intrapersonal[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Identify how he/she contributes to the family Type: Vocational
 
@@ -854,20 +817,18 @@
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="self_esteem_intrapersonal[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Talk about what he/she does well Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="self_esteem_intrapersonal[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Identify positive characteristics of self Type: Pre-Vocational
                                                     </label>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -887,7 +848,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="self_regulation_intrapersonal[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Self – Calming strategies Type: Vocational
                                                     </label>
@@ -911,29 +872,14 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="managing_death_of_family_members[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Self – Calming strategies Type: Vocational
                                                     </label>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading19">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse19"
-                                                aria-expanded="false" aria-controls="collapse19">
-                                                Section G : Domain 03 - Emotional development > Intrapersonal > Loss of
-                                                relationship > managing death of family members
-                                            </button>
-                                        </h2>
-                                        <div id="collapse19" class="accordion-collapse collapse"
-                                            aria-labelledby="heading19" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="managing_death_of_family_members[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Share personal exhausting feelings. Type: Vocational
                                                     </label>
@@ -955,7 +901,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="managing_death_of_relative_friends[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Share personal exhausting feelings. Type: Vocational
                                                     </label>
@@ -977,28 +923,28 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="interpersonal_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Apologizing Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="interpersonal_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Wait while others speak Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="interpersonal_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Asking questions Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="interpersonal_skills[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Sharing with others Type: Vocational
                                                     </label>
@@ -1021,7 +967,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="handle_accept_different_situation[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Self control Type: Vocational
                                                     </label>
@@ -1044,7 +990,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="understand_social_deviation[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Understand, follow and maintain the acceptable and unacceptable
                                                         behaviors Type: Vocational
@@ -1052,7 +998,7 @@
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="understand_social_deviation[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Understand the responsibility towards all age group of people.
                                                         Type: Vocational
@@ -1077,12 +1023,11 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="how_to_play_with_others[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Understanding game / play Type: Vocational
                                                     </label>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -1101,7 +1046,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="me_and_you[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Makes apologies or gives explanations of behavior Type:
                                                         Vocational
@@ -1125,7 +1070,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="ethical_values[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Interrupting skills Type: Vocational
 
@@ -1133,7 +1078,7 @@
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="ethical_values[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Explain clearly Type: Pre-Vocational
                                                     </label>
@@ -1156,7 +1101,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3"  name="work_readiness_ethical_values[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Be comfortable with getting temporarily interrupted Type:
                                                         Vocational
@@ -1165,7 +1110,7 @@
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3"  name="work_readiness_ethical_values[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Accept changes in schedule Type: Vocational
                                                     </label>
@@ -1188,14 +1133,14 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="home_maintenance_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Ironing Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="home_maintenance_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Making bed Type: Pre-Vocational
                                                     </label>
@@ -1218,49 +1163,49 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="cleaning_washing_chores_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Clean windows Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3"  name="cleaning_washing_chores_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Clean sink Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="cleaning_washing_chores_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Mop floor Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="cleaning_washing_chores_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Sweep floor Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="cleaning_washing_chores_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Change garbage bag Type: Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="cleaning_washing_chores_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Pick up personal items Type: Pre-Vocational
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="cleaning_washing_chores_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Washing clothes Type: Pre-Vocational
                                                     </label>
@@ -1283,7 +1228,7 @@
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="formCheckcolor3">
+                                                        id="formCheckcolor3" name="telephone_skills_self_development[]">
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Relay simple telephone messages Type: Vocational
                                                     </label>
@@ -1300,8 +1245,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                <button type="button" class="btn btn-outline-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-primary waves-effect waves-light">Save changes</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
