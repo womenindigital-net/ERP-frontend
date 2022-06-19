@@ -111,7 +111,7 @@
                         <li><a href="{{ route('student.appointment')}}">Appointment</a></li>
                         <li><a href="{{ route('case-history.create')}}">Case History</a></li>
                         <li><a href="{{ route('care-need.create') }}">Care Needs Form</a></li>
-                        <li><a href="{{ route('referral.list') }}">Referral Form</a></li>
+                        <li><a href="{{ route('referral.create') }}">Referral Form</a></li>
                     </ul>
                 </li>
                 <li>

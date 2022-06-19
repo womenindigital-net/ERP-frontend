@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('referrals', function (Blueprint $table) {
             $table->id();
-            $table->string('date');
+            $table->string('is_approved')->default(0);
+            $table->string('date')->nullable();
             $table->string('teacher_id')->nullable();
             $table->string('candidate_id')->nullable();
             $table->string('doctor_id')->nullable();

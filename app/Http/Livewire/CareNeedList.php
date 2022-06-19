@@ -24,11 +24,7 @@ class CareNeedList extends Component
         $this->dispatchBrowserEvent('notify');
     }
 
-    public function delete($id)
-    {
-        $this->careRepo->delete($id);
-        $this->dispatchBrowserEvent('notify', 'Deleted');
-    }
+
 
     public function render()
     {

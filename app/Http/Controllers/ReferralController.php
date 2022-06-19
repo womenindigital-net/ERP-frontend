@@ -3,11 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Referral;
+use App\Repositories\UserRepository;
+use App\Repositories\DoctorRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\ReferralRepository;
 use App\Http\Requests\StoreReferralRequest;
 use App\Http\Requests\UpdateReferralRequest;
 
 class ReferralController extends Controller
 {
+
+    private UserRepository $userRepo;
+    private DoctorRepository $doctorRepo;
+    private StudentRepository $studentRepo;
+    private ReferralRepository $referralRepo;
+
+    public $referral;
+
+    public function __construct(UserRepository $userRepo, StudentRepository $studentRepo, DoctorRepository $doctorRepo, ReferralRepository $referralRepo)
+    {
+        $this->userRepo = $userRepo;
+        $this->doctorRepo = $doctorRepo;
+        $this->studentRepo = $studentRepo;
+        $this->referralRepo = $referralRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +36,6 @@ class ReferralController extends Controller
      */
     public function index()
     {
-        return view('referral-form');
     }
 
     /**
@@ -25,7 +45,13 @@ class ReferralController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'doctors' => $this->doctorRepo->getData(),
+            'students' => $this->studentRepo->getData(),
+        ];
+
+        return view('referral.create', $data);
     }
 
     /**
@@ -36,7 +62,9 @@ class ReferralController extends Controller
      */
     public function store(StoreReferralRequest $request)
     {
-        //
+        $this->referralRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +75,13 @@ class ReferralController extends Controller
      */
     public function show(Referral $referral)
     {
-        //
+        $data = [
+            'record' => $this->referral = $referral,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'doctors' => $this->doctorRepo->getData(),
+        ];
+        return view('referral.view', $data);
     }
 
     /**
@@ -58,7 +92,13 @@ class ReferralController extends Controller
      */
     public function edit(Referral $referral)
     {
-        //
+        $data = [
+            'record' => $this->referral = $referral,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'doctors' => $this->doctorRepo->getData(),
+        ];
+        return view('referral.edit', $data);
     }
 
     /**
@@ -68,9 +108,11 @@ class ReferralController extends Controller
      * @param  \App\Models\Referral  $referral
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateReferralRequest $request, Referral $referral)
+    public function update(StoreReferralRequest $request, Referral $referral)
     {
-        //
+        $this->referralRepo->update($referral, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

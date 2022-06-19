@@ -10,7 +10,7 @@ class ReferralRepository extends BaseRepository
 
     public function getListData(mixed $perPage, mixed $search)
     {
-        return $this->model::when($search, function ($query) use ($search) {
+        return $this->model::with('student', 'teacher', 'doctor')->when($search, function ($query) use ($search) {
             $query->where('name', 'like', "%$search%")
                 ->orWhere('nid', 'like', "%$search%");
         })->latest()->paginate($perPage);
