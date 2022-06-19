@@ -117,40 +117,42 @@
             <div class="modal-body p-0">
                 <div class="card p-0 m-0">
                     <div class="card-body">
-                        <div class="row pb-3">
+                        <div class="row pb-1">
                             <div class="col-6 d-flex">
-                                <label class="col-4 col-form-label"> Student Name</label>
-                                <div class="col-6">
+                                <label class="col-md-2 col-form-label"> Student Name</label>
+                                <div class="col-md-10">
                                     <x-input-select name="student_id" :records="[]" />
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
-                                <label for="example-text-input" class="col-md-4 col-form-label">Assignment Name</label>
-                                <div class="col-md-6">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Assignment Name</label>
+                                <div class="col-md-10">
                                     <x-input-text name="assignment_name" placeholder="Assignment Name"></x-input-text>
                                 </div>
                             </div>
                         </div>
                         <div class="row pb-3">
                             <div class="col-6 d-flex">
-                                <label class="col-md-4 col-form-label">Start Date</label>
-                                <div class="col-md-6">
+                                <label class="col-md-2 col-form-label">Start Date</label>
+                                <div class="col-md-10">
                                     <x-input-text name="start_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
-                                <label class="col-md-4 col-form-label">End Date</label>
-                                <div class="col-md-6">
+                                <label class="col-md-2 col-form-label">End Date</label>
+                                <div class="col-md-10">
                                     <x-input-text name="end_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
                                 </div>
                             </div>
                         </div>
-                        <div class="row pb-3">
-                            <div class="col-6">
-                                <label class="form-label">Instruction</label>
+                        <div class="row pb-2">
+                        <div class="col-md-6 d-flex">
+                            <label class="col-md-2 col-form-label">Instruction</label>
+                            <div class="col-md-10">
                                 <x-input-textarea name='instruction' rows='5'></x-input-textarea>
                             </div>
-                            <div class="col-6 mt-4 border border-2">
+                        </div>
+                            <div class="col-6 border border-2">
                                 <div class="fw-bold">Section E: Domain 01 - Physical development : <span
                                         class="text-danger">0</span></div>
                                 <div class="fw-bold">Section F: Domain 02 : Intellectual / cognitive development : <span
@@ -163,75 +165,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row pb-3">
-                            <div class="row">
-                                <div class="col-12 p-0">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h2 class=" text-center mb-4">Raw Material Lists</h2>
-                                            <form class="repeater" enctype="multipart/form-data">
-                                                <div class="row">
-                                                    <div class="col-lg-3 p-0 pe-1">
-                                                        <label for="name">SL</label>
-                                                        <label for="name">Selected Task</label>
-                                                    </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="product">Teacher</label>
-                                                    </div>
-                                                    <div class="col-lg-3 p-0 pe-1">
-                                                        <label for="product">Routine</label>
-                                                    </div>
-                                                    <div class="col-lg-4 p-0 pe-1">
-                                                        <label for="total">Comment</label>
-                                                    </div>
-                                                </div>
-                                                <div data-repeater-list="group-a">
-                                                    <div data-repeater-item class="row">
-                                                        <div class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
-                                                            <span class="pe-2 pb-1">01</span>
-                                                            <p class="form-control m-0">Cut on a line</p>
-                                                        </div>
-                                                        <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                            <x-input-select name="teacher_id" :records="[]" />
-                                                        </div>
-                                                        <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">Select</option>
-                                                                <option value="1">09:00:AM - 09:15:AM - Assembly
-                                                                </option>
-                                                                <option value="2">09:15:AM - 10:30:AM - Breakfast
-                                                                </option>
-                                                                <option value="3">10:30:AM - 01:30:PM - Follow ITP (
-                                                                    focus on ADL ), therapy/ gym / exercise</option>
-                                                                <option value="4">01:30:PM - 02:15:PM - Lunch</option>
-                                                                <option value="5">02:15:PM - 02:45:PM - Rest</option>
-                                                                <option value="6">02:45:PM - 04:45:PM - Cultural
-                                                                    Activity / Continue Vocational work</option>
-                                                                <option value="7">04:45:PM - 05:00:PM - Snacks</option>
-                                                                <option value="8">05:00:PM - 05:00:PM - Return Home
-                                                                </option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-textarea name='comment' rows='1' cols='35'>
-                                                            </x-input-textarea>
-
-                                                            <button class="btn btn-danger btn-rounded ms-2">
-                                                                <i class="fas fa-trash-alt"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <button class="btn btn-primary" type="button" id="collapse">Collapse</button>
-                                    <button class="btn btn-primary" type="button" id="expend">Expend</button>
-                                </div>
+                      <div class="table-responsive">
+                        <table class="table w-100 table-bordered">
+                          <thead>
+                            <tr class="table-primary">
+                           <th>Selected Task</th>
+                           <th>Teacher</th>
+                           <th>Routine</th>
+                           <th>Comment</th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                        <div class="row pb-2">
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" id="collapse">Collapse</button>
+                                <button class="btn btn-primary" type="button" id="expend">Expend</button>
                             </div>
                         </div>
                         <div class="row">
@@ -1245,8 +1194,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-outline-primary waves-effect waves-light">Save changes</button>
+                <button type="button" class="btn btn-outline-danger waves-effect" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-success waves-effect waves-light">Save changes</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

@@ -29,8 +29,6 @@ class StoreAssignTaskRequest extends FormRequest
             "start_date"                     => 'nullable',
             "end_date"                       => 'nullable',
             "instruction"                    => 'nullable',
-            "teacher_id"                     => 'nullable',
-            "comment"                           => 'nullable',
             "organized_play"                 => 'nullable',
             "jumping_jacks"                  => 'nullable',
             "fitness_physical_activity"      => 'nullable',
