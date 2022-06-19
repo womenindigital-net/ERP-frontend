@@ -2,7 +2,6 @@
 
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -36,7 +35,7 @@
                                                     <div class="col-6 d-flex">
                                                         <label for="example-text-input" class="col-md-4 col-form-label">ITP Name</label>
                                                         <div class="col-md-6">
-                                                            <x-input-text name="ITP_name"  placeholder="ITP Name"></x-input-text>
+                                                            <x-input-text name="itp_name"  placeholder="ITP Name"></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -55,76 +54,26 @@
                                                     </div>
                                                 </div>
                                                 <div class="row pb-3">
-                                                    <div class="col-6">
-                                                        <label class="form-label">Instruction</label>
-                                                        <x-input-textarea name='instruction' rows='5'></x-input-textarea>
-                                                    </div>
-                                                    <div class="col-6 mt-4 border border-2">
-                                                        <div class="fw-bold">Section E: Domain 01 - Physical development : <span class="text-danger">0</span></div>
-                                                        <div class="fw-bold">Section F: Domain 02 : Intellectual / cognitive development : <span class="text-danger">0</span></div>
-                                                        <div class="fw-bold">Section G : Domain 03 - Emotional development : <span class="text-danger">0</span></div>
-                                                        <div class="fw-bold">Section H : Domain 04 - Social and ethical development : <span class="text-danger">0</span></div>
-                                                        <div class="fw-bold">Section I: Independent skills : <span class="text-danger">0</span></div>
+                                                    <div class="col-6 d-flex">
+                                                        <label class="form-label col-md-4">Instruction</label>
+                                                        <div class="col-md-6">
+                                                            <x-input-textarea name='instruction' rows='5'></x-input-textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="row pb-3">
+
                                                     <div class="row">
-                                                        <div class="col-12 p-0">
-                                                            <div class="card">
-                                                                <div class="card-body">
-                                                                    <h2 class=" text-center mb-4">Raw Material Lists</h2>
-                                                                    <form class="repeater" enctype="multipart/form-data">
-                                                                        <div class="row">
-                                                                            <div class="col-lg-3 p-0 pe-1">
-                                                                                <label for="name">SL</label>
-                                                                                <label for="name">Selected Task</label>
-                                                                            </div>
-                                                                            <div class="col-lg-2 p-0 pe-1">
-                                                                                <label for="product">Teacher</label>
-                                                                            </div>
-                                                                            <div class="col-lg-3 p-0 pe-1">
-                                                                                <label for="product">Routine</label>
-                                                                            </div>
-                                                                            <div class="col-lg-4 p-0 pe-1">
-                                                                                <label for="total">Comment</label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div data-repeater-list="group-a">
-                                                                            <div data-repeater-item class="row">
-                                                                                <div  class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
-                                                                                    <span class="pe-2 pb-1">01</span>
-                                                                                    <p class="form-control">Cut on a line</p>
-                                                                                </div>
-                                                                                <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                                                    <x-input-select name="teacher_id" :records="$teachers" />
-                                                                                </div>
-                                                                                <div  class=" col-lg-3 p-0 pe-1 pb-1">
-                                                                                    <select id="formrow-inputState" class="form-select">
-                                                                                        <option selected="">--Select--</option>
-                                                                                        <option value="1">09:00:AM - 09:15:AM - Assembly</option>
-                                                                                        <option value="2">09:15:AM - 10:30:AM - Breakfast</option>
-                                                                                        <option value="3">10:30:AM - 01:30:PM - Follow ITP ( focus on ADL ), therapy/ gym / exercise</option>
-                                                                                        <option value="4">01:30:PM - 02:15:PM - Lunch</option>
-                                                                                        <option value="5">02:15:PM - 02:45:PM - Rest</option>
-                                                                                        <option value="6">02:45:PM - 04:45:PM - Cultural Activity / Continue Vocational work</option>
-                                                                                        <option value="7">04:45:PM - 05:00:PM - Snacks</option>
-                                                                                        <option value="8">05:00:PM - 05:00:PM - Return Home</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                                <div class="col-lg-4 p-0 pe-1 pb-1  d-flex">
-                                                                                    <x-input-textarea name='des' rows='1' cols='35'></x-input-textarea>
-                                                                                    <div>
-                                                                                        <button class="btn btn-danger btn-rounded ms-2">
-                                                                                            <i class="fas fa-trash-alt"></i>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </div>  
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <div class="table-responsive">
+                                                            <table class="table w-100 table-bordered">
+                                                              <thead>
+                                                                <tr class="table-primary">
+                                                                  <th>Selected task</th>
+                                                                  <th>Comment</th>
+                                                                </tr>
+                                                              </thead>
+                                                            </table>
+                                                          </div>
                                                     </div>
                                                     <div class="col-12 row">
                                                         <div class="col-2">
@@ -723,26 +672,26 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_interpersonal_skill[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Apologizing Type: Pre-Vocational
 
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_interpersonal_skill[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Wait while others speak Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_interpersonal_skill[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Asking questions Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_interpersonal_skill[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Sharing with others Type: Vocational
                                                                             </label>
@@ -763,7 +712,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_different_situation[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Self control Type: Vocational
                                                                             </label>
@@ -785,13 +734,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_termsof_age[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Understand, follow and maintain the acceptable and unacceptable behaviors Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_termsof_age[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Understand the responsibility towards all age group of people. Type: Vocational
                                                                             </label>
@@ -816,7 +765,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H3[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_play_with_others[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                Understanding game / play Type: Vocational
                                                                             </label>
@@ -837,7 +786,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H4[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_social_interection[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Makes apologies or gives explanations of behavior Type: Vocational
                                                                             </label>
@@ -860,14 +809,14 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H5[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_ethical_values[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Interrupting skills Type: Vocational
 
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H5[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_ethical_values[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Explain clearly Type: Pre-Vocational
                                                                             </label>
@@ -889,14 +838,14 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H6[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_work_habit_ethical_values[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Be comfortable with getting temporarily interrupted Type: Vocational
 
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_H6[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_work_habit_ethical_values[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Accept changes in schedule Type: Vocational
                                                                             </label>
@@ -918,13 +867,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_self_development[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Ironing Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_self_development[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Making bed Type: Pre-Vocational
                                                                             </label>
@@ -946,43 +895,43 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_cleaning_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Clean windows Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_cleaning_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Clean sink Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_cleaning_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Mop floor Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_cleaning_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Sweep floor Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_cleaning_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Change garbage bag Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_cleaning_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Pick up personal items Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_cleaning_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Washing clothes Type: Pre-Vocational
                                                                             </label>
@@ -1004,22 +953,16 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input name="section_I2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_telephone_selfdevelopment[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Relay simple telephone messages Type: Vocational
                                                                             </label>
                                                                         </div>
-                                                                    
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <!-- Single item  -->
-                                                         
                                                             <!-- Single item  -->
-
-                                                        
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1133,23 +1076,6 @@
 
 @endsection
 @section('script')
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $(".hide").hide();
-      $("#container").click(function(){
-        $(".hide").toggle();
-      });
-    });
-</script>
 
 
 @endsection
-
-
-
-
