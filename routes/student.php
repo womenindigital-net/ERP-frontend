@@ -52,7 +52,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'assign-task' => AssignTaskController::class,
         'occupational-therapy' => OccupationalTherapyController::class,
         'sensory-checklist-child' => SensoryChecklistChildController::class,
-        'assign-task' => AssignTaskController::class,
         'create-itp' => CreateItpController::class,
         'assign-teacher' => AssignTeacherController::class,
         'notice-board' => NoticeBoardController::class,
