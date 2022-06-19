@@ -14,23 +14,28 @@ class NoticeBoardList extends Component
 
     private NoticeBoardRepository $noticeBoardRepo;
 
-     public function boot(NoticeBoardRepository $noticeBoardRepo)
+    public function boot(NoticeBoardRepository $noticeBoardRepo)
     {
         $this->noticeBoardRepo = $noticeBoardRepo;
     }
 
-    public function show($date = [], $mode = 'create', $recordId = 0)
+    public function toggleApprove($recordId)
     {
+        $this->noticeBoardRepo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
+    }
 
-        $this->recordId = $recordId;
-        $this->emit('show-referral', $date, $mode, $recordId);
+    public function delete($id)
+    {
+        $this->noticeBoardRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
     }
 
     public function render()
     {
-         $data = [
+        $data = [
             'records' => $this->noticeBoardRepo->getListData($this->perPage, $this->search)
         ];
-        return view('livewire.notice-board-list',$data)->extends('layouts.master')->section('content');
+        return view('livewire.notice-board-list', $data)->extends('layouts.master')->section('content');
     }
 }

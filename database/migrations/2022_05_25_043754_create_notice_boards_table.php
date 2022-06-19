@@ -16,6 +16,7 @@ return new class extends Migration
     {
         Schema::create('notice_boards', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_approved')->default(0);
             $table->string('send_to')->nullable();
             $table->string('sub')->nullable();
             $table->string('area')->nullable();
