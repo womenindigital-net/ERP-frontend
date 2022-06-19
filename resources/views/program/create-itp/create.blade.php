@@ -24,20 +24,19 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body p-0">
-                                        
                                         <div class="card p-0 m-0">
                                             <div class="card-body">
                                                 <div class="row pb-3">
                                                     <div class="col-6 d-flex">
                                                         <label class="col-4 col-form-label"> Student Name</label>
                                                         <div class="col-6">
-                                                          <x-input-select name="student_id" :records="[]" />
+                                                          <x-input-select name="student_id" :records="$students"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-6 d-flex">
                                                         <label for="example-text-input" class="col-md-4 col-form-label">ITP Name</label>
                                                         <div class="col-md-6">
-                                                            <x-input-text name="name"  placeholder="ITP Name"></x-input-text>
+                                                            <x-input-text name="ITP_name"  placeholder="ITP Name"></x-input-text>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -97,7 +96,7 @@
                                                                                     <p class="form-control">Cut on a line</p>
                                                                                 </div>
                                                                                 <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                                                    <x-input-select name="teacher_id" :records="[]" />
+                                                                                    <x-input-select name="teacher_id" :records="$teachers" />
                                                                                 </div>
                                                                                 <div  class=" col-lg-3 p-0 pe-1 pb-1">
                                                                                     <select id="formrow-inputState" class="form-select">
@@ -151,13 +150,13 @@
 
 
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="personal_work[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Grooming
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input class="form-check-input" name="personal_work[]" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Cut nails hands and feet
                                                                             </label>
@@ -184,19 +183,17 @@
 
                                                                         
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="family_work[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Making breakfast for the family
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="family_work[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Watching movie and television show with family
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -216,20 +213,17 @@
 
                                                                         
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="recreational_work[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Games(online games)
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="recreational_work[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Games(making picture by cutting paper)
                                                                             </label>
                                                                         </div>
-
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -249,13 +243,13 @@
 
                                                                         
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="household_work[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="household_work[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -275,23 +269,19 @@
                                                                 <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
                                                                         
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="computer_homework[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="computer_homework[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -307,23 +297,19 @@
                                                                 <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
                                                                         
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="meal_preparetion_skill[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="meal_preparetion_skill[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -339,17 +325,15 @@
                                                                 <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
                                                                         
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="cooking_catering[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="cooking_catering[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -370,19 +354,17 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="gym_exercise[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="gym_exercise[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -398,16 +380,14 @@
                                                                 <div id="collapsenine" class="accordion-collapse collapse" aria-labelledby="headingnine"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="therapeutic_homework[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="therapeutic_homework[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -428,13 +408,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -455,13 +435,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma1[]"  class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -482,13 +462,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -509,13 +489,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma3[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma3[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -536,25 +516,23 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma4[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma4[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Clear a table Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma4[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Participate in preparing foods Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -574,23 +552,17 @@
 
                                                                         
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma5[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma5[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> Hridoy
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -606,17 +578,14 @@
                                                                 <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma6[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma6[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -638,17 +607,14 @@
                                                                 <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma7[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma7[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -670,23 +636,18 @@
                                                                 <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma8[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma8[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
                                                                         </div>
-
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -702,11 +663,8 @@
                                                                 <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="heading19"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma9[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -725,7 +683,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_g[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Checkbox Info
                                                                             </label>
@@ -745,11 +703,8 @@
                                                                 <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="heading20"
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
-
-
-                                                                        
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="Homework_karisma10[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Share personal exhausting feelings. Type: Vocational
                                                                             </label>
@@ -768,26 +723,26 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Apologizing Type: Pre-Vocational
->>>>>>> Hridoy
+
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Wait while others speak Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Asking questions Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Sharing with others Type: Vocational
                                                                             </label>
@@ -808,7 +763,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Self control Type: Vocational
                                                                             </label>
@@ -830,13 +785,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Understand, follow and maintain the acceptable and unacceptable behaviors Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Understand the responsibility towards all age group of people. Type: Vocational
                                                                             </label>
@@ -861,7 +816,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H3[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                Understanding game / play Type: Vocational
                                                                             </label>
@@ -882,7 +837,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H4[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Makes apologies or gives explanations of behavior Type: Vocational
                                                                             </label>
@@ -905,14 +860,14 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H5[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Interrupting skills Type: Vocational
 
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H5[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Explain clearly Type: Pre-Vocational
                                                                             </label>
@@ -934,14 +889,14 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H6[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Be comfortable with getting temporarily interrupted Type: Vocational
 
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_H6[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Accept changes in schedule Type: Vocational
                                                                             </label>
@@ -963,13 +918,13 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Ironing Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Making bed Type: Pre-Vocational
                                                                             </label>
@@ -991,43 +946,43 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Clean windows Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Clean sink Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Mop floor Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Sweep floor Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Change garbage bag Type: Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Pick up personal items Type: Pre-Vocational
                                                                             </label>
                                                                         </div>
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I1[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Washing clothes Type: Pre-Vocational
                                                                             </label>
@@ -1049,7 +1004,7 @@
                                                                     data-bs-parent="#accordionExample">
                                                                     <div class="accordion-body">
                                                                         <div class="form-check form-check-info mb-3">
-                                                                            <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                                            <input name="section_I2[]" class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                             <label class="form-check-label" for="formCheckcolor3">
                                                                                 Relay simple telephone messages Type: Vocational
                                                                             </label>
