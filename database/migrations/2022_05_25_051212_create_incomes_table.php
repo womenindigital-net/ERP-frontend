@@ -22,7 +22,7 @@ return new class extends Migration
             $table->double('amount', 12, 2)->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->string('date');
-            $table->string('invoice_no')->nullable();
+            $table->string('invoice_no', 20)->nullable()->unique();
             $table->string('note')->nullable();
             $table->double('due_amount', 10, 2)->nullable();
             $table->timestamps();

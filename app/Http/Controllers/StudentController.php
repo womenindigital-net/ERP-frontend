@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Services\CourseService;
 use Livewire\WithPagination;
 use Illuminate\Contracts\View\View;
 use App\Repositories\UserRepository;
@@ -23,13 +24,21 @@ class StudentController extends Controller
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
     private CaseHistoryRepository $caseRepo;
+    private CourseService $courseService;
 
-    public function __construct(UserRepository $userRepository, ProjectRepository $projectRepository, StudentRepository $studentRepository, CaseHistoryRepository $caseHistoryRepository)
+    public function __construct(
+        UserRepository $userRepository,
+        ProjectRepository $projectRepository,
+        StudentRepository $studentRepository,
+        CaseHistoryRepository $caseHistoryRepository,
+        CourseService $courseService,
+    )
     {
         $this->userRepo = $userRepository;
         $this->projectRepo = $projectRepository;
         $this->studentRepo = $studentRepository;
         $this->caseRepo = $caseHistoryRepository;
+        $this->courseService = $courseService;
     }
 
     /**
@@ -115,12 +124,7 @@ class StudentController extends Controller
 
     public function studentIncome()
     {
-        $data = [
-            'projects' => $this->projectRepo->getData(),
-            'students' => $this->studentRepo->getData(),
-        ];
 
-        return view('accounting.income.student_income', $data);
     }
 
     /*public function caseHistory(): Factory|View|Application

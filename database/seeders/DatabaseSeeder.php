@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             ProjectSeeder::class,
             CourseSeeder::class,
             StudentSeeder::class,
+            PaymentMethodSeeder::class,
         ]);
     }
 }

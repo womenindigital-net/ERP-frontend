@@ -14,6 +14,7 @@ class CaseHistoryList extends Component
 
     private CaseHistoryRepository $caseRepo;
     public $reportList;
+    protected string $destroyRoute = 'case-history.destroy';
 
     public function boot(CaseHistoryRepository $caseHistRepo)
     {
@@ -24,17 +25,6 @@ class CaseHistoryList extends Component
     {
         $this->caseRepo->toggleColumn($recordId, 'is_approved');
         $this->dispatchBrowserEvent('notify');
-    }
-
-    public function confirmDelete($recordId)
-    {
-        $data = [
-            'routeName' => route('case-history.destroy', $recordId),
-        ];
-
-        $data = array_merge_recursive(ProjectConstants::$swalConfirmDeleteEvents, $data);
-
-        $this->dispatchBrowserEvent('swal', $data);
     }
 
     public function render()

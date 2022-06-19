@@ -2,17 +2,26 @@
 
 namespace App\Repositories;
 
-use App\Models\Income;
+use App\Models\StudentIncome;
 
 class StudentIncomeRepository extends BaseRepository
 {
-    protected string $model = Income::class;
+    protected string $model = StudentIncome::class;
 
     public function getListData(mixed $perPage, mixed $search)
     {
-        return $this->model::when($search, function ($query) use ($search) {
-            $query->where('name', 'like', "%$search%")
-                ->orWhere('nid', 'like', "%$search%");
-        })->latest()->paginate($perPage);
+        return $this->model::with('income.project', 'incomeDetails')
+                           ->when($search, function($query) use ($search)
+                           {
+                               $query->where(function($q) use ($search) {
+                                   $q->whereHas('income', function($q2) use ($search) {
+                                       $q2->where('amount', 'like', "%$search%");
+                                   });
+                               })->orWhere(function($q) use ($search) {
+                                   $q->whereHas('income.project', function ($q2) use ($search) {
+                                       $q2->where('title', 'like', "%$search%");
+                                   });
+                               });
+                           })->latest()->paginate($perPage);
     }
 }

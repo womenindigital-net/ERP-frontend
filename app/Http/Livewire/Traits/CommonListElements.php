@@ -15,4 +15,15 @@ trait CommonListElements
     {
         $this->resetPage();
     }
+
+    public function confirmDelete($recordId)
+    {
+        $data = [
+            'routeName' => route($this->destroyRoute, $recordId),
+        ];
+
+        $data = array_merge_recursive(ProjectConstants::$swalConfirmDeleteEvents, $data);
+
+        $this->dispatchBrowserEvent('swal', $data);
+    }
 }

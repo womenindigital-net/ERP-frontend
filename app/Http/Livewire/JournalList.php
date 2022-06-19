@@ -19,6 +19,7 @@ class JournalList extends Component
     private JournalService $service;
     private JournalRepository $repo;
     public string $filter = '';
+    protected string $destroyRoute = 'journal.destroy';
 
     public array $viewRecord = [];
 
@@ -30,7 +31,6 @@ class JournalList extends Component
 
     public function view($record)
     {
-//        dd($record);
         $this->viewRecord = $record;
     }
 
@@ -38,17 +38,6 @@ class JournalList extends Component
     {
         $this->repo->toggleColumn($recordId, 'is_approved');
         $this->dispatchBrowserEvent('notify');
-    }
-
-    public function confirmDelete($recordId)
-    {
-        $data = [
-            'routeName' => route('journal.destroy', $recordId),
-        ];
-
-        $data = array_merge_recursive(ProjectConstants::$swalConfirmDeleteEvents, $data);
-
-        $this->dispatchBrowserEvent('swal', $data);
     }
 
     public function render(): Factory|View|Application

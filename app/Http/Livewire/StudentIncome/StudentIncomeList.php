@@ -4,6 +4,7 @@ namespace App\Http\Livewire\StudentIncome;
 
 use App\Http\Livewire\Traits\CommonListElements;
 use App\Services\StudentIncomeService;
+use App\Utility\ProjectConstants;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,8 +15,8 @@ class StudentIncomeList extends Component
     use WithPagination, CommonListElements;
 
     public int $recordId = 0;
-
     private StudentIncomeService $service;
+    protected string $destroyRoute = 'student-income.destroy';
 
     public function boot(StudentIncomeService $service)
     {
@@ -24,14 +25,12 @@ class StudentIncomeList extends Component
 
     public function show($studentIncome = [], $mode = 'create', $recordId = 0)
     {
-        // dd($mode);
         $this->recordId = $recordId;
         $this->emit('show-student-income', $studentIncome, $mode, $recordId);
     }
 
     public function render()
     {
-
         $data = [
             'records' => $this->service->getListData($this->perPage, $this->search),
         ];

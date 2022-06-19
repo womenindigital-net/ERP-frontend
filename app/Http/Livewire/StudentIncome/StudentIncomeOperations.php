@@ -40,12 +40,12 @@ class StudentIncomeOperations extends Component
         'amount' => 'required|min:1',
     ];
 
-    protected $listeners = ['show-student-income' => 'showStudentIncome'];
+//    protected $listeners = ['show-student-income' => 'showStudentIncome'];
 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
-        $this->dispatchBrowserEvent('notify');
+//        $this->dispatchBrowserEvent('notify');
     }
 
     public function add()
@@ -62,37 +62,19 @@ class StudentIncomeOperations extends Component
     {
     }
 
+    private function formattedCourses($courses): array
+    {
+
+    }
+
     public function render()
     {
         $data = [
             'projects' => $this->projectRepo->getData(),
             'students' => $this->studentRepo->getData(),
-            'courses' => $this->formattedCourses(),
+            'courses' => $this->formattedCourses(Course::specifyingRelation()->get()),
         ];
 
         return view('livewire.student-income.student-income-operations', $data);
-    }
-
-    private function formattedCourses(): array
-    {
-        $courses = Course::specifyingRelation()->get();
-        foreach ($courses as $key => $course) {
-            if (!isset($custom[$course->parent_course_id])) {
-                $custom[$course->parent_course_id] = [
-                    'id'       => $course->parent_course_id,
-                    'title'    => $course->parentCourse->title,
-                    'children' => [],
-                ];
-            }
-
-            $childrenInfo = [
-                'id'    => $course->id,
-                'title' => $course->title,
-            ];
-
-            $custom[$course->parent_course_id]['children'][] = $childrenInfo;
-        }
-
-        return $custom ?? [];
     }
 }
