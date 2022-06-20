@@ -39,7 +39,7 @@
                                                 <label for="example-text-input" class="col-md-4 col-form-label">Student
                                                     ID:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_id" type="number" placeholder="Student ID">
+                                                    <x-input-text name="student_id" type="number"  value="{{ $record->student_id }}" placeholder="Student ID">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -47,14 +47,14 @@
                                                 <label for="example-search-input"
                                                     class="col-md-4 col-form-label">Name:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_name" placeholder="Student Name">
+                                                    <x-input-text name="student_name"  value="{{ $record->student_name }}" placeholder="Student Name">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label for="" class="col-md-4 col-form-label">Date of Birth:</label>
                                                 <div class="col-md-8" id="datepicker2">
-                                                    <x-input-text name="dob" type="date" placeholder="mm/dd/yyyy">
+                                                    <x-input-text name="dob" type="date"  value="{{ $record->dob }}" placeholder="mm/dd/yyyy">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -63,14 +63,14 @@
                                                     Assesment:</label>
                                                 <div class="col-md-8" id="datepicker2">
                                                     <x-input-text name="date_of_assesment" type="date"
-                                                        placeholder="mm/dd/yyyy">
+                                                         value="{{ $record->date_of_assesment }}" placeholder="mm/dd/yyyy">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label for="example-tel-input" class="col-md-4 col-form-label">NID:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_nid" placeholder="Student NID">
+                                                    <x-input-text name="student_nid"  value="{{ $record->student_nid }}" placeholder="Student NID">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -79,7 +79,7 @@
                                                     Address:</label>
                                                 <div class="col-md-8">
                                                     <x-input-textarea name="student_present_address"
-                                                        placeholder="Student Present Address" rows="1">
+                                                         value="{{ $record->student_present_address }}" placeholder="Student Present Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
                                                     Address:</label>
                                                 <div class="col-md-8">
                                                     <x-input-textarea name="student_parmanent_address"
-                                                        placeholder="Student Parmanent Address" rows="1">
+                                                         value="{{ $record->student_parmanent_address }}" placeholder="Student Parmanent Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
                                             </div>
@@ -98,7 +98,7 @@
                                                     class="col-md-4 col-form-label">Diagonosis:</label>
                                                 <div class="col-md-8">
                                                     <x-input-textarea name="student_parmanent_address"
-                                                        placeholder="Student Parmanent Address" rows="1">
+                                                         value="{{ $record->student_parmanent_address }}" placeholder="Student Parmanent Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
                                             </div>
@@ -107,13 +107,13 @@
                                             <div class="mb-3 row">
                                                 <label class="col-md-4 col-form-label">Gender:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-select name="gender" :records="$constants::$genders"></x-input-select>
+                                                    <x-input-select name="gender"     :selected="$record->gender" :records="$constants::$genders"></x-input-select>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label class="col-md-4 col-form-label">Blood Group:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-select name="blood_group" :records="$constants::$bloodGroups">
+                                                    <x-input-select name="blood_group"    :selected="$record->blood_group" :records="$constants::$bloodGroups">
                                                     </x-input-select>
                                                 </div>
                                             </div>
@@ -122,7 +122,7 @@
                                                     Card
                                                     No:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="suborno_card_no" placeholder="Suborno Card No">
+                                                    <x-input-text name="suborno_card_no"  value="{{ $record->suborno_card_no }}" placeholder="Suborno Card No">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -130,7 +130,7 @@
                                                 <label for="example-tel-input"
                                                     class="col-md-4 col-form-label">Diagonosis:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="diagnosis" placeholder="Diagonosis">
+                                                    <x-input-text name="diagnosis"  value="{{ $record->diagnosis }}" placeholder="Diagonosis">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -138,7 +138,7 @@
                                                 <label for="example-password-input"
                                                     class="col-md-4 col-form-label d-flex align-items-center">Photo:</label>
                                                 <div class=" col-md-8">
-                                                    <x-input-text name="student_photo" type="file"></x-input-text>
+                                                    <x-input-text name="student_photo" type="file" value="{{ $record->student_photo }}"  ></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -169,13 +169,13 @@
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="father_name" placeholder="Father Name">
+                                                    <x-input-text name="father_name"  value="{{ $record->father_name }}" placeholder="Father Name">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="father_number" placeholder="Father's Number">
+                                                    <x-input-text name="father_number"  value="{{ $record->father_number }}" placeholder="Father's Number">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -183,25 +183,25 @@
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
                                                     <x-input-text name="father_profession"
-                                                        placeholder="Father's profession">
+                                                         value="{{ $record->father_profession }}" placeholder="Father's profession">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="father_email" placeholder="Father's Email">
+                                                    <x-input-text name="father_email"  value="{{ $record->father_email }}" placeholder="Father's Email">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="father_doc" placeholder="Father's Document">
+                                                    <x-input-text name="father_doc"  value="{{ $record->father_doc }}" placeholder="Father's Document">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="father_fb_link" placeholder="Father's FB link">
+                                                    <x-input-text name="father_fb_link"  value="{{ $record->father_fb_link }}" placeholder="Father's FB link">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -215,38 +215,38 @@
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="mother_name" placeholder="Mother Name">
+                                                    <x-input-text name="mother_name"  value="{{ $record->mother_name }}" placeholder="Mother Name">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="mother_number" placeholder="Mother Number">
+                                                    <x-input-text name="mother_number"  value="{{ $record->mother_number }}" placeholder="Mother Number">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
                                                     <x-input-text name="mother_profession"
-                                                        placeholder="Mother's profession">
+                                                         value="{{ $record->mother_profession }}" placeholder="Mother's profession">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="mother_email" placeholder="Mother's Email">
+                                                    <x-input-text name="mother_email"  value="{{ $record->mother_email }}" placeholder="Mother's Email">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="mother_doc" placeholder="Mother's Document">
+                                                    <x-input-text name="mother_doc"  value="{{ $record->mother_doc }}" placeholder="Mother's Document">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <div class="col-md-12">
-                                                    <x-input-text name="mother_fb_link" placeholder="Mother's FB link">
+                                                    <x-input-text name="mother_fb_link"  value="{{ $record->mother_fb_link }}" placeholder="Mother's FB link">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -287,7 +287,7 @@
                                                     Type:</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="disability"
-                                                        placeholder="What type of disability do you have">
+                                                         value="{{ $record->disability }}" placeholder="What type of disability do you have">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -296,7 +296,7 @@
                                                     Interest:</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="work_interest"
-                                                        placeholder="Where is your interest">
+                                                         value="{{ $record->work_interest }}" placeholder="Where is your interest">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -306,7 +306,7 @@
                                                 <div class="col-md-8">
 
                                                     <x-input-text name="transport"
-                                                        placeholder="What type of transport do you prefer?">
+                                                         value="{{ $record->transport }}" placeholder="What type of transport do you prefer?">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -314,7 +314,7 @@
                                                 <label for="example-search-input" class="col-md-4 col-form-label">Device
                                                     Name:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="device_name" placeholder="Your device name">
+                                                    <x-input-text name="device_name"  value="{{ $record->transport }}" placeholder="Your device name">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -324,7 +324,7 @@
                                                     Area:</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="prefer_work_area"
-                                                        placeholder="Your prefareble area">
+                                                         value="{{ $record->prefer_work_area }}" placeholder="Your prefareble area">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -332,7 +332,7 @@
                                                 <label for="example-search-input" class="col-md-4 col-form-label">Local
                                                     Guardian:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="local_guardian" placeholder="Your local guardian">
+                                                    <x-input-text name="local_guardian"  value="{{ $record->local_guardian }}" placeholder="Your local guardian">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -340,7 +340,7 @@
                                                 <label for="example-search-input"
                                                     class="col-md-4 col-form-label">Position:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="position" placeholder="Your position">
+                                                    <x-input-text name="position"  value="{{ $record->position }}" placeholder="Your position">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -349,7 +349,7 @@
                                                 <label for="example-search-input"
                                                     class="col-md-4 col-form-label">Duration:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="duration" placeholder="Duration">
+                                                    <x-input-text name="duration"  value="{{ $record->duration }}" placeholder="Duration">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -362,7 +362,7 @@
                                                     work:</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="skill_of_work"
-                                                        placeholder="Your strength of work">
+                                                         value="{{ $record->skill_of_work }}" placeholder="Your strength of work">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -372,7 +372,7 @@
                                                     accommodation :</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="reasonable_accommodation"
-                                                        placeholder="Your accommodation">
+                                                         value="{{ $record->reasonable_accommodation }}" placeholder="Your accommodation">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -380,7 +380,7 @@
                                                 <label for="example-search-input" class="col-md-4 col-form-label">Device
                                                     Use:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="device_use" placeholder="Device Use">
+                                                    <x-input-text name="device_use"  value="{{ $record->device_use }}" placeholder="Device Use">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -388,7 +388,7 @@
                                                 <label for="example-search-input"
                                                     class="col-md-4 col-form-label">Qualification:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="qualification" placeholder="Your qualification">
+                                                    <x-input-text name="qualification"  value="{{ $record->qualification }}" placeholder="Your qualification">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -397,7 +397,7 @@
                                                     class="col-md-4 col-form-label">Training:</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="training"
-                                                        placeholder="What type of training do you have">
+                                                         value="{{ $record->training }}" placeholder="What type of training do you have">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -406,7 +406,7 @@
                                                     class="col-md-4 col-form-label">Organization:</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="organization"
-                                                        placeholder="Your organization name">
+                                                         value="{{ $record->suborno_card_no }}" placeholder="Your organization name">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -414,7 +414,7 @@
                                                 <label for="example-search-input" class="col-md-4 col-form-label">Phone
                                                     Number:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="phone_number" placeholder="Your phone number">
+                                                    <x-input-text name="phone_number"  value="{{ $record->phone_number }}" placeholder="Your phone number">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -423,7 +423,7 @@
                                                     Leave:</label>
                                                 <div class="col-md-8">
                                                     <x-input-text name="cause_of_leave"
-                                                        placeholder="Your causes of leave">
+                                                         value="{{ $record->cause_of_leave }}" placeholder="Your causes of leave">
                                                     </x-input-text>
                                                 </div>
                                             </div>
