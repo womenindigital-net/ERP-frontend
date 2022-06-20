@@ -1,156 +1,77 @@
 @extends('layouts.master')
-@section('title') @lang('translation.Starter_Page') @endsection
-@section('css')@endsection
+
+@section('title')
+@lang('translation.Data_Tables')
+@endsection
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
+@endsection
 
 @section('content')
-{{-- code --}}
 <div class="row">
-    <div class="col-12">
+    <div class="col-xl-12 p-0">
         <div class="card">
-            <div class="card-body">
-                <div class="d-flex justify-content-between pb-3">
-                    <h3>ASSIGN TESK</h3>
-                    <button type="button" class="btn btn-outline-info waves-effect waves-light " data-bs-toggle="modal"
-                        data-bs-target=".bs-example-modal-xl"><i class="fas fa-plus-circle"></i>
-                        Add</button>
-                </div>
-                <div class="table-responsive">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                              class="form-control form-control-sm form-select form-select-sm">
-                              <option value="10">10</option>
-                              <option value="25">25</option>
-                              <option value="50">50</option>
-                              <option value="100">100</option>
-                            </select> entries
-                          </label>
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                          <label style="display: inline-flex;align-items: center;">Search:
-                              <x-input-text type="search" name="search" />
-                          </label>
-                        </div>
-                      </div>
-                      <div class="table-responsive">
-                        <table class="table w-100 table-bordered">
-                          <thead>
-                            <tr class="table-primary">
-                              <th> Assign To</th>
-                              <th> Student</th>
-                              <th> Assign Task Name</th>
-                              <th> Instruction</th>
-                              <th> Log</th>
-                              <th> Action</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>demo</td>
-                              <td>demo</td>
-                              <td>reading</td>
-                              <td>first to last</td>
-                              <td>demo</td>
-                              <td>
-                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                                  <i class="mdi mdi-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                                    class="fas fa-check"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
-                                    class="fas fa-check"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
-                                  <i class="mdi mdi-pencil"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                  <i class="bx bx-dollar"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                  <i class="fas fa-arrow-circle-right"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                  <i class="fas fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                          Showing 1 to 2 of 2 entries
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                          <nav>
-                            <ul class="pagination" style="justify-content: end;">
-                              <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                              </li>
-                              <li class="page-item"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item active">
-                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                              </li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                              </li>
-                            </ul>
-                          </nav>
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- end col -->
-</div> <!-- end row -->
-<!-- sample modal content -->
-<div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="myExtraLargeModalLabel">Task Assignment Edit</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-0">
+            <div class="card-body p-0">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
+                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                            <span class="d-none d-sm-block">Add</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
+                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                            <span class="d-none d-sm-block">List</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content p-3 text-muted">
+                    <div class="tab-pane active" id="case-histroy" role="tabpanel">
+                        <form action="{{ route('assign-task.store') }}" method="post">
+                            @csrf
+          <div class="modal-body p-0">
                 <div class="card p-0 m-0">
                     <div class="card-body">
-                        <div class="row pb-3">
+                        <div class="row pb-1">
                             <div class="col-6 d-flex">
-                                <label class="col-4 col-form-label"> Student Name</label>
-                                <div class="col-6">
+                                <label class="col-md-2 col-form-label"> Student Name</label>
+                                <div class="col-md-10">
                                     <x-input-select name="student_id" :records="[]" />
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
-                                <label for="example-text-input" class="col-md-4 col-form-label">Assignment Name</label>
-                                <div class="col-md-6">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Assignment Name</label>
+                                <div class="col-md-10">
                                     <x-input-text name="assignment_name" placeholder="Assignment Name"></x-input-text>
                                 </div>
                             </div>
                         </div>
                         <div class="row pb-3">
                             <div class="col-6 d-flex">
-                                <label class="col-md-4 col-form-label">Start Date</label>
-                                <div class="col-md-6">
+                                <label class="col-md-2 col-form-label">Start Date</label>
+                                <div class="col-md-10">
                                     <x-input-text name="start_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
                                 </div>
                             </div>
                             <div class="col-6 d-flex">
-                                <label class="col-md-4 col-form-label">End Date</label>
-                                <div class="col-md-6">
+                                <label class="col-md-2 col-form-label">End Date</label>
+                                <div class="col-md-10">
                                     <x-input-text name="end_date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
                                 </div>
                             </div>
                         </div>
-                        <div class="row pb-3">
-                            <div class="col-6">
-                                <label class="form-label">Instruction</label>
+                        <div class="row pb-2">
+                        <div class="col-md-6 d-flex">
+                            <label class="col-md-2 col-form-label">Instruction</label>
+                            <div class="col-md-10">
                                 <x-input-textarea name='instruction' rows='5'></x-input-textarea>
                             </div>
-                            <div class="col-6 mt-4 border border-2">
+                        </div>
+                            <div class="col-6 border border-2">
                                 <div class="fw-bold">Section E: Domain 01 - Physical development : <span
                                         class="text-danger">0</span></div>
                                 <div class="fw-bold">Section F: Domain 02 : Intellectual / cognitive development : <span
@@ -163,75 +84,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row pb-3">
-                            <div class="row">
-                                <div class="col-12 p-0">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h2 class=" text-center mb-4">Raw Material Lists</h2>
-                                            <form class="repeater" enctype="multipart/form-data">
-                                                <div class="row">
-                                                    <div class="col-lg-3 p-0 pe-1">
-                                                        <label for="name">SL</label>
-                                                        <label for="name">Selected Task</label>
-                                                    </div>
-                                                    <div class="col-lg-2 p-0 pe-1">
-                                                        <label for="product">Teacher</label>
-                                                    </div>
-                                                    <div class="col-lg-3 p-0 pe-1">
-                                                        <label for="product">Routine</label>
-                                                    </div>
-                                                    <div class="col-lg-4 p-0 pe-1">
-                                                        <label for="total">Comment</label>
-                                                    </div>
-                                                </div>
-                                                <div data-repeater-list="group-a">
-                                                    <div data-repeater-item class="row">
-                                                        <div class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
-                                                            <span class="pe-2 pb-1">01</span>
-                                                            <p class="form-control m-0">Cut on a line</p>
-                                                        </div>
-                                                        <div class="col-lg-2 p-0 pe-1 pb-1">
-                                                            <x-input-select name="teacher_id" :records="[]" />
-                                                        </div>
-                                                        <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                                            <select id="formrow-inputState" class="form-select">
-                                                                <option selected="">Select</option>
-                                                                <option value="1">09:00:AM - 09:15:AM - Assembly
-                                                                </option>
-                                                                <option value="2">09:15:AM - 10:30:AM - Breakfast
-                                                                </option>
-                                                                <option value="3">10:30:AM - 01:30:PM - Follow ITP (
-                                                                    focus on ADL ), therapy/ gym / exercise</option>
-                                                                <option value="4">01:30:PM - 02:15:PM - Lunch</option>
-                                                                <option value="5">02:15:PM - 02:45:PM - Rest</option>
-                                                                <option value="6">02:45:PM - 04:45:PM - Cultural
-                                                                    Activity / Continue Vocational work</option>
-                                                                <option value="7">04:45:PM - 05:00:PM - Snacks</option>
-                                                                <option value="8">05:00:PM - 05:00:PM - Return Home
-                                                                </option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
-                                                            <x-input-textarea name='name' rows='1' cols='35'>
-                                                            </x-input-textarea>
-
-                                                            <button class="btn btn-danger btn-rounded ms-2">
-                                                                <i class="fas fa-trash-alt"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <button class="btn btn-primary" type="button" id="collapse">Collapse</button>
-                                    <button class="btn btn-primary" type="button" id="expend">Expend</button>
-                                </div>
+                      <div class="table-responsive">
+                        <table class="table w-100 table-bordered">
+                          <thead>
+                            <tr class="table-primary">
+                           <th>Selected Task</th>
+                           <th>Teacher</th>
+                           <th>Routine</th>
+                           <th>Comment</th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                        <div class="row pb-2">
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" id="collapse">Collapse</button>
+                                <button class="btn btn-primary" type="button" id="expend">Expend</button>
                             </div>
                         </div>
                         <div class="row">
@@ -1120,16 +988,16 @@
                                     </div>
                                     <!-- Single item  -->
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading27">
+                                        <h2 class="accordion-header" id="heading28">
                                             <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse27"
-                                                aria-expanded="false" aria-controls="collapse27">
+                                                data-bs-toggle="collapse" data-bs-target="#collapse28"
+                                                aria-expanded="false" aria-controls="collapse28">
                                                 Section I: Independent skills > Household maintenance skills > Home
                                                 Maintenance > Self development
                                             </button>
                                         </h2>
-                                        <div id="collapse27" class="accordion-collapse collapse"
-                                            aria-labelledby="heading27" data-bs-parent="#accordionExample">
+                                        <div id="collapse28" class="accordion-collapse collapse"
+                                            aria-labelledby="heading28" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
@@ -1150,16 +1018,16 @@
                                     </div>
                                     <!-- Single item  -->
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading28">
+                                        <h2 class="accordion-header" id="heading29">
                                             <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse28"
-                                                aria-expanded="false" aria-controls="collapse28">
+                                                data-bs-toggle="collapse" data-bs-target="#collapse29"
+                                                aria-expanded="false" aria-controls="collapse29">
                                                 Section I: Independent skills > Household maintenance skills > Cleaning
                                                 & Washing Chores > Self development
                                             </button>
                                         </h2>
-                                        <div id="collapse28" class="accordion-collapse collapse"
-                                            aria-labelledby="heading28" data-bs-parent="#accordionExample">
+                                        <div id="collapse29" class="accordion-collapse collapse"
+                                            aria-labelledby="heading29" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
@@ -1215,16 +1083,16 @@
                                     </div>
                                     <!-- Single item  -->
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading29">
+                                        <h2 class="accordion-header" id="heading30">
                                             <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapse29"
-                                                aria-expanded="false" aria-controls="collapse29">
+                                                data-bs-toggle="collapse" data-bs-target="#collapse30"
+                                                aria-expanded="false" aria-controls="collapse30">
                                                 Section I: Independent skills > Household maintenance skills > Telephone
                                                 Skills > Self development
                                             </button>
                                         </h2>
-                                        <div id="collapse29" class="accordion-collapse collapse"
-                                            aria-labelledby="heading29" data-bs-parent="#accordionExample">
+                                        <div id="collapse30" class="accordion-collapse collapse"
+                                            aria-labelledby="heading30" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox"
@@ -1244,16 +1112,110 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-outline-primary waves-effect waves-light">Save changes</button>
+        </form>
+    </div>
+   <div class="tab-pane" id="case-histroy_list" role="tabpanel">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                              class="form-control form-control-sm form-select form-select-sm">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                            </select> entries
+                          </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <label style="display: inline-flex;align-items: center;">Search:
+                              <x-input-text type="search" name="search" />
+                          </label>
+                        </div>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table w-100 table-bordered">
+                          <thead>
+                            <tr class="table-primary">
+                              <th> Assign To</th>
+                              <th> Student</th>
+                              <th> Assign Task Name</th>
+                              <th> Instruction</th>
+                              <th> Log</th>
+                              <th> Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>demo</td>
+                              <td>demo</td>
+                              <td>reading</td>
+                              <td>first to last</td>
+                              <td>demo</td>
+                              <td>
+                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                  <i class="mdi mdi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                                    class="fas fa-check"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                  <i class="mdi mdi-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="bx bx-dollar"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                  <i class="fas fa-arrow-circle-right"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <nav>
+                            <ul class="pagination" style="justify-content: end;">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+                </div>
+</div>
+                </div>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+    </div>
+</div>
+</div>
 @endsection
+
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
 <script>
+
     $(document).ready(function(){
         var $links = $('#expend');
         $links.click(function(){
