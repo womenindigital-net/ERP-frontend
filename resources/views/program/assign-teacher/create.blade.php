@@ -140,23 +140,26 @@
                             </div>
                             <div class="col-2 d-flex align-items-center">
                                 <div class="form-check ">
-                                    <x-input-radio-or-check name='select' :records="['Select All']" type="checkbox">
-                                    </x-input-radio-or-check>
+                                    <input class="form-check-input" :records="['Select All']" type="checkbox"  onclick='selects()'>
+                                    <label class="form-check-label" for="formCheck1">
+                                        Select All
+                                    </label>
                                 </div>
                             </div>
                             <div class="col-2 d-flex align-items-center">
                                 <div class="form-check ">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
+                                    <input class="form-check-input" type="checkbox"  onclick='deSelect()'>
                                     <label class="form-check-label" for="formCheck1">
                                         Deselect All
                                     </label>
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="row pt-3">
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
                                     <label class="form-check-label" for="formCheck1">
                                         Boutique
                                     </label>
@@ -164,24 +167,24 @@
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck2">
                                         Paperwork
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck3">
                                         Elementary
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck4">
                                         Music
                                     </label>
                                 </div>
@@ -190,32 +193,32 @@
                         <div class="row pt-3">
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck5">
                                         Tailoring
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck6">
                                         Starter
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck7">
                                         Yoga
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck8">
                                         Dance
                                     </label>
                                 </div>
@@ -224,32 +227,32 @@
                         <div class="row pt-3">
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck9">
                                         Online Chess class
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck10">
                                         Jewelry
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck11">
                                         Radial
                                     </label>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="formCheck1">
-                                    <label class="form-check-label" for="formCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" name="chk">
+                                    <label class="form-check-label" for="formCheck12">
                                         Physical Exercise(PE)
                                     </label>
                                 </div>
@@ -280,7 +283,6 @@
 </div><!-- /.modal -->
 
 
-
 @endsection
 @section('script')
 
@@ -292,5 +294,22 @@
 
 <!-- fontawesome init -->
 <script src="{{ URL::asset('/assets/js/pages/fontawesome.init.js') }}"></script>
+<<script type="text/javascript">  
+    function selects(){  
+        var ele=document.getElementsByName('chk');  
+        for(var i=0; i<ele.length; i++){  
+            if(ele[i].type=='checkbox')  
+                ele[i].checked=true;  
+        }  
+    }  
+    function deSelect(){  
+        var ele=document.getElementsByName('chk');  
+        for(var i=0; i<ele.length; i++){  
+            if(ele[i].type=='checkbox')  
+                ele[i].checked=false;  
+              
+        }  
+    }             
+</script>  
 
 @endsection
