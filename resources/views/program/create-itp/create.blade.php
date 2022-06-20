@@ -4837,25 +4837,115 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Weights- Encourage the student to wear weights during the physical activity or play. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Obstacle Course- Set up an obstacle course in which the student has to go over, under, around and through objects and have the student go through the course first with eyes open and then with Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                        Matching- Give the student several jars with lids of various sizes and have him/her match the lid to the jar and screw them together without looking. Type: Pre-Vocational  
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Statues- Assume a position yourself and encourage the student to make his/her body match your position exactly. Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Spots- Touch the student quickly somewhere on his/her body while his/her eyes are closed and have him/her open his/her eyes and point to the exact spot. Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       One or Two? – With the student facing away, touch him/her one time or twice simultaneously on arms, face, chest, legs, etc. and have him/her tell you if he/she felt one or two touches. Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Shapes/Letters- While the student’s eyes are closed, draw a shape, letter or number and have him/her guess what it was. Then have him/her try to draw exactly what he/she felt. Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      Touch Input- Rub the student’s arms, legs, face, etc. Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Rolling- Have the student roll up in a carpet, blanket, towels or hammock. Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Tactile Play- Encourage the student to play with clay, Play-Doh, mud, water, soap bubbles Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Matching- Present the student with a variety of textured objects with two of each and have the student put them into matching pairs by feeling them only (eyes closed). Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      Feely Box- Put everyday objects in a box and have the student feel and identify them without looking. Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Weights- Encourage the student to wear weights during the physical activity or play. Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Obstacle Course- Set up an obstacle course in which the student has to go over, under, around and through objects and have the student go through the course first with eyes open and then with Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Matching- Give the student several jars with lids of various sizes and have him/her match the lid to the jar and screw them together without looking. Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Statues- Assume a position yourself and encourage the student to make his/her body match your position exactly. Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Spots- Touch the student quickly somewhere on his/her body while his/her eyes are closed and have him/her open his/her eyes and point to the exact spot. Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       One or Two? – With the student facing away, touch him/her one time or twice simultaneously on arms, face, chest, legs, etc. and have him/her tell you if he/she felt one or two touches. Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Shapes/Letters- While the student’s eyes are closed, draw a shape, letter or number and have him/her guess what it was. Then have him/her try to draw exactly what he/she felt. Type: Vocational 
                                                     </label>
                                                 </div>
                                             </div>
@@ -4865,7 +4955,7 @@
                                         <h2 class="accordion-header" id="headingAAAA">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseAAAA" aria-expanded="false" aria-controls="collapseAAAA">
-                                                d
+                                                Section F: Domain 02 : Intellectual / cognitive development > Skill Development planner > Intrapersonal skills > Assertiveness
                                             </button>
                                         </h2>
                                         <div id="collapseAAAA" class="accordion-collapse collapse" aria-labelledby="headingAAAA"
@@ -4874,19 +4964,61 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                     Personal hygiene Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                       Describe Particular situation Type: Pre-Vocational   
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Rights Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Speaking up Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Saying no Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Describe Particular event elaborately Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Describe Particular situation elaborately Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Writing story Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Writing message Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      Maintain dairy Type: Vocational  
                                                     </label>
                                                 </div>
                                             </div>
