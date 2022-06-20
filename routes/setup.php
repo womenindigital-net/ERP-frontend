@@ -21,7 +21,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('program-setup/attendence-card-setup', [SetupController::class, 'attendenceCardSetup'])->name('setup.program-setup.attendence-card-setup');
     // Setup->> Program Setup
     // setup ->> Company Setup
-    Route::get('company-setup/company-setup', [SetupController::class, 'companySetup'])->name('setup.company-setup.company-setup');
+    Route::get('company-setup/company-setup/create', [SetupController::class, 'companySetup'])->name('setup.company-setup.create');
     //setup ->> project setup 
     Route::get('project-setup/project-setup', [SetupController::class, 'projectSetup'])->name('setup.project-setup.project-setup');
     //setup ->> Doctor setup
@@ -44,7 +44,8 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('vendor-list/supplier-setup', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup');
     Route::get('vendor-list/supplier-type-setup', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup');
     // Customer List 
-    Route::get('customers-list/customer-reg', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg');
+    Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
+    Route::get('customers-list/customer-type/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-type.create');
     // Course and Admission
     Route::get('course-and-admission', [SetupController::class, 'courseAdmission'])->name('setup.course-and-admission');
 
@@ -70,10 +71,10 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Year End Close 
     Route::get('year-end-close.year_end_stock_count', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.year_end_stock_count');
     // Other Setting  
-    Route::get('other-settings.user', [SetupController::class, 'otherUser'])->name('setup.other-settings.user');
-    Route::get('other-settings.academic_calendar', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic_calendar');
-    Route::get('other-settings.task_weight_setting', [SetupController::class, 'taskWeight'])->name('setup.other-settings.task_weight_setting');
-    Route::get('other-settings.user_permission_setup', [SetupController::class, 'userPermission'])->name('setup.other-settings.user_permission_setup');
+    Route::get('other-settings.user.create', [SetupController::class, 'otherUser'])->name('setup.other-settings.user.create');
+    Route::get('setup.other-settings.academic-calender.create', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic-calender.create');
+    Route::get('other-settings.task-weight-settings.create', [SetupController::class, 'taskWeight'])->name('setup.other-settings.task-weight-settings.create');
+    Route::get('other-settings.user-permission-setup.create', [SetupController::class, 'userPermission'])->name('setup.other-settings.user-permission-setup.create');
 
 
 

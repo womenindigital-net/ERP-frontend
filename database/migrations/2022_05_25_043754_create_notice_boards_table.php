@@ -16,9 +16,11 @@ return new class extends Migration
     {
         Schema::create('notice_boards', function (Blueprint $table) {
             $table->id();
-            $table->string('publish_date')->nullable();
-            $table->string('expired_date')->nullable();
-            $table->text('notice');
+            $table->boolean('is_approved')->default(0);
+            $table->string('send_to')->nullable();
+            $table->string('sub')->nullable();
+            $table->string('area')->nullable();
+            $table->text('notice')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
             $table->softDeletes();

@@ -9,7 +9,7 @@ use App\Repositories\SensoryChecklistAdultRepository;
 
 class SensoryCheckListAdultList extends Component
 {
-        use WithPagination, CommonListElements;
+    use WithPagination, CommonListElements;
 
     private SensoryChecklistAdultRepository $sensoryChecklistAdultRepo;
     public $reportList;
@@ -25,11 +25,17 @@ class SensoryCheckListAdultList extends Component
         $this->dispatchBrowserEvent('notify');
     }
 
+    public function delete($id)
+    {
+        $this->sensoryChecklistAdultRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
+    }
+
     public function render()
     {
         $data = [
             'records' => $this->sensoryChecklistAdultRepo->getListData($this->perPage, $this->search),
         ];
-        return view('livewire.sensory-check-list-adult-list',$data);
+        return view('livewire.sensory-check-list-adult-list', $data);
     }
 }

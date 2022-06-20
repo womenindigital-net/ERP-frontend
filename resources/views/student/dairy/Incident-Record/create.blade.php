@@ -58,7 +58,7 @@
                                                                                 for="basicpill-firstname-input">Collection
                                                                                 Date:</label>
                                                                             <div class="input-group" id="datepicker2">
-                                                                                <x-input-text name="date"
+                                                                                <x-input-text name="collection_date"
                                                                                     placeholder="dd/mm/yyyy" type="date">
                                                                                 </x-input-text>
                                                                             </div><!-- input-group -->
@@ -69,7 +69,7 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="['1' => 'one']" />
+                                                                                :records="$teachers" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -86,7 +86,7 @@
                                                                         <div class="me-5 ">
                                                                             <label class="form-check-label pb-2">Date and
                                                                                 Time</label>
-                                                                            <x-input-text name="date"
+                                                                            <x-input-text name="date_and_time"
                                                                                 placeholder="dd/mm/yyyy" type="date">
                                                                             </x-input-text>
                                                                         </div>

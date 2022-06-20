@@ -3,11 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\CreateItp;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
 use App\Http\Requests\StoreCreateItpRequest;
 use App\Http\Requests\UpdateCreateItpRequest;
+use App\Repositories\CreateItpRepository;
 
 class CreateItpController extends Controller
 {
+    private CreateItpRepository $createitpRepo;
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $record;
+
+    public function __construct(CreateItpRepository $createitpRepo, UserRepository $userRepository, StudentRepository $studentRepository)
+    {
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
+        $this->createitpRepo = $createitpRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +40,8 @@ class CreateItpController extends Controller
     public function create()
     {
         $data = [
-            // 'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('program.create-itp.create', $data);
@@ -69,11 +83,11 @@ class CreateItpController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCreateItpRequest  $request
+     * @param  \App\Http\Requests\StoreCreateItpRequest  $request
      * @param  \App\Models\CreateItp  $createItp
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCreateItpRequest $request, CreateItp $createItp)
+    public function update(StoreCreateItpRequest $request, CreateItp $createItp)
     {
         //
     }

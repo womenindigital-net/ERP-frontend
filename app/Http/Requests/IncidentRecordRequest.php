@@ -24,13 +24,14 @@ class IncidentRecordRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "date"            => 'nullable',
-            "teacher_id"      => 'nullable',
-            "incident_type"   => 'nullable',
-            "setting"         => 'nullable',
-            "duration"        => 'nullable',
-            "action_taken"    => 'nullable',
-            "previous_causes" => 'nullable',
+            "collection_date"            => 'nullable',
+            "teacher_id"                 => 'nullable',
+            "incident_type"              => 'nullable',
+            "date_and_time"              => 'nullable',
+            "setting"                    => 'nullable',
+            "duration"                   => 'nullable',
+            "action_taken"               => 'nullable',
+            "previous_causes"            => 'nullable',
         ];
     }
 }

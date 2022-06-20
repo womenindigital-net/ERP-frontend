@@ -77,7 +77,7 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="['1'=>'one']" />
+                                                                                :records="$teachers"  />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -161,7 +161,7 @@
                                                                     label="Manipulation" :records="$otassessmentConstants::$ability"
                                                                     secondaryInputLabel=""></x-input-radio-or-check>
 
-                                                                <x-input-radio-or-check name="opposition" label="Opposition"
+                                                                <x-input-radio-or-check name="opp_one" label="Opposition"
                                                                     :records="$otassessmentConstants::$ability" secondaryInputLabel="">
                                                                 </x-input-radio-or-check>
 
@@ -208,7 +208,7 @@
                                                                     label="Awareness of Risk & hazard" :records="$otassessmentConstants::$maintain"
                                                                     secondaryInputLabel=""></x-input-radio-or-check>
 
-                                                                <x-input-radio-or-check name="opposition" label="Opposition"
+                                                                <x-input-radio-or-check name="opposition_two" label="Opposition"
                                                                     :records="$otassessmentConstants::$appropriate" secondaryInputLabel="">
                                                                 </x-input-radio-or-check>
 

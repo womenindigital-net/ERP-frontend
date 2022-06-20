@@ -18,6 +18,11 @@ class OtAssessmentList extends Component
     {
         $this->otAssessmentRepo = $otAssessmentRepo;
     }
+    public function delete($id)
+    {
+        $this->otAssessmentRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
+    }
 
     public function toggleApprove($recordId)
     {

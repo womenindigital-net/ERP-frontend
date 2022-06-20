@@ -86,9 +86,14 @@ class SensoryAdultController extends Controller
      * @param  \App\Models\SensoryAdult  $sensoryAdult
      * @return \Illuminate\Http\Response
      */
-    public function edit(SensoryAdult $sensoryAdult)
+    public function edit(SensoryAdult $sensory_checklist_adult)
     {
-        //
+        $data = [
+            'record' => $this->careNeed = $sensory_checklist_adult,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('assessment.sensory-checklist-adult.edit', $data);
     }
 
     /**
@@ -98,9 +103,11 @@ class SensoryAdultController extends Controller
      * @param  \App\Models\SensoryAdult  $sensoryAdult
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSensoryAdultRequest $request, SensoryAdult $sensoryAdult)
+    public function update(SensoryAdultRequest $request, SensoryAdult $sensory_checklist_adult)
     {
-        //
+        $this->sensoryAdultRepo->update($sensory_checklist_adult, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

@@ -13,7 +13,7 @@ class StoreNoticeBoardRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreNoticeBoardRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'send_to' => 'nullable',
+            'sub' => 'nullable',
+            'area' => 'nullable',
         ];
     }
 }
