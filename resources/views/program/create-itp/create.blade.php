@@ -5200,7 +5200,7 @@
                                         <h2 class="accordion-header" id="headingBBB">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseBBB" aria-expanded="false" aria-controls="collapseBBB">
-                                                d
+                                              Section F: Domain 02 : Intellectual / cognitive development > Skill Development planner > Intrapersonal skills > Generalization ability
                                             </button>
                                         </h2>
                                         <div id="collapseBBB" class="accordion-collapse collapse" aria-labelledby="headingBBB"
@@ -5209,19 +5209,115 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Use of toilet : home and outside Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                        Greetings Type: Pre-Vocational  
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Clothing Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Use of household items Type: Pre-Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Household work : using oven, cleaning plates, combing hair, shower, brush teeth, organizing cloths, eating habit, cleaning Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Recreation activities Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Accepting changes Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Behavior issues : home and outside Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       follow instructions Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         relationship Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Greetings Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Clothing Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Use of household items Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Household work : using oven, cleaning plates, combing hair, shower, brush teeth, organizing cloths, eating habit, cleaning Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Recreation activities Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Accepting changes Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Behavior issues : home and outside Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Follow instructions Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       relationship Type: Vocational 
                                                     </label>
                                                 </div>
                                             </div>
@@ -5231,7 +5327,7 @@
                                         <h2 class="accordion-header" id="headingC">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
-                                                d
+                                               Section F: Domain 02 : Intellectual / cognitive development > Skill Development planner > Intrapersonal skills > Transition and Changes
                                             </button>
                                         </h2>
                                         <div id="collapseC" class="accordion-collapse collapse" aria-labelledby="headingC"
@@ -5240,19 +5336,19 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Pre-counseling Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Social story Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Choice of work Type: Vocational 
                                                     </label>
                                                 </div>
                                             </div>
@@ -5262,7 +5358,7 @@
                                         <h2 class="accordion-header" id="headingCC">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseCC" aria-expanded="false" aria-controls="collapseCC">
-                                                d
+                                                Section F: Domain 02 : Intellectual / cognitive development > Skill Development planner > Intrapersonal skills > Building Enthusiasm
                                             </button>
                                         </h2>
                                         <div id="collapseCC" class="accordion-collapse collapse" aria-labelledby="headingCC"
@@ -5271,19 +5367,38 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Showing interest. Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                        Positive attitude Type: Vocational  
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Stay logical and reasonable Type: Vocational 
+                                                    </label>
+                                                </div>
+                                           
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Passionate with patience Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Intrapersonal skills Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Feeling and saying sorry Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                             </div>
