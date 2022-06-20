@@ -4635,73 +4635,73 @@
                                             data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                      Get suggestion from dietitian Type: Pre-Vocational  
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                          Prepare foods with a variety of colors and textures. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Use aromatic herbs and hot spices to add more flavor Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                          avoid adding more sugar or salt to foods. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                          If diet permits, add small amounts of cheese, bacon bits, butter, olive oil, or toasted nuts on vegetables. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Avoid combination dishes, that can hide individual flavors and dilute taste. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Get suggestion from dietitian Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Prepare foods with a variety of colors and textures. Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Use aromatic herbs and hot spices to add more flavor Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Avoid adding more sugar or salt to foods. Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        If diet permits, add small amounts of cheese, bacon bits, butter, olive oil, or toasted nuts on vegetables. Type: Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Avoid combination dishes, that can hide individual flavors and dilute taste. Type: Vocational 
                                                     </label>
@@ -4720,73 +4720,73 @@
                                             data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Read aloud Type: Pre-Vocational  
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Music ( making songs / tunes) Type: Pre-Vocational  
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Verbal lectures, discussions, talking things through and listening Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Story telling Type: Pre-Vocational   
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                         Text to speech software Type: Pre-Vocational  
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Poetry / rhythmic reading Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Use tunes or rhymes as mnemonic devices Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Drama Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Talking books / audio books Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Recite information to learn. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Read aloud and tape test questions or directions. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Use verbal analogies and storytelling to demonstrate their point. Type: Pre-Vocational 
                                                     </label>
@@ -4805,31 +4805,31 @@
                                             data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                          Touch Input- Rub the student’s arms, legs, face, etc. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                          Rolling- Have the student roll up in a carpet, blanket, towels or hammock. Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Tactile Play- Encourage the student to play with clay, Play-Doh, mud, water, soap bubbles Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                          Matching- Present the student with a variety of textured objects with two of each and have the student put them into matching pairs by feeling them only (eyes closed). Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
-                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
                                                        Feely Box- Put everyday objects in a box and have the student feel and identify them without looking. Type: Pre-Vocational   
                                                     </label>
