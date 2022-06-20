@@ -202,7 +202,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="student.vocational_evalution">Vocational Evalution</a></li>
+                        <li><a href="{{ route('vocational-evaluation.create') }}">Vocational Evalution</a></li>
                     </ul>
 
                 </li>
