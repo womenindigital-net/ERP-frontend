@@ -4577,6 +4577,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Single item  -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading43">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -4621,6 +4622,443 @@
                                             </div>
                                         </div>
                                     </div>
+                                    {{-- First Demo Add --}}
+                                    <!-- Single item  -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingA">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseA" class="accordion-collapse collapse" aria-labelledby="headingA"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingAA">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseAA" aria-expanded="false" aria-controls="collapseAA">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseAA" class="accordion-collapse collapse" aria-labelledby="headingAA"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingAAA">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseAAA" aria-expanded="false" aria-controls="collapseAAA">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseAAA" class="accordion-collapse collapse" aria-labelledby="headingAAA"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingAAAA">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseAAAA" aria-expanded="false" aria-controls="collapseAAAA">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseAAAA" class="accordion-collapse collapse" aria-labelledby="headingAAAA"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingAAAAA">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseAAAAA" aria-expanded="false" aria-controls="collapseAAAAA">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseAAAAA" class="accordion-collapse collapse" aria-labelledby="headingAAAAA"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingB">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseB" class="accordion-collapse collapse" aria-labelledby="headingB"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingBB">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseBB" aria-expanded="false" aria-controls="collapseBB">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseBB" class="accordion-collapse collapse" aria-labelledby="headingBB"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingBBB">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseBBB" aria-expanded="false" aria-controls="collapseBBB">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseBBB" class="accordion-collapse collapse" aria-labelledby="headingBBB"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingC">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseC" class="accordion-collapse collapse" aria-labelledby="headingC"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingCC">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseCC" aria-expanded="false" aria-controls="collapseCC">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseCC" class="accordion-collapse collapse" aria-labelledby="headingCC"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingCCC">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseCCC" aria-expanded="false" aria-controls="collapseCCC">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseCCC" class="accordion-collapse collapse" aria-labelledby="headingCCC"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingE">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseE" aria-expanded="false" aria-controls="collapseE">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseE" class="accordion-collapse collapse" aria-labelledby="headingE"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingF">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseF" aria-expanded="false" aria-controls="collapseF">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseF" class="accordion-collapse collapse" aria-labelledby="headingF"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingG">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseG" aria-expanded="false" aria-controls="collapseG">
+                                                d
+                                            </button>
+                                        </h2>
+                                        <div id="collapseG" class="accordion-collapse collapse" aria-labelledby="headingG"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- ////////////////////// --}}
                                          <!-- Single item  -->
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="heading44">
