@@ -34,7 +34,7 @@ use App\Http\Controllers\StaffAndWorkplaceInspectionController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
-        '' => StudentController::class,
+        'student' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
         'madicine-admin' => MedicineAdminController::class,
