@@ -31,6 +31,7 @@ use App\Http\Controllers\SensoryChecklistChildController;
 use App\Http\Controllers\FunctionalCommunicationController;
 use App\Http\Controllers\FunctionalMovementskillController;
 use App\Http\Controllers\StaffAndWorkplaceInspectionController;
+use App\Http\Controllers\VocationalEvalutionController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -60,6 +61,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'drama-diary-evaluation' => DramaDiaryEvaluationController::class,
         'staff-and-workplaceinspection' => StaffAndWorkplaceInspectionController::class,
         'referral' => ReferralController::class,
+        'vocational-evaluation' => VocationalEvalutionController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
