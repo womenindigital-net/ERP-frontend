@@ -19,7 +19,6 @@ return new class extends Migration
         Schema::create('sale_income_details', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(SaleIncome::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Category::class)->nullable()->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->string('available_qty')->nullable();
             $table->string('qty')->nullable();

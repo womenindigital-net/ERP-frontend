@@ -8,7 +8,7 @@ class StudentIncomeRepository extends BaseRepository
 {
     protected string $model = StudentIncome::class;
 
-    public function getListData(mixed $perPage, mixed $search)
+    public function getListData(int $perPage, string $search)
     {
         return $this->model::with('income.project', 'incomeDetails')
                            ->when($search, function($query) use ($search)

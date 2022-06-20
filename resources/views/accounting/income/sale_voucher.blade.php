@@ -342,49 +342,7 @@
                             </form>
                         </div>
                         <div class="tab-pane" id="sale_voucher_list" role="tabpanel">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="table-responsive">
-                                            <table id="datatable-buttons"
-                                                   class="table table-striped table-bordered dt-responsive w-100">
-                                                <thead>
-                                                <tr class="table-primary">
-                                                    <th>Project</th>
-                                                    <th>Customer</th>
-                                                    <th>Is Draft</th>
-                                                    <th>Date</th>
-                                                    <th>Cost</th>
-                                                    <th>Discount</th>
-                                                    <th>Is Pay Completed</th>
-                                                    <th>Cash Amount</th>
-                                                    <th>Cheque Amount</th>
-                                                    <th>Credit Amount</th>
-                                                    <th>Total Paid</th>
-                                                    <th>Log</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
+                            <livewire:sale-voucher-list/>
                         </div>
                     </div>
                 </div>

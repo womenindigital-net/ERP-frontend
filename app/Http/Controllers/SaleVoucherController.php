@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SaleVoucherRequest;
+use App\Models\Income;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CustomerRepository;
+use App\Repositories\IncomeRepository;
 use App\Repositories\ProductRepository;
 use App\Repositories\ProjectRepository;
 use App\Repositories\WarehouseRepository;
@@ -25,6 +27,7 @@ class SaleVoucherController extends Controller
     private CategoryRepository $categoryRepo;
     private ProductRepository $productRepo;
     private SaleVoucherService $service;
+    private IncomeRepository $repo;
 
     public function __construct(
         ProjectRepository $projectRepository,
@@ -33,6 +36,7 @@ class SaleVoucherController extends Controller
         CategoryRepository $categoryRepository,
         ProductRepository $productRepository,
         SaleVoucherService $service,
+        IncomeRepository $repo,
     )
     {
         $this->projectRepo  = $projectRepository;
@@ -41,6 +45,7 @@ class SaleVoucherController extends Controller
         $this->categoryRepo = $categoryRepository;
         $this->productRepo = $productRepository;
         $this->service = $service;
+        $this->repo = $repo;
     }
 
     /**
@@ -102,11 +107,21 @@ class SaleVoucherController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     *
+     * @return Application|Factory|View
      */
-    public function edit($id)
+    public function edit($id): View|Factory|Application
     {
-        //
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'customers' => $this->customerRepo->getData(),
+            'warehouses' => $this->warehouseRepo->getData(),
+            'categories' => $this->categoryRepo->getData(),
+            'products' => $this->productRepo->getData(),
+            'record' => $this->repo->getRelatedData(Income::find($id), ['saleIncome.warehouse', 'saleIncome.details.product', 'project', 'history', 'creator'])
+        ];
+
+        return view('accounting.income.sale_voucher_edit', $data);
     }
 
     /**
@@ -115,11 +130,14 @@ class SaleVoucherController extends Controller
      * @param Request $request
      * @param  int  $id
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(SaleVoucherRequest $request, $id): RedirectResponse
     {
-        //
+        $this->service->update($id, $request->validated());
+
+        Session::flash('success');
+        return redirect()->route('sale-voucher.create');
     }
 
     /**
@@ -130,6 +148,6 @@ class SaleVoucherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Income::find($id)->delete();
     }
 }

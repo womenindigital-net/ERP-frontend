@@ -18,22 +18,16 @@ class SaleVoucherService
     {
         try{
             DB::beginTransaction();
-            // income
-            //            -- project_id, type, amount, created_by, date, invoice_no, note, due_amount
+
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
             $income = $this->repo->store($incomeInfo);
 
-            // sale_income
-            //        -- income_id, customer_id, ship_to_address, warehouse_id
             $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
 
-            // sale_income_detail
-            //        -- sale_income_id, category_id, product_id, available_qty, qty, price, discount, sub_total,
             $saleIncome->details()->createMany($validated['details']);
 
-            // income_history
-            //        -- type, amount, info, due_amount, note, payable_amount
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
+
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
@@ -70,13 +64,13 @@ class SaleVoucherService
             'amount' => array_sum(array_column($data['details'], 'sub_total')),
         ];
 
-        $searchString = 'card';
+        $searchString = 'cash';
 
-        if (isset($data['cheque']) && ($data['cheque'] == 'on')) {
+        if (isset($data['cheque'])) {
             $searchString = "$searchString|cheque*";
         }
 
-        if (isset($data['card']) && ($data['card'] == 'on')) {
+        if (isset($data['card'])) {
             $searchString = "$searchString|card*";
         }
 
@@ -86,8 +80,46 @@ class SaleVoucherService
                 $paymentInfo['info'][$key] = $val;
             }
         }
-//        dd(array_merge($custom, $paymentInfo));
+
         return array_merge($custom, $paymentInfo);
+    }
+
+    public function update($id, $validated)
+    {
+        $income = $this->repo->specificIncomeWithSaleIncomeRelations($id);
+
+        try{
+            DB::beginTransaction();
+
+            [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
+            $income = $this->repo->update($income, $incomeInfo);
+
+            $income->saleIncome()->delete();
+            $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
+
+            $productInfos = array_filter($validated['details'], [$this, 'getOnlyNotEmptyRecords']);
+            $saleIncome->details()->createMany($productInfos);
+
+            $income->history()->delete();
+            $income->history()->create($this->collectIncomeHistoryInfo($validated));
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage(), $e->getLine());
+        }
+    }
+
+    private function getOnlyNotEmptyRecords($data)
+    {
+        foreach ($data as $key => $val) {
+            if (!$val) {
+                unset($data[$key]);
+                break;
+            }
+        }
+
+        return $data;
     }
 
 }
