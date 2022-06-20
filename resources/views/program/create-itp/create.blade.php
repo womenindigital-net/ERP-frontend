@@ -19491,7 +19491,8 @@
                                                     <div class="form-check form-check-info mb-3">
                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Be tolerant. Type: Vocational                                                                            </label>
+                                                            Be tolerant. Type: Vocational                                                                            
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -19502,73 +19503,116 @@
                                             <h2 class="accordion-header" id="heading172">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapse172" aria-expanded="false" aria-controls="collapse172">
-                                                    Section I: Independent skills > Household maintenance skills > Home Maintenance > Self development
+                                                    Section H : Domain 04 - Social and ethical development > Personal values setting > Ethical Values > Understanding right and wrong
                                                 </button>
                                             </h2>
                                             <div id="collapse172" class="accordion-collapse collapse" aria-labelledby="heading172"
                                                 data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Making bed Type: Pre-Vocational
+                                                            More effective time management. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Identify faulty equipment/appliances Type: Vocational
+                                                            Prioritizing capacity in risk-benefit ratio Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Ironing Type: Vocational
+                                                            Know about the common values of human. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Dusting Type: Pre-Vocational
+                                                            Enhanced self-awareness. Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Make minor household repair Type: Vocational
+                                                            Prioritizing capacity in risk-benefit ratio Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Ironing Type: Pre-Vocational
+                                                            Prioritizing capacity in risk-benefit ratio Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Seek help for repair when necessary Type: Vocational
+                                                            Reveal what matters most to you in life. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Sweeping / Mopping Type: Pre-Vocational
+                                                            Enhanced self-awareness. Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Home Maintenance Type: Vocational
+                                                            Prioritizing capacity in risk-benefit ratio Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Wiping counters and tables Type: Pre-Vocational
+                                                            Reveal what matters most to you in life. Type: Pre-Vocational
                                                         </label>
                                                     </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            More effective time management. Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Know about the common values of human. Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Enhanced self-awareness. Type: Pre-Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Reveal what matters most to you in life. Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            More effective time management. Type: Pre-Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Know about the common values of human. Type: Pre-Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="personal_values_setting_ethical_values_understanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Reveal what matters most to you in life. Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -19578,135 +19622,157 @@
                                             <h2 class="accordion-header" id="heading173">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapse173" aria-expanded="false" aria-controls="collapse173">
-                                                    Section I: Independent skills > Household maintenance skills > Operating Household appliances > Self development
+                                                    Section H : Domain 04 - Social and ethical development > Roles rights & responsibilities > Ethical Values > Understanding right and wrong
                                                 </button>
                                             </h2>
                                             <div id="collapse173" class="accordion-collapse collapse" aria-labelledby="heading173"
                                                 data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Vacuum Type: Vocational
+                                                            Cast Vote Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Video games consolers Type: Pre-Vocational
+                                                            Knowledge about basic responsibilities as a citizen Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Electric can opener or can opener Type: Pre-Vocational
+                                                            Knowledge about basic rights & responsibilities as a member of a family. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Electric Kettle Type: Vocational
+                                                            Legal rights Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Mixer / blender Type: Vocational
+                                                            Knowledge about basic rights & responsibilities as a member of a family. Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Microwave open Type: Pre-Vocational
+                                                            Knowledge about basic rights & responsibilities as a member of an association or a community. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            TV, DVD, CD player Type: Vocational
+                                                            Legal rights Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Electric can opener or can opener Type: Vocational
+                                                            Knowledge about basic rights as a citizen Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Washing machine&Dryer Type: Pre-Vocational
+                                                            Knowledge about basic rights & responsibilities as a member of a family. Type: Vocational
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Knowledge about basic rights & responsibilities as a member of an association or a community. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Mobile phone, telephone Type: Vocational
+                                                            Basic rights (education, medical, shelter, cloth, food) Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Microwave open Type: Vocational
+                                                            Knowledge about basic rights as a citizen Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Electric Kettle Type: Pre-Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Camera, digital camera, mobile camera Type: Vocational
+                                                            Knowledge about basic rights & responsibilities as a member of an association or a community. Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Washing machine&Dryer Type: Vocational
+                                                            Knowledge about basic rights as a citizen Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            TV, DVD, CD player Type: Pre-Vocational
+                                                            Basic rights (education, medical, shelter, cloth, food) Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Knowledge about basic responsibilities as a citizen Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Computer, laptops Type: Vocational
+                                                            Knowledge about basic rights & responsibilities as a member of an association or a community. Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Knowledge about basic rights as a citizen Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Reasonable accommodations Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Dishwasher Type: Vocational
+                                                            Knowledge about basic responsibilities as a citizen Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Computer, laptops Type: Pre-Vocational
+                                                            Cast Vote Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Video games consolers Type: Vocational
-
+                                                            Knowledge about basic responsibilities as a citizen Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Toaster Type: Pre-Vocational
+                                                            Reasonable accommodations Type: Vocational
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-info mb-3">
+                                                        <input class="form-check-input" name="roles_rights_responsibilities_ethical_values_nderstanding_right_and_wrong[]" type="checkbox" id="formCheckcolor3" >
+                                                        <label class="form-check-label" for="formCheckcolor3">
+                                                            Knowledge about basic rights & responsibilities as a member of a family. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                 </div>
@@ -19720,300 +19786,160 @@
                                             <h2 class="accordion-header" id="heading174">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapse174" aria-expanded="false" aria-controls="collapse174">
-                                                    Section I: Independent skills > Household maintenance skills > Cleaning & Washing Chores > Self development
+                                                    Section H : Domain 04 - Social and ethical development > Ethical Values > Understanding right and wrong > Respect
                                                 </button>
                                             </h2>
                                             <div id="collapse174" class="accordion-collapse collapse" aria-labelledby="heading174"
                                                 data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Operate dishwasher correctly Type: Vocational
+                                                            Be helpful if possible Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Washing clothes Type: Pre-Vocational
+                                                            Encourage others to express opinions and ideas. Type: Pre-Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean shower area Type: Vocational
+                                                            Listen to what others have to say before expressing your viewpoint Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Identify recyclable materials Type: Vocational
+                                                            Use people's ideas to change or improve work. Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Make bed Type: Pre-Vocational
+                                                            Encourage others to express opinions and ideas. Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean freezer Type: Vocational
+                                                            Congratulate If someone does a great job Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Wash, dry & keep the utensils Type: Vocational
+                                                            Use people's ideas to change or improve work. Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Sort & put away utensils Type: Vocational
+                                                            Listen to what others have to say before expressing your viewpoint Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Cleaning sinks and tubs Type: Pre-Vocational
+                                                            Congratulate If someone does a great job Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean toilet Type: Vocational
+                                                            Be helpful if possible Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Dispose of recyclable materials in proper place Type: Vocational
+                                                            Congratulate If someone does a great job Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Change the bedding Type: Pre-Vocational
+                                                            Say Thank you Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean an oven Type: Vocational
+                                                            Respecting yourself Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            General house cleaning Type: Vocational
+                                                            Congratulate If someone does a great job Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Put away dishes Type: Vocational
+                                                            Use people`s ideas to change or improve work. Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Cleaning toilets Type: Pre-Vocational
+                                                            Respecting yourself Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean sink Type: Vocational
+                                                            Treat people with courtesy, politeness, and kindness. Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Sweep floor Type: Vocational
+                                                            Say Thank you Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Pick up personal items Type: Pre-Vocational
+                                                            Use people`s ideas to change or improve work. Type: Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean & organize a closet Type: Vocational
+                                                            Treat people with courtesy, politeness, and kindness. Type: Pre-Vocational
 
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Housekeeping Type: Vocational
+                                                            Encourage others to express opinions and ideas. Type: Vocational
                                                         </label>
                                                     </div>
                                                     <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                        <input class="form-check-input" name="ethical_values_understanding_right_and_wrong_respect[]" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean sink Type: Vocational
+                                                            Say Thank you Type: Pre-Vocational
                                                         </label>
                                                     </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Washing windows Type: Pre-Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean windows Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Mop floor Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Put items on a shelf Type: Pre-Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Use a vacuum cleaner Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Empty garbage Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clear & wipe counter Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean walls & woodwork Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Organize toys in their place. Type: Pre-Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Wash & rinse dishes Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Water household plants Type: Pre-Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Use common household cleaning products Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Change garbage bag Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Wipe appliance surfaces Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Hang towel/facecloth on rack Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean the table (Eating Area) after eating Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Dry dishes Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Dust furniture Type: Pre-Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean windows & mirrors Type: Vocational
-
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean garbage can Type: Vocational
-
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean refrigerator Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Replace bathroom supplies Type: Vocational
-
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Clean the Cooking Area Type: Vocational
-                                                        </label>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
