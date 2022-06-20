@@ -5028,7 +5028,7 @@
                                         <h2 class="accordion-header" id="headingAAAAA">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseAAAAA" aria-expanded="false" aria-controls="collapseAAAAA">
-                                                d
+                                                Section F: Domain 02 : Intellectual / cognitive development > Skill Development planner > Intrapersonal skills > Decision Making
                                             </button>
                                         </h2>
                                         <div id="collapseAAAAA" class="accordion-collapse collapse" aria-labelledby="headingAAAAA"
@@ -5037,19 +5037,38 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                       Choice making (PECs, Sign, Non-Verbal Communication) Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                       Choice sort out Type: Pre-Vocational   
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Choice list Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                        
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Making decision Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                         Consequences of decisions Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                      Clarifying own decision Type: Vocational 
                                                     </label>
                                                 </div>
                                             </div>
@@ -5059,7 +5078,7 @@
                                         <h2 class="accordion-header" id="headingB">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">
-                                                d
+                                                Section F: Domain 02 : Intellectual / cognitive development > Skill Development planner > Intrapersonal skills > Understanding situation
                                             </button>
                                         </h2>
                                         <div id="collapseB" class="accordion-collapse collapse" aria-labelledby="headingB"
@@ -5068,19 +5087,49 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Create Mock situation Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Thinking Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Social story Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                    Describe situation Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Create Mock situation Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Thinking Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Social story Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Describe situation Type: Vocational 
                                                     </label>
                                                 </div>
                                             </div>
@@ -5090,7 +5139,7 @@
                                         <h2 class="accordion-header" id="headingBB">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseBB" aria-expanded="false" aria-controls="collapseBB">
-                                                d
+                                                Section F: Domain 02 : Intellectual / cognitive development > Skill Development planner > Intrapersonal skills > Curiosity and asking question
                                             </button>
                                         </h2>
                                         <div id="collapseBB" class="accordion-collapse collapse" aria-labelledby="headingBB"
@@ -5099,19 +5148,49 @@
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                         Left the play with interest Type: Pre-Vocational 
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                        
+                                                       Observe interesting situation Type: Pre-Vocational   
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-info mb-3">
                                                     <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                     <label class="form-check-label" for="formCheckcolor3">
-                                                      
+                                                       Listen attentively Type: Pre-Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Different working elements Type: Pre-Vocational   
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Left the situation with interest Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Observe interesting situation Type: Vocational 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                        Listen attentively Type: Vocational  
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-info mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
+                                                    <label class="form-check-label" for="formCheckcolor3">
+                                                       Different working elements Type: Vocational 
                                                     </label>
                                                 </div>
                                             </div>
@@ -20285,105 +20364,6 @@
                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                         <label class="form-check-label" for="formCheckcolor3">
                                                             Recognize a busy signal Type: Pre-Vocational
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single item  --> 
-                                        <!-- Single item  -->
-                                         <div class="accordion-item">
-                                            <h2 class="accordion-header" id="heading177">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapse177" aria-expanded="false" aria-controls="collapse177">
-                                                    Section I: Independent skills > Banking > Banking Account details > Self development
-                                                </button>
-                                            </h2>
-                                            <div id="collapse177" class="accordion-collapse collapse" aria-labelledby="heading177"
-                                                data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Use an ATM Machine to deposit cash/cheques Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Deposit cash/cheques using counter service iside a bank Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Use an ATM Machine to withdraw cash Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Write a cheque Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Pay a bill at a bank Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Use a debit card Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Demonstrate skills for banking by telephone Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Withdraw cash using counter service inside a bank Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Describe common procedures at a bank Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Participate in discussion of how much money is in their account Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Open a bank account Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Participate in discussion on what to use their money for Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Endorse a cheque Type: Vocational
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-info mb-3">
-                                                        <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
-                                                        <label class="form-check-label" for="formCheckcolor3">
-                                                            Demonstrate privacy issues regarding banking (I.E., PIN NUMBER) Type: Vocational
                                                         </label>
                                                     </div>
                                                 </div>
