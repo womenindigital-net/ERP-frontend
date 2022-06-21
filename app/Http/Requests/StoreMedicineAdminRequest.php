@@ -13,7 +13,7 @@ class StoreMedicineAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class StoreMedicineAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'nullable',
+            'prescription_id' => 'nullable',
+            'given_id' => 'nullable',
+            'given_date' => 'nullable',
+            'given_time' => 'nullable',
+            'medicine' => 'nullable',
+            'amountGiven' => 'nullable',
+            'amountgivenunit' => 'nullable',
+            'note' => 'nullable',
+            
         ];
     }
 }

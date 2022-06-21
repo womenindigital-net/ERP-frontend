@@ -66,7 +66,7 @@
                                                                     <div class="mb-3">
                                                                         <label>Collection Date:</label>
                                                                         <x-input-text name="collection_date" type="date"
-                                                                            placeholder="mm/dd/yyyy">
+                                                                            placeholder="mm/dd/yyyy" :required="true">
                                                                         </x-input-text>
                                                                     </div>
                                                                 </div>
@@ -74,7 +74,7 @@
                                                                     <div class="mb-3">
                                                                         <label>Teacher:</label>
                                                                         <x-input-select name="teacher_id"
-                                                                            :records="$teachers">
+                                                                            :records="$teachers" :required="true">
                                                                         </x-input-select>
                                                                     </div>
                                                                 </div>
@@ -82,7 +82,7 @@
                                                                     <div class="mb-3">
                                                                         <label>Candidate ID:</label>
                                                                         <x-input-select :records="$students"
-                                                                            name="student_id">
+                                                                            name="student_id" :required="true">
                                                                         </x-input-select>
                                                                     </div>
                                                                 </div>

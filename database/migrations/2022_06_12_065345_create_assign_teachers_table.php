@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('assign_teachers', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_approved')->default(0);
+            $table->string('student_name')->nullable();
+            $table->string('teachar_name')->nullable();
+            $table->string('subject')->nullable();
             $table->timestamps();
         });
     }
