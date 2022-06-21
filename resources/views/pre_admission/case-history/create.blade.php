@@ -72,7 +72,8 @@
                                                                             Date:</label>
                                                                         <div class="input-group" id="datepicker2">
                                                                             <x-input-text name="sample" type="date"
-                                                                                name="date" placeholder="mm/dd/yyyy">
+                                                                                name="date" :required="true"
+                                                                                placeholder="mm/dd/yyyy">
                                                                             </x-input-text>
                                                                         </div><!-- input-group -->
                                                                     </div>

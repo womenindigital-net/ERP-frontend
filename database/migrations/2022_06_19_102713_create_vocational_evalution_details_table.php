@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('vocational_evalution_id')->nullable();
             $table->string('category_id')->nullable();
-            $table->string('sub_category_id')->nullable();
             $table->string('production')->nullable();
             $table->string('target')->nullable();
             $table->string('wastage')->nullable();

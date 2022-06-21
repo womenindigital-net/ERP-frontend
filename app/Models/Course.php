@@ -18,7 +18,7 @@ class Course extends Model
 
     public function scopeSpecifyingRelation($query)
     {
-        return $query->with('parentCourse', function($q) {
+        return $query->with('parentCourse', function ($q) {
             $q->select('id', 'title');
         })->select('id', 'title', 'parent_course_id')->whereNotNull('parent_course_id');
     }

@@ -4,3 +4,4 @@ record->student->name ?? 'nameNotFound'
 file uploding
 referral form Doctor view
 vocational-evaluation category
+categorySeeder

@@ -2,22 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Livewire\WithPagination;
 use App\Models\VocationalEvalution;
 use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
+use App\Services\VocationalEvaluationService;
+use App\Http\Livewire\Traits\CommonListElements;
 use App\Http\Requests\StoreVocationalEvalutionRequest;
 use App\Http\Requests\UpdateVocationalEvalutionRequest;
-use App\Services\VocationalEvaluationService;
+use App\Services\CategoryService;
 
 class VocationalEvalutionController extends Controller
 {
+    use WithPagination, CommonListElements;
+
     private StudentRepository $studentRepo;
     private VocationalEvaluationService $vocService;
+    private CategoryService $categoryService;
 
-    public function __construct(StudentRepository $studentRepo, VocationalEvaluationService $vocService)
+
+
+    public function __construct(StudentRepository $studentRepo, VocationalEvaluationService $vocService, CategoryService $categoryService)
     {
         $this->studentRepo = $studentRepo;
         $this->vocService = $vocService;
+        $this->categoryService = $categoryService;
     }
 
     /**
@@ -39,6 +48,7 @@ class VocationalEvalutionController extends Controller
     {
         $data = [
             'students' => $this->studentRepo->getData(),
+            'categories' => $this->categoryService->getFormattedDataAsOptGroup(),
         ];
         return view('student.vocational_evaluation.create', $data);
     }

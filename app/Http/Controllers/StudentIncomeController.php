@@ -41,8 +41,7 @@ class StudentIncomeController extends Controller
         CaseHistoryRepository $caseHistoryRepository,
         StudentIncomeRepository $studentIncomeRepository,
         CourseService $courseService,
-    )
-    {
+    ) {
         $this->userRepo = $userRepository;
         $this->projectRepo = $projectRepository;
         $this->studentRepo = $studentRepository;
@@ -93,7 +92,7 @@ class StudentIncomeController extends Controller
         Session::flash('success');
 
         return redirect()->back();
-//        dd($request->validated());
+        //        dd($request->validated());
     }
 
     /**

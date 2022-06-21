@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +18,14 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
+        $count = 0;
+        $count++;
+        $parentCategoriesId = Category::count() > 10 ? Category::inRandomOrder()->first()->id : null;
         return [
-            //
+            'name' => $categories[$count++],
+            'created_by' => User::inRandomOrder()->first()->id,
+            'type' => 'action',
+            'parent_category_id' => $parentCategoriesId,
         ];
     }
 }

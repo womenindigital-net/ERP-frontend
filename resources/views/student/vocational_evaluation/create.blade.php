@@ -55,11 +55,8 @@
                                                         <h2 class=" text-center mb-4">Assign Tesks</h2>
                                                         <div class="repeater">
                                                             <div class="row px-3">
-                                                                <div class="col p-0 ">
+                                                                <div class="col-lg-2 p-0 ">
                                                                     <label class="m-0">Category Name </label>
-                                                                </div>
-                                                                <div class="col p-0 ">
-                                                                    <label class="m-0">Sub Category</label>
                                                                 </div>
                                                                 <div class="col p-0 ">
                                                                     <label class="m-0">No of Production</label>
@@ -94,13 +91,25 @@
                                                             </div>
                                                             <div data-repeater-list="vocational">
                                                                 <div data-repeater-item class="row px-3">
-                                                                    <div class="col d-flex p-0 pb-1 align-items-center">
-                                                                        <x-input-select name="category_id"
-                                                                            :records="['1'=>'one']" />
-                                                                    </div>
-                                                                    <div class=" col p-0 pb-1">
-                                                                        <x-input-select name="sub_category_id"
-                                                                            :records="['1'=>'one']" />
+                                                                    <div
+                                                                        class="col-lg-2 d-flex p-0 pb-1 align-items-center">
+                                                                        <div class="w-100">
+                                                                            <select class="form-control form-select"
+                                                                                name="category_id">
+                                                                                <option>--Select--</option>
+                                                                                @foreach($categories as $category)
+                                                                                <optgroup label="{{$category['name']}}">
+                                                                                    @foreach($category['children'] as
+                                                                                    $childCategory)
+                                                                                    <option
+                                                                                        value="{{$childCategory['id']}}">
+                                                                                        {{$childCategory['name']}}
+                                                                                    </option>
+                                                                                    @endforeach
+                                                                                </optgroup>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
                                                                     <div class=" col p-0 pb-1">
                                                                         <x-input-text name="production" />
@@ -163,39 +172,7 @@
                         </div><!-- /.modal-dialog -->
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
-                        <div class="table-responsive">
-                            <table class="table w-100 table-bordered">
-                                <thead>
-                                    <tr class="table-primary">
-                                        <th>Student Name</th>
-                                        <th>Production Date</th>
-                                        <th>Total Product Category</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Adiba Atiar</td>
-                                        <td>2021-03-02</td>
-                                        <td>1</td>
-                                        <td class="text-center">
-                                            <button type="button"
-                                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                                data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-add">
-                                                <i class=" fas fa-eye"></i>
-                                            </button>
-                                            <button type="button"
-                                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light"
-                                                data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-add">
-                                                <i class="fas fa-pen"></i></button>
-                                            <button type="button"
-                                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light"><i
-                                                    class="fas fa-trash-alt" id="sa-warning"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <livewire:vocational-evalution-list>
                     </div>
                 </div>
             </div>

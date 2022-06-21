@@ -10,9 +10,9 @@ class VocationalEvaluationService
 {
     private VocationalEvalutionRepository $vocRepo;
 
-    public function __construct(VocationalEvalutionRepository $vocRepo)
+    public function __construct(VocationalEvalutionRepository $repository)
     {
-        $this->vocRepo = $vocRepo;
+        $this->vocRepo = $repository;
     }
 
     public function store(mixed $validated): void
@@ -21,7 +21,7 @@ class VocationalEvaluationService
 
         try {
             DB::beginTransaction();
-            /** @var vocational $obj */
+            /** @var VocationalEvalution $obj */
             $obj = $this->vocRepo->store($info);
 
             $obj->details()->createMany($detailInfo);

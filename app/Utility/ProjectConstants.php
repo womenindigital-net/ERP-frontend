@@ -146,6 +146,10 @@ final class ProjectConstants
         self:: GROSS => 'Gross',
         self:: NET_SALARY => 'Net Salary',
     ];
+
+    // Teacher
+    
+    // Teacher
 }
 
 
