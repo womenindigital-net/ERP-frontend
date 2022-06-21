@@ -39,7 +39,7 @@
                                                 <label for="example-text-input" class="col-md-4 col-form-label">Student
                                                     ID:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_id" type="number"  value="{{ $record->student_id }}" placeholder="Student ID">
+                                                    <x-input-text name="code" type="number"  value="{{ $record->code }}" placeholder="Student ID">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -47,7 +47,7 @@
                                                 <label for="example-search-input"
                                                     class="col-md-4 col-form-label">Name:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_name"  value="{{ $record->student_name }}" placeholder="Student Name">
+                                                    <x-input-text name="name"  value="{{ $record->name }}" placeholder="Student Name">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -70,7 +70,7 @@
                                             <div class="mb-3 row">
                                                 <label for="example-tel-input" class="col-md-4 col-form-label">NID:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_nid"  value="{{ $record->student_nid }}" placeholder="Student NID">
+                                                    <x-input-text name="nid"  value="{{ $record->nid }}" placeholder="Student NID">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -78,8 +78,8 @@
                                                 <label for="example-password-input" class="col-md-4 col-form-label">Present
                                                     Address:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-textarea name="student_present_address"
-                                                         value="{{ $record->student_present_address }}" placeholder="Student Present Address" rows="1">
+                                                    <x-input-textarea name="present_address"
+                                                         value="{{ $record->present_address }}" placeholder="Student Present Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
                                             </div>
@@ -88,8 +88,8 @@
                                                     class="col-md-4 col-form-label">Parmanent
                                                     Address:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-textarea name="student_parmanent_address"
-                                                         value="{{ $record->student_parmanent_address }}" placeholder="Student Parmanent Address" rows="1">
+                                                    <x-input-textarea name="permanent_address"
+                                                         value="{{ $record->permanent_address }}" placeholder="Student Parmanent Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
                                             </div>
@@ -97,8 +97,8 @@
                                                 <label for="example-password-input"
                                                     class="col-md-4 col-form-label">Diagonosis:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-textarea name="student_parmanent_address"
-                                                         value="{{ $record->student_parmanent_address }}" placeholder="Student Parmanent Address" rows="1">
+                                                    <x-input-textarea name="diagnosis"
+                                                         value="{{ $record->diagnosis }}" placeholder="Student Parmanent Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
                                             </div>
@@ -127,25 +127,17 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
-                                                <label for="example-tel-input"
-                                                    class="col-md-4 col-form-label">Diagonosis:</label>
-                                                <div class="col-md-8">
-                                                    <x-input-text name="diagnosis"  value="{{ $record->diagnosis }}" placeholder="Diagonosis">
-                                                    </x-input-text>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3 row">
                                                 <label for="example-password-input"
                                                     class="col-md-4 col-form-label d-flex align-items-center">Photo:</label>
                                                 <div class=" col-md-8">
-                                                    <x-input-text name="student_photo" type="file" value="{{ $record->student_photo }}"  ></x-input-text>
+                                                    <x-input-text name="photo" type="file" value="{{ $record->photo }}"  ></x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label class="col-md-4 col-form-label">Status:</label>
                                                 <div class="col-md-8">
                                                     <div class="mb-3">
-                                                        <x-input-select name="student_id" :records="[]" />
+                                                        <x-input-select name="statuss" :records="[]" :selected="$record->statuss" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -153,7 +145,7 @@
                                                 <label class="col-md-4 col-form-label">Stage:</label>
                                                 <div class="col-md-8">
                                                     <div class="mb-3">
-                                                        <x-input-select name="student_id" :records="[]" />
+                                                        <x-input-select name="stage" :records="[]" :selected="$record->stage" />
                                                     </div>
                                                 </div>
                                             </div>

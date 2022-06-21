@@ -27,8 +27,8 @@
                             <td>{{ $record->date_of_assessment }}</td>
                             <td>{{ $record->dob }}</td>
                             <td>{{ $record->blood_group }}</td>
-                            <td>{{ $record->dob }}</td>
-                            <td>{{ $record->dob }}</td>
+                            <td>{{ $record->phone_number }}</td>
+                            <td>{{ $record->statuss }}</td>
                             <td>{{ $record->dob }}</td>
                             <td>{{ $record->created_at }}</td>
                             <td>
