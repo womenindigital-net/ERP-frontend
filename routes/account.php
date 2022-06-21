@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PaymentController;
@@ -13,13 +14,14 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
         'sale-voucher' => SaleVoucherController::class,
+        'donation-and-other' => DonationController::class,
     ]);
 
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
 
 //    Route::get('journal', [JournalController::class, 'index'])->name('journal');
 //    Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');
-    Route::get('donation-and-other', [IncomeController::class, 'donationAndOther'])->name('donation-and-other');
+//    Route::get('donation-and-other', [\App\Http\Controllers\DonationController::class, 'create'])->name('donation-and-other');
 
     Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');
     Route::get('purchase-order', [PurchaseController::class, 'purchaseOrder'])->name('purchase-order');

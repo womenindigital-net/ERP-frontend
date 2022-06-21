@@ -38,4 +38,9 @@ class Income extends Model
     {
         return $this->belongsTo(User::class, 'created_by', 'id');
     }
+
+    public function donation(): HasOne
+    {
+        return $this->hasOne(Donation::class);
+    }
 }

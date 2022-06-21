@@ -208,122 +208,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- 7th row end  -->
-                                                <!-- 8th row start  -->
-                                                <div class="row">
-                                                    <div class="form-check form-check-primary mb-3">
-                                                        <input class="form-check-input" name="cheque" type="checkbox"
-                                                               id="formCheckBox">
-                                                        <label class="form-check-label" for="formCheckcolor1">Cheque
-                                                            Pay</label>
-                                                    </div>
-                                                    <div class="row" id="formCheckBoxForm">
-                                                        <div class="row">
-                                                            <div class="row">
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Amount</label>
-                                                                        <x-input-text name="cheque_amount"
-                                                                                      placeholder="Enter Bank Name Here">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Cheque No</label>
-                                                                        <x-input-text name="cheque_no"
-                                                                                      placeholder="Phone One Here ">
-                                                                        </x-input-text>
-
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label"> Acc No</label>
-                                                                        <x-input-text name="cheque_account_no"
-                                                                                      placeholder="Enter Acc No">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Account Name</label>
-                                                                        <x-input-text name="cheque_account_name"
-                                                                                      placeholder="Enter Acc.Name Here ">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Bank Name</label>
-                                                                        <x-input-text name="cheque_bank_name"
-                                                                                      placeholder="Enter Bank Name">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- 8th row end  -->
-                                                <!-- 9th row start  -->
-                                                <div class="row">
-                                                    <div class="form-check form-check-primary mb-3">
-                                                        <input class="form-check-input" name="card" type="checkbox"
-                                                               id="formCheckBox2">
-                                                        <label class="form-check-label" for="formCheckcolor1"> Credit
-                                                            Card
-                                                            Pay</label>
-                                                    </div>
-                                                    <div class="row" id="formCheckBoxForm2">
-                                                        <div class="row">
-                                                            <div class="row">
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Amount</label>
-                                                                        <x-input-text name="card_amount"
-                                                                                      placeholder="Enter  Amount">
-                                                                        </x-input-text>
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label"> Card No</label>
-                                                                        <x-input-text name="card_no"
-                                                                                      placeholder="Enter  Credit Card Number">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Card Name</label>
-                                                                        <x-input-text name="card_name"
-                                                                                      placeholder="Enter  Card Name">
-                                                                        </x-input-text>
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Card Type</label>
-                                                                        <x-input-text name="card_type"
-                                                                                      placeholder="Enter  Card Type here">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- 9th row end  -->
+                                                @include('partials.cheque-pay')
+                                                @include('partials.card-pay')
                                             </div>
                                         </div>
                                     </div>
@@ -358,16 +244,6 @@
     {{-- Custom Js form --}}
     <script>
         $ ( document ).ready ( function () {
-            $ ( "#formCheckBoxForm" ).hide ();
-            $ ( "#formCheckBoxForm2" ).hide ();
-
-            $ ( "#formCheckBox" ).click ( function () {
-                $ ( "#formCheckBoxForm" ).toggle ();
-            } );
-            $ ( "#formCheckBox2" ).click ( function () {
-                $ ( "#formCheckBoxForm2" ).toggle ();
-            } );
-
             /*$("#category_id").change(function(e) {
                 let categoryId = e.currentTarget.value;
                 if (categoryId) {
