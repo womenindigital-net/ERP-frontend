@@ -59,41 +59,40 @@
                         <div class="tab-content">
                           <div class="tab-pane" id="AutismBehaviorChecklist">
                             <section>
-                              <form>
-                                <div class="row">
-                                  <div class="col-lg-4">
-                                    <div class="mb-3">
-                                      <label for="basicpill-firstname-input">Collection Date:</label>
-                                      <x-input-text name="date" type="date" placeholder=""></x-input-text>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <div class="mb-3">
-                                      <label for="basicpill-lastname-input">Teacher:</label>
-                                      <x-input-select name="teacher_id" :records="$teachers" />
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <div class="mb-3">
-                                      <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                      <x-input-select name="student_id" :records="$students" />
-                                    </div>
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <div class="mb-3">
+                                    <label for="basicpill-firstname-input">Collection Date:</label>
+                                    <x-input-text name="date" type="date" placeholder=""></x-input-text>
                                   </div>
                                 </div>
-                                <div class="row">
-                                  <div class="col-lg-12">
-                                    <div class="mb-3">
-                                      <label for="verticalnav-phoneno-input">Instruction:</label>
-                                      <p>The Autism Behavior Checklist (ABC) is a checklist of non-adaptive behaviors;
-                                        capable of
-                                        providing how an individual “Looks” in comparison to others. This checklist
-                                        reflects an
-                                        individual’s challenges to respond appropriately to daily life situation.
-                                        Parents and the
-                                        educational team to complete the check lists.</p>
-                                    </div>
+                                <div class="col-lg-4">
+                                  <div class="mb-3">
+                                    <label for="basicpill-lastname-input">Teacher:</label>
+                                    <x-input-select name="teacher_id" :records="$teachers" />
                                   </div>
                                 </div>
+                                <div class="col-lg-4">
+                                  <div class="mb-3">
+                                    <label for="basicpill-phoneno-input">Candidate ID:</label>
+                                    <x-input-select name="student_id" :records="$students" />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="mb-3">
+                                    <label for="verticalnav-phoneno-input">Instruction:</label>
+                                    <p>The Autism Behavior Checklist (ABC) is a checklist of non-adaptive behaviors;
+                                      capable of
+                                      providing how an individual “Looks” in comparison to others. This checklist
+                                      reflects an
+                                      individual’s challenges to respond appropriately to daily life situation.
+                                      Parents and the
+                                      educational team to complete the check lists.</p>
+                                  </div>
+                                </div>
+                              </div>
                             </section>
                           </div>
                           <div class="tab-pane" id="SensoryBehaviors">
@@ -117,11 +116,11 @@
                                 label="Sometimes painful stimuli such as bruises, cuts, and injections evoke no reaction"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
-                                  <!-- row end -->
-                                  <x-input-radio-or-check name="sometimes_painful_stimuli_such_as_bruises"
-                                  label="Often will not blink when bright light is directed toward eyes"
-                                  :records="$constants::$autismBehaviorCheck">
-                                </x-input-radio-or-check>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="sometimes_painful_stimuli_such_as_bruises"
+                                label="Often will not blink when bright light is directed toward eyes"
+                                :records="$constants::$autismBehaviorCheck">
+                              </x-input-radio-or-check>
                               <!-- row end -->
                               <x-input-radio-or-check name="covers_ears_at_many_sounds"
                                 label="Covers ears at many sounds" :records="$constants::$autismBehaviorCheck">
@@ -148,54 +147,52 @@
                           <div class="tab-pane" id="RelatingBehaviors">
                             <section>
                               <!-- row end -->
-                              <x-input-radio-or-check 
-                                label="Frequently does not attend to social/environmental stimuli" :records="$constants::$autismBehaviorCheck">
+                              <x-input-radio-or-check label="Frequently does not attend to social/environmental stimuli"
+                                :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check  label="Has no social smile" :records="$constants::$autismBehaviorCheck">
+                              <x-input-radio-or-check label="Has no social smile"
+                                :records="$constants::$autismBehaviorCheck">
+                              </x-input-radio-or-check>
+                              <!-- row end -->
+                              <x-input-radio-or-check label="Does not reach out when reached for "
+                                :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
                               <x-input-radio-or-check
-                                label="Does not reach out when reached for " :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check
-                                label="Not responsive to other people’s facial expressions/feelings" :records="$constants::$autismBehaviorCheck">
+                                label="Not responsive to other people’s facial expressions/feelings"
+                                :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
                               <x-input-radio-or-check label="Actively avoids eye contact"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check  label="Resists being touched or held"
+                              <x-input-radio-or-check label="Resists being touched or held"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check
-                                label="Is flaccid when held in arms"
+                              <x-input-radio-or-check label="Is flaccid when held in arms"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check
-                                label="Is stiff and hard to held"
+                              <x-input-radio-or-check label="Is stiff and hard to held"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check
-                                label="Does not imitate other children at play "
+                              <x-input-radio-or-check label="Does not imitate other children at play "
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check
-                                label="Has not developed any friendships"
+                              <x-input-radio-or-check label="Has not developed any friendships"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check  label="Often frightened or very anxious "
+                              <x-input-radio-or-check label="Often frightened or very anxious "
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- end row -->
-                              <x-input-radio-or-check  label="Looks through people"
+                              <x-input-radio-or-check label="Looks through people"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
@@ -213,7 +210,7 @@
                                 label="Does not use toys appropriately" :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>
                               <!-- row end -->
-                              <x-input-radio-or-check name="sometimes_shows_no_startle response_to_loud noise"
+                              <x-input-radio-or-check name="sometimes_shows_no_startle_response_to_loud_noise"
                                 label="Sometimes shows no “startle response” to ”loud noise”"
                                 :records="$constants::$autismBehaviorCheck">
                               </x-input-radio-or-check>

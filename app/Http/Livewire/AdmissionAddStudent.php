@@ -4,10 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class ReferralForms extends Component
+class AdmissionAddStudent extends Component
 {
     public function render()
     {
-        return view('livewire.referral-forms');
+        return view('livewire.admission-add-student');
     }
 }

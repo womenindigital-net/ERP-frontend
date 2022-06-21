@@ -72,10 +72,10 @@ class AutisumBhehaviourController extends Controller
      * @param  \App\Models\AutisumBhehaviour  $autisumBhehaviour
      * @return \Illuminate\Http\Response
      */
-    public function show(AutisumBhehaviour $autisumBhehaviour)
+    public function show(AutisumBhehaviour $autisum_behaviour)
     {
         $data = [
-            'record' => $this->record = $autisumBhehaviour,
+            'record' => $this->record = $autisum_behaviour,
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
@@ -88,10 +88,10 @@ class AutisumBhehaviourController extends Controller
      * @param  \App\Models\AutisumBhehaviour  $autisumBhehaviour
      * @return \Illuminate\Http\Response
      */
-    public function edit(AutisumBhehaviour $autisumBhehaviour)
+    public function edit(AutisumBhehaviour $autisum_behaviour)
     {
         $data = [
-            'record' => $this->record = $autisumBhehaviour,
+            'record' => $this->record = $autisum_behaviour,
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
@@ -105,9 +105,9 @@ class AutisumBhehaviourController extends Controller
      * @param  \App\Models\AutisumBhehaviour  $autisumBhehaviour
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAutisumBhehaviourRequest $request, AutisumBhehaviour $autisumBhehaviour)
+    public function update(StoreAutisumBhehaviourRequest $request, AutisumBhehaviour $autisum_behaviour)
     {
-        $this->autisumRepo->update($autisumBhehaviour, $request->validated());
+        $this->autisumRepo->update($autisum_behaviour, $request->validated());
         Session::flash('success');
         return redirect()->back();
     }

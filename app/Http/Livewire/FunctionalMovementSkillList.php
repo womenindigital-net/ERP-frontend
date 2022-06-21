@@ -9,7 +9,7 @@ use App\Repositories\FunctionalMovementSkillRepository;
 
 class FunctionalMovementSkillList extends Component
 {
-     use WithPagination, CommonListElements;
+    use WithPagination, CommonListElements;
 
     private FunctionalMovementSkillRepository $functionalMovementSkillRepo;
     public $reportList;
@@ -24,11 +24,19 @@ class FunctionalMovementSkillList extends Component
         $this->functionalMovementSkillRepo->toggleColumn($recordId, 'is_approved');
         $this->dispatchBrowserEvent('notify');
     }
+
+
+    public function delete($id)
+    {
+        $this->functionalMovementSkillRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
+    }
+
     public function render()
     {
         $data = [
             'records' => $this->functionalMovementSkillRepo->getListData($this->perPage, $this->search),
         ];
-        return view('livewire.functional-movement-skill-list',$data );
+        return view('livewire.functional-movement-skill-list', $data);
     }
 }

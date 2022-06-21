@@ -24,6 +24,7 @@ class FunctionalMovementskillRequest extends FormRequest
     public function rules(): array
     {
         return [
+            "collection_date"                => 'nullable',
             "teacher_id"                     => 'nullable',
             "candidate_id"                   => 'nullable',
             "functional_movement_general_1"  => 'nullable',

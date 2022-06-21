@@ -2,12 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NoticeBoard;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\NoticeBoardRepository;
 use App\Http\Requests\StoreNoticeBoardRequest;
 use App\Http\Requests\UpdateNoticeBoardRequest;
-use App\Models\NoticeBoard;
 
 class NoticeBoardController extends Controller
 {
+
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    private NoticeBoardRepository $noticeRepo;
+    public $noticeBoard;
+
+    public function __construct(UserRepository $userRepo, StudentRepository $studentRepo, NoticeBoardRepository $noticeRepo)
+    {
+        $this->userRepo = $userRepo;
+        $this->studentRepo = $studentRepo;
+        $this->noticeRepo = $noticeRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +40,13 @@ class NoticeBoardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { 
-         return view('program.notice-board.create');
+    {
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+
+        return view('program.notice-board.create', $data);
     }
 
     /**
@@ -36,7 +57,9 @@ class NoticeBoardController extends Controller
      */
     public function store(StoreNoticeBoardRequest $request)
     {
-        //
+        $this->noticeRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +70,11 @@ class NoticeBoardController extends Controller
      */
     public function show(NoticeBoard $noticeBoard)
     {
-        //
+        $data = [
+            'record' => $this->noticeBoard = $noticeBoard,
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('program.notice-board.view', $data);
     }
 
     /**
@@ -58,7 +85,11 @@ class NoticeBoardController extends Controller
      */
     public function edit(NoticeBoard $noticeBoard)
     {
-        //
+        $data = [
+            'record' => $this->noticeBoard = $noticeBoard,
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('program.notice-board.edit', $data);
     }
 
     /**
@@ -68,9 +99,11 @@ class NoticeBoardController extends Controller
      * @param  \App\Models\NoticeBoard  $noticeBoard
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateNoticeBoardRequest $request, NoticeBoard $noticeBoard)
+    public function update(StoreNoticeBoardRequest $request, NoticeBoard $noticeBoard)
     {
-        //
+        $this->noticeRepo->update($noticeBoard, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

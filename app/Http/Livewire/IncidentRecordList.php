@@ -24,7 +24,13 @@ class IncidentRecordList extends Component
         $this->incidentRecordRepo->toggleColumn($recordId, 'is_approved');
         $this->dispatchBrowserEvent('notify');
     }
-
+    
+    public function delete($id)
+    {
+        $this->incidentRecordRepo->delete($id);
+        $this->dispatchBrowserEvent('notify', 'Deleted');
+    }
+    
     public function render()
     {
         $data = [

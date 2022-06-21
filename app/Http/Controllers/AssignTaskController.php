@@ -25,12 +25,9 @@ class AssignTaskController extends Controller
      */
     public function create()
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-            'students' => []
-        ];
+        
 
-        return view('program.assign-task.create', $data);
+        return view('program.assign-task.create',);
     }
 
     /**
@@ -69,11 +66,11 @@ class AssignTaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAssignTaskRequest  $request
+     * @param  \App\Http\Requests\StoreAssignTaskRequest  $request
      * @param  \App\Models\AssignTask  $assignTask
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAssignTaskRequest $request, AssignTask $assignTask)
+    public function update(StoreAssignTaskRequest $request, AssignTask $assignTask)
     {
         //
     }

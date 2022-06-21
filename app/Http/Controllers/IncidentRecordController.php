@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\IncidentRecord;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\IncidentRecordRequest;
 use App\Repositories\IncidentRecordRepository;
@@ -11,10 +13,15 @@ use App\Http\Requests\UpdateIncidentRecordRequest;
 class IncidentRecordController extends Controller
 {
     private IncidentRecordRepository $incidentRcordRepo;
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $records;
 
-    public function __construct(IncidentRecordRepository $incidentRcordRepo)
+    public function __construct(IncidentRecordRepository $incidentRcordRepo,UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->incidentRcordRepo = $incidentRcordRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
     }
     /**
      * Display a listing of the resource.
@@ -33,7 +40,11 @@ class IncidentRecordController extends Controller
      */
     public function create()
     {
-        return view('student.dairy.Incident-Record.create');
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.dairy.Incident-Record.create',$data);
     }
 
     /**
@@ -56,9 +67,14 @@ class IncidentRecordController extends Controller
      * @param  \App\Models\IncidentRecord  $incidentRecord
      * @return \Illuminate\Http\Response
      */
-    public function show(IncidentRecord $incidentRecord)
+    public function show(IncidentRecord $incident_record)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->records = $incident_record,
+        ];
+        return view('student.dairy.Incident-Record.view', $data);
     }
 
     /**

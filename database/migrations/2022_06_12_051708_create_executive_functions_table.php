@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('become_frustrated_when_things')->nullable();
             $table->string('have_trouble_completing')->nullable();
             $table->string('I_will_do_it_later')->nullable();
+            $table->string('next')->nullable();
             $table->timestamps();
         });
     }

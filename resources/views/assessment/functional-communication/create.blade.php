@@ -91,7 +91,7 @@
                                                                         <label
                                                                             for="basicpill-lastname-input">Teacher:</label>
                                                                         <x-input-select name="Teacher_id"
-                                                                            :records="['1'=>'one']" />
+                                                                            :records="$teachers"/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
@@ -99,7 +99,7 @@
                                                                         <label for="basicpill-phoneno-input">Candidate
                                                                             ID:</label>
                                                                         <x-input-select name="candidate_i"
-                                                                            :records="['1'=>'one']" />
+                                                                            :records="$students" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -436,7 +436,6 @@
                                                     <div class="tab-pane" id="Repair_Structures">
                                                         <section>
                                                             <div>
-
                                                                 <!--end row -->
                                                                 <x-input-radio-or-check
                                                                     label="has an excellent rote memory with poor comprehension"

@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\UserRepository;
 use App\Models\FunctionalCommunication;
+use App\Repositories\StudentRepository;
 use App\Http\Requests\FunctionalCommunicationRequest;
+use App\Repositories\FunctionalCommunicationRepository;
 use App\Http\Requests\UpdateFunctionalCommunicationRequest;
 
 class FunctionalCommunicationController extends Controller
 {
+
+
+    private FunctionalCommunicationRepository $fcomRepo;
+    private StudentRepository $studentRepo;
+    public $record;
+
+    public function __construct(FunctionalCommunicationRepository $fcomRepo, UserRepository $userRepository, StudentRepository $studentRepository)
+    {
+        $this->fcomRepo = $fcomRepo;
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +41,8 @@ class FunctionalCommunicationController extends Controller
     public function create()
     {
         $data = [
-            'students' => []
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
         ];
 
         return view('assessment.functional-communication.create', $data);

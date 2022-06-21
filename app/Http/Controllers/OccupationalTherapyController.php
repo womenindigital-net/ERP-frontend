@@ -65,12 +65,12 @@ class OccupationalTherapyController extends Controller
      * @param  \App\Models\OccupationalTherapy  $occupationalTherapy
      * @return \Illuminate\Http\Response
      */
-    public function show(OccupationalTherapy $occupationalTherapy)
+    public function show(OccupationalTherapy $occupational_therapy)
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'record' => $this->record = $occupationalTherapy,
+            'record' => $this->record = $occupational_therapy,
         ];
         return view('assessment.occupational-therapy.view', $data);
     }
@@ -81,9 +81,14 @@ class OccupationalTherapyController extends Controller
      * @param  \App\Models\OccupationalTherapy  $occupationalTherapy
      * @return \Illuminate\Http\Response
      */
-    public function edit(OccupationalTherapy $occupationalTherapy)
+    public function edit(OccupationalTherapy $occupational_therapy)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $this->record = $occupational_therapy,
+        ];
+        return view('assessment.occupational-therapy.edit', $data);
     }
 
     /**
