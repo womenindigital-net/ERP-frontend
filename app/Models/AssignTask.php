@@ -25,6 +25,196 @@ class AssignTask extends Model
             set: fn ($val) => json_encode($val),
         );
     }
+    protected function bodyAwareness(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function physicalGrowth(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function goodTouch(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function decisionMaking(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function generalizationAbility(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function functionalReadingSkills(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }   
+     protected function includesFineMotorSkills(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function timeSkills(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function respond(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function verbs(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function listeningSkills(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function request(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function speaking(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function pragmaticCommunication(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function washingShowering(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function basicFirstAidKnowledgee(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function preparationSkills(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function cookingPreparation(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function intrapersonal(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function prompting(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function modeling(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function emotions(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function socialAwareness(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function interpersonalSkill(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function gamesHowToPlayWithOthers(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function sharingPersonalIssues(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+     protected function selfDevelopment(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+
     protected function adaptations(): Attribute
     {
         return Attribute::make(
@@ -60,7 +250,7 @@ class AssignTask extends Model
             set: fn ($val) => json_encode($val),
         );
     }
-    protected function functionalReadingSkills(): Attribute
+    protected function functionalReadingSkillss(): Attribute
     {
         return Attribute::make(
             get: fn ($val) => json_decode($val),

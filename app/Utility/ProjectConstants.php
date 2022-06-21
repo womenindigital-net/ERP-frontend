@@ -2,6 +2,7 @@
 
 namespace App\Utility;
 
+
 final class ProjectConstants
 {
     const DATA_PER_PAGE = 10;
@@ -112,9 +113,9 @@ final class ProjectConstants
     const OTHER_PAYMENT = 'Other Payment';
     const  SALARY_HEAD  = 'Salary head';
 
-        public static array $salaryHead = [
-        self:: OTHER_PAYMENT => 'Other Payment',
-        self:: SALARY_HEAD  => 'Salary head',
+    public static array $salaryHead = [
+        self::OTHER_PAYMENT => 'Other Payment',
+        self::SALARY_HEAD  => 'Salary head',
     ];
 
 
@@ -122,8 +123,8 @@ final class ProjectConstants
     const DEDUCTIVE = 'Deductive';
 
     public static array $setup = [
-        self:: ADDITIVE  => 'Additive',
-        self:: DEDUCTIVE => 'Deductive',
+        self::ADDITIVE  => 'Additive',
+        self::DEDUCTIVE => 'Deductive',
     ];
 
 
@@ -132,9 +133,9 @@ final class ProjectConstants
     const MONTHLY = 'Monthly';
 
     public static array $payType = [
-        self:: HOURLY  => 'Hourly',
-        self:: DAILY => 'Daily',
-        self:: MONTHLY => 'Monthly',
+        self::HOURLY  => 'Hourly',
+        self::DAILY => 'Daily',
+        self::MONTHLY => 'Monthly',
     ];
 
     const BASIC  = 'Basic';
@@ -142,14 +143,40 @@ final class ProjectConstants
     const NET_SALARY = 'Net Salary';
 
     public static array $deduct = [
-        self:: BASIC   => 'Basic',
-        self:: GROSS => 'Gross',
-        self:: NET_SALARY => 'Net Salary',
+        self::BASIC   => 'Basic',
+        self::GROSS => 'Gross',
+        self::NET_SALARY => 'Net Salary',
+    ];
+    //assign teacher
+    const BOUTIQUE  = 'Boutique';
+    const PAPERWORK = 'Paperwork';
+    const ELEMENTRARY = 'Elementary';
+    const MUSIC = 'Music';
+    const TAILORING = 'Tailoring';
+    const STARTER = 'Starter';
+    const YOGA = 'Yoga';
+    const DANCE = 'Dance';
+    const ONLINECHESSCLASS = 'Online Chess class';
+    const JEWELRY  = 'Jewelry';
+    const RADIAL  = 'Radial';
+    const PHYSICALEXERCISE = 'Physical Exercise(PE)';
+
+    public static array $assignTeacher = [
+        self::BOUTIQUE  => 'Boutique',
+        self::PAPERWORK => 'Paperwork',
+        self::ELEMENTRARY => 'Elementary',
+        self::MUSIC => 'Music',
+        self::TAILORING => 'Tailoring',
+        self::STARTER => 'Starter',
+        self::YOGA => 'Yoga',
+        self::DANCE => 'Dance',
+        self::ONLINECHESSCLASS => 'Online Chess class',
+        self::JEWELRY  => 'Jewelry',
+        self::RADIAL  => 'Radial',
+        self::PHYSICALEXERCISE => 'Physical Exercise(PE)',
     ];
 
     // Teacher
     
     // Teacher
 }
-
-

@@ -13,7 +13,7 @@ class StoreAssignTeacherRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreAssignTeacherRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "student_name"    => 'nullable',
+            "teachar_name"    => 'nullable',
+            "subject"       => 'nullable',
         ];
     }
 }

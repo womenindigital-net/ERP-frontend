@@ -16,8 +16,9 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="case-histroy" role="tabpanel">
-                            <form action="{{ route('assign-teacher.store') }}" method="post">
+                            <form action="{{ route('assign-teacher.update', $record->id) }}" method="post">
                                 @csrf
+                                @method('PUT')
                                 <div class="modal-body p-0">
                                     <div class="card p-0 m-0">
                                         <div class="card-body">
@@ -189,15 +190,19 @@
                                                 <input type="checkbox" id="square-switch1" switch="none" checked />
                                                 <label for="square-switch1" data-on-label="Yes" data-off-label="No"></label>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="row modal-footer">
-                                            <div class="col-md-2">
-                                                <a href="{{ route('assign-teacher.create') }}"
-                                                    class="btn btn-success w-100">Go back</a>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="row modal-footer">
+                                                        <div class="col-md-4 d-flex">
+                                                            <a href="{{ route('assign-teacher.create') }}"
+                                                                class="btn btn-success w-100 me-3">Go back</a>
+
+                                                            <button type="submit"
+                                                                class="btn btn-success w-100">Update</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +213,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
 @section('script')

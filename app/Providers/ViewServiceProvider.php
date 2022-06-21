@@ -63,6 +63,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('careConstants', CareNeedsFormConstants::class);
         });
         View::share('therapyConstants', OccupationalTherapyConstants::class);
+        View::share('projectConstants', ProjectConstants::class);
         View::share('physiotherapyConstants', PhysioTherapy::class);
         View::share('executiveConstants', ExecutiveFunctionTest::class);
         View::share('IRAConstants', IndividualRiskAssessmentForm::class);
