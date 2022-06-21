@@ -27,7 +27,7 @@
                                                     <div class="mb-3 row">
                                                         <label class="col-md-4 col-form-label">Student:</label>
                                                         <div class="col-md-8">
-                                                            <x-input-select name="student_name" :selected="$record->student_id" :records="$students" />
+                                                            <x-input-select name="student_name" :selected="$record->student_name" :records="$students" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -35,7 +35,7 @@
                                                     <div class="mb-3 row">
                                                         <label class="col-md-4 col-form-label">Main Teacher:</label>
                                                         <div class="col-md-8">
-                                                            <x-input-select name="teachar_name" :selected="$record->teachar_id" :records="$teachers" />
+                                                            <x-input-select name="teachar_name" :selected="$record->teachar_name" :records="$teachers" />
                                                         </div>
                                                     </div>
                                                 </div>
