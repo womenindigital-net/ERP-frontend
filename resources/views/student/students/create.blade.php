@@ -38,7 +38,7 @@
                                                 <label for="example-text-input" class="col-md-4 col-form-label">Student
                                                     ID:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_id" type="number" placeholder="Student ID">
+                                                    <x-input-text name="code" type="number" placeholder="Student ID">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -46,13 +46,13 @@
                                                 <label for="example-search-input"
                                                     class="col-md-4 col-form-label">Name:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_name" placeholder="Student Name">
+                                                    <x-input-text name="name" placeholder="Student Name">
                                                     </x-input-text>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label for="" class="col-md-4 col-form-label">Date of Birth:</label>
-                                                <div class="col-md-8" id="datepicker2">
+                                                <div class="col-md-8">
                                                     <x-input-text name="dob" type="date" placeholder="mm/dd/yyyy">
                                                     </x-input-text>
                                                 </div>
@@ -60,8 +60,8 @@
                                             <div class="mb-3 row">
                                                 <label for="" class="col-md-4 col-form-label">Date of
                                                     Assesment:</label>
-                                                <div class="col-md-8" id="datepicker2">
-                                                    <x-input-text name="date_of_assesment" type="date"
+                                                <div class="col-md-8">
+                                                    <x-input-text name="date_of_assessment" type="date"
                                                         placeholder="mm/dd/yyyy">
                                                     </x-input-text>
                                                 </div>
@@ -69,7 +69,7 @@
                                             <div class="mb-3 row">
                                                 <label for="example-tel-input" class="col-md-4 col-form-label">NID:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-text name="student_nid" placeholder="Student NID">
+                                                    <x-input-text name="nid" placeholder="Student NID">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -77,7 +77,7 @@
                                                 <label for="example-password-input" class="col-md-4 col-form-label">Present
                                                     Address:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-textarea name="student_present_address"
+                                                    <x-input-textarea name="present_address"
                                                         placeholder="Student Present Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
@@ -87,7 +87,7 @@
                                                     class="col-md-4 col-form-label">Parmanent
                                                     Address:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-textarea name="student_parmanent_address"
+                                                    <x-input-textarea name="permanent_address"
                                                         placeholder="Student Parmanent Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
@@ -96,7 +96,7 @@
                                                 <label for="example-password-input"
                                                     class="col-md-4 col-form-label">Diagonosis:</label>
                                                 <div class="col-md-8">
-                                                    <x-input-textarea name="student_parmanent_address"
+                                                    <x-input-textarea name="diagnosis"
                                                         placeholder="Student Parmanent Address" rows="1">
                                                     </x-input-textarea>
                                                 </div>
@@ -125,7 +125,7 @@
                                                     </x-input-text>
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">
+                                           <div class="mb-3 row">
                                                 <label for="example-tel-input"
                                                     class="col-md-4 col-form-label">Diagonosis:</label>
                                                 <div class="col-md-8">
@@ -144,7 +144,7 @@
                                                 <label class="col-md-4 col-form-label">Status:</label>
                                                 <div class="col-md-8">
                                                     <div class="mb-3">
-                                                        <x-input-select name="student_id" :records="[]" />
+                                                        <x-input-select name="statuss" :records="[]" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -152,7 +152,7 @@
                                                 <label class="col-md-4 col-form-label">Stage:</label>
                                                 <div class="col-md-8">
                                                     <div class="mb-3">
-                                                        <x-input-select name="student_id" :records="[]" />
+                                                        <x-input-select name="stage" :records="[]" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -257,7 +257,7 @@
                                                 <label for="example-number-input"
                                                     class="col-md-6 pe-4 col-form-label fs-5">Is
                                                     Interested in Job: <input class="form-check-input me-5" id="container"
-                                                        type="checkbox" name="container"></label>
+                                                        type="checkbox" name="is_interested_in_job"></label>
 
                                             </div>
                                             <div class="mb-3 col-6 d-flex justify-content-end ">
@@ -266,12 +266,12 @@
                                                     Observation:</label>
                                                 <div class="btn-group btn-group-sm p-2 col-md-2" role="group"
                                                     aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check" name="btnradio"
-                                                        id="btnradio4" autocomplete="off" checked>
+                                                    <input type="radio" class="btn-check" name="approved_for_observation"
+                                                        id="btnradio4" autocomplete="off" checked value="1">
                                                     <label class="btn btn-outline-success" for="btnradio4">Yes</label>
 
-                                                    <input type="radio" class="btn-check" name="btnradio"
-                                                        id="btnradio5" autocomplete="off">
+                                                    <input type="radio" class="btn-check" name="approved_for_observation"
+                                                        id="btnradio5" autocomplete="off" value="0">
                                                     <label class="btn btn-outline-success text-danger"
                                                         for="btnradio5">No</label>
                                                 </div>
