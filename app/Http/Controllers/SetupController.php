@@ -64,59 +64,59 @@ class SetupController extends Controller
     }
     public function projectSetup()
     {
-        return view('setup.project-setup.project-setup');
+        return view('setup.project-setup.create');
     }
     public function doctorSetup()
     {
-        return view('setup.doctor-setup');
+        return view('setup.doctor-setup.create');
     }
     public function chartAccountSetup()
     {
-        return view('setup.chart-of-accounts');
+        return view('setup.chart-of-accounts.create');
     }
     public function accountDetailsSetup()
     {
-        return view('setup.account-details');
+        return view('setup.account-details.create');
     }
     public function manageChequebook()
     {
-        return view('setup.manage-chequebook');
+        return view('setup.manage-chequebook.create');
     }
     public function bankReconcilationNew()
     {
-        return view('setup.bank-reconcilation-new');
+        return view('setup.bank-reconcilation-new.create');
     }
     public function bankReconcilation()
     {
-        return view('setup.bank-reconcilation');
+        return view('setup.bank-reconcilation.create');
     }
     public function salaryGradeSetup()
     {
-        return view('setup.payroll-management.salary_grade_setup');
+        return view('setup.payroll-management.salary_grade_setup.create');
     }
     public function salaryStepSetup()
     {
-        return view('setup.payroll-management.salary_step_setup');
+        return view('setup.payroll-management.salary_step_setup.create');
     }
     public function salaryHeadSetup()
     {
-        return view('setup.payroll-management.salary_head_setup');
+        return view('setup.payroll-management.salary_head_setup.create');
     }
     public function salaryPackageSetup()
     {
-        return view('setup.payroll-management.salary_package_setup');
+        return view('setup.payroll-management.salary_package_setup.create');
     }
     public function salaryBudgetSetup()
     {
-        return view('setup.payroll-management.salary_budget_setup');
+        return view('setup.payroll-management.salary_budget_setup.create');
     }
     public function supplierSetup()
     {
-        return view('setup.vendor-list.supplier-setup');
+        return view('setup.vendor-list.supplier-setup.create');
     }
     public function supplierTypeSetup()
     {
-        return view('setup.vendor-list.supplier-type-setup');
+        return view('setup.vendor-list.supplier-type-setup.create');
     }
     public function customerReg()
     {
@@ -128,39 +128,39 @@ class SetupController extends Controller
     }
     public function courseAdmission()
     {
-        return view('setup.course-and-admission');
+        return view('setup.course-and-admission.create');
     }
     public function markingCategory()
     {
-        return view('setup.vocational-marking-category');
+        return view('setup.vocational-marking-category.create');
     }
     public function markingSubcategory()
     {
-        return view('setup.vocational-marking-subcategory');
+        return view('setup.vocational-marking-subcategory.create');
     }
     public function studentEvolution()
     {
-        return view('setup.vocational-student-evolution');
+        return view('setup.vocational-student-evolution.create');
     }
     public function employeeInformation()
     {
-        return view('setup.employee-information');
+        return view('setup.employee-information.create');
     }
     public function attendeanceSetup()
     {
-        return view('setup.attendance-policy-setup');
+        return view('setup.attendance-policy-setup.create');
     }
     public function leaveTypeSetup()
     {
-        return view('setup.leave-type');
+        return view('setup.leave-type.create');
     }
     public function leavePackageSetup()
     {
-        return view('setup.leave-package');
+        return view('setup.leave-package.create');
     }
     public function createProduct()
     {
-        return view('setup.create-product');
+        return view('setup.create-product.create');
     }
     public function accountMappingSetup()
     {

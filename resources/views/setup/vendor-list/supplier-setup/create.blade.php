@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title') @lang('translation.Starter_Page') @endsection
+@section('title') @lang('translation.Tabs_&_Accordions') @endsection
 @section('css')
 @endsection
 @section('content')
@@ -7,17 +7,18 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
+                <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block">Customer Type Setup</span>
+                            <span class="d-none d-sm-block">Supplier Type Setup</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab">
                             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                            <span class="d-none d-sm-block">Customer Type List</span>
+                            <span class="d-none d-sm-block">Supplier Type List</span>
                         </a>
                     </li>
                 </ul>
@@ -32,138 +33,129 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="card-body">
-                                                        <h4 class="card-title">Student Create</h4>
                                                         <div class="mb-2 row">
-                                                            <label for="example-text-input"
-                                                                class="col-md-4 col-form-label">Name</label>
+                                                                <label for="example-text-input" class="col-md-4 col-form-label text-end">Name</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="name"  placeholder="Enter Customer Name Here"></x-input-text>
+                                                                <x-input-text name="name"  placeholder="Enter your supplier name"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-5 row">
-                                                            <label for="example-search-input"
-                                                                class="col-md-4 col-form-label">Mobile</label>
+                                                            <label for="example-search-input" class="col-md-4 col-form-label text-end">Contact Person</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="mobile"  placeholder="Mobile"></x-input-text>
+                                                                <x-input-text name="contact_person" type="search" placeholder="Contact Person Name Here"></x-input-text>
+                                                            </div>
+                                                         </div>
+                                                        <div class="mb-2 row">
+                                                            <label for="example-email-input" class="col-md-4 col-form-label text-end">Address 1</label>
+                                                            <div class="col-md-8">
+                                                                <x-input-text name="address_1" type="email" placeholder="Enter Address Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
-                                                            <label for="example-email-input"
-                                                                class="col-md-4 col-form-label">Address 1</label>
+                                                            <label for="example-email-input" class="col-md-4 col-form-label text-end">City</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="address_1"  placeholder="Address 1"></x-input-text>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-2 row">
-                                                            <label for="example-email-input"
-                                                                class="col-md-4 col-form-label">City</label>
-                                                            <div class="col-md-8">
-                                                                <x-input-text name="city"  placeholder="City Name Here"></x-input-text>
+                                                                <x-input-text name="city" placeholder="City Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-5 row">
-                                                            <label for="example-url-input"
-                                                                class="col-md-4 col-form-label">State</label>
+                                                            <label for="example-url-input" class="col-md-4 col-form-label text-end">State</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="state"  placeholder="State Name Here"></x-input-text>
+                                                                <x-input-text name="state" placeholder="State Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
-                                                            <label for="example-text-input"
-                                                                class="col-md-4 col-form-label">Phone 1</label>
+                                                            <label for="example-text-input" class="col-md-4 col-form-label text-end">Phone 1</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="phone_1"  placeholder="Phone One Here"></x-input-text>
+                                                                <x-input-text name="phone" placeholder="Phone One Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2 row">
-                                                            <label for="example-search-input"
-                                                                class="col-md-4 col-form-label">Email</label>
+                                                            <label for="example-search-input" class="col-md-4 col-form-label text-end">Fax</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="email"  placeholder="Enter Email Address Here"></x-input-text>
+                                                                <x-input-text name="fax" placeholder="Enter Fax Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="card-body">
-                                                        <div class="mb-5 mt-3 row">
-                                                            <label class="col-md-4 col-form-label">Select</label>
+                                                        <div class="mb-2  row">
+                                                            <label class="col-md-4 col-form-label text-end">Type</label>
                                                             <div class="col-md-8">
-                                                                <x-input-select name="select" :records="[]" />
+                                                                <x-input-select name="type" :records="[]" />
                                                             </div>
                                                         </div>
+                                                        <div class="row">
+                                                            <label for="example-text-input" class="col-md-4 col-form-label text-end">Designation</label>
+                                                            <div class="col-md-8">
+                                                                <x-input-text name="designation" placeholder="Enter designation here"></x-input-text>
+                                                            </div>
+                                                        </div>
+                                                        <br><br>
                                                         {{-- Address --}}
                                                         <div class="mb-2 row">
-                                                            <label for="example-search-input"
-                                                                class="col-md-4 col-form-label">Address</label>
+                                                            <label for="example-search-input" class="col-md-4 col-form-label text-end">Address</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="address"  placeholder="Enter Address Here"></x-input-text>
+                                                                <x-input-text name="address" placeholder="Enter  Address two Here"></x-input-text>
                                                             </div>
-                                                        </div>
+                                                        </div> 
                                                         {{-- Zip Code --}}
                                                         <div class="mb-2 row">
-                                                            <label for="example-search-input"
-                                                                class="col-md-4 col-form-label">Zip Code</label>
+                                                            <label for="example-search-input" class="col-md-4 col-form-label text-end ">Zip Code</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text type="number" name="zip_code"  placeholder="Zip Code"></x-input-text>
+                                                                <x-input-text name="zip_code" type="number" placeholder="Enter Zip code here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         {{-- Country --}}
                                                         <div class="mb-5 row">
-                                                            <label for="example-search-input"
-                                                                class="col-md-4 col-form-label">Country</label>
+                                                            <label for="example-search-input text-end" class="col-md-4 col-form-label text-end">Country</label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="country"  placeholder="Country Name Here"></x-input-text>
+                                                                <x-input-text name="country" placeholder="Country Name Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                         {{-- Phone2 --}}
                                                         <div class="mb-2 row">
-                                                            <label for="example-search-input"
-                                                                class="col-md-4 col-form-label">Phone2 </label>
+                                                            <label for="example-search-input" class="col-md-4 col-form-label text-end">Phone2 </label>
                                                             <div class="col-md-8">
-                                                                <x-input-text name="phone_2"  placeholder="Phone Two Here"></x-input-text>
+                                                                <x-input-text name="phone_2" type="number" placeholder="Phone Two Here"></x-input-text>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2 row">
+                                                            <label for="example-search-input" class="col-md-4 col-form-label text-end">Email</label>
+                                                            <div class="col-md-8">
+                                                                <x-input-text name="email" placeholder="Email Address Here"></x-input-text>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-3">
-                                                            <h5 class="mb-5">Is Card Allow &nbsp;
-                                                                <input class="form-check-input" type="checkbox"
-                                                                id="gridCheck">
-                                                            </h5>
+                                                {{-- note --}}
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="mb-2 row">
+                                                        <label for="example-search-input" class="col-md-2 col-form-label text-end ps-5">Note</label>
+                                                        <div class="col-md-6">
+                                                            <x-input-text name="note"></x-input-text>
                                                         </div>
-                                                        <label for="example-search-input"
-                                                            class="col-md-2 col-form-label">
-                                                            <h5>Advanced</h5>
-                                                        </label>
-                                                        <div class="col-md-4">
-                                                            <x-input-text name="advance"  placeholder="Advanced Amount"></x-input-text>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <h5 class="mb-5">Is Active &nbsp;
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="gridCheck">
-                                                            </h5>
+                                                        <div class="form-check col-md-3 ms-5">
+                                                            <label class="form-check-label ms-3" for="formCheck2">
+                                                                Is Active
+                                                            </label>
+                                                            <input class="form-check-input" type="checkbox" id="formCheck2" checked>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            {{-- note end  --}}
+                                        <div class="d-flex justify-content-end ">
+                                            <div class="me-2"> 
+                                                <button class="btn btn-outline-danger waves-effect waves-light" type="submit">RESET</button>
+                                            </div>
+                                            <div class="ms-2">
+                                                <button class="btn btn-outline-success waves-effect waves-light" type="submit">SAVE</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </form>
+                            </form>      
                         </section>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-end">
-                                    <button type="button" class="btn btn-outline-danger w-md">Reset</button>
-                                    <button type="submit" class="btn btn-outline-info w-md">Save</button>
-                                </div>
-                                <div class="col-lg-3"> </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="tab-pane" id="profile" role="tabpanel">
                         <div class="row">
@@ -183,7 +175,7 @@
                                             </div>
                                             <div class="col-sm-12 col-md-6 text-end">
                                               <label style="display: inline-flex;align-items: center;">Search:
-                                                <input type="search" class="form-control form-control-sm" placeholder="">
+                                                  <x-input-text type="search" name="search" />
                                               </label>
                                             </div>
                                           </div>
@@ -191,42 +183,27 @@
                                             <table class="table w-100 table-bordered">
                                               <thead>
                                                 <tr class="table-primary">
-                                                  <th>Name</th>
-                                                  <th>Type</th>
-                                                  <th>Mobile</th>
-                                                  <th>DOB</th>
-                                                  <th>City</th>
-                                                  <th>Phone1</th>
-                                                  <th>Email</th>
-                                                  <th>Credit Allow</th>
-                                                  <th>Limit</th>
-                                                  <th>Due</th>
-                                                  <th>Log</th>
-                                                  <th>Action</th>
+                                                  <th> Name</th>
+                                                  <th> Description</th>
+                                                  <th> Log</th>
+                                                  <th> Action</th>
                                                 </tr>
                                               </thead>
                                               <tbody>
                                                 <tr>
-                                                  <td>VF Asia</td>
-                                                  <td>Organization</td>
-                                                  <td></td>
-                                                  <td></td>
-                                                  <td></td>
-                                                  <td></td>
-                                                  <td></td>
-                                                  <td>No</td>
-                                                  <td>0</td>
-                                                  <td>0</td>
-                                                  <td>Create: Ohidul Hassan<br> @ 2021-06-20 11:20:46 <br>
-                                                      There is no update record.</td>
-                                                  <td>      
-                                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                                  <tr>
+                                                      <td>Whole Sell</td>
+                                                      <td></td>
+                                                      <td>Create: Shonod Digital @ 2018-12-01 17:51:02
+                                                          There is no update record</td>
+                                                   <td>
+                                                       <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                                         <i class="mdi mdi-pencil"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                                      </button>
+                                                      <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                                                         <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                  </td>
+                                                      </button> 
+                                                   </td>
                                                 </tr>
                                               </tbody>
                                             </table>
@@ -256,8 +233,8 @@
                                     </div>
                                 </div>
                             </div> <!-- end col -->
-                        </div>
-                    </div>
+                        </div> <!-- end row -->     
+                    </div> 
                 </div>
             </div>
         </div>
