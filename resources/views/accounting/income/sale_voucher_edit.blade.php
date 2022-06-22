@@ -205,131 +205,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- 7th row end  -->
-                                            <!-- 8th row start  -->
-                                            <div class="row">
-                                                <div class="form-check form-check-primary mb-3">
-                                                    <input class="form-check-input" name="cheque" type="checkbox"
-                                                           id="formCheckBox" value="{{$history->cheque}}">
-                                                    <label class="form-check-label" for="formCheckcolor1">Cheque
-                                                        Pay</label>
-                                                </div>
-                                                <div class="row" id="formCheckBoxForm">
-                                                    <div class="row">
-                                                        <div class="row">
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Amount</label>
-                                                                    <x-input-text name="cheque_amount"
-                                                                                  value="{{$history->cheque_amount}}"
-                                                                                  placeholder="Enter Bank Name Here">
-                                                                    </x-input-text>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Cheque No</label>
-                                                                    <x-input-text name="cheque_no"
-                                                                                  value="{{$history->cheque_no}}"
-                                                                                  placeholder="Phone One Here ">
-                                                                    </x-input-text>
-
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label"> Acc No</label>
-                                                                    <x-input-text name="cheque_account_no"
-                                                                                  value="{{$history->cheque_account_no}}"
-                                                                                  placeholder="Enter Acc No">
-                                                                    </x-input-text>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Account Name</label>
-                                                                    <x-input-text name="cheque_account_name"
-                                                                                  value="{{$history->cheque_account_name}}"
-                                                                                  placeholder="Enter Acc.Name Here ">
-                                                                    </x-input-text>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Bank Name</label>
-                                                                    <x-input-text name="cheque_bank_name"
-                                                                                  value="{{$history->cheque_bank_name}}"
-                                                                                  placeholder="Enter Bank Name">
-                                                                    </x-input-text>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- 8th row end  -->
-                                            <!-- 9th row start  -->
-                                            <div class="row">
-                                                <div class="form-check form-check-primary mb-3">
-                                                    <input class="form-check-input" name="card" type="checkbox"
-                                                           id="formCheckBox2" value="{{$history->card ?? ''}}">
-                                                    <label class="form-check-label" for="formCheckcolor1"> Credit
-                                                        Card
-                                                        Pay</label>
-                                                </div>
-                                                <div class="row" id="formCheckBoxForm2">
-                                                    <div class="row">
-                                                        <div class="row">
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Amount</label>
-                                                                    <x-input-text name="card_amount"
-                                                                                  value="{{$history->card_amount ?? ''}}"
-                                                                                  placeholder="Enter  Amount">
-                                                                    </x-input-text>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label"> Card No</label>
-                                                                    <x-input-text name="card_no"
-                                                                                  value="{{$history->card_no ?? ''}}"
-                                                                                  placeholder="Enter  Credit Card Number">
-                                                                    </x-input-text>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Card Name</label>
-                                                                    <x-input-text name="card_name"
-                                                                                  value="{{$history->card_name ?? ''}}"
-                                                                                  placeholder="Enter  Card Name">
-                                                                    </x-input-text>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <div class="mb-3">
-                                                                    <label class="form-label">Card Type</label>
-                                                                    <x-input-text name="card_type"
-                                                                                  value="{{$history->card_type ?? ''}}"
-                                                                                  placeholder="Enter  Card Type here">
-                                                                    </x-input-text>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- 9th row end  -->
+                                            @include('partials.cheque-pay-edit')
+                                            @include('partials.card-pay-edit')
                                         </div>
                                     </div>
                                 </div>
@@ -360,16 +237,6 @@
     {{-- Custom Js form --}}
     <script>
         $ ( document ).ready ( function () {
-            $ ( "#formCheckBoxForm" ).hide ();
-            $ ( "#formCheckBoxForm2" ).hide ();
-
-            $ ( "#formCheckBox" ).click ( function () {
-                $ ( "#formCheckBoxForm" ).toggle ();
-            } );
-            $ ( "#formCheckBox2" ).click ( function () {
-                $ ( "#formCheckBoxForm2" ).toggle ();
-            } );
-
             function addEventForAllProductChange() {
                 let allSelects = $ ( "#ProductGroup select" );
                 for (let i = 0; i < allSelects.length; i++) {
