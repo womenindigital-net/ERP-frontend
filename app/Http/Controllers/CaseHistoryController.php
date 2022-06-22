@@ -11,8 +11,6 @@ use App\Repositories\StudentRepository;
 use App\Repositories\UserRepository;
 use App\Services\CaseHistoryService;
 use App\Utility\ProjectConstants;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Session;
 
