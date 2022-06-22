@@ -23,42 +23,42 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // setup ->> Company Setup
     Route::get('company-setup/company-setup/create', [SetupController::class, 'companySetup'])->name('setup.company-setup.create');
     //setup ->> project setup 
-    Route::get('project-setup/project-setup', [SetupController::class, 'projectSetup'])->name('setup.project-setup.project-setup');
+    Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
     //setup ->> Doctor setup
-    Route::get('doctor-setup', [SetupController::class, 'doctorSetup'])->name('setup.doctor-setup');
+    Route::get('doctor-setup.create', [SetupController::class, 'doctorSetup'])->name('setup.doctor-setup.create');
     // account setup 
-    Route::get('chart-of-accounts', [SetupController::class, 'chartAccountSetup'])->name('setup.chart-of-accounts');
+    Route::get('chart-of-accounts.create', [SetupController::class, 'chartAccountSetup'])->name('setup.chart-of-accounts.create');
     // bank details setup 
-    Route::get('account-details', [SetupController::class, 'accountDetailsSetup'])->name('setup.account-details');
-    Route::get('manage-chequebook', [SetupController::class, 'manageChequebook'])->name('setup.manage-chequebook');
+    Route::get('account-details.create', [SetupController::class, 'accountDetailsSetup'])->name('setup.account-details.create');
+    Route::get('manage-chequebook.create', [SetupController::class, 'manageChequebook'])->name('setup.manage-chequebook.create');
     // bank reconcilation 
-    Route::get('bank-reconcilation-new', [SetupController::class, 'bankReconcilationNew'])->name('setup.bank-reconcilation-new');
-    Route::get('bank-reconcilation', [SetupController::class, 'bankReconcilation'])->name('setup.bank-reconcilation');
+    Route::get('bank-reconcilation-new.create', [SetupController::class, 'bankReconcilationNew'])->name('setup.bank-reconcilation-new.create');
+    Route::get('bank-reconcilation.create', [SetupController::class, 'bankReconcilation'])->name('setup.bank-reconcilation.create');
     // Payroll Management setup 
-    Route::get('payroll-management/salary_grade_setup', [SetupController::class, 'salaryGradeSetup'])->name('setup.payroll-management.salary_grade_setup');
-    Route::get('payroll-management/salary_step_setup', [SetupController::class, 'salaryStepSetup'])->name('setup.payroll-management.salary_step_setup');
-    Route::get('payroll-management/salary_head_setup', [SetupController::class, 'salaryHeadSetup'])->name('setup.payroll-management.salary_head_setup');
-    Route::get('payroll-management/salary_package_setup', [SetupController::class, 'salaryPackageSetup'])->name('setup.payroll-management.salary_package_setup');
-    Route::get('payroll-management/salary_budget_setup', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup');
+    Route::get('payroll-management/salary_grade_setup.create', [SetupController::class, 'salaryGradeSetup'])->name('setup.payroll-management.salary_grade_setup.create');
+    Route::get('payroll-management/salary_step_setup.create', [SetupController::class, 'salaryStepSetup'])->name('setup.payroll-management.salary_step_setup.create');
+    Route::get('payroll-management/salary_head_setup.create', [SetupController::class, 'salaryHeadSetup'])->name('setup.payroll-management.salary_head_setup.create');
+    Route::get('payroll-management/salary_package_setup.create', [SetupController::class, 'salaryPackageSetup'])->name('setup.payroll-management.salary_package_setup.create');
+    Route::get('payroll-management/salary_budget_setup.create', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup.create');
     // Vendor List   
-    Route::get('vendor-list/supplier-setup', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup');
-    Route::get('vendor-list/supplier-type-setup', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup');
+    Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
+    Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
     // Customer List 
     Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
     Route::get('customers-list/customer-type/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-type.create');
     // Course and Admission
-    Route::get('course-and-admission', [SetupController::class, 'courseAdmission'])->name('setup.course-and-admission');
+    Route::get('course-and-admission.create', [SetupController::class, 'courseAdmission'])->name('setup.course-and-admission.create');
 
     // Vocational Marking 
-    Route::get('vocational-marking-category', [SetupController::class, 'markingCategory'])->name('setup.vocational-marking-category');
-    Route::get('vocational-marking-subcategory', [SetupController::class, 'markingSubcategory'])->name('setup.vocational-marking-subcategory');
-    Route::get('vocational-student-evolution', [SetupController::class, 'studentEvolution'])->name('setup.vocational-student-evolution');
+    Route::get('vocational-marking-category.create', [SetupController::class, 'markingCategory'])->name('setup.vocational-marking-category.create');
+    Route::get('vocational-marking-subcategory.create', [SetupController::class, 'markingSubcategory'])->name('setup.vocational-marking-subcategory.create');
+    Route::get('vocational-student-evolution.create', [SetupController::class, 'studentEvolution'])->name('setup.vocational-student-evolution.create');
     // HR & Admin Links 
-    Route::get('employee-information', [SetupController::class, 'employeeInformation'])->name('setup.employee-information');
-    Route::get('attendance-policy-setupy', [SetupController::class, 'attendeanceSetup'])->name('setup.attendance-policy-setup');
-    Route::get('leave-type', [SetupController::class, 'leaveTypeSetup'])->name('setup.leave-type');
-    Route::get('leave-package', [SetupController::class, 'leavePackageSetup'])->name('setup.leave-package');
-    Route::get('create-product', [SetupController::class, 'createProduct'])->name('setup.create-product');
+    Route::get('employee-information.create', [SetupController::class, 'employeeInformation'])->name('setup.employee-information.create');
+    Route::get('attendance-policy-setup.create', [SetupController::class, 'attendeanceSetup'])->name('setup.attendance-policy-setup.create');
+    Route::get('leave-type.create', [SetupController::class, 'leaveTypeSetup'])->name('setup.leave-type.create');
+    Route::get('leave-package.create', [SetupController::class, 'leavePackageSetup'])->name('setup.leave-package.create');
+    Route::get('create-product.create', [SetupController::class, 'createProduct'])->name('setup.create-product.create');
     // Accounting Mapping 
     Route::get('accounting-mapping.account_mapping', [SetupController::class, 'accountMappingSetup'])->name('setup.accounting-mapping.account_mapping');
     Route::get('accounting-mapping.accounting_year_setup', [SetupController::class, 'accountingYearSetup'])->name('setup.accounting-mapping.accounting_year_setup');
