@@ -8,15 +8,9 @@ class VocationalEvalutionRepository extends BaseRepository
 {
     protected string $model = VocationalEvalution::class;
 
-    public function getListData($perPage, $search, $filter)
+    public function getListData($perPage, $search)
     {
-        return $this->model::with('details', 'student')
-            ->when($search, function ($query) use ($search) {
-                $query->where('particulars', "like", "%$search%")
-                    ->orWhere('transaction_amount', 'like', "%$search%");
-            })->when($filter != '', function ($query) use ($filter) {
-                $query->where('is_approved', $filter);
-            })->latest()
+        return $this->model::with('details', 'student')->latest()
             ->paginate($perPage);
     }
 }
