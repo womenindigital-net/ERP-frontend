@@ -26,10 +26,10 @@ return new class extends Migration
             $table->text('has_move_ability')->nullable();
             $table->text('has_fine_equipment_use_ability')->nullable();
             $table->json('has_write_ability')->nullable();
-            $table->text('has_interest_in_education')->nullable();
-            $table->text('has_self_work_capability')->nullable();
-            $table->text('has_social_communication_ability')->nullable();
-            $table->text('is_able_to_play_with_others')->nullable();
+            $table->text('has_education_intersted')->nullable();
+            $table->text('has_self_work_capabelity')->nullable();
+            $table->text('has_abil_to_comminite_socilely')->nullable();
+            $table->text('is_ableto_paly_others')->nullable();
             $table->json('has_any_learning_obstacle')->nullable();
             $table->text('has_control_over_body')->nullable();
             $table->text('has_speaking_problem')->nullable();

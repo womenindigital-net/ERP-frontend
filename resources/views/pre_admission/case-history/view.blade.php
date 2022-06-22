@@ -31,10 +31,10 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-sm-9 col-md-9 apply-view-only">
+                <div class="col-sm-9 col-md-9 ">
                   <form action="{{ route('case-history.store') }}" method="POST">
                     @csrf
-                    <div class="tab-content">
+                    <div class="tab-content apply-view-only">
                       <div class="tab-pane" id="caseHistoryInit">
                         <section>
                           <div class="row">
@@ -64,31 +64,6 @@
                                 <x-input-select :records="$students" name="student_id"
                                   :selected="$caseHistory->student_id">
                                 </x-input-select>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-phoneno-input">Phone</label>
-                                <x-input-text name="phone" value="{{ $caseHistory->phone }}">
-                                </x-input-text>
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-email-input">Email</label>
-                                <x-input-text name="email" value="{{ $caseHistory->email }}">
-                                </x-input-text>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="mb-3">
-                                <label for="verticalnav-address-input">Address</label>
-                                <x-input-textarea name="address" value="{{ $caseHistory->address }}"></x-input-textarea>
                               </div>
                             </div>
                           </div>
