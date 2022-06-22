@@ -32,6 +32,7 @@ use App\Http\Controllers\SensoryChecklistChildController;
 use App\Http\Controllers\FunctionalCommunicationController;
 use App\Http\Controllers\FunctionalMovementskillController;
 use App\Http\Controllers\StaffAndWorkplaceInspectionController;
+use App\Http\Controllers\StudentAttendanceController;
 use App\Http\Controllers\VocationalEvalutionController;
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
@@ -64,6 +65,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'referral' => ReferralController::class,
         'vocational-evaluation' => VocationalEvalutionController::class,
         'student-income' => StudentIncomeController::class,
+        'student-attendance' => StudentAttendanceController::class,
         //        'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
@@ -118,7 +120,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('dairy/incident-record', [StudentController::class, 'incidentRecord'])->name('student.dairy.incident-record');
     Route::get('dairy/medicine-admin', [StudentController::class, 'medicineAdmin'])->name('student.dairy.medicine-admin');
 
-    // Route::get('student-attendence', [StudentController::class, 'studentAttendence'])->name('student.attendence');
+     //Route::get('student-attendence', [StudentController::class, 'studentAttendence'])->name('student.attendence');
     // Route::get('', [StudentController::class, ''])->name('');
     Route::get('assessment/functional_movement_skills', [StudentController::class, 'functionalMovementskill'])->name('assessment.functional_movement_skills');
     Route::get('co-curricular/drama-diary-evaluation', [StudentController::class, 'dramaDiary'])->name('student.co-curricular.drama-diary-evaluation');

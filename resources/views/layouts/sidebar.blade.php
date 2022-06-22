@@ -192,7 +192,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ 'student.student-attendance' }}">Student Attendence</a>
+                            <a href="{{ route('student-attendance.create') }}">Student Attendence</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
