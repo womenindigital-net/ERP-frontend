@@ -214,8 +214,11 @@
             </div>
         </div>
     </div>
+<<<<<<< Updated upstream
 </div>
 </div>
+=======
+>>>>>>> Stashed changes
 @endsection
 @section('script')
 <<script type="text/javascript">

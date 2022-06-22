@@ -2,12 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StudentAttendance;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\StudentAttendanceRepository;
 use App\Http\Requests\StoreStudentAttendanceRequest;
 use App\Http\Requests\UpdateStudentAttendanceRequest;
-use App\Models\StudentAttendance;
 
 class StudentAttendanceController extends Controller
 {
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    private StudentAttendanceRepository $studentAttendanceRepo;
+
+    public function __construct(UserRepository $userRepo, StudentRepository $studentRepo, StudentAttendanceRepository $studentAttendanceRepo)
+    {
+        $this->userRepo = $userRepo;
+        $this->studentRepo = $studentRepo;
+        $this->studentAttendanceRepo = $studentAttendanceRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +39,11 @@ class StudentAttendanceController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.sutdent_attendance.create', $data);
     }
 
     /**
@@ -36,7 +54,9 @@ class StudentAttendanceController extends Controller
      */
     public function store(StoreStudentAttendanceRequest $request)
     {
-        //
+        $this->studentAttendanceRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +67,12 @@ class StudentAttendanceController extends Controller
      */
     public function show(StudentAttendance $studentAttendance)
     {
-        //
+        $data = [
+            'record' => $this->studentAttendance = $studentAttendance,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.sutdent_attendance.view', $data);
     }
 
     /**
@@ -58,7 +83,12 @@ class StudentAttendanceController extends Controller
      */
     public function edit(StudentAttendance $studentAttendance)
     {
-        //
+        $data = [
+            'record' => $this->studentAttendance = $studentAttendance,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.sutdent_attendance.view', $data);
     }
 
     /**
@@ -70,7 +100,9 @@ class StudentAttendanceController extends Controller
      */
     public function update(UpdateStudentAttendanceRequest $request, StudentAttendance $studentAttendance)
     {
-        //
+        $this->studentAttendance->update($studentAttendance, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

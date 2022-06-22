@@ -42,7 +42,7 @@ class CaseHistory extends Model
         );
     }
 
-    protected function hasAnyLearningAbstacle(): Attribute
+    protected function hasAnyLearningObstacle(): Attribute
     {
         return Attribute::make(
             get: fn ($val) => json_decode($val),
