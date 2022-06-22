@@ -10,7 +10,8 @@ class VocationalEvalutionRepository extends BaseRepository
 
     public function getListData($perPage, $search)
     {
-        return $this->model::with('details', 'student')->latest()
+        return $this->model::with('details', 'student')
+            ->latest()
             ->paginate($perPage);
     }
 }

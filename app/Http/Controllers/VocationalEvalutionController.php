@@ -10,6 +10,7 @@ use App\Services\VocationalEvaluationService;
 use App\Http\Livewire\Traits\CommonListElements;
 use App\Http\Requests\StoreVocationalEvalutionRequest;
 use App\Http\Requests\UpdateVocationalEvalutionRequest;
+use App\Repositories\VocationalEvalutionRepository;
 use App\Services\CategoryService;
 
 class VocationalEvalutionController extends Controller
@@ -17,8 +18,10 @@ class VocationalEvalutionController extends Controller
     use WithPagination, CommonListElements;
 
     private StudentRepository $studentRepo;
+    private VocationalEvalutionRepository $vocRepo;
     private VocationalEvaluationService $vocService;
     private CategoryService $categoryService;
+    public $records;
 
 
 
@@ -72,9 +75,21 @@ class VocationalEvalutionController extends Controller
      * @param  \App\Models\VocationalEvalution  $vocationalEvalution
      * @return \Illuminate\Http\Response
      */
-    public function show(VocationalEvalution $vocationalEvalution)
+    public function show(VocationalEvalution $vocational_evaluation)
     {
-        //
+        $data = [
+            'students' => $this->studentRepo->getData(),
+            'categories' => $this->categoryService->getFormattedDataAsOptGroup(),
+            'records' => $this->records = $vocational_evaluation,
+        ];
+        dd($data);
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'students' => $this->studentRepo->getData(),
+            'courses' => $this->courseService->getFormattedDataAsOptGroup(),
+            'record' => $this->vocService->vocRepo->getRelatedData($studentIncome, ['income.project', 'incomeDetails']),
+        ];
+        return view('student.vocational_evaluation.view', $data);
     }
 
     /**

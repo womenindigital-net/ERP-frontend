@@ -57,6 +57,7 @@ class CaseHistory extends Model
             set: fn ($val) => json_encode($val),
         );
     }
+
     protected function howYouWillDescribeYouChild(): Attribute
     {
         return Attribute::make(
