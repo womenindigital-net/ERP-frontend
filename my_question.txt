@@ -5,3 +5,6 @@ file uploding
 referral form Doctor view
 vocational-evaluation category
 categorySeeder
+
+sell voucher no edit
+sell return needed

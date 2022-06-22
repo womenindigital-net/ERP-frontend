@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Student::class)->constrained()->cascadeOnDelete();
             $table->string('date')->nullable();
-            $table->integer('delay')->nullable();
+            $table->integer('topic')->nullable();
             $table->integer('rating')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();

@@ -37,7 +37,7 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('student-income.create') }}">Student Income</a></li>
                         <li><a href="{{ route('sale-voucher.create') }}">Sale Voucher</a></li>
-                        <li><a href="{{ route('donation-and-other') }}">Donation And Other</a></li>
+                        <li><a href="{{ route('donation-and-other.create') }}">Donation And Other</a></li>
                     </ul>
                 </li>
                 <li>
@@ -192,7 +192,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ 'student.student-attendance' }}">Student Attendence</a>
+                            <a href="{{ route('student-attendance.create') }}">Student Attendence</a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>

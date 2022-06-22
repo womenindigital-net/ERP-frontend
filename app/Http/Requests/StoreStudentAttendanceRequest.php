@@ -13,7 +13,7 @@ class StoreStudentAttendanceRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class StoreStudentAttendanceRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'student_id' => 'nullable',
+            'date' => 'nullable',
+            'topic' => 'nullable',
+            'rating' => 'nullable',
+            'note' => 'nullable',
         ];
     }
 }

@@ -42,5 +42,6 @@
 <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 {{--<script src="{{ asset('assets/js/pages/sweet-alerts.init.js') }}"></script>--}}
 <script src="{{asset('assets/js/custom.js')}}"></script>
+@stack('bottomJsStack')
 </body>
 </html>

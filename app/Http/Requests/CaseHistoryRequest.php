@@ -24,7 +24,7 @@ class CaseHistoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date'                                                   => 'nullable',
+            'date'                                                   => 'required',
             'teacher_id'                                             => 'nullable',
             'student_id'                                             => 'nullable',
             'phone'                                                  => 'nullable',
