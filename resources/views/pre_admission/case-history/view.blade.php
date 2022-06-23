@@ -195,7 +195,8 @@
                           <!-- end row -->
                           <x-input-radio-or-check :checked="$caseHistory->has_sleep_patten_problem"
                             name="has_sleep_patten_problem" label="ঘুমের প্যাটার্নে কোন সমস্যা আছে কিনা ?"
-                            :records="$constants::$yesNo" secondaryInputLabel="বিস্তারিত লিখুন">
+                            :records="$constants::$yesNo" secondaryInputLabel="বিস্তারিত লিখুন"
+                            :secondaryInputValue="$caseHistory->has_sleep_patten_problem_secondary">
                           </x-input-radio-or-check>
                         </section>
                       </div>
@@ -414,7 +415,7 @@
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->favorite_games" name='favorite_games'
                               label="কি খেলা পছন্দ করে?" :records="$caseConstants::$faveriteGames" :isVertical="false">
-                              :secondaryInputLabel="অন্যান্য হলে তা লিখুন"
+                              : secondaryInputLabel="অন্যান্য হলে তা লিখুন"
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->can_obey_elder_commends"

@@ -16,7 +16,7 @@
             @if($secondaryInputLabel)
             <label for="basicpill-firstname-input">{{$secondaryInputLabel}}</label>
             <input type="text" class="form-control" {{$secondaryInputName ? "name=$secondaryInputName" : '' }}
-                {{$secondaryInputValue}}>
+                value="{{$secondaryInputValue}}">
             @endif
         </div>
     </div>
