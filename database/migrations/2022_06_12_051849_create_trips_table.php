@@ -14,44 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('trips', function (Blueprint $table) {
-            $table->id();
-            $table->tinyText('bath')->nullable();
-            $table->tinyText('bath_secondary')->nullable();
-            $table->tinyText('wearing_cloth')->nullable();
-            $table->tinyText('wearing_cloth_secondary')->nullable();
-            $table->tinyText('wrooming')->nullable();
-            $table->tinyText('wrooming_secondary')->nullable();
-            $table->tinyText('do_toilet')->nullable();
-            $table->tinyText('do_toilet_secondary')->nullable();
-            $table->tinyText('eating_healthy_food')->nullable();
-            $table->tinyText('eating_healthy_food_secondary')->nullable();
-            $table->tinyText('wakeup_from_bed')->nullable();
-            $table->tinyText('wakeup_from_bed_secondary')->nullable();
-            $table->tinyText('get_up_from_the_chair')->nullable();
-            $table->tinyText('get_up_from_the_chair_secondary')->nullable();
-            $table->tinyText('walk')->nullable();
-            $table->tinyText('walk_secondary')->nullable();
 
-            $table->tinyText('taking_trip_materials_and_preparation')->nullable();
-            $table->tinyText('taking_trip_materials_and_preparation_secondary')->nullable();
-            $table->tinyText('whether_the_trainee_has_been_contacted')->nullable();
-            $table->tinyText('whether_the_trainee_has_been_contacted_secondary')->nullable();
-            $table->tinyText('communicate_with_other_members_of_the_team')->nullable();
-            $table->tinyText('communicate_with_other_members_of_the_team_secondary')->nullable();
-            $table->tinyText('where_visits')->nullable();
-            $table->tinyText('where_visits_secondary')->nullable();
-            $table->tinyText('who_were_driving_cars_or_other_assistants')->nullable();
-            $table->tinyText('who_were_driving_cars_or_other_assistants_secondary')->nullable();
-            $table->tinyText('overall_tour_like')->nullable();
-            $table->tinyText('overall_tour_like_secondary')->nullable();
-            $table->tinyText('this_trip')->nullable();
-            $table->tinyText('this_trip_secondary')->nullable();
-            $table->tinyText('tour_presented_and_managed_professionally')->nullable();
-            $table->tinyText('tour_presented_and_managed_professionally_secondary')->nullable();
-            $table->tinyText('teacher_went_alone_or_in_the_team')->nullable();
-            $table->tinyText('teacher_went_alone_or_in_the_team_secondary')->nullable();
-            $table->string('trip_description')->nullable();
-            $table->tinyText('home_environment')->nullable();
+            $table->id();
+            $table->json('activities_of_daily_living')->nullable();
+            $table->json('only_for_staff')->nullable();
+
+            /*$table->tinyText('home_environment')->nullable();
             $table->tinyText('home_environment_secondary')->nullable();
             $table->tinyText('do_need_separate_room')->nullable();
             $table->tinyText('do_need_separate_room_secondary')->nullable();
@@ -404,7 +372,7 @@ return new class extends Migration
             $table->tinyText('signature_teacher')->nullable();
             $table->tinyText('signature_teacher_name_or_designation')->nullable();
             $table->tinyText('supervisor_signature')->nullable();
-            $table->tinyText('supervisor_signature_name_or_designation')->nullable();
+            $table->tinyText('supervisor_signature_name_or_designation')->nullable();*/
             $table->timestamps();
         });
     }
