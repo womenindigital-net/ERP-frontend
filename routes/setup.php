@@ -5,20 +5,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Setup ->> Store Management Route
-    Route::get('warehouse-setup', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup');
-    Route::get('measure-unit-setup', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup');
-    Route::get('product-category-setup', [SetupController::class, 'productCategorySetup'])->name('product.category.setup');
-    Route::get('product-create', [SetupController::class, 'productCreate'])->name('product.create');
+    Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
+    Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
+    Route::get('product-category-setup.create', [SetupController::class, 'productCategorySetup'])->name('product.category.setup.create');
+    Route::get('product-create.create', [SetupController::class, 'productCreate'])->name('product.create.create');
     // Setup ->> Store Management Route
     // Setup->> Program Setup 
-    Route::get('program-setup/tesk-create', [SetupController::class, 'teskCreate'])->name('setup.program-setup.tesk-create');
-    Route::get('program-setup/prescription', [SetupController::class, 'presCription'])->name('setup.program-setup.prescription');
-    Route::get('program-setup/tesk-weight-setup', [SetupController::class, 'taskWeightSetup'])->name('setup.program-setup.tesk-weight-setup');
-    Route::get('program-setup/activity-create', [SetupController::class, 'activityCreate'])->name('setup.program-setup.activity-create');
-    Route::get('program-setup/course-setup', [SetupController::class, 'courseSetup'])->name('setup.program-setup.course-setup');
-    Route::get('program-setup/vocational-category-subcategory-setup', [SetupController::class, 'vocationalSetup'])->name('setup.program-setup.vocational-category-subcategory-setup');
-    Route::get('program-setup/academic-calender-create', [SetupController::class, 'academicCalender'])->name('setup.program-setup.academic-calender-create');
-    Route::get('program-setup/attendence-card-setup', [SetupController::class, 'attendenceCardSetup'])->name('setup.program-setup.attendence-card-setup');
+    Route::get('program-setup/tesk-create.create', [SetupController::class, 'teskCreate'])->name('setup.program-setup.tesk-create.create');
+    Route::get('program-setup/prescription.create', [SetupController::class, 'presCription'])->name('setup.program-setup.prescription.create');
+    Route::get('program-setup/tesk-weight-setup.create', [SetupController::class, 'taskWeightSetup'])->name('setup.program-setup.tesk-weight-setup.create');
+    Route::get('program-setup/activity-create.create', [SetupController::class, 'activityCreate'])->name('setup.program-setup.activity-create.create');
+    Route::get('program-setup/course-setup.create', [SetupController::class, 'courseSetup'])->name('setup.program-setup.course-setup.create');
+    Route::get('program-setup/vocational-category-subcategory-setup.create', [SetupController::class, 'vocationalSetup'])->name('setup.program-setup.vocational-category-subcategory-setup.create');
+    Route::get('program-setup/academic-calender-create.create', [SetupController::class, 'academicCalender'])->name('setup.program-setup.academic-calender-create.create');
+    Route::get('program-setup/attendence-card-setup.create', [SetupController::class, 'attendenceCardSetup'])->name('setup.program-setup.attendence-card-setup.create');
     // Setup->> Program Setup
     // setup ->> Company Setup
     Route::get('company-setup/company-setup/create', [SetupController::class, 'companySetup'])->name('setup.company-setup.create');
@@ -60,16 +60,16 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('leave-package.create', [SetupController::class, 'leavePackageSetup'])->name('setup.leave-package.create');
     Route::get('create-product.create', [SetupController::class, 'createProduct'])->name('setup.create-product.create');
     // Accounting Mapping 
-    Route::get('accounting-mapping.account_mapping', [SetupController::class, 'accountMappingSetup'])->name('setup.accounting-mapping.account_mapping');
-    Route::get('accounting-mapping.accounting_year_setup', [SetupController::class, 'accountingYearSetup'])->name('setup.accounting-mapping.accounting_year_setup');
-    Route::get('accounting-mapping.closing_account_setup', [SetupController::class, 'clossingAccountSetup'])->name('setup.accounting-mapping.closing_account_setup');
+    Route::get('accounting-mapping.account_mapping.create', [SetupController::class, 'accountMappingSetup'])->name('setup.accounting-mapping.account_mapping.create');
+    Route::get('accounting-mapping.accounting_year_setup.create', [SetupController::class, 'accountingYearSetup'])->name('setup.accounting-mapping.accounting_year_setup.create');
+    Route::get('accounting-mapping.closing_account_setup.create', [SetupController::class, 'clossingAccountSetup'])->name('setup.accounting-mapping.closing_account_setup.create');
     // Budget & Forecasting 
-    Route::get('budget-year-setup', [SetupController::class, 'budgetYearSetup'])->name('setup.budget-year-setup');
-    Route::get('budget-head-setup', [SetupController::class, 'budgetHeadSetup'])->name('setup.budget-head-setup');
-    Route::get('Budget-Template-setup', [SetupController::class, 'budgetTemplateSetup'])->name('setup.Budget-Template-setup');
-    Route::get('budget-review', [SetupController::class, 'budgetReviewSetup'])->name('setup.budget-review');
+    Route::get('budget-year-setup.create', [SetupController::class, 'budgetYearSetup'])->name('setup.budget-year-setup.create');
+    Route::get('budget-head-setup.create', [SetupController::class, 'budgetHeadSetup'])->name('setup.budget-head-setup.create');
+    Route::get('Budget-Template-setup.create', [SetupController::class, 'budgetTemplateSetup'])->name('setup.Budget-Template-setup.create');
+    Route::get('budget-review.create', [SetupController::class, 'budgetReviewSetup'])->name('setup.budget-review.create');
     // Year End Close 
-    Route::get('year-end-close.year_end_stock_count', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.year_end_stock_count');
+    Route::get('year-end-close.create', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.create');
     // Other Setting  
     Route::get('other-settings.user.create', [SetupController::class, 'otherUser'])->name('setup.other-settings.user.create');
     Route::get('setup.other-settings.academic-calender.create', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic-calender.create');
