@@ -165,6 +165,7 @@
                           </x-input-radio-or-check>
                           <!-- end row -->
                           <x-input-radio-or-check :checked="$caseHistory->has_past_assessment_by_specialist"
+                            :secondaryInputValue="$caseHistory->has_past_assessment_by_specialist_secondary"
                             name="has_past_assessment_by_specialist"
                             label="অতীতে আপনার সন্তানের কোন স্পেশালিষ্ট এর মাধ্যমে অ্যাসেসমেন্ট হয়েছিল কিনা ?"
                             :records="$constants::$yesNo" secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
@@ -194,7 +195,8 @@
                           <!-- end row -->
                           <x-input-radio-or-check :checked="$caseHistory->has_sleep_patten_problem"
                             name="has_sleep_patten_problem" label="ঘুমের প্যাটার্নে কোন সমস্যা আছে কিনা ?"
-                            :records="$constants::$yesNo" secondaryInputLabel="বিস্তারিত লিখুন">
+                            :records="$constants::$yesNo" secondaryInputLabel="বিস্তারিত লিখুন"
+                            :secondaryInputValue="$caseHistory->has_sleep_patten_problem_secondary">
                           </x-input-radio-or-check>
                         </section>
                       </div>
@@ -413,7 +415,7 @@
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->favorite_games" name='favorite_games'
                               label="কি খেলা পছন্দ করে?" :records="$caseConstants::$faveriteGames" :isVertical="false">
-                              :secondaryInputLabel="অন্যান্য হলে তা লিখুন"
+                              : secondaryInputLabel="অন্যান্য হলে তা লিখুন"
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->can_obey_elder_commends"
@@ -637,8 +639,8 @@
                               label="কাজ করা বন্ধ করে দেয়" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"
-                              name='can_stay_longer_if_needed' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
+                            <x-input-radio-or-check :checked="$caseHistory->is_there_instability"
+                              name='is_there_instability' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"

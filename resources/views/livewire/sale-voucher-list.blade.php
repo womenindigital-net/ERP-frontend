@@ -21,7 +21,7 @@
                     <td>{{$record->project->title}}</td>
                     <td>{{optional($record->creator)->name}}</td>
                     <td>{{$record->date}}</td>
-                    <td>{{$record->saleIncome->warehouse->title}}</td>
+                    <td>{{$record->saleIncome && $record->saleIncome->warehouse ? $record->saleIncome->warehouse->title : ''}}</td>
                     <td>{{$record->amount}}</td>
                     <td>
                         <button type="button"

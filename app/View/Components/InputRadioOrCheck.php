@@ -3,6 +3,9 @@
 namespace App\View\Components;
 
 use Exception;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class InputRadioOrCheck extends Component
@@ -17,14 +20,14 @@ class InputRadioOrCheck extends Component
     public string $wireModel;
     public string $secondaryInputName;
     public array $checked;
-    public string $secondaryInputValue;
+    public $secondaryInputValue;
 
     /**
      * Create a new component instance.
      *
      * @return Exception
      */
-    public function __construct($records, $label = '', $name = '', $checked = false, $isVertical = true, $multiple = false, $secondaryInputLabel = '', $secondaryInputValue='', $type = 'radio', $wireModel = false)
+    public function __construct($records, $label = '', $name = '', $checked = false, $isVertical = true, $multiple = false, $secondaryInputLabel = '', $secondaryInputValue = '', $type = 'radio', $wireModel = false)
     {
         if (!$name and !$wireModel and !$label) {
             return new Exception("Please, pass name or label or wireModel");
@@ -47,7 +50,7 @@ class InputRadioOrCheck extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return Application|Factory|View
      */
     public function render()
     {

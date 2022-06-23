@@ -28,6 +28,8 @@
                     <div class="tab-pane active" id="add" role="tabpanel">
                         <div class="row">
                             <div class="col-12">
+                                <form action="{{route('trip.store')}}" method="POST">
+                                    @csrf
                                 <!-- Wizard container -->
                                 <div class="wizard-container">
                                     <div class="card_stap wizard-card row" data-color="red" id="wizard">
@@ -101,8 +103,6 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-9 col-md-9">
-                                            <form action="" method="POST">
-                                                @csrf
                                                 <div class="tab-content">
                                                     <div class="tab-pane" id="ActivitiesofDailyLiving">
                                                         <section>
@@ -964,7 +964,6 @@
                                                     </div>
                                                     <div class="tab-pane" id="dailyWork">
                                                         <section>
-                                                            <form>
                                                                 <x-input-radio-or-check name="list_for_marketing"
                                                                     label="বাজারের লিস্ট করা"
                                                                     :records="$tripReportConstants::$help"
@@ -1073,12 +1072,10 @@
                                                                     </div>
                                                                     <!-- input-group -->
                                                                 </div>
-                                                            </form>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="wonWork">
                                                         <section>
-                                                            <form>
                                                                 <x-input-radio-or-check name="washing_cloth_and_drying"
                                                                     label="কাপড় ধোওয়া ও শুঁকাতে দেওয়া"
                                                                     :records="$tripReportConstants::$help"
@@ -1285,7 +1282,6 @@
                                                                     </div>
                                                                     <!-- input-group -->
                                                                 </div>
-                                                            </form>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="lunch">
@@ -1457,7 +1453,6 @@
                                                     </div>
                                                     <div class="tab-pane" id="Resttime">
                                                         <section>
-                                                            <form>
                                                                 <x-input-radio-or-check name="rest_in_bed"
                                                                     label="শুয়ে রেস্ট নেওয়া"
                                                                     :records="$tripReportConstants::$help"
@@ -1568,7 +1563,6 @@
                                                                     </div>
                                                                     <!-- input-group -->
                                                                 </div>
-                                                            </form>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="afternoon">
@@ -2160,10 +2154,10 @@
                                                                     <x-input-text
                                                                         name="night_eating_medicine_time_secondary">
                                                                     </x-input-text>
-                                                                </div> 
+                                                                </div>
                                                             </div>
                                                                 <!-- input-group -->
-                                                         
+
 
                                                             <x-input-radio-or-check name="night_teeth_brash"
                                                                 label="দাঁত ব্রাশ করবে"
@@ -2236,7 +2230,7 @@
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
-                                                            </div> 
+                                                            </div>
                                                             <x-input-radio-or-check name="hanging_mosquito_nets"
                                                                 label="মশারি খাটানো/টাঙ্গানো"
                                                                 :records="$tripReportConstants::$help"
@@ -2343,7 +2337,6 @@
                                                     </div>
                                                     <div class="tab-pane" id="TripEvaluationSignature">
                                                         <section>
-                                                            <form>
                                                                 <div class="mb-3">
                                                                     <label for="basicpill-firstname-input">স্বাক্ষর-
                                                                         টিচার</label>
@@ -2383,7 +2376,6 @@
                                                                     </div>
                                                                     <!-- input-group -->
                                                                 </div>
-                                                            </form>
                                                         </section>
                                                     </div>
                                                     <div class="wizard-footer d-flex justify-content-between">
@@ -2402,10 +2394,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- wizard container -->
+                                </form>
                             </div>
                         </div> <!-- end col -->
                         <!-- end row -->
