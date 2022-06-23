@@ -30,79 +30,94 @@
                             <div class="col-12">
                                 <form action="{{route('trip.store')}}" method="POST">
                                     @csrf
-                                <!-- Wizard container -->
-                                <div class="wizard-container">
-                                    <div class="card_stap wizard-card row" data-color="red" id="wizard">
-                                        <div class="col-sm-3 col-md-3">
-                                            <div id="wizard-navigation">
-                                                <ul class="wizard-navigation">
-                                                    <li class="w-100"><a href="#ActivitiesofDailyLiving"
-                                                            data-toggle="tab">Activities of Daily Living (ADLs) দৈনন্দিন
-                                                            কার্যাবলী</a></li>
-                                                    <li class="w-100"><a href="#justForstaff" data-toggle="tab">শুধু
-                                                            স্টাফ এর জন্য প্রযোজ্য</a></li>
-                                                    <li class="w-100"><a href="#HomeAssessmentWorksheet"
-                                                            data-toggle="tab">বাড়ীর এসেসমেন্ট ওয়ার্কসিট >
-                                                            কার্যক্রম</a></li>
-                                                    <li class="w-100"><a href="#securityandsafety" data-toggle="tab">
-                                                            বাড়ীর আসেসমেন্টের ওয়ার্কসিট > নিরাপত্তা এবং সুরক্ষা</a></li>
-                                                    <li class="w-100"><a href="#Equipment" data-toggle="tab">বাড়ীর
-                                                            আসেসমেন্টের
-                                                            ওয়ার্কসিট > সাজসরঞ্জাম</a></li>
-                                                    <li class="w-100"><a href="#light" data-toggle="tab">বাড়ীর
-                                                            আসেসমেন্টের ওয়ার্কসিট > আলো</a></li>
-                                                    <li class="w-100"><a href="#kitchen" data-toggle="tab">বাড়ীর
-                                                            আসেসমেন্টের ওয়ার্কসিট > রান্নাঘর</a></li>
-                                                    <li class="w-100"><a href="#bathroom" data-toggle="tab">বাড়ীর
-                                                            আসেসমেন্টের ওয়ার্কসিট > বাথরুম</a></li>
-                                                    <li class="w-100"><a href="#floor" data-toggle="tab">বাড়ীর
-                                                            আসেসমেন্টের ওয়ার্কসিট > মেঝে</a></li>
-                                                    <li class="w-100"><a href="#InstrumentalActivitiesofDailyLiving"
-                                                            data-toggle="tab">Instrumental Activities of Daily Living
-                                                            (IADLs)</a></li>
-                                                    <li class="w-100"><a href="#Neighbor"
-                                                            data-toggle="tab">Environmental Safety > প্রতিবেশি</a></li>
-                                                    <li class="w-100"><a href="#steps" data-toggle="tab">Environmental
-                                                            Safety > সিঁড়ি</a></li>
-                                                    <li class="w-100"><a href="#wokeUpmorning"
-                                                            data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন >
-                                                            সকালে ঘুম থেকে উঠে</a></li>
-                                                    <li class="w-100"><a href="#readingWriting"
-                                                            data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন >
-                                                            লিখাপড়া</a></li>
-                                                    <li class="w-100"><a href="#dailyWork"
-                                                            data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন >
-                                                            দৈনন্দিন কাজ</a></li>
-                                                    <li class="w-100"><a href="#" data-toggle="tab">শিক্ষার্থীদের
-                                                            দৈনন্দিন রুটিনের সাজেশন > নিজের কাজ</a></li>
-                                                    <li class="w-100"><a href="#wonWork" data-toggle="tab">শিক্ষার্থীদের
-                                                            দৈনন্দিন রুটিনের সাজেশন > নিজের কাজ</a></li>
-                                                    <li class="w-100"><a href="#lunch" data-toggle="tab">শিক্ষার্থীদের
-                                                            দৈনন্দিন রুটিনের সাজেশন > দুপুরের খাবারের সময়</a></li>
-                                                    <li class="w-100"><a href="#Resttime"
-                                                            data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন >
-                                                            রেস্ট টাইম</a></li>
-                                                    <li class="w-100"><a href="#afternoon"
-                                                            data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন >
-                                                            বিকেলে</a></li>
-                                                    <li class="w-100"><a href="#evening" data-toggle="tab">শিক্ষার্থীদের
-                                                            দৈনন্দিন রুটিনের সাজেশন > সন্ধ্যা</a></li>
-                                                    <li class="w-100"><a href="#Constructivework" data-toggle="tab">
-                                                            শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন > গঠনমূলক কাজ</a></li>
-                                                    <li class="w-100"><a href="#dinner" data-toggle="tab">শিক্ষার্থীদের
-                                                            দৈনন্দিন রুটিনের সাজেশন > রাতের খাবার</a>
-                                                    </li>
-                                                    <li class="w-100"><a href="#afterdinner"
-                                                            data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন >
-                                                            রাতে শোবার আগে</a></li>
-                                                    <li class="w-100"><a href="#Signature"
-                                                            data-toggle="tab">Signature</a></li>
-                                                    <li class="w-100"><a href="#TripEvaluationSignature"
-                                                            data-toggle="tab">Trip Evaluation Signature</a></li>
-                                                </ul>
+                                    <!-- Wizard container -->
+                                    <div class="wizard-container">
+                                        <div class="card_stap wizard-card row" data-color="red" id="wizard">
+                                            <div class="col-sm-3 col-md-3">
+                                                <div id="wizard-navigation">
+                                                    <ul class="wizard-navigation">
+                                                        <li class="w-100"><a href="#ActivitiesofDailyLiving"
+                                                                data-toggle="tab">Activities of Daily Living (ADLs)
+                                                                দৈনন্দিন
+                                                                কার্যাবলী</a></li>
+                                                        <li class="w-100"><a href="#justForstaff" data-toggle="tab">শুধু
+                                                                স্টাফ এর জন্য প্রযোজ্য</a></li>
+                                                        <li class="w-100"><a href="#HomeAssessmentWorksheet"
+                                                                data-toggle="tab">বাড়ীর এসেসমেন্ট ওয়ার্কসিট >
+                                                                কার্যক্রম</a></li>
+                                                        <li class="w-100"><a href="#securityandsafety"
+                                                                data-toggle="tab">
+                                                                বাড়ীর আসেসমেন্টের ওয়ার্কসিট > নিরাপত্তা এবং সুরক্ষা</a>
+                                                        </li>
+                                                        <li class="w-100"><a href="#Equipment" data-toggle="tab">বাড়ীর
+                                                                আসেসমেন্টের
+                                                                ওয়ার্কসিট > সাজসরঞ্জাম</a></li>
+                                                        <li class="w-100"><a href="#light" data-toggle="tab">বাড়ীর
+                                                                আসেসমেন্টের ওয়ার্কসিট > আলো</a></li>
+                                                        <li class="w-100"><a href="#kitchen" data-toggle="tab">বাড়ীর
+                                                                আসেসমেন্টের ওয়ার্কসিট > রান্নাঘর</a></li>
+                                                        <li class="w-100"><a href="#bathroom" data-toggle="tab">বাড়ীর
+                                                                আসেসমেন্টের ওয়ার্কসিট > বাথরুম</a></li>
+                                                        <li class="w-100"><a href="#floor" data-toggle="tab">বাড়ীর
+                                                                আসেসমেন্টের ওয়ার্কসিট > মেঝে</a></li>
+                                                        <li class="w-100"><a href="#InstrumentalActivitiesofDailyLiving"
+                                                                data-toggle="tab">Instrumental Activities of Daily
+                                                                Living
+                                                                (IADLs)</a></li>
+                                                        <li class="w-100"><a href="#Neighbor"
+                                                                data-toggle="tab">Environmental Safety > প্রতিবেশি</a>
+                                                        </li>
+                                                        <li class="w-100"><a href="#steps"
+                                                                data-toggle="tab">Environmental
+                                                                Safety > সিঁড়ি</a></li>
+                                                        <li class="w-100"><a href="#wokeUpmorning"
+                                                                data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন
+                                                                >
+                                                                সকালে ঘুম থেকে উঠে</a></li>
+                                                        <li class="w-100"><a href="#readingWriting"
+                                                                data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন
+                                                                >
+                                                                লিখাপড়া</a></li>
+                                                        <li class="w-100"><a href="#dailyWork"
+                                                                data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন
+                                                                >
+                                                                দৈনন্দিন কাজ</a></li>
+                                                        <li class="w-100"><a href="#wonWork"
+                                                                data-toggle="tab">শিক্ষার্থীদের
+                                                                দৈনন্দিন রুটিনের সাজেশন > নিজের কাজ</a></li>
+                                                        <li class="w-100"><a href="#lunch"
+                                                                data-toggle="tab">শিক্ষার্থীদের
+                                                                দৈনন্দিন রুটিনের সাজেশন > দুপুরের খাবারের সময়</a></li>
+                                                        <li class="w-100"><a href="#Resttime"
+                                                                data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন
+                                                                >
+                                                                রেস্ট টাইম</a></li>
+                                                        <li class="w-100"><a href="#afternoon"
+                                                                data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন
+                                                                >
+                                                                বিকেলে</a></li>
+                                                        <li class="w-100"><a href="#evening"
+                                                                data-toggle="tab">শিক্ষার্থীদের
+                                                                দৈনন্দিন রুটিনের সাজেশন > সন্ধ্যা</a></li>
+                                                        <li class="w-100"><a href="#Constructivework" data-toggle="tab">
+                                                                শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন > গঠনমূলক কাজ</a>
+                                                        </li>
+                                                        <li class="w-100"><a href="#dinner"
+                                                                data-toggle="tab">শিক্ষার্থীদের
+                                                                দৈনন্দিন রুটিনের সাজেশন > রাতের খাবার</a>
+                                                        </li>
+                                                        <li class="w-100"><a href="#afterdinner"
+                                                                data-toggle="tab">শিক্ষার্থীদের দৈনন্দিন রুটিনের সাজেশন
+                                                                >
+                                                                রাতে শোবার আগে</a></li>
+                                                        <li class="w-100"><a href="#Signature"
+                                                                data-toggle="tab">Signature</a></li>
+                                                        <li class="w-100"><a href="#TripEvaluationSignature"
+                                                                data-toggle="tab">Trip Evaluation Signature</a></li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-9 col-md-9">
+                                            <div class="col-sm-9 col-md-9">
                                                 <div class="tab-content">
                                                     <div class="tab-pane" id="ActivitiesofDailyLiving">
                                                         <section>
@@ -234,8 +249,7 @@
                                                                         বোধ করছিলেন? ট্রিপের সাফল্যের জন্য আপনি কি
                                                                         সাজেশন দিবেন?</label>
                                                                     <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="trip_description"
->
+                                                                        <x-input-text name="trip_description">
                                                                         </x-input-text>
                                                                     </div><!-- input-group -->
                                                                 </div>
@@ -362,7 +376,7 @@
                                                             {{-- end row --}}
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Light">
+                                                    <div class="tab-pane" id="light">
                                                         <section>
                                                             <x-input-radio-or-check name="easily_lights_on_and_off"
                                                                 label="সহজে লাইটের সুইচ অন অফ করা"
@@ -837,7 +851,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="reading_time" >
+                                                                    <x-input-text name="reading_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -964,324 +978,296 @@
                                                     </div>
                                                     <div class="tab-pane" id="dailyWork">
                                                         <section>
-                                                                <x-input-radio-or-check name="list_for_marketing"
-                                                                    label="বাজারের লিস্ট করা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="list_for_marketing_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                            <x-input-radio-or-check name="list_for_marketing"
+                                                                label="বাজারের লিস্ট করা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="list_for_marketing_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="list_for_marketing_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="list_for_marketing_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check
-                                                                    name="marketing_with_mother_and_father"
-                                                                    label="বাবার / মায়ের সাথে বাজারে যাওয়া"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="marketing_with_mother_and_father_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check
+                                                                name="marketing_with_mother_and_father"
+                                                                label="বাবার / মায়ের সাথে বাজারে যাওয়া"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="marketing_with_mother_and_father_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="marketing_with_mother_and_father_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="marketing_with_mother_and_father_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check
-                                                                    name="helping_mother_for_cutting_and_cooking_food"
-                                                                    label="মায়ের সাথে সবজি কাটা ও রান্নাতে সাহায্য করা / মায়ের সাথে সবজি আলাদা করতে সাহায্য করা/ সেদ্ধ আলু ,ডিম ছেলা/ডিম ফেটা, ডিম ভাঙ্গা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="helping_mother_for_cutting_and_cooking_food_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check
+                                                                name="helping_mother_for_cutting_and_cooking_food"
+                                                                label="মায়ের সাথে সবজি কাটা ও রান্নাতে সাহায্য করা / মায়ের সাথে সবজি আলাদা করতে সাহায্য করা/ সেদ্ধ আলু ,ডিম ছেলা/ডিম ফেটা, ডিম ভাঙ্গা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="helping_mother_for_cutting_and_cooking_food_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="helping_mother_for_cutting_and_cooking_food_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="helping_mother_for_cutting_and_cooking_food_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check
-                                                                    name="creating_menu_or_recognize_food_using_image"
-                                                                    label="খাবারের মেনু তৈরি করা / ছবি দেখে খাবার চিনতে পারা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="creating_menu_or_recognize_food_using_image_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check
+                                                                name="creating_menu_or_recognize_food_using_image"
+                                                                label="খাবারের মেনু তৈরি করা / ছবি দেখে খাবার চিনতে পারা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="creating_menu_or_recognize_food_using_image_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="creating_menu_or_recognize_food_using_image_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="creating_menu_or_recognize_food_using_image_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
+                                                                <!-- input-group -->
+                                                            </div>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="wonWork">
                                                         <section>
-                                                                <x-input-radio-or-check name="washing_cloth_and_drying"
-                                                                    label="কাপড় ধোওয়া ও শুঁকাতে দেওয়া"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="washing_cloth_and_drying_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                            <x-input-radio-or-check name="washing_cloth_and_drying"
+                                                                label="কাপড় ধোওয়া ও শুঁকাতে দেওয়া"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="washing_cloth_and_drying_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="washing_cloth_and_drying_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="washing_cloth_and_drying_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check name="clean_up_himself_room"
-                                                                    label="নিজের রুম পরিস্কার করা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="clean_up_himself_room_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check name="clean_up_himself_room"
+                                                                label="নিজের রুম পরিস্কার করা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="clean_up_himself_room_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="clean_up_himself_room_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="clean_up_himself_room_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check name="folding_cloth"
-                                                                    label="কাপড় ভাজ করা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="folding_cloth_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check name="folding_cloth"
+                                                                label="কাপড় ভাজ করা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="folding_cloth_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="folding_cloth_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="folding_cloth_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check
-                                                                    name="tidy_wardrobe_or_cotton_drawer"
-                                                                    label="ওয়ার্ডরোব বা কাপরের ড্রয়ার গুছানো"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="tidy_wardrobe_or_cotton_drawer_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check
+                                                                name="tidy_wardrobe_or_cotton_drawer"
+                                                                label="ওয়ার্ডরোব বা কাপরের ড্রয়ার গুছানো"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="tidy_wardrobe_or_cotton_drawer_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="tidy_wardrobe_or_cotton_drawer_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="tidy_wardrobe_or_cotton_drawer_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check name="iron_cloth"
-                                                                    label="কাপড় ইস্ত্রি করা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="iron_cloth_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check name="iron_cloth"
+                                                                label="কাপড় ইস্ত্রি করা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="iron_cloth_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="iron_cloth_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="iron_cloth_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check name="cutting_nails"
-                                                                    label="নখ কাটা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="cutting_nails_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check name="cutting_nails" label="নখ কাটা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="cutting_nails_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="cutting_nails_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="cutting_nails_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check name="hair_cutting"
-                                                                    label="চুল কাটা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="hair_cutting_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check name="hair_cutting" label="চুল কাটা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="hair_cutting_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="hair_cutting_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="hair_cutting_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <x-input-radio-or-check name="shave" label="সেভ করা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="shave_time" >
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <x-input-radio-or-check name="shave" label="সেভ করা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="shave_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="shave_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="shave_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
+                                                                <!-- input-group -->
+                                                            </div>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="lunch">
@@ -1453,116 +1439,106 @@
                                                     </div>
                                                     <div class="tab-pane" id="Resttime">
                                                         <section>
-                                                                <x-input-radio-or-check name="rest_in_bed"
-                                                                    label="শুয়ে রেস্ট নেওয়া"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
+                                                            <x-input-radio-or-check name="rest_in_bed"
+                                                                label="শুয়ে রেস্ট নেওয়া"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
 
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="rest_in_bed_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="rest_in_bed_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="rest_in_bed_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="rest_in_bed_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
+                                                                <!-- input-group -->
+                                                            </div>
 
-                                                                <x-input-radio-or-check name="reading_story_book"
-                                                                    label="গল্প বই পরা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
+                                                            <x-input-radio-or-check name="reading_story_book"
+                                                                label="গল্প বই পরা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
 
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="reading_story_book_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="reading_story_book_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="reading_story_book_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="reading_story_book_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
+                                                                <!-- input-group -->
+                                                            </div>
 
-                                                                <x-input-radio-or-check name="listening_song"
-                                                                    label="গান শুনা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
+                                                            <x-input-radio-or-check name="listening_song"
+                                                                label="গান শুনা" :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
 
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="listening_song_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="listening_song_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="listening_song_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="listening_song_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
+                                                                <!-- input-group -->
+                                                            </div>
 
-                                                                <x-input-radio-or-check name="playing_video_game"
-                                                                    label="ভিডিও গেমস খেলা"
-                                                                    :records="$tripReportConstants::$help"
-                                                                    secondaryInputLabel="সাজেশন">
-                                                                </x-input-radio-or-check>
-                                                                {{-- end row --}}
+                                                            <x-input-radio-or-check name="playing_video_game"
+                                                                label="ভিডিও গেমস খেলা"
+                                                                :records="$tripReportConstants::$help"
+                                                                secondaryInputLabel="সাজেশন">
+                                                            </x-input-radio-or-check>
+                                                            {{-- end row --}}
 
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সময়</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="playing_video_game_time"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সময়</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="playing_video_game_time">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">বিস্তারিত
-                                                                        লিখুন</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="playing_video_game_time_secondary"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">বিস্তারিত
+                                                                    লিখুন</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="playing_video_game_time_secondary">
+                                                                    </x-input-text>
                                                                 </div>
+                                                                <!-- input-group -->
+                                                            </div>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="afternoon">
@@ -1872,7 +1848,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="home_work_time" >
+                                                                    <x-input-text name="home_work_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2131,7 +2107,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                     <div class="tab-pane" id="afterdinner">
+                                                    <div class="tab-pane" id="afterdinner">
                                                         <section>
                                                             <x-input-radio-or-check name="night_eating_medicine"
                                                                 label="ঔষদ খাওয়া/ খাওয়ানো (যখন প্রয়োজন)"
@@ -2145,8 +2121,8 @@
                                                                     <x-input-text name="night_eating_medicine_time">
                                                                     </x-input-text>
                                                                 </div>
-                                                             </div>
-                                                         <!-- input-group -->
+                                                            </div>
+                                                            <!-- input-group -->
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
@@ -2156,7 +2132,7 @@
                                                                     </x-input-text>
                                                                 </div>
                                                             </div>
-                                                                <!-- input-group -->
+                                                            <!-- input-group -->
 
 
                                                             <x-input-radio-or-check name="night_teeth_brash"
@@ -2178,7 +2154,8 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="night_teeth_brash_time_secondary">
+                                                                    <x-input-text
+                                                                        name="night_teeth_brash_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2202,7 +2179,8 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="night_changing_cloth_time_secondary">
+                                                                    <x-input-text
+                                                                        name="night_changing_cloth_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2217,7 +2195,7 @@
                                                             <div class="mb-3">
                                                                 <label for="">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="put_to_bed_time" >
+                                                                    <x-input-text name="put_to_bed_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2292,7 +2270,7 @@
                                                                     Team</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text name="special_educator_team"
-                                                                        type="file" >
+                                                                        type="file">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2328,7 +2306,7 @@
                                                                 <label for="basicpill-firstname-input">Note, If
                                                                     any</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="note_if_any" >
+                                                                    <x-input-text name="note_if_any">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2337,45 +2315,43 @@
                                                     </div>
                                                     <div class="tab-pane" id="TripEvaluationSignature">
                                                         <section>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">স্বাক্ষর-
-                                                                        টিচার</label>
-                                                                    <x-input-text name="signature_teacher" type="file">
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">স্বাক্ষর-
+                                                                    টিচার</label>
+                                                                <x-input-text name="signature_teacher" type="file">
+                                                                </x-input-text>
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">নাম এবং
+                                                                    পদবী</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="signature_teacher_name_or_designation">
                                                                     </x-input-text>
-                                                                    <!-- input-group -->
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">নাম এবং
-                                                                        পদবী</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="signature_teacher_name_or_designation"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">সুপারভাইজার
+                                                                    এর স্বাক্ষর</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text name="supervisor_signature"
+                                                                        type="file">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">সুপারভাইজার
-                                                                        এর স্বাক্ষর</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text name="supervisor_signature"
-                                                                            type="file" >
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
+                                                                <!-- input-group -->
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input">নাম এবং
+                                                                    পদবী</label>
+                                                                <div class="input-group" id="datepicker2">
+                                                                    <x-input-text
+                                                                        name="supervisor_signature_name_or_designation">
+                                                                    </x-input-text>
                                                                 </div>
-                                                                <div class="mb-3">
-                                                                    <label for="basicpill-firstname-input">নাম এবং
-                                                                        পদবী</label>
-                                                                    <div class="input-group" id="datepicker2">
-                                                                        <x-input-text
-                                                                            name="supervisor_signature_name_or_designation"
->
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                    <!-- input-group -->
-                                                                </div>
+                                                                <!-- input-group -->
+                                                            </div>
                                                         </section>
                                                     </div>
                                                     <div class="wizard-footer d-flex justify-content-between">
@@ -2394,9 +2370,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div> <!-- wizard container -->
+                                    </div> <!-- wizard container -->
                                 </form>
                             </div>
                         </div> <!-- end col -->
