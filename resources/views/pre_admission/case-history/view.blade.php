@@ -165,6 +165,7 @@
                           </x-input-radio-or-check>
                           <!-- end row -->
                           <x-input-radio-or-check :checked="$caseHistory->has_past_assessment_by_specialist"
+                            :secondaryInputValue="$caseHistory->has_past_assessment_by_specialist_secondary"
                             name="has_past_assessment_by_specialist"
                             label="অতীতে আপনার সন্তানের কোন স্পেশালিষ্ট এর মাধ্যমে অ্যাসেসমেন্ট হয়েছিল কিনা ?"
                             :records="$constants::$yesNo" secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
