@@ -1,4 +1,7 @@
 <div>
+    <br>
+    @include('elements.per-page-item-and-search')
+    <br>
     <div class="table-responsive">
         <table class="table table-bordered w-100">
             <thead>
