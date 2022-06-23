@@ -728,7 +728,7 @@
                                                                     :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name='can_stay_longer_if_needed'
+                                                                <x-input-radio-or-check name='is_there_instability'
                                                                     label="অস্থিরতা আছে কি?"
                                                                     :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
