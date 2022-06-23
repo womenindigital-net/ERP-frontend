@@ -138,6 +138,7 @@ class CaseHistoryRequest extends FormRequest
             'does_get_angry_quickly'                                 => 'nullable',
             'does_get_disappointed_quickly'                          => 'nullable',
             'does_stop_working'                                      => 'nullable',
+            'is_there_instability'                                      => 'nullable',
             'can_stay_longer_if_needed'                              => 'nullable',
             'does_have_tremendous_behaviors_at_home'                 => 'nullable',
             'seems_like_not_interested_in_playing'                   => 'nullable',

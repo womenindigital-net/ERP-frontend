@@ -131,6 +131,7 @@ return new class extends Migration
             $table->text('does_get_angry_quickly')->nullable();
             $table->text('does_get_disappointed_quickly')->nullable();
             $table->text('does_stop_working')->nullable();
+            $table->text('is_there_instability')->nullable();
             $table->text('can_stay_longer_if_needed')->nullable();
             $table->text('does_have_tremendous_behaviors_at_home')->nullable();
             $table->text('seems_like_not_interested_in_playing')->nullable();

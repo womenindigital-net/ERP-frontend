@@ -637,8 +637,8 @@
                               label="কাজ করা বন্ধ করে দেয়" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"
-                              name='can_stay_longer_if_needed' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
+                            <x-input-radio-or-check :checked="$caseHistory->is_there_instability"
+                              name='is_there_instability' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"
