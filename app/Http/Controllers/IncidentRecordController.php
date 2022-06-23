@@ -17,7 +17,7 @@ class IncidentRecordController extends Controller
     private StudentRepository $studentRepo;
     public $records;
 
-    public function __construct(IncidentRecordRepository $incidentRcordRepo,UserRepository $userRepository, StudentRepository $studentRepository)
+    public function __construct(IncidentRecordRepository $incidentRcordRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->incidentRcordRepo = $incidentRcordRepo;
         $this->userRepo    = $userRepository;
@@ -44,7 +44,7 @@ class IncidentRecordController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-        return view('student.dairy.Incident-Record.create',$data);
+        return view('student.dairy.Incident-Record.create', $data);
     }
 
     /**

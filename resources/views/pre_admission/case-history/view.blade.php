@@ -31,10 +31,10 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-sm-9 col-md-9 apply-view-only">
+                <div class="col-sm-9 col-md-9 ">
                   <form action="{{ route('case-history.store') }}" method="POST">
                     @csrf
-                    <div class="tab-content">
+                    <div class="tab-content apply-view-only">
                       <div class="tab-pane" id="caseHistoryInit">
                         <section>
                           <div class="row">
@@ -64,31 +64,6 @@
                                 <x-input-select :records="$students" name="student_id"
                                   :selected="$caseHistory->student_id">
                                 </x-input-select>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-phoneno-input">Phone</label>
-                                <x-input-text name="phone" value="{{ $caseHistory->phone }}">
-                                </x-input-text>
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-email-input">Email</label>
-                                <x-input-text name="email" value="{{ $caseHistory->email }}">
-                                </x-input-text>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="mb-3">
-                                <label for="verticalnav-address-input">Address</label>
-                                <x-input-textarea name="address" value="{{ $caseHistory->address }}"></x-input-textarea>
                               </div>
                             </div>
                           </div>
@@ -190,6 +165,7 @@
                           </x-input-radio-or-check>
                           <!-- end row -->
                           <x-input-radio-or-check :checked="$caseHistory->has_past_assessment_by_specialist"
+                            :secondaryInputValue="$caseHistory->has_past_assessment_by_specialist_secondary"
                             name="has_past_assessment_by_specialist"
                             label="অতীতে আপনার সন্তানের কোন স্পেশালিষ্ট এর মাধ্যমে অ্যাসেসমেন্ট হয়েছিল কিনা ?"
                             :records="$constants::$yesNo" secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
@@ -219,7 +195,8 @@
                           <!-- end row -->
                           <x-input-radio-or-check :checked="$caseHistory->has_sleep_patten_problem"
                             name="has_sleep_patten_problem" label="ঘুমের প্যাটার্নে কোন সমস্যা আছে কিনা ?"
-                            :records="$constants::$yesNo" secondaryInputLabel="বিস্তারিত লিখুন">
+                            :records="$constants::$yesNo" secondaryInputLabel="বিস্তারিত লিখুন"
+                            :secondaryInputValue="$caseHistory->has_sleep_patten_problem_secondary">
                           </x-input-radio-or-check>
                         </section>
                       </div>
@@ -438,7 +415,7 @@
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->favorite_games" name='favorite_games'
                               label="কি খেলা পছন্দ করে?" :records="$caseConstants::$faveriteGames" :isVertical="false">
-                              :secondaryInputLabel="অন্যান্য হলে তা লিখুন"
+                              : secondaryInputLabel="অন্যান্য হলে তা লিখুন"
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->can_obey_elder_commends"
@@ -662,8 +639,8 @@
                               label="কাজ করা বন্ধ করে দেয়" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"
-                              name='can_stay_longer_if_needed' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
+                            <x-input-radio-or-check :checked="$caseHistory->is_there_instability"
+                              name='is_there_instability' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"

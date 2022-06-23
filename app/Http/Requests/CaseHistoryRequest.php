@@ -24,7 +24,7 @@ class CaseHistoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date'                                                   => 'nullable',
+            'date'                                                   => 'required',
             'teacher_id'                                             => 'nullable',
             'student_id'                                             => 'nullable',
             'phone'                                                  => 'nullable',
@@ -34,10 +34,10 @@ class CaseHistoryRequest extends FormRequest
             'has_move_ability'                                       => 'nullable',
             'has_fine_equipment_use_ability'                         => 'nullable',
             'has_write_ability'                                      => 'nullable',
-            'has_interest_in_education'                              => 'nullable',
-            'has_self_work_capability'                               => 'nullable',
-            'has_social_communication_ability'                       => 'nullable',
-            'is_able_to_play_with_others'                            => 'nullable',
+            'has_education_intersted'                                => 'nullable',
+            'has_self_work_capabelity'                               => 'nullable',
+            'has_abil_to_comminite_socilely'                         => 'nullable',
+            'is_ableto_paly_others'                                  => 'nullable',
             'has_any_learning_obstacle'                              => 'nullable',
             'has_control_over_body'                                  => 'nullable',
             'has_speaking_problem'                                   => 'nullable',
@@ -138,6 +138,7 @@ class CaseHistoryRequest extends FormRequest
             'does_get_angry_quickly'                                 => 'nullable',
             'does_get_disappointed_quickly'                          => 'nullable',
             'does_stop_working'                                      => 'nullable',
+            'is_there_instability'                                      => 'nullable',
             'can_stay_longer_if_needed'                              => 'nullable',
             'does_have_tremendous_behaviors_at_home'                 => 'nullable',
             'seems_like_not_interested_in_playing'                   => 'nullable',

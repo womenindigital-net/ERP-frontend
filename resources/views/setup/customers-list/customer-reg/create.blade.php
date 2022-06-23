@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('title') @lang('translation.Starter_Page') @endsection
 @section('css')
-
 @endsection
 @section('content')
 <div class="row">

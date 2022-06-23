@@ -68,31 +68,6 @@
                               </div>
                             </div>
                           </div>
-
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-phoneno-input">Phone</label>
-                                <x-input-text name="phone" value="{{ $caseHistory->phone }}">
-                                </x-input-text>
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="mb-3">
-                                <label for="verticalnav-email-input">Email</label>
-                                <x-input-text name="email" value="{{ $caseHistory->email }}">
-                                </x-input-text>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="mb-3">
-                                <label for="verticalnav-address-input">Address</label>
-                                <x-input-textarea name="address" value="{{ $caseHistory->address }}"></x-input-textarea>
-                              </div>
-                            </div>
-                          </div>
                         </section>
                       </div>
                       <div class="tab-pane" id="referralInformation">
@@ -663,8 +638,8 @@
                               label="কাজ করা বন্ধ করে দেয়" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
-                            <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"
-                              name='can_stay_longer_if_needed' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
+                            <x-input-radio-or-check :checked="$caseHistory->is_there_instability"
+                              name='is_there_instability' label="অস্থিরতা আছে কি?" :records="$constants::$yesNo">
                             </x-input-radio-or-check>
                             <!-- end row -->
                             <x-input-radio-or-check :checked="$caseHistory->can_stay_longer_if_needed"

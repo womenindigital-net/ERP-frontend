@@ -34,8 +34,7 @@ class StudentController extends Controller
         StudentRepository $studentRepository,
         CaseHistoryRepository $caseHistoryRepository,
         CourseService $courseService,
-    )
-    {
+    ) {
         $this->userRepo = $userRepository;
         $this->projectRepo = $projectRepository;
         $this->studentRepo = $studentRepository;
@@ -50,7 +49,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-       //
+        //
     }
 
     /**
@@ -160,7 +159,6 @@ class StudentController extends Controller
 
     public function studentIncome()
     {
-
     }
 
     /*public function caseHistory(): Factory|View|Application
@@ -187,6 +185,12 @@ class StudentController extends Controller
         ];
 
         return view('admission.add_student', $data);
+    }
+
+    public function studentProfile(): Factory|View|Application
+    {
+
+        return view('student.student_profile.profile');
     }
 
     public function individualrisk(): Factory|View|Application

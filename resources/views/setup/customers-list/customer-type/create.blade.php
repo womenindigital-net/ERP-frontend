@@ -1,14 +1,6 @@
 @extends('layouts.master')
-
 @section('title') @lang('translation.Tabs_&_Accordions') @endsection
-
 @section('content')
-
-@component('components.breadcrumb')
-@slot('li_1') UI Elements @endslot
-@slot('title') Tabs & Accordions @endslot
-@endcomponent
-
 <div class="row">
     <div class="col-xl-12">
         <div class="card">

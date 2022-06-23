@@ -97,35 +97,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="row">
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label
-                                                                            for="verticalnav-phoneno-input">Phone</label>
-                                                                        <x-input-text name="phone">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6">
-                                                                    <div class="mb-3">
-                                                                        <label
-                                                                            for="verticalnav-email-input">Email</label>
-                                                                        <x-input-text name="email">
-                                                                        </x-input-text>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="mb-3">
-                                                                        <label
-                                                                            for="verticalnav-address-input">Address</label>
-                                                                        <x-input-textarea name="address">
-                                                                        </x-input-textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="referralInformation">
@@ -655,8 +626,7 @@
                                                                         name='does_lose_different_things_from_bags_regularly'
                                                                         label="সে কি নিয়মিত পেন্সিল বক্স থেকে বিভিন্ন্য আইটেম বা স্কুল ব্যাগ থেকে বিভিন্ন জিনিষ হারায়?"
                                                                         :records="$constants::$yesNo"
-                                                                        secondaryInputLabel="আপনার সন্তানের মাঝে নিচের বিষয়গুলির নিয়ে কোন অসুবিধা পরিলক্ষন করেছেন কি? করে থাকলে, কমেন্টে বিস্তারিত লিখুন। এই বিষয়গুলি মুলত স্কুলে যাওয়ার বয়সের জন্য প্রযোজ্যঃ"
-                                                                        :isVertical="false" :multiple="true">
+                                                                        secondaryInputLabel="আপনার সন্তানের মাঝে নিচের বিষয়গুলির নিয়ে কোন অসুবিধা পরিলক্ষন করেছেন কি? করে থাকলে, কমেন্টে বিস্তারিত লিখুন। এই বিষয়গুলি মুলত স্কুলে যাওয়ার বয়সের জন্য প্রযোজ্যঃ">
                                                                     </x-input-radio-or-check>
                                                                 </div>
                                                             </section>
@@ -758,7 +728,7 @@
                                                                     :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name='can_stay_longer_if_needed'
+                                                                <x-input-radio-or-check name='is_there_instability'
                                                                     label="অস্থিরতা আছে কি?"
                                                                     :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>

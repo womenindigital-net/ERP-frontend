@@ -43,7 +43,7 @@ class AssignTeacherController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-        return view('program.assign-teacher.create',$data);
+        return view('program.assign-teacher.create', $data);
     }
 
     /**
@@ -56,7 +56,7 @@ class AssignTeacherController extends Controller
     {
         $this->assignTeacherRepo->store($request->validated());
         Session::flash('success');
-        return redirect()->back();  
+        return redirect()->back();
     }
 
     /**
