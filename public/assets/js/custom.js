@@ -47,6 +47,7 @@ function swalConfirmDelete(data) {
                 // data: data.postData,
             }).done(function (response) {
                 Swal.fire("Done!", "Operation Successful", "success");
+                location.reload();
             })
         }
     })
