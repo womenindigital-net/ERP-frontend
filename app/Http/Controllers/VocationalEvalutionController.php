@@ -18,18 +18,21 @@ class VocationalEvalutionController extends Controller
     use WithPagination, CommonListElements;
 
     private StudentRepository $studentRepo;
-    private VocationalEvalutionRepository $vocRepo;
+    private VocationalEvalutionRepository $repo;
     private VocationalEvaluationService $vocService;
     private CategoryService $categoryService;
-    public $records;
 
-
-
-    public function __construct(StudentRepository $studentRepo, VocationalEvaluationService $vocService, CategoryService $categoryService)
+    public function __construct(
+        StudentRepository $studentRepo,
+        VocationalEvaluationService $vocService,
+        CategoryService $categoryService,
+        VocationalEvalutionRepository $repository,
+    )
     {
         $this->studentRepo = $studentRepo;
         $this->vocService = $vocService;
         $this->categoryService = $categoryService;
+        $this->repo = $repository;
     }
 
     /**
@@ -80,15 +83,9 @@ class VocationalEvalutionController extends Controller
         $data = [
             'students' => $this->studentRepo->getData(),
             'categories' => $this->categoryService->getFormattedDataAsOptGroup(),
-            'records' => $this->records = $vocational_evaluation,
+            'records' => $this->repo->getRelatedData($vocational_evaluation, ['details']),
         ];
-        dd($data);
-        $data = [
-            'projects' => $this->projectRepo->getData(),
-            'students' => $this->studentRepo->getData(),
-            'courses' => $this->courseService->getFormattedDataAsOptGroup(),
-            'record' => $this->vocService->vocRepo->getRelatedData($studentIncome, ['income.project', 'incomeDetails']),
-        ];
+
         return view('student.vocational_evaluation.view', $data);
     }
 
