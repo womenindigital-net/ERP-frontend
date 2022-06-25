@@ -73,6 +73,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "seeks_out_surfaces"                                               => 'nullable',
             "thoroughly_enjoys_and_seeks_out_messy_play"                       => 'nullable',
             "craves_vibrating_or_strong_sensory_input"                         => 'nullable',
+
             "has_difficulty_with_fine_motor"                                   => 'nullable',
             "may_not_be_able_to_identify"                                      => 'nullable',
             "maybe_afraid_of_the_dark"                                         => 'nullable',
@@ -86,6 +87,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "crayons_or_silverware"                                            => 'nullable',
             "continues_to_mouth_objects"                                       => 'nullable',
             "has_difficulty_figuring_out"                                      => 'nullable',
+
             "avoids_dislikes_playground_equipment"                             => 'nullable',
             "prefers_sedentary_tasks"                                          => 'nullable',
             "avoids_dislikes_elevators"                                        => 'nullable',
@@ -102,6 +104,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "loses_balance_easily_and_may_appear_clumsy"                       => 'nullable',
             "fearful_of_activities_which_require_good_balance"                 => 'nullable',
             "avoids_rapid_or_rotating_movements"                               => 'nullable',
+            
             "in_constant_motion_cant_seem_to_sit_still"                        => 'nullable',
             "craves_fast"                                                      => 'nullable',
             "loves_being_tossed_in_the_air"                                    => 'nullable',
@@ -113,6 +116,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "always_running_jumping_hopping_etc_instead_of_walking"            => 'nullable',
             "rocks_body_shakes_leg_or_head_while_sitting"                      => 'nullable',
             "likes_sudden"                                                     => 'nullable',
+            
             "in_constant_motion"                                               => 'nullable',
             "craves_fast"                                                      => 'nullable',
             "loves_being_tossed_"                                              => 'nullable',
@@ -127,6 +131,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "loves_being_tossed"                                               => 'nullable',
             "loves_to_swing_as_high_as_possibl"                                => 'nullable',
             "likes_sudden_or_quick_movements"                                  => 'nullable',
+
             "has_a_limp"                                                       => 'nullable',
             "frequently_slumps"                                                => 'nullable',
             "difficulty_simultaneously_lifting_head"                           => 'nullable',
@@ -143,6 +148,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "has_difficulty_licking"                                           => 'nullable',
             "seems_to_be_unsure_about"                                         => 'nullable',
             "difficulty_learning_exercise_"                                    => 'nullable',
+            
             "seeks_out_jumping_bumping_and_crashing_activities"                => 'nullable',
             "stomps_feet_when_walking"                                         => 'nullable',
             "kicks_his_her_feet_on_floor_or_chair_while_sitting_at_desk_table" => 'nullable',
@@ -161,6 +167,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "loves_jumping_off_furniture"                                      => 'nullable',
             "frequently_hits_bumps_or_pushes_other_children"                   => 'nullable',
             "chews_on_pens_straws_shirt_sleeves_etc"                           => 'nullable',
+            
             "misjudges_how_much_to_flex"                                       => 'nullable',
             "difficulty_regulating_pressure"                                   => 'nullable',
             "kicks_his_her_feet_on_floor"                                      => 'nullable',

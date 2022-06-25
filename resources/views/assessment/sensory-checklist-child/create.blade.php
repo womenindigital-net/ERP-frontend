@@ -51,8 +51,7 @@
                                                             data-toggle="tab">Signs Of Tactile
                                                             Dysfunction</a></li>
                                                     <li class="w-100"><a href="#Hyposensitivity_To_Touch"
-                                                            data-toggle="tab">Hyposensitivity To
-                                                            Touch (Under-Responsive)</a></li>
+                                                            data-toggle="tab">Hyposensitivity To Touch (Under-Responsive)</a></li>
                                                     <li class="w-100"><a
                                                             href="#Poor_Tactile_Perception_And_Discrimination"
                                                             data-toggle="tab">Poor Tactile
