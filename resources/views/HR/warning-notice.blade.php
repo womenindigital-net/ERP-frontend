@@ -10,15 +10,6 @@
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumb')
-        @slot('li_1') HRMS @endslot
-        @slot('title') WARNING NOTICE @endslot
-    @endcomponent
-    {{-- code  --}}
-
- 
-
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -27,89 +18,90 @@
                     <div class="d-flex justify-content-end ">
                         <button type="button" class="btn btn-outline-info waves-effect waves-light mb-5" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl"> <i
                             class="fas fa-plus-circle"></i> Add</button>   
-                         <!-- sample modal content -->
-                        <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="myExtraLargeModalLabel">Add Warning Notice</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body p-0">
-                                        <div class="container">
-                                            <div class="row row-cols-2">
-                                              <div class="col">
-                                                <h6>Select Name</h6>
-                                                <select class="form-control  form-select strip-tags"  required="">
-                                                    <option value="">--Select Name--</option>
-                                                    <option value="1">  Farhana</option>
-                                                    <option value="2">A.K.M  Shahidullah</option>
-                                                    <option value="3">Abdullah Al Asif</option>
-                                                    <option value="4">Airin  Shiddique</option>
-                                                    <option value="5">Anas Bin Iqbal</option>
-                                                    <option value="6">Angon  Rahman</option>
-                                                    <option value="7">Arup  Mandal</option>
-                                                    <option value="8">Ashiqur Rahman Majumder</option>
-                                                    <option value="9">Bijoy Gharami .</option>
-                                                    <option value="10">Bijoy Urban Rosario</option>
-                                                </select>
-                                              </div>
-                                              <div class="col">
-                                                  <h6>Warning Subject</h6>
-                                                  <input class="form-control strip-tags" id="Subject" placeholder="Subject" required="" name="Subject" type="text">
-                                              </div> 
-                                            </div>
-                                            <div class="col-xs-12 col-lg-12 col-md-12">
-                                                <label class="control-label col-xs-12 col-md-12 text-left p-left-0   pt-3" for="" title="Student">Warning Description 
-                                                </label>
-                                                <div class="col-xs-12 col-md-12 input-group">
-                                                    <textarea class="form-control strip-tags" placeholder="Description" required="" name="Description" cols="50" rows="10"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"> Close</button>
-                                        <button type="button" class="btn font-size-16 btn-success" id="sa-position"> Save</button>
-                                    </div>
-                                </div><!-- /.modal-content -->
-                            </div><!-- /.modal-dialog -->
-                        </div><!-- /.modal --> 
+                         
                     </div>
 
-                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                        <thead>
-                            <tr>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
+                              class="form-control form-control-sm form-select form-select-sm">
+                              <option value="10">10</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                            </select> entries
+                          </label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <label style="display: inline-flex;align-items: center;">Search:
+                            <input type="search" class="form-control form-control-sm" placeholder="">
+                          </label>
+                        </div>
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table table-bordered w-100">
+                          <thead>
+                            <tr class="table-primary">
                                 <th>Employee Name</th>
                                 <th>Warning Subject</th>
                                 <th>Warning Description</th>
                                 <th>Action</th>
-
                             </tr>
-                        </thead>
-                        <tbody>
+                          </thead>
+                          <tbody>
                             <tr>
                                 <td>Mst Tahmina Begum </td>
                                 <td>test sub</td>
                                 <td>test desc</td>
-                                <td class="text-center">
-                                    <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light"
-                                    data-bs-toggle="modal" data-bs-target="#material-callects-modal-xl-view">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-success btn-rounded waves-effect waves-light "
-                                        data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
-                                        <i class="fas fa-pen"></i></button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-danger btn-rounded waves-effect waves-light "> <i
-                                        class="fas fa-trash-alt"></i></button>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target="#material-callects-modal-xl-view">
+                                    <i class="mdi mdi-eye"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                                        class="fas fa-check"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-add">
+                                    <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                    <i class="bx bx-dollar"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                                    <i class="fas fa-trash-alt"></i>
+                                    </button>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          Showing 1 to 2 of 2 entries
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-end">
+                          <nav>
+                            <ul class="pagination" style="justify-content: end;">
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div> <!-- end col -->
@@ -149,30 +141,55 @@
                 </div>
             </div><!-- /.modal-content -->
         </div>
+    </div>
 
 
-
+<!-- sample modal content -->
+<div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myExtraLargeModalLabel">Add Warning Notice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="container">
+                    <div class="row row-cols-2">
+                      <div class="col">
+                        <h6>Select Name</h6>
+                        <x-input-select name="student_id" :records="[]" />
+                      </div>
+                      <div class="col">
+                          <h6>Warning Subject</h6>
+                          <x-input-text name="warning_sub" type="text"
+                                placeholder="">
+                            </x-input-text>
+                      </div> 
+                    </div>
+                    <div class="col-xs-12 col-lg-12 col-md-12">
+                        <label class="control-label col-xs-12 col-md-12 text-left p-left-0   pt-3" for="" title="Student">Warning Description 
+                        </label>
+                        <div class="col-xs-12 col-md-12">
+                            <x-input-textarea name="warning_des" type="text"
+                                placeholder="">
+                            </x-input-textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"> Close</button>
+                <button type="button" class="btn font-size-16 btn-success" id="sa-position"> Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal --> 
 
 
 
 
 @endsection
 @section('script')
-<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $(".hide").hide();
-      $("#container").click(function(){
-        $(".hide").toggle();
-      });
-    });
-    </script>
-<script src="{{ URL::asset('/assets/js/pages/fontawesome.init.js') }}"></script>
-@endsection
 
 
 
