@@ -98,6 +98,7 @@ class CaseHistoryRequest extends FormRequest
             'does_like_play'                                         => 'nullable',
             'can_play_independently'                                 => 'nullable',
             'favorite_games'                                         => 'nullable',
+            'favorite_games_secondary'                               => 'nullable',
             'can_obey_elder_commends'                                => 'nullable',
             'do_you_things_obey_elder_elder_is_heard'                => 'nullable',
             'can_clean_himself_after_properly'                       => 'nullable',
@@ -138,7 +139,7 @@ class CaseHistoryRequest extends FormRequest
             'does_get_angry_quickly'                                 => 'nullable',
             'does_get_disappointed_quickly'                          => 'nullable',
             'does_stop_working'                                      => 'nullable',
-            'is_there_instability'                                      => 'nullable',
+            'is_there_instability'                                   => 'nullable',
             'can_stay_longer_if_needed'                              => 'nullable',
             'does_have_tremendous_behaviors_at_home'                 => 'nullable',
             'seems_like_not_interested_in_playing'                   => 'nullable',
@@ -158,6 +159,12 @@ class CaseHistoryRequest extends FormRequest
             'try_to_ignore_task'                                     => 'nullable',
             'which_kind_of_task_he_try_to_skip'                      => 'nullable',
             'lost_again_and_again'                                   => 'nullable',
+            'Learned_the_structure_of_a_three_or_four_wheeled_bicycle' => 'nullable',
+            'can_you_speak_any_other_language'                       => 'nullable',
+            'can_use_language_correctly'                             => 'nullable',
+            'does_the_toilet_use_alone'                              => 'nullable',
+            'does_have_tremendous_behaviors_at_home_secondary'       => 'nullable',
+            'staying_in_motion_all_the_time'                         => 'nullable',
         ];
     }
 }
