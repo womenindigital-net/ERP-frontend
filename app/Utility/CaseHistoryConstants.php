@@ -23,6 +23,20 @@ final class CaseHistoryConstants
     const HAPPY = 'হাশি খুশী';
     const SLEEPMORE = 'বেশি ঘুমায়';
 
+    const HAPPYNESS = ' হাসি খুশী';
+    const FIREND = 'সহজেই বন্ধুত্ব তৈরি করে';
+    const TROUBLESOME = 'ঝামেলা করে';
+    const OFFENSIVE = ' আক্রমণাত্মক';
+    const ACTIVE = ' সক্রিয় ';
+    const ALONE = ' একা থাকতে পছন্দ করে ';
+    const BEKHAPPA = ' বেধপ/বেখাপ্পা';
+    const DISCIPLINE = ' শৃঙ্খলার মধ্যে আনা কঠিন ';
+    const GUEST = ' অতিথির সামনে লাজুক ';
+    const WEAK = ' ভীরু / দুর্বল চিত্তের ';
+    const SLOW = ' ঢিলেমি /ধিরস্থির ';
+    const EMOTIONS = ' আবেগ প্রবণ ';
+    const OTHERS = 'অন্যান্য';
+
     const JEROTOTWO = '০-২ বছর- সংবেদন-সঞ্চালন স্তর';
     const TWOTOFORE = '২-৪বছর- প্রাক সক্রিয়তার স্তর';
     const FORETOSEVEN = '৪-৭ বছর- প্রাক সক্রিয়তার স্তর';
@@ -103,6 +117,16 @@ final class CaseHistoryConstants
     const STUMBLES = 'হোঁচট খায় বা জিনিষ পত্রের বা বন্ধুদের সাথে ধাক্কা খায়';
     const NEEDHELPUSINGSCISSORSKNIVES = 'কাঁচি, ছুরি বেমানান ভাবে ব্যবহার করে এবং সাহায্য প্রয়োজন হয়';
     const TASKOFWRITINGSEEMSDIFFICULTTOHIM = 'লিখার কাজটি তার কাছে কঠিন মনে হয়';
+
+    const DAILY = ' হাসি খুশী';
+    const REGULER = 'নিয়মিত';
+    const SOMETIMES = 'মাঝে মাঝে';
+    const ABSOLUTEL = 'একেবারেই না';
+
+    const PRE = 'হ্যাঁ , প্রি ন্যাটাল ';
+    const NEW = 'হ্যাঁ, নিউ ন্যাটাল';
+    const POST = 'হ্যাঁ, পোস্ট ন্যাটাল';
+    const NO = 'না';
 
     public static array $hasWriteAbilities = [
         self::HAS_RIGHT_STRUCTURE => 'আকার, গঠন ঠিক আছে কিনা',
@@ -298,4 +322,33 @@ final class CaseHistoryConstants
         self::DOESNOTRESPONDTOCALLS => 'ডাকলে সাড়া দেয় না',
         self::OFTENDOESNOTRESPOND => 'অনুরোধে প্রায়ই সাড়া দেয় না',
     ];
+
+ public static array $activeFirends = [
+    self:: HAPPYNESS => ' হাসি খুশী',
+    self:: FIREND => 'সহজেই বন্ধুত্ব তৈরি করে',
+    self:: TROUBLESOME => 'ঝামেলা করে',
+    self:: OFFENSIVE => ' আক্রমণাত্মক',
+    self:: ACTIVE => ' সক্রিয় ',
+    self:: ALONE => ' একা থাকতে পছন্দ করে ',
+    self:: BEKHAPPA => ' বেধপ/বেখাপ্পা',
+    self:: DISCIPLINE => ' শৃঙ্খলার মধ্যে আনা কঠিন ',
+    self:: GUEST => ' অতিথির সামনে লাজুক ',
+    self:: WEAK => ' ভীরু / দুর্বল চিত্তের ',
+    self:: SLOW => ' ঢিলেমি /ধিরস্থির ',
+    self:: EMOTIONS => ' আবেগ প্রবণ ',
+    self:: OTHERS => 'অন্যান্য',
+ ];
+ public static array $absolutely = [
+    self:: DAILY => ' হাসি খুশী',
+    self:: REGULER => 'নিয়মিত',
+    self:: SOMETIMES => 'মাঝে মাঝে',
+    self:: ABSOLUTEL => 'একেবারেই না',
+ ];
+
+ public static array $pre = [
+    self:: PRE => 'হ্যাঁ , প্রি ন্যাটাল ',
+    self:: NEW => 'হ্যাঁ, নিউ ন্যাটাল',
+    self:: POST => 'হ্যাঁ, পোস্ট ন্যাটাল',
+    self:: NO => 'না',
+ ];
 }

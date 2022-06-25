@@ -844,12 +844,12 @@
                                                                 <p>শিশু নিচে বর্ণিত খেলাধুলা ও শারীরিক কসরত বা সঙ্গীত
                                                                     সংক্রান্ত
                                                                     বিষয়ে অংশগ্রহণ করে</p>
-                                                                <x-input-radio-or-check name='lost_again_and_again'
-                                                                    label="আমি শিশুকে পরে শুনাই" :records="$constants::$yesNo">
+                                                                <x-input-radio-or-check name='i_listen_to_the_baby_later'
+                                                                    label="আমি শিশুকে পরে শুনাই" :records="$caseConstants::$absolutely">
                                                                 </x-input-radio-or-check>
-                                                                <x-input-radio-or-check name="has_any_learning_obstacle"
+                                                                <x-input-radio-or-check name="how_would_you_describe_the_child"
                                                                     label="আপনি সন্তানকে কি ভাবে বর্ণনা করবেন ?"
-                                                                    :records="$caseConstants::$hasAnyLerningAbstagol" type="checkbox" :isVertical="false"
+                                                                    :records="$caseConstants::$activeFirends" type="checkbox" :isVertical="false"
                                                                     :multiple="true">
                                                                 </x-input-radio-or-check>
                                                                 <div class="col-xl-12 col-sm-12">
@@ -858,18 +858,17 @@
                                                                             লিখুনঃ</h5>
                                                                         <div class="input-group" id="datepicker2">
                                                                             <x-input-text type="text"
-                                                                                name='concerning_points_of_child_school_work'>
+                                                                                name='three_main_concerns'>
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- input-->
                                                                     </div>
                                                                 </div>
-
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="report">
                                                             <section>
-                                                                <x-input-radio-or-check name="has_speaking_problem"
+                                                                <x-input-radio-or-check name="whether_the_eyes_were_examined"
                                                                     label="চোখের পরিক্ষা হয়েছিল কিনা? (রিপোর্ট সংযুক্ত করুন)"
                                                                     :records="$constants::$yesNo"
                                                                     secondaryInputLabel="থাকলে উল্লেখ করুন">
@@ -880,13 +879,12 @@
                                                                             সংযুক্ত করুন</h5>
                                                                         <div class="input-group" id="datepicker2">
                                                                             <x-input-text type="file"
-                                                                                name='concerning_points_of_child_school_work'>
+                                                                                name='report_if_eye_examination_has_been_done'>
                                                                             </x-input-text>
                                                                         </div>
-                                                                        <!-- input-->
                                                                     </div>
                                                                 </div>
-                                                                <x-input-radio-or-check name='lost_again_and_again'
+                                                                <x-input-radio-or-check name='hearing_attach_report_if_checked'
                                                                     label="শ্রবণ ( Hearing)পরিক্ষা হয়েছিল কিনা?"
                                                                     :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
@@ -896,40 +894,40 @@
                                                                             থাকলে রিপোর্ট সংযুক্ত করুন</h5>
                                                                         <div class="input-group" id="datepicker2">
                                                                             <x-input-text type="file"
-                                                                                name='concerning_points_of_child_school_work'>
+                                                                                name='hearing_attach_report_if_checked'>
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- input-->
                                                                     </div>
                                                                 </div>
-                                                                <x-input-radio-or-check name="has_speaking_problem"
+                                                                <x-input-radio-or-check name="whether_there_were_any_problems_during_pregnancy_or_at_birth"
                                                                     label="প্রেগন্যান্ট অবস্থায় বা শিশুর জন্মের সময়ে কোন সমস্যা ছিল কি?"
                                                                     :records="$constants::$yesNo"
                                                                     secondaryInputLabel="কি ধরনের সমস্যাছিল">
                                                                 </x-input-radio-or-check>
-                                                                <x-input-radio-or-check name='fff'
+                                                                <x-input-radio-or-check name='whether_the_child_received_any_head_injuries'
                                                                     label="শিশু মাথায় কোন আঘাত পেয়েছিল কিনা?"
-                                                                    :records="$constants::$yesNo">
+                                                                    :records="$caseConstants::$pre">
                                                                 </x-input-radio-or-check>
-                                                                <x-input-radio-or-check name='শিশু মাথায় কোন আঘাত পেয়েছিল কিনা?'
+                                                                <x-input-radio-or-check name='whether_there_is_caesar'
                                                                     label="সিজার আছে কিনা"
                                                                     :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
-                                                                <x-input-radio-or-check name="has_speaking_problem"
+                                                                <x-input-radio-or-check name="the_baby_had_an_ear_infection_or_a_problem"
                                                                     label="শিশুর কানে ইনফেকশন বা কোন সমস্যা হয়েছিল কিনাঃ"
                                                                     :records="$constants::$yesNo"
                                                                     secondaryInputLabel="বিস্তারিত লিখুন">
                                                                 </x-input-radio-or-check>
-                                                                <x-input-radio-or-check name="has_speaking_problem"
+                                                                <x-input-radio-or-check name="what_kind_of_ear_problems"
                                                                     label="কানে কি ধরনের সমস্যা - অন্তকর্ণ / মধ্যকর্ণ/ বহিঃকর্ণ"
                                                                     :records="$constants::$yesNo"
                                                                     secondaryInputLabel="বিস্তারিত লিখুন">
                                                                 </x-input-radio-or-check>
-                                                                <x-input-radio-or-check name='শিশু মাথায় কোন আঘাত পেয়েছিল কিনা?'
+                                                                <x-input-radio-or-check name='no_illness_or_hospitalization_was_required'
                                                                     label="কোন অসুখ বা হসপিটালে ভর্তি হতে হয়েছিল?"
                                                                     :records="$constants::$yesNo">
                                                                 </x-input-radio-or-check>
-                                                                  <x-input-radio-or-check name="has_speaking_problem"
+                                                                  <x-input-radio-or-check name="whether_there_is_other_relevant_treatment_information"
                                                                     label="অন্যান্য প্রাসঙ্গিক চিকিৎসার তথ্য আছে কিনা"
                                                                     :records="$constants::$yesNo"
                                                                     secondaryInputLabel="বিস্তারিত লিখুন">
@@ -939,7 +937,7 @@
                                                                         <h5 class="">অন্যান্য প্রাসঙ্গিক চিকিৎসার তথ্য থাকলে রিপোর্ট সংযুক্ত করুন-</h5>
                                                                         <div class="input-group" id="datepicker2">
                                                                             <x-input-text type="file"
-                                                                                name='concerning_points_of_child_school_work'>
+                                                                                name='attach_the_report_if_you_have_other_relevant_treatment_information'>
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- input-->
@@ -982,7 +980,6 @@
 @endsection
 
 @section('script')
-    <!-- Custom step -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
 @endsection

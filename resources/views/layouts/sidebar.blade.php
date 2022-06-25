@@ -549,11 +549,11 @@
                         <span>HR Admin</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="HR.warning-notice">Warning Notice</a></li>
-                        <li><a href="HR.show-case-notice">Show Case Notice</a></li>
-                        <li><a href="HR.advice-letter">Advice Letter</a></li>
-                        <li><a href="HR.employee-leave-status">Employee Leave Status</a></li>
-                        <li><a href="HR.certificate_setup">Certificate Setup</a></li>
+                        <li><a href="{{ route('HR.warning-notice.create') }}">Warning Notice</a></li>
+                        <li><a href="{{ route('HR.show-case-notice.create') }}">Show Case Notice</a></li>
+                        <li><a href="{{ route('HR.advice-letter.create') }}">Advice Letter</a></li>
+                        <li><a href="{{ route('HR.employee-leave-status.create') }}">Employee Leave Status</a></li>
+                        <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
                         <li><a href=""> </a></li>
                         <li><a href=""> </a></li>
                         <li><a href=""> </a></li>

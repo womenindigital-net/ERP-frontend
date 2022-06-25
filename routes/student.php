@@ -1,11 +1,9 @@
 <?php
 
 use App\Http\Controllers\StudentIncomeController;
-use App\Http\Livewire\CaseHistory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\AppointmentList;
 use App\Http\Controllers\TripController;
-use App\Http\Controllers\SetupController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\RunMitpController;
 use App\Http\Controllers\StudentController;
@@ -23,7 +21,6 @@ use App\Http\Controllers\MedicineAdminController;
 use App\Http\Controllers\PhysiotherapyController;
 use App\Http\Controllers\IncidentRecordController;
 use App\Http\Controllers\IndividualRiskController;
-use App\Http\Livewire\StudentIncome\StudentIncome;
 use App\Http\Controllers\AutisumBhehaviourController;
 use App\Http\Controllers\ExecutiveFunctionController;
 use App\Http\Controllers\OccupationalTherapyController;
@@ -120,7 +117,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('dairy/incident-record', [StudentController::class, 'incidentRecord'])->name('student.dairy.incident-record');
     Route::get('dairy/medicine-admin', [StudentController::class, 'medicineAdmin'])->name('student.dairy.medicine-admin');
 
-     //Route::get('student-attendence', [StudentController::class, 'studentAttendence'])->name('student.attendence');
+    //Route::get('student-attendence', [StudentController::class, 'studentAttendence'])->name('student.attendence');
     // Route::get('', [StudentController::class, ''])->name('');
     Route::get('assessment/functional_movement_skills', [StudentController::class, 'functionalMovementskill'])->name('assessment.functional_movement_skills');
     Route::get('co-curricular/drama-diary-evaluation', [StudentController::class, 'dramaDiary'])->name('student.co-curricular.drama-diary-evaluation');

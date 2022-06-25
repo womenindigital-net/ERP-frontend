@@ -342,6 +342,19 @@ class TripRequest extends FormRequest
             'visiting_house_or_favorite_place_or_shopping_time' => 'nullable',
             'visiting_house_or_favorite_place_or_shopping_time_secondary' => 'nullable',
 
+            'Make_sherbet_or_tea_or_snakes' => 'nullable',
+            'Make_sherbet_or_tea_or_snakes_secondary' => 'nullable',
+            'Make_sherbet_or_tea_or_snakes_time' => 'nullable',
+            'Make_sherbet_or_tea_or_snakes_time_secondary' => 'nullable',
+            'guest_reception' => 'nullable',
+            'guest_reception_secondary' => 'nullable',
+            'guest_reception_time' => 'nullable',
+            'guest_reception_time_secondary' => 'nullable',
+            'spending_time_with_brother_sister' => 'nullable',
+            'spending_time_with_brother_sister_secondary' => 'nullable',
+            'spending_time_with_brother_sister_time' => 'nullable',
+            'spending_time_with_brother_sister_time_secondary' => 'nullable',
+
         ];
     }
 }
