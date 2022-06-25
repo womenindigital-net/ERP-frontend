@@ -416,7 +416,20 @@ final class TripReport
             'visiting_house_or_favorite_place_or_shopping_time',
             'visiting_house_or_favorite_place_or_shopping_time_secondary',
         ],
-        // 'safety' => [],
+        'evening' => [
+            'Make_sherbet_or_tea_or_snakes',
+            'Make_sherbet_or_tea_or_snakes_secondary',
+            'Make_sherbet_or_tea_or_snakes_time',
+            'Make_sherbet_or_tea_or_snakes_time_secondary',
+            'guest_reception',
+            'guest_reception_secondary',
+            'guest_reception_time',
+            'guest_reception_time_secondary',
+            'spending_time_with_brother_sister',
+            'spending_time_with_brother_sister_secondary',
+            'spending_time_with_brother_sister_time',
+            'spending_time_with_brother_sister_time_secondary',
+        ],
         // 'safety' => [],
     ];
 }

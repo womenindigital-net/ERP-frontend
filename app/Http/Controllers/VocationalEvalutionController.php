@@ -27,8 +27,7 @@ class VocationalEvalutionController extends Controller
         VocationalEvaluationService $vocService,
         CategoryService $categoryService,
         VocationalEvalutionRepository $repository,
-    )
-    {
+    ) {
         $this->studentRepo = $studentRepo;
         $this->vocService = $vocService;
         $this->categoryService = $categoryService;
