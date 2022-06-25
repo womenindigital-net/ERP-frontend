@@ -35,21 +35,11 @@ return new class extends Migration
             $table->json('lunch_time')->nullable();
             $table->json('rest_time')->nullable();
             $table->json('afternoon')->nullable();
+            $table->json('evening')->nullable();
+
 
 
             /*
-            $table->tinyText('Make_sherbet_or_tea_or_snakes')->nullable();
-            $table->tinyText('Make_sherbet_or_tea_or_snakes_secondary')->nullable();
-            $table->tinyText('Make_sherbet_or_tea_or_snakes_time')->nullable();
-            $table->tinyText('Make_sherbet_or_tea_or_snakes_time_secondary')->nullable();
-            $table->tinyText('guest_reception')->nullable();
-            $table->tinyText('guest_reception_secondary')->nullable();
-            $table->tinyText('guest_reception_time')->nullable();
-            $table->tinyText('guest_reception_time_secondary')->nullable();
-            $table->tinyText('spending_time_with_brother_sister')->nullable();
-            $table->tinyText('spending_time_with_brother_sister_secondary')->nullable();
-            $table->tinyText('spending_time_with_brother_sister_time')->nullable();
-            $table->tinyText('spending_time_with_brother_sister_time_secondary')->nullable();
             $table->tinyText('reading_book_and_hand_writing')->nullable();
             $table->tinyText('reading_book_and_hand_writing_secondary')->nullable();
             $table->tinyText('reading_book_and_hand_writing_time')->nullable();
