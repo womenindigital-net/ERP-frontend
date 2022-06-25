@@ -91,6 +91,7 @@ return new class extends Migration
             $table->text('does_like_play')->nullable();
             $table->text('can_play_independently')->nullable();
             $table->text('favorite_games')->nullable();
+            $table->text('favorite_games_secondary')->nullable();
             $table->text('can_obey_elder_commends')->nullable();
             $table->text('do_you_things_obey_elder_elder_is_heard')->nullable();
             $table->text('can_clean_himself_after_properly')->nullable();
@@ -151,6 +152,12 @@ return new class extends Migration
             $table->text('try_to_ignore_task')->nullable();
             $table->text('which_kind_of_task_he_try_to_skip')->nullable();
             $table->text('lost_again_and_again')->nullable();
+            $table->text('Learned_thestructure')->nullable();
+            $table->text('can_you_speak_any_other_language')->nullable();
+            $table->text('can_use_language_correctly')->nullable();
+            $table->text('does_the_toilet_use_alone')->nullable();
+            $table->text('does_have_tremendous_behaviors_at_home_secondary')->nullable();
+            $table->text('staying_in_motion_all_the_time')->nullable();
             $table->timestamps();
         });
     }
