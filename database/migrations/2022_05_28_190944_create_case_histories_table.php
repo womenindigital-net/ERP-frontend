@@ -158,6 +158,21 @@ return new class extends Migration
             $table->text('does_the_toilet_use_alone')->nullable();
             $table->text('does_have_tremendous_behaviors_at_home_secondary')->nullable();
             $table->text('staying_in_motion_all_the_time')->nullable();
+            $table->text('i_listen_to_the_baby_later')->nullable();
+            $table->text('how_would_you_describe_the_child')->nullable();
+            $table->text('whether_the_eyes_were_examined')->nullable();
+            $table->text('three_main_concerns')->nullable();
+            $table->text('report_if_eye_examination_has_been_done')->nullable();
+            $table->text('hearing_attach_report_if_checked')->nullable();
+            $table->text('hearing_attach_report_if_checked')->nullable();
+            $table->text('whether_there_were_any_problems_during_pregnancy_or_at_birth')->nullable();
+            $table->text('whether_the_child_received_any_head_injuries')->nullable();
+            $table->text('whether_there_is_caesar')->nullable();
+            $table->text('the_baby_had_an_ear_infection_or_a_problem')->nullable();
+            $table->text('what_kind_of_ear_problems')->nullable();
+            $table->text('no_illness_or_hospitalization_was_required')->nullable();
+            $table->text('whether_there_is_other_relevant_treatment_information')->nullable();
+            $table->text('attach_the_report_if_you_have_other_relevant_treatment_information')->nullable();
             $table->timestamps();
         });
     }

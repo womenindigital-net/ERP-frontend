@@ -165,6 +165,21 @@ class CaseHistoryRequest extends FormRequest
             'does_the_toilet_use_alone'                              => 'nullable',
             'does_have_tremendous_behaviors_at_home_secondary'       => 'nullable',
             'staying_in_motion_all_the_time'                         => 'nullable',
+            'i_listen_to_the_baby_later'                             => 'nullable',
+            'how_would_you_describe_the_child'                       => 'nullable',
+            'whether_the_eyes_were_examined'                         => 'nullable',
+            'three_main_concerns'                                    => 'nullable',
+            'report_if_eye_examination_has_been_done'                => 'nullable',
+            'hearing_attach_report_if_checked'                       => 'nullable',
+            'hearing_attach_report_if_checked'                       => 'nullable',
+            'whether_there_were_any_problems_during_pregnancy_or_at_birth' => 'nullable',
+            'whether_the_child_received_any_head_injuries' => 'nullable',
+            'whether_there_is_caesar' => 'nullable',
+            'the_baby_had_an_ear_infection_or_a_problem' => 'nullable',
+            'what_kind_of_ear_problems' => 'nullable',
+            'no_illness_or_hospitalization_was_required' => 'nullable',
+            'whether_there_is_other_relevant_treatment_information' => 'nullable',
+            'attach_the_report_if_you_have_other_relevant_treatment_information' => 'nullable',
         ];
     }
 }
