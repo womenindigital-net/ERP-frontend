@@ -16,7 +16,7 @@ class GymAndOutingController extends Controller
     private UserRepository $userRepo;
     private StudentRepository $studentRepo;
     public $record;
-    
+
 
     public function __construct(GymAndOutingRepository $gymAndOutingRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
@@ -73,7 +73,7 @@ class GymAndOutingController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'record' => $this->record = $gymAndOuting,
+            'record' => $gymAndOuting,
         ];
         return view('student.dairy.Gym-Outing-Evalution.view', $data);
     }
@@ -86,7 +86,12 @@ class GymAndOutingController extends Controller
      */
     public function edit(GymAndOuting $gymAndOuting)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $gymAndOuting,
+        ];
+        return view('student.dairy.Gym-Outing-Evalution.edit', $data);
     }
 
     /**
@@ -96,9 +101,11 @@ class GymAndOutingController extends Controller
      * @param  \App\Models\GymAndOuting  $gymAndOuting
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateGymAndOutingRequest $request, GymAndOuting $gymAndOuting)
+    public function update(StoreGymAndOutingRequest $request, GymAndOuting $gymAndOuting)
     {
-        //
+        $this->gymAndOutingRepo->update($gymAndOuting, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

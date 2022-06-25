@@ -84,7 +84,7 @@ class CaseHistoryController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'caseHistory' => $this->caseHistory = $caseHistory,
+            'caseHistory' => $caseHistory,
         ];
         return view('pre_admission.case-history.view', $data);
     }
@@ -101,7 +101,7 @@ class CaseHistoryController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'caseHistory' => $this->caseHistory = $caseHistory,
+            'caseHistory' => $caseHistory,
         ];
         return view('pre_admission.case-history.edit', $data);
     }
