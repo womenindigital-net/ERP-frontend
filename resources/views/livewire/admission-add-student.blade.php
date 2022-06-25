@@ -21,10 +21,11 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="case-histroy" role="tabpanel">
-                           <livewire:admission-add-student-create/>
+                            {{--
+                            <livewire:admission-add-student-create /> --}}
                         </div>
                         <div class="tab-pane" id="case-histroy_list" role="tabpanel">
-                            <livewire:admission-add-student-list/>
+                            <livewire:admission-add-student-list />
                         </div>
                     </div>
                 </div>
@@ -32,7 +33,7 @@
         </div>
     </div>
 
- <!-- end row -->
+    <!-- end row -->
     <!-- sample modal content -->
-    
+
 </div>

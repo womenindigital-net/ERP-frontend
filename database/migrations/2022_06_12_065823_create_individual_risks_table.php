@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->foreignIdFor(Student::class, 'student_id')->nullable()->constrained('students')->cascadeOnDelete();
             $table->boolean('is_approved')->default(0);
-            $table->string('hazard_spotted')->nullable();
+            $table->string('hazard_spotted', 500)->nullable();
             $table->string('accident_or_incident')->nullable();
             $table->string('possible_concerns')->nullable();
             $table->string('risk_rating')->nullable();

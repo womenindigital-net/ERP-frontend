@@ -83,9 +83,14 @@ class IncidentRecordController extends Controller
      * @param  \App\Models\IncidentRecord  $incidentRecord
      * @return \Illuminate\Http\Response
      */
-    public function edit(IncidentRecord $incidentRecord)
+    public function edit(IncidentRecord $incident_record)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $incident_record,
+        ];
+        return view('student.dairy.Incident-Record.edit', $data);
     }
 
     /**
@@ -95,9 +100,11 @@ class IncidentRecordController extends Controller
      * @param  \App\Models\IncidentRecord  $incidentRecord
      * @return \Illuminate\Http\Response
      */
-    public function update(IncidentRecordRequest $request, IncidentRecord $incidentRecord)
+    public function update(IncidentRecordRequest $request, IncidentRecord $incident_record)
     {
-        //
+        $this->incidentRcordRepo->update($incident_record, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
