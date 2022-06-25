@@ -12,4 +12,9 @@ class ProductRepository extends BaseRepository
     {
         return Product::whereCategoryId($categoryId)->get();
     }
+
+    public function getWithSpecifyingRelation()
+    {
+        return $this->model::specifyingRelation()->get();
+    }
 }

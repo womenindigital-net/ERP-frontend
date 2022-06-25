@@ -5,8 +5,10 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\RequisitionController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SaleVoucherController;
+use App\Http\Controllers\StockAssignController;
 use App\Http\Controllers\StockController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +17,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'journal' => JournalController::class,
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
+        'requisition' => RequisitionController::class,
+        'stock-assign' => StockAssignController::class,
     ]);
 
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
@@ -23,7 +27,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 //    Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');
 //    Route::get('donation-and-other', [\App\Http\Controllers\DonationController::class, 'create'])->name('donation-and-other');
 
-    Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');
+//    Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');
     Route::get('purchase-order', [PurchaseController::class, 'purchaseOrder'])->name('purchase-order');
     Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 
@@ -45,5 +49,5 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::get('stock-reorder-report', [StockController::class, 'stockReorderReport'])->name('stock-reorder-report');
     Route::get('product-analysis-report', [StockController::class, 'stockProductAnalysisReport'])->name('product-analysis-report');
 
-    Route::get('stock-assign', [StockController::class, 'stockAssign'])->name('stock-assign');
+//    Route::get('stock-assign', [StockController::class, 'stockAssign'])->name('stock-assign');
 });

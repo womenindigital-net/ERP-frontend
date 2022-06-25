@@ -8,11 +8,11 @@ class StockRepository extends BaseRepository
 {
     protected string $model = Stock::class;
 
-    public function getDetailAccordingly()
+    public function getDetailAccordingly($project_id = false, $warehouse_id = false, $product_id = false)
     {
-        $projectId   = request()->project_id;
-        $productId   = request()->product_id;
-        $warehouseId = request()->warehouse_id;
+        $projectId   = $project_id ?: request()->project_id;
+        $productId   = $product_id ?: request()->product_id;
+        $warehouseId = $warehouse_id ?: request()->warehouse_id;
 
         return $this->model::with('product')->where([
             'product_id'   => $productId,

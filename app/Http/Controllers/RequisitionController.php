@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRequisitionRequest;
 use App\Http\Requests\UpdateRequisitionRequest;
 use App\Models\Requisition;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
 
 class RequisitionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -21,18 +25,18 @@ class RequisitionController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
-        //
+        return view('accounting.purchase.requisition');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreRequisitionRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(StoreRequisitionRequest $request)
     {
@@ -42,8 +46,9 @@ class RequisitionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Requisition  $requisition
-     * @return \Illuminate\Http\Response
+     * @param Requisition $requisition
+     *
+     * @return Response
      */
     public function show(Requisition $requisition)
     {
@@ -53,20 +58,26 @@ class RequisitionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Requisition  $requisition
-     * @return \Illuminate\Http\Response
+     * @param Requisition  $requisition
+     *
+     * @return Application|Factory|View
      */
-    public function edit(Requisition $requisition)
+    public function edit(Requisition $requisition): View|Factory|Application
     {
-        //
+        $data = [
+            'record' => $requisition,
+        ];
+
+        return view('accounting.purchase.requisition_edit', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateRequisitionRequest  $request
-     * @param  \App\Models\Requisition  $requisition
-     * @return \Illuminate\Http\Response
+     * @param Requisition $requisition
+     *
+     * @return Response
      */
     public function update(UpdateRequisitionRequest $request, Requisition $requisition)
     {
@@ -76,8 +87,9 @@ class RequisitionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Requisition  $requisition
-     * @return \Illuminate\Http\Response
+     * @param Requisition  $requisition
+     *
+     * @return Response
      */
     public function destroy(Requisition $requisition)
     {

@@ -164,7 +164,7 @@ return new class extends Migration
             $table->text('three_main_concerns')->nullable();
             $table->text('report_if_eye_examination_has_been_done')->nullable();
             $table->text('hearing_attach_report_if_checked')->nullable();
-            $table->text('hearing_attach_report_if_checked')->nullable();
+            $table->text('hearing_attach_report_if_checked_secondary')->nullable();
             $table->text('whether_there_were_any_problems_during_pregnancy_or_at_birth')->nullable();
             $table->text('whether_the_child_received_any_head_injuries')->nullable();
             $table->text('whether_there_is_caesar')->nullable();
@@ -172,7 +172,7 @@ return new class extends Migration
             $table->text('what_kind_of_ear_problems')->nullable();
             $table->text('no_illness_or_hospitalization_was_required')->nullable();
             $table->text('whether_there_is_other_relevant_treatment_information')->nullable();
-            $table->text('attach_the_report_if_you_have_other_relevant_treatment_information')->nullable();
+            $table->text('attach_the_report_if_you_have_treatment_information')->nullable();
             $table->timestamps();
         });
     }

@@ -99,7 +99,7 @@ class StockController extends Controller
 
     public function stockAssign()
     {
-        return view('inventory-management.stock_assign');
+
     }
 
     public function finishedGoods()

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Course extends Model
 {
@@ -11,7 +12,7 @@ class Course extends Model
 
     protected $guarded = ['id'];
 
-    public function parentCourse()
+    public function parentCourse(): BelongsTo
     {
         return $this->belongsTo(Course::class, 'parent_course_id', 'id');
     }
@@ -20,6 +21,7 @@ class Course extends Model
     {
         return $query->with('parentCourse', function ($q) {
             $q->select('id', 'title');
-        })->select('id', 'title', 'parent_course_id')->whereNotNull('parent_course_id');
+        })->select('id', 'title', 'parent_course_id')
+          ->whereNotNull('parent_course_id');
     }
 }

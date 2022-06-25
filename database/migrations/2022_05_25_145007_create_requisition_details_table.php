@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('requisition_details', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Requisition::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Category::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Project::class)->constrained()->cascadeOnDelete();
-            $table->string('qty')->nullable();
+            $table->foreignIdFor(\App\Models\Product::class)->constrained()->cascadeOnDelete();
+            $table->integer('available_qty')->nullable();
+            $table->integer('qty')->nullable();
             $table->integer('sub_total')->nullable();
             $table->double('price', 8, 2);
+            $table->double('discount', 8, 2);
             $table->boolean('is_approved')->default(0);
             $table->timestamps();
         });
