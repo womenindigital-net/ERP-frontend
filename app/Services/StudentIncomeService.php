@@ -31,9 +31,11 @@ class StudentIncomeService
     public function store(array $validate): void
     {
         [$incomeInfo, $studentIncomeInfo] = $this->segregateInfo($validate);
+
         try {
             DB::beginTransaction();
-            $income = $this->repo->store($incomeInfo);
+
+            $income = $this->incomeRepo->store($incomeInfo);
 
             $studentIncome = $income->studentIncome()->create($studentIncomeInfo);
 

@@ -14,6 +14,7 @@ class OccupationalTherapyController extends Controller
 {
 
     private OccupationalTherapyRepository $occupationalRepo;
+    private UserRepository $userRepo;
     private StudentRepository $studentRepo;
     public $record;
 

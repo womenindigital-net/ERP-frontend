@@ -8,51 +8,51 @@ class SetupController extends Controller
 {
     public function warehouseSetup()
     {
-        return view('setup.store-management.warehouse_setup');
+        return view('setup.store-management.warehouse_setup.create');
     }
     public function measureUnitSetup()
     {
-        return view('setup.store-management.measure-unit');
+        return view('setup.store-management.measure-unit.create');
     }
     public function productCategorySetup()
     {
-        return view('setup.store-management.product-category');
+        return view('setup.store-management.product-category.create');
     }
     public function productCreate()
     {
-        return view('setup.store-management.product_setup');
+        return view('setup.store-management.product_setup.create');
     }
     public function academicCalender()
     {
-        return view('setup.program-setup.academic-calender-create');
+        return view('setup.program-setup.academic-calender-create.create');
     }
     public function attendenceCardSetup()
     {
-        return view('setup.program-setup.attendence-card-setup');
+        return view('setup.program-setup.attendence-card-setup.create');
     }
     public function teskCreate()
     {
-        return view('setup.program-setup.tesk-create');
+        return view('setup.program-setup.tesk-create.create');
     }
     public function vocationalSetup()
     {
-        return view('setup.program-setup.vocational-category-subcategory-setup');
+        return view('setup.program-setup.vocational-category-subcategory-setup.create');
     }
     public function presCription()
     {
-        return view('setup.program-setup.prescription');
+        return view('setup.program-setup.prescription.create');
     }
     public function activityCreate()
     {
-        return view('setup.program-setup.activity-create');
+        return view('setup.program-setup.activity-create.create');
     }
     public function taskWeightSetup()
     {
-        return view('setup.program-setup.tesk-weight-setup');
+        return view('setup.program-setup.tesk-weight-setup.create');
     }
     public function courseSetup()
     {
-        return view('setup.program-setup.course-setup');
+        return view('setup.program-setup.course-setup.create');
     }
     public function companySetup()
     {
@@ -164,35 +164,35 @@ class SetupController extends Controller
     }
     public function accountMappingSetup()
     {
-        return view('setup.accounting-mapping.account_mapping');
+        return view('setup.accounting-mapping.account_mapping.create');
     }
     public function accountingYearSetup()
     {
-        return view('setup.accounting-mapping.accounting_year_setup');
+        return view('setup.accounting-mapping.accounting_year_setup.create');
     }
     public function clossingAccountSetup()
     {
-        return view('setup.accounting-mapping.closing_account_setup');
+        return view('setup.accounting-mapping.closing_account_setup.create');
     }
     public function budgetYearSetup()
     {
-        return view('setup.budget-year-setup');
+        return view('setup.budget-year-setup.create');
     }
     public function budgetHeadSetup()
     {
-        return view('setup.budget-head-setup');
+        return view('setup.budget-head-setup.create');
     }
     public function budgetTemplateSetup()
     {
-        return view('setup.Budget-Template-setup');
+        return view('setup.Budget-Template-setup.create');
     }
     public function budgetReviewSetup()
     {
-        return view('setup.budget-review');
+        return view('setup.budget-review.create');
     }
     public function yearEnd()
     {
-        return view('setup.year-end-close.year_end_stock_count');
+        return view('setup.year-end-close.create');
     }
     public function otherUser()
     {

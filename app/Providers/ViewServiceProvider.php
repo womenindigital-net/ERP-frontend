@@ -8,7 +8,7 @@ use App\Utility\OtAssessment;
 use App\Utility\PhysioTherapy;
 use App\Utility\IncidentRecord;
 use App\Utility\ProjectConstants;
-use App\Utility\SensoryYoungAdult;
+use App\Utility\SensoryCheckList;
 use App\Utility\StaffAndWorkPlace;
 use App\Utility\AssigntaskConstant;
 use App\Utility\FunctionalMovement;
@@ -67,7 +67,7 @@ class ViewServiceProvider extends ServiceProvider
         View::share('physiotherapyConstants', PhysioTherapy::class);
         View::share('executiveConstants', ExecutiveFunctionTest::class);
         View::share('IRAConstants', IndividualRiskAssessmentForm::class);
-        View::share('sensoryChecklistConstant', SensoryYoungAdult::class);
+        View::share('sensoryChecklistConstant', SensoryCheckList::class);
         View::share('tripReportConstants', TripReport::class);
         View::share('gymoutingConstants', Gymouting::class);
         View::share('otassessmentConstants', OtAssessment::class);

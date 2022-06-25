@@ -27,6 +27,8 @@ class SocialRequest extends FormRequest
             "collection_date"                                                                                              => 'nullable',
             "teacher_id"                                                                                                   => 'nullable',
             "student_id"                                                                                                   => 'nullable',
+
+
             "interaction_with_adults"                                                                                      => 'nullable',
             "one"                                                                                                          => 'nullable',
             "interaction_with_younger_children"                                                                            => 'nullable',
@@ -46,6 +48,7 @@ class SocialRequest extends FormRequest
             "aggressive_tendencies"                                                                                        => 'nullable',
             "responsiveness"                                                                                               => 'nullable',
             "ability_to_handle_being_left_out"                                                                             => 'nullable',
+
             "expresses_feelings"                                                                                           => 'nullable',
             "identifies_feelings"                                                                                          => 'nullable',
             "explains_feelings"                                                                                            => 'nullable',
@@ -54,6 +57,7 @@ class SocialRequest extends FormRequest
             "complains"                                                                                                    => 'nullable',
             "blames_others"                                                                                                => 'nullable',
             "provides_pertinent_information_on_request"                                                                    => 'nullable',
+
             "ability_to_establish_a_topic"                                                                                 => 'nullable',
             "ability_to_maintain_topic_relevancy"                                                                          => 'nullable',
             "ability_to_change_a_topic_using_signals"                                                                      => 'nullable',

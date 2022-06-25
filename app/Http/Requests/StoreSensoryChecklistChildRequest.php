@@ -27,6 +27,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "collection_date"                                                  => 'nullable',
             "teacher_id"                                                       => 'nullable',
             "candidate_id"                                                     => 'nullable',
+
             "hypersensitivity_to_touch"                                        => 'nullable',
             "becomes_fearful"                                                  => 'nullable',
             "as_an_infant"                                                     => 'nullable',
@@ -40,7 +41,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "resists_friendly"                                                 => 'nullable',
             "dislikes_kisses"                                                  => 'nullable',
             "appears_fearful_of"                                               => 'nullable',
-            "avoids_group_situations_for_fear_of_the_unexpected_=touch"        => 'nullable',
+            "avoids_group_situations_for_fear_of_the_unexpected_touch"        => 'nullable',
             "prefers_hugs"                                                     => 'nullable',
             "a_raindrop"                                                       => 'nullable',
             "may_overreact_to_minor_cuts"                                      => 'nullable',
@@ -60,6 +61,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "is_a_picky_eater"                                                 => 'nullable',
             "may_refuse_to_walk_barefoot_on_grass_or_sand"                     => 'nullable',
             "may_walk_on_toes_only"                                            => 'nullable',
+
             "may_crave_touch"                                                  => 'nullable',
             "is_not_aware_of_being_touched"                                    => 'nullable',
             "is_not_bothered_by_injuries"                                      => 'nullable',

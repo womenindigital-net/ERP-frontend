@@ -7,7 +7,7 @@ use App\Models\OccupationalTherapy;
 class OccupationalTherapyRepository extends BaseRepository
 {
     protected string $model = OccupationalTherapy::class;
-     public function getListData($perPage, $search)
+    public function getListData($perPage, $search)
     {
         return $this->model::when($search, function ($query) use ($search) {
             $query->where("address", "like", "%$search%")
@@ -17,5 +17,4 @@ class OccupationalTherapyRepository extends BaseRepository
             ;
         })->latest()->paginate($perPage);
     }
-
 }
