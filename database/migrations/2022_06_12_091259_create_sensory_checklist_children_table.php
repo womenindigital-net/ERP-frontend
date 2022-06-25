@@ -15,8 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sensory_checklist_children', function (Blueprint $table)
-        {
+        Schema::create('sensory_checklist_children', function (Blueprint $table) {
             $table->id();
             $table->json('sensory_checklist')->nullable();
             $table->json('signs_of_tactile_dysfunction')->nullable();
