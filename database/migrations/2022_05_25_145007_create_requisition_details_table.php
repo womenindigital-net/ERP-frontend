@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('qty')->nullable();
             $table->integer('sub_total')->nullable();
             $table->double('price', 8, 2);
-            $table->double('discount', 8, 2);
+            $table->double('discount', 8, 2)->nullable();
             $table->boolean('is_approved')->default(0);
             $table->timestamps();
         });
