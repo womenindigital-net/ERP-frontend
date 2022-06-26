@@ -5,7 +5,7 @@ namespace App\Utility;
 final class SensoryCheckList
 {
     public static array $columnCollections = [
-        'Pragmatic Objective'            => [
+        'pragmatic_objective'            => [
             'interaction_with_adults',
             'one',
             'interaction_with_younger_children',
@@ -26,7 +26,7 @@ final class SensoryCheckList
             'responsiveness',
             'ability_to_handle_being_left_out',
         ],
-        'PERSONAL'            => [
+        'personal'            => [
             'expresses_feelings',
             'identifies_feelings',
             'explains_feelings',
@@ -36,7 +36,7 @@ final class SensoryCheckList
             'blames_others',
             'provides_pertinent_information_on_request',
         ],
-        'Topic Maintenance'            => [
+        'topic_maintenance'            => [
             'ability_to_establish_a_topic',
             'ability_to_maintain_topic_relevancy',
             'ability_to_change_a_topic_using_signals',
@@ -45,7 +45,7 @@ final class SensoryCheckList
             'ability_to_interrupt_appropriately',
             'ability_to_terminate_the_conversation',
         ],
-        'Conversational Structure'            => [
+        'conversational_structure'            => [
             'ability_to_initiate_a_conversation',
             'ability_to_establish_a_conversation_outside_of_the_interest_area',
             'ability_to_acknowledge_others_in_conversation',
@@ -53,25 +53,25 @@ final class SensoryCheckList
             'ability_to_order_information_appropriately',
             'use_of_pedantic_speech',
         ],
-        'Word Structure'            => [
+        'word_structure'            => [
             'ability_to_use_generals_or_specifics',
             'pronoun_use',
             'use_of_word_referents',
             'ability_to_employee',
         ],
-        'Manner/Effectiveness'            => [
+        'manner_effectiveness'            => [
             'lie_ambiguous_confusing_information_share',
             'provides_relevant_information',
             'truthfulness_of_information',
             'ability_to_establish_joint_activity',
             'tendency_to_present_personal_opinions_as_factual',
         ],
-        'Repair Structures'            => [
+        'repair_structures'            => [
             'requests_clarification_as_needed',
             'spontaneously_provides_additional_information',
             'requests_repetition_of_information_for_clarification_purposes',
         ],
-        'Functional Intent > A.Responsiveness'            => [
+        'responsiveness'            => [
             'looks_at_speaker_when_called',
             'delay_of_response',
             'ability_to_label_information_appropriately',
@@ -80,7 +80,7 @@ final class SensoryCheckList
             'ability_to_state_facts_appropriately',
             'ability_to_provide_clarification_appropriately',
         ],
-        'Functional Intent > B.INSTRUMENTAL – States needs'            => [
+        'instrumental_states_needs'            => [
             'makes_polite_requests',
             'makes_choices',
             'gives_description_of_an_object_wanted',
@@ -88,7 +88,7 @@ final class SensoryCheckList
             'requests_help',
         ],
 
-        'Functional Intent > C. Requesting'            => [
+        'requesting'            => [
             'ability_to_request_information_appropriately',
             'ability_to_request_yes_no_responses_appropriately',
             'ability_to_use_wh_questions_appropriately',
@@ -97,7 +97,7 @@ final class SensoryCheckList
             'ability_to_request_attention_appropriately',
             'ability_to_request_help_appropriately',
         ],
-        'Functional Intent > D. Prosody'            => [
+        'prosody'            => [
             'ability_to_use_appropriate_rate_of_speech',
             'ability_to_use_appropriate_tone_of_voice',
             'ability_to_use_appropriate_pitch',
@@ -105,7 +105,7 @@ final class SensoryCheckList
             'ability_to_comprehend_implied_meanings_via_tone_of_voice',
             'ability_to_comprehend_implied_meanings_via_inflectional_cues',
         ],
-        'Functional Intent > E. Protests'            => [
+        'protests'            => [
             'ability_to_state_his_opinion_using_appropriate_means',
             'ability_to_disagree',
         ],
@@ -119,16 +119,16 @@ final class SensoryCheckList
             'ability_to_recognize_others_moods',
             'ability_to_differentiate_requests_from_demands'
         ],
-        'Functional Intent > G. Humor'            => [
+        'humor'            => [
             'comprehends_humor',
             'uses_humor_appropriately',
         ],
-        'Functional Intent > H. Greetings/Acknowledgements'            => [
+        'greetingsacknowledgements'            => [
             'provides_greetings',
             'uses_greetings',
             'ability_to_acknowledge_the_presence_of_another_individual',
         ],
-        'Functional Intent > I. Problem Solving'            => [
+        'problem_solving'            => [
             'ability_to_solve_problems_affecting_himself',
             'ability_to_solve_problems_affecting_others',
             'ability_to_recognize_problems_affecting_others',
@@ -136,11 +136,11 @@ final class SensoryCheckList
             'ability_to_establish_cause_effect',
             'ability_to_use_conflict_resolution',
         ],
-        'Functional Intent > J. Deceit'            => [
+        'deceit'            => [
             'uses_language_to_deceive',
             'lies',
         ],
-        'Academic Communication'            => [
+        'academi_communication'            => [
             'ability_to_respond_appropriately_to_teacher_requests',
             'ability_to_reorient_to_academic_agenda_appropriately',
             'ability_to_obtain_teachers_attention_appropriately',
@@ -150,8 +150,7 @@ final class SensoryCheckList
             'ability_to_summarize_a_story_providing_key_information',
             'ability_to_respond_to_questions_requiring_inferential_reasoning',
         ],
-        'Nonverbal Communication
-'            => [
+        'nonverbal_communication'           => [
             'ability_to_recognize_personal_space_boundaries',
             'ability_to_touch_appropriatel',
             'comprehends_facial_expression',
@@ -164,18 +163,18 @@ final class SensoryCheckList
             'ability_to_use_body_language',
             'ability_to_use_eye_contact',
         ],
-        'Perspective Taking'            => [
+        'perspective_taking'            => [
             'ability_to_recognize_anothers_viewpoints',
             'ability_to_recognize_anothers_interests',
             'ability_to_recognize_anothers_feelings',
             'ability_to_demonstrate_concern_for_anothers_problems',
         ],
-        'REGULATORY - Gives commands'            => [
+        'regulatory_gives_commands'            => [
             'gives_directions_to_play_a_game',
             'gives_directions_to_make_something',
             'changes_the_style_of_commands_or_requests_depending_on_who_the_child_is_speaking_to_and_what_the_child_wants',
         ],
-        'Social-Emotional'            => [
+        'social_emotional'            => [
             'ability_to_recognize_personal_emotional_states',
             'ability_to_recognize_emotional_states_in_others',
             'ability_to_express_personal_emotional_state',

@@ -24,7 +24,7 @@ final class DramaDiaryEvaluation
 
     ];
     public static array $columnCollections = [
-        'বেসিক / ফাংশনাল এরিয়া' => [
+        'basic_functional_area' => [
             'understanding_the_character',
             'understanding_the_character_secondary',
             'being_able_to_understand_the_character_and_act',
@@ -58,7 +58,7 @@ final class DramaDiaryEvaluation
             'respect_for_the_coartist',
             'respect_for_the_coartist_secondary',
         ],
-        'অন্যান এরিয়া' => [
+        'other_areas' => [
             'hold_attention',
             'hold_attention_secondary',
             'presentation',
