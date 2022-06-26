@@ -28,64 +28,49 @@
                       
                           <div class="modal-body">
                             <div class="col-12 d-flex  mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Package Name:</label>
+                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Currency Name:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="employeetype_name" type="text"
+                                    <x-input-text name="currency_name" type="text"
                                     placeholder="">
                                 </x-input-text>
                                 </div>
                             </div>
                             <div class="col-12 d-flex mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Description:</label>
+                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Symbol:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
+                                    <x-input-text name="symbol" type="text"
                                     placeholder="">
                                 </x-input-text>
                                 </div>
                             </div>
                             <div class="col-12 d-flex mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Amount:</label>
+                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Lowest Unit Name:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
+                                    <x-input-text name="lowest_unit_name" type="text"
+                                    placeholder="">
+                                </x-input-text>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex  mb-3">
+                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Converse Amount:</label>
+                                <div class="col-md-8">
+                                    <x-input-text name="converse_amount" type="text"
                                     placeholder="">
                                 </x-input-text>
                                 </div>
                             </div>
                             <div class="col-12 d-flex mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Is In Percent :</label>
+                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Is Default :</label>
                                 <div class="col-md-8">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
                                         <input type="radio" class="btn-check" name="btnradio1" id="btnradio4"  >
                                         <label class="btn btn-outline-success" for="btnradio4">Yes</label>
-                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradio5" >
+                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradio5" checked>
                                         <label class="btn btn-outline-danger" for="btnradio5">No</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 d-flex  mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Sal Head Id:</label>
-                                <div class="col-md-8">
-                                    <x-input-text name="employeetype_name" type="text"
-                                    placeholder="">
-                                </x-input-text>
-                                </div>
-                            </div>
-                            <div class="col-12 d-flex mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Total Amount Each Year:</label>
-                                <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
-                                    placeholder="">
-                                </x-input-text>
-                                </div>
-                            </div>
-                            <div class="col-12 d-flex mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Curnc Id:</label>
-                                <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
-                                    placeholder="">
-                                </x-input-text>
-                                </div>
-                            </div>
+                            
 
                         </div>
                         <div class="row modal-footer">
@@ -120,29 +105,25 @@
                         <table class="table table-bordered w-100">
                           <thead>
                             <tr class="table-primary">
-                                <th>Package Name</th>
-                                <th>Amount</th>
-                                <th>IsInPercent</th>
-                                <th>Salary Head</th>
-                                <th>Each Year Payment</th>
-                                <th>Currency</th>
+                                <th> Name</th>
+                                <th>Symbol</th>
+                                <th>Lowest Unit Ammount</th>
+                                <th>Is Default</th>
+                                <th>Converse Ammount</th>
                                 <th>Log</th>
                                 <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                                <td>Eid Bonus</td>
-                                <td>50.0000</td>
-                                <td>Y</td>
-                                <td>Basic</td>
-                                <td>30000 </td>
-                                <td>Bangladeshi Taka</td>
-                                <td>Create: Shonod Digital @ 2018-12-26 20:11:36</td>
+                                <td>USD</td>
+                                <td>$</td>
+                                <td>1</td>
+                                <td>No</td>
+                                <td>80.00</td>
+                                <td>Create: Shonod Digital @ 2018-12-26 20:11:02
+                                    Update: Shonod Digital @ 2019-05-01 05:11:24</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                                        class="fas fa-check"></i>
-                                    </button>
                                     <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
                                         class="fas fa-check"></i>
                                     </button>
