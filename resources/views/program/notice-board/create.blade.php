@@ -1,13 +1,10 @@
 @extends('layouts.master')
-
 @section('title')
 @lang('translation.Data_Tables')
 @endsection
-
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 @endsection
-
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">

@@ -566,9 +566,9 @@
                         <li><a href="">Section Setup</a></li>
                         <li><a href="">Designation Setup</a></li>
                         <li><a href="">Attendence</a></li>
-                        <li><a href="">Leave Application</a></li>
-                        <li><a href="">Notice Template Setup</a></li>
-                        <li><a href="">Notice Board</a></li>
+                        <li><a href="HR.leave-application.create">Leave Application</a></li>
+                        <li><a href="HR.notice-template-setup.create">Notice Template Setup</a></li>
+                        <li><a href="HR.notice-board.create">Notice Board</a></li>
                         <li><a href="">Employee Attendance</a></li>
                         <li><a href="">Employee Attendance (short)</a></li>
                     </ul>

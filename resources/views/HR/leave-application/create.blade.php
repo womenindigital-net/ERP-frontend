@@ -21,43 +21,86 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
                           <div class="modal-body">
-                            <div class="col-12 d-flex  mb-3">
-                                <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Package Title:</label>
-                                <div class="col-md-8">
-                                    <x-input-text name="package_name" type="text"
-                                    placeholder="">
-                                </x-input-text>
+                              <div class="col-12 d-flex gap-2">
+                                <div class="col-4">
+                                    <label>Reason</label>
+                                    <x-input-textarea name="reason" type="text"
+                                            placeholder=""/>
+                                </div> 
+                                <div class="col-4">
+                                    <label>Employee</label>
+                                    <x-input-select name="employee" :records="[]" />
                                 </div>
-                            </div>
+                                <div class="col-4">
+                                    <label>Support Employee</label>
+                                    <x-input-select name="support_employee" :records="[]" />
+                                </div>
+                              </div>
+                              <div class="col-12 d-flex gap-2">
+                                <div class="col-4">
+                                    <label>Duration in days</label>
+                                    <x-input-text name="duration_in_days" type="number"/>
+                                </div> 
+                                <div class="col-4">
+                                    <label>Duration In Hours</label>
+                                    <x-input-text name="duration_in_hours" type="number"/>
+                                </div>
+                                <div class="col-4">
+                                   <label for="LvAppType" class="control-label">Leave App. Type</label>
+                                    <div class=" d-flex gap-2">
+                                      <div class="radio radio-success">
+                                        <input type="checkbox" class="form-check-input">
+                                        <label> Request </label>
+                                      </div>
+                                      <div class="radio radio-success">
+                                         <input type="checkbox" class="form-check-input">
+                                        <label> Plan </label>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-12 d-flex gap-2">
+                                <div class="col-4">
+                                    <label>Address At Leave</label>
+                                    <x-input-text name="address_at_leave"/>
+                                </div> 
+                                <div class="col-4">
+                                    <label>Phone At Leave</label>
+                                    <x-input-text name="phone_at_leave"/>
+                                </div>
+                                <div class="col-4">
+                                    <label>Available Leave Attachment</label>
+                                    <x-input-text name="available_leave_ttachment" type="file"/>
+                                </div>
+                              </div>
                           </div>
-                          <h5 class="text-center py-2">Activity Lists</h5>
+                          <h6>Leave Application Details </h6>
                           <div class="repeater" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="product">Salary Head</label>
+                                    <label for="Type">Type</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="product">Pay Amount </label>
+                                    <label for="start_date">Start Date</label>
+                                </div>
+                                <div class="col-lg-2 p-0 pe-1">
+                                    <label for="start_date">End Date</label>
                                 </div>
                                 <div class="col-lg-1 p-0 pe-1 text-center">
-                                    <label for="quality">Is Percent</label>
-                                </div>
-                                <div class="col-lg-2 p-0 pe-1">
-                                    <label for="discount">Percent Head</label>
+                                    <label for="duration">Duration</label>
                                 </div>
                                 <div class="col-lg-1 p-0 pe-1">
-                                    <label for="total">Rules</label>
+                                    <label for="discount">Is Hour</label>
                                 </div>
                                 <div class="col-lg-1 p-0 pe-1">
-                                    <label for="total">Extra Time</label>
+                                    <label for="total">Half-Day</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="total">Payment Type</label>
+                                    <label for="total">1st Hour</label>
                                 </div>
                             </div>
                             <div data-repeater-list="details" id="ProductGroup">
@@ -66,32 +109,27 @@
                                         <x-input-select name="student_id"
                                          :records="[]" />
                                     </div>
-
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                        <x-input-text name="available_qty" placeholder=""
-                                                      :readonly="true" class="available-qty">
-                                        </x-input-text>
+                                        <x-input-text name="start_date" type="date" placeholder="dd/mm/yyyy" :readonly="true" />
                                     </div>
 
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1 text-center">
-                                        <input type="checkbox" class="form-check-input">
-                                    </div>
-                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                        <x-input-select name="student_id"
-                                         :records="[]" />
+                                    <div class=" col-lg-2 p-0 pe-1 pb-1 text-center">
+                                       <x-input-text name="end-date" type="date" placeholder="dd/mm/yyyy" :readonly="true" /> 
                                     </div>
                                     <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-select name="student_id"
-                                         :records="[]" />
+                                        <x-input-text name="duration" type="number"/>
                                     </div>
                                     <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-text name="price" placeholder="" class="price"
-                                                      :readonly="true">
-                                        </x-input-text>
+                                      <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                       <x-input-text name="duration" type="number"/>
+                                    </div>
+                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                       <x-input-text name="duration" type="number"/>
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
-                                        <x-input-select name="student_id"
-                                         :records="[]" />
+                                      <input type="checkbox" class="form-check-input">
                                         <button class="btn btn-danger ms-2 removeBtn">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
@@ -134,15 +172,31 @@
                         <table class="table table-bordered w-100">
                           <thead>
                             <tr class="table-primary">
-                                <th>Facility Package Name</th>
-                                <th>Log </th>
+                              <th><input type="checkbox" class="form-check-input"></th>
+                                <th>Employee</th>
+                                <th>App. Date</th>
+                                <th>Supp. Employee</th>
+                                <th>Dayes</th>
+                                <th>Hours</th>
+                                <th>Status</th>
+                                <th>Send For Approval</th>
+                                <th>Approval</th>
+                                <th>Log</th>
                                 <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                                <td>Facility Package title</td>
-                                <td>Create: Shonod Digital @ 2018-12-26 16:32:48</td>
+                            <tr> 
+                                <td><input type="checkbox" class="form-check-input"></td>
+                                <td>Md.Abul Hasnat</td>
+                                <td>2019-09-01</td>
+                                <td></td>
+                                <td>0.00</td>
+                                <td>5</td>
+                                <td>Pending</td>
+                                <td>Rejected</td>
+                                <td>No</td>
+                                <td> 	Create: Karishma Cultural @ 2019-09-01 17:01:51 Md. Kutubuddin .. @ 2019-11-04 15:09:04 </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
                                         <i class="mdi mdi-eye"></i>
