@@ -51,4 +51,16 @@ final class FunctionalMovementSkillsConstents
         self::CAN4NOTDO => 'Try 3: Can not do',
     ];
 
+    const TRYDO3 = 'Try 3: Can do';
+    const TRYNOTDO3 = 'Try 3: Can not do';
+    const TRYDO4 = 'Try 4: Can do';
+    const TRYNOTDO4 = 'Try 4: Can not do';
+
+    public static array $generalSkills = [
+        self::TRYDO3 => 'Try 3: Can do',
+        self::TRYNOTDO3 => 'Try 3: Can not do',
+        self::TRYDO4 => 'Try 4: Can do',
+        self::TRYNOTDO4 => 'Try 4: Can not do',
+    ];
+
 }

@@ -24,6 +24,15 @@ Route::group(['prefix' => 'hr-admin', 'middleware' => ['auth']], function () {
     Route::get('advice-letter.create', [HrAdminController::class, 'adviceLetter'])->name('HR.advice-letter.create');
     Route::get('employee-leave-status.create', [HrAdminController::class, 'employeeLeave'])->name('HR.employee-leave-status.create');
     Route::get('certificate-setup.create', [HrAdminController::class, 'certificateSetup'])->name('HR.certificate-setup.create');
+    Route::get('employee-type.create', [HrAdminController::class, 'employeetypeSetup'])->name('HR.employee-type.create');
+    Route::get('department.create', [HrAdminController::class, 'departmentSetup'])->name('HR.department.create');
+    Route::get('weekend-package.create', [HrAdminController::class, 'weekendSetup'])->name('HR.weekend-package.create');
+    Route::get('facility-package.create', [HrAdminController::class, 'facilityPackage'])->name('HR.facility-package.create');
+    Route::get('bonous-package.create', [HrAdminController::class, 'bonousPackage'])->name('HR.bonous-package.create');
+    Route::get('currency-setup.create', [HrAdminController::class, 'currencySetup'])->name('HR.currency-setup.create');
+
+
+
 
 
 

@@ -563,9 +563,25 @@
                         <li><a href="{{ route('HR.advice-letter.create') }}">Advice Letter</a></li>
                         <li><a href="{{ route('HR.employee-leave-status.create') }}">Employee Leave Status</a></li>
                         <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
-                        <li><a href=""> </a></li>
-                        <li><a href=""> </a></li>
-                        <li><a href=""> </a></li>
+                        <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
+                        <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
+                        <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
+                        <li><a href="{{ route('HR.facility-package.create') }}">Facility Package Setup</a></li>
+                        <li><a href="{{ route('HR.bonous-package.create') }}">Bonous Package Setup</a></li>
+                        <li><a href="HR.currency-setup.create">Currency Setup</a></li>
+                        <li><a href="HR.result-setup.create">Result Setup</a></li>
+                        <li><a href="HR.Institute-setup.create">Institute Setup</a></li>
+                        <li><a href="HR.organization-setup.create">Organization Setup </a></li>
+                        <li><a href="HR.section-setup.create">Section Setup</a></li>
+                        <li><a href="HR.attendence.create">Attendence</a></li>
+
+                        <li><a href="HR.designation-setup.create">Designation Setup</a></li>
+
+                        <li><a href="HR.leave-application.create">Leave Application</a></li>
+                        <li><a href="HR.notice-template-setup.create">Notice Template Setup</a></li>
+                        <li><a href="HR.notice-board.create">Notice Board</a></li>
+                        <li><a href="">Employee Attendance</a></li>
+                        <li><a href="">Employee Attendance (short)</a></li>
                     </ul>
                 </li>
 
