@@ -8,6 +8,14 @@ final class PhysioTherapy
     const HYPER = 'Hyper';
     const HYPO = 'Hypo';
 
+    const RANORMAL = 'Normal';
+    const RESTRICTED = 'Restricted';
+
+    public static array $range = [
+    self:: RANORMAL => 'Normal',
+    self:: RESTRICTED => 'Restricted',
+    ];
+
     public static array $limbs = [
         self::NORMAL => 'Normal',
         self::HYPER => 'Hyper',

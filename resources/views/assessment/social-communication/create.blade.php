@@ -32,7 +32,6 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="add" role="tabpanel">
@@ -82,6 +81,9 @@
                                                             Prosody</a></li>
                                                     <li class="w-100"><a href="#Functional_Intent_E"
                                                             data-toggle="tab">Functional Intent > E.
+                                                            Protests</a></li>
+                                                    <li class="w-100"><a href="#Functional_Intent_F"
+                                                            data-toggle="tab">Functional Intent > F.
                                                             Protests</a></li>
                                                     <li class="w-100"><a href="#Functional_Intent_G"
                                                             data-toggle="tab">Functional Intent > G.
@@ -1008,7 +1010,6 @@
 
                                                     </div>
                                                     <div class="tab-pane" id="Social_Emotional">
-
                                                         <section>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
@@ -1029,11 +1030,6 @@
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check label="Perfectionist quality"
-                                                                :records="$constants::$socialCommunication"
-                                                                :isVertical="false">
-                                                            </x-input-radio-or-check>
-                                                            <!-- row end -->
                                                             <x-input-radio-or-check
                                                                 label="Ability to use appropriate self-control"
                                                                 :records="$constants::$socialCommunication"
@@ -1042,6 +1038,11 @@
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
                                                                 label="Ability to lose a game graciously"
+                                                                :records="$constants::$socialCommunication"
+                                                                :isVertical="false">
+                                                            </x-input-radio-or-check>
+                                                           <!-- row end -->
+                                                            <x-input-radio-or-check label="Perfectionist quality"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
