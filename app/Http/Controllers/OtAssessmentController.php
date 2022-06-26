@@ -17,11 +17,11 @@ use Illuminate\Contracts\Foundation\Application;
 class OtAssessmentController extends Controller
 {
     private OtAssessmentRepository $otAssessmentRepo;
-     private UserRepository $userRepo;
+    private UserRepository $userRepo;
     private StudentRepository $studentRepo;
     public $records;
 
-    public function __construct(OtAssessmentRepository $otAssessmentRepo,UserRepository $userRepository, StudentRepository $studentRepository)
+    public function __construct(OtAssessmentRepository $otAssessmentRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->otAssessmentRepo = $otAssessmentRepo;
         $this->userRepo    = $userRepository;
@@ -48,7 +48,7 @@ class OtAssessmentController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-       return view('student.dairy.OT-Assessment.create',$data);
+        return view('student.dairy.OT-Assessment.create', $data);
     }
 
     /**
@@ -86,9 +86,14 @@ class OtAssessmentController extends Controller
      * @param  \App\Models\OtAssessment  $otAssessment
      * @return \Illuminate\Http\Response
      */
-    public function edit(OtAssessment $otAssessment)
+    public function edit(OtAssessment $ot_assessment)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $ot_assessment,
+        ];
+        return view('student.dairy.OT-Assessment.edit', $data);
     }
 
     /**
@@ -98,9 +103,11 @@ class OtAssessmentController extends Controller
      * @param  \App\Models\OtAssessment  $otAssessment
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOtAssessmentRequest $request, OtAssessment $otAssessment)
+    public function update(OtAssessmentRequest $request, OtAssessment $ot_assessment)
     {
-        //
+        $this->otAssessmentRepo->update($ot_assessment, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

@@ -113,8 +113,8 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::get('student-list', [StudentController::class, 'studentList'])->name('student.list');
     Route::get('dairy/trip-report-form', [StudentController::class, 'tripReportForm'])->name('trip.report.form');
     Route::get('dairy/gym-outing-evaluation', [StudentController::class, 'gymOutingEvaluation'])->name('gym.outing.evaluation');
-    Route::get('dairy/ot-assessment', [StudentController::class, 'otAssessment'])->name('ot.assessment');
-    Route::get('dairy/incident-record', [StudentController::class, 'incidentRecord'])->name('student.dairy.incident-record');
+    // Route::get('dairy/ot-assessment', [StudentController::class, 'otAssessment'])->name('ot.assessment');
+    // Route::get('dairy/incident-record', [StudentController::class, 'incidentRecord'])->name('student.dairy.incident-record');
     Route::get('dairy/medicine-admin', [StudentController::class, 'medicineAdmin'])->name('student.dairy.medicine-admin');
 
     //Route::get('student-attendence', [StudentController::class, 'studentAttendence'])->name('student.attendence');

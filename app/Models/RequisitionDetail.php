@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RequisitionDetail extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['product_id', 'qty', 'sub_total', 'price'];
 }

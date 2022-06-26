@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-
+Route::get('contacts', function () {
+    return view('default');
+});
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 Route::get('users', [UserController::class, 'index'])->name('users.index');
 Route::get('user-type/{type}', [UserController::class, 'specificUserType'])->name('users.type');
@@ -24,3 +26,5 @@ Route::get('user-type/{type}', [UserController::class, 'specificUserType'])->nam
 Route::get('get-products/{category}', [\App\Http\Controllers\ProductController::class, 'getProductsAccordingCategory'])->name('getProductsAccordingCategory');
 Route::get('get-stock-details-accordingly', [\App\Http\Controllers\StockController::class, 'getDetailAccordingly'])->name('getDetailAccordingly');
 Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+

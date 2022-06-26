@@ -26,8 +26,12 @@ window.addEventListener ( 'close-modal', event => {
     $ ( ".btn-close" ).click ();
 } );
 
+window.addEventListener ( 'reload', event => {
+    location.reload();
+} );
+
 window.addEventListener ( 'reset-form', event => {
-    document.getElementById ( event.detail.formName ).reset ();
+    document.getElementById ( event.detail.formId ).reset ();
 } );
 
 function swalConfirmDelete(data) {
