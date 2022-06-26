@@ -151,55 +151,54 @@
                                 <button class="btn btn-success w-100">Save</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
                     <!--  Extra Large modal example -->
- <div class="modal fade student-income-modal-xl-view" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-         <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-primary">Certificates Details
-                        </h5>
-             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- journal form start -->
-                        <div class="table-responsive">
-                            <table class="table table-bordered border-success mb-0">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Cert Name</th>
-                                        <td>MBS (Masters Of Business Studies)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Cert Type</th>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Cert Note</th>
-                                        <td>Post Graduation</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Is Active</th>
-                                        <td>Yes</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="row modal-footer">
-                            <div class="col-md-1">
-                                <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                <div class="modal fade student-income-modal-xl-view" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title text-primary">Certificates Details
+                                        </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- journal form start -->
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered border-success mb-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Cert Name</th>
+                                                        <td>MBS (Masters Of Business Studies)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Cert Type</th>
+                                                        <td>A</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Cert Note</th>
+                                                        <td>Post Graduation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Is Active</th>
+                                                        <td>Yes</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="row modal-footer">
+                                            <div class="col-md-1">
+                                                <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- journal form end -->
-      </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                        </div> <!-- journal form end -->
+                      </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
 
             </div>
         </div>

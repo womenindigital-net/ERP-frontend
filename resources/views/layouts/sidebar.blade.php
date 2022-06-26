@@ -554,9 +554,23 @@
                         <li><a href="{{ route('HR.advice-letter.create') }}">Advice Letter</a></li>
                         <li><a href="{{ route('HR.employee-leave-status.create') }}">Employee Leave Status</a></li>
                         <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
-                        <li><a href=""> </a></li>
-                        <li><a href=""> </a></li>
-                        <li><a href=""> </a></li>
+                        <li><a href="HR.employee-type.create">Employee Type Setup</a></li>
+                        <li><a href="">Department setup</a></li>
+                        <li><a href="">Weekend Package Setup</a></li>
+                        <li><a href="">Facility Package Setup</a></li>
+                        <li><a href="">Bonous Package Setup</a></li>
+                        <li><a href="">Currency Setup</a></li>
+                        <li><a href="">Result Setup</a></li>
+                        <li><a href="">Institute Setup</a></li>
+                        <li><a href="">Organization Setup </a></li>
+                        <li><a href="">Section Setup</a></li>
+                        <li><a href="">Designation Setup</a></li>
+                        <li><a href="">Attendence</a></li>
+                        <li><a href="">Leave Application</a></li>
+                        <li><a href="">Notice Template Setup</a></li>
+                        <li><a href="">Notice Board</a></li>
+                        <li><a href="">Employee Attendance</a></li>
+                        <li><a href="">Employee Attendance (short)</a></li>
                     </ul>
                 </li>
 
