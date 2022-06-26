@@ -559,11 +559,11 @@
                         <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
                         <li><a href="HR.facility-package.create">Facility Package Setup</a></li>
                         <li><a href="HR.bonous-package.create">Bonous Package Setup</a></li>
-                        <li><a href="">Currency Setup</a></li>
-                        <li><a href="">Result Setup</a></li>
-                        <li><a href="">Institute Setup</a></li>
-                        <li><a href="">Organization Setup </a></li>
-                        <li><a href="">Section Setup</a></li>
+                        <li><a href="HR.currency-setup.create">Currency Setup</a></li>
+                        <li><a href="HR.result-setup.create">Result Setup</a></li>
+                        <li><a href="HR.Institute-setup.create">Institute Setup</a></li>
+                        <li><a href="HR.organization-setup.create">Organization Setup </a></li>
+                        <li><a href="HR.section-setup.create">Section Setup</a></li>
                         <li><a href="">Designation Setup</a></li>
                         <li><a href="">Attendence</a></li>
                         <li><a href="HR.leave-application.create">Leave Application</a></li>
