@@ -116,6 +116,7 @@ class PhysiotherapyRequest extends FormRequest
             "communication"                           => 'nullable',
             "social"                                  => 'nullable',
             "emotional"                               => 'nullable',
+            "neck"                                    => 'nullable',
         ];
     }
 }
