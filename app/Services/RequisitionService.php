@@ -16,7 +16,7 @@ class RequisitionService
 
     public function store(array $validated)
     {
-        try{
+        try {
             DB::beginTransaction();
             [$requisitionInfos, $data] = $this->collectRequisitionInfos($validated);
             $requisition = $this->repo->store($requisitionInfos);
@@ -43,7 +43,7 @@ class RequisitionService
     {
         [$requisitionDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty']);
 
-        for( $i = 0; $i < count($requisitionDetailInfos['product_id']); $i++) {
+        for ($i = 0; $i < count($requisitionDetailInfos['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $requisitionDetailInfos['product_id'][$i],
                 'qty' => $requisitionDetailInfos['qty'][$i],
@@ -58,7 +58,7 @@ class RequisitionService
 
     public function update($requisition, array $validated)
     {
-        try{
+        try {
             DB::beginTransaction();
             [$requisitionInfos, $data] = $this->collectRequisitionInfos($validated);
             $requisition = $this->repo->update($requisition, $requisitionInfos);

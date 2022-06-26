@@ -37,7 +37,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'student' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
-        'madicine-admin' => MedicineAdminController::class,
+        'medicine-admin' => MedicineAdminController::class,
         'incident-record' => IncidentRecordController::class,
         'ot-assessment' => OtAssessmentController::class,
         'trip' => TripController::class,

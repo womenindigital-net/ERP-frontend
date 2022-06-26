@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreMedicineAdminRequest extends FormRequest
+class UpdateMedicineAdminDetailsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreMedicineAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,12 +24,7 @@ class StoreMedicineAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'student_id' => 'nullable',
-            'prescription_id' => 'nullable',
-            'given_id' => 'nullable',
-            'date' => 'nullable',
-            'time' => 'nullable',
-            'medicineAdmin.*' => 'nullable',
+            //
         ];
     }
 }

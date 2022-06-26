@@ -50,6 +50,10 @@ class TripService
         [$lunchTime, $data] = $this->collectLunchTime($data);
         [$restTime, $data] = $this->collectRestTime($data);
         [$afternoon, $data] = $this->collectAfternoon($data);
+        [$evening, $data] = $this->collectEvening($data);
+        [$constructiveWork, $data] = $this->collectConstructiveWork($data);
+        [$dinner, $data] = $this->collectDinner($data);
+        [$AfterDinner, $data] = $this->collectAfterDinner($data);
 
         return [
             'activities_of_daily_living' => $activitiesOfDailyLivingInfos,
@@ -71,6 +75,10 @@ class TripService
             'lunch_time' => $lunchTime,
             'rest_time' => $restTime,
             'afternoon' => $afternoon,
+            'evening' => $evening,
+            'constructive_work' => $constructiveWork,
+            'dinner' => $dinner,
+            'after_dinner' => $AfterDinner,
         ];
     }
 
@@ -152,5 +160,21 @@ class TripService
     public function collectAfternoon(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['afternoon']);
+    }
+    public function collectEvening(mixed $data): array
+    {
+        return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['evening']);
+    }
+    public function collectConstructiveWork(mixed $data): array
+    {
+        return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['constructive_work']);
+    }
+    public function collectDinner(mixed $data): array
+    {
+        return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['dinner']);
+    }
+    public function collectAfterDinner(mixed $data): array
+    {
+        return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['after_dinner']);
     }
 }

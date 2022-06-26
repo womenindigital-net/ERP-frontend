@@ -16,15 +16,11 @@ return new class extends Migration
         Schema::create('medicine_admins', function (Blueprint $table) {
             $table->id();
             $table->boolean('is_approved')->default(0);
-            $table->string('name')->nullable();
+            $table->string('student_id')->nullable();
             $table->string('prescription_id')->nullable();
             $table->string('given_id')->nullable();
-            $table->string('given_date')->nullable();
-            $table->string('given_time')->nullable();
-            $table->string('medicine')->nullable();
-            $table->string('amountGiven')->nullable();
-            $table->string('amountgivenunit')->nullable();
-            $table->string('note')->nullable();
+            $table->string('date')->nullable();
+            $table->string('time')->nullable();
             $table->timestamps();
         });
     }

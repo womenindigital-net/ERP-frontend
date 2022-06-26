@@ -12,7 +12,9 @@
                 <!-- Tab panes -->
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
-                        <form>
+                        <form action="{{ route('vocational-evaluation.update', $records->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
                             {{-- @dd($records) --}}
                             <div class="modal-body">
                                 <!-- journal form start -->
@@ -156,10 +158,7 @@
                                 <!-- journal form end -->
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal">
-                                    <i class="bx bx-exit"></i>Close</button>
-                                <button type="submit" class="btn font-size-16 btn-success">
-                                    <i class="bx bx-save"></i>Save
+                                <button type="submit" class="btn font-size-16 btn-success">Update
                                 </button>
                             </div>
                         </form>

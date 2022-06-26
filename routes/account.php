@@ -23,11 +23,11 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
 
-//    Route::get('journal', [JournalController::class, 'index'])->name('journal');
-//    Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');
-//    Route::get('donation-and-other', [\App\Http\Controllers\DonationController::class, 'create'])->name('donation-and-other');
+    //    Route::get('journal', [JournalController::class, 'index'])->name('journal');
+    //    Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');
+    //    Route::get('donation-and-other', [\App\Http\Controllers\DonationController::class, 'create'])->name('donation-and-other');
 
-//    Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');
+    //    Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');
     Route::get('purchase-order', [PurchaseController::class, 'purchaseOrder'])->name('purchase-order');
     Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 
@@ -49,5 +49,5 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::get('stock-reorder-report', [StockController::class, 'stockReorderReport'])->name('stock-reorder-report');
     Route::get('product-analysis-report', [StockController::class, 'stockProductAnalysisReport'])->name('product-analysis-report');
 
-//    Route::get('stock-assign', [StockController::class, 'stockAssign'])->name('stock-assign');
+    //    Route::get('stock-assign', [StockController::class, 'stockAssign'])->name('stock-assign');
 });
