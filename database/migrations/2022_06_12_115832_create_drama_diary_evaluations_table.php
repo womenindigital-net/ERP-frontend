@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Student::class, 'candidate_id')->nullable()->constrained('students')->cascadeOnDelete();
 
 
-            $table->json('বেসিক / ফাংশনাল এরিয়া')->nullable();
-            $table->json('অন্যান এরিয়া')->nullable();
+            $table->json('basic_functional_area')->nullable();
+            $table->json('other_areas')->nullable();
 
 
             // $table->string('understanding_the_character')->nullable();

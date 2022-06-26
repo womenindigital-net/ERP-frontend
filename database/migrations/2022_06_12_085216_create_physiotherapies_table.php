@@ -31,7 +31,7 @@ return new class extends Migration
             $table->json('transitional_movements')->nullable();
             $table->json('fine_motor_skill')->nullable();
             $table->json('automatic_reaction')->nullable();
-            $table->json('aensory_skill_normal_hypo_response)')->nullable();
+            $table->json('sensory_skill_normal_hypo_response')->nullable();
             $table->json('cognitive_skills')->nullable();
             $table->json('treatment')->nullable();
             $table->json('signature')->nullable();

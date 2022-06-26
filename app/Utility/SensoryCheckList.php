@@ -58,7 +58,7 @@ final class SensoryCheckList
             'may_refuse_to_walk_barefoot_on_grass_or_sand',
             'may_walk_on_toes_only',
         ],
-        'Hyposensitivity To Touch (Under-Responsive)'   => [
+        'hyposensitivity_to_touch'   => [
             'may_crave_touch',
             'is_not_aware_of_being_touched',
             'is_not_bothered_by_injuries',
@@ -73,7 +73,7 @@ final class SensoryCheckList
         ],
 
 
-        'Poor Tactile Perception And Discrimination'            => [
+        'poor_tactile_perception_and_discrimination'            => [
             'has_difficulty_with_fine_motor',
             'may_not_be_able_to_identify',
             ' maybe_afraid_of_the_dark',
@@ -88,7 +88,7 @@ final class SensoryCheckList
             ' continues_to_mouth_objects',
             'has_difficulty_figuring_out',
         ],
-        'Signs Of Vestibular Dysfunction > Hypersensitivity To Movement (Over-Responsive)'            => [
+        'signs_of_vestibular_dysfunction'            => [
             'avoids_dislikes_playground_equipment',
             'prefers_sedentary_tasks',
             'avoids_dislikes_elevators',
@@ -106,7 +106,7 @@ final class SensoryCheckList
             'fearful_of_activities_which_require_good_balance',
             'avoids_rapid_or_rotating_movements',
         ],
-        'Signs Of Vestibular Dysfunction > Hyposensitivity To Movement (Under-Responsive)'            => [
+        'signs_of_vestibular_dysfunction_under'            => [
             'in_constant_motion_cant_seem_to_sit_still',
             'craves_fast',
             'loves_being_tossed_in_the_air',
@@ -119,7 +119,7 @@ final class SensoryCheckList
             'rocks_body_shakes_leg_or_head_while_sitting',
             'likes_sudden',
         ],
-        'Signs Of Vestibular Dysfunction > . Poor Muscle Tone And/Or Coordination'            => [
+        'signs_of_vestibular_dysfunction_coordination'            => [
             'has_a_limp',
             'frequently_slumps',
             'difficulty_simultaneously_lifting_head',
@@ -137,7 +137,7 @@ final class SensoryCheckList
             'seems_to_be_unsure_about',
             'difficulty_learning_exercise_',
         ],
-        'Signs Of Proprioceptive Dysfunction > Sensory Seeking Behaviors'            => [
+        'signs_of_vestibular_dysfunction_behaviors'            => [
             'seeks_out_jumping_bumping_and_crashing_activities',
             'stomps_feet_when_walking',
             'kicks_his_her_feet_on_floor_or_chair_while_sitting_at_desk_table',
@@ -157,7 +157,7 @@ final class SensoryCheckList
             'frequently_hits_bumps_or_pushes_other_children',
             'chews_on_pens_straws_shirt_sleeves_etc',
         ],
-        'Signs Of Proprioceptive Dysfunction > 2. Difficulty With "Grading Of Movement"'            => [
+        'signs_of_vestibular_dysfunction_movement"'            => [
             'misjudges_how_much_to_flex',
             'difficulty_regulating_pressure',
             'kicks_his_her_feet_on_floor',
