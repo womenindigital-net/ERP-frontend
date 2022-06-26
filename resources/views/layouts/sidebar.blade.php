@@ -554,11 +554,11 @@
                         <li><a href="{{ route('HR.advice-letter.create') }}">Advice Letter</a></li>
                         <li><a href="{{ route('HR.employee-leave-status.create') }}">Employee Leave Status</a></li>
                         <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
-                        <li><a href="HR.employee-type.create">Employee Type Setup</a></li>
-                        <li><a href="">Department setup</a></li>
-                        <li><a href="">Weekend Package Setup</a></li>
-                        <li><a href="">Facility Package Setup</a></li>
-                        <li><a href="">Bonous Package Setup</a></li>
+                        <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
+                        <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
+                        <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
+                        <li><a href="HR.facility-package.create">Facility Package Setup</a></li>
+                        <li><a href="HR.bonous-package.create">Bonous Package Setup</a></li>
                         <li><a href="">Currency Setup</a></li>
                         <li><a href="">Result Setup</a></li>
                         <li><a href="">Institute Setup</a></li>

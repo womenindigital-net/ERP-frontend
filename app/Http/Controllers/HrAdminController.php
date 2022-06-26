@@ -27,5 +27,18 @@ class HrAdminController extends Controller
     {
         return view('HR.certificate-setup.create');
     }
+    public function employeetypeSetup()
+    {
+        return view('HR.employee-type.create');
+    }
+    public function departmentsetup()
+    {
+        return view('HR.department.create');
+    }
+    public function weekendsetup()
+    {
+        return view('HR.weekend-package.create');
+    }
+    
 
 }

@@ -24,6 +24,12 @@ Route::group(['prefix' => 'hr-admin', 'middleware' => ['auth']], function () {
     Route::get('advice-letter.create', [HrAdminController::class, 'adviceLetter'])->name('HR.advice-letter.create');
     Route::get('employee-leave-status.create', [HrAdminController::class, 'employeeLeave'])->name('HR.employee-leave-status.create');
     Route::get('certificate-setup.create', [HrAdminController::class, 'certificateSetup'])->name('HR.certificate-setup.create');
+    Route::get('employee-type.create', [HrAdminController::class, 'employeetypeSetup'])->name('HR.employee-type.create');
+    Route::get('department.create', [HrAdminController::class, 'departmentsetup'])->name('HR.department.create');
+    Route::get('weekend-package.create', [HrAdminController::class, 'weekendsetup'])->name('HR.weekend-package.create');
+
+
+
 
 
 
