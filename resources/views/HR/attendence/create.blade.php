@@ -11,7 +11,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block">Dailyly Attendance</span>
+                            <span class="d-none d-sm-block">Daily Attendance</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -37,9 +37,6 @@
                           <div class="repeater" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="product">SL</label>
-                                </div>
-                                <div class="col-lg-2 p-0 pe-1">
                                     <label for="product">Employee</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1 text-center">
@@ -54,9 +51,6 @@
                             </div>
                             <div data-repeater-list="details" id="ProductGroup">
                                 <div data-repeater-item class="row removeRow">
-                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                      <label for="">1</label>
-                                    </div>
 
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
                                         <x-input-text name="date" type="date"/>
@@ -88,15 +82,8 @@
                           <label style="display: inline-flex;align-items: center;">Employee
                             <input type="search" class="form-control form-control-sm" placeholder="">
                           </label>
-                        </div>
-                      </div>
-                     </div>
-                       
                           <div class="repeater" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-lg-2 p-0 pe-1">
-                                    <label for="product">SL</label>
-                                </div>
                                 <div class="col-lg-2 p-0 pe-1">
                                     <label for="product">Date</label>
                                 </div>
@@ -137,6 +124,11 @@
                             <input data-repeater-create type="button"
                                    class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"
                                    id="AddMore"/>
+                        </div>
+                      </div>
+                     </div>
+                       
+                          
                         </div>
                     </div>
                 </div>

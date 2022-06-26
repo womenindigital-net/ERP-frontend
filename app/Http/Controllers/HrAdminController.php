@@ -31,13 +31,25 @@ class HrAdminController extends Controller
     {
         return view('HR.employee-type.create');
     }
-    public function departmentsetup()
+    public function departmentSetup()
     {
         return view('HR.department.create');
     }
-    public function weekendsetup()
+    public function weekendSetup()
     {
         return view('HR.weekend-package.create');
+    }
+    public function facilityPackage()
+    {
+        return view('HR.facility-package.create');
+    }
+    public function bonousPackage()
+    {
+        return view('HR.bonous-package.create');
+    }
+    public function currencySetup()
+    {
+        return view('HR.currency-setup.create');
     }
     
 
