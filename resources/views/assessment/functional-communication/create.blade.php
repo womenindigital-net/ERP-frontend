@@ -661,7 +661,7 @@
                                                                 <!--end row -->
                                                                 <!--end row -->
                                                                 <x-input-radio-or-check
-                                                                    label="Speech is hard to understand"
+                                                                    label="Talks too little in a conversation with peers / adults"
                                                                     :records="$constants::$yesNoEn"
                                                                     secondaryInputLabel="Excessive:">
                                                                 </x-input-radio-or-check>

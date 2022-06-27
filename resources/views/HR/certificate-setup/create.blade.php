@@ -21,15 +21,13 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
-                        
                             <div class="modal-body">
                                 <div class="col-12 d-flex">
                                     <label for="example-text-input" class="col-md-2 col-form-label text-end">Certificate Name</label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 ps-2">
                                         <x-input-text name="certificate_name" type="text"
                                         placeholder="">
                                     </x-input-text>
@@ -39,7 +37,7 @@
                             <div class=" mb-2">
                                 <div class="col-12 d-flex">
                                     <label for="example-text-input" class="col-md-2 col-form-label text-end" >Type</label>
-                                    <div class="col-md-8 ms-5">
+                                    <div class="col-md-8 ps-3">
                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                             <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked>
                                             <label class="btn btn-outline-success" for="btnradio4">Academic</label>
@@ -52,7 +50,7 @@
                             <div class="">
                                 <div class="col-12 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-2 col-form-label text-end ">Note</label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 ps-2">
                                         <x-input-text name="note" type="text"
                                         placeholder="">
                                         </x-input-text>

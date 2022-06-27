@@ -25,78 +25,74 @@
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
-                      
-                          <div class="modal-body">
+                          <div class="modal-body pb-0">
                             <div class="col-12 d-flex  mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Employee Type Name:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="employeetype_name" type="text"
-                                    placeholder="">
-                                </x-input-text>
+                                    <x-input-text name="employeetype_name" type="text" />
                                 </div>
                             </div>
                             <div class="col-12 d-flex">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Type Desc:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
-                                    placeholder="">
-                                </x-input-text>
+                                    <x-input-text name="type_desc" type="text" />
                                 </div>
                             </div>
                           </div>
-                          <div class=" mb-3 d-flex row">
-                              <div class="col-3 text-center">
+                         
+                          <div class="d-flex row">
+                             <div class="col-2 text-end"></div>
+                              <div class="col-2 text-center">
                                   <label for="example-text-input" class=" col-form-label text-end" >Is Contract</label>
-                                  <div class=" ">
+                                  <div class="">
                                       <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
                                           <input type="radio" class="btn-check" name="btnradio1" id="btnradio4"  >
                                           <label class="btn btn-outline-success" for="btnradio4">Yes</label>
-                                          <input type="radio" class="btn-check" name="btnradio1" id="btnradio5" >
+                                          <input type="radio" class="btn-check" name="btnradio1" id="btnradio5" checked>
                                           <label class="btn btn-outline-danger" for="btnradio5">No</label>
                                       </div>
                                   </div>
                               </div>
-                              <div class="col-3 text-center">
+                              <div class="col-2 text-center">
                                   <label for="example-text-input" class=" col-form-label " >	Bonus Eligible</label>
                                   <div class="">
                                       <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
                                           <input type="radio" class="btn-check" name="btnradio2" id="btnradio6" >
                                           <label class="btn btn-outline-success" for="btnradio6">Yes</label>
-                                          <input type="radio" class="btn-check" name="btnradio2" id="btnradio7" >
+                                          <input type="radio" class="btn-check" name="btnradio2" id="btnradio7" checked >
                                           <label class="btn btn-outline-danger" for="btnradio7">No</label>
                                       </div>
                                   </div>
                               </div>
-                              <div class="col-3 text-center">
+                              <div class="col-2 text-center">
                                   <label for="example-text-input" class=" col-form-label text-end" >Daily Basis</label>
                                   <div class="">
                                       <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
                                           <input type="radio" class="btn-check" name="btnradio3" id="btnradio8" autocomplete="off" >
                                           <label class="btn btn-outline-success" for="btnradio8">Yes</label>
-                                          <input type="radio" class="btn-check" name="btnradio3" id="btnradio9" autocomplete="off">
+                                          <input type="radio" class="btn-check" name="btnradio3" id="btnradio9" autocomplete="off" checked>
                                           <label class="btn btn-outline-danger" for="btnradio9">No</label>
                                       </div>
                                   </div>
                               </div>
-                              <div class="col-3 text-center">
-                                  <label for="example-text-input" class=" col-form-label text-end" >Service Provider</label>
+                              <div class="col-2 text-center">
+                                  <label for="example-text-input" class="col-form-label text-start" >Service Provider</label>
                                   <div class="">
                                       <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
                                           <input type="radio" class="btn-check" name="btnradio4" id="btnradio10" autocomplete="off" >
                                           <label class="btn btn-outline-success" for="btnradio10">Yes</label>
-                                          <input type="radio" class="btn-check" name="btnradio4" id="btnradio11" autocomplete="off">
+                                          <input type="radio" class="btn-check" name="btnradio4" id="btnradio11" autocomplete="off" checked>
                                           <label class="btn btn-outline-danger" for="btnradio11">No</label>
                                       </div>
                                   </div>
                               </div>
+                              <div class="col-3 text-end"></div>
                           </div>
                           <div class="">
                               <div class="col-12 d-flex mb-3">
                                   <label for="example-text-input" class="col-md-2 col-form-label text-center pe-2 ">Note:</label>
                                   <div class="col-md-8">
-                                      <x-input-text name="note" type="text"
-                                      placeholder="">
-                                      </x-input-text>
+                                      <x-input-text name="note" type="text" />
                                   </div>
                               </div>
                           </div>
@@ -124,7 +120,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 text-end">
                           <label style="display: inline-flex;align-items: center;">Search:
-                            <input type="search" class="form-control form-control-sm" placeholder="">
+                            <x-input-text type="search" name="search" />
                           </label>
                         </div>
                       </div>

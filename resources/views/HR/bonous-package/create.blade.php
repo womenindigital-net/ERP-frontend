@@ -46,7 +46,7 @@
                             <div class="col-12 d-flex mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Amount:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
+                                    <x-input-text name="type_desc" type="number"
                                     placeholder="">
                                 </x-input-text>
                                 </div>
@@ -55,7 +55,7 @@
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Is In Percent :</label>
                                 <div class="col-md-8">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradio4"  >
+                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradio4" checked>
                                         <label class="btn btn-outline-success" for="btnradio4">Yes</label>
                                         <input type="radio" class="btn-check" name="btnradio1" id="btnradio5" >
                                         <label class="btn btn-outline-danger" for="btnradio5">No</label>
@@ -65,9 +65,8 @@
                             <div class="col-12 d-flex  mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Sal Head Id:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="employeetype_name" type="text"
-                                    placeholder="">
-                                </x-input-text>
+                                  <x-input-select name="student_id"
+                                  :records="[]" />
                                 </div>
                             </div>
                             <div class="col-12 d-flex mb-3">
@@ -81,9 +80,8 @@
                             <div class="col-12 d-flex mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Curnc Id:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
-                                    placeholder="">
-                                </x-input-text>
+                                  <x-input-select name="student_id"
+                                  :records="[]" />
                                 </div>
                             </div>
 

@@ -30,6 +30,15 @@ Route::group(['prefix' => 'hr-admin', 'middleware' => ['auth']], function () {
     Route::get('facility-package.create', [HrAdminController::class, 'facilityPackage'])->name('HR.facility-package.create');
     Route::get('bonous-package.create', [HrAdminController::class, 'bonousPackage'])->name('HR.bonous-package.create');
     Route::get('currency-setup.create', [HrAdminController::class, 'currencySetup'])->name('HR.currency-setup.create');
+    Route::get('result-setup.create', [HrAdminController::class, 'resultSetup'])->name('HR.result-setup.create');
+    Route::get('Institute-setup.create', [HrAdminController::class, 'instituteSetup'])->name('HR.Institute-setup.create');
+    Route::get('organization-setup.create', [HrAdminController::class, 'organizationSetup'])->name('HR.organization-setup.create');
+    Route::get('section-setup.create', [HrAdminController::class, 'sectionSetup'])->name('HR.section-setup.create');
+    Route::get('attendence.create', [HrAdminController::class, 'attendenceCreate'])->name('HR.attendence.create');
+    Route::get('designation-setup.create', [HrAdminController::class, 'designationSetup'])->name('HR.designation-setup.create');
+    Route::get('leave-application.create', [HrAdminController::class, 'leaveApplication'])->name('HR.leave-application.create');
+    Route::get('notice-template-setup.create', [HrAdminController::class, 'noticeTemplate'])->name('HR.notice-template-setup.create');
+    Route::get('notice-board.create', [HrAdminController::class, 'noticeBoard'])->name('HR.notice-board.create');
 
 
 
