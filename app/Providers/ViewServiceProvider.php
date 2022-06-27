@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Utility\Gymouting;
 use App\Utility\TripReport;
+use App\Utility\MitpConstent;
 use App\Utility\OtAssessment;
 use App\Utility\PhysioTherapy;
 use App\Utility\IncidentRecord;
@@ -16,18 +17,15 @@ use Illuminate\Support\Facades\View;
 use App\Utility\CaseHistoryConstants;
 use App\Utility\DramaDiaryEvaluation;
 use App\Utility\ExecutiveFunctionTest;
+use App\Utility\SensoryCheckListChild;
 use App\Utility\CareNeedsFormConstants;
 use Illuminate\Support\ServiceProvider;
 use App\Utility\BreadcrumbsMappingConstants;
 use App\Utility\IndividualRiskAssessmentForm;
 use App\Utility\OccupationalTherapyConstants;
+use App\Utility\SensoryCheckListChildConstants;
 use App\Utility\individual_risk_assessment_form;
 use App\Utility\FunctionalMovementSkillsConstents;
-use App\Utility\MitpConstent;
-
-
-
-
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -67,7 +65,7 @@ class ViewServiceProvider extends ServiceProvider
         View::share('physiotherapyConstants', PhysioTherapy::class);
         View::share('executiveConstants', ExecutiveFunctionTest::class);
         View::share('IRAConstants', IndividualRiskAssessmentForm::class);
-        View::share('sensoryChecklistConstant', SensoryCheckList::class);
+        View::share('sensoryChecklistConstant', SensoryCheckListChildConstants::class);
         View::share('tripReportConstants', TripReport::class);
         View::share('gymoutingConstants', Gymouting::class);
         View::share('otassessmentConstants', OtAssessment::class);

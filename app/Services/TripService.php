@@ -27,6 +27,7 @@ class TripService
         $data = $this->processInfo($validated);
 
         $this->repo->update($trip, $data);
+        
     }
 
     private function processInfo(array $validated): array

@@ -52,7 +52,6 @@ class TripController extends Controller
      */
     public function store(TripRequest $request): RedirectResponse
     {
-        dd($request->validated());
         $this->service->store($request->validated());
 
         Session::flash('success');
@@ -81,7 +80,6 @@ class TripController extends Controller
      */
     public function edit(Trip $trip): View|Factory|Application
     {
-        // dd($trip->only_for_staff);
         $data = [
             'record' => $trip,
             'activitiesOfDailyLiving' => $trip->activities_of_daily_living,

@@ -2,7 +2,7 @@
 
 namespace App\Utility;
 
-final class SensoryCheckList
+final class SensoryCheckListChildConstants
 {
 
     const AVOIDS = "AVOIDS";
@@ -157,7 +157,7 @@ final class SensoryCheckList
             'frequently_hits_bumps_or_pushes_other_children',
             'chews_on_pens_straws_shirt_sleeves_etc',
         ],
-        'signs_of_vestibular_dysfunction_movement"'            => [
+        'signs_of_vestibular_dysfunction_movement'            => [
             'misjudges_how_much_to_flex',
             'difficulty_regulating_pressure',
             'kicks_his_her_feet_on_floor',

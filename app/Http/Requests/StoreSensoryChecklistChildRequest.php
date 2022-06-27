@@ -26,7 +26,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
         return [
             "collection_date"                                                  => 'nullable',
             "teacher_id"                                                       => 'nullable',
-            "candidate_id"                                                     => 'nullable',
+            "student_id"                                                       => 'nullable',
 
             "hypersensitivity_to_touch"                                        => 'nullable',
             "becomes_fearful"                                                  => 'nullable',
@@ -104,7 +104,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "loses_balance_easily_and_may_appear_clumsy"                       => 'nullable',
             "fearful_of_activities_which_require_good_balance"                 => 'nullable',
             "avoids_rapid_or_rotating_movements"                               => 'nullable',
-            
+
             "in_constant_motion_cant_seem_to_sit_still"                        => 'nullable',
             "craves_fast"                                                      => 'nullable',
             "loves_being_tossed_in_the_air"                                    => 'nullable',
@@ -116,7 +116,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "always_running_jumping_hopping_etc_instead_of_walking"            => 'nullable',
             "rocks_body_shakes_leg_or_head_while_sitting"                      => 'nullable',
             "likes_sudden"                                                     => 'nullable',
-            
+
             "in_constant_motion"                                               => 'nullable',
             "craves_fast"                                                      => 'nullable',
             "loves_being_tossed_"                                              => 'nullable',
@@ -148,7 +148,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "has_difficulty_licking"                                           => 'nullable',
             "seems_to_be_unsure_about"                                         => 'nullable',
             "difficulty_learning_exercise_"                                    => 'nullable',
-            
+
             "seeks_out_jumping_bumping_and_crashing_activities"                => 'nullable',
             "stomps_feet_when_walking"                                         => 'nullable',
             "kicks_his_her_feet_on_floor_or_chair_while_sitting_at_desk_table" => 'nullable',
@@ -167,7 +167,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "loves_jumping_off_furniture"                                      => 'nullable',
             "frequently_hits_bumps_or_pushes_other_children"                   => 'nullable',
             "chews_on_pens_straws_shirt_sleeves_etc"                           => 'nullable',
-            
+
             "misjudges_how_much_to_flex"                                       => 'nullable',
             "difficulty_regulating_pressure"                                   => 'nullable',
             "kicks_his_her_feet_on_floor"                                      => 'nullable',

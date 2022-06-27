@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Student;
 use App\Models\User;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Student;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,13 +15,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('socials', function(Blueprint $table)
-        {
+        Schema::create('socials', function (Blueprint $table) {
             $table->id();
             $table->string('collection_date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->foreignIdFor(Student::class, 'student_id')->nullable()->constrained('users')->cascadeOnDelete();
-
 
             $table->json('pragmatic_objective')->nullable();
             $table->json('personal')->nullable();
@@ -35,7 +33,7 @@ return new class extends Migration
             $table->json('requesting')->nullable();
             $table->json('prosody')->nullable();
             $table->json('protests')->nullable();
-            $table->json('style_of_Conversation')->nullable();
+            $table->json('style_of_conversation')->nullable();
             $table->json('humor')->nullable();
             $table->json('greetings_acknowledgements')->nullable();
             $table->json('problem_solving')->nullable();
