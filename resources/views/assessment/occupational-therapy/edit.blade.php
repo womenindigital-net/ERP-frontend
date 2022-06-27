@@ -133,7 +133,7 @@
                                                                                             Treatment </label>
                                                                                         <x-input-text
                                                                                             name="medication_treatment"
-                                                                                            value="{{ $record->muscle_tone->upper_limbs_left ?? '' }}"
+                                                                                            value="{{ $record->general->medication_treatment ?? '' }}"
                                                                                             placeholder="Medication Treatment">
                                                                                         </x-input-text>
                                                                                     </div>
@@ -143,7 +143,7 @@
                                                                                             present medicines</label>
                                                                                         <x-input-text
                                                                                             name="separate_home_equipment"
-                                                                                            value="{{ $record->muscle_tone->upper_limbs_left ?? '' }}"
+                                                                                            value="{{ $record->general->any_present_medicines ?? '' }}"
                                                                                             placeholder="Any present medicines">
                                                                                         </x-input-text>
                                                                                     </div>
@@ -154,17 +154,17 @@
                                                                 </div>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check label="Separate Home equipment"
-                                                                 :checked="$muscle_tone->lower_limbs_one ?? ''"
+                                                                 :checked="$general->separate_home_equipment ?? ''"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check label="Communication"
-                                                                 :checked="$muscle_tone->lower_limbs_one ?? ''"
+                                                                 :checked="$general->communication ?? ''"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check label="Communication"
-                                                                 :checked="$muscle_tone->lower_limbs_one ?? ''"
+                                                                 :checked="$general->communication_one ?? ''"
                                                                     :records="$therapyConstants::$communication">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
