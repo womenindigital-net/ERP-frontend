@@ -197,12 +197,6 @@
                                                                 secondaryInputLabel="শিক্ষক এর মন্তব্য">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="respect_for_the_coartist"
-                                                                label="সহশিল্পীর প্রতি শ্রদ্ধাশীলতা"
-                                                                :records="$diaryConstant::$diaryType"
-                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য">
-                                                            </x-input-radio-or-check>
-                                                            <!-- end row -->
 
                                                         </section>
                                                     </div>
@@ -222,13 +216,6 @@
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
                                                             <x-input-radio-or-check name="perticipating_drama"
-                                                                label="সবার সাথে নাটকে অংশ নিবে"
-                                                                :records="$diaryConstant::$diaryType"
-                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য">
-                                                            </x-input-radio-or-check>
-                                                            <!-- end row -->
-                                                            <x-input-radio-or-check
-                                                                name="will_take_part_in_the_play_with_everyone"
                                                                 label="সবার সাথে নাটকে অংশ নিবে"
                                                                 :records="$diaryConstant::$diaryType"
                                                                 secondaryInputLabel="শিক্ষক এর মন্তব্য">
