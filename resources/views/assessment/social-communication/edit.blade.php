@@ -161,9 +161,9 @@
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
                                                             <section>
-                                                                <x-input-radio-or-check name=""
+                                                                <x-input-radio-or-check :checked="$pragmatic_objective->interaction_with_adults" name=""
                                                                     label="Interaction with adults " :records="$constants::$socialCommunication"
-                                                                    :isVertical="false">
+                                                                    :isVertical="false" secondaryInputValue="{{ $pragmatic_objective->interaction_with_adults_secondary }}">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check name=""
