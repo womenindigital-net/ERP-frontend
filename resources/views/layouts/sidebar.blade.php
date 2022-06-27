@@ -574,9 +574,7 @@
                         <li><a href="HR.organization-setup.create">Organization Setup </a></li>
                         <li><a href="HR.section-setup.create">Section Setup</a></li>
                         <li><a href="HR.attendence.create">Attendence</a></li>
-
                         <li><a href="HR.designation-setup.create">Designation Setup</a></li>
-
                         <li><a href="HR.leave-application.create">Leave Application</a></li>
                         <li><a href="HR.notice-template-setup.create">Notice Template Setup</a></li>
                         <li><a href="HR.notice-board.create">Notice Board</a></li>
@@ -584,7 +582,6 @@
                         <li><a href="">Employee Attendance (short)</a></li>
                     </ul>
                 </li>
-
             </ul>
         </div>
         <!-- Sidebar -->
