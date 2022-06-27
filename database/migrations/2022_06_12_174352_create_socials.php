@@ -35,6 +35,7 @@ return new class extends Migration
             $table->json('requesting')->nullable();
             $table->json('prosody')->nullable();
             $table->json('protests')->nullable();
+            $table->json('style_of_Conversation')->nullable();
             $table->json('humor')->nullable();
             $table->json('greetings_acknowledgements')->nullable();
             $table->json('problem_solving')->nullable();

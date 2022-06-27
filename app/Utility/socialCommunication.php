@@ -90,12 +90,14 @@ final class SensoryCheckList
 
         'requesting'            => [
             'ability_to_request_information_appropriately',
+            'ability_to_request_permission_appropriately',
             'ability_to_request_yes_no_responses_appropriately',
             'ability_to_use_wh_questions_appropriately',
             'ability_to_request_an_action_of_another_appropriately',
             'ability_to_request_clarification_appropriately',
             'ability_to_request_attention_appropriately',
             'ability_to_request_help_appropriately',
+            
         ],
         'prosody'            => [
             'ability_to_use_appropriate_rate_of_speech',
@@ -109,7 +111,7 @@ final class SensoryCheckList
             'ability_to_state_his_opinion_using_appropriate_means',
             'ability_to_disagree',
         ],
-        ''            => [
+        'style_of_Conversation'            => [
             'ability_to_shift_the_style_of_conversation_according_to_person',
             'ability_to_shift_the_style_of_conversation_according_to_the_setting',
             'ability_to_shift_the_style_of_conversation_according_to_humor',
@@ -146,6 +148,7 @@ final class SensoryCheckList
             'ability_to_obtain_teachers_attention_appropriately',
             'ability_to_request_clarification_from_teacher',
             'ability_to_participate_in_classroom_discussions',
+            'ability_to_interact_with_classroom_peers',
             'ability_to_paraphrase_text',
             'ability_to_summarize_a_story_providing_key_information',
             'ability_to_respond_to_questions_requiring_inferential_reasoning',
