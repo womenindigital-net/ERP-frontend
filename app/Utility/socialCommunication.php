@@ -123,7 +123,7 @@ final class SensoryCheckList
             'comprehends_humor',
             'uses_humor_appropriately',
         ],
-        'greetingsacknowledgements'            => [
+        'greetings_acknowledgements'            => [
             'provides_greetings',
             'uses_greetings',
             'ability_to_acknowledge_the_presence_of_another_individual',
@@ -140,7 +140,7 @@ final class SensoryCheckList
             'uses_language_to_deceive',
             'lies',
         ],
-        'academi_communication'            => [
+        'academy_communication'            => [
             'ability_to_respond_appropriately_to_teacher_requests',
             'ability_to_reorient_to_academic_agenda_appropriately',
             'ability_to_obtain_teachers_attention_appropriately',
