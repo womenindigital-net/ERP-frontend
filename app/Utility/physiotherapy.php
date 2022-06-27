@@ -64,7 +64,9 @@ final class PhysioTherapy
             'bathing',
             'does_the_child_attend_school',
             'enter_your_name',
+             'if_yes_enter_school_name',
             'leisure_or_play_activities_of_interest',
+           
         ],
         'strength'            => [
             'please_explain_strength_area',
@@ -83,6 +85,7 @@ final class PhysioTherapy
             'continuous_rolling',
             'lying_to_sit',
             'box_sit_to_stand',
+            'jumping',
             'cross_sit_to_stand',
             'kneeling_to_stand',
         ],
@@ -131,6 +134,8 @@ final class PhysioTherapy
         ],
         'muscle_power'            => [
             'upper_limbs',
+            'left',
+            'right',
             'lower_limbs',
             'trunk',
         ],
