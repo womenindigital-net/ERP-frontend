@@ -21,49 +21,48 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                 <div class="tab-pane active" id="case-histroy" role="tabpanel">
                     <div class="modal-body">
                       <div class="row">
                         <div class="col-lg-12 col-md-8">
-                          <label style="display: inline-flex;align-items: center;">Date
-                            <input type="search" class="form-control form-control-sm" placeholder="">
+                          <label style="display: inline-flex;align-items: center;" class="gap-3">Date
+                           <x-input-text type="search"  name="search"/>
                           </label>
                         </div>
                       </div>
-                          </div>
+                      <label class="text-center pb-2 pt-2">Employee list</label>
                           <div class="repeater" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="product">Employee</label>
+                                    <label for="employee">Employee</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1 text-center">
-                                    <label for="quality">Sign In</label>
+                                    <label for="sing_out">Sign In</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="discount">Sign Out</label>
+                                    <label for="sing_out">Sign Out</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="total">Remark</label>
+                                    <label for="remark">Remark</label>
                                 </div>
                             </div>
                             <div data-repeater-list="details" id="ProductGroup">
                                 <div data-repeater-item class="row removeRow">
 
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                        <x-input-text name="date" type="date"/>
+                                        <x-input-text name="employee"/>
                                     </div>
 
                                     <div class=" col-lg-2 p-0 pe-1 pb-1 text-center">
-                                        <input type="checkbox" class="form-check-input">
+                                        <x-input-text name="sing_out" type="time" />
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                          <x-input-text name="date"/>
+                                          <x-input-text name="sing_out" type="time" />
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
-                                        <x-input-text name="date"/>
+                                        <x-input-text name="remark"/>
                                         <button class="btn btn-danger ms-2 removeBtn">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
@@ -75,60 +74,54 @@
                                    id="AddMore"/>
                         </div>
                     </div>
-                    
+                    </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
+                    <div class="modal-body">
                       <div class="row">
                         <div class="col-lg-12 col-md-8">
-                          <label style="display: inline-flex;align-items: center;">Employee
-                            <input type="search" class="form-control form-control-sm" placeholder="">
+                          <label style="display: inline-flex;align-items: center;" class=" gap-3">Employee
+                            <x-input-text type="search"  name="search"/>
                           </label>
+                        </div>
+                      </div>
+                      <label class="text-center pb-2 pt-2">Attendance list</label>
                           <div class="repeater" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="product">Date</label>
+                                    <label for="date">Date</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1 text-center">
-                                    <label for="quality">Sign In</label>
+                                    <label for="sing_out">Sign In</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="discount">Sign Out</label>
+                                    <label for="sing_out">Sign Out</label>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1">
-                                    <label for="total">Remark</label>
+                                    <label for="remark">Remark</label>
                                 </div>
                             </div>
                             <div data-repeater-list="details" id="ProductGroup">
                                 <div data-repeater-item class="row removeRow">
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                      <label for="">1</label>
-                                    </div>
-
-                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
                                         <x-input-text name="date" type="date"/>
                                     </div>
-
                                     <div class=" col-lg-2 p-0 pe-1 pb-1 text-center">
-                                        <input type="checkbox" class="form-check-input">
+                                        <x-input-text name="sing_out" type="time" />
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                          <x-input-text name="date"/>
+                                          <x-input-text name="sing_out" type="time" />
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
-                                        <x-input-text name="date"/>
+                                        <x-input-text name="remark"/>
                                         <button class="btn btn-danger ms-2 removeBtn">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <input data-repeater-create type="button"
-                                   class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"
-                                   id="AddMore"/>
+                            <input data-repeater-create type="button" class="btn btn-success mt-3 px-4 mt-lg-0" value="Add" id="AddMore"/>
                         </div>
-                      </div>
-                     </div>
-                       
-                          
+                    </div>
                         </div>
                     </div>
                 </div>

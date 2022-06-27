@@ -78,8 +78,8 @@
                                 </div>
                               </div>
                           </div>
-                          <h6>Leave Application Details </h6>
-                          <div class="repeater" enctype="multipart/form-data">
+                          <label class="text-center">Leave Application Details </label>
+                          <div class="repeater p-4" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-2 p-0 pe-1">
                                     <label for="Type">Type</label>
@@ -93,20 +93,23 @@
                                 <div class="col-lg-1 p-0 pe-1 text-center">
                                     <label for="duration">Duration</label>
                                 </div>
-                                <div class="col-lg-1 p-0 pe-1">
-                                    <label for="discount">Is Hour</label>
+                                <div class="col-lg-1 p-0  text-center">
+                                    <label for="is_houe">Is Hour</label>
                                 </div>
-                                <div class="col-lg-1 p-0 pe-1">
-                                    <label for="total">Half-Day</label>
+                                <div class="col-lg-1 p-0">
+                                    <label for="avl_time">Avl. Time</label>
                                 </div>
-                                <div class="col-lg-2 p-0 pe-1">
-                                    <label for="total">1st Hour</label>
+                                <div class="col-lg-1 p-0  text-center">
+                                    <label for="half_day">Half-Day</label>
+                                </div>
+                                <div class="col-lg-1 p-0">
+                                    <label for="hour">1st Hour</label>
                                 </div>
                             </div>
                             <div data-repeater-list="details" id="ProductGroup">
                                 <div data-repeater-item class="row removeRow">
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                        <x-input-select name="student_id"
+                                        <x-input-select name="type"
                                          :records="[]" />
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
@@ -119,17 +122,17 @@
                                     <div class=" col-lg-1 p-0 pe-1 pb-1">
                                         <x-input-text name="duration" type="number"/>
                                     </div>
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                      <input type="checkbox" class="form-check-input">
+                                    <div class=" col-lg-1  p-0 pb-1 text-center">
+                                      <input type="checkbox" class="form-check-input " name="is_houe">
                                     </div>
                                     <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                       <x-input-text name="duration" type="number"/>
+                                       <x-input-text name="avl_time" />
                                     </div>
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                       <x-input-text name="duration" type="number"/>
+                                    <div class=" col-lg-1 p-0  pb-1 text-center">
+                                      <input type="checkbox" class="form-check-input " name="half_day">
                                     </div>
-                                    <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
-                                      <input type="checkbox" class="form-check-input">
+                                    <div class=" col-lg-1 p-0  pb-1 d-flex ps-3 ">
+                                      <input type="checkbox" class="form-check-input " name="hour">
                                         <button class="btn btn-danger ms-2 removeBtn">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
