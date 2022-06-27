@@ -27,13 +27,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">physiotherapy</span>
+                                <span class="d-none d-sm-block">Add</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">Physiotherapy List</span>
+                                <span class="d-none d-sm-block"> List</span>
                             </a>
                         </li>
                     </ul>
