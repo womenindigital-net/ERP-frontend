@@ -24,7 +24,7 @@
                     </li>
                 </ul>
                 <!-- Tab panes -->
-                <div class="tab-content p-3 text-muted">
+                        <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
                         <div class="row">
                             <div class="col-12">
@@ -39,7 +39,7 @@
                                                     <li class="w-100"><a href="#Pragmatic_Objective"
                                                             data-toggle="tab">বেসিক / ফাংশনাল এরিয়া</a>
                                                     </li>
-                                                    <li class="w-100"><a href="#Outing" data-toggle="tab">অন্যান
+                                                               <li class="w-100"><a href="#Outing" data-toggle="tab">অন্যান
                                                             এরিয়া</a>
                                                     </li>
                                                 </ul>
