@@ -89,9 +89,6 @@
                                         <div class="col p-0 pe-1 text-center">
                                             <label for="product">Amount Given Unit</label>
                                         </div>
-                                        <div class="col-1 p-0 ps-5 text-center">
-                                            <label for="quality">Expire Check</label>
-                                        </div>
                                         <div class="col p-0 pe-5 text-center">
                                             <label for="quality">Note</label>
                                         </div>
@@ -110,9 +107,6 @@
                                             <div class=" col p-0 pe-1 pb-1">
                                                 <x-input-text name="amount_given_unit" placeholder="Amount Given Unit">
                                                 </x-input-text>
-                                            </div>
-                                            <div class=" col-1 p-0  pb-1 text-center">
-                                                <input type="checkbox" name="expire_check[]" class="form-check-input">
                                             </div>
 
                                             <div class=" col p-0  pb-1 me-4 d-flex">

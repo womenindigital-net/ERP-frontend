@@ -59,13 +59,14 @@ class MedicineAdminServices
 
     private function collectRequisitionDetailsInfos(mixed $data): array
     {
-        [$requisitionDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['medicine_name', 'amount_given', 'amount_given_unit', 'expire_check[', 'note']);
+        dump($data);
+        [$requisitionDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['medicine_name', 'amount_given', 'amount_given_unit', 'note']);
+        dd($requisitionDetailInfos, $data);
         for ($i = 0; $i < count($data['medicineAdmin']); $i++) {
             $custom[$i] = [
                 'medicine_name' => $data['medicineAdmin'][$i]['medicine_name'],
                 'amount_given' => $data['medicineAdmin'][$i]['amount_given'],
                 'amount_given_unit' => $data['medicineAdmin'][$i]['amount_given_unit'],
-                'expire_check' => $data['medicineAdmin'][$i]['expire_check['], //Why this '['
                 'note' => $data['medicineAdmin'][$i]['note'],
             ];
         }
