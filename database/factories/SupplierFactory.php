@@ -14,10 +14,20 @@ class SupplierFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'type' => 'sample',
+            'contact_person' => $this->faker->name,
+            'designation' => $this->faker->title,
+            'address' => $this->faker->address,
+            'zip' => $this->faker->postcode,
+            'city' => $this->faker->city,
+            'country' => $this->faker->country,
+            'phone' => $this->faker->phoneNumber,
+            'email' => $this->faker->safeEmail,
+            'note' => $this->faker->sentence,
         ];
     }
 }

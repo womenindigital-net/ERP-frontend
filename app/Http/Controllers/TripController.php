@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TripRequest;
 use App\Models\Trip;
+use App\Repositories\StudentRepository;
 use App\Repositories\TripRepository;
+use App\Repositories\UserRepository;
 use App\Services\TripService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -16,11 +18,14 @@ class TripController extends Controller
 {
     private TripService $service;
     private TripRepository $repo;
+    // private StudentRepository $userRepo;
+    private UserRepository $userRepo;
 
-    public function __construct(TripService $service, TripRepository $repository)
+    public function __construct(TripService $service, TripRepository $repository, UserRepository $userRepo)
     {
         $this->service = $service;
         $this->repo    = $repository;
+        $this->userRepo    = $userRepo;
     }
 
     /**
@@ -40,7 +45,10 @@ class TripController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        return view('student.dairy.trip.create');
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('student.dairy.trip.create', $data);
     }
 
     /**
@@ -52,7 +60,6 @@ class TripController extends Controller
      */
     public function store(TripRequest $request): RedirectResponse
     {
-        dd($request->validated());
         $this->service->store($request->validated());
 
         Session::flash('success');
@@ -81,7 +88,6 @@ class TripController extends Controller
      */
     public function edit(Trip $trip): View|Factory|Application
     {
-        // dd($trip->only_for_staff);
         $data = [
             'record' => $trip,
             'activitiesOfDailyLiving' => $trip->activities_of_daily_living,

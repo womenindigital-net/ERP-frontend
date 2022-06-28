@@ -33,7 +33,7 @@
                                         <div class="col-6 row mb-3">
                                             <label class="col-4 col-form-label">Time</label>
                                             <div class="col-8">
-                                                <x-input-text type="number" name="time"  placeholder="">
+                                                <x-input-text type="time" name="time"  placeholder="">
                                                 </x-input-text>
                                             </div>
                                         </div>
@@ -86,14 +86,15 @@
                                                 :records="[]" />
                                             </div>
                                         </div> 
+                                          <div class="text-end pe-5">
+                                            <button type="button" class="btn btn-outline-danger waves-effect waves-light">Reset</button>
+                                            <button type="button" class="btn btn-outline-success waves-effect waves-light">Save</button>
+                                          </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-end pe-2">
-                            <button type="button" class="btn btn-danger waves-effect waves-light">Reset</button>
-                            <button type="button" class="btn btn-success waves-effect waves-light">Save</button>
-                        </div>
+
                     </div>
                     <div class="tab-pane" id="profile" role="tabpanel">
                         <div class="row">

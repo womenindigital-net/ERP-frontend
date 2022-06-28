@@ -9,18 +9,22 @@ use App\Http\Requests\SocialRequest;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\View\Factory;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Foundation\Application;
+use App\Services\SocialCommunicationService;
 
 class SocialController extends Controller
 {
     private UserRepository $userRepo;
     private StudentRepository $studentRepo;
+    private SocialCommunicationService $service;
     public $record;
 
-    public function __construct(UserRepository $userRepository, StudentRepository $studentRepository)
+    public function __construct(UserRepository $userRepository, StudentRepository $studentRepository, SocialCommunicationService $service)
     {
         $this->userRepo = $userRepository;
         $this->studentRepo = $studentRepository;
+        $this->service = $service;
     }
 
     /**
@@ -57,7 +61,11 @@ class SocialController extends Controller
      */
     public function store(SocialRequest $request)
     {
-        //
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return back();
     }
 
     /**

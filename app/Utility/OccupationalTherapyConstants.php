@@ -64,9 +64,7 @@ final class OccupationalTherapyConstants
     ];
 
     public static array $columnCollections = [
-
         'general'            => [
-            'medication_treatment',
             'medication_treatment',
             'any_present_medicines',
             'separate_home_equipment',
@@ -103,13 +101,14 @@ final class OccupationalTherapyConstants
             'jumping',
         ],
         'transitional_movements'            => [
-            'rolling_supine_to_prone',
+            'rolling_supine_to_prone_one',
             'continuous_rolling',
             'box_sit_to_stand',
             'kneeling_to_stand',
             'prone_to_supine',
             'lying_to_sit',
             'cross_sit_to_stand',
+            'rolling_supine_to_prone'
         ],
         'fine_motor_skill'            => [
             'dominance',
@@ -141,7 +140,7 @@ final class OccupationalTherapyConstants
             'visual_discrimination',
             'visual_memory',
             'visual_figure_ground',
-            'visual Spatial',
+            'visual_Spatial',
             'behavior',
             'social_interaction',
         ],
@@ -153,9 +152,11 @@ final class OccupationalTherapyConstants
             'bathing',
             'any_more_information',
             'activities_of_interest',
+            'any_more_information',
+            'leisure'
         ],
         'strength'            => [
-            'physical_(gross_motor_or_fine_motor)',
+            'physical',
             'cognitive',
             'strength_behavioral',
             'strength_communication',

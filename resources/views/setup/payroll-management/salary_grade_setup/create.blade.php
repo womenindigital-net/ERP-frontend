@@ -158,9 +158,7 @@
 </div>
 @endsection
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="{{ asset('assets/custom/custom_step_form/custom_step.js') }}"></script>
-<!-- form repeater js -->
-<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
+    <!-- form repeater js -->
+    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection

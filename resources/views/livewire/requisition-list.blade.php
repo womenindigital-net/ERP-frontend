@@ -38,10 +38,10 @@
                            >
                             <i class="mdi mdi-pencil"></i>
                         </a>
-                        <button type="button"
+                        <a href="{{route('purchase-order.create', $record->id)}}" type="button"
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                             <i class="fas fa-arrow-circle-right"></i>
-                        </button>
+                        </a>
                         <button type="button"
                                 class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                             <i class="fas fa-trash-alt"></i>

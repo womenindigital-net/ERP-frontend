@@ -99,7 +99,7 @@
                                                                         <label
                                                                             for="basicpill-firstname-input">Collection
                                                                             Date:</label>
-                                                                        <x-input-text name="date" type="date"
+                                                                        <x-input-text name="collection_date" type="date"
                                                                             placeholder="mm/dd/yyyy">
                                                                         </x-input-text>
                                                                     </div>
@@ -1051,7 +1051,7 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                        {{-- <livewire:sensory-check-list-child-list> --}}
+                         <livewire:sensory-check-list-child-list /> 
                     </div>
                 </div>
 

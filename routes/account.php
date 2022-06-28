@@ -28,7 +28,14 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     //    Route::get('donation-and-other', [\App\Http\Controllers\DonationController::class, 'create'])->name('donation-and-other');
 
     //    Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');
-    Route::get('purchase-order', [PurchaseController::class, 'purchaseOrder'])->name('purchase-order');
+    //    Route::get('purchase-order', [PurchaseController::class, 'purchaseOrder'])->name('purchase-order');
+
+    Route::get('purchase-order/requisition/{requisition?}', [PurchaseController::class, 'create'])->name('purchase-order.create');
+    Route::post('purchase-order/requisition/{requisition}/store', [PurchaseController::class, 'store'])->name('purchase-order.store');
+    Route::get('purchase-order/{purchase_order}/requisition/{requisition}/edit', [PurchaseController::class, 'edit'])->name('purchase-order.edit');
+    Route::put('purchase-order/{purchase_order}/requisition/{requisition}/update', [PurchaseController::class, 'update'])->name('purchase-order.update');
+    Route::delete('purchase-order/{purchase_order}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
+
     Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 
     Route::get('payment-supplier', [PaymentController::class, 'supplier'])->name('payment-supplier');
