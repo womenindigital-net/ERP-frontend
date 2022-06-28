@@ -78,7 +78,25 @@ class SensoryChecklistChildController extends Controller
      */
     public function show(SensoryChecklistChild $sensoryChecklistChild)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'id' => $sensoryChecklistChild['id'],
+            'collection_date' => $sensoryChecklistChild['collection_date'],
+            'teacher_id' => $sensoryChecklistChild['teacher_id'],
+            'student_id' => $sensoryChecklistChild['student_id'],
+            'sensory_checklist' => $sensoryChecklistChild['sensory_checklist'],
+            'signs_of_tactile_dysfunction' => $sensoryChecklistChild['signs_of_tactile_dysfunction'],
+            'hyposensitivity_to_touch' => $sensoryChecklistChild['hyposensitivity_to_touch'],
+            'poor_tactile_perception_and_discrimination' => $sensoryChecklistChild['poor_tactile_perception_and_discrimination'],
+            'signs_of_vestibular_dysfunction' => $sensoryChecklistChild['signs_of_vestibular_dysfunction'],
+            'signs_of_vestibular_dysfunction_under' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_under'],
+            'signs_of_vestibular_dysfunction_coordination' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_coordination'],
+            'signs_of_vestibular_dysfunction_behaviors' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_behaviors'],
+            'signs_of_vestibular_dysfunction_movement' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_movement'],
+        ];
+
+        return view('assessment.sensory-checklist-child.view', $data);
     }
 
     /**

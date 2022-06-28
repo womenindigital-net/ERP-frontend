@@ -24,6 +24,8 @@ class TripRequest extends FormRequest
     public function rules(): array
     {
         return [
+            "collection_date"   => 'nullable',
+            "teacher_id"       => 'nullable',
             'bath' => 'nullable',
             'bath_secondary' => 'nullable',
             'wearing_cloth' => 'nullable',

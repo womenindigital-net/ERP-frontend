@@ -23,6 +23,8 @@
                                                 <li class="w-100"><a href="#ActivitiesofDailyLiving"
                                                         data-toggle="tab">Activities of Daily Living (ADLs) দৈনন্দিন
                                                         কার্যাবলী</a></li>
+                                                <li class="w-100"><a href="#trip"
+                                                        data-toggle="tab">Trip</a></li>
                                                 <li class="w-100"><a href="#justForstaff" data-toggle="tab">শুধু
                                                         স্টাফ এর জন্য প্রযোজ্য</a></li>
                                                 <li class="w-100"><a href="#HomeAssessmentWorksheet"
@@ -88,6 +90,33 @@
                                     </div>
                                     <div class="col-sm-9 col-md-9">
                                         <div class="tab-content">
+                                            <div class="tab-pane" id="trip">
+                                                        <section>
+                                                            <div class="row">
+                                                                <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <label
+                                                                            for="basicpill-firstname-input">Collection
+                                                                            Date:</label>
+                                                                        <div class="input-group" id="datepicker2">
+                                                                            <x-input-text name="collection_date"
+                                                                            value="{{ $record->collection_date }}"
+                                                                                type="date" placeholder="mm/dd/yyyy" />
+                                                                        </div><!-- input-group -->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <label
+                                                                            for="basicpill-lastname-input">Teacher:</label>
+                                                                        <x-input-select name="teacher_id"
+                                                                            :records="$teachers" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </section>
+                                                    </div>
                                             <div class="tab-pane" id="ActivitiesofDailyLiving">
                                                 <section>
                                                     <x-input-radio-or-check
