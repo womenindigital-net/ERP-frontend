@@ -12,4 +12,10 @@ class RequisitionRepository extends BaseRepository
     {
         return $this->model::with('details')->latest()->paginate($perPage);
     }
+
+    public function getApprovedList()
+    {
+        return $this->model::all();
+//        return $this->model::approved()->all();
+    }
 }

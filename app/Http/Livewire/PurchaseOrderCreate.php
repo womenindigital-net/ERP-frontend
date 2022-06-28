@@ -5,67 +5,60 @@ namespace App\Http\Livewire;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Http\Livewire\Traits\CommonListElements;
 use App\Repositories\ProjectRepository;
+use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\RequisitionRepository;
-use App\Repositories\StockRepository;
-use App\Repositories\UserRepository;
-use App\Repositories\WarehouseRepository;
+use App\Repositories\SupplierRepository;
 use App\Services\ProductService;
-use App\Services\RequisitionService;
+use App\Services\PurchaseOrderService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class RequisitionCreate extends Component
+class PurchaseOrderCreate extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
-    private string $destroyRoute = 'requisition.destroy';
 
     public $requisition;
-    public $requested_by;
+    public $requisition_id;
     public $date;
-    public $title;
+    public $exp_date;
+    public $vat;
+    public $supplier_id;
 
-    private RequisitionService $service;
-    private RequisitionRepository $repo;
-    private ProductService $productService;
+    private PurchaseOrderRepository $repo;
+    private PurchaseOrderService $service;
     private ProjectRepository $projectRepo;
-    private UserRepository $userRepo;
-    private WarehouseRepository $warehouseRepository;
-    private StockRepository $stockRepo;
+    private SupplierRepository $supplierRepo;
+    private ProductService $productService;
+    private RequisitionRepository $requisitionRepo;
 
     public function boot(
-        RequisitionService $service,
-        RequisitionRepository $repository,
-        ProductService $productService,
+        PurchaseOrderService $service,
+        PurchaseOrderRepository $repository,
         ProjectRepository $projectRepository,
-        UserRepository $userRepository,
-        WarehouseRepository $warehouseRepository,
-        StockRepository $stockRepository,
+        SupplierRepository $supplierRepository,
+        ProductService $productService,
+        RequisitionRepository $requisitionRepository,
     )
     {
-        $this->inputs[] = $this->numberOfItems;
         $this->service = $service;
-        $this->repo =$repository;
-        $this->productService = $productService;
+        $this->repo = $repository;
         $this->projectRepo = $projectRepository;
-        $this->userRepo = $userRepository;
-        $this->warehouseRepository = $warehouseRepository;
-        $this->stockRepo = $stockRepository;
+        $this->supplierRepo = $supplierRepository;
+        $this->productService = $productService;
+        $this->requisitionRepo = $requisitionRepository;
+        $this->inputs[] = $this->numberOfItems;
     }
 
     public function mount()
     {
-        if ($this->requisition) {
-            $this->requisition = $this->repo->getRelatedData($this->requisition, ['details']);
+//        dd($this->requisition);
 
+        if ($this->requisition->id) {
             $this->project_id = $this->requisition->project_id;
-            $this->requested_by = $this->requisition->requested_by;
-            $this->date = $this->requisition->date;
-            $this->title = $this->requisition->title;
-            $this->warehouse_id = $this->requisition->warehouse_id;
-
+            $this->requisition_id = $this->requisition->id;
             $this->inputs = $this->requisition->details->toArray();
 
             foreach ($this->requisition->details as $key => $detail) {
@@ -81,22 +74,26 @@ class RequisitionCreate extends Component
 
     protected array $rules = [
         'project_id' => 'required',
-        'requested_by' => 'nullable',
+        'requisition_id' => 'nullable',
+        'supplier_id' => 'nullable',
         'date' => 'required',
-        'title' => 'required',
-        'warehouse_id' => 'required',
+
         'product_id.*' => 'required',
+        'exp_date.*' => 'nullable',
         'available_qty.*' => 'required',
         'qty.*' => 'required',
-        'sub_total.*' => 'nullable',
         'price.*' => 'nullable',
+        'vat.*' => 'nullable',
         'discount.*' => 'nullable',
+        'sub_total.*' => 'nullable',
+
+        'note' => 'nullable',
     ];
 
     public function updated($name, $value)
     {
-        if (str_starts_with($name, 'product_id.')) {
-            if (!$value || !$this->project_id || !$this->warehouse_id)
+        /*if (str_starts_with($name, 'product_id.')) {
+            if (!$value || !$this->project_id)
                 return;
 
             $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
@@ -128,18 +125,20 @@ class RequisitionCreate extends Component
             if ($this->price[$targetKey] && $this->qty[$targetKey]) {
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - ($this->discount[$targetKey] ?? 0);
             }
-        }
+        }*/
     }
 
     public function render(): Factory|View|Application
     {
+//        dd($this->requisitionRepo->getApprovedList());
+
         $data = [
             'projects' => $this->projectRepo->getData(),
+            'suppliers' => $this->supplierRepo->getData(),
             'products' => $this->productService->getFormattedDataAsOptGroup(),
-            'users' => $this->userRepo->getData(),
-            'warehouses' => $this->warehouseRepository->getData(),
+            'requisitions' => $this->requisitionRepo->getApprovedList(),
         ];
 
-        return view('livewire.requisition-create', $data);
+        return view('livewire.purchase-order-create', $data);
     }
 }
