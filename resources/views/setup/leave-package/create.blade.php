@@ -213,3 +213,8 @@
     </div> 
 </div>
 @endsection
+@section('script')
+    <!-- form repeater js -->
+    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
+@endsection
