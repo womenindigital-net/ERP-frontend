@@ -63,9 +63,8 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-9 col-md-9">
-                                        <form action="{{ route('occupational-therapy.store') }}" method="POST">
-                                            @csrf
-                                            <div class="tab-content">
+                                        <form >
+                                            <div class="tab-content apply-view-only">
                                                 <div class="tab-pane" id="Occupational_Therapy">
                                                     <section>
                                                         <div class="row">
