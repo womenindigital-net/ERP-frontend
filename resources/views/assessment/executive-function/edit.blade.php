@@ -85,7 +85,6 @@ Student Qa
                                             <div class="tab-pane" id="Pragmatic_Objective">
                                                 <section>
                                                     <div>
-
                                                         <!-- end row -->
                                                         <x-input-radio-or-check :checked="$record->have_trouble_getting"
                                                             name="have_trouble_getting"

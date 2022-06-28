@@ -31,8 +31,7 @@ class SensoryChecklistChildService
 
     private function processInfo(array $validated): array
     {
-        [$sensoryChecklist, $data] = $this->collectSensoryChecklist($validated);
-        [$signsOfTactileDysfunction, $data] = $this->collectSignsOfTactileDysfunction($data);
+        [$signsOfTactileDysfunction, $data] = $this->collectSignsOfTactileDysfunction($validated);
         [$hyposensitivityToTouch, $data] = $this->collectHyposensitivityToTouch($data);
         [$poorTactilePerceptionAndDiscrimination, $data] = $this->collectPoorTactilePerceptionAndDiscrimination($data);
         [$signsOfVestibularDysfunction, $data] = $this->collectSignsOfVestibularDysfunction($data);
@@ -41,11 +40,12 @@ class SensoryChecklistChildService
         [$signsOfVestibularDysfunctionBehaviors, $data] = $this->collectSignsOfVestibularDysfunctionBehaviors($data);
         [$signsOfVestibularDysfunctionMovement, $data] = $this->collectSignsOfVestibularDysfunctionMovement($data);
 
+        
+
         return [
             'collection_date' => $validated['collection_date'],
             'teacher_id' => $validated['teacher_id'],
             'student_id' => $validated['student_id'],
-            'sensory_checklist' => $sensoryChecklist,
             'signs_of_tactile_dysfunction' => $signsOfTactileDysfunction,
             'hyposensitivity_to_touch' => $hyposensitivityToTouch,
             'poor_tactile_perception_and_discrimination' => $poorTactilePerceptionAndDiscrimination,
@@ -57,14 +57,9 @@ class SensoryChecklistChildService
         ];
     }
 
-    private function collectSensoryChecklist(mixed $validated): array
+    private function collectSignsOfTactileDysfunction(mixed $validated): array
     {
-        return extractNecessaryFieldsFromData($validated, SensoryCheckListChildConstants::$columnCollections['sensory_checklist']);
-    }
-
-    private function collectSignsOfTactileDysfunction(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SensoryCheckListChildConstants::$columnCollections['signs_of_tactile_dysfunction']);
+        return extractNecessaryFieldsFromData($validated, SensoryCheckListChildConstants::$columnCollections['signs_of_tactile_dysfunction']);
     }
 
     private function collectHyposensitivityToTouch(mixed $data): array

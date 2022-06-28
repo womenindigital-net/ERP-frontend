@@ -23,9 +23,8 @@ class PhysiotherapyRequest extends FormRequest
      */
     public function rules(): array
     {
-        //        dd($this->request->all());
         return [
-            "collention_date"                         => 'nullable',
+            "collection_date"                         => 'nullable',
             "teacher_id"                              => 'nullable',
             "candidate_id"                            => 'nullable',
             "birth_history"                           => 'nullable',

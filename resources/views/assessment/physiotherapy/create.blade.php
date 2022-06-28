@@ -44,24 +44,42 @@
                                         <div class="col-sm-3 col-md-3">
                                             <div id="wizard-navigation">
                                                 <ul class="wizard-navigation">
-                                                    <li class="w-100"><a href="#Social_Communication" data-toggle="tab">Sensory Checklist</a></li>
-                                                    <li class="w-100"><a href="#Pragmatic_Objective" data-toggle="tab">General</a></li>
-                                                    <li class="w-100"><a href="#PERSONAL" data-toggle="tab">Visual Perception</a></li>
-                                                    <li class="w-100"><a href="#Topic_Maintenance" data-toggle="tab">Activities of Daily living</a></li>
-                                                    <li class="w-100"><a href="#Conversational_Structure" data-toggle="tab">Strength</a></li>
-                                                    <li class="w-100"><a href="#Word_Structure" data-toggle="tab">Functional Gross Motor</a></li>
-                                                    <li class="w-100"><a href="#Manner_Effectiveness" data-toggle="tab">Transitional Movements</a></li>
-                                                    <li class="w-100"><a href="#Repair_Structures" data-toggle="tab">Fine motor Skill</a></li>
-                                                    <li class="w-100"><a href="#Functional_Intent" data-toggle="tab">Automatic Reaction</a></li>
-                                                    <li class="w-100"><a href="#Functional_Intent_B" data-toggle="tab">Sensory Skill (Normal /Hypo response)</a></li>
-                                                    <li class="w-100"><a href="#Functional_Intent_C" data-toggle="tab">Cognitive Skills</a></li>
-                                                    <li class="w-100"><a href="#Functional_Intent_D" data-toggle="tab">Treatment</a></li>
-                                                    <li class="w-100"><a href="#Functional_Intent_E" data-toggle="tab">Signature</a></li>
-                                                    <li class="w-100"><a href="#mp" data-toggle="tab">Muscle Power</a></li>
-                                                    <li class="w-100"><a href="#mt" data-toggle="tab">Muscle tone</a></li>
+                                                    <li class="w-100"><a href="#Social_Communication"
+                                                            data-toggle="tab">Sensory Checklist</a></li>
+                                                    <li class="w-100"><a href="#Pragmatic_Objective"
+                                                            data-toggle="tab">General</a></li>
+                                                    <li class="w-100"><a href="#PERSONAL" data-toggle="tab">Visual
+                                                            Perception</a></li>
+                                                    <li class="w-100"><a href="#Topic_Maintenance"
+                                                            data-toggle="tab">Activities of Daily living</a></li>
+                                                    <li class="w-100"><a href="#Conversational_Structure"
+                                                            data-toggle="tab">Strength</a></li>
+                                                    <li class="w-100"><a href="#Word_Structure"
+                                                            data-toggle="tab">Functional Gross Motor</a></li>
+                                                    <li class="w-100"><a href="#Manner_Effectiveness"
+                                                            data-toggle="tab">Transitional Movements</a></li>
+                                                    <li class="w-100"><a href="#Repair_Structures"
+                                                            data-toggle="tab">Fine motor Skill</a></li>
+                                                    <li class="w-100"><a href="#Functional_Intent"
+                                                            data-toggle="tab">Automatic Reaction</a></li>
+                                                    <li class="w-100"><a href="#Functional_Intent_B"
+                                                            data-toggle="tab">Sensory Skill (Normal /Hypo response)</a>
+                                                    </li>
+                                                    <li class="w-100"><a href="#Functional_Intent_C"
+                                                            data-toggle="tab">Cognitive Skills</a></li>
+                                                    <li class="w-100"><a href="#Functional_Intent_D"
+                                                            data-toggle="tab">Treatment</a></li>
+                                                    <li class="w-100"><a href="#Functional_Intent_E"
+                                                            data-toggle="tab">Signature</a></li>
+                                                    <li class="w-100"><a href="#mp" data-toggle="tab">Muscle Power</a>
+                                                    </li>
+                                                    <li class="w-100"><a href="#mt" data-toggle="tab">Muscle tone</a>
+                                                    </li>
                                                     <li class="w-100"><a href="#Be" data-toggle="tab">Behavior</a></li>
-                                                    <li class="w-100"><a href="#DA" data-toggle="tab">Domain Area</a></li>
-                                                    <li class="w-100"><a href="#Range_of_movement" data-toggle="tab">Range of movement</a></li>
+                                                    <li class="w-100"><a href="#DA" data-toggle="tab">Domain Area</a>
+                                                    </li>
+                                                    <li class="w-100"><a href="#Range_of_movement"
+                                                            data-toggle="tab">Range of movement</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -77,7 +95,7 @@
                                                                         <label
                                                                             for="basicpill-firstname-input">Collection
                                                                             Date:</label>
-                                                                        <x-input-text name="date" type="date"
+                                                                        <x-input-text name="collection_date" type="date"
                                                                             placeholder="Collection Date">
                                                                         </x-input-text>
                                                                     </div>
@@ -94,7 +112,7 @@
                                                                     <div class="mb-3">
                                                                         <label for="basicpill-phoneno-input">Candidate
                                                                             ID:</label>
-                                                                        <x-input-select name="student_id"
+                                                                        <x-input-select name="candidate_id"
                                                                             :records="$students" />
                                                                     </div>
                                                                 </div>
@@ -730,42 +748,42 @@
                                                     </div>
                                                     <div class="tab-pane" id="Range_of_movement">
                                                         <section>
-                                                                <!-- end row -->
-                                                                <x-input-radio-or-check label="Upper limbs"
-                                                                    :records="$physiotherapyConstants::$range">
-                                                                </x-input-radio-or-check>
-                                                                <div class="mb-3">
-                                                                    <label for="formrow-firstname-input"
-                                                                        class="form-label">Left</label>
-                                                                    <x-input-text name="left" placeholder="">
-                                                                    </x-input-text>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="formrow-firstname-input"
-                                                                        class="form-label">Right</label>
-                                                                    <x-input-text name="right" placeholder="">
-                                                                    </x-input-text>
-                                                                </div>
-                                                                <!-- end row -->
-                                                                <x-input-radio-or-check label="Lower Limbs"
-                                                                    :records="$physiotherapyConstants::$range">
-                                                                </x-input-radio-or-check>
-                                                                <div class="mb-3">
-                                                                    <label for="formrow-firstname-input"
-                                                                        class="form-label">Left</label>
-                                                                    <x-input-text name="left" placeholder="">
-                                                                    </x-input-text>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="formrow-firstname-input"
-                                                                        class="form-label">Right</label>
-                                                                    <x-input-text name="right" placeholder="">
-                                                                    </x-input-text>
-                                                                </div>
-                                                             <!-- end row -->
-                                                                <x-input-radio-or-check label="Neck"
-                                                                    :records="$physiotherapyConstants::$range">
-                                                                </x-input-radio-or-check>
+                                                            <!-- end row -->
+                                                            <x-input-radio-or-check label="Upper limbs"
+                                                                :records="$physiotherapyConstants::$range">
+                                                            </x-input-radio-or-check>
+                                                            <div class="mb-3">
+                                                                <label for="formrow-firstname-input"
+                                                                    class="form-label">Left</label>
+                                                                <x-input-text name="left" placeholder="">
+                                                                </x-input-text>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="formrow-firstname-input"
+                                                                    class="form-label">Right</label>
+                                                                <x-input-text name="right" placeholder="">
+                                                                </x-input-text>
+                                                            </div>
+                                                            <!-- end row -->
+                                                            <x-input-radio-or-check label="Lower Limbs"
+                                                                :records="$physiotherapyConstants::$range">
+                                                            </x-input-radio-or-check>
+                                                            <div class="mb-3">
+                                                                <label for="formrow-firstname-input"
+                                                                    class="form-label">Left</label>
+                                                                <x-input-text name="left" placeholder="">
+                                                                </x-input-text>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="formrow-firstname-input"
+                                                                    class="form-label">Right</label>
+                                                                <x-input-text name="right" placeholder="">
+                                                                </x-input-text>
+                                                            </div>
+                                                            <!-- end row -->
+                                                            <x-input-radio-or-check label="Neck"
+                                                                :records="$physiotherapyConstants::$range">
+                                                            </x-input-radio-or-check>
                                                         </section>
                                                     </div>
                                                 </div>

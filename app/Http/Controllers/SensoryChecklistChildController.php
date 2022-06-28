@@ -118,9 +118,13 @@ class SensoryChecklistChildController extends Controller
      * @param  \App\Models\SensoryChecklistChild  $sensoryChecklistChild
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSensoryChecklistChildRequest $request, SensoryChecklistChild $sensoryChecklistChild)
+    public function update(StoreSensoryChecklistChildRequest $request, SensoryChecklistChild $sensoryChecklistChild)
     {
-        //
+        $this->service->update($sensoryChecklistChild, $request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('sensory-checklist-child.create');
     }
 
     /**

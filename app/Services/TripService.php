@@ -93,88 +93,88 @@ class TripService
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['only_for_staff']);
     }
 
-    public function collectActivities(mixed $data): array
+    private function collectActivities(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['activities']);
     }
 
-    public function collectSecuritySafety(mixed $data): array
+    private function collectSecuritySafety(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['security_safety']);
     }
-    public function collectEquipment(mixed $data): array
+    private function collectEquipment(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['equipment']);
     }
-    public function collectLight(mixed $data): array
+    private function collectLight(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['light']);
     }
-    public function collectKitchen(mixed $data): array
+    private function collectKitchen(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['kitchen']);
     }
-    public function collectBathroom(mixed $data): array
+    private function collectBathroom(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['bathroom']);
     }
-    public function collectFloor(mixed $data): array
+    private function collectFloor(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['floor']);
     }
-    public function collectInstrumentalActivitiesOfDaily(mixed $data): array
+    private function collectInstrumentalActivitiesOfDaily(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['instrumental_activities_of_daily']);
     }
-    public function collectEnvironmentalSafetyRelative(mixed $data): array
+    private function collectEnvironmentalSafetyRelative(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['environmental_safety_relative']);
     }
-    public function collectEnvironmentalSafetyStep(mixed $data): array
+    private function collectEnvironmentalSafetyStep(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['environmental_safety_step']);
     }
-    public function collectWokeUpInTheMorning(mixed $data): array
+    private function collectWokeUpInTheMorning(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['woke_up_in_the_morning']);
     }
-    public function collectReadingWriting(mixed $data): array
+    private function collectReadingWriting(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['reading_writing']);
     }
-    public function collectDailyWork(mixed $data): array
+    private function collectDailyWork(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['daily_work']);
     }
-    public function collectWonWork(mixed $data): array
+    private function collectWonWork(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['won_work']);
     }
-    public function collectLunchTime(mixed $data): array
+    private function collectLunchTime(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['lunch_time']);
     }
-    public function collectRestTime(mixed $data): array
+    private function collectRestTime(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['rest_time']);
     }
-    public function collectAfternoon(mixed $data): array
+    private function collectAfternoon(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['afternoon']);
     }
-    public function collectEvening(mixed $data): array
+    private function collectEvening(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['evening']);
     }
-    public function collectConstructiveWork(mixed $data): array
+    private function collectConstructiveWork(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['constructive_work']);
     }
-    public function collectDinner(mixed $data): array
+    private function collectDinner(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['dinner']);
     }
-    public function collectAfterDinner(mixed $data): array
+    private function collectAfterDinner(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['after_dinner']);
     }
