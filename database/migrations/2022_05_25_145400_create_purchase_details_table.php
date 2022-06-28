@@ -24,6 +24,7 @@ return new class extends Migration
             $table->double('vat', 4, 2)->nullable();
             $table->double('sub_total', 4, 2)->nullable();
             $table->boolean('is_paid', 4, 2)->nullable();
+            $table->string('exp_date')->nullable();
             $table->timestamps();
         });
     }

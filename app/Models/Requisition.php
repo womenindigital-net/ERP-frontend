@@ -14,4 +14,9 @@ class Requisition extends Model
     {
         return $this->hasMany(RequisitionDetail::class);
     }
+
+    public function scopeApproved($query)
+    {
+        return $query->whereApproved(1);
+    }
 }

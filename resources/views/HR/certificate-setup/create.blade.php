@@ -103,7 +103,7 @@
                                     <td>Post Graduation</td>
                                     <td>Create: Karishma Cultural @ 2018-12-27 19:24:14</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1"  data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
                                     <i class="mdi mdi-eye"></i>
                                     </button>
                                     <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i

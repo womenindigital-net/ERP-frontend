@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePurchaseRequest;
 use App\Http\Requests\UpdatePurchaseRequest;
 use App\Models\Purchase;
+use App\Models\Requisition;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class PurchaseController extends Controller
 {
@@ -21,11 +25,16 @@ class PurchaseController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Requisition $requisition
+     *
+     * @return Application|Factory|View
      */
-    public function create()
+    public function create(Requisition $requisition): View|Factory|Application
     {
-        //
+        $data = [
+            'requisition' => Requisition::with('details')->find($requisition->id),
+        ];
+        return view('accounting.purchase.purchase_order', $data);
     }
 
     /**
@@ -86,7 +95,7 @@ class PurchaseController extends Controller
 
     public function purchaseOrder()
     {
-        return view('accounting.purchase.purchase_order');
+
     }
 
     public function purchaseReturn()
