@@ -204,33 +204,33 @@
                                                     <div class="tab-pane" id="Outing">
                                                         <section>
                                                             <!-- Start row -->
-                                                            <x-input-radio-or-check :checked="$basic_functional_area->respect_for_the_coartist?? ''" name="hold_attention"
+                                                            <x-input-radio-or-check :checked="$other_areas->hold_attention?? ''" name="hold_attention"
                                                                 label="মনোযোগ ধরে রাখা"
                                                                 :records="$diaryConstant::$diaryType"
-                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য">
+                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য" secondaryInputLabel="শিক্ষক এর মন্তব্য"  secondaryInputValue="{{ $other_areas->hold_attention_secondary ?? '' }}">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="presentation"
+                                                            <x-input-radio-or-check :checked="$other_areas->presentation?? ''"  name="presentation"
                                                                 label="প্রেজেন্টেশান"
                                                                 :records="$diaryConstant::$diaryType"
-                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য">
+                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য"  secondaryInputValue="{{ $other_areas->presentation_secondary ?? '' }}">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="perticipating_drama"
+                                                            <x-input-radio-or-check :checked="$other_areas->perticipating_drama?? ''"  name="perticipating_drama"
                                                                 label="সবার সাথে নাটকে অংশ নিবে"
                                                                 :records="$diaryConstant::$diaryType"
-                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য">
+                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য"  secondaryInputValue="{{ $other_areas->perticipating_drama_secondary ?? '' }}">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="self_doing_ownwork"
+                                                            <x-input-radio-or-check :checked="$other_areas->self_doing_ownwork?? ''"  name="self_doing_ownwork"
                                                                 label="ব্যক্তিগত অংশ স্বনির্ভর ভাবে করতে পারা"
                                                                 :records="$diaryConstant::$diaryType"
-                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য">
+                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য"  secondaryInputValue="{{ $other_areas->self_doing_ownwork_secondary ?? '' }}">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="others" label="অন্যান্য"
+                                                            <x-input-radio-or-check :checked="$other_areas->others?? ''"  name="others" label="অন্যান্য"
                                                                 :records="$diaryConstant::$diaryType"
-                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য">
+                                                                secondaryInputLabel="শিক্ষক এর মন্তব্য"  secondaryInputValue="{{ $other_areas->others_secondary ?? '' }}">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
                                                         </section>

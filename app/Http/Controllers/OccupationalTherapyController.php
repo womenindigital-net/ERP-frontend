@@ -50,7 +50,7 @@ class OccupationalTherapyController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-        return view('assessment.occupational-therapy.create', $data);
+        return view('assessment.occupational-therapy.edit', $data);
     }
 
     /**

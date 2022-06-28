@@ -64,7 +64,6 @@ final class OccupationalTherapyConstants
     ];
 
     public static array $columnCollections = [
-
         'general'            => [
             'medication_treatment',
             'any_present_medicines',
