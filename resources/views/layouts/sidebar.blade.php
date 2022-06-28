@@ -445,9 +445,7 @@
                                         Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary
-                                        Step
-                                        Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary Step Setup</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('setup.payroll-management.salary_head_setup.create') }}">Salary
@@ -558,28 +556,41 @@
                         <span>HR Admin</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Recruitment</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li> 
+                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li> 
+                                <li><a href="HR.applicant-list.create">Applicant List</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">HR Setup</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
+                                <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
+                                <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
+                                <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
+                                <li><a href="{{ route('HR.facility-package.create') }}">Facility Package Setup</a></li>
+                                <li><a href="{{ route('HR.bonous-package.create') }}">Bonous Package Setup</a></li>
+                                <li><a href="{{ route('HR.currency-setup.create') }}">Currency Setup</a></li>
+                                <li><a href="{{ route('HR.result-setup.create') }}">Result Setup</a></li>
+                                <li><a href="{{ route('HR.Institute-setup.create') }}">Institute Setup</a></li>
+                                <li><a href="{{ route('HR.organization-setup.create') }}">Organization Setup </a></li>
+                                <li><a href="{{ route('HR.section-setup.create') }}">Section Setup</a></li>
+                                <li><a href="{{ route('HR.designation-setup.create') }}">Designation Setup</a></li>
+                                <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a></li> 
+                            </ul>
+                        </li>
                         <li><a href="{{ route('HR.warning-notice.create') }}">Warning Notice</a></li>
                         <li><a href="{{ route('HR.show-case-notice.create') }}">Show Case Notice</a></li>
                         <li><a href="{{ route('HR.advice-letter.create') }}">Advice Letter</a></li>
                         <li><a href="{{ route('HR.employee-leave-status.create') }}">Employee Leave Status</a></li>
-                        <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
-                        <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
-                        <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
-                        <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
-                        <li><a href="{{ route('HR.facility-package.create') }}">Facility Package Setup</a></li>
-                        <li><a href="{{ route('HR.bonous-package.create') }}">Bonous Package Setup</a></li>
-                        <li><a href="{{ route('HR.currency-setup.create') }}">Currency Setup</a></li>
-                        <li><a href="{{ route('HR.result-setup.create') }}">Result Setup</a></li>
-                        <li><a href="{{ route('HR.Institute-setup.create') }}">Institute Setup</a></li>
-                        <li><a href="{{ route('HR.organization-setup.create') }}">Organization Setup </a></li>
-                        <li><a href="{{ route('HR.section-setup.create') }}">Section Setup</a></li>
                         <li><a href="{{ route('HR.attendence.create') }}">Attendence</a></li>
-                        <li><a href="{{ route('HR.designation-setup.create') }}">Designation Setup</a></li>
                         <li><a href="{{ route('HR.leave-application.create') }}">Leave Application</a></li>
-                        <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a></li>
-                        <li><a href="HR.notice-board.create">Notice Board</a></li>
-                        <li><a href="">Employee Attendance</a></li>
-                        <li><a href="">Employee Attendance (short)</a></li>
+                        <li><a href="{{ route('HR.notice-board.create') }}">Notice Board</a></li>
+                        {{-- <li><a href="">Employee Attendance</a></li>
+                        <li><a href="">Employee Attendance (short)</a></li> --}}
                     </ul>
                 </li>
             </ul>
