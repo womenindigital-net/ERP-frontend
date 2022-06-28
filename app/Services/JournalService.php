@@ -59,8 +59,7 @@ class JournalService
 
         $detailInfos = $validated['journal'];
         unset($validated['journal']);
-        dd([$validated, $detailInfos]);
-
+        
         return [$validated, $detailInfos];
     }
 

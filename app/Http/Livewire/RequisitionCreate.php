@@ -43,11 +43,10 @@ class RequisitionCreate extends Component
         UserRepository $userRepository,
         WarehouseRepository $warehouseRepository,
         StockRepository $stockRepository,
-    )
-    {
+    ) {
         $this->inputs[] = $this->numberOfItems;
         $this->service = $service;
-        $this->repo =$repository;
+        $this->repo = $repository;
         $this->productService = $productService;
         $this->projectRepo = $projectRepository;
         $this->userRepo = $userRepository;

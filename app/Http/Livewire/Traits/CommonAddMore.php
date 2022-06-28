@@ -25,6 +25,7 @@ trait CommonAddMore
         $this->inputs[] = $this->numberOfItems;
     }
 
+
     public function submit()
     {
         $this->service->store($this->validate());

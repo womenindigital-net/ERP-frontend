@@ -10,6 +10,7 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SaleVoucherController;
 use App\Http\Controllers\StockAssignController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\StockReceiveController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
@@ -19,6 +20,9 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'donation-and-other' => DonationController::class,
         'requisition' => RequisitionController::class,
         'stock-assign' => StockAssignController::class,
+
+
+        'stock-receive' => StockReceiveController::class,
     ]);
 
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
@@ -44,7 +48,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::get('advance-payment-list', [PaymentController::class, 'advancePaymentList'])->name('advance.payment.list');
     Route::get('bank-to-bank-list', [PaymentController::class, 'bankToBankList'])->name('bank.to.bank.list');
 
-    Route::get('stock-receive', [StockController::class, 'stockReceive'])->name('stock-receive');
+    // Route::get('stock-receive', [StockController::class, 'stockReceive'])->name('stock-receive');
     Route::get('finished-goods', [StockController::class, 'finishedGoods'])->name('finished-goods');
     Route::get('material-collect', [StockController::class, 'materialCollect'])->name('material-collect');
     Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');

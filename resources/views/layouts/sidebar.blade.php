@@ -77,7 +77,7 @@
                         <span>Stock Management</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('stock-receive') }}">Stock Receive</a></li>
+                        <li><a href="{{ route('stock-receive.create') }}">Stock Receive</a></li>
                         <li><a href="{{ route('finished-goods') }}">Finished Goods</a></li>
                         <li><a href="{{ route('material-collect') }}">Material Collects</a></li>
                         <li><a href="{{ route('stock-transfer') }}">Stock Transfer</a></li>

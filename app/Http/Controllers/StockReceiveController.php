@@ -25,7 +25,7 @@ class StockReceiveController extends Controller
      */
     public function create()
     {
-        //
+        return view('stock-management.stock_receive');
     }
 
     /**

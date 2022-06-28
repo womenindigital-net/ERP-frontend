@@ -12,9 +12,9 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($records as $record)
+            @foreach($records as $key => $record)
                 <tr>
-                    <td></td>
+                    <td>{{ ++$key }}</td>
                     <td>{{$record->title}}</td>
                     <td>{{$record->date}}</td>
                     <td>{{$record->details->count()}}</td>
