@@ -11,11 +11,11 @@ class MedicineAdminList extends Component
 {
     use WithPagination, CommonListElements;
 
-    private MedicineAdminRepository $medicineAdminRepo;
+    private MedicineAdminRepository $repo;
 
-    public function boot(MedicineAdminRepository $medicineAdminRepo)
+    public function boot(MedicineAdminRepository $repo)
     {
-        $this->medicineAdminRepo = $medicineAdminRepo;
+        $this->repo = $repo;
     }
 
     public function toggleApprove($recordId)
@@ -26,14 +26,14 @@ class MedicineAdminList extends Component
 
     public function delete($id)
     {
-        $this->medicineAdminRepo->delete($id);
+        $this->repo->delete($id);
         $this->dispatchBrowserEvent('notify', 'Deleted');
     }
 
     public function render()
     {
         $data = [
-            'records' => $this->medicineAdminRepo->getListData($this->perPage, $this->search)
+            'records' => $this->repo->getListData($this->perPage, $this->search)
         ];
         return view('livewire.medicine-admin-list', $data);
     }

@@ -37,7 +37,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'student' => StudentController::class,
         'case-history' => CaseHistoryController::class,
         'social-communication' => SocialController::class,
-        'madicine-admin' => MedicineAdminController::class,
+        'medicine-admin' => MedicineAdminController::class,
         'incident-record' => IncidentRecordController::class,
         'ot-assessment' => OtAssessmentController::class,
         'trip' => TripController::class,
@@ -63,7 +63,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'vocational-evaluation' => VocationalEvalutionController::class,
         'student-income' => StudentIncomeController::class,
         'student-attendance' => StudentAttendanceController::class,
-        //        'another' => \App\Http\Controllers\StudentController::class,
+        // 'another' => \App\Http\Controllers\StudentController::class,
     ]);
 
     //    Route::get('appointment', [StudentController::class, 'appointment'])->name('student.appointment');

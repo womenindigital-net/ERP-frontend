@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TripRequest;
 use App\Models\Trip;
+use App\Repositories\StudentRepository;
 use App\Repositories\TripRepository;
+use App\Repositories\UserRepository;
 use App\Services\TripService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -16,11 +18,14 @@ class TripController extends Controller
 {
     private TripService $service;
     private TripRepository $repo;
+    // private StudentRepository $userRepo;
+    private UserRepository $userRepo;
 
-    public function __construct(TripService $service, TripRepository $repository)
+    public function __construct(TripService $service, TripRepository $repository, UserRepository $userRepo)
     {
         $this->service = $service;
         $this->repo    = $repository;
+        $this->userRepo    = $userRepo;
     }
 
     /**
@@ -40,7 +45,10 @@ class TripController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        return view('student.dairy.trip.create');
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        ];
+        return view('student.dairy.trip.create', $data);
     }
 
     /**
@@ -80,10 +88,31 @@ class TripController extends Controller
      */
     public function edit(Trip $trip): View|Factory|Application
     {
-//        dd($trip->activities_of_daily_living);
         $data = [
             'record' => $trip,
             'activitiesOfDailyLiving' => $trip->activities_of_daily_living,
+            'onlyForStaff' => $trip->only_for_staff,
+            'activities' => $trip->activities,
+            'securitySafety' => $trip->security_safety,
+            'equipment' => $trip->equipment,
+            'light' => $trip->light,
+            'kitchen' => $trip->kitchen,
+            'bathroom' => $trip->bathroom,
+            'floor' => $trip->floor,
+            'instrumentalActivitiesOfDaily' => $trip->instrumental_activities_of_daily,
+            'environmentalSafetyRelative' => $trip->environmental_safety_relative,
+            'environmentalSafetyStep' => $trip->environmental_safety_step,
+            'wokeUpInTheMorning' => $trip->woke_up_in_the_morning,
+            'readingWriting' => $trip->reading_writing,
+            'dailyWork' => $trip->daily_work,
+            'wonWork' => $trip->won_work,
+            'lunchTime' => $trip->lunch_time,
+            'restTime' => $trip->rest_time,
+            'afternoon' => $trip->afternoon,
+            'evening' => $trip->evening,
+            'constructiveWork' => $trip->constructive_work,
+            'dinner' => $trip->dinner,
+            'afterDinner' => $trip->after_dinner,
         ];
         return view('student.dairy.trip.edit', $data);
     }

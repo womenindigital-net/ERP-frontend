@@ -4,7 +4,7 @@
     @lang('translation.Login') 2
 @endsection
 
-@section('css')
+        @section('css')
     <!-- owl.carousel css -->
     <link rel="stylesheet" href="{{ URL::asset('/assets/libs/owl.carousel/owl.carousel.min.css') }}">
 @endsection

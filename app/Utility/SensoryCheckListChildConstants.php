@@ -2,7 +2,7 @@
 
 namespace App\Utility;
 
-final class SensoryCheckList
+final class SensoryCheckListChildConstants
 {
 
     const AVOIDS = "AVOIDS";
@@ -18,11 +18,6 @@ final class SensoryCheckList
     ];
 
     public static array $columnCollections = [
-        'sensory_checklist'            => [
-            'collection_date',
-            'teacher_id',
-            'candidate_id',
-        ],
         'signs_of_tactile_dysfunction' => [
             'hypersensitivity_to_touch',
             'becomes_fearful',
@@ -33,7 +28,6 @@ final class SensoryCheckList
             'complains_about_having_hair_brushed',
             'bothered_by_rough_bed_sheets',
             'avoids_group_situations',
-            'complains_about_having_hair_brushed',
             'resists_friendly',
             'dislikes_kisses',
             'appears_fearful_of',
@@ -58,12 +52,12 @@ final class SensoryCheckList
             'may_refuse_to_walk_barefoot_on_grass_or_sand',
             'may_walk_on_toes_only',
         ],
-        'Hyposensitivity To Touch (Under-Responsive)'   => [
+        'hyposensitivity_to_touch'   => [
             'may_crave_touch',
             'is_not_aware_of_being_touched',
             'is_not_bothered_by_injuries',
             'may_not_be_aware_that_hands',
-            'may_be_self-abusive',
+            'may_be_self_abusive',
             'mouths_objects_excessively',
             'frequently_hurts',
             'repeatedly_touches_surfaces',
@@ -73,9 +67,8 @@ final class SensoryCheckList
         ],
 
 
-        'Poor Tactile Perception And Discrimination'            => [
+        'poor_tactile_perception_and_discrimination'            => [
             'has_difficulty_with_fine_motor',
-            'may_not_be_able_to_identify',
             ' maybe_afraid_of_the_dark',
             'may_be_a_messy_dresser',
             ' looks_disheveled',
@@ -87,39 +80,40 @@ final class SensoryCheckList
             ' crayons_or_silverware',
             ' continues_to_mouth_objects',
             'has_difficulty_figuring_out',
+            'may_not_be_able_to_identify',
         ],
-        'Signs Of Vestibular Dysfunction > Hypersensitivity To Movement (Over-Responsive)'            => [
+        'signs_of_vestibular_dysfunction'            => [
             'avoids_dislikes_playground_equipment',
             'prefers_sedentary_tasks',
             'avoids_dislikes_elevators',
             'may_physically_cling_to_an_adult_they_trust',
             'may_appear_terrified_offalling_even',
-            'afraid_of_heights_even_the_height_of_a_curb_or_step',
-            'fearful_of_feet_leaving_the_ground',
-            'fearful_of_going_up_or_down_stairs_or_walking_on_uneven_surfaces',
+            'afraid_of_heights',
+            'fearful_of_feet',
+            'fearful_of_going_up',
             'afraid_of_being_tipped_upside_down',
             'startles_if_someone_else_moves_them',
             'as_an_infant',
             'may_be_fearful_of',
-            'may_have_disliked_being_placed_',
-            'loses_balance_easily_and_may_appear_clumsy',
-            'fearful_of_activities_which_require_good_balance',
-            'avoids_rapid_or_rotating_movements',
+            'may_have_disliked_being_placed',
+            'loses_balance_easily',
+            'Fearful_of_activities',
+            'Avoids_rapid_or_rotating_movements',
         ],
-        'Signs Of Vestibular Dysfunction > Hyposensitivity To Movement (Under-Responsive)'            => [
+        'signs_of_vestibular_dysfunction_under'            => [
             'in_constant_motion_cant_seem_to_sit_still',
             'craves_fast',
             'loves_being_tossed_in_the_air',
-            'could_spin_for_hours_and_never_appear_to_be_dizzy',
-            'loves_the_fast_intense_and_or_or_scary_rides_at_amusement_parks',
+            'could_spin_for_hours',
+            'loves_the_fast',
             'always_jumping_on_furniture',
             'loves_to_swing_as_high_as_possible',
-            'is_a_thrill_seeker_dangerous_at_times',
-            'always_running_jumping_hopping_etc_instead_of_walking',
-            'rocks_body_shakes_leg_or_head_while_sitting',
+            'is_a_thrill_seeker',
+            'always_running',
+            'rocks_body',
             'likes_sudden',
         ],
-        'Signs Of Vestibular Dysfunction > . Poor Muscle Tone And/Or Coordination'            => [
+        'signs_of_vestibular_dysfunction_coordination'            => [
             'has_a_limp',
             'frequently_slumps',
             'difficulty_simultaneously_lifting_head',
@@ -135,29 +129,29 @@ final class SensoryCheckList
             'may_appear_ambidextrous',
             'has_difficulty_licking',
             'seems_to_be_unsure_about',
-            'difficulty_learning_exercise_',
+            'difficulty_learning_exercise',
         ],
-        'Signs Of Proprioceptive Dysfunction > Sensory Seeking Behaviors'            => [
-            'seeks_out_jumping_bumping_and_crashing_activities',
+        'signs_of_vestibular_dysfunction_behaviors'            => [
+            'seeks_out_jumping_bumping',
             'stomps_feet_when_walking',
             'kicks_his_her_feet_on_floor_or_chair_while_sitting_at_desk_table',
             'bites_or_sucks_on_fingers_and',
             'loves_to_be_tightly_wrapped',
             'prefrs_clothees',
-            'may_not_understand_the_idea_',
-            'loves_or_seeks_out_squishing_activities',
+            'may_not_understand_the_idea',
+            'loves_or_seeks_out',
             'enjoys_bear_hugs',
             'excessive_banging',
-            'loves_roughhousing_and_tackling_or_wrestling_games',
+            'loves_roughhousing_and_tackling',
             'frequently_falls_on_floor_intentionally',
             'would_jump_on_a_trampoline',
             'grinds_his_her_teeth_throughout_the_day',
             'loves_pushing_pulling',
             'loves_jumping_off_furniture',
-            'frequently_hits_bumps_or_pushes_other_children',
-            'chews_on_pens_straws_shirt_sleeves_etc',
+            'frequently_hits',
+            'chews_on_pens',
         ],
-        'Signs Of Proprioceptive Dysfunction > 2. Difficulty With "Grading Of Movement"'            => [
+        'signs_of_vestibular_dysfunction_movement'            => [
             'misjudges_how_much_to_flex',
             'difficulty_regulating_pressure',
             'kicks_his_her_feet_on_floor',

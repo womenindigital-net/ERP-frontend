@@ -64,9 +64,7 @@ final class OccupationalTherapyConstants
     ];
 
     public static array $columnCollections = [
-     
-        'General'            => [
-            'medication_treatment',
+        'general'            => [
             'medication_treatment',
             'any_present_medicines',
             'separate_home_equipment',
@@ -75,7 +73,7 @@ final class OccupationalTherapyConstants
         ],
 
 
-        'Muscle Tone'                  => [
+        'muscle_tone'                  => [
             'upper_limbs',
             'upper_left',
             'upper_right',
@@ -86,14 +84,14 @@ final class OccupationalTherapyConstants
             'trunk_or_neck_right',
         ],
 
-        'Range of movement'              => [
+        'range_of_movement'              => [
             'range_upper_limbs',
             'range_or_neck_left',
             'range_or_neck_right',
             'range_lower_limbs_two',
         ],
 
-        'Functional Gross Motor'            => [
+        'functional_gross_motor'            => [
             'sitting',
             'standing',
             'ball_skill',
@@ -102,16 +100,17 @@ final class OccupationalTherapyConstants
             'running',
             'jumping',
         ],
-        'Transitional Movements'            => [
-            'rolling_supine_to_prone',
+        'transitional_movements'            => [
+            'rolling_supine_to_prone_one',
             'continuous_rolling',
             'box_sit_to_stand',
             'kneeling_to_stand',
             'prone_to_supine',
             'lying_to_sit',
             'cross_sit_to_stand',
+            'rolling_supine_to_prone'
         ],
-        'Fine motor Skill'            => [
+        'fine_motor_skill'            => [
             'dominance',
             'reach',
             'grasp_type',
@@ -124,12 +123,12 @@ final class OccupationalTherapyConstants
             'writing_skills',
             'grasp_type',
         ],
-        'Automatic Reaction'            => [
+        'automatic_reaction'            => [
             'protective_reactions',
             'equilibrium_reaction',
         ],
 
-        'Sensory Skill (Normal/Hypo response)'            => [
+        'sensory_skill'            => [
             'tactile',
             'visual',
             'auditory',
@@ -137,15 +136,15 @@ final class OccupationalTherapyConstants
             'proprioceptive',
             'vestibular',
         ],
-        'Visual Perception'            => [
+        'visual_perception'            => [
             'visual_discrimination',
             'visual_memory',
             'visual_figure_ground',
-            'visual Spatial',
+            'visual_Spatial',
             'behavior',
             'social_interaction',
         ],
-        'Activities of Daily living (ADL’s)'            => [
+        'activities_of_daily_living'            => [
             'eating',
             'brushing_teeth',
             'dressing',
@@ -153,9 +152,11 @@ final class OccupationalTherapyConstants
             'bathing',
             'any_more_information',
             'activities_of_interest',
+            'any_more_information',
+            'leisure'
         ],
-        'Strength'            => [
-            'physical_(gross_motor_or_fine_motor)',
+        'strength'            => [
+            'physical',
             'cognitive',
             'strength_behavioral',
             'strength_communication',
@@ -163,13 +164,13 @@ final class OccupationalTherapyConstants
             'adls',
             'emotional',
         ],
-        'Signature'            => [
+        'signature'            => [
             'therapist_signature',
             'designation_organization',
             'supervisor_signature',
             'designation_name',
         ],
-        'Cognitive Skills'            => [
+        'cognitive_skills'            => [
             'attention',
             'problem_solving',
             'able_to_follow_instruction',
@@ -179,7 +180,7 @@ final class OccupationalTherapyConstants
             'body_co_ordination',
             'bilateral_integration',
         ],
-        'Treatment Plan'            => [
+        'treatment_Plan'            => [
             'problem_list',
             'treatment_plan',
             'progress',

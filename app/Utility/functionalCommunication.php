@@ -2,11 +2,11 @@
 
 namespace App\Utility;
 
-final class SensoryCheckList
+final class FunctionalCommunication
 {
     public static array $columnCollections = [
 
-        'Speech'            => [
+        'speech'            => [
             'talk_too_loud_for_the_context',
             'talk_too_loud_for_the_context_secondary',
             'speech_is_hard_to_understand',
@@ -26,7 +26,7 @@ final class SensoryCheckList
             'speech_sounds_sign_song',
             'speech_sounds_sign_song_secondary',
         ],
-        'Body Language'            => [
+        'body_language'            => [
             'talk_too_quietly_for_the_context',
             'talk_too_quietly_for_the_context_secondary',
             'body_posture_is_too_rigid',
@@ -50,7 +50,7 @@ final class SensoryCheckList
             'does_not_use_eye_contact',
             'does_not_use_eye_contact_secondary',
         ],
-        'Words usages / Vocabulary'            => [
+        'words_usages_vocabulary'            => [
             'repeats_words_or_phrases_or_sentences',
             'repeats_words_or_phrases_or_sentences_secondary',
             'Has_difficulties_using',
@@ -70,12 +70,12 @@ final class SensoryCheckList
             'reverses_personal_pronouns',
             'reverses_personal_pronouns_secondary',
         ],
-        'Sentence structure'            => [
+        'sentence_structure'            => [
             'lacks_variety_in_use_of_sentence_structure',
             'lacks_variety_in_use_of_sentence_structure_secondary',
         ],
 
-        'Relaying information'            => [
+        'relaying_information'            => [
             'leaves_out_important_information_when_retelling_a_story_describing_an_event_giving_directions_or_giving_a_message',
             'leaves_out_important_information_when_retelling_a_story_describing_an_event_giving_directions_or_giving_a_message_secondary',
             'has_difficulties_relaying_information_in_a_sequential_way',
@@ -85,7 +85,7 @@ final class SensoryCheckList
             'is_slow_in_answering_questions_in_class_or_work',
             'is_slow_in_answering_questions_in_class_or_work_secondary',
         ],
-        'Following Directions'            => [
+        'following_directions'            => [
             'has_difficulty_understanding_what_to_do',
             'has_difficulty_understanding_what_to_do_secondary',
             'often_asks_for_repeats_or_explanations_of_a_direction_or_assignment',
@@ -101,11 +101,11 @@ final class SensoryCheckList
             'has_difficulty_comprehending_questions',
             'has_difficulty_comprehending_questions_secondary',
         ],
-        'Attention and Memory'            => [
+        'attention_and_memory'            => [
             'has_an_excellent_rote_memory_with_poor_comprehension',
             'has_an_excellent_rote_memory_with_poor_comprehension_secondary',
             'often_looks_away_or_',
-            'often_looks_away_or_',
+            'often_looks_away_or_secondary',
             'has_difficulty_remembering_orally_presented_information',
             'has_difficulty_remembering_orally_presented_information_secondary',
             'has_a_hard_time_picking_out_the_main_points_of_an_oral_presentation_or_story',
@@ -131,7 +131,7 @@ final class SensoryCheckList
             'response_to_speech_is_delayed',
             'response_to_speech_is_delayed_secondary',
         ],
-        'Conversation / Social Communication'            => [
+        'conversation_social_communication'            => [
             'protective_reactions',
             'equilibrium_reaction',
             'demonstrates_pragmatic_difficulties_despite_adequate_scores_on_standardized_tests',
@@ -168,6 +168,8 @@ final class SensoryCheckList
             'has_difficulty_adapting_language_to_audience_or_setting_secondary',
             'talks_too_much_in_a_conversation_with_peers_or_adults',
             'talks_too_much_in_a_conversation_with_peers_or_adults_secondary',
+            'talks_too_little_in_a_conversation_with_peers_adults',
+            'talks_too_little_in_a_conversation_with_peers_adults_secondary',
             'bringing_up_the_same_topic_repeatedly',
             'bringing_up_the_same_topic_repeatedly_secondary',
             'gives_recitative_or_redundant_information',
@@ -207,7 +209,7 @@ final class SensoryCheckList
             'appear_to_have_difficulty_judging_listener_interest',
             'appear_to_have_difficulty_judging_listener_interest_secondary',
         ],
-        'Play skill'            => [
+        'play_skill'            => [
             'appears_more_interested_in_objectives_than_people',
             'appears_more_interested_in_objectives_than_people_secondary',
             'does_not_establish_joint_focus',

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Repositories\UserRepository;
 use App\Models\SensoryChecklistChild;
+use Illuminate\Http\RedirectResponse;
 use App\Repositories\StudentRepository;
-use App\Repositories\SensoryChecklistChildRepository;
+use Illuminate\Support\Facades\Session;
+use App\Services\SensoryChecklistChildService;
 use App\Http\Requests\StoreSensoryChecklistChildRequest;
 use App\Http\Requests\UpdateSensoryChecklistChildRequest;
 
@@ -13,16 +15,19 @@ class SensoryChecklistChildController extends Controller
 {
 
     private UserRepository $userRepo;
-    private SensoryChecklistChildRepository $sensoryRepo;
     private StudentRepository $studentRepo;
+    private SensoryChecklistChildService $service;
     public $record;
 
-    public function __construct(UserRepository $userRepository, SensoryChecklistChildRepository $Repository,  StudentRepository $studentRepository)
-    {
-        $this->userRepo    = $userRepository;
+    public function __construct(
+        UserRepository $userRepository,
+        SensoryChecklistChildService $sensoryService,
+        StudentRepository $studentRepository
+    ) {
+        $this->userRepo = $userRepository;
+        $this->service = $sensoryService;
         $this->studentRepo = $studentRepository;
-        $this->sensoryRepo = $Repository;
-    }   
+    }
 
 
     /**
@@ -53,14 +58,16 @@ class SensoryChecklistChildController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreSensoryChecklistChildRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param  StoreSensoryChecklistChildRequest  $request
+     * @return RedirectResponse
      */
-    public function store(StoreSensoryChecklistChildRequest $request)
+    public function store(StoreSensoryChecklistChildRequest $request): RedirectResponse
     {
-        $this->sensoryRepo->store($request->validated());
+        $this->service->store($request->validated());
 
-        return redirect()->back();
+        Session::flash('success');
+
+        return back();
     }
 
     /**
@@ -71,7 +78,25 @@ class SensoryChecklistChildController extends Controller
      */
     public function show(SensoryChecklistChild $sensoryChecklistChild)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'id' => $sensoryChecklistChild['id'],
+            'collection_date' => $sensoryChecklistChild['collection_date'],
+            'teacher_id' => $sensoryChecklistChild['teacher_id'],
+            'student_id' => $sensoryChecklistChild['student_id'],
+            'sensory_checklist' => $sensoryChecklistChild['sensory_checklist'],
+            'signs_of_tactile_dysfunction' => $sensoryChecklistChild['signs_of_tactile_dysfunction'],
+            'hyposensitivity_to_touch' => $sensoryChecklistChild['hyposensitivity_to_touch'],
+            'poor_tactile_perception_and_discrimination' => $sensoryChecklistChild['poor_tactile_perception_and_discrimination'],
+            'signs_of_vestibular_dysfunction' => $sensoryChecklistChild['signs_of_vestibular_dysfunction'],
+            'signs_of_vestibular_dysfunction_under' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_under'],
+            'signs_of_vestibular_dysfunction_coordination' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_coordination'],
+            'signs_of_vestibular_dysfunction_behaviors' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_behaviors'],
+            'signs_of_vestibular_dysfunction_movement' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_movement'],
+        ];
+
+        return view('assessment.sensory-checklist-child.view', $data);
     }
 
     /**
@@ -82,7 +107,26 @@ class SensoryChecklistChildController extends Controller
      */
     public function edit(SensoryChecklistChild $sensoryChecklistChild)
     {
-        //
+
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'id' => $sensoryChecklistChild['id'],
+            'collection_date' => $sensoryChecklistChild['collection_date'],
+            'teacher_id' => $sensoryChecklistChild['teacher_id'],
+            'student_id' => $sensoryChecklistChild['student_id'],
+            'sensory_checklist' => $sensoryChecklistChild['sensory_checklist'],
+            'signs_of_tactile_dysfunction' => $sensoryChecklistChild['signs_of_tactile_dysfunction'],
+            'hyposensitivity_to_touch' => $sensoryChecklistChild['hyposensitivity_to_touch'],
+            'poor_tactile_perception_and_discrimination' => $sensoryChecklistChild['poor_tactile_perception_and_discrimination'],
+            'signs_of_vestibular_dysfunction' => $sensoryChecklistChild['signs_of_vestibular_dysfunction'],
+            'signs_of_vestibular_dysfunction_under' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_under'],
+            'signs_of_vestibular_dysfunction_coordination' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_coordination'],
+            'signs_of_vestibular_dysfunction_behaviors' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_behaviors'],
+            'signs_of_vestibular_dysfunction_movement' => $sensoryChecklistChild['signs_of_vestibular_dysfunction_movement'],
+        ];
+
+        return view('assessment.sensory-checklist-child.edit', $data);
     }
 
     /**
@@ -92,9 +136,13 @@ class SensoryChecklistChildController extends Controller
      * @param  \App\Models\SensoryChecklistChild  $sensoryChecklistChild
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSensoryChecklistChildRequest $request, SensoryChecklistChild $sensoryChecklistChild)
+    public function update(StoreSensoryChecklistChildRequest $request, SensoryChecklistChild $sensoryChecklistChild)
     {
-        //
+        $this->service->update($sensoryChecklistChild, $request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('sensory-checklist-child.create');
     }
 
     /**

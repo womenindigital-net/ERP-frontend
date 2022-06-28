@@ -24,16 +24,12 @@ class StoreMedicineAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable',
+            'student_id' => 'nullable',
             'prescription_id' => 'nullable',
             'given_id' => 'nullable',
-            'given_date' => 'nullable',
-            'given_time' => 'nullable',
-            'medicine' => 'nullable',
-            'amountGiven' => 'nullable',
-            'amountgivenunit' => 'nullable',
-            'note' => 'nullable',
-            
+            'date' => 'nullable',
+            'time' => 'nullable',
+            'medicineAdmin.*' => 'nullable',
         ];
     }
 }

@@ -7,6 +7,7 @@ use App\Models\MedicineAdmin;
 class MedicineAdminRepository extends BaseRepository
 {
     protected string $model = MedicineAdmin::class;
+
     public function getListData($perPage, $search)
     {
         return $this->model::when($search, function ($query) use ($search) {

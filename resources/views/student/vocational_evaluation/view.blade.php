@@ -13,19 +13,22 @@
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <form>
+                            {{-- @dd($records) --}}
                             <div class="modal-body">
                                 <!-- journal form start -->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Select Name</label>
-                                            <x-input-select name="student_id" :records="$students" />
+                                            <x-input-select :selected="$records->student_id" name="student_id"
+                                                :records="$students" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label>Select Date</label>
-                                            <x-input-text name="date" type="date" placeholder="mm/dd/yyyy">
+                                            <x-input-text value="{{ $records->date }}" name="date" type="date"
+                                                placeholder="mm/dd/yyyy">
                                             </x-input-text>
                                         </div>
                                     </div>
@@ -72,6 +75,7 @@
                                                         </div>
                                                     </div>
                                                     <div data-repeater-list="vocational">
+                                                        @foreach ($records->details as $detail)
                                                         <div data-repeater-item class="row px-3">
                                                             <div class="col-lg-2 d-flex p-0 pb-1 align-items-center">
                                                                 <div class="w-100">
@@ -82,7 +86,9 @@
                                                                         <optgroup label="{{$category['name']}}">
                                                                             @foreach($category['children'] as
                                                                             $childCategory)
-                                                                            <option value="{{$childCategory['id']}}">
+                                                                            <option value="{{$childCategory['id']}}"
+                                                                                @if(($childCategory['id'])==($detail->
+                                                                                category_id))selected @endif>
                                                                                 {{$childCategory['name']}}
                                                                             </option>
                                                                             @endforeach
@@ -92,39 +98,50 @@
                                                                 </div>
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="production" />
+                                                                <x-input-text value="{{ $detail->production }}"
+                                                                    name="production" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="target" />
+                                                                <x-input-text value="{{ $detail->target }}"
+                                                                    name="target" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="wastage" />
+                                                                <x-input-text value="{{ $detail->wastage }}"
+                                                                    name="wastage" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="time_taken" />
+                                                                <x-input-text value="{{ $detail->time_taken }}"
+                                                                    name="time_taken" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="work_quality" />
+                                                                <x-input-text value="{{ $detail->work_quality }}"
+                                                                    name="work_quality" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="delivery_complete" />
+                                                                <x-input-text value="{{ $detail->delivery_complete }}"
+                                                                    name="delivery_complete" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="follow_ins" />
+                                                                <x-input-text value="{{ $detail->follow_ins }}"
+                                                                    name="follow_ins" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="generalizatio" />
+                                                                <x-input-text value="{{ $detail->generalizatio }}"
+                                                                    name="generalizatio" />
                                                             </div>
                                                             <div class=" col p-0 pb-1">
-                                                                <x-input-text name="adaption" />
+                                                                <x-input-text value="{{ $detail->adaption }}"
+                                                                    name="adaption" />
                                                             </div>
                                                             <div class="col-lg-2 p-0 pb-1 align-self-center d-flex">
-                                                                <x-input-text name="remarks" />
+                                                                <x-input-text value="{{ $detail->remarks }}"
+                                                                    name="remarks" />
                                                                 <button class="btn btn-danger btn-rounded ms-2">
                                                                     <i class="fas fa-trash-alt"></i>
                                                                 </button>
                                                             </div>
                                                         </div>
+                                                        @endforeach
                                                     </div>
                                                     <div class="">
                                                         <button data-repeater-create type="button"

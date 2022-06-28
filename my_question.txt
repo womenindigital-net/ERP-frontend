@@ -8,5 +8,9 @@ categorySeeder
 
 sell voucher no edit
 sell return needed
-secendety value not come
+secondary value not come
 Success! mgs always Flash
+vocational-evaluation 
+
+
+medicine Admin 'expire_check['

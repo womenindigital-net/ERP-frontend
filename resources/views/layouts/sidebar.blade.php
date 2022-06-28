@@ -173,7 +173,7 @@
                                     <a href="{{ route('incident-record.create') }}">Incident Record</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('madicine-admin.create') }}">Medicine admin</a>
+                                    <a href="{{ route('medicine-admin.create') }}">Medicine admin</a>
                                 </li>
                                 {{-- <li>
                                     <a href="student.dairy.score-calculation">Score Calculation</a>
@@ -282,15 +282,18 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Program Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('setup.program-setup.prescription.create') }}">Prescription</a></li>
+                                <li> <a href="{{ route('setup.program-setup.prescription.create') }}">Prescription</a>
+                                </li>
                                 <li> <a href="{{ route('setup.program-setup.activity-create.create') }}">Activity
                                         create</a>
                                 </li>
-                                <li> <a href="{{ route('setup.program-setup.tesk-create.create') }}">Task create</a></li>
+                                <li> <a href="{{ route('setup.program-setup.tesk-create.create') }}">Task create</a>
+                                </li>
 
                                 <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight
                                         Setup</a></li>
-                                <li> <a href="{{ route('setup.program-setup.course-setup.create') }}">Course Setup</a></li>
+                                <li> <a href="{{ route('setup.program-setup.course-setup.create') }}">Course Setup</a>
+                                </li>
                                 <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence
                                         card
                                         setup</a></li>
@@ -342,7 +345,8 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation New</a>
+                                    <a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation
+                                        New</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('setup.bank-reconcilation.create') }}">Bank Reconcilation</a>
@@ -399,12 +403,14 @@
                                         Category</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.vocational-marking-subcategory.create') }}">Vocational Marking
+                                    <a href="{{ route('setup.vocational-marking-subcategory.create') }}">Vocational
+                                        Marking
                                         Sub
                                         Category</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.vocational-student-evolution.create') }}">Vocational Student
+                                    <a href="{{ route('setup.vocational-student-evolution.create') }}">Vocational
+                                        Student
                                         Evolution</a>
                                 </li>
                             </ul>
@@ -439,11 +445,13 @@
                                         Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary Step
+                                    <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary
+                                        Step
                                         Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_head_setup.create') }}">Salary Head
+                                    <a href="{{ route('setup.payroll-management.salary_head_setup.create') }}">Salary
+                                        Head
                                         Setup</a>
                                 </li>
                                 <li>
@@ -501,7 +509,8 @@
                                     <a href="{{ route('setup.budget-head-setup.create') }}">Budget Head Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.Budget-Template-setup.create') }}">Budget Template Setup</a>
+                                    <a href="{{ route('setup.Budget-Template-setup.create') }}">Budget Template
+                                        Setup</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('setup.budget-review.create') }}">Budget Review</a>
@@ -554,12 +563,25 @@
                         <li><a href="{{ route('HR.advice-letter.create') }}">Advice Letter</a></li>
                         <li><a href="{{ route('HR.employee-leave-status.create') }}">Employee Leave Status</a></li>
                         <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
-                        <li><a href=""> </a></li>
-                        <li><a href=""> </a></li>
-                        <li><a href=""> </a></li>
+                        <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
+                        <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
+                        <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
+                        <li><a href="{{ route('HR.facility-package.create') }}">Facility Package Setup</a></li>
+                        <li><a href="{{ route('HR.bonous-package.create') }}">Bonous Package Setup</a></li>
+                        <li><a href="{{ route('HR.currency-setup.create') }}">Currency Setup</a></li>
+                        <li><a href="{{ route('HR.result-setup.create') }}">Result Setup</a></li>
+                        <li><a href="{{ route('HR.Institute-setup.create') }}">Institute Setup</a></li>
+                        <li><a href="{{ route('HR.organization-setup.create') }}">Organization Setup </a></li>
+                        <li><a href="{{ route('HR.section-setup.create') }}">Section Setup</a></li>
+                        <li><a href="{{ route('HR.attendence.create') }}">Attendence</a></li>
+                        <li><a href="{{ route('HR.designation-setup.create') }}">Designation Setup</a></li>
+                        <li><a href="{{ route('HR.leave-application.create') }}">Leave Application</a></li>
+                        <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a></li>
+                        <li><a href="HR.notice-board.create">Notice Board</a></li>
+                        <li><a href="">Employee Attendance</a></li>
+                        <li><a href="">Employee Attendance (short)</a></li>
                     </ul>
                 </li>
-
             </ul>
         </div>
         <!-- Sidebar -->

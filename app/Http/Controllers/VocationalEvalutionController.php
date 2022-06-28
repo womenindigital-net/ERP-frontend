@@ -66,6 +66,7 @@ class VocationalEvalutionController extends Controller
      */
     public function store(StoreVocationalEvalutionRequest $request)
     {
+
         $this->vocService->store($request->validated());
         Session::flash('success');
         return redirect()->back();
@@ -94,9 +95,15 @@ class VocationalEvalutionController extends Controller
      * @param  \App\Models\VocationalEvalution  $vocationalEvalution
      * @return \Illuminate\Http\Response
      */
-    public function edit(VocationalEvalution $vocationalEvalution)
+    public function edit(VocationalEvalution $vocational_evaluation)
     {
-        //
+        $data = [
+            'students' => $this->studentRepo->getData(),
+            'categories' => $this->categoryService->getFormattedDataAsOptGroup(),
+            'records' => $this->repo->getRelatedData($vocational_evaluation, ['details']),
+        ];
+
+        return view('student.vocational_evaluation.edit', $data);
     }
 
     /**
@@ -106,9 +113,11 @@ class VocationalEvalutionController extends Controller
      * @param  \App\Models\VocationalEvalution  $vocationalEvalution
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateVocationalEvalutionRequest $request, VocationalEvalution $vocationalEvalution)
+    public function update(StoreVocationalEvalutionRequest $request, VocationalEvalution $vocational_evaluation)
     {
-        //
+        $this->vocService->update($vocational_evaluation, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

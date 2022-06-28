@@ -108,24 +108,13 @@ class RequisitionCreate extends Component
             $this->price[$targetKey] = $productInfo->product->selling_price;
         }
 
-        if (str_starts_with($name, 'qty.')) {
+        if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.')) {
             $targetKey = $this->getTargetKey($name);
 
             if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
                 return;
 
-            if ($this->price[$targetKey] && $this->qty[$targetKey]) {
-                $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - ($this->discount[$targetKey] ?? 0);
-            }
-        }
-
-        if (str_starts_with($name, 'discount.')) {
-            $targetKey = $this->getTargetKey($name);
-
-            if (!$this->available_qty[$targetKey])
-                return;
-
-            if ($this->price[$targetKey] && $this->qty[$targetKey]) {
+            if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - ($this->discount[$targetKey] ?? 0);
             }
         }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\MedicineAdmin;
 use App\Repositories\UserRepository;
+use App\Repositories\DoctorRepository;
 use App\Repositories\StudentRepository;
+use App\Services\MedicineAdminServices;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\MedicineAdminRepository;
 use App\Http\Requests\StoreMedicineAdminRequest;
@@ -14,16 +16,23 @@ class MedicineAdminController extends Controller
 {
     private UserRepository $userRepo;
     private StudentRepository $studentRepo;
-    private MedicineAdminRepository $medicineAdminRepo;
-    
-    public function __construct(UserRepository $userRepo, StudentRepository $studentRepo, MedicineAdminRepository $medicineAdminRepo)
-    {
+    private MedicineAdminRepository $repo;
+    private DoctorRepository $doctorRepo;
+    private MedicineAdminServices $services;
+
+    public function __construct(
+        UserRepository $userRepo,
+        StudentRepository $studentRepo,
+        MedicineAdminRepository $repo,
+        DoctorRepository $doctorRepo,
+        MedicineAdminServices $services
+    ) {
         $this->userRepo = $userRepo;
         $this->studentRepo = $studentRepo;
-        $this->medicineAdminRepo = $medicineAdminRepo;
+        $this->repo = $repo;
+        $this->doctorRepo = $doctorRepo;
+        $this->services = $services;
     }
-
-
 
     /**
      * Display a listing of the resource.
@@ -45,6 +54,7 @@ class MedicineAdminController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'doctors' => $this->doctorRepo->getData(),
         ];
         return view('student.dairy.Medicine-Admin.create', $data);
     }
@@ -57,7 +67,8 @@ class MedicineAdminController extends Controller
      */
     public function store(StoreMedicineAdminRequest $request)
     {
-        $this->medicineAdminRepo->store($request->validated());
+        dd($request->validated());
+        $this->services->store($request->validated());
         Session::flash('success');
         return redirect()->back();
     }
@@ -68,11 +79,13 @@ class MedicineAdminController extends Controller
      * @param  \App\Models\MedicineAdmin  $medicineAdmin
      * @return \Illuminate\Http\Response
      */
-    public function show(MedicineAdmin $medicineAdmin)
+    public function show(MedicineAdmin $medicine_admin)
     {
         $data = [
-            'record' => $this->medicineAdmin = $medicineAdmin,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'doctors' => $this->doctorRepo->getData(),
+            'record' => $this->repo->getRelatedData($medicine_admin, ['details']),
         ];
         return view('student.dairy.Medicine-Admin.view', $data);
     }
@@ -83,11 +96,13 @@ class MedicineAdminController extends Controller
      * @param  \App\Models\MedicineAdmin  $medicineAdmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(MedicineAdmin $medicineAdmin)
+    public function edit(MedicineAdmin $medicine_admin)
     {
         $data = [
-            'record' => $this->medicineAdmin = $medicineAdmin,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'doctors' => $this->doctorRepo->getData(),
+            'record' => $this->repo->getRelatedData($medicine_admin, ['details']),
         ];
         return view('student.dairy.Medicine-Admin.edit', $data);
     }
@@ -99,9 +114,10 @@ class MedicineAdminController extends Controller
      * @param  \App\Models\MedicineAdmin  $medicineAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMedicineAdminRequest $request, MedicineAdmin $medicineAdmin)
+    public function update(StoreMedicineAdminRequest $request, MedicineAdmin $medicine_admin)
     {
-        $this->medicineAdmin->update($medicineAdmin, $request->validated());
+        // dd($request);
+        $this->services->update($medicine_admin, $request->validated());
         Session::flash('success');
         return redirect()->back();
     }

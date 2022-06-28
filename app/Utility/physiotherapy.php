@@ -8,6 +8,14 @@ final class PhysioTherapy
     const HYPER = 'Hyper';
     const HYPO = 'Hypo';
 
+    const RANORMAL = 'Normal';
+    const RESTRICTED = 'Restricted';
+
+    public static array $range = [
+    self:: RANORMAL => 'Normal',
+    self:: RESTRICTED => 'Restricted',
+    ];
+
     public static array $limbs = [
         self::NORMAL => 'Normal',
         self::HYPER => 'Hyper',
@@ -23,7 +31,7 @@ final class PhysioTherapy
         self::HYPO_TONE => 'Hypo Tone',
     ];
     public static array $columnCollections = [
-        'General'            => [
+        'general'            => [
             'birth_history',
             'before_birth',
             'pregnancy',
@@ -35,7 +43,7 @@ final class PhysioTherapy
             'any_present_medicines',
             'home_equipment',
         ],
-        'Visual Perception'            => [
+        'visual_perception'            => [
             'visual_discrimination',
             'visual_memory',
             'visual_figure_ground',
@@ -48,7 +56,7 @@ final class PhysioTherapy
             'choking',
             'drinking',
         ],
-        'Activities of Daily living'            => [
+        'activities_of_daily_living'            => [
             'eating',
             'brushing_teeth',
             'dressing',
@@ -56,12 +64,14 @@ final class PhysioTherapy
             'bathing',
             'does_the_child_attend_school',
             'enter_your_name',
+             'if_yes_enter_school_name',
             'leisure_or_play_activities_of_interest',
+           
         ],
-        'Strength'            => [
+        'strength'            => [
             'please_explain_strength_area',
         ],
-        'Functional Gross Motor'            => [
+        'functional_gross_motor'            => [
             'sitting',
             'crawling',
             'standing',
@@ -70,15 +80,16 @@ final class PhysioTherapy
             'running',
             'ball_skill'
         ],
-        'Transitional Movements'            => [
+        'transitional_movements'            => [
             'prone_to_supine',
             'continuous_rolling',
             'lying_to_sit',
             'box_sit_to_stand',
+            'jumping',
             'cross_sit_to_stand',
             'kneeling_to_stand',
         ],
-        'Fine motor Skill'            => [
+        'fine_motor_skill'            => [
             'dominance',
             'left',
             'right',
@@ -91,17 +102,17 @@ final class PhysioTherapy
             'transfer',
             'writing_skill',
         ],
-        'Automatic Reaction'            => [
+        'automatic_reaction'            => [
             'protective_reactions',
             'equilibrium_reaction',
         ],
-        'Sensory Skill (Normal /Hypo response)'            => [
+        'sensory_skill_normal_hypo_response'            => [
             'tactile',
             'auditory',
             'vestibular',
             'proprioceptive',
         ],
-        'Cognitive Skills'            => [
+        'cognitive_skills'            => [
             'attention',
             'problem_solving',
             'able_to_follow_instruction',
@@ -111,31 +122,33 @@ final class PhysioTherapy
             'body_co_ordination',
             'bilateral_integration',
         ],
-        'Treatment'            => [
+        'treatment'            => [
             'problam_list',
             'treatment_plan',
             'treatment_plann',
             'progress',
         ],
-        'Signature'            => [
+        'signature'            => [
             'therapist_signature',
             'designation',
         ],
-        'Muscle Power'            => [
+        'muscle_power'            => [
             'upper_limbs',
+            'left',
+            'right',
             'lower_limbs',
             'trunk',
         ],
-        'Muscle tone'            => [
+        'muscle_tone'            => [
             //tabel a kono kichu pai nai (name)
         ],
-        'Behavior'            => [
+        'behavior'            => [
             'independence',
             'social_interaction',
             'social_communication',
             'interpersonal',
         ],
-        'Domain Area'            => [
+        'domain_area'            => [
             'physical_Gross_motor_Fine_motor',
             'cognitive',
             'if_yes',
