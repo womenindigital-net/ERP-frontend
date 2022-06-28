@@ -2,7 +2,7 @@
 
 namespace App\Utility;
 
-final class SensoryCheckList
+final class SocialCommunication
 {
     public static array $columnCollections = [
         'pragmatic_objective'            => [
@@ -97,7 +97,7 @@ final class SensoryCheckList
             'ability_to_request_clarification_appropriately',
             'ability_to_request_attention_appropriately',
             'ability_to_request_help_appropriately',
-            
+
         ],
         'prosody'            => [
             'ability_to_use_appropriate_rate_of_speech',

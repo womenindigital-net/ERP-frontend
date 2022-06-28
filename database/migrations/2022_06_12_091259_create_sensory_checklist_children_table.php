@@ -17,6 +17,9 @@ return new class extends Migration
     {
         Schema::create('sensory_checklist_children', function (Blueprint $table) {
             $table->id();
+            $table->string('collection_date')->nullable();
+            $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->foreignIdFor(Student::class, 'student_id')->nullable()->constrained('students')->cascadeOnDelete();
             $table->json('sensory_checklist')->nullable();
             $table->json('signs_of_tactile_dysfunction')->nullable();
             $table->json('hyposensitivity_to_touch')->nullable();

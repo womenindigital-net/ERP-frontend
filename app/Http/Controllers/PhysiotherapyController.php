@@ -4,20 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Physiotherapy;
 use App\Repositories\UserRepository;
+use App\Services\PhysiotherapyService;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\PhysiotherapyRequest;
-use App\Repositories\PhysiotherapyRepository;
-use App\Http\Requests\UpdatePhysiotherapyRequest;
 
 class PhysiotherapyController extends Controller
 {
-    private PhysiotherapyRepository $phyRepo;
+    private PhysiotherapyService $service;
     private StudentRepository $studentRepo;
     public $record;
 
-    public function __construct(PhysiotherapyRepository $phyRepo, UserRepository $userRepository, StudentRepository $studentRepository)
+    public function __construct(PhysiotherapyService $service, UserRepository $userRepository, StudentRepository $studentRepository)
     {
-        $this->phyRepo = $phyRepo;
+        $this->service = $service;
         $this->userRepo    = $userRepository;
         $this->studentRepo = $studentRepository;
     }
@@ -42,7 +42,6 @@ class PhysiotherapyController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-
         return view('assessment.physiotherapy.create', $data);
     }
 
@@ -55,8 +54,11 @@ class PhysiotherapyController extends Controller
      */
     public function store(PhysiotherapyRequest $request)
     {
-        $this->phyRepo->store($request->validated());
-        return redirect()->back();
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('physiotherapy.create');
     }
 
     /**
@@ -73,7 +75,7 @@ class PhysiotherapyController extends Controller
             'record' => $this->record = $physiotherapy,
         ];
 
-        return view('assessment.executive-function.view', $data);
+        return view('assessment.physiotherapy.view', $data);
     }
 
     /**
@@ -84,7 +86,31 @@ class PhysiotherapyController extends Controller
      */
     public function edit(Physiotherapy $physiotherapy)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'id' => $physiotherapy['id'],
+            'collection_date' => $physiotherapy['collection_date'],
+            'teacher_id' => $physiotherapy['teacher_id'],
+            'candidate_id' => $physiotherapy['candidate_id'],
+            'general' => $physiotherapy['general'],
+            'visual_perception' => $physiotherapy['visual_perception'],
+            'activities_of_daily_living' => $physiotherapy['activities_of_daily_living'],
+            'strength' => $physiotherapy['strength'],
+            'functional_gross_motor' => $physiotherapy['functional_gross_motor'],
+            'transitional_movements' => $physiotherapy['transitional_movements'],
+            'fine_motor_skill' => $physiotherapy['fine_motor_skill'],
+            'automatic_reaction' => $physiotherapy['automatic_reaction'],
+            'sensory_skill_normal_hypo_response' => $physiotherapy['sensory_skill_normal_hypo_response'],
+            'cognitive_skills' => $physiotherapy['cognitive_skills'],
+            'treatment' => $physiotherapy['treatment'],
+            'signature' => $physiotherapy['signature'],
+            'muscle_power' => $physiotherapy['muscle_power'],
+            'muscle_tone' => $physiotherapy['muscle_tone'],
+            'behavior' => $physiotherapy['behavior'],
+            'domain_area' => $physiotherapy['domain_area'],
+        ];
+        return view('assessment.physiotherapy.edit', $data);
     }
 
     /**
@@ -96,7 +122,12 @@ class PhysiotherapyController extends Controller
      */
     public function update(PhysiotherapyRequest $request, Physiotherapy $physiotherapy)
     {
-        //
+        dd($request->validated());
+        $this->service->update($physiotherapy, $request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('physiotherapy.create');
     }
 
     /**

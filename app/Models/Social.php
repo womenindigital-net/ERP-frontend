@@ -6,131 +6,158 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Physiotherapy extends Model
+class Social extends Model
 {
     use HasFactory;
 
-    protected function general(): Attribute
+    protected function pragmaticObjective(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function visualPerception(): Attribute
+    protected function personal(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function activitiesOfDailyLiving(): Attribute
+    protected function topicMaintenance(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function strength(): Attribute
+    protected function conversationalStructure(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function functionalGrossMotor(): Attribute
+    protected function wordStructure(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function transitionalMovements(): Attribute
+    protected function mannerEffectiveness(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function fineMotorSkill(): Attribute
+    protected function repairStructures(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function automaticReaction(): Attribute
+    protected function responsiveness(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function sensorySkillNormalHypoResponse(): Attribute
+    protected function instrumentalStatesNeeds(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function cognitiveSkills(): Attribute
+    protected function requesting(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function treatment(): Attribute
+    protected function prosody(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function signature(): Attribute
+    protected function protests(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function musclePower(): Attribute
+    protected function styleOfConversation(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function muscleTone(): Attribute
+    protected function humor(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function behavior(): Attribute
+    protected function greetingsAcknowledgements(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
             set: fn($val) => json_encode($val),
         );
     }
-
-    protected function domainArea(): Attribute
+    protected function problemSolving(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function deceit(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function academyCommunication(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function nonverbalCommunication(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function perspectiveTaking(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function regulatoryGivesCommands(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function socialEmotional(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),
