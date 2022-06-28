@@ -91,30 +91,31 @@
                                     <div class="col-sm-9 col-md-9">
                                         <div class="tab-content">
                                             <div class="tab-pane" id="trip">
-                                                        <section>
+                                                       <section>
+
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
                                                                         <label
                                                                             for="basicpill-firstname-input">Collection
                                                                             Date:</label>
-                                                                        <div class="input-group" id="datepicker2">
-                                                                            <x-input-text name="collection_date"
-                                                                            value="{{ $record->collection_date }}"
-                                                                                type="date" placeholder="mm/dd/yyyy" />
-                                                                        </div><!-- input-group -->
+                                                                        <x-input-text value="{{ $collection_date }}"
+                                                                            name="collection_date" type="date"
+                                                                            placeholder="mm/dd/yyyy">
+                                                                        </x-input-text>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
                                                                         <label
                                                                             for="basicpill-lastname-input">Teacher:</label>
-                                                                        <x-input-select name="teacher_id"
-                                                                            :records="$teachers" />
+                                                                        <x-input-select :selected="$teacher_id"
+                                                                            name="teacher_id" :records="$teachers">
+                                                                        </x-input-select>
                                                                     </div>
                                                                 </div>
+                                                             
                                                             </div>
-
                                                         </section>
                                                     </div>
                                             <div class="tab-pane" id="ActivitiesofDailyLiving">

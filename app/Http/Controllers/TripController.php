@@ -45,10 +45,11 @@ class TripController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        $data = [
-            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+         $data = [
+             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
-        return view('student.dairy.trip.create', $data);
+        
+        return view('student.dairy.trip.edit', $data);
     }
 
     /**

@@ -944,8 +944,8 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                        {{--
-                        <livewire:occupational-therapy-list /> --}}
+                        
+                        <livewire:occupational-therapy-list />
                         <!-- end row -->
                     </div>
                 </div>

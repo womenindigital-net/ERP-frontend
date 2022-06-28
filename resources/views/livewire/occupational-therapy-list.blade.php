@@ -1,6 +1,5 @@
 <div>
     <x-record-list :records="$records">
-        {{-- @dd($records); --}}
         <div class="table-responsive">
             <table class="table table-bordered w-100">
                 <thead>
