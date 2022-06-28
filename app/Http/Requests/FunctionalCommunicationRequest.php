@@ -23,12 +23,10 @@ class FunctionalCommunicationRequest extends FormRequest
      */
     public function rules(): array
     {
-        $this->dd($this->request->all());
-
         return [
-            "date"                                                                                                                        => 'nullable',
+            "collection_date"                                                                                                                        => 'nullable',
             "teacher_id"                                                                                                                  => 'nullable',
-            "candidate_i"                                                                                                                 => 'nullable',
+            "student_id"                                                                                                                 => 'nullable',
             "talk_too_loud_for_the_context"                                                                                               => 'nullable',
             "talk_too_loud_for_the_context_secondary"                                                                                     => 'nullable',
             "speech_is_hard_to_understand"                                                                                                => 'nullable',

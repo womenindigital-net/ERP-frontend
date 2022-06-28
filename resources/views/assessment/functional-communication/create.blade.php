@@ -82,7 +82,7 @@
                                                                         <label
                                                                             for="basicpill-firstname-input">Collection
                                                                             Date:</label>
-                                                                        <x-input-text name="date" type="date"
+                                                                        <x-input-text name="collection_date" type="date"
                                                                             placeholder=""></x-input-text>
                                                                     </div>
                                                                 </div>
@@ -90,7 +90,7 @@
                                                                     <div class="mb-3">
                                                                         <label
                                                                             for="basicpill-lastname-input">Teacher:</label>
-                                                                        <x-input-select name="Teacher_id"
+                                                                        <x-input-select name="teacher_id"
                                                                             :records="$teachers"/>
                                                                     </div>
                                                                 </div>
@@ -98,7 +98,7 @@
                                                                     <div class="mb-3">
                                                                         <label for="basicpill-phoneno-input">Candidate
                                                                             ID:</label>
-                                                                        <x-input-select name="candidate_i"
+                                                                        <x-input-select name="student_id"
                                                                             :records="$students" />
                                                                     </div>
                                                                 </div>

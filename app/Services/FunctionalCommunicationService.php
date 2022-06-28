@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Models\FunctionalCommunication;
 use App\Utility\SocialCommunication;
 use App\Repositories\FunctionalCommunicationRepository;
-
+use App\Utility\FunctionalCommunication as UtilityFunctionalCommunication;
 
 class FunctionalCommunicationService
 {
@@ -33,147 +33,69 @@ class FunctionalCommunicationService
 
     private function processInfo(array $validated): array
     {
-        [$pragmaticObjective, $data] = $this->collectPragmaticObjective($validated);
-        [$personal, $data] = $this->collectPersonal($data);
-        [$topicMaintenance, $data] = $this->collectTopicMaintenance($data);
-        [$conversationalStructure, $data] = $this->collectConversationalStructure($data);
-        [$wordStructure, $data] = $this->collectWordStructure($data);
-        [$mannerEffectiveness, $data] = $this->collectMannerEffectiveness($data);
-        [$repairStructures, $data] = $this->collectRepairStructures($data);
-        [$responsiveness, $data] = $this->collectResponsiveness($data);
-        [$instrumentalStatesNeeds, $data] = $this->collectInstrumentalStatesNeeds($data);
-        [$requesting, $data] = $this->collectRequesting($data);
-        [$prosody, $data] = $this->collectProsody($data);
-        [$protests, $data] = $this->collectProtests($data);
-        [$styleOfConversation, $data] = $this->collectStyleOfConversation($data);
-        [$humor, $data] = $this->collectHumor($data);
-        [$greetingsAcknowledgements, $data] = $this->collectGreetingsAcknowledgements($data);
-        [$problemSolving, $data] = $this->collectProblemSolving($data);
-        [$deceit, $data] = $this->collectDeceit($data);
-        [$academyCommunication, $data] = $this->collectAcademyCommunication($data);
-        [$nonverbalCommunication, $data] = $this->collectNonverbalCommunication($data);
-        [$perspectiveTaking, $data] = $this->collectPerspectiveTaking($data);
-        [$regulatoryGivesCommands, $data] = $this->collectRegulatoryGivesCommands($data);
-        [$socialEmotional, $data] = $this->collectSocialEmotional($data);
+        [$speech, $data] = $this->collectSpeech($validated);
+        [$bodyLanguage, $data] = $this->collectBodyLanguage($data);
+        [$wordsUsagesVocabulary, $data] = $this->collectWordsUsagesVocabulary($data);
+        [$sentenceStructure, $data] = $this->collectSentenceStructure($data);
+        [$relayingInformation, $data] = $this->collectRelayingInformation($data);
+        [$followingDirections, $data] = $this->collectFollowingDirections($data);
+        [$attentionAndMemory, $data] = $this->collectAttentionAndMemory($data);
+        [$conversationSocialCommunication, $data] = $this->collectConversationSocialCommunication($data);
+        [$playSkill, $data] = $this->collectPlaySkill($data);
 
         return [
             'collection_date' => $validated['collection_date'],
             'teacher_id' => $validated['teacher_id'],
             'student_id' => $validated['student_id'],
-            'pragmatic_objective' => $pragmaticObjective,
-            'personal' => $personal,
-            'topic_maintenance' => $topicMaintenance,
-            'conversational_structure' => $conversationalStructure,
-            'word_structure' => $wordStructure,
-            'manner_effectiveness' => $mannerEffectiveness,
-            'repair_structures' => $repairStructures,
-            'responsiveness' => $responsiveness,
-            'instrumental_states_needs' => $instrumentalStatesNeeds,
-            'requesting' => $requesting,
-            'prosody' => $prosody,
-            'protests' => $protests,
-            'style_of_conversation' => $styleOfConversation,
-            'humor' => $humor,
-            'greetings_acknowledgements' => $greetingsAcknowledgements,
-            'problem_solving' => $problemSolving,
-            'deceit' => $deceit,
-            'academy_communication' => $academyCommunication,
-            'nonverbal_communication' => $nonverbalCommunication,
-            'perspective_taking' => $perspectiveTaking,
-            'regulatory_gives_commands' => $regulatoryGivesCommands,
-            'social_emotional' => $socialEmotional,
+            'speech' => $speech,
+            'body_language' => $bodyLanguage,
+            'words_usages_vocabulary' => $wordsUsagesVocabulary,
+            'sentence_structure' => $sentenceStructure,
+            'relaying_information' => $relayingInformation,
+            'following_directions' => $followingDirections,
+            'attention_and_memory' => $attentionAndMemory,
+            'conversation_social_communication' => $conversationSocialCommunication,
+            'play_skill' => $playSkill,
         ];
     }
 
-    private function collectPragmaticObjective(mixed $validated): array
+    private function collectSpeech(mixed $validated): array
     {
-        return extractNecessaryFieldsFromData($validated, FunctionalComm::$columnCollections['pragmatic_objective']);
+        return extractNecessaryFieldsFromData($validated, UtilityFunctionalCommunication::$columnCollections['speech']);
     }
 
-    private function collectPersonal(mixed $data): array
+    private function collectBodyLanguage(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['personal']);
     }
 
-    private function collectTopicMaintenance(mixed $data): array
+    private function collectWordsUsagesVocabulary(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['topic_maintenance']);
     }
 
-    private function collectConversationalStructure(mixed $data): array
+    private function collectSentenceStructure(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['conversational_structure']);
     }
-    private function collectWordStructure(mixed $data): array
+    private function collectRelayingInformation(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['word_structure']);
     }
-    private function collectMannerEffectiveness(mixed $data): array
+    private function collectFollowingDirections(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['manner_effectiveness']);
     }
-    private function collectRepairStructures(mixed $data): array
+    private function collectAttentionAndMemory(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['repair_structures']);
     }
-    private function collectResponsiveness(mixed $data): array
+    private function collectConversationSocialCommunication(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['responsiveness']);
     }
-    private function collectInstrumentalStatesNeeds(mixed $data): array
+    private function collectPlaySkill(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['instrumental_states_needs']);
-    }
-    private function collectRequesting(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['requesting']);
-    }
-    private function collectProsody(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['prosody']);
-    }
-    private function collectProtests(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['protests']);
-    }
-    private function collectStyleOfConversation(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['style_of_Conversation']);
-    }
-    private function collectHumor(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['humor']);
-    }
-    private function collectGreetingsAcknowledgements(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['greetings_acknowledgements']);
-    }
-    private function collectProblemSolving(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['problem_solving']);
-    }
-    private function collectDeceit(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['deceit']);
-    }
-    private function collectAcademyCommunication(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['academy_communication']);
-    }
-    private function collectNonverbalCommunication(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['nonverbal_communication']);
-    }
-    private function collectPerspectiveTaking(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['perspective_taking']);
-    }
-    private function collectRegulatoryGivesCommands(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['regulatory_gives_commands']);
-    }
-    private function collectSocialEmotional(mixed $data): array
-    {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['social_emotional']);
     }
 }
