@@ -9,18 +9,24 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Requests\OccupationalTherapyRequest;
 use App\Repositories\OccupationalTherapyRepository;
 use App\Http\Requests\UpdateOccupationalTherapyRequest;
+use App\Services\OccupationalTherapyService;
 
 class OccupationalTherapyController extends Controller
 {
-
-    private OccupationalTherapyRepository $occupationalRepo;
+    private OccupationalTherapyRepository $repo;
+    private OccupationalTherapyService $service;
     private UserRepository $userRepo;
     private StudentRepository $studentRepo;
     public $record;
 
-    public function __construct(OccupationalTherapyRepository $occupationalRepo, UserRepository $userRepository, StudentRepository $studentRepository)
-    {
-        $this->occupationalRepo = $occupationalRepo;
+    public function __construct(
+        OccupationalTherapyRepository $occupationalRepo,
+        OccupationalTherapyService $occupationalService,
+        UserRepository $userRepository,
+        StudentRepository $studentRepository
+    ) {
+        $this->repo = $occupationalRepo;
+        $this->service = $occupationalService;
         $this->userRepo    = $userRepository;
         $this->studentRepo = $studentRepository;
     }
@@ -44,7 +50,7 @@ class OccupationalTherapyController extends Controller
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
         ];
-        return view('assessment.occupational-therapy.create', $data);
+        return view('assessment.occupational-therapy.edit', $data);
     }
 
     /**
@@ -55,7 +61,7 @@ class OccupationalTherapyController extends Controller
      */
     public function store(OccupationalTherapyRequest $request)
     {
-        $this->occupationalRepo->store($request->validated());
+        $this->service->store($request->validated());
         Session::flash('success');
         return redirect()->back();
     }
@@ -71,7 +77,23 @@ class OccupationalTherapyController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'record' => $this->record = $occupational_therapy,
+            'date' => $occupational_therapy['date'],
+            'teacher_id' => $occupational_therapy['teacher_id'],
+            'candidate_id' => $occupational_therapy['candidate_id'],
+            'general' => $occupational_therapy['general'],
+            'muscle_tone' => $occupational_therapy['muscle_tone'],
+            'range_of_movement' => $occupational_therapy['range_of_movement'],
+            'functional_gross_motor' => $occupational_therapy['functional_gross_motor'],
+            'transitional_movements' => $occupational_therapy['transitional_movements'],
+            'fine_motor_skill' => $occupational_therapy['fine_motor_skill'],
+            'automatic_reaction' => $occupational_therapy['automatic_reaction'],
+            'sensory_skill' => $occupational_therapy['sensory_skill'],
+            'visual_perception' => $occupational_therapy['visual_perception'],
+            'activities_of_daily_living' => $occupational_therapy['activities_of_daily_living'],
+            'strength' => $occupational_therapy['strength'],
+            'signature' => $occupational_therapy['signature'],
+            'cognitive_skills' => $occupational_therapy['cognitive_skills'],
+            'treatment_Plan' => $occupational_therapy['treatment_Plan'],
         ];
         return view('assessment.occupational-therapy.view', $data);
     }
@@ -87,7 +109,23 @@ class OccupationalTherapyController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'record' => $this->record = $occupational_therapy,
+            'date' => $occupational_therapy['date'],
+            'teacher_id' => $occupational_therapy['teacher_id'],
+            'candidate_id' => $occupational_therapy['candidate_id'],
+            'general' => $occupational_therapy['general'],
+            'muscle_tone' => $occupational_therapy['muscle_tone'],
+            'range_of_movement' => $occupational_therapy['range_of_movement'],
+            'functional_gross_motor' => $occupational_therapy['functional_gross_motor'],
+            'transitional_movements' => $occupational_therapy['transitional_movements'],
+            'fine_motor_skill' => $occupational_therapy['fine_motor_skill'],
+            'automatic_reaction' => $occupational_therapy['automatic_reaction'],
+            'sensory_skill' => $occupational_therapy['sensory_skill'],
+            'visual_perception' => $occupational_therapy['visual_perception'],
+            'activities_of_daily_living' => $occupational_therapy['activities_of_daily_living'],
+            'strength' => $occupational_therapy['strength'],
+            'signature' => $occupational_therapy['signature'],
+            'cognitive_skills' => $occupational_therapy['cognitive_skills'],
+            'treatment_Plan' => $occupational_therapy['treatment_Plan'],
         ];
         return view('assessment.occupational-therapy.edit', $data);
     }
@@ -101,7 +139,11 @@ class OccupationalTherapyController extends Controller
      */
     public function update(UpdateOccupationalTherapyRequest $request, OccupationalTherapy $occupationalTherapy)
     {
-        //
+        $this->service->update($occupationalTherapy, $request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('occupational-therapy.create');
     }
 
     /**

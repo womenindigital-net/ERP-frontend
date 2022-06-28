@@ -1,10 +1,15 @@
 <?php
 
-// namespace App\Repositories;
+namespace App\Repositories;
 
-// use App\Models\SocialCommunication;
+use App\Models\Social;
 
-// class SocialCommunicationRepository extends BaseRepository
-// {
-//     protected string $model = SocialCommunication::class;
-// }
+class SocialCommunicationRepository extends BaseRepository
+{
+    protected string $model = Social::class;
+
+    public function getListData(int $perPage, string $search)
+    {
+        return $this->model::latest()->paginate($perPage);
+    }
+}

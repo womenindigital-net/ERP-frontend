@@ -45,7 +45,7 @@ class FunctionalCommunicationController extends Controller
             'students' => $this->studentRepo->getData(),
         ];
 
-        return view('assessment.functional-communication.create', $data);
+        return view('assessment.functional-communication.edit', $data);
     }
 
     /**
@@ -79,7 +79,7 @@ class FunctionalCommunicationController extends Controller
      */
     public function edit(FunctionalCommunication $functionalCommunication)
     {
-        //
+        
     }
 
     /**
