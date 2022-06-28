@@ -101,67 +101,64 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-9 col-md-9">
-                                            <form>
+                                            <form action="{{ route('social-communication.update', $id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('PUT')
                                                 <div class="tab-content">
                                                     <div class="tab-pane" id="Social_Communication">
                                                         <section>
-                                                            <form>
-                                                                <div class="row">
-                                                                    <div class="col-lg-4 pull-left pb-2">
-                                                                        <label class="p-2">Collection
-                                                                            Date:</label>
-                                                                        <x-input-text name="collection_date" type="date"
-                                                                            placeholder="mm/dd/yyyy"
-                                                                            value="{{$record->collection_date}}">
-                                                                        </x-input-text>
-                                                                    </div>
 
-                                                                    <div class="col-lg-4 pull-left pb-2">
-                                                                        <label class="p-2">Teacher: <span
-                                                                                class="text-danger text-bold">*</span></label>
-                                                                        <x-input-select name="teacher_id"
-                                                                            :records="$teachers"
-                                                                            :selected="$record->teacher_id">
-                                                                        </x-input-select>
-                                                                    </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-4 pull-left pb-2">
+                                                                    <label class="p-2">Collection
+                                                                        Date:</label>
+                                                                    <x-input-text name="collection_date" type="date"
+                                                                        placeholder="mm/dd/yyyy"
+                                                                        value="{{$collection_date}}">
+                                                                    </x-input-text>
+                                                                </div>
 
-                                                                    <div class="col-lg-4 pull-left pb-2">
-                                                                        <label class="p-2">Candidate ID:
-                                                                            <span
-                                                                                class="text-danger text-bold">*</span></label>
-                                                                        <x-input-select name="student_id"
-                                                                            :records="$students"
-                                                                            :selected="$record->student_id">
-                                                                        </x-input-select>
+                                                                <div class="col-lg-4 pull-left pb-2">
+                                                                    <label class="p-2">Teacher: <span
+                                                                            class="text-danger text-bold">*</span></label>
+                                                                    <x-input-select name="teacher_id"
+                                                                        :records="$teachers" :selected="$teacher_id">
+                                                                    </x-input-select>
+                                                                </div>
 
+                                                                <div class="col-lg-4 pull-left pb-2">
+                                                                    <label class="p-2">Candidate ID:
+                                                                        <span
+                                                                            class="text-danger text-bold">*</span></label>
+                                                                    <x-input-select name="student_id"
+                                                                        :records="$students" :selected="$student_id">
+                                                                    </x-input-select>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="col-xs-12 col-md-12 form-group pb-2">
+                                                                        <label class="col-md-12">Description:</label>
+                                                                        <p>Social Communication checklist</p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div
-                                                                            class="col-xs-12 col-md-12 form-group pb-2">
-                                                                            <label
-                                                                                class="col-md-12">Description:</label>
-                                                                            <p>Social Communication checklist</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12">
-                                                                        <div
-                                                                            class="col-xs-12 col-md-12 form-group pb-2">
-                                                                            <label
-                                                                                class="col-md-12">Instruction:</label>
-                                                                            <p> These social communication skills
-                                                                                develop over time. Read the behaviors
-                                                                                below and place an X in
-                                                                                the appropriate column that describes
-                                                                                how your child uses words/language, no
-                                                                                words (gestures –
-                                                                                preverbal) or does not yet show a
-                                                                                behavior.</p>
-                                                                        </div>
+                                                                <div class="col-12">
+                                                                    <div class="col-xs-12 col-md-12 form-group pb-2">
+                                                                        <label class="col-md-12">Instruction:</label>
+                                                                        <p> These social communication skills
+                                                                            develop over time. Read the behaviors
+                                                                            below and place an X in
+                                                                            the appropriate column that describes
+                                                                            how your child uses words/language, no
+                                                                            words (gestures –
+                                                                            preverbal) or does not yet show a
+                                                                            behavior.</p>
                                                                     </div>
                                                                 </div>
-                                                            </form>
+                                                            </div>
+
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="Pragmatic_Objective">
@@ -171,7 +168,7 @@
                                                                 name="" label="Interaction with adults "
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false"
-                                                                secondaryInputValue="{{ $pragmatic_objective->interaction_with_adults_secondary }}">
+                                                                secondaryInputValue="{{ $pragmatic_objective->interaction_with_adults_secondary  ?? ''}}">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
@@ -1422,62 +1419,61 @@
                     <!-- Seller Details -->
                     <h3>Social Communication</h3>
                     <section>
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-4 pull-left pb-2">
-                                    <label class="p-2">Collection Date:</label>
-                                    <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy"
-                                        value="{{$record->collection_date}}">
-                                    </x-input-text>
-                                </div>
 
-                                <div class="col-lg-4 pull-left pb-2">
-                                    <label class="p-2">Teacher: <span class="text-danger text-bold">*</span></label>
-                                    <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
-                                </div>
+                        <div class="row">
+                            <div class="col-lg-4 pull-left pb-2">
+                                <label class="p-2">Collection Date:</label>
+                                <x-input-text name="collection_date" type="date" placeholder="mm/dd/yyyy"
+                                    value="{{$collection_date}}">
+                                </x-input-text>
+                            </div>
 
-                                <div class="col-lg-4 pull-left pb-2">
-                                    <label class="p-2">Candidate ID: <span
-                                            class="text-danger text-bold">*</span></label>
-                                    <select class="form-control strip-tags select2 form-select" id="StudentID"
-                                        required="" name="StudentID">
-                                        <option selected="selected" value="">-- Select --</option>
-                                        <option value="1">Aalliyah Tehzeeb Ahmed</option>
-                                        <option value="2">abdullah-al-nafi antor</option>
-                                        <option value="3">Abdullahil Baki</option>
-                                        <option value="4">Abdur Rahman Sajid</option>
-                                        <option value="5">Abid Hossain Turjo</option>
-                                        <option value="6">Abid Kabir Chowdhury</option>
-                                        <option value="7">Abrar Ahosab Talha</option>
-                                        <option value="8">Abrar Jawad Siam</option>
-                                        <option value="9">Abu Sufiyan</option>
-                                        <option value="10">Adib Akbar</option>
-                                        <option value="11">Adiba Atiar</option>
-                                        <option value="12">Adil Anaf</option>
-                                        <option value="13">Aditya Chakraborty</option>
-                                        <option value="14">Adiyan Islam Danial</option>
-                                    </select>
+                            <div class="col-lg-4 pull-left pb-2">
+                                <label class="p-2">Teacher: <span class="text-danger text-bold">*</span></label>
+                                <x-input-select name="teacher_id" :records="$teachers"></x-input-select>
+                            </div>
+
+                            <div class="col-lg-4 pull-left pb-2">
+                                <label class="p-2">Candidate ID: <span class="text-danger text-bold">*</span></label>
+                                <select class="form-control strip-tags select2 form-select" id="StudentID" required=""
+                                    name="StudentID">
+                                    <option selected="selected" value="">-- Select --</option>
+                                    <option value="1">Aalliyah Tehzeeb Ahmed</option>
+                                    <option value="2">abdullah-al-nafi antor</option>
+                                    <option value="3">Abdullahil Baki</option>
+                                    <option value="4">Abdur Rahman Sajid</option>
+                                    <option value="5">Abid Hossain Turjo</option>
+                                    <option value="6">Abid Kabir Chowdhury</option>
+                                    <option value="7">Abrar Ahosab Talha</option>
+                                    <option value="8">Abrar Jawad Siam</option>
+                                    <option value="9">Abu Sufiyan</option>
+                                    <option value="10">Adib Akbar</option>
+                                    <option value="11">Adiba Atiar</option>
+                                    <option value="12">Adil Anaf</option>
+                                    <option value="13">Aditya Chakraborty</option>
+                                    <option value="14">Adiyan Islam Danial</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="col-xs-12 col-md-12 form-group pb-2">
+                                    <label class="col-md-12">Description:</label>
+                                    <p>Social Communication checklist</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="col-xs-12 col-md-12 form-group pb-2">
-                                        <label class="col-md-12">Description:</label>
-                                        <p>Social Communication checklist</p>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="col-xs-12 col-md-12 form-group pb-2">
-                                        <label class="col-md-12">Instruction:</label>
-                                        <p> These social communication skills develop over time. Read the behaviors
-                                            below and place an X in
-                                            the appropriate column that describes how your child uses words/language, no
-                                            words (gestures –
-                                            preverbal) or does not yet show a behavior.</p>
-                                    </div>
+                            <div class="col-12">
+                                <div class="col-xs-12 col-md-12 form-group pb-2">
+                                    <label class="col-md-12">Instruction:</label>
+                                    <p> These social communication skills develop over time. Read the behaviors
+                                        below and place an X in
+                                        the appropriate column that describes how your child uses words/language, no
+                                        words (gestures –
+                                        preverbal) or does not yet show a behavior.</p>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+
                     </section>
 
                     <!-- Company Document -->

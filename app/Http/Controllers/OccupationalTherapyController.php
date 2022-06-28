@@ -109,6 +109,7 @@ class OccupationalTherapyController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'id' => $occupational_therapy['id'],
             'date' => $occupational_therapy['date'],
             'teacher_id' => $occupational_therapy['teacher_id'],
             'candidate_id' => $occupational_therapy['candidate_id'],
@@ -137,7 +138,7 @@ class OccupationalTherapyController extends Controller
      * @param  \App\Models\OccupationalTherapy  $occupationalTherapy
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOccupationalTherapyRequest $request, OccupationalTherapy $occupationalTherapy)
+    public function update(OccupationalTherapyRequest $request, OccupationalTherapy $occupationalTherapy)
     {
         $this->service->update($occupationalTherapy, $request->validated());
 

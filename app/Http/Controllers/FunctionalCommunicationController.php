@@ -5,21 +5,27 @@ namespace App\Http\Controllers;
 use App\Repositories\UserRepository;
 use App\Models\FunctionalCommunication;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Services\FunctionalCommunicationService;
 use App\Http\Requests\FunctionalCommunicationRequest;
 use App\Repositories\FunctionalCommunicationRepository;
 use App\Http\Requests\UpdateFunctionalCommunicationRequest;
 
 class FunctionalCommunicationController extends Controller
 {
-
-
-    private FunctionalCommunicationRepository $fcomRepo;
+    private FunctionalCommunicationRepository $Repo;
+    private FunctionalCommunicationService $service;
     private StudentRepository $studentRepo;
     public $record;
 
-    public function __construct(FunctionalCommunicationRepository $fcomRepo, UserRepository $userRepository, StudentRepository $studentRepository)
-    {
-        $this->fcomRepo = $fcomRepo;
+    public function __construct(
+        FunctionalCommunicationRepository $repo,
+        UserRepository $userRepository,
+        StudentRepository $studentRepository,
+        FunctionalCommunicationService $service
+    ) {
+        $this->repo = $repo;
+        $this->service = $service;
         $this->userRepo    = $userRepository;
         $this->studentRepo = $studentRepository;
     }
@@ -45,7 +51,7 @@ class FunctionalCommunicationController extends Controller
             'students' => $this->studentRepo->getData(),
         ];
 
-        return view('assessment.functional-communication.edit', $data);
+        return view('assessment.functional-communication.create', $data);
     }
 
     /**
@@ -57,7 +63,11 @@ class FunctionalCommunicationController extends Controller
      */
     public function store(FunctionalCommunicationRequest $request)
     {
-        dd($request);
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return back();
     }
 
     /**
@@ -79,7 +89,25 @@ class FunctionalCommunicationController extends Controller
      */
     public function edit(FunctionalCommunication $functionalCommunication)
     {
-        
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'id' => $functionalCommunication['id'],
+            'collection_date' => $functionalCommunication['collection_date'],
+            'teacher_id' => $functionalCommunication['teacher_id'],
+            'student_id' => $functionalCommunication['student_id'],
+            'speech' => $functionalCommunication['speech'],
+            'body_language' => $functionalCommunication['body_language'],
+            'words_usages_vocabulary' => $functionalCommunication['words_usages_vocabulary'],
+            'sentence_structure' => $functionalCommunication['sentence_structure'],
+            'relaying_information' => $functionalCommunication['relaying_information'],
+            'following_directions' => $functionalCommunication['following_directions'],
+            'attention_and_memory' => $functionalCommunication['attention_and_memory'],
+            'conversation_social_communication' => $functionalCommunication['conversation_social_communication'],
+            'play_skill' => $functionalCommunication['play_skill'],
+        ];
+
+        return view('assessment.functional-communication.edit', $data);
     }
 
     /**
@@ -91,7 +119,9 @@ class FunctionalCommunicationController extends Controller
      */
     public function update(FunctionalCommunicationRequest $request, FunctionalCommunication $functionalCommunication)
     {
-        //
+        $this->service->update($functionalCommunication, $request->validated());
+        Session::flash('success');
+        return redirect()->route('functional-communication.create');
     }
 
     /**
