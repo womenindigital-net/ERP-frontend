@@ -47,42 +47,42 @@
                                             <div class="col-sm-3 col-md-3">
                                                 <div id="wizard-navigation">
                                                     <ul class="wizard-navigation">
-                                                        <li class="w-100"><a href="#Social_Communication"
+                                                        <li class="w-100"><a href="#sensory_checklist"
                                                                 data-toggle="tab">Sensory Checklist</a></li>
-                                                        <li class="w-100"><a href="#Pragmatic_Objective"
+                                                        <li class="w-100"><a href="#general"
                                                                 data-toggle="tab">General</a>
                                                         </li>
-                                                        <li class="w-100"><a href="#PERSONAL" data-toggle="tab">Visual
+                                                        <li class="w-100"><a href="#visual_perception" data-toggle="tab">Visual
                                                                 Perception</a></li>
-                                                        <li class="w-100"><a href="#Topic_Maintenance"
+                                                        <li class="w-100"><a href="#activities_of_daily_living"
                                                                 data-toggle="tab">Activities of Daily living</a></li>
-                                                        <li class="w-100"><a href="#Conversational_Structure"
+                                                        <li class="w-100"><a href="#strength"
                                                                 data-toggle="tab">Strength</a></li>
-                                                        <li class="w-100"><a href="#Word_Structure"
+                                                        <li class="w-100"><a href="#functional_gross_motor"
                                                                 data-toggle="tab">Functional Gross Motor</a></li>
-                                                        <li class="w-100"><a href="#Manner_Effectiveness"
+                                                        <li class="w-100"><a href="#transitional_movements"
                                                                 data-toggle="tab">Transitional Movements</a></li>
-                                                        <li class="w-100"><a href="#Repair_Structures"
+                                                        <li class="w-100"><a href="#fine_motor_skill"
                                                                 data-toggle="tab">Fine motor Skill</a></li>
-                                                        <li class="w-100"><a href="#Functional_Intent"
+                                                        <li class="w-100"><a href="#automatic_reaction"
                                                                 data-toggle="tab">Automatic Reaction</a>
                                                         </li>
-                                                        <li class="w-100"><a href="#Functional_Intent_B"
+                                                        <li class="w-100"><a href="#sensory_skill"
                                                                 data-toggle="tab">Sensory Skill (Normal /Hypo response)</a>
                                                         </li>
-                                                        <li class="w-100"><a href="#Functional_Intent_C"
+                                                        <li class="w-100"><a href="#cognitive_skills"
                                                                 data-toggle="tab">Cognitive Skills</a></li>
-                                                        <li class="w-100"><a href="#Functional_Intent_D"
+                                                        <li class="w-100"><a href="#treatment"
                                                                 data-toggle="tab">Treatment</a></li>
-                                                        <li class="w-100"><a href="#Functional_Intent_E"
+                                                        <li class="w-100"><a href="#signature"
                                                                 data-toggle="tab">Signature</a></li>
-                                                        <li class="w-100"><a href="#mp" data-toggle="tab">Muscle
+                                                        <li class="w-100"><a href="#muscle_power" data-toggle="tab">Muscle
                                                                 Power</a></li>
-                                                        <li class="w-100"><a href="#mt" data-toggle="tab">Muscle
+                                                        <li class="w-100"><a href="#muscle_tone" data-toggle="tab">Muscle
                                                                 tone</a></li>
-                                                        <li class="w-100"><a href="#Be" data-toggle="tab">Behavior</a>
+                                                        <li class="w-100"><a href="#behavior" data-toggle="tab">Behavior</a>
                                                         </li>
-                                                        <li class="w-100"><a href="#DA" data-toggle="tab">Domain
+                                                        <li class="w-100"><a href="#domain_area" data-toggle="tab">Domain
                                                                 Area</a></li>
 
                                                     </ul>
@@ -91,7 +91,7 @@
                                             <div class="col-sm-9 col-md-9">
                                                 <form>
                                                     <div class="tab-content">
-                                                        <div class="tab-pane" id="Social_Communication">
+                                                        <div class="tab-pane" id="sensory_checklist">
 
                                                             <section>
                                                                 <form>
@@ -141,7 +141,7 @@
                                                                 </form>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Pragmatic_Objective">
+                                                        <div class="tab-pane" id="general">
                                                             <section>
                                                                 <form>
                                                                     <div class="mb-3">
@@ -218,7 +218,7 @@
                                                                 </form>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="PERSONAL">
+                                                        <div class="tab-pane" id="visual_perception">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -287,7 +287,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Topic_Maintenance">
+                                                        <div class="tab-pane" id="activities_of_daily_living">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -343,7 +343,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Conversational_Structure">
+                                                        <div class="tab-pane" id="strength">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -363,7 +363,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Word_Structure">
+                                                        <div class="tab-pane" id="functional_gross_motor">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -407,7 +407,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Manner_Effectiveness">
+                                                        <div class="tab-pane" id="transitional_movements">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -451,7 +451,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Repair_Structures">
+                                                        <div class="tab-pane" id="fine_motor_skill">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -519,7 +519,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent">
+                                                        <div class="tab-pane" id="automatic_reaction">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -541,7 +541,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_B">
+                                                        <div class="tab-pane" id="sensory_skill">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -574,7 +574,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_C">
+                                                        <div class="tab-pane" id="cognitive_skills">
                                                             <section>
                                                                 <div>
                                                                     <form>
@@ -630,7 +630,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_D">
+                                                        <div class="tab-pane" id="treatment">
                                                             <section>
                                                                 <form>
                                                                     <div class="mb-3">
@@ -670,7 +670,7 @@
                                                                 </form>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Functional_Intent_E">
+                                                        <div class="tab-pane" id="signature">
                                                             <h3>Signature</h3>
                                                             <section>
                                                                 <form>
@@ -696,7 +696,7 @@
                                                                 </form>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="mp">
+                                                        <div class="tab-pane" id="muscle_power">
                                                             <h3>Muscle Power</h3>
                                                             <section>
                                                                 <div>
@@ -749,7 +749,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="mt">
+                                                        <div class="tab-pane" id="muscle_tone">
                                                             <h3>Muscle Tone</h3>
                                                             <section>
                                                                 <div>
@@ -795,7 +795,7 @@
                                                                 </div>
                                                             </section>
                                                         </div>
-                                                        <div class="tab-pane" id="Be">
+                                                        <div class="tab-pane" id="behavior">
                                                             <section>
                                                                 <form>
                                                                     <!-- end row -->
@@ -820,9 +820,8 @@
                                                                     <!-- end row -->
                                                                 </form>
                                                             </section>
-
                                                         </div>
-                                                        <div class="tab-pane" id="DA">
+                                                        <div class="tab-pane" id="domain_area">
                                                             <section>
                                                                 <form>
                                                                     <!-- end row -->
@@ -894,7 +893,7 @@
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="tab-content">
-                                                    <div class="tab-pane" id="Social_Communication">
+                                                    <div class="tab-pane" id="sensory_checklist">
                                                         <section>
                                                             <div class="row">
                                                                 <div class="col-lg-4">
@@ -942,7 +941,7 @@
 
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Pragmatic_Objective">
+                                                    <div class="tab-pane" id="general">
                                                         <section>
 
                                                             <div class="mb-3">
@@ -1023,7 +1022,7 @@
 
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="PERSONAL">
+                                                    <div class="tab-pane" id="visual_perception">
                                                         <section>
                                                             <div>
 
@@ -1108,10 +1107,9 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Topic_Maintenance">
+                                                    <div class="tab-pane" id="activities_of_daily_living">
                                                         <section>
                                                             <div>
-
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$activities_of_daily_living->eating ?? ''"
@@ -1169,10 +1167,9 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Conversational_Structure">
+                                                    <div class="tab-pane" id="strength">
                                                         <section>
                                                             <div>
-
                                                                 <!-- end row -->
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
@@ -1188,7 +1185,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Word_Structure">
+                                                    <div class="tab-pane" id="functional_gross_motor">
                                                         <section>
                                                             <div>
 
@@ -1239,7 +1236,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Manner_Effectiveness">
+                                                    <div class="tab-pane" id="transitional_movements">
                                                         <section>
                                                             <div>
 
@@ -1290,10 +1287,9 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Repair_Structures">
+                                                    <div class="tab-pane" id="fine_motor_skill">
                                                         <section>
                                                             <div>
-
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$fine_motor_skill->dominance ?? ''"
@@ -1371,7 +1367,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Functional_Intent">
+                                                    <div class="tab-pane" id="automatic_reaction">
                                                         <section>
                                                             <div>
 
@@ -1393,7 +1389,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Functional_Intent_B">
+                                                    <div class="tab-pane" id="sensory_skill">
                                                         <section>
                                                             <div>
 
@@ -1430,10 +1426,9 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Functional_Intent_C">
+                                                    <div class="tab-pane" id="cognitive_skills">
                                                         <section>
                                                             <div>
-
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$cognitive_skills->attention ?? ''"
@@ -1494,7 +1489,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Functional_Intent_D">
+                                                    <div class="tab-pane" id="treatment">
                                                         <section>
 
                                                             <div class="mb-3">
@@ -1536,7 +1531,7 @@
 
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Functional_Intent_E">
+                                                    <div class="tab-pane" id="signature">
                                                         <h3>Signature</h3>
                                                         <section>
 
@@ -1562,11 +1557,10 @@
 
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="mp">
+                                                    <div class="tab-pane" id="muscle_power">
                                                         <h3>Muscle Power</h3>
                                                         <section>
                                                             <div>
-
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$muscle_power->upper_limbs ?? ''"
@@ -1619,7 +1613,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="mt">
+                                                    <div class="tab-pane" id="muscle_tone">
                                                         <h3>Muscle Tone</h3>
                                                         <section>
                                                             <div>
@@ -1669,7 +1663,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    <div class="tab-pane" id="Be">
+                                                    <div class="tab-pane" id="behavior">
                                                         <section>
 
                                                             <!-- end row -->
@@ -1702,9 +1696,8 @@
                                                         </section>
 
                                                     </div>
-                                                    <div class="tab-pane" id="DA">
+                                                    <div class="tab-pane" id="domain_area">
                                                         <section>
-
                                                             <!-- end row -->
                                                             <x-input-radio-or-check
                                                                 :checked="$domain_area->physical_Gross_motor_Fine_motor ?? ''"
