@@ -25,21 +25,23 @@ class OccupationalTherapyRequest extends FormRequest
     {
         return [
 
-            "date"                    => 'nullable',
-            "teacher_id"              => 'nullable',
-            "candidate_id"            => 'nullable',
-            "separate_home_equipment" => 'nullable',
-            "communication"           => 'nullable',
-            "left"                    => 'nullable',
-            "right"                   => 'nullable',
-            "lower_limbs"             => 'nullable',
-            "trunk_or_neck"           => 'nullable',
-            "upper_limbs"             => 'nullable',
-            "designation_name"        => 'nullable',
-            "memory"                  => 'nullable',
-            "problem_list"            => 'nullable',
-            "treatment_plan"          => 'nullable',
-            "progress"                => 'nullable',
+            "date"                                          => 'nullable',
+            "teacher_id"                                    => 'nullable',
+            "candidate_id"                                  => 'nullable',
+            "general"                                       => 'nullable',
+            "muscle_tone"                                   => 'nullable',
+            "range_of_movement"                             => 'nullable',
+            "functional_gross_motor"                        => 'nullable',
+            "transitional_movements"                        => 'nullable',
+            "fine_motor_skill"                              => 'nullable',
+            "automatic_reaction"                            => 'nullable',
+            "sensory_skill"                                 => 'nullable',
+            "visual_perception"                             => 'nullable',
+            "activities_of_daily_living"                    => 'nullable',
+            "strength"                                      => 'nullable',
+            "signature"                                     => 'nullable',
+            "cognitive_skills"                              => 'nullable',
+            "treatment_Plan"                                => 'nullable',
         ];
     }
 }
