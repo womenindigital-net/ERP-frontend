@@ -5,21 +5,26 @@ namespace App\Http\Controllers;
 use App\Repositories\UserRepository;
 use App\Models\FunctionalCommunication;
 use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\FunctionalCommunicationRequest;
 use App\Repositories\FunctionalCommunicationRepository;
 use App\Http\Requests\UpdateFunctionalCommunicationRequest;
 
 class FunctionalCommunicationController extends Controller
 {
-
-
-    private FunctionalCommunicationRepository $fcomRepo;
+    private FunctionalCommunicationRepository $Repo;
+    private FunctionalCommunicationService $service;
     private StudentRepository $studentRepo;
     public $record;
 
-    public function __construct(FunctionalCommunicationRepository $fcomRepo, UserRepository $userRepository, StudentRepository $studentRepository)
-    {
-        $this->fcomRepo = $fcomRepo;
+    public function __construct(
+        FunctionalCommunicationRepository $repo,
+        UserRepository $userRepository,
+        StudentRepository $studentRepository,
+        FunctionalCommunicationService $service
+    ) {
+        $this->repo = $repo;
+        $this->service = $service;
         $this->userRepo    = $userRepository;
         $this->studentRepo = $studentRepository;
     }
@@ -45,7 +50,7 @@ class FunctionalCommunicationController extends Controller
             'students' => $this->studentRepo->getData(),
         ];
 
-        return view('assessment.functional-communication.edit', $data);
+        return view('assessment.functional-communication.create', $data);
     }
 
     /**
@@ -57,7 +62,11 @@ class FunctionalCommunicationController extends Controller
      */
     public function store(FunctionalCommunicationRequest $request)
     {
-        dd($request);
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return back();
     }
 
     /**
@@ -79,7 +88,6 @@ class FunctionalCommunicationController extends Controller
      */
     public function edit(FunctionalCommunication $functionalCommunication)
     {
-        
     }
 
     /**
