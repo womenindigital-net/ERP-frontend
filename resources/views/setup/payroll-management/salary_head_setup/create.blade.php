@@ -36,12 +36,12 @@
                               <x-input-text name="head_name_bangla" placeholder="Enter Head Name Bangla Here"></x-input-text>
                           </div>
                       </div>
-                    <div class="col-md-12 d-flex ps-3">
+                    <div class="col-md-12 d-flex">
                       <div class="col-md-6 mb-3">
                           <label class="form-label">Default Amount</label>
                             <x-input-text name="default_amount" type="number" placeholder="Enter Default Amount Here"></x-input-text>                          
                       </div>
-                      <div class="col-md-6 ps-2 pe-3 mb-3">
+                      <div class="col-md-6 ps-2  mb-3">
                           <label class="form-label">Account</label>
                           <x-input-select name="account" :records="[]" />
                       </div>

@@ -73,13 +73,13 @@
 
                                             <div class="mb-3 col-lg-2">
                                                 <label for="message">Message</label>
-                                                <x-input-textarea name="hello1" placeholder="">
+                                                <x-input-textarea name="hello1" rows="1" placeholder="">
                                                 </x-input-textarea>
                                             </div>
 
-                                            <div class="col-lg-2 align-self-center">
+                                            <div class="col-sm-1 align-self-center">
                                                 <div class="d-grid">
-                                                    <input data-repeater-delete type="button" class="btn btn-primary" value="Delete" />
+                                                    <input data-repeater-delete type="button" class="btn btn-danger" value="Delete" />
                                                 </div>
                                             </div>
                                         </div>

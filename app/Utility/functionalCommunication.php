@@ -2,7 +2,7 @@
 
 namespace App\Utility;
 
-final class SensoryCheckList
+final class FunctionalCommunication
 {
     public static array $columnCollections = [
 
