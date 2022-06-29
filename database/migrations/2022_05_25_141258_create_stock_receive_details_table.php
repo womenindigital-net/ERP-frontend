@@ -20,10 +20,13 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(StockReceive::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
-            $table->string('qty');
-            $table->integer('depreciation_percentage')->nullable();
             $table->string('exp_date')->nullable();
+            $table->string('qty')->nullable();
+            $table->string('received')->nullable();
+            $table->string('return')->nullable();
+            $table->string('receivable')->nullable();
+            $table->string('stock_receive_qty')->nullable();
+            $table->string('serial')->nullable();
             $table->timestamps();
         });
     }

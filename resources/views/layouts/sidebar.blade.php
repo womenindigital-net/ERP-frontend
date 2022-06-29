@@ -78,7 +78,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('stock-receive.create') }}">Stock Receive</a></li>
-                        <li><a href="{{ route('finished-goods') }}">Finished Goods</a></li>
+                        <li><a href="{{ route('finished-goods.create') }}">Finished Goods</a></li>
                         <li><a href="{{ route('material-collect') }}">Material Collects</a></li>
                         <li><a href="{{ route('stock-transfer') }}">Stock Transfer</a></li>
                         <li><a href="{{ route('stock-count') }}">Stock Count</a></li>
@@ -445,7 +445,8 @@
                                         Setup</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary Step Setup</a>
+                                    <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary
+                                        Step Setup</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('setup.payroll-management.salary_head_setup.create') }}">Salary
@@ -559,9 +560,9 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Recruitment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li> 
-                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li> 
-                                <li><a href="HR.applicant-list.create">Applicant List</a></li> 
+                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li>
+                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li>
+                                <li><a href="HR.applicant-list.create">Applicant List</a></li>
                             </ul>
                         </li>
                         <li>
@@ -579,7 +580,8 @@
                                 <li><a href="{{ route('HR.organization-setup.create') }}">Organization Setup </a></li>
                                 <li><a href="{{ route('HR.section-setup.create') }}">Section Setup</a></li>
                                 <li><a href="{{ route('HR.designation-setup.create') }}">Designation Setup</a></li>
-                                <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a></li> 
+                                <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a href="{{ route('HR.warning-notice.create') }}">Warning Notice</a></li>
