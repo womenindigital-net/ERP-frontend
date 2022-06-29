@@ -63,27 +63,30 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-9 col-md-9">
-                                        <form >
+                                        <form>
+                                            
                                             <div class="tab-content apply-view-only">
                                                 <div class="tab-pane" id="Occupational_Therapy">
                                                     <section>
                                                         <div class="row">
                                                             <div class="col-lg-4 pull-left pb-2">
                                                                 <label class="p-2">Collection Date:</label>
-                                                                <x-input-text name="date" type="date"
-                                                                    placeholder="mm/dd/yyyy">
+                                                                <x-input-text value="{{ $date }}" name="date"
+                                                                    type="date" placeholder="mm/dd/yyyy">
                                                                 </x-input-text>
                                                             </div>
                                                             <div class="col-lg-4 pull-left pb-2">
                                                                 <label class="p-2">Teacher: <span
                                                                         class="text-danger text-bold">*</span>
                                                                 </label>
-                                                                <x-input-select name="teacher_id" :records="$teachers" />
+                                                                <x-input-select :selected="$teacher_id" name="teacher_id"
+                                                                    :records="$teachers" />
                                                             </div>
                                                             <div class="col-lg-4 pull-left pb-2">
                                                                 <label class="p-2">Candidate ID:
                                                                     <span class="text-danger text-bold">*</span></label>
-                                                                <x-input-select name="candidate_id" :records="$students" />
+                                                                <x-input-select name="candidate_id" :selected="$candidate_id"
+                                                                    :records="$students" />
                                                             </div>
                                                             <div class="col-lg-12 p-0 pb-2">
                                                                 <label class="col-md-12 px-1">Description:</label>
@@ -109,7 +112,7 @@
                                                                                     class="form-check-label pb-2">Medication
                                                                                     Treatment </label>
                                                                                 <x-input-text name="medication_treatment"
-                                                                                    value="{{ $muscle_tone->upper_limbs_left ?? '' }}"
+                                                                                    value="{{ $general->medication_treatment ?? '' }}"
                                                                                     placeholder="Medication Treatment">
                                                                                 </x-input-text>
                                                                             </div>
@@ -117,7 +120,7 @@
                                                                                 <label class="form-check-label pb-2">Any
                                                                                     present medicines</label>
                                                                                 <x-input-text name="separate_home_equipment"
-                                                                                    value="{{ $muscle_tone->upper_limbs_left ?? '' }}"
+                                                                                    value="{{ $general->any_present_medicines ?? '' }}"
                                                                                     placeholder="Any present medicines">
                                                                                 </x-input-text>
                                                                             </div>
@@ -128,14 +131,14 @@
                                                         </div>
                                                         <!-- row end -->
                                                         <x-input-radio-or-check label="Separate Home equipment"
-                                                            :checked="$muscle_tone->lower_limbs_one ?? ''" :records="$constants::$yesNoEn">
+                                                            :checked="$general->separate_home_equipment ?? ''" :records="$constants::$yesNoEn">
                                                         </x-input-radio-or-check>
                                                         <!-- row end -->
-                                                        <x-input-radio-or-check label="Communication" :checked="$muscle_tone->lower_limbs_one ?? ''"
+                                                        <x-input-radio-or-check label="Communication" :checked="$general->communication ?? ''"
                                                             :records="$constants::$yesNoEn">
                                                         </x-input-radio-or-check>
                                                         <!-- row end -->
-                                                        <x-input-radio-or-check label="Communication" :checked="$muscle_tone->lower_limbs_one ?? ''"
+                                                        <x-input-radio-or-check label="Communication" :checked="$general->communication_one ?? ''"
                                                             :records="$therapyConstants::$communication">
                                                         </x-input-radio-or-check>
                                                         <!-- row end -->
@@ -195,7 +198,7 @@
                                                                                 <label
                                                                                     class="form-check-label pb-2">Left</label>
                                                                                 <x-input-text name="trunk_or_neck_left"
-                                                                                    value="{{ $general->trunk_or_neck_left ?? '' }}"
+                                                                                    value="{{ $muscle_tone->trunk_or_neck_left ?? '' }}"
                                                                                     placeholder="Left">
                                                                                 </x-input-text>
                                                                             </div>
@@ -834,14 +837,19 @@
                                                             label="Perceptual Motor" :records="$constants::$yesNoEn">
                                                         </x-input-radio-or-check>
                                                         <!-- row end -->
+
+
                                                         <x-input-radio-or-check :checked="$cognitive_skills->body_awareness ?? ''" label="Body Awareness"
                                                             :records="$constants::$yesNoEn">
                                                         </x-input-radio-or-check>
                                                         <!-- row end -->
+
+
                                                         <x-input-radio-or-check :checked="$cognitive_skills->body_co_ordination ?? ''"
                                                             label="Body Co-ordination" :records="$constants::$yesNoEn">
                                                         </x-input-radio-or-check>
                                                         <!-- row end -->
+
                                                         <x-input-radio-or-check :checked="$cognitive_skills->bilateral_integration ?? ''"
                                                             label="Bilateral Integration" :records="$constants::$yesNoEn">
                                                         </x-input-radio-or-check>
@@ -911,6 +919,7 @@
                                                         <!-- row end -->
                                                     </section>
                                                 </div>
+
                                             </div>
                                             <div class="wizard-footer d-flex justify-content-between">
                                                 <div class="pull-left">
