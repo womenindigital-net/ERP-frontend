@@ -128,7 +128,7 @@
                             <td>Create: Md. Kutubuddin .. @ 2021-09-02 13:46:18
                               Update: Sajida Rahman @ 2021-09-02 13:59:24 </td>
                               <td>
-                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
                                   <i class="mdi mdi-eye"></i>
                                 </button>
                                 <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
@@ -167,5 +167,98 @@
         </div>
     </div>
 </div>
+<!--  Extra Large modal example -->
+<div class="modal fade student-income-modal-xl-view" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary">Job contact
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="row p-3">
+                <div class="col-12 mb-3 d-flex">
+                    <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Notice Template</label>
+                    <div class="col-md-10">
+                        <x-input-select name="notice_template" :records="[]" />
+                    </div>
+                </div>
+                <div class="col-12 d-flex mb-3">
+                    <label for="example-text-input"
+                        class="col-md-2 col-form-label  pe-2">Send To</label>
+                    <div class="col-md-10">
+                        <x-input-text name="send_to" vlaue="Sajida Rahman" />
+                    </div>
+                </div>
+                <div class="col-12 d-flex mb-3">
+                    <label for="example-text-input"
+                        class="col-md-2 col-form-label  pe-2">Subject</label>
+                    <div class="col-md-10">
+                        <x-input-text name="subject"/>
+                    </div>
+                </div>
+                <div class="col-12 d-flex mb-3">
+                    <label for="example-text-input"
+                        class="col-md-2 col-form-label  pe-2">Message</label>
+                    <div class="col-md-10">
+                        <x-input-textarea name="message" rows="1"/>
+                    </div>
+                </div>
+            </div>
+                <div class="table-responsive">
+          <table class="table w-100 table-bordered">
+            <thead>
+              <tr class="table-primary">
+             <th>SL</th>
+             <th>Approvar</th>
+             <th>Status</th>
+             <th>Comments</th>
+             <th>Status Changed</th>
+             <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+              <td>1</td>
+              <td>Sajida Rahman</td>
+              <td>Deny/Reject</td>
+              <td></td>
+              <td>2021-09-02</td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                    <i class="mdi mdi-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"><i
+                      class="fas fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".material-callects-modal-xl-view">
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="bx bx-dollar"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                    <i class="fas fa-arrow-circle-right"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+            <div class="row modal-footer">
+                <div class="col-md-1">
+                    <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

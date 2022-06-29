@@ -33,7 +33,7 @@
                                  <div class="col-6 d-flex  mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Name:</label>
                                     <div class="col-md-8">
-                                         <x-input-select name="name" :records="[]" />
+                                         <x-input-select name="job_contact_name" :records="[]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex  mb-3">

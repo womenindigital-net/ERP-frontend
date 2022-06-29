@@ -222,7 +222,7 @@
                                 <div class="row p-3">
                                     <div class="col-6 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
-                                            title:</label>
+                                            Title:</label>
                                         <div class="col-md-8">
                                             <x-input-select name="job_title" :records="[]" />
                                         </div>
