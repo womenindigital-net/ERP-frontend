@@ -25,7 +25,7 @@ class FinishedGoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('stock-management.finished_goods');
     }
 
     /**

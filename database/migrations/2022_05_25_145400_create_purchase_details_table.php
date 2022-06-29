@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\Purchase::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Supplier::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\RequisitionDetail::class)->constrained()->cascadeOnDelete();
-            $table->integer('stock_qty')->nullable();
-            $table->integer('from_stock_qty')->nullable();
+            $table->foreignIdFor(\App\Models\Product::class)->constrained()->cascadeOnDelete();
+            $table->integer('available_qty')->nullable();
             $table->integer('purchase_qty')->nullable();
+            $table->double('price', 8, 2)->nullable();
             $table->double('vat', 4, 2)->nullable();
             $table->double('sub_total', 4, 2)->nullable();
             $table->boolean('is_paid', 4, 2)->nullable();

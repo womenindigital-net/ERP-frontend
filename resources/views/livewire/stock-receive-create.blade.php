@@ -18,22 +18,24 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Reveive Type</label>
-                                <x-input-select :records="$receiveTypes" wireModel="type"/>
+                                <x-input-select :records="$receiveTypes" wireModel="type" />
                             </div>
                         </div>
                         <div class="col-md-6">
-                            @if($purchaseAble)
+                            @if($purchaseInput)
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Purchase</label>
-                                <x-input-text wireModel="purchase" placeholder="Purchase no here">
+                                <x-input-text wireModel="purchase_type" placeholder="Purchase no here">
                                 </x-input-text>
                             </div>
-                            @elseif($receiveAble)
-                            <div class="mb-3 d-none" id="return">
+                            @elseif($receiveInput)
+                            <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Return</label>
-                                <x-input-text wireModel="return" placeholder="Return here">
+                                <x-input-text wireModel="return_type" placeholder="Return here">
                                 </x-input-text>
                             </div>
+                            @else
+
                             @endif
                         </div>
                         <div class="col-md-6">
@@ -96,7 +98,7 @@
                                 <x-input-text wireModel="exp_date.{{ $key }}" type="date"></x-input-text>
                             </div>
                             <div class="col-lg-1 p-0 pe-1">
-                                <x-input-text type="number" wireModel="qty.{{ $key }}" placeholder="0">
+                                <x-input-text wireModel="qty.{{ $key }}" type="number" placeholder="0">
                                 </x-input-text>
                             </div>
 
@@ -113,7 +115,7 @@
                                 <x-input-text wireModel="stock_receive_qty.{{ $key }}"></x-input-text>
                             </div>
                             <div class="col-lg-1 p-0 pe-1">
-                                <x-input-text type="number" wireModel="serial.{{ $key }}"></x-input-text>
+                                <x-input-text wireModel="serial.{{ $key }}" type="number"></x-input-text>
                             </div>
                             <div class="mb-2 col-lg-1 p-0 pe-1">
                                 <button type="button" class="btn btn-danger waves-effect waves-light removeBtn">

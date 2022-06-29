@@ -58,7 +58,11 @@ class StockReceiveController extends Controller
      */
     public function edit(StockReceive $stockReceive)
     {
-        //
+        $data = [
+            'record' => $stockReceive,
+        ];
+
+        return view('stock-management.stock_receive_edit', $data);
     }
 
     /**

@@ -2,28 +2,28 @@
 
 namespace App\Services;
 
-use App\Repositories\RequisitionRepository;
+
+use App\Repositories\StockReceiveRepository;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class StockReceiveService
 {
-    private RequisitionRepository $repo;
+    private StockReceiveRepository $repo;
 
-    public function __construct(RequisitionRepository $repository)
+    public function __construct(StockReceiveRepository $repository)
     {
         $this->repo = $repository;
     }
 
     public function store(array $validated)
     {
-        dd($validated);
         try {
             DB::beginTransaction();
-            [$requisitionInfos, $data] = $this->collectRequisitionInfos($validated);
-            $requisition = $this->repo->store($requisitionInfos);
-
-            $requisitionDetailsInfos = $this->collectRequisitionDetailsInfos($data);
-            $requisition->details()->createMany($requisitionDetailsInfos);
+            [$stockRec, $data] = $this->collectStockReceive($validated);
+            $stockReceive = $this->repo->store($stockRec);
+            $stockReceiveDetailsInfos = $this->collectStockReceiveDetailsInfos($data);
+            $stockReceive->details()->createMany($stockReceiveDetailsInfos);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
@@ -31,42 +31,47 @@ class StockReceiveService
         }
     }
 
-    private function collectRequisitionInfos(array $validated)
+    private function collectStockReceive(array $validated)
     {
-        [$requisitionInfos, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'requested_by', 'date', 'title', 'warehouse_id', 'note']);
+        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'type', 'purchase_type', 'return_type', 'date']);
 
-        $requisitionInfos['created_by'] = auth()->id();
+        $stockReceive['created_by'] = auth()->id();
+        $stockReceive['note'] = null;
 
-        return [$requisitionInfos, $data];
+        return [$stockReceive, $data];
     }
 
-    private function collectRequisitionDetailsInfos(mixed $data): array
+    private function collectStockReceiveDetailsInfos(mixed $data): array
     {
-        [$requisitionDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty']);
-
-        for ($i = 0; $i < count($requisitionDetailInfos['product_id']); $i++) {
+        [$stockReceiveDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'exp_date', 'qty', 'received', 'return', 'receivable', 'stock_receive_qty', 'serial']);
+        for ($i = 0; $i < count($stockReceiveDetailInfos['product_id']); $i++) {
             $custom[$i] = [
-                'product_id' => $requisitionDetailInfos['product_id'][$i],
-                'qty' => $requisitionDetailInfos['qty'][$i],
-                'sub_total' => $requisitionDetailInfos['sub_total'][$i],
-                'price' => $requisitionDetailInfos['price'][$i],
-                'available_qty' => $requisitionDetailInfos['available_qty'][$i],
+                'product_id' => $stockReceiveDetailInfos['product_id'][$i],
+                'exp_date' => $stockReceiveDetailInfos['exp_date'][$i],
+                'qty' => $stockReceiveDetailInfos['qty'][$i],
+                'received' => $stockReceiveDetailInfos['received'][$i],
+                'return' => $stockReceiveDetailInfos['return'][$i],
+                'receivable' => $stockReceiveDetailInfos['receivable'][$i],
+                'stock_receive_qty' => $stockReceiveDetailInfos['stock_receive_qty'][$i],
+                'serial' => $stockReceiveDetailInfos['serial'][$i],
             ];
         }
+
 
         return $custom ?? [];
     }
 
-    public function update($requisition, array $validated)
+    public function update($stockReceive, array $validated)
     {
+       
         try {
             DB::beginTransaction();
-            [$requisitionInfos, $data] = $this->collectRequisitionInfos($validated);
-            $requisition = $this->repo->update($requisition, $requisitionInfos);
+            [$stockRec, $data] = $this->collectStockReceive($validated);
+            $stockReceive = $this->repo->update($stockReceive, $stockRec);
+            $stockReceive->details()->delete();
+            $stockReceiveDetailsInfos = $this->collectStockReceiveDetailsInfos($data);
 
-            $requisition->details()->delete();
-            $requisitionDetailsInfos = $this->collectRequisitionDetailsInfos($data);
-            $requisition->details()->createMany($requisitionDetailsInfos);
+            $stockReceive->details()->createMany($stockReceiveDetailsInfos);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
