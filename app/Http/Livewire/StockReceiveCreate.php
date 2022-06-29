@@ -24,10 +24,11 @@ class StockReceiveCreate extends Component
     public $exp_date;
     public $received;
     public $return;
-    public $receivable;
     public $stock_receive_qty;
     public $serial;
     public $type;
+    public $purchaseAble;
+    public $receiveAble;
 
     private StockReceiveService $service;
     private StockReceiveRepository $repo;
@@ -47,6 +48,9 @@ class StockReceiveCreate extends Component
         StockRepository $stockRepository,
     ) {
         $this->inputs[] = $this->numberOfItems;
+        $this->receiveAble = false;
+        $this->purchaseAble = true;
+
         $this->service = $service;
         $this->repo = $repository;
         $this->productService = $productService;
@@ -54,6 +58,19 @@ class StockReceiveCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+    }
+
+    public function updating($name, $value)
+    {
+        if ($name == 'type') {
+            if ($value == 'purchase') {
+                $this->purchaseAble = true;
+                $this->receiveAble = false;
+            } elseif ($value == 'return') {
+                $this->purchaseAble = false;
+                $this->receiveAble = true;
+            }
+        }
     }
 
     // public function mount()
@@ -85,6 +102,11 @@ class StockReceiveCreate extends Component
             'products' => $this->productService->getFormattedDataAsOptGroup(),
             'users' => $this->userRepo->getData(),
             'warehouses' => $this->warehouseRepository->getData(),
+            'receiveTypes' => [
+                'purchase' => 'Purchase',
+                'return' => 'Return',
+                'temporary' => 'Temporary'
+            ]
         ];
 
         return view('livewire.stock-receive-create', $data);

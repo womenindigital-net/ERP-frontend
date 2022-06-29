@@ -18,26 +18,23 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Reveive Type</label>
-                                <select class="form-control form-select" wireModel="type"
-                                    onchange="purchaseOrReturn(this)">
-                                    <option>--Select--</option>
-                                    <option value="1" selected>purchase</option>
-                                    <option value="2">Return</option>
-                                    <option value="3">Temporary</option>
-                                </select>
+                                <x-input-select :records="$receiveTypes" wireModel="type"/>
                             </div>
                         </div>
                         <div class="col-md-6">
+                            @if($purchaseAble)
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Purchase</label>
                                 <x-input-text wireModel="purchase" placeholder="Purchase no here">
                                 </x-input-text>
                             </div>
+                            @elseif($receiveAble)
                             <div class="mb-3 d-none" id="return">
                                 <label for="validationCustom02" class="form-label">Return</label>
                                 <x-input-text wireModel="return" placeholder="Return here">
                                 </x-input-text>
                             </div>
+                            @endif
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
