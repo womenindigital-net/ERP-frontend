@@ -76,7 +76,7 @@ if (!function_exists('convertLevelIntoName')) {
 }
 
 if (!function_exists('extractNecessaryFieldsFromData')) {
-    function extractNecessaryFieldsFromData($data, array $fields): array
+    function extractNecessaryFieldsFromData(array $data, array $fields): array
     {
         $fields = implode('|', $fields);
 

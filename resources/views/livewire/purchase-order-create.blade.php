@@ -10,7 +10,8 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Requisition</label>
-                <x-input-select wireModel="requisition_id" :records="$requisitions" targetColumn="title" :selected="$requisition->id"/>
+                <x-input-select wireModel="requisition_id" :records="$requisitions" targetColumn="title"
+                                :selected="$requisition->id"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -98,7 +99,7 @@
                                 <label for="discount">Price</label>
                             </div>
                             <div class="col-lg-1 p-0 pe-1">
-                                <label for="subtotal">VAT</label>
+                                <label for="subtotal">VAT %</label>
                             </div>
                             <div class="col-lg-1 p-0 pe-1">
                                 <label for="subtotal">Discount</label>
@@ -109,52 +110,52 @@
                         </div>
                         @foreach($inputs as $key => $item)
                             <div data-repeater-list="group-a">
-                            <div data-repeater-item class="row">
-                                <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
-                                    <select class="form-control form-select" wire:model="product_id.{{$key}}">
-                                        <option>--Select--</option>
-                                        @foreach($products as $product)
-                                            <optgroup label="{{$product['name']}}">
-                                                @foreach($product['children'] as $childCourse)
-                                                    <option
-                                                        value="{{$childCourse['id']}}">{{$childCourse['name']}}</option>
-                                                @endforeach
-                                            </optgroup>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="exp_date.{{$key}}" type="date"></x-input-text>
-                                </div>
-                                <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="available_qty.{{$key}}" type="number" :readOnly="true">
-                                    </x-input-text>
-                                </div>
+                                <div data-repeater-item class="row">
+                                    <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
+                                        <select class="form-control form-select" wire:model="product_id.{{$key}}">
+                                            <option>--Select--</option>
+                                            @foreach($products as $product)
+                                                <optgroup label="{{$product['name']}}">
+                                                    @foreach($product['children'] as $childCourse)
+                                                        <option
+                                                            value="{{$childCourse['id']}}">{{$childCourse['name']}}</option>
+                                                    @endforeach
+                                                </optgroup>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="exp_date.{{$key}}" type="date"></x-input-text>
+                                    </div>
+                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="available_qty.{{$key}}" type="number" :readOnly="true">
+                                        </x-input-text>
+                                    </div>
 
-                                <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="qty.{{$key}}" type="number" :readOnly="true">
-                                    </x-input-text>
-                                </div>
-                                <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="price.{{$key}}" type="number" :readOnly="true">
-                                    </x-input-text>
-                                </div>
-                                <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="vat.{{$key}}" type="number">
-                                    </x-input-text>
-                                </div>
-                                <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="discount.{{$key}}" type="number" :readOnly="true">
-                                    </x-input-text>
-                                </div>
-                                <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                    <input wireModel="sub_total.{{$key}}" type="number" class="form-control" />
-                                    <button class="btn btn-danger ms-2">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
+                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="qty.{{$key}}" type="number" :readOnly="true">
+                                        </x-input-text>
+                                    </div>
+                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="price.{{$key}}" type="number" :readOnly="true">
+                                        </x-input-text>
+                                    </div>
+                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="vat.{{$key}}" type="number">
+                                        </x-input-text>
+                                    </div>
+                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="discount.{{$key}}" type="number" :readOnly="true">
+                                        </x-input-text>
+                                    </div>
+                                    <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
+                                        <x-input-text wireModel="sub_total.{{$key}}" type="number"/>
+                                        <button class="btn btn-danger ms-2">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </form>
                     <!-- 7th row start  -->
@@ -176,13 +177,16 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-
         </div>
         <div class="col-md-4">
             <button class="btn btn-danger w-100">Reset</button>
         </div>
         <div class="col-md-4">
-            <button class="btn btn-success w-100">Save</button>
+            @if($this->mode == 'edit')
+                <button class="btn btn-success w-100" wire:click="update()">Update</button>
+            @else
+                <button class="btn btn-success w-100" wire:click="submit()">Save</button>
+            @endif
         </div>
     </div>
     <!-- end row -->

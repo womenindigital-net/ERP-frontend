@@ -56,7 +56,7 @@ class PurchaseOrderCreate extends Component
     {
 //        dd($this->requisition);
 
-        if ($this->requisition->id) {
+        if ($this->requisition && $this->requisition->id) {
             $this->project_id = $this->requisition->project_id;
             $this->requisition_id = $this->requisition->id;
             $this->inputs = $this->requisition->details->toArray();
@@ -92,40 +92,15 @@ class PurchaseOrderCreate extends Component
 
     public function updated($name, $value)
     {
-        /*if (str_starts_with($name, 'product_id.')) {
-            if (!$value || !$this->project_id)
-                return;
-
-            $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
-            if (!$productInfo) return;
-
+        if (str_starts_with($name, 'vat.')) {
             $targetKey = $this->getTargetKey($name);
-
-            $this->available_qty[$targetKey] = $productInfo->qty;
-            $this->price[$targetKey] = $productInfo->product->selling_price;
-        }
-
-        if (str_starts_with($name, 'qty.')) {
-            $targetKey = $this->getTargetKey($name);
-
-            if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
-                return;
-
             if ($this->price[$targetKey] && $this->qty[$targetKey]) {
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - ($this->discount[$targetKey] ?? 0);
+                if ($value) {
+                    $this->sub_total[$targetKey] += $this->sub_total[$targetKey] * ($this->vat[$targetKey]/100);
+                }
             }
         }
-
-        if (str_starts_with($name, 'discount.')) {
-            $targetKey = $this->getTargetKey($name);
-
-            if (!$this->available_qty[$targetKey])
-                return;
-
-            if ($this->price[$targetKey] && $this->qty[$targetKey]) {
-                $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - ($this->discount[$targetKey] ?? 0);
-            }
-        }*/
     }
 
     public function render(): Factory|View|Application
