@@ -949,8 +949,7 @@
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
                         <!-- form start -->
-                        {{--
-                        <livewire:functional-communication-list /> --}}
+                        <livewire:functional-communication-list />
                         <!-- end row -->
                     </div>
                 </div>

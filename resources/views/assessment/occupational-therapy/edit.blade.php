@@ -938,7 +938,7 @@
                                         <input type='button' class='btn btn-primary waves-effect waves-light btn-next'
                                             name='next' value='Next' />
                                         <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                            wire:click='save' value='Finish' />
+                                            wire:click='save' value='Update' />
                                     </div>
                                 </div>
                             </form>
