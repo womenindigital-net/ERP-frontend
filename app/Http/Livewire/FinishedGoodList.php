@@ -5,27 +5,26 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Http\Livewire\Traits\CommonListElements;
-use App\Repositories\StockReceiveRepository;
+use App\Repositories\FinishedGoodRepository;
 
-class StockReceiveList extends Component
+class FinishedGoodList extends Component
 {
 
     use WithPagination, CommonListElements;
     protected string $destroyRoute = 'stock-receive.destroy';
-    private StockReceiveRepository $repo;
+    private FinishedGoodRepository $repo;
 
-    public function boot(StockReceiveRepository $repository)
+    public function boot(FinishedGoodRepository $repository)
     {
         $this->repo = $repository;
     }
 
+
     public function render()
     {
-
         $data = [
             'records' => $this->repo->getListData($this->perPage, $this->search)
         ];
-
-        return view('livewire.stock-receive-list', $data);
+        return view('livewire.finished-good-list', $data);
     }
 }

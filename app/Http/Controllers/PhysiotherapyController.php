@@ -72,9 +72,27 @@ class PhysiotherapyController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
-            'record' => $this->record = $physiotherapy,
+            'id' => $physiotherapy['id'],
+            'collection_date' => $physiotherapy['collection_date'],
+            'teacher_id' => $physiotherapy['teacher_id'],
+            'candidate_id' => $physiotherapy['candidate_id'],
+            'general' => $physiotherapy['general'],
+            'visual_perception' => $physiotherapy['visual_perception'],
+            'activities_of_daily_living' => $physiotherapy['activities_of_daily_living'],
+            'strength' => $physiotherapy['strength'],
+            'functional_gross_motor' => $physiotherapy['functional_gross_motor'],
+            'transitional_movements' => $physiotherapy['transitional_movements'],
+            'fine_motor_skill' => $physiotherapy['fine_motor_skill'],
+            'automatic_reaction' => $physiotherapy['automatic_reaction'],
+            'sensory_skill_normal_hypo_response' => $physiotherapy['sensory_skill_normal_hypo_response'],
+            'cognitive_skills' => $physiotherapy['cognitive_skills'],
+            'treatment' => $physiotherapy['treatment'],
+            'signature' => $physiotherapy['signature'],
+            'muscle_power' => $physiotherapy['muscle_power'],
+            'muscle_tone' => $physiotherapy['muscle_tone'],
+            'behavior' => $physiotherapy['behavior'],
+            'domain_area' => $physiotherapy['domain_area'],
         ];
-
         return view('assessment.physiotherapy.view', $data);
     }
 

@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Models\StockReceive;
+use App\Models\FinishedGood;
 
-class StockReceiveRepository extends BaseRepository
+class FinishedGoodRepository extends BaseRepository
 {
-    protected string $model = StockReceive::class;
+    protected string $model = FinishedGood::class;
 
     
     public function getListData(int $perPage, string $search)

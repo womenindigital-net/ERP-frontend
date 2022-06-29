@@ -40,7 +40,7 @@ class StoreSensoryChecklistChildRequest extends FormRequest
             "complains_about_having_hair_brushed"                              => 'nullable',
             "resists_friendly"                                                 => 'nullable',
             "dislikes_kisses"                                                  => 'nullable',
-            "appears_fearful_of"                                               => 'nullable',
+            "appears_fearful_of_one"                                               => 'nullable',
             "avoids_group_situations_for_fear_of_the_unexpected_touch"        => 'nullable',
             "prefers_hugs"                                                     => 'nullable',
             "a_raindrop"                                                       => 'nullable',

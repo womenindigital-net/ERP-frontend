@@ -25,7 +25,7 @@ class FinishedGoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('stock-management.finished_goods');
     }
 
     /**
@@ -58,7 +58,11 @@ class FinishedGoodController extends Controller
      */
     public function edit(FinishedGood $finishedGood)
     {
-        //
+        $data = [
+            'record' => $finishedGood,
+        ];
+
+        return view('stock-management.finished_goods_edit', $data);
     }
 
     /**

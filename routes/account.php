@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\FinishedGoodController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PaymentController;
@@ -23,6 +24,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
 
         'stock-receive' => StockReceiveController::class,
+        'finished-goods' => FinishedGoodController::class,
     ]);
 
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
@@ -49,7 +51,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::get('bank-to-bank-list', [PaymentController::class, 'bankToBankList'])->name('bank.to.bank.list');
 
     // Route::get('stock-receive', [StockController::class, 'stockReceive'])->name('stock-receive');
-    Route::get('finished-goods', [StockController::class, 'finishedGoods'])->name('finished-goods');
+    // Route::get('finished-goods', [StockController::class, 'finishedGoods'])->name('finished-goods');
     Route::get('material-collect', [StockController::class, 'materialCollect'])->name('material-collect');
     Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');
     Route::get('stock-count', [StockController::class, 'stockCount'])->name('stock-count');
