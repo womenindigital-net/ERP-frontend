@@ -30,19 +30,3 @@
     </div>
 </div>
 @endsection
-@section('script')
-<script>
-    function purchaseOrReturn(selectObject) {
-  var value = selectObject.value;  
-  if(value == 1){
-    $('#return').hide();
-    $('#purchase').show();
-  }
-  else if(value == 2){
-    $('#return').show();
-    $('#purchase').hide();
-  }
-  
-}
-</script>
-@endsection

@@ -1,8 +1,9 @@
 <div class="tab-pane active" id="stock_recive" role="tabpanel">
-        
-        <div class="row">
-            <div class="col-12 p-0">
-                <div class="card">
+
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="card">
+                <form action="">
                     <div class="text-center">
                         <h4 class="mb-4">Product BOM</h4>
                     </div>
@@ -17,25 +18,23 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Reveive Type</label>
-                                <select class="form-control form-select" wireModel="type" onchange="purchaseOrReturn(this)">
-                                    <option>--Select--</option>
-                                    <option value="1" selected>purchase</option>
-                                    <option value="2">Return</option>
-                                    <option value="3">Temporary</option>
-                                </select>
+                                <x-input-select :records="$receiveTypes" wireModel="type"/>
                             </div>
                         </div>
                         <div class="col-md-6">
+                            @if($purchaseAble)
                             <div class="mb-3">
                                 <label for="validationCustom02" class="form-label">Purchase</label>
                                 <x-input-text wireModel="purchase" placeholder="Purchase no here">
                                 </x-input-text>
                             </div>
+                            @elseif($receiveAble)
                             <div class="mb-3 d-none" id="return">
                                 <label for="validationCustom02" class="form-label">Return</label>
                                 <x-input-text wireModel="return" placeholder="Return here">
                                 </x-input-text>
                             </div>
+                            @endif
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
@@ -126,16 +125,20 @@
                         <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                             wire:click="addMore()" />
                     </div>
-                </div>
             </div>
+            </form>
         </div>
-    </form>
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <input type="reset" class="btn btn-danger  waves-effect waves-light w-100" value="Reset">
-            </div>
-            <div class="col-md-4">
-                <button class="btn btn-success  waves-effect waves-light w-100" id="sa-position">Save</button>
-            </div>
+    </div>
+    <div class="row justify-content-center">
+        {{-- <div class="col-md-4">
+            <input type="reset" class="btn btn-danger  waves-effect waves-light w-100" value="Reset">
+        </div> --}}
+        <div class="col-md-4">
+            @if($this->mode == 'edit')
+            <button class="btn btn-success w-100" wire:click="update()">Update</button>
+            @else
+            <button class="btn btn-success w-100" wire:click="submit()">Save</button>
+            @endif
         </div>
+    </div>
 </div>

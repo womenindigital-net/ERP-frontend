@@ -19,6 +19,17 @@ class StockReceiveCreate extends Component
     use WithPagination, CommonListElements, CommonAddMore;
     private string $destroyRoute = 'stock-receive.destroy';
 
+    public $purchase;
+    public $date;
+    public $exp_date;
+    public $received;
+    public $return;
+    public $stock_receive_qty;
+    public $serial;
+    public $type;
+    public $purchaseAble;
+    public $receiveAble;
+
     private StockReceiveService $service;
     private StockReceiveRepository $repo;
     private ProductService $productService;
@@ -37,6 +48,9 @@ class StockReceiveCreate extends Component
         StockRepository $stockRepository,
     ) {
         $this->inputs[] = $this->numberOfItems;
+        $this->receiveAble = false;
+        $this->purchaseAble = true;
+
         $this->service = $service;
         $this->repo = $repository;
         $this->productService = $productService;
@@ -46,13 +60,30 @@ class StockReceiveCreate extends Component
         $this->stockRepo = $stockRepository;
     }
 
+    public function updating($name, $value)
+    {
+        if ($name == 'type') {
+            if ($value == 'purchase') {
+                $this->purchaseAble = true;
+                $this->receiveAble = false;
+            } elseif ($value == 'return') {
+                $this->purchaseAble = false;
+                $this->receiveAble = true;
+            }
+        }
+    }
+
+    // public function mount()
+    // {
+    //     dd($this->validate());
+    // }
+
     protected array $rules = [
         'project_id' => 'required',
-        'type' => 'required',
+        'warehouse_id' => 'required',
         'purchase' => 'nullable',
         'return' => 'nullable',
         'date' => 'required',
-        'warehouse_id' => 'required',
         'product_id.*' => 'required',
         'exp_date.*' => 'required',
         'received.*' => 'nullable',
@@ -60,6 +91,7 @@ class StockReceiveCreate extends Component
         'receivable.*' => 'nullable',
         'stock_receive_qty.*' => 'required',
         'serial.*' => 'required',
+        /*'type' => 'required'*/
     ];
 
     public function render()
@@ -70,6 +102,11 @@ class StockReceiveCreate extends Component
             'products' => $this->productService->getFormattedDataAsOptGroup(),
             'users' => $this->userRepo->getData(),
             'warehouses' => $this->warehouseRepository->getData(),
+            'receiveTypes' => [
+                'purchase' => 'Purchase',
+                'return' => 'Return',
+                'temporary' => 'Temporary'
+            ]
         ];
 
         return view('livewire.stock-receive-create', $data);
