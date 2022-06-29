@@ -19,6 +19,16 @@ class StockReceiveCreate extends Component
     use WithPagination, CommonListElements, CommonAddMore;
     private string $destroyRoute = 'stock-receive.destroy';
 
+    public $purchase;
+    public $date;
+    public $exp_date;
+    public $received;
+    public $return;
+    public $receivable;
+    public $stock_receive_qty;
+    public $serial;
+    public $type;
+
     private StockReceiveService $service;
     private StockReceiveRepository $repo;
     private ProductService $productService;
@@ -45,6 +55,11 @@ class StockReceiveCreate extends Component
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
     }
+
+    // public function mount()
+    // {
+    //     dd($this->validate());
+    // }
 
     protected array $rules = [
         'project_id' => 'required',

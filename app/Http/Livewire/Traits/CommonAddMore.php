@@ -28,6 +28,7 @@ trait CommonAddMore
 
     public function submit()
     {
+        dd(4545);
         $this->service->store($this->validate());
         $this->dispatchBrowserEvent('notify');
         $this->dispatchBrowserEvent('reload');
