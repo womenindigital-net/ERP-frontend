@@ -5,7 +5,6 @@ namespace App\Services;
 
 use App\Repositories\StockReceiveRepository;
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\Nullable;
 
 class StockReceiveService
 {

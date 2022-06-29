@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('finished_good_details', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\FinishedGood::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Category::class)->constrained()->cascadeOnDelete();
+            // $table->foreignIdFor(\App\Models\Category::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Product::class)->constrained()->cascadeOnDelete();
             $table->string('qty');
-            $table->foreignIdFor(\App\Models\Unit::class)->constrained()->cascadeOnDelete();
+            $table->string('unit');
+            // $table->foreignIdFor(\App\Models\Unit::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
