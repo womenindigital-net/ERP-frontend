@@ -560,9 +560,21 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Recruitment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li>
-                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li>
-                                <li><a href="HR.applicant-list.create">Applicant List</a></li>
+
+                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li> 
+                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li> 
+                                <li><a href="HR.applicant-list.create">Applicant List</a></li> 
+                                <li><a href="HR.sent-mail.create">Sent Mail</a></li> 
+                                <li><a href="HR.assign-interviewer.create">Assign Interviewer</a></li> 
+                                <li><a href="HR.interview-rating-form.create">Interview Rating Form</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Recruit</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="HR.recruit.job-confirmation.create">Job Confirmation (Generated for single person)</a></li> 
+                                <li><a href="HR.recruit.job-contact.create">Job Contact</a></li> 
+                                <li><a href="HR.recruit.reporting-memo.create">Reporting Memo</a></li> 
                             </ul>
                         </li>
                         <li>

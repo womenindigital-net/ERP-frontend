@@ -175,7 +175,7 @@
                                 </div>
                             </div>
                             <input data-repeater-create="" type="button" class="btn btn-outline-info waves-effect waves-light mt-3 ms-1 mt-lg-0" value="Add">
-                            </form>
+                        </form>
                     </div>
                 </div>
                 <div class="card-body">
@@ -215,7 +215,6 @@
 @endsection
 @section('script')
 <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-
 <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection
 

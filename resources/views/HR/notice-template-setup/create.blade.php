@@ -144,6 +144,42 @@
             </div>
         </div>
     </div>
+  </div>
 </div>
+<!--  Extra Large modal example -->
+<div class="modal fade student-income-modal-xl-view" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary">Reporting Memo</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="row p-3">
+              <div class="col-6 d-flex  mb-3">
+                  <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Title:</label>
+                  <div class="col-md-8">
+                          <x-input-text name="title"/>
+                  </div>
+              </div>
+              <div class="col-6 d-flex mb-3">
+                  <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Notice Type:</label>
+                  <div class="col-md-8">
+                      <x-input-select name="notice_type" :records="[]" />
+                  </div>
+              </div>
+              <div class="col-6 d-flex  mb-3">
+                  <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Message:</label>
+                  <div class="col-md-8">
+                          <x-input-textarea  name="essage" rows="1" />
+                  </div>
+              </div>
+          </div>
+          <div class="row modal-footer">
+              <div class="col-md-1">
+                  <button class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 @endsection
