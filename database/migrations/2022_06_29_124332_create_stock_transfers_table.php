@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('reference')->nullable();
             $table->string('date')->nullable();
             $table->string('total_transfer_quantity')->nullable();
+            $table->boolean('is_approved')->default(0);
             $table->foreignIdFor(Warehouse::class, 'warehouse_id_from')->nullable()->constrained('warehouses')->nullOnDelete();
             $table->foreignIdFor(Warehouse::class, 'warehouse_id_to')->nullable()->constrained('warehouses')->nullOnDelete();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();

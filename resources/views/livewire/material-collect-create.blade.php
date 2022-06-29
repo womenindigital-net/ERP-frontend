@@ -6,7 +6,7 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                         <label class="form-label">Select Name</label>
-                        <x-input-select wireModel="project_id" :records="$users" targetColumn="title" />
+                        <x-input-select wireModel="collected_for" :records="$users" targetColumn="title" />
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -47,6 +47,7 @@
                                     </div>
                                 </div>
                                 <div data-repeater-list="group-a">
+                                    @foreach ($inputs as $key => $item)
                                     <div data-repeater-item class="row">
                                         <div class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
                                             <select class="form-control form-select" wire:model="product_id.{{$key}}">
@@ -103,13 +104,22 @@
                                             </button>
                                         </div>
                                     </div>
-
+                                    @endforeach
                                 </div>
                                 <div class="ms-2">
                                     <button data-repeater-create type="button"
                                         class="btn btn-success waves-effect waves-light">Add</button>
                                 </div>
                             </form>
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="col-md-2">
+                                @if($this->mode == 'edit')
+                                <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+                                @elseif (!($this->mode == 'show'))
+                                <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

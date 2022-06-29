@@ -11,12 +11,19 @@ class FinishedGoodList extends Component
 {
 
     use WithPagination, CommonListElements;
-    protected string $destroyRoute = 'stock-receive.destroy';
     private FinishedGoodRepository $repo;
+
+    protected string $destroyRoute = 'finished-goods.destroy';
 
     public function boot(FinishedGoodRepository $repository)
     {
         $this->repo = $repository;
+    }
+
+    public function toggleApprove($recordId)
+    {
+        $this->repo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
     }
 
 

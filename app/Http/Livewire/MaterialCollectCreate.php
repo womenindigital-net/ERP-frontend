@@ -51,6 +51,10 @@ class MaterialCollectCreate extends Component
     }
 
 
+    public $collected_for;
+    public $date;
+    public $warehouser_id;
+
     // public function mount()
     // {
     //     if ($this->stockReceive) {
@@ -82,20 +86,9 @@ class MaterialCollectCreate extends Component
     // }
 
     protected array $rules = [
-        'project_id' => 'required',
-        'warehouse_id' => 'required',
-        'type' => 'required',
-        'purchase_type' => 'nullable',
-        'return_type' => 'nullable',
+        'collected_for' => 'required',
         'date' => 'required',
-        'product_id.*' => 'required',
-        'exp_date.*' => 'required',
-        'qty.*' => 'nullable',
-        'received.*' => 'nullable',
-        'return.*' => 'nullable',
-        'receivable.*' => 'nullable',
-        'stock_receive_qty.*' => 'nullable',
-        'serial.*' => 'nullable',
+        'warehouser_id' => 'required',
     ];
 
     public function update()

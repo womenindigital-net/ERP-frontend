@@ -21,6 +21,7 @@ class MaterialCollectionService
             DB::beginTransaction();
             [$stockRec, $data] = $this->collectStockReceive($validated);
             $stockReceive = $this->repo->store($stockRec);
+            dd($data);
             $stockReceiveDetailsInfos = $this->collectStockReceiveDetailsInfos($data);
             $stockReceive->details()->createMany($stockReceiveDetailsInfos);
             DB::commit();
@@ -32,10 +33,7 @@ class MaterialCollectionService
 
     private function collectStockReceive(array $validated)
     {
-        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'type', 'purchase_type', 'return_type', 'date']);
-
-        $stockReceive['created_by'] = auth()->id();
-        $stockReceive['note'] = null;
+        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['collected_for', 'date', 'warehouser_id']);
 
         return [$stockReceive, $data];
     }
@@ -62,7 +60,7 @@ class MaterialCollectionService
 
     public function update($stockReceive, array $validated)
     {
-       
+
         try {
             DB::beginTransaction();
             [$stockRec, $data] = $this->collectStockReceive($validated);

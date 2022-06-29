@@ -25,7 +25,7 @@ class StockTransferController extends Controller
      */
     public function create()
     {
-        return view('stock-management.stock_transfer');
+        return view('stock-management.stock_transfer.create');
     }
 
     /**
@@ -47,7 +47,11 @@ class StockTransferController extends Controller
      */
     public function show(StockTransfer $stockTransfer)
     {
-        //
+        $data = [
+            'records' => $stockTransfer,
+        ];
+
+        return view('stock-management.stock_transfer.show', $data);
     }
 
     /**
@@ -62,7 +66,7 @@ class StockTransferController extends Controller
             'record' => $stockTransfer,
         ];
 
-        return view('stock-management.stock_transfer_edit', $data);
+        return view('stock-management.stock_transfer.edit', $data);
     }
 
     /**
@@ -85,6 +89,6 @@ class StockTransferController extends Controller
      */
     public function destroy(StockTransfer $stockTransfer)
     {
-        //
+        return $stockTransfer->delete();
     }
 }

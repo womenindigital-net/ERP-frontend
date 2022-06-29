@@ -15,7 +15,7 @@ class StockReceiveController extends Controller
      */
     public function index()
     {
-        //
+        redirect()->route('stock-assign.create');
     }
 
     /**
@@ -25,7 +25,7 @@ class StockReceiveController extends Controller
      */
     public function create()
     {
-        return view('stock-management.stock_receive');
+        return view('stock-management.stock_receive.create');
     }
 
     /**
@@ -47,7 +47,11 @@ class StockReceiveController extends Controller
      */
     public function show(StockReceive $stockReceive)
     {
-        //
+        $data = [
+            'records' => $stockReceive,
+        ];
+
+        return view('stock-management.stock_receive.show', $data);
     }
 
     /**
@@ -62,7 +66,7 @@ class StockReceiveController extends Controller
             'record' => $stockReceive,
         ];
 
-        return view('stock-management.stock_receive_edit', $data);
+        return view('stock-management.stock_receive.edit', $data);
     }
 
     /**
@@ -85,6 +89,6 @@ class StockReceiveController extends Controller
      */
     public function destroy(StockReceive $stockReceive)
     {
-        //
+        return $stockReceive->delete();
     }
 }

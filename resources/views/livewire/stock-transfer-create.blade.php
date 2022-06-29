@@ -61,7 +61,7 @@
                         <div data-repeater-list="group-a">
 
                             @foreach ($inputs as $key => $item)
-                            <div data-repeater-item class="row">
+                            <div data-repeater-item class="row removeRow">
                                 <div class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
                                     <select class="form-control form-select" wire:model="product_id.{{$key}}">
                                         <option>--Select--</option>
@@ -84,14 +84,20 @@
                                 </div>
                                 <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
                                     <x-input-text type="number" wireModel="serial.{{ $key }}"></x-input-text>
-                                    <button class="btn btn-danger ms-2">
+                                    @if (!($this->mode == 'show'))
+                                    <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                        wire:click="removeRow({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach
+                            @if (!($this->mode == 'show'))
                             <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                                 wire:click="addMore()" />
+
+                            @endif
                         </div>
 
                     </form>
@@ -100,12 +106,14 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        @if($this->mode == 'edit')
-        <button class="btn btn-success w-100" wire:click="update()">Update</button>
-        @else
-        <button class="btn btn-success w-100" wire:click="submit()">Save</button>
-        @endif
+    <div class="row justify-content-end">
+        <div class="col-md-2">
+            @if($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode == 'show'))
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+            @endif
+        </div>
     </div>
     <!-- end row -->
 </div>
