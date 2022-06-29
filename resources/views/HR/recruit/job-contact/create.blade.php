@@ -25,8 +25,7 @@
                             <div class="modal-body pb-0">
                                 <div class="row">
                                     <div class="col-6 d-flex  mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
-                                            title:</label>
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job title:</label>
                                         <div class="col-md-8">
                                             <x-input-select name="job_title" :records="[]" />
                                         </div>
@@ -47,7 +46,7 @@
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input"
-                                            class="col-md-4 col-form-label  pe-2">WorkStation:</label>
+                                            class="col-md-4 col-form-label  pe-2">Work Station:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="workStation" />
                                         </div>
@@ -57,12 +56,12 @@
                                             date:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="start_date" type="date" />
-                                        </div>
+                                        </div> 
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Logs:</label>
                                         <div class="col-md-8">
-                                            <x-input-text name="workStation" />
+                                            <x-input-text name="log" />
                                         </div>
                                     </div>
                                 </div>
