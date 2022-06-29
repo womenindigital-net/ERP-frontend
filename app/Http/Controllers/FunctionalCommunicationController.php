@@ -78,7 +78,24 @@ class FunctionalCommunicationController extends Controller
      */
     public function show(FunctionalCommunication $functionalCommunication)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'id' => $functionalCommunication['id'],
+            'collection_date' => $functionalCommunication['collection_date'],
+            'teacher_id' => $functionalCommunication['teacher_id'],
+            'student_id' => $functionalCommunication['student_id'],
+            'speech' => $functionalCommunication['speech'],
+            'body_language' => $functionalCommunication['body_language'],
+            'words_usages_vocabulary' => $functionalCommunication['words_usages_vocabulary'],
+            'sentence_structure' => $functionalCommunication['sentence_structure'],
+            'relaying_information' => $functionalCommunication['relaying_information'],
+            'following_directions' => $functionalCommunication['following_directions'],
+            'attention_and_memory' => $functionalCommunication['attention_and_memory'],
+            'conversation_social_communication' => $functionalCommunication['conversation_social_communication'],
+            'play_skill' => $functionalCommunication['play_skill'],
+        ];
+        return view('assessment.functional-communication.view', $data);
     }
 
     /**
