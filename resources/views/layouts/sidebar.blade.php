@@ -552,8 +552,7 @@
                 <li class="menu-title">HR Admin</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-share-alt"></i>
-                        <span>HR Admin</span>
+                        <i class="bx bx-share-alt"></i> <span>HR Admin</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
@@ -562,6 +561,14 @@
                                 <li><a href="HR.employee-requisition.create">Employee Requisition</a></li> 
                                 <li><a href="HR.apply-for-job.create">Apply for Job</a></li> 
                                 <li><a href="HR.applicant-list.create">Applicant List</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">Recruit</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="HR.recruit.job-confirmation.create">Job Confirmation (Generated for single person)</a></li> 
+                                <li><a href="HR.recruit.job-contact.create">Job Contact</a></li> 
+                                <li><a href="HR.recruit.reporting-memo.create">Reporting Memo</a></li> 
                             </ul>
                         </li>
                         <li>
