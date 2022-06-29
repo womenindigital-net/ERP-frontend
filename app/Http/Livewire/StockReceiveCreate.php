@@ -63,11 +63,10 @@ class StockReceiveCreate extends Component
 
     protected array $rules = [
         'project_id' => 'required',
-        'type' => 'required',
+        'warehouse_id' => 'required',
         'purchase' => 'nullable',
         'return' => 'nullable',
         'date' => 'required',
-        'warehouse_id' => 'required',
         'product_id.*' => 'required',
         'exp_date.*' => 'required',
         'received.*' => 'nullable',
@@ -75,6 +74,7 @@ class StockReceiveCreate extends Component
         'receivable.*' => 'nullable',
         'stock_receive_qty.*' => 'required',
         'serial.*' => 'required',
+        /*'type' => 'required'*/
     ];
 
     public function render()
