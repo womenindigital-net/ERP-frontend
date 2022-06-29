@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">WorkStation:</label>
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Work Station:</label>
                                     <div class="col-md-8">
                                         <x-input-text name="workStation"/>
                                     </div>
@@ -166,7 +166,7 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title text-primary">Job Confirmation (Generated for single person)</h5>
+                              <h5 class="modal-title text-primary">Job Confirmation</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                               <div class="row p-3">
@@ -189,7 +189,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">WorkStation:</label>
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Work Station:</label>
                                     <div class="col-md-8">
                                         <x-input-text name="workStation"/>
                                     </div>
@@ -198,12 +198,6 @@
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Start date:</label>
                                     <div class="col-md-8">
                                         <x-input-text name="start_date" type="date" />
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Logs:</label>
-                                    <div class="col-md-8">
-                                      <x-input-text name="workStation"/>
                                     </div>
                                 </div>
                             </div>

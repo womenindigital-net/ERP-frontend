@@ -26,60 +26,69 @@
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
                         <div class="modal-body pb-0">
-                            <div class="row">
+                            <div class="row pb-5">
                                 <div class="col-6 d-flex  mb-3">
-                                    <label for="example-text-input" class="col-md-4">Is company employee:</label>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradio4">
-                                        <label class="btn btn-outline-success" for="btnradio4">Yes</label>
-                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradio5" checked="">
-                                        <label class="btn btn-outline-danger" for="btnradio5">No</label>
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex  mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">First Name:</label>
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job title:</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="f_name" type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Last Name:</label>
-                                    <div class="col-md-8">
-                                        <x-input-text name="l_name" type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex  mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Mobile no:</label>
-                                    <div class="col-md-8">
-                                        <x-input-text name="mobile_no" type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Email:</label>
-                                    <div class="col-md-8">
-                                        <x-input-text name="email_add" type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applying For:</label>
-                                    <div class="col-md-8">
-                                        <x-input-select name="applying_for"
+                                        <x-input-select name="job_title_select"
                                         :records="[]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Date of Birth:</label>
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Depertmnet:</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="dob" type="date" />
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">CV upload:</label>
-                                    <div class="col-md-8">
-                                        <x-input-text name="cv_upload" type="file" />
+                                        <x-input-select name="deaprtment_select"
+                                        :records="[]" />
                                     </div>
                                 </div>
                             </div>
+                            <form class="repeater pb-5" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-lg-2 p-0 pe-1">
+                                        <label for="product">To</label>
+                                    </div>
+                                    <div class="col-lg-2 p-0 pe-1">
+                                        <label for="quality">Subject</label>
+                                    </div>
+                                    <div class="col-lg-2 p-0 pe-1">
+                                        <label for="subtotal">Date</label>
+                                    </div>
+                                    <div class="col-lg-2 p-0 pe-1">
+                                        <label for="quality">time</label>
+                                    </div>
+                                    <div class="col-lg-2 p-0 pe-1">
+                                        <label for="subtotal">Logs</label>
+                                    </div>
+                                    
+                                </div>
+                                <div data-repeater-list="group-a">
+                                    <div data-repeater-item class="row removeRow">
+
+                                        <div  class="col-lg-2 d-flex p-0 pe-1 pb-1 ">
+                                            <x-input-text name="criteria" type="text"></x-input-text>
+                                        </div>
+                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                            <x-input-select name="subject"
+                                        :records="[]" />
+                                        </div>
+                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                            <x-input-text name="date" type="date"></x-input-text>
+                                        </div>
+                                        <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                            <x-input-text name="mailing_time" type="time"></x-input-text>
+                                        </div>
+                                        <div class="col-lg-2 p-0 pe-1 pb-1 d-flex">
+                                            <x-input-text name="logs" type="text"></x-input-text>
+                                            <div class="">
+                                                <button class="btn btn-danger ms-2 removeBtn">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
+                            </form>
                         </div>
                           <div class="row modal-footer">
                               <div class="col-md-1">
@@ -113,22 +122,22 @@
                         <table class="table table-bordered w-100">
                           <thead>
                             <tr class="table-primary">
-                                <th>Name</th>
-                                <th>Mobile No</th>
-                                <th>Email</th>
-                                <th>Applying Position</th>
-                                <th>DOB</th>
+                                <th>Depertmnet</th>
+                                <th>To</th>
+                                <th>Subject</th>
+                                <th>Date  </th>
+                                <th>time</th>
                                 <th>Log</th>
                                 <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                                <td>Test</td>
-                                <td>+88017</td>
-                                <td>abc@gmail.com</td>
-                                <td>Office Manager</td>
-                                <td>12/04/22</td>
+                                <td>HR</td>
+                                <td>Demo</td>
+                                <td>Application</td>
+                                <td>12/02</td>
+                                <td>12.00pm</td>
                                 <td>Create: Karishma Cultural @ 2018-12-27 19:24:14</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
@@ -186,66 +195,51 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title text-primary">Employee Requisition Form</h5>
+                              <h5 class="modal-title text-primary">Mail Information</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             
                             <div class="modal-body pb-0">
-                                <div class="row">
+                                <div class="row pb-5">
                                     <div class="col-6 d-flex  mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Is company employee:</label>
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job title:</label>
                                         <div class="col-md-8">
-                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
-                                                <input type="radio" class="btn-check" name="btnradioview" id="btnradio1" autocomplete="off" checked="">
-                                                <label class="btn btn-outline-success" for="btnradio1">Yes</label>
-                                                <input type="radio" class="btn-check" name="btnradioview" id="btnradio2" autocomplete="off">
-                                                <label class="btn btn-outline-danger" for="btnradio2">No</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex  mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">First Name:</label>
-                                        <div class="col-md-8">
-                                            <x-input-text name="f_name" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Last Name:</label>
-                                        <div class="col-md-8">
-                                            <x-input-text name="l_name" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex  mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Mobile no:</label>
-                                        <div class="col-md-8">
-                                            <x-input-text name="mobile_no" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Email:</label>
-                                        <div class="col-md-8">
-                                            <x-input-text name="email_add" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applying For:</label>
-                                        <div class="col-md-8">
-                                            <x-input-select name="applying_for"
+                                            <x-input-select name="job_title_select"
                                             :records="[]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Date of Birth:</label>
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Depertmnet:</label>
                                         <div class="col-md-8">
-                                            <x-input-text name="dob" type="date" />
+                                            <x-input-select name="deaprtment_select"
+                                            :records="[]" />
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex  mb-3">
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">To:</label>
+                                        <div class="col-md-8">
+                                            <x-input-text name="to" type="text"></x-input-text>
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">CV upload:</label>
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Subject:</label>
                                         <div class="col-md-8">
-                                            <x-input-text name="cv_upload" type="file" />
+                                            <x-input-text name="subject" type="text"></x-input-text>
                                         </div>
                                     </div>
+                                    <div class="col-6 d-flex mb-3">
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Date:</label>
+                                        <div class="col-md-8">
+                                            <x-input-text name="date" type="date"></x-input-text>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex  mb-3">
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Time:</label>
+                                        <div class="col-md-8">
+                                            <x-input-text name="time" type="time"></x-input-text>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="row modal-footer">
@@ -263,4 +257,7 @@
 @endsection
 
 @section('script')
+<!-- form repeater js -->
+<script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+<script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection
