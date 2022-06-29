@@ -4,6 +4,7 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\FinishedGoodController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\JournalController;
+use App\Http\Controllers\MaterialCollectionController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RequisitionController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\SaleVoucherController;
 use App\Http\Controllers\StockAssignController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\StockReceiveController;
+use App\Http\Controllers\StockTransferController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
@@ -25,6 +27,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
         'stock-receive' => StockReceiveController::class,
         'finished-goods' => FinishedGoodController::class,
+        'material-collect' => MaterialCollectionController::class,
+        'stock-transfer' => StockTransferController::class,
     ]);
 
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
@@ -52,8 +56,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
     // Route::get('stock-receive', [StockController::class, 'stockReceive'])->name('stock-receive');
     // Route::get('finished-goods', [StockController::class, 'finishedGoods'])->name('finished-goods');
-    Route::get('material-collect', [StockController::class, 'materialCollect'])->name('material-collect');
-    Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');
+    // Route::get('material-collect', [StockController::class, 'materialCollect'])->name('material-collect');
+    // Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');
     Route::get('stock-count', [StockController::class, 'stockCount'])->name('stock-count');
 
     Route::get('stock-out', [StockController::class, 'stockOut'])->name('stock-out');

@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
+use App\Models\StockTransferDetail;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\MaterialCollectionDetail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class MaterialCollection extends Model
+class StockTransfer extends Model
 {
     use HasFactory;
 
     public function details(): HasMany
     {
-        return $this->hasMany(MaterialCollectionDetail::class);
+        return $this->hasMany(StockTransferDetail::class);
     }
 }

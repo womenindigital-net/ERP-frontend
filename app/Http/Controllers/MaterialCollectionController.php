@@ -25,7 +25,7 @@ class MaterialCollectionController extends Controller
      */
     public function create()
     {
-        //
+        return view('stock-management.material_collects')
     }
 
     /**
