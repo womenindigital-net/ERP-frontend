@@ -92,7 +92,6 @@
                                                 <form>
                                                     <div class="tab-content">
                                                         <div class="tab-pane" id="sensory_checklist">
-
                                                             <section>
                                                                 <form>
                                                                     <div class="row">
@@ -2004,7 +2003,6 @@
                                 <!-- end row -->
                             </form>
                         </section>
-
                         <!-- Bank Details -->
                         <h3>Visual Perception</h3>
                         <section>

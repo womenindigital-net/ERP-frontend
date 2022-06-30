@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'hr-admin', 'middleware' => ['auth']], function () {
+    Route::group(['prefix' => 'hr-admin', 'middleware' => ['auth']], function () {
     Route::resources(['/' => HrAdminController::class]);
+    // Recruitment
+    Route::get('HR.employee-requisition.create', [HrAdminController::class, 'employeeRequisition'])->name('HR.employee-requisition.create');
+    Route::get('HR.apply-for-job.create', [HrAdminController::class, 'applyForJon'])->name('HR.apply-for-job.create');
     // warning notice 
     Route::get('warning-notice.create', [HrAdminController::class, 'warningNotice'])->name('HR.warning-notice.create');
     Route::get('show-case-notice.create', [HrAdminController::class, 'showcaseNotice'])->name('HR.show-case-notice.create');

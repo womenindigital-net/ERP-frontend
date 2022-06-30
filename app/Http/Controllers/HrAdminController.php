@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 
 class HrAdminController extends Controller
 {
+    public function employeeRequisition()
+    {
+        return view('HR.employee-requisition.create');
+    }
+    public function applyForJob()
+    {
+        return view('HR.apply-for-job.create');
+    }
+    
     public function warningNotice()
     {
         return view('HR.warning-notice.create');
