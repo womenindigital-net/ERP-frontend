@@ -115,6 +115,6 @@ class IncidentRecordController extends Controller
      */
     public function destroy(IncidentRecord $incidentRecord)
     {
-        //
+        return $incidentRecord->delete();
     }
 }

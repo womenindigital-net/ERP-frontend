@@ -10,7 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class PhysiotherapyList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'physiotherapy.destroy';
     private PhysiotherapyRepository $physioTherapyRepo;
     public $reportList;
 

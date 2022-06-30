@@ -12,6 +12,7 @@ class CareNeedList extends Component
     use WithPagination, CommonListElements;
     private CareNeedRepository $careRepo;
     public $reportList;
+    protected string $destroyRoute = 'care-need.destroy';
 
     public function boot(CareNeedRepository $careRepo)
     {

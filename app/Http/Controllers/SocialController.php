@@ -177,6 +177,6 @@ class SocialController extends Controller
      */
     public function destroy(Social $social_communication)
     {
-        //
+        return $social_communication->delete();
     }
 }

@@ -11,6 +11,7 @@ class NoticeBoardList extends Component
 {
 
     use WithPagination, CommonListElements;
+    protected string $destroyRoute = 'notice-board.destroy';
 
     private NoticeBoardRepository $noticeBoardRepo;
 

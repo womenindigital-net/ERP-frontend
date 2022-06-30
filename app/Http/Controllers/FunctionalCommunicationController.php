@@ -149,6 +149,6 @@ class FunctionalCommunicationController extends Controller
      */
     public function destroy(FunctionalCommunication $functionalCommunication)
     {
-        //
+        return $functionalCommunication->delete();
     }
 }

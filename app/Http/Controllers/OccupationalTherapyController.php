@@ -155,6 +155,6 @@ class OccupationalTherapyController extends Controller
      */
     public function destroy(OccupationalTherapy $occupationalTherapy)
     {
-        //
+        return $occupationalTherapy->delete();
     }
 }

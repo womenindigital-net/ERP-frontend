@@ -113,6 +113,6 @@ class StudentAttendanceController extends Controller
      */
     public function destroy(StudentAttendance $studentAttendance)
     {
-        //
+        return $studentAttendance->delete();
     }
 }

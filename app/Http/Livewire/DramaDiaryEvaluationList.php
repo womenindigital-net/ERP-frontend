@@ -10,7 +10,7 @@ use App\Repositories\DramaDiaryEvaluationRepository;
 class DramaDiaryEvaluationList extends Component
 {
      use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'drama-diary-evaluation.destroy';
     private DramaDiaryEvaluationRepository $dramaDriaryEvaluationRepo;
     public $reportList;
 

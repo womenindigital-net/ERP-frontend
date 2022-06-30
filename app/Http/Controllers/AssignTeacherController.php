@@ -113,6 +113,6 @@ class AssignTeacherController extends Controller
      */
     public function destroy(AssignTeacher $assignTeacher)
     {
-        //
+        return $assignTeacher->delete();
     }
 }

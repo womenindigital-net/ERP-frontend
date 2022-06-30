@@ -10,7 +10,7 @@ use App\Repositories\SensoryChecklistAdultRepository;
 class SensoryCheckListAdultList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'sensory-checklist-adult.destroy';
     private SensoryChecklistAdultRepository $sensoryChecklistAdultRepo;
     public $reportList;
 

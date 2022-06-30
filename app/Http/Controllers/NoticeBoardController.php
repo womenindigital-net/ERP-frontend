@@ -114,6 +114,6 @@ class NoticeBoardController extends Controller
      */
     public function destroy(NoticeBoard $noticeBoard)
     {
-        //
+        return $noticeBoard->delete();
     }
 }

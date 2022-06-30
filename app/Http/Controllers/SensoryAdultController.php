@@ -118,6 +118,6 @@ class SensoryAdultController extends Controller
      */
     public function destroy(SensoryAdult $sensoryAdult)
     {
-        //
+        return $sensoryAdult->delete();
     }
 }

@@ -14,7 +14,7 @@ use Livewire\WithPagination;
 class TripReportList extends Component
 {
     // use WithPagination, CommonListElements;
-    // protected string $destroyRoute = 'trip.destroy';
+     protected string $destroyRoute = 'trip.destroy';
 
     // private TripService $service;
     // private TripRepository $repo;

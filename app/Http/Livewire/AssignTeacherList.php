@@ -10,7 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class AssignTeacherList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'assign-teacher.destroy';
     private AssignTeacherRepository $assignTheacherRepo;
 
     public function boot(AssignTeacherRepository $assignTheacherRepo)

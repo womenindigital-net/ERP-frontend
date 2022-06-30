@@ -10,7 +10,7 @@ use App\Repositories\StudentAttendanceRepository;
 class StudentAttendanceList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'notice-board.destroy';
     private StudentAttendanceRepository $studentAttendanceRepo;
 
     public function boot(StudentAttendanceRepository $studentAttendanceRepo)
