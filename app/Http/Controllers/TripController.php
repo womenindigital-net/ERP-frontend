@@ -80,7 +80,33 @@ class TripController extends Controller
      */
     public function show(Trip $trip)
     {
-        //
+        $data = [
+            'record' => $trip,
+            'activitiesOfDailyLiving' => $trip->activities_of_daily_living,
+            'onlyForStaff' => $trip->only_for_staff,
+            'activities' => $trip->activities,
+            'securitySafety' => $trip->security_safety,
+            'equipment' => $trip->equipment,
+            'light' => $trip->light,
+            'kitchen' => $trip->kitchen,
+            'bathroom' => $trip->bathroom,
+            'floor' => $trip->floor,
+            'instrumentalActivitiesOfDaily' => $trip->instrumental_activities_of_daily,
+            'environmentalSafetyRelative' => $trip->environmental_safety_relative,
+            'environmentalSafetyStep' => $trip->environmental_safety_step,
+            'wokeUpInTheMorning' => $trip->woke_up_in_the_morning,
+            'readingWriting' => $trip->reading_writing,
+            'dailyWork' => $trip->daily_work,
+            'wonWork' => $trip->won_work,
+            'lunchTime' => $trip->lunch_time,
+            'restTime' => $trip->rest_time,
+            'afternoon' => $trip->afternoon,
+            'evening' => $trip->evening,
+            'constructiveWork' => $trip->constructive_work,
+            'dinner' => $trip->dinner,
+            'afterDinner' => $trip->after_dinner,
+        ];
+        return view('student.dairy.trip.view', $data);
     }
 
     /**

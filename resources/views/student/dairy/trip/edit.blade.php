@@ -92,7 +92,6 @@
                                         <div class="tab-content">
                                             <div class="tab-pane" id="trip">
                                                        <section>
-
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <div class="mb-3">
