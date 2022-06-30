@@ -20,7 +20,15 @@ use Illuminate\Support\Facades\Route;
     Route::resources(['/' => HrAdminController::class]);
     // Recruitment
     Route::get('HR.employee-requisition.create', [HrAdminController::class, 'employeeRequisition'])->name('HR.employee-requisition.create');
-    Route::get('HR.apply-for-job.create', [HrAdminController::class, 'applyForJon'])->name('HR.apply-for-job.create');
+    Route::get('HR.apply-for-job.create', [HrAdminController::class, 'applyForJob'])->name('HR.apply-for-job.create');
+    Route::get('HR.applicant-list.create', [HrAdminController::class, 'applicationList'])->name('HR.applicant-list.create');
+    Route::get('HR.sent-mail.create', [HrAdminController::class, 'sentMail'])->name('HR.sent-mail.create');
+    Route::get('HR.assign-interviewer.create', [HrAdminController::class, 'assignInterviewer'])->name('HR.assign-interviewer.create');
+    Route::get('HR.interview-rating-form.create', [HrAdminController::class, 'interviewerRatingForm'])->name('HR.interview-rating-form.create');
+    // Recruit
+    Route::get('HR.recruit.job-confirmation.create', [HrAdminController::class, 'jobConfirmation'])->name('HR.recruit.job-confirmation.create');
+    Route::get('HR.recruit.job-contact.create', [HrAdminController::class, 'jobContact'])->name('HR.recruit.job-contact.create');
+    Route::get('HR.recruit.reporting-memo.create', [HrAdminController::class, 'reportingMemo'])->name('HR.recruit.reporting-memo.create');
     // warning notice 
     Route::get('warning-notice.create', [HrAdminController::class, 'warningNotice'])->name('HR.warning-notice.create');
     Route::get('show-case-notice.create', [HrAdminController::class, 'showcaseNotice'])->name('HR.show-case-notice.create');

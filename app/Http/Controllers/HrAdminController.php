@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class HrAdminController extends Controller
 {
+    // Recruitment
     public function employeeRequisition()
     {
         return view('HR.employee-requisition.create');
@@ -14,7 +15,38 @@ class HrAdminController extends Controller
     {
         return view('HR.apply-for-job.create');
     }
+    public function applicationList()
+    {
+        return view('HR.applicant-list.create');
+    }
     
+    public function sentMail()
+    {
+        return view('HR.sent-mail.create');
+    }
+    
+    public function assignInterviewer()
+    {
+        return view('HR.assign-interviewer.create');
+    }
+    
+    public function interviewerRatingForm()
+    {
+        return view('HR.interview-rating-form.create');
+    }
+    // Recruit
+    public function jobConfirmation()
+    {
+        return view('HR.recruit.job-confirmation.create');
+    }
+    public function jobContact()
+    {
+        return view('HR.recruit.job-contact.create');
+    }
+    public function reportingMemo()
+    {
+        return view('HR.recruit.reporting-memo.create');
+    }
     public function warningNotice()
     {
         return view('HR.warning-notice.create');
