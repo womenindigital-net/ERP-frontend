@@ -27,7 +27,9 @@ trait CommonAddMore
 
     public function removeRow($key)
     {
+        // dump($this->inputs);
         unset($this->inputs[$key]);
+        // dd($this->inputs);
     }
 
 

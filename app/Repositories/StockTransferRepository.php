@@ -10,7 +10,7 @@ class StockTransferRepository extends BaseRepository
 
     public function getListData(int $perPage, string $search)
     {
-        return $this->model::with('details')->latest()->paginate($perPage);
+        return $this->model::with('details', 'warehouseFrom', 'warehouseTo', 'project')->latest()->paginate($perPage);
     }
 
     public function getApprovedList()

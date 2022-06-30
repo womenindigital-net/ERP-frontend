@@ -24,8 +24,12 @@ class StockTransfer extends Model
         return $this->belongsTo(Project::class);
     }
 
-    public function warehouse(): BelongsTo
+    public function warehouseFrom(): BelongsTo
     {
-        return $this->belongsTo(Warehouse::class);
+        return $this->belongsTo(Warehouse::class, 'warehouse_id_from', 'id');
+    }
+    public function warehouseTo(): BelongsTo
+    {
+        return $this->belongsTo(Warehouse::class, 'warehouse_id_to', 'id');
     }
 }
