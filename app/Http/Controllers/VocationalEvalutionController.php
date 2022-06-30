@@ -128,6 +128,6 @@ class VocationalEvalutionController extends Controller
      */
     public function destroy(VocationalEvalution $vocationalEvalution)
     {
-        //
+        return $vocationalEvalution->delete();
     }
 }

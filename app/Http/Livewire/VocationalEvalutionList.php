@@ -11,7 +11,7 @@ use App\Repositories\VocationalEvalutionRepository;
 class VocationalEvalutionList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'vocational-evaluation.destroy';
     private VocationalEvalutionRepository $vocRepo;
 
     public function boot(VocationalEvalutionRepository $vocRepo)
