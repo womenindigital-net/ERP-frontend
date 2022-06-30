@@ -4,8 +4,8 @@ namespace App\Services;
 
 
 use App\Models\DramaDiaryEvaluation;
-use App\Utility\TripReport;
 use App\Repositories\DramaDiaryEvaluationRepository;
+use App\Utility\DramaDiaryEvaluation as UtilityDramaDiaryEvaluation;
 
 class DramaDiaryEvaluationService
 {
@@ -18,17 +18,17 @@ class DramaDiaryEvaluationService
 
     public function store(array $validated): void
     {
-        dd($validated);
         $data = $this->processInfo($validated);
+        dd($data);
 
         $this->repo->store($data);
     }
 
-    public function update(DramaDiaryEvaluation $drama, mixed $validated): void
+    public function update(DramaDiaryEvaluation $dramaDiaryEvaluation, mixed $validated): void
     {
         $data = $this->processInfo($validated);
 
-        $this->repo->update($trip, $data);
+        $this->repo->update($dramaDiaryEvaluation, $data);
     }
 
     private function processInfo(array $validated): array
@@ -48,11 +48,11 @@ class DramaDiaryEvaluationService
 
     private function collectBasicFunctionalArea(mixed $validated): array
     {
-        return extractNecessaryFieldsFromData($validated, TripReport::$columnCollections['activities_of_daily_living']);
+        return extractNecessaryFieldsFromData($validated, UtilityDramaDiaryEvaluation::$columnCollections['basic_functional_area']);
     }
 
     private function collectOtherAreas(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['only_for_staff']);
+        return extractNecessaryFieldsFromData($data, UtilityDramaDiaryEvaluation::$columnCollections['other_areas']);
     }
 }

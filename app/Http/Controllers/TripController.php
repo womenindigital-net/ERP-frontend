@@ -93,8 +93,9 @@ class TripController extends Controller
     public function edit(Trip $trip): View|Factory|Application
     {
         $data = [
-            'record' => $trip,
-            'activitiesOfDailyLiving' => $trip->activities_of_daily_living,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'collection_date' => $trip['collection_date'],
+            'teacher_id' => $trip['teacher_id'],
             'onlyForStaff' => $trip->only_for_staff,
             'activities' => $trip->activities,
             'securitySafety' => $trip->security_safety,
