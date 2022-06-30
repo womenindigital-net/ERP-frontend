@@ -2,8 +2,6 @@
 
 namespace App\Utility;
 
-use Illuminate\Support\Arr;
-
 final class DramaDiaryEvaluation
 {
 
@@ -23,6 +21,8 @@ final class DramaDiaryEvaluation
         self::FIVE => "5",
 
     ];
+
+
     public static array $columnCollections = [
         'basic_functional_area' => [
             'understanding_the_character',
