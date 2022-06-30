@@ -560,13 +560,12 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Recruitment</a>
                             <ul class="sub-menu" aria-expanded="true">
-
-                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li>
-                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li>
-                                <li><a href="HR.applicant-list.create">Applicant List</a></li>
-                                <li><a href="HR.sent-mail.create">Sent Mail</a></li>
-                                <li><a href="HR.assign-interviewer.create">Assign Interviewer</a></li>
-                                <li><a href="HR.interview-rating-form.create">Interview Rating Form</a></li>
+                                <li><a href="{{ route('HR.employee-requisition.create') }}">Employee Requisition</a></li> 
+                                <li><a href="{{ route('HR.apply-for-job.create') }}">Apply for Job</a></li> 
+                                <li><a href="HR.applicant-list.create">Applicant List</a></li> 
+                                <li><a href="HR.sent-mail.create">Sent Mail</a></li> 
+                                <li><a href="HR.assign-interviewer.create">Assign Interviewer</a></li> 
+                                <li><a href="HR.interview-rating-form.create">Interview Rating Form</a></li> 
                             </ul>
                         </li>
                         <li>
