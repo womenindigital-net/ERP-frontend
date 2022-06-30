@@ -125,6 +125,7 @@ class TripController extends Controller
             'id' => $trip['id'],
             'collection_date' => $trip['collection_date'],
             'teacher_id' => $trip['teacher_id'],
+            'activitiesOfDailyLiving' => $trip->activities_of_daily_living,
             'onlyForStaff' => $trip->only_for_staff,
             'activities' => $trip->activities,
             'securitySafety' => $trip->security_safety,
