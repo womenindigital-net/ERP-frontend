@@ -18,11 +18,14 @@ class TripController extends Controller
 {
     private TripService $service;
     private TripRepository $repo;
-    // private StudentRepository $userRepo;
+    // private StudentRepository $studentRepo;
     private UserRepository $userRepo;
 
-    public function __construct(TripService $service, TripRepository $repository, UserRepository $userRepo)
-    {
+    public function __construct(
+        TripService $service,
+        TripRepository $repository,
+        UserRepository $userRepo
+    ) {
         $this->service = $service;
         $this->repo    = $repository;
         $this->userRepo    = $userRepo;
@@ -45,11 +48,11 @@ class TripController extends Controller
      */
     public function create(): View|Factory|Application
     {
-         $data = [
-             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
-        
-        return view('student.dairy.trip.edit', $data);
+
+        return view('student.dairy.trip.create', $data);
     }
 
     /**
@@ -77,7 +80,35 @@ class TripController extends Controller
      */
     public function show(Trip $trip)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'collection_date' => $trip['collection_date'],
+            'teacher_id' => $trip['teacher_id'],
+            'activitiesOfDailyLiving' => $trip->activities_of_daily_living,
+            'onlyForStaff' => $trip->only_for_staff,
+            'activities' => $trip->activities,
+            'securitySafety' => $trip->security_safety,
+            'equipment' => $trip->equipment,
+            'light' => $trip->light,
+            'kitchen' => $trip->kitchen,
+            'bathroom' => $trip->bathroom,
+            'floor' => $trip->floor,
+            'instrumentalActivitiesOfDaily' => $trip->instrumental_activities_of_daily,
+            'environmentalSafetyRelative' => $trip->environmental_safety_relative,
+            'environmentalSafetyStep' => $trip->environmental_safety_step,
+            'wokeUpInTheMorning' => $trip->woke_up_in_the_morning,
+            'readingWriting' => $trip->reading_writing,
+            'dailyWork' => $trip->daily_work,
+            'wonWork' => $trip->won_work,
+            'lunchTime' => $trip->lunch_time,
+            'restTime' => $trip->rest_time,
+            'afternoon' => $trip->afternoon,
+            'evening' => $trip->evening,
+            'constructiveWork' => $trip->constructive_work,
+            'dinner' => $trip->dinner,
+            'afterDinner' => $trip->after_dinner,
+        ];
+        return view('student.dairy.trip.view', $data);
     }
 
     /**
@@ -90,7 +121,10 @@ class TripController extends Controller
     public function edit(Trip $trip): View|Factory|Application
     {
         $data = [
-            'record' => $trip,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'id' => $trip['id'],
+            'collection_date' => $trip['collection_date'],
+            'teacher_id' => $trip['teacher_id'],
             'activitiesOfDailyLiving' => $trip->activities_of_daily_living,
             'onlyForStaff' => $trip->only_for_staff,
             'activities' => $trip->activities,

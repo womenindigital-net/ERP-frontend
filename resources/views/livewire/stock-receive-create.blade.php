@@ -14,39 +14,35 @@
                                 <label class="form-label">Project</label>
                                 <x-input-select wireModel="project_id" :records="$projects" targetColumn="title" />
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">Reveive Type</label>
-                                <x-input-select :records="$receiveTypes" wireModel="type"/>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            @if($purchaseAble)
-                            <div class="mb-3">
-                                <label for="validationCustom02" class="form-label">Purchase</label>
-                                <x-input-text wireModel="purchase" placeholder="Purchase no here">
-                                </x-input-text>
-                            </div>
-                            @elseif($receiveAble)
-                            <div class="mb-3 d-none" id="return">
-                                <label for="validationCustom02" class="form-label">Return</label>
-                                <x-input-text wireModel="return" placeholder="Return here">
-                                </x-input-text>
-                            </div>
-                            @endif
-                        </div>
-                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Date</label>
                                 <x-input-text wireModel="date" type="date"></x-input-text>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Warehouse</label>
                                 <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Reveive Type</label>
+                                <x-input-select :records="$receiveTypes" wireModel="type" />
+                            </div>
+                            @if($purchaseInput)
+                            <div class="mb-3">
+                                <label for="validationCustom02" class="form-label">Purchase</label>
+                                <x-input-text wireModel="purchase_type" placeholder="Purchase no here">
+                                </x-input-text>
+                            </div>
+                            @elseif($receiveInput)
+                            <div class="mb-3">
+                                <label for="validationCustom02" class="form-label">Return</label>
+                                <x-input-text wireModel="return_type" placeholder="Return here">
+                                </x-input-text>
+                            </div>
+                            @else
+
+                            @endif
                         </div>
                     </div>
                     <!--form end -->
@@ -72,7 +68,7 @@
                         <div class="col-lg-2 p-0">
                             <label>Stock Receive Qty.</label>
                         </div>
-                        <div class="col-lg-1 p-0">
+                        <div class="col-lg-2 p-0">
                             <label>Serial</label>
                         </div>
                     </div>
@@ -96,7 +92,7 @@
                                 <x-input-text wireModel="exp_date.{{ $key }}" type="date"></x-input-text>
                             </div>
                             <div class="col-lg-1 p-0 pe-1">
-                                <x-input-text type="number" wireModel="qty.{{ $key }}" placeholder="0">
+                                <x-input-text wireModel="qty.{{ $key }}" type="number" placeholder="0">
                                 </x-input-text>
                             </div>
 
@@ -112,32 +108,33 @@
                             <div class="col-lg-2 p-0 pe-1">
                                 <x-input-text wireModel="stock_receive_qty.{{ $key }}"></x-input-text>
                             </div>
-                            <div class="col-lg-1 p-0 pe-1">
-                                <x-input-text type="number" wireModel="serial.{{ $key }}"></x-input-text>
-                            </div>
-                            <div class="mb-2 col-lg-1 p-0 pe-1">
-                                <button type="button" class="btn btn-danger waves-effect waves-light removeBtn">
+                            <div class="col-lg-2 d-flex">
+                                <x-input-text wireModel="serial.{{ $key }}" type="number"></x-input-text>
+                                @if (!($this->mode == 'show'))
+                                <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                    wire:click="removeRow({{ $key }})">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
+                                @endif
                             </div>
                         </div>
                         @endforeach
+                        @if (!($this->mode == 'show'))
                         <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                             wire:click="addMore()" />
+
+                        @endif
                     </div>
             </div>
             </form>
         </div>
     </div>
-    <div class="row justify-content-center">
-        {{-- <div class="col-md-4">
-            <input type="reset" class="btn btn-danger  waves-effect waves-light w-100" value="Reset">
-        </div> --}}
-        <div class="col-md-4">
+    <div class="row justify-content-end">
+        <div class="col-md-2">
             @if($this->mode == 'edit')
-            <button class="btn btn-success w-100" wire:click="update()">Update</button>
-            @else
-            <button class="btn btn-success w-100" wire:click="submit()">Save</button>
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode == 'show'))
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @endif
         </div>
     </div>

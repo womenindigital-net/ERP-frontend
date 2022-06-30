@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body p-0">
                     <div class="row mb-3">
                         @if($title)
                         <div class="col-6">

@@ -57,6 +57,8 @@ class TripService
         [$AfterDinner, $data] = $this->collectAfterDinner($data);
 
         return [
+            'collection_date' => $validated['collection_date'],
+            'teacher_id' => $validated['teacher_id'],
             'activities_of_daily_living' => $activitiesOfDailyLivingInfos,
             'only_for_staff' => $onlyForStaffInfos,
             'activities' => $activities,

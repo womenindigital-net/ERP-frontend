@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">CV upload*:</label>
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">CV upload:</label>
                                     <div class="col-md-8">
                                         <x-input-text name="cv_upload" type="file" />
                                     </div>
@@ -241,7 +241,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">CV upload*:</label>
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">CV upload:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="cv_upload" type="file" />
                                         </div>

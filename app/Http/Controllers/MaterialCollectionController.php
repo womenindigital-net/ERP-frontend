@@ -25,7 +25,7 @@ class MaterialCollectionController extends Controller
      */
     public function create()
     {
-        //
+        return view('stock-management.material_collects.create');
     }
 
     /**
@@ -47,7 +47,11 @@ class MaterialCollectionController extends Controller
      */
     public function show(MaterialCollection $materialCollection)
     {
-        //
+        $data = [
+            'records' => $materialCollection,
+        ];
+
+        return view('stock-management.material_collects.show', $data);
     }
 
     /**
@@ -58,7 +62,11 @@ class MaterialCollectionController extends Controller
      */
     public function edit(MaterialCollection $materialCollection)
     {
-        //
+        $data = [
+            'records' => $materialCollection,
+        ];
+
+        return view('stock-management.material_collects.edit', $data);
     }
 
     /**
@@ -81,6 +89,6 @@ class MaterialCollectionController extends Controller
      */
     public function destroy(MaterialCollection $materialCollection)
     {
-        //
+        return $materialCollection->delete();
     }
 }

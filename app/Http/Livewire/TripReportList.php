@@ -13,22 +13,38 @@ use Livewire\WithPagination;
 
 class TripReportList extends Component
 {
+    // use WithPagination, CommonListElements;
+    // protected string $destroyRoute = 'trip.destroy';
+
+    // private TripService $service;
+    // private TripRepository $repo;
+
+    // public function boot(TripService $service, TripRepository $repository)
+    // {
+    //     $this->service = $service;
+    //     $this->repo = $repository;
+    // }
+
+
     use WithPagination, CommonListElements;
-    protected string $destroyRoute = 'trip.destroy';
+    private TripRepository $tripRepo;
+    public $reportList;
 
-    private TripService $service;
-    private TripRepository $repo;
-
-    public function boot(TripService $service, TripRepository $repository)
+    public function boot(TripRepository $tripRepo)
     {
-        $this->service = $service;
-        $this->repo = $repository;
+        $this->tripRepo = $tripRepo;
+    }
+
+    public function toggleApprove($recordId)
+    {
+        $this->tripRepo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
     }
 
     public function render(): Factory|View|Application
     {
         $data = [
-            'records' => $this->repo->getListData($this->perPage, $this->search),
+            'records' => $this->tripRepo->getListData($this->perPage, $this->search),
         ];
         return view('livewire.trip-report-list', $data);
     }

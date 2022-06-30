@@ -96,7 +96,8 @@
                                                                             <label
                                                                                 for="basicpill-firstname-input">Collection
                                                                                 Date:</label>
-                                                                            <x-input-text name="date" type="date"
+                                                                            <x-input-text name="collection_date"
+                                                                                type="date"
                                                                                 placeholder="Collection Date">
                                                                             </x-input-text>
                                                                         </div>
@@ -113,7 +114,7 @@
                                                                         <div class="mb-3">
                                                                             <label for="basicpill-phoneno-input">Candidate
                                                                                 ID:</label>
-                                                                            <x-input-select name="student_id"
+                                                                            <x-input-select name="candidate_id"
                                                                                 :records="$students" />
                                                                         </div>
                                                                     </div>
@@ -132,7 +133,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
                                                             </section>
                                                         </div>
                                                         <div class="tab-pane" id="Pragmatic_Objective">
@@ -806,7 +806,7 @@
                             </div> <!-- end col -->
                         </div>
                         <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                            {{-- <livewire:physiotherapy-list /> --}}
+                            <livewire:physiotherapy-list />
                         </div>
                     </div>
                 </div>

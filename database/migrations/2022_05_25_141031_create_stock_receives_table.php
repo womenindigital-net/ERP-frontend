@@ -19,9 +19,10 @@ return new class extends Migration
         Schema::create('stock_receives', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
             $table->string('type')->nullable();
-            $table->string('purchase')->nullable();
-            $table->string('return')->nullable();
+            $table->string('purchase_type')->nullable();
+            $table->string('return_type')->nullable();
             $table->string('date')->nullable();
             $table->string('note')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
