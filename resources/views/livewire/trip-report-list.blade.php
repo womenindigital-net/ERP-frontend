@@ -1,5 +1,5 @@
 <div>
-    {{-- <x-record-list :records="$records">
+    <x-record-list :records="$records">
     <div class="table-responsive">
         <table class="table table-bordered w-100">
             <thead>
@@ -48,5 +48,5 @@
             </tbody>
         </table>
     </div>
-    </x-record-list> --}}
+    </x-record-list>
 </div>

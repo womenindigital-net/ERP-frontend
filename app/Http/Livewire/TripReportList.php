@@ -27,7 +27,6 @@ class TripReportList extends Component
 
 
     use WithPagination, CommonListElements;
-
     private TripRepository $tripRepo;
     public $reportList;
 

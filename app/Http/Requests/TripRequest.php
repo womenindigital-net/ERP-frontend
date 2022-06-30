@@ -25,8 +25,8 @@ class TripRequest extends FormRequest
     {
         return [
             "collection_date"   => 'nullable',
-            "teacher_id"       => 'nullable',
-            'bath' => 'nullable',
+            "teacher_id"        => 'nullable',
+            'bath'              => 'nullable',
             'bath_secondary' => 'nullable',
             'wearing_cloth' => 'nullable',
             'wearing_cloth_secondary' => 'nullable',
