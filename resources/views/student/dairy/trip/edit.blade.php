@@ -11,7 +11,7 @@
                 <!-- Nav tabs -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{route('trip.update', $record->id) ?? '' }}" method="POST">
+                        <form action="{{route('trip.update', $id) ?? '' }}" method="POST">
                             @method('put')
                             @csrf
                             <!-- Wizard container -->
