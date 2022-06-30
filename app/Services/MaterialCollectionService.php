@@ -32,7 +32,7 @@ class MaterialCollectionService
 
     private function collectMaterialCollect(array $validated)
     {
-        [$materialCollect, $data] = extractNecessaryFieldsFromData($validated, ['collected_for', 'date', 'warehouse_id', 'produce_product_id', 'will_produce']);
+        [$materialCollect, $data] = extractNecessaryFieldsFromData($validated, ['collected_for', 'date', 'warehouse_id', 'produce_product_id', 'will_produce','note']);
         $materialCollect['created_by'] = auth()->id();
         return [$materialCollect, $data];
     }

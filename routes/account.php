@@ -1,19 +1,20 @@
 <?php
 
-use App\Http\Controllers\DonationController;
-use App\Http\Controllers\FinishedGoodController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\JournalController;
-use App\Http\Controllers\MaterialCollectionController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\StockOutController;
 use App\Http\Controllers\RequisitionController;
 use App\Http\Controllers\SaleVoucherController;
 use App\Http\Controllers\StockAssignController;
-use App\Http\Controllers\StockController;
-use App\Http\Controllers\StockOutController;
+use App\Http\Controllers\FinishedGoodController;
 use App\Http\Controllers\StockReceiveController;
 use App\Http\Controllers\StockTransferController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MaterialCollectionController;
+
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([

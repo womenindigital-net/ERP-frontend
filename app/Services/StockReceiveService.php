@@ -3,8 +3,8 @@
 namespace App\Services;
 
 
-use App\Repositories\StockReceiveRepository;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\StockReceiveRepository;
 
 class StockReceiveService
 {
@@ -32,10 +32,9 @@ class StockReceiveService
 
     private function collectStockReceive(array $validated)
     {
-        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'type', 'purchase_type', 'return_type', 'date']);
+        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'type', 'purchase_type', 'return_type', 'date', 'note']);
 
         $stockReceive['created_by'] = auth()->id();
-        $stockReceive['note'] = null;
 
         return [$stockReceive, $data];
     }

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->foreignIdFor(Warehouse::class, 'warehouse_id_from')->nullable()->constrained('warehouses')->nullOnDelete();
             $table->foreignIdFor(Warehouse::class, 'warehouse_id_to')->nullable()->constrained('warehouses')->nullOnDelete();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

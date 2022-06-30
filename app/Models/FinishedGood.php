@@ -25,6 +25,6 @@ class FinishedGood extends Model
     }
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'created_by', 'id');
     }
 }

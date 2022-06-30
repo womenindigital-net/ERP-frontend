@@ -15,7 +15,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#stock_out_list" role="tab">
                             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                            <span class="d-none d-sm-block">Product Details List</span>
+                            <span class="d-none d-sm-block">Stock Out List</span>
                         </a>
                     </li>
                 </ul>

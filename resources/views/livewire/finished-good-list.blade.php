@@ -18,7 +18,7 @@
                     <tr>
                         <td>{{ $record->warehouse->title }}</td>
                         <td>{{ $record->date }}</td>
-                        <td>{{ $record->created_by }}</td>
+                        <td>{{ $record->creator->name }}</td>
                         <td>{{ $record->total_qty }}</td>
                         <td><small>{{ $record->created_at }}</small></td>
                         <td>

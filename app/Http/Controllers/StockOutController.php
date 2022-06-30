@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StockOut;
 use App\Http\Requests\StoreStockOutRequest;
 use App\Http\Requests\UpdateStockOutRequest;
-use App\Models\StockOut;
 
 class StockOutController extends Controller
 {

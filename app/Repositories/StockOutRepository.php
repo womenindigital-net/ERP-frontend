@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\MaterialCollection;
+use App\Models\StockOut;
 
-class MaterialCollectionRepository extends BaseRepository
+class StockOutRepository extends BaseRepository
 {
-    protected string $model = MaterialCollection::class;
+    protected string $model = StockOut::class;
 
 
     public function getListData(int $perPage, string $search)
     {
-        return $this->model::with('details', 'warehouse', 'creator')->latest()->paginate($perPage);
+        return $this->model::with('details', 'project', 'warehouse')->latest()->paginate($perPage);
     }
 
     public function getApprovedList()

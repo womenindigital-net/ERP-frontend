@@ -16,11 +16,9 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="row mb-2">
-                <div class="col-10">
-                    <label class="text-end form-label">Note</label>
-                    <x-input-textarea wireModel="note" cols="5" placeholder="Enter Note ..." />
-                </div>
+            <div class="mb-3">
+                <label class="text-end form-label">Note</label>
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note ..." />
             </div>
         </div>
     </div>
@@ -28,7 +26,7 @@
         <div class="col-12 p-0">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">All product</h4>
+                    <h2 class=" text-center mb-4">All Products</h2>
                     <div class="repeater">
                         <div class="row">
                             <div class="col-lg-3 p-0 pe-1">

@@ -24,9 +24,9 @@
                         <td>{{ $record->reference }}</td>
                         <td>{{ $record->date }}</td>
                         <td>{{ $record->total_transfer_quantity }}</td>
-                        <td>{{ $record->warehouse_id_from }}</td>
-                        <td>{{ $record->warehouse_id_to }}</td>
-                        <td>{{ $record->is_approved }}</td>
+                        <td>{{ $record->warehouseFrom->title }}</td>
+                        <td>{{ $record->warehouseTo->title }}</td>
+                        <td>{{ $record->is_approved ? "YES" : "NO" }}</td>
                         <td><small>{{ $record->created_at }}</small></td>
                         <td>
                             <a href="{{route('stock-transfer.show', $record->id)}}" type="button"

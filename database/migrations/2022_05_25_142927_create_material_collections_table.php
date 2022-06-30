@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignIdFor(Product::class, 'produce_product_id')->constrained('products')->cascadeOnDelete();
             $table->string('will_produce')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

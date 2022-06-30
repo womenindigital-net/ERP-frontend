@@ -2,22 +2,29 @@
     <div class="row">
         <div class="col-12">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Select Name</label>
                         <x-input-select wireModel="collected_for" :records="$users" targetColumn="title" />
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Select Date</label>
                         <x-input-text wireModel="date" type="date"></x-input-text>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Warehouse (Materials Taken From)</label>
                         <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-2">
+                        <label class="form-label">Note</label>
+                        <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note">
+                        </x-input-textarea>
                     </div>
                 </div>
             </div>
@@ -44,6 +51,7 @@
                         <x-input-text wireModel="will_produce"></x-input-text>
                     </div>
                 </div>
+
             </div>
 
             <div class="row">
