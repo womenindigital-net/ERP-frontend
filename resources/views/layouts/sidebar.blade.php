@@ -79,8 +79,8 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('stock-receive.create') }}">Stock Receive</a></li>
                         <li><a href="{{ route('finished-goods.create') }}">Finished Goods</a></li>
-                        <li><a href="{{ route('material-collect') }}">Material Collects</a></li>
-                        <li><a href="{{ route('stock-transfer') }}">Stock Transfer</a></li>
+                        <li><a href="{{ route('material-collect.create') }}">Material Collects</a></li>
+                        <li><a href="{{ route('stock-transfer.create') }}">Stock Transfer</a></li>
                         <li><a href="{{ route('stock-count') }}">Stock Count</a></li>
                     </ul>
                 </li>
@@ -561,12 +561,12 @@
                             <a href="javascript: void(0);" class="has-arrow">Recruitment</a>
                             <ul class="sub-menu" aria-expanded="true">
 
-                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li> 
-                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li> 
-                                <li><a href="HR.applicant-list.create">Applicant List</a></li> 
-                                <li><a href="HR.sent-mail.create">Sent Mail</a></li> 
-                                <li><a href="HR.assign-interviewer.create">Assign Interviewer</a></li> 
-                                <li><a href="HR.interview-rating-form.create">Interview Rating Form</a></li> 
+                                <li><a href="HR.employee-requisition.create">Employee Requisition</a></li>
+                                <li><a href="HR.apply-for-job.create">Apply for Job</a></li>
+                                <li><a href="HR.applicant-list.create">Applicant List</a></li>
+                                <li><a href="HR.sent-mail.create">Sent Mail</a></li>
+                                <li><a href="HR.assign-interviewer.create">Assign Interviewer</a></li>
+                                <li><a href="HR.interview-rating-form.create">Interview Rating Form</a></li>
                             </ul>
                         </li>
                         <li>

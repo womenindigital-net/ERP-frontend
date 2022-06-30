@@ -4,20 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
 use App\Models\DramaDiaryEvaluation;
+use App\Repositories\UserRepository;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\Factory;
+use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
+use App\Services\DramaDiaryEvaluationService;
 use Illuminate\Contracts\Foundation\Application;
 use App\Http\Requests\DramaDiaryEvaluationRequest;
-use App\Repositories\DramaDiaryEvaluationRepository;
 use App\Http\Requests\UpdateDramaDiaryEvaluationRequest;
 
 class DramaDiaryEvaluationController extends Controller
 {
-    private DramaDiaryEvaluationRepository $dramaDiaryRepo;
+    private DramaDiaryEvaluationService $service;
+    private StudentRepository $studentRepo;
+    private UserRepository $userRepo;
 
-    public function __construct(DramaDiaryEvaluationRepository $dramaDiaryRepo)
-    {
-        $this->dramaDiaryRepo = $dramaDiaryRepo;
+    public function __construct(
+        DramaDiaryEvaluationService $service,
+        StudentRepository $studentRepo,
+        UserRepository $userRepo,
+    ) {
+        $this->service = $service;
+        $this->studentRepo = $studentRepo;
+        $this->userRepo    = $userRepo;
     }
 
     /**
@@ -37,7 +47,12 @@ class DramaDiaryEvaluationController extends Controller
      */
     public function create()
     {
-        return view('student.co-curricular.Drama-diary-evaluation.create');
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+
+        return view('student.co-curricular.Drama-diary-evaluation.create', $data);
     }
 
     /**
@@ -49,10 +64,11 @@ class DramaDiaryEvaluationController extends Controller
      */
     public function store(DramaDiaryEvaluationRequest $request)
     {
-        // $this->dramaDiaryRepo->store($request->validated());
-        // return redirect()->back();
+        $this->service->store($request->validated());
+
         Session::flash('success');
-        dd($request);
+
+        return back();
     }
 
     /**
@@ -63,7 +79,17 @@ class DramaDiaryEvaluationController extends Controller
      */
     public function show(DramaDiaryEvaluation $dramaDiaryEvaluation)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'date' => $dramaDiaryEvaluation['date'],
+            'teacher_id' => $dramaDiaryEvaluation['teacher_id'],
+            'candidate_id' => $dramaDiaryEvaluation['candidate_id'],
+            'basic_functional_area' => $dramaDiaryEvaluation->basic_functional_area,
+            'other_areas' => $dramaDiaryEvaluation->other_areas,
+        ];
+
+        return view('student.co-curricular.Drama-diary-evaluation.view', $data);
     }
 
     /**
@@ -74,7 +100,18 @@ class DramaDiaryEvaluationController extends Controller
      */
     public function edit(DramaDiaryEvaluation $dramaDiaryEvaluation)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'id' => $dramaDiaryEvaluation['id'],
+            'date' => $dramaDiaryEvaluation['date'],
+            'teacher_id' => $dramaDiaryEvaluation['teacher_id'],
+            'candidate_id' => $dramaDiaryEvaluation['candidate_id'],
+            'basic_functional_area' => $dramaDiaryEvaluation->basic_functional_area,
+            'other_areas' => $dramaDiaryEvaluation->other_areas,
+        ];
+
+        return view('student.co-curricular.Drama-diary-evaluation.edit', $data);
     }
 
     /**
@@ -84,9 +121,13 @@ class DramaDiaryEvaluationController extends Controller
      * @param  \App\Models\DramaDiaryEvaluation  $dramaDiaryEvaluation
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDramaDiaryEvaluationRequest $request, DramaDiaryEvaluation $dramaDiaryEvaluation)
+    public function update(DramaDiaryEvaluationRequest $request, DramaDiaryEvaluation $dramaDiaryEvaluation): RedirectResponse
     {
-        //
+        $this->service->update($dramaDiaryEvaluation, $request->validated());
+
+        Session::flash('success');
+
+        return redirect()->route('drama-diary-evaluation.create');
     }
 
     /**
@@ -97,6 +138,6 @@ class DramaDiaryEvaluationController extends Controller
      */
     public function destroy(DramaDiaryEvaluation $dramaDiaryEvaluation)
     {
-        //
+        return $dramaDiaryEvaluation->delete();
     }
 }

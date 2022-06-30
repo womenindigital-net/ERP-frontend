@@ -6,6 +6,11 @@
                 <label class="form-label">Warehouse</label>
                 <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
             </div>
+            <div class="row mb-2">
+                <label class="form-label">Note</label>
+                <x-input-textarea wireModel="note" placeholder="Enter Note">
+                </x-input-textarea>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="mb-3">
@@ -24,10 +29,10 @@
                             <div class="col-lg-4 p-0 pe-1">
                                 <label for="name">Product</label>
                             </div>
-                            <div class="col-lg-3 p-0 pe-1">
+                            <div class="col-lg-4 p-0 pe-1">
                                 <label for="product">Unit</label>
                             </div>
-                            <div class="col-lg-3 p-0 pe-1">
+                            <div class="col-lg-4 p-0 pe-1">
                                 <label for="total">Quantity</label>
                             </div>
                         </div>
@@ -46,47 +51,40 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class=" col-lg-3 p-0 pe-1 pb-1">
+                                <div class=" col-lg-4 p-0 pe-1 pb-1">
                                     <x-input-select :records="$unitType" wireModel="unit.{{ $key }}" />
                                 </div>
-                                <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
+                                <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
                                     <x-input-text type="number" wireModel="qty.{{ $key }}"></x-input-text>
-                                    <button class="btn btn-danger ms-2 removeBtn">
+                                    @if (!($this->mode == 'show'))
+                                    <button type="button" class="btn ms-2 btn-danger t removeBtn"
+                                        wire:click="removeRow({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach
+                            @if (!($this->mode == 'show'))
                             <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                                 wire:click="addMore()" />
-                        </div>
 
-                    </form>
-                    <!-- 7th row start  -->
-                    <div class="row mt-3 justify-content-center ">
-                        <div class="col-lg-6">
-                            <div class="row mb-2">
-                                <label for="horizontal-firstname-input"
-                                    class="col-2 text-end col-form-label">Note</label>
-                                <div class="col-10">
-                                    <x-input-textarea wireModel="note" placeholder="Enter Note">
-                                    </x-input-textarea>
-                                </div>
-                            </div>
+                            @endif
                         </div>
-                    </div>
-                    <!-- 7th row end  -->
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        @if($this->mode == 'edit')
-        <button class="btn btn-success w-100" wire:click="update()">Update</button>
-        @else
-        <button class="btn btn-success w-100" wire:click="submit()">Save</button>
-        @endif
+    <div class="row justify-content-end">
+        <div class="col-lg-2">
+            @if($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode == 'show'))
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+            @endif
+        </div>
     </div>
     <!-- end row -->
 </div>
