@@ -81,7 +81,9 @@ class TripController extends Controller
     public function show(Trip $trip)
     {
         $data = [
-            'record' => $trip,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'collection_date' => $trip['collection_date'],
+            'teacher_id' => $trip['teacher_id'],
             'activitiesOfDailyLiving' => $trip->activities_of_daily_living,
             'onlyForStaff' => $trip->only_for_staff,
             'activities' => $trip->activities,

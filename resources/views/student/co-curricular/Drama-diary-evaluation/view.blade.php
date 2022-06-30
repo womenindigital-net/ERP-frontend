@@ -76,7 +76,7 @@
                                                                         <label for="basicpill-phoneno-input">Candidate
                                                                             ID:</label>
                                                                         <x-input-select name="candidate_id"
-                                                                            :records="[]" />
+                                                                            :records="" />
                                                                     </div>
                                                                 </div>
                                                             </div>

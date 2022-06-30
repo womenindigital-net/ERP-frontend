@@ -19,8 +19,6 @@ class DramaDiaryEvaluationService
     public function store(array $validated): void
     {
         $data = $this->processInfo($validated);
-        dd($data);
-
         $this->repo->store($data);
     }
 

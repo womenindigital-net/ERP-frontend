@@ -82,9 +82,14 @@ class DramaDiaryEvaluationController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'date' => $dramaDiaryEvaluation['date'],
+            'teacher_id' => $dramaDiaryEvaluation['teacher_id'],
+            'candidate_id' => $dramaDiaryEvaluation['candidate_id'],
+            'basic_functional_area' => $dramaDiaryEvaluation->basic_functional_area,
+            'other_areas' => $dramaDiaryEvaluation->other_areas,
         ];
 
-        return view('student.co-curricular.Drama-diary-evaluation.edit', $data);
+        return view('student.co-curricular.Drama-diary-evaluation.view', $data);
     }
 
     /**
@@ -98,6 +103,12 @@ class DramaDiaryEvaluationController extends Controller
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'id' => $dramaDiaryEvaluation['id'],
+            'date' => $dramaDiaryEvaluation['date'],
+            'teacher_id' => $dramaDiaryEvaluation['teacher_id'],
+            'candidate_id' => $dramaDiaryEvaluation['candidate_id'],
+            'basic_functional_area' => $dramaDiaryEvaluation->basic_functional_area,
+            'other_areas' => $dramaDiaryEvaluation->other_areas,
         ];
 
         return view('student.co-curricular.Drama-diary-evaluation.edit', $data);
