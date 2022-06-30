@@ -94,6 +94,7 @@ class TripController extends Controller
     {
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'id' => $trip['id'],
             'collection_date' => $trip['collection_date'],
             'teacher_id' => $trip['teacher_id'],
             'onlyForStaff' => $trip->only_for_staff,
