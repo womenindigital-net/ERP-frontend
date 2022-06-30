@@ -27,6 +27,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'finished-goods' => FinishedGoodController::class,
         'material-collect' => MaterialCollectionController::class,
         'stock-transfer' => StockTransferController::class,
+
+
     ]);
 
     Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');

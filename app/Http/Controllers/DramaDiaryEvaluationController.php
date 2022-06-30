@@ -127,7 +127,7 @@ class DramaDiaryEvaluationController extends Controller
 
         Session::flash('success');
 
-        return redirect()->route('trip.create');
+        return redirect()->route('drama-diary-evaluation.create');
     }
 
     /**
