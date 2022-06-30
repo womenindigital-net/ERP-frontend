@@ -45,8 +45,8 @@
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-pencil"></i>
                             </a>
-                            <button wire:click="delete({{ $record->id }})"
-                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                            <button type="button" wire:click="confirmDelete({{$record->id}})"
+                                class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </td>

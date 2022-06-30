@@ -153,6 +153,6 @@ class SensoryChecklistChildController extends Controller
      */
     public function destroy(SensoryChecklistChild $sensoryChecklistChild)
     {
-        //
+        return $sensoryChecklistChild->delete();
     }
 }

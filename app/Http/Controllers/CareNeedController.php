@@ -118,6 +118,6 @@ class CareNeedController extends Controller
      */
     public function destroy(CareNeed $careNeed)
     {
-        //
+        return $careNeed->delete();
     }
 }

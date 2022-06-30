@@ -156,6 +156,6 @@ class PhysiotherapyController extends Controller
      */
     public function destroy(Physiotherapy $physiotherapy)
     {
-        //
+        return $physiotherapy->delete();
     }
 }

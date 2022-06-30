@@ -10,7 +10,7 @@ use App\Repositories\FunctionalCommunicationRepository;
 class FunctionalCommunicationList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'functional-communication.destroy';
     private FunctionalCommunicationRepository $functionalCommunicationRepo;
     public $reportList;
 

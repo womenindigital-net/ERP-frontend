@@ -10,7 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class MedicineAdminList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'medicine-admin.destroy';
     private MedicineAdminRepository $repo;
 
     public function boot(MedicineAdminRepository $repo)

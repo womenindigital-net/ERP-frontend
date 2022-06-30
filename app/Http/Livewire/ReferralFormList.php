@@ -10,6 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class ReferralFormList extends Component
 {
     use WithPagination, CommonListElements;
+    protected string $destroyRoute = 'referral.destroy';
 
     private ReferralRepository $referralRepo;
 

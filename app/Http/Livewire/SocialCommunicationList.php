@@ -10,7 +10,7 @@ use App\Repositories\SocialCommunicationRepository;
 class SocialCommunicationList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'social-communication.destroy';
     private SocialCommunicationRepository $socialCommunicationRepo;
     public $reportList;
 

@@ -10,7 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class OtAssessmentList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'ot-assessment.destroy';
     private OtAssessmentRepository $otAssessmentRepo;
     public $reportList;
 

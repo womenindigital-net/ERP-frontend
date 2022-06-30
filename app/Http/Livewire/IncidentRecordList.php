@@ -10,7 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class IncidentRecordList extends Component
 {
      use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'incident-record.destroy';
     private IncidentRecordRepository $incidentRecordRepo;
     public $reportList;
 

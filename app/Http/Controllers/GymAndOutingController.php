@@ -16,8 +16,6 @@ class GymAndOutingController extends Controller
     private UserRepository $userRepo;
     private StudentRepository $studentRepo;
     public $record;
-
-
     public function __construct(GymAndOutingRepository $gymAndOutingRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
         $this->userRepo    = $userRepository;
@@ -116,6 +114,6 @@ class GymAndOutingController extends Controller
      */
     public function destroy(GymAndOuting $gymAndOuting)
     {
-        //
+        return $gymAndOuting->delete();
     }
 }

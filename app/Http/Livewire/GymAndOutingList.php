@@ -10,7 +10,7 @@ use App\Repositories\GymAndOutingRepository;
 class GymAndOutingList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'gym-and-outing.destroy';
     private GymAndOutingRepository $gymAndOutRepo;
     public $reportList;
 

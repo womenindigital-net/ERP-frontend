@@ -10,7 +10,7 @@ use App\Repositories\IndividualRiskRepositories;
 class IndividualRiskList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'individual-risk.destroy';
     private IndividualRiskRepositories $individualRiskRepo;
     public $reportList;
 

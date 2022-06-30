@@ -118,6 +118,6 @@ class FunctionalMovementskillController extends Controller
      */
     public function destroy(FunctionalMovementskill $functionalMovementskill)
     {
-        //
+        return $functionalMovementskill->delete();
     }
 }

@@ -117,6 +117,6 @@ class ExecutiveFunctionController extends Controller
      */
     public function destroy(ExecutiveFunction $executiveFunction)
     {
-        //
+        return $executiveFunction->delete();
     }
 }

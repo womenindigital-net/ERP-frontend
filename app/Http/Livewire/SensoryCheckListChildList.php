@@ -10,6 +10,7 @@ use App\Repositories\SensoryChecklistChildRepository;
 class SensoryCheckListChildList extends Component
 {
     use WithPagination, CommonListElements;
+    protected string $destroyRoute = 'sensory-checklist-child.destroy';
 
     private SensoryChecklistChildRepository $sensoryCheckListChildRepo;
     public $reportList;

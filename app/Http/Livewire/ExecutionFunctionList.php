@@ -12,7 +12,7 @@ class ExecutionFunctionList extends Component
 
     use WithPagination, CommonListElements;
     private ExecutiveFunctionRepository $executiveRepo;
-
+    protected string $destroyRoute = 'executive-function.destroy';
     public function boot(ExecutiveFunctionRepository $executiveRepo)
     {
         $this->executiveRepo = $executiveRepo;

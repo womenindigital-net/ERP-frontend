@@ -10,7 +10,7 @@ use App\Repositories\OccupationalTherapyRepository;
 class OccupationalTherapyList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'occupational-therapy.destroy';
     private OccupationalTherapyRepository $occupationTherapyRepo;
     public $reportList;
 

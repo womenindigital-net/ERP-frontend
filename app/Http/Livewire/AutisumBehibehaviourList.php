@@ -9,11 +9,10 @@ use App\Repositories\AutisumBehaviourRepository;
 
 class AutisumBehibehaviourList extends Component
 {
-
+    protected string $destroyRoute = 'autisum-behaviour.destroy';
     use WithPagination, CommonListElements;
     private AutisumBehaviourRepository $AutisumBehaviourRepo;
     public $reportList;
-
     public function boot(AutisumBehaviourRepository $AutisumBehaviourRepo)
     {
         $this->AutisumBehaviourRepo = $AutisumBehaviourRepo;

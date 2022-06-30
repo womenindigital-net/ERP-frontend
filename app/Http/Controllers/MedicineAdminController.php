@@ -130,6 +130,6 @@ class MedicineAdminController extends Controller
      */
     public function destroy(MedicineAdmin $medicineAdmin)
     {
-        //
+        return $medicineAdmin->delete();
     }
 }

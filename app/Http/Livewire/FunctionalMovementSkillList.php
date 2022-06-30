@@ -10,7 +10,7 @@ use App\Repositories\FunctionalMovementSkillRepository;
 class FunctionalMovementSkillList extends Component
 {
     use WithPagination, CommonListElements;
-
+    protected string $destroyRoute = 'functional-movement-skill.destroy';
     private FunctionalMovementSkillRepository $functionalMovementSkillRepo;
     public $reportList;
 

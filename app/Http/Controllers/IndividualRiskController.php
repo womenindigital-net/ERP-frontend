@@ -119,6 +119,6 @@ class IndividualRiskController extends Controller
      */
     public function destroy(IndividualRisk $individualRisk)
     {
-        //
+        return $individualRisk->delete();
     }
 }

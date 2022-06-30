@@ -118,6 +118,6 @@ class OtAssessmentController extends Controller
      */
     public function destroy(OtAssessment $otAssessment)
     {
-        //
+        return $otAssessment->delete();
     }
 }

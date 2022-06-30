@@ -123,6 +123,6 @@ class ReferralController extends Controller
      */
     public function destroy(Referral $referral)
     {
-        //
+        return $referral->delete();
     }
 }

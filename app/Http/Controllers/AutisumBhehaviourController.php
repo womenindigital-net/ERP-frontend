@@ -120,6 +120,6 @@ class AutisumBhehaviourController extends Controller
      */
     public function destroy(AutisumBhehaviour $autisumBhehaviour)
     {
-        //
+        return $autisumBhehaviour->delete();
     }
 }
