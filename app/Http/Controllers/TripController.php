@@ -18,11 +18,14 @@ class TripController extends Controller
 {
     private TripService $service;
     private TripRepository $repo;
-    // private StudentRepository $userRepo;
+    // private StudentRepository $studentRepo;
     private UserRepository $userRepo;
 
-    public function __construct(TripService $service, TripRepository $repository, UserRepository $userRepo)
-    {
+    public function __construct(
+        TripService $service,
+        TripRepository $repository,
+        UserRepository $userRepo
+    ) {
         $this->service = $service;
         $this->repo    = $repository;
         $this->userRepo    = $userRepo;
@@ -45,11 +48,11 @@ class TripController extends Controller
      */
     public function create(): View|Factory|Application
     {
-         $data = [
-             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
         ];
-        
-        return view('student.dairy.trip.edit', $data);
+
+        return view('student.dairy.trip.create', $data);
     }
 
     /**

@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('drama_diary_evaluations', function (Blueprint $table) {
             $table->id();
+            $table->string('date')->nullable();
             $table->foreignIdFor(\App\Models\User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Student::class, 'candidate_id')->nullable()->constrained('students')->cascadeOnDelete();
-
-
             $table->json('basic_functional_area')->nullable();
             $table->json('other_areas')->nullable();
             $table->timestamps();

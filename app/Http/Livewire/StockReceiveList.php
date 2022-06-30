@@ -11,12 +11,19 @@ class StockReceiveList extends Component
 {
 
     use WithPagination, CommonListElements;
-    protected string $destroyRoute = 'stock-receive.destroy';
     private StockReceiveRepository $repo;
+
+    protected string $destroyRoute = 'stock-receive.destroy';
 
     public function boot(StockReceiveRepository $repository)
     {
         $this->repo = $repository;
+    }
+
+    public function toggleApprove($recordId)
+    {
+        $this->repo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
     }
 
     public function render()

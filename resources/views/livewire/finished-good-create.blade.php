@@ -4,20 +4,18 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Warehouse</label>
-                <select class="form-control form-select">
-                    <option>--Select--</option>
-                    <option value="1">Canteen Logistic Materials</option>
-                    <option value="2">Canteen Raw material</option>
-                    <option value="3">Office Outlet</option>
-                    <option value="4">Office Programme</option>
-                    <option value="5">Office Store</option>
-                </select>
+                <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
+            </div>
+            <div class="row mb-2">
+                <label class="form-label">Note</label>
+                <x-input-textarea wireModel="note" placeholder="Enter Note">
+                </x-input-textarea>
             </div>
         </div>
         <div class="col-md-6">
             <div class="mb-3">
                 <label>Date</label>
-                <x-input-text name="hh" type="date"></x-input-text>
+                <x-input-text wireModel="date" type="date"></x-input-text>
             </div>
         </div>
     </div>
@@ -28,94 +26,64 @@
                     <h2 class=" text-center mb-4">All Products</h2>
                     <form class="repeater" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-lg-3 p-0 pe-1">
-                                <label for="name">Category</label>
+                            <div class="col-lg-4 p-0 pe-1">
+                                <label for="name">Product</label>
                             </div>
-                            <div class="col-lg-3 p-0 pe-1">
-                                <label for="product">Product</label>
-                            </div>
-                            <div class="col-lg-3 p-0 pe-1">
+                            <div class="col-lg-4 p-0 pe-1">
                                 <label for="product">Unit</label>
                             </div>
-                            <div class="col-lg-3 p-0 pe-1">
+                            <div class="col-lg-4 p-0 pe-1">
                                 <label for="total">Quantity</label>
                             </div>
                         </div>
                         <div data-repeater-list="group-a">
+                            @foreach ($inputs as $key => $item)
                             <div data-repeater-item class="row removeRow">
-                                <div class="col-lg-3 d-flex p-0 pe-1 pb-1 align-items-center">
-                                    <select id="formrow-inputState" class="form-select">
-                                        <option>Select</option>
-                                        <option value="1">4 Water Purifier & 6 Fire Exit</option>
-                                        <option value="2">AlAC (11)</option>
-                                        <option value="3">Angel Chef Hot Kitchen</option>
-                                        <option value="4">Anklet</option>
-                                        <option value="5">Annual Anniversary</option>
-                                        <option value="6">Annual Anniversary of PFDA - V</option>
-                                        <option value="8">antivirus</option>
-                                        <option value="9">Application Development</option>
-                                        <option value="10">Art Finished Goods</option>
-                                        <option value="11">Art Raw Materials</option>
-                                        <option value="12">Art Training Materials </option>
-                                        <option value="13">Asus Laptop </option>
-                                        <option value="14">Attend meetings, Workshop, Sem </option>
-                                        <option value="15">BAKERY </option>
-                                        <option value="16">Bakery Equipment </option>
-                                        <option value="17">Bakery finish products </option>
-                                        <option value="18">Bakery Logistic Materials </option>
-                                        <option value="19">Bakery Raw Materials </option>
+                                <div class="col-lg-4 d-flex p-0 pe-1 pb-1 align-items-center">
+                                    <select class="form-control form-select" wire:model="product_id.{{$key}}">
+                                        <option>--Select--</option>
+                                        @foreach($products as $product)
+                                        <optgroup label="{{$product['name']}}">
+                                            @foreach($product['children'] as $childCourse)
+                                            <option value="{{$childCourse['id']}}">{{$childCourse['name']}}</option>
+                                            @endforeach
+                                        </optgroup>
+                                        @endforeach
                                     </select>
                                 </div>
-                                <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                    <select id="formrow-inputState" class="form-select">
-                                        <option selected="">Select</option>
-                                    </select>
+                                <div class=" col-lg-4 p-0 pe-1 pb-1">
+                                    <x-input-select :records="$unitType" wireModel="unit.{{ $key }}" />
                                 </div>
-                                <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                    <select id="formrow-inputState" class="form-select">
-                                        <option selected="">Select</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                    <x-input-text type="number" name="hh"></x-input-text>
-                                    <button class="btn btn-danger ms-2 removeBtn">
+                                <div class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">
+                                    <x-input-text type="number" wireModel="qty.{{ $key }}"></x-input-text>
+                                    @if (!($this->mode == 'show'))
+                                    <button type="button" class="btn ms-2 btn-danger t removeBtn"
+                                        wire:click="removeRow({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    @endif
                                 </div>
                             </div>
+                            @endforeach
+                            @if (!($this->mode == 'show'))
+                            <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
+                                wire:click="addMore()" />
 
-                        </div>
-                        <div class="ms-2">
-                            <button data-repeater-create type="button"
-                                class="btn btn-success waves-effect waves-light"> Add</button>
+                            @endif
                         </div>
                     </form>
-                    <!-- 7th row start  -->
-                    <div class="row mt-3 justify-content-center ">
-                        <div class="col-lg-6">
-                            <div class="row mb-2">
-                                <label for="horizontal-firstname-input"
-                                    class="col-2 text-end col-form-label">Note</label>
-                                <div class="col-10">
-                                    <x-input-textarea name="hh" placeholder="Enter Note">
-                                    </x-input-textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 7th row end  -->
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <button class="btn btn-danger waves-effect waves-light w-100">Reset</button>
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-success  waves-effect waves-light w-100"
-                id="sa-position">Save</button>
+    <div class="row justify-content-end">
+        <div class="col-lg-2">
+            @if($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode == 'show'))
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+            @endif
         </div>
     </div>
     <!-- end row -->

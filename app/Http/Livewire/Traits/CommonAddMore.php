@@ -25,6 +25,11 @@ trait CommonAddMore
         $this->inputs[] = $this->numberOfItems;
     }
 
+    public function removeRow($key)
+    {
+        unset($this->inputs[$key]);
+    }
+
 
     public function submit()
     {
