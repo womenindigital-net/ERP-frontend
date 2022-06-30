@@ -20,7 +20,6 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
         'requisition' => RequisitionController::class,
-        'stock-assign' => StockAssignController::class,
 
 
         'stock-receive' => StockReceiveController::class,
@@ -28,6 +27,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'material-collect' => MaterialCollectionController::class,
         'stock-transfer' => StockTransferController::class,
 
+        
+        'stock-assign' => StockAssignController::class,
 
     ]);
 

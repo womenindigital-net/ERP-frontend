@@ -67,7 +67,6 @@ class MedicineAdminController extends Controller
      */
     public function store(StoreMedicineAdminRequest $request)
     {
-        dd($request->validated());
         $this->services->store($request->validated());
         Session::flash('success');
         return redirect()->back();

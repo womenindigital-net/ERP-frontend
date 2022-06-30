@@ -27,7 +27,6 @@ class StockTransferList extends Component
 
     public function render()
     {
-        dd($this->repo->getListData($this->perPage, $this->search));
         $data = [
             'records' => $this->repo->getListData($this->perPage, $this->search)
         ];

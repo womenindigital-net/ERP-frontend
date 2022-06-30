@@ -1,5 +1,4 @@
 <div class="tab-pane active" id="case-histroy" role="tabpanel">
-    <!-- end row -->
     <div class="row">
         <div class="col-12">
             <div class="row">
@@ -18,7 +17,7 @@
                 <div class="col-lg-4">
                     <div class="mb-3">
                         <label class="form-label">Warehouse (Materials Taken From)</label>
-                        <x-input-select wireModel="warehouser_id" :records="$warehouses" targetColumn="title" />
+                        <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
                     </div>
                 </div>
             </div>
@@ -26,7 +25,7 @@
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Produce Product</label>
-                        <select class="form-control form-select" wire:model="product_id">
+                        <select class="form-control form-select" wire:model="produce_product_id">
                             <option>--Select--</option>
                             @foreach($products as $product)
                             <optgroup label="{{$product['name']}}">
@@ -81,18 +80,29 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-4 p-0 pe-1 pb-1">
-                                            <p class="form-control m-0">25</p>
-                                        </div>
-                                        <div class="col-lg-4 p-0 pe-1 pb-1">
-                                            <x-input-text name="qty" type="number">
+                                            <x-input-text wireModel="avl_stock.{{$key}}" type="number" :readOnly="true">
                                             </x-input-text>
+                                        </div>
+                                        <div class="col-lg-4 p-0 pe-1 pb-1 d-flex">
+                                            <x-input-text wireModel="qty.{{$key}}" type="number">
+                                            </x-input-text>
+                                            @if (!($this->mode == 'show'))
+                                            <button type="button"
+                                                class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                                wire:click="removeRow({{ $key }})">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                            @endif
                                         </div>
                                     </div>
                                     @endforeach
                                 </div>
                                 <div class="ms-2">
-                                    <button data-repeater-create type="button"
-                                        class="btn btn-success waves-effect waves-light">Add</button>
+                                    @if (!($this->mode == 'show'))
+                                    <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0"
+                                        value="Add" wire:click="addMore()" />
+
+                                    @endif
                                 </div>
                             </form>
                         </div>

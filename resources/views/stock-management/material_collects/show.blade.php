@@ -6,7 +6,7 @@
     <div class="col-xl-12 p-0">
         <div class="card">
             <div class="card-body p-0 apply-view-only">
-                    <livewire:material-collect-create :stockReceive="$records" mode="show"/>
+                    <livewire:material-collect-create :materialCollect="$records" mode="show"/>
             </div>
         </div>
     </div>
