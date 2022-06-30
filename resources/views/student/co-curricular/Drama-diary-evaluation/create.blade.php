@@ -238,22 +238,21 @@
                                                         </section>
                                                     </div>
                                                 </div>
+                                                <div class="wizard-footer d-flex justify-content-between">
+                                                    <div class="pull-left">
+                                                        <input type='button'
+                                                            class='btn btn-primary waves-effect waves-light btn-previous'
+                                                            name='previous' value='Previous' />
+                                                    </div>
+                                                    <div class="pull-right">
+                                                        <input type='button'
+                                                            class='btn btn-primary waves-effect waves-light btn-next'
+                                                            name='next' value='Next' />
+                                                        <input type="submit" class='btn btn-finish btn-fill btn-danger'
+                                                            wire:click='save' value='Finish' />
+                                                    </div>
+                                                </div>
                                             </form>
-                                            <div class="wizard-footer d-flex justify-content-between">
-                                                <div class="pull-left">
-                                                    <input type='button'
-                                                        class='btn btn-primary waves-effect waves-light btn-previous'
-                                                        name='previous' value='Previous' />
-                                                </div>
-                                                <div class="pull-right">
-                                                    <input type='button'
-                                                        class='btn btn-primary waves-effect waves-light btn-next'
-                                                        name='next' value='Next' />
-                                                    <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                        wire:click='save' value='Finish' />
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div> <!-- wizard container -->
