@@ -38,9 +38,6 @@ class MaterialCollectCreate extends Component
         StockRepository $stockRepository,
     ) {
         $this->inputs[] = $this->numberOfItems;
-        $this->receiveInput = false;
-        $this->purchaseInput = false;
-
         $this->service = $service;
         $this->repo = $repository;
         $this->productService = $productService;
@@ -51,49 +48,50 @@ class MaterialCollectCreate extends Component
     }
 
 
+    public $materialCollect;
     public $collected_for;
     public $date;
-    public $warehouser_id;
+    public $warehouse_id;
+    public $produce_product_id;
+    public $will_produce;
+    public $avl_stock;
+    public $qty;
 
-    // public function mount()
-    // {
-    //     if ($this->stockReceive) {
-    //         // dd($this->stockReceive);
-    //         $this->stockReceive = $this->repo->getRelatedData($this->stockReceive, ['details']);
+    public function mount()
+    {
+        if ($this->materialCollect) {
+            $this->materialCollect = $this->repo->getRelatedData($this->materialCollect, ['details']);
 
-    //         $this->project_id = $this->stockReceive->project_id;
-    //         $this->type = $this->stockReceive->type;
-    //         $this->purchase_type = $this->stockReceive->purchase_type;
-    //         $this->purchase_type ? $this->purchaseInput = true : $this->purchaseInput = false;
-    //         $this->return_type = $this->stockReceive->return_type;
-    //         $this->return_type ? $this->receiveInput = true : $this->receiveInput = false;
-    //         $this->date = $this->stockReceive->date;
-    //         $this->warehouse_id = $this->stockReceive->warehouse_id;
+            $this->collected_for = $this->materialCollect->collected_for;
+            $this->date = $this->materialCollect->date;
+            $this->warehouse_id = $this->materialCollect->warehouse_id;
+            $this->produce_product_id = $this->materialCollect->produce_product_id;
+            $this->will_produce = $this->materialCollect->will_produce;
+            $this->created_by = $this->materialCollect->created_by;
 
-    //         $this->inputs = $this->stockReceive->details->toArray();
+            $this->inputs = $this->materialCollect->details->toArray();
 
-    //         foreach ($this->stockReceive->details as $key => $detail) {
-    //             $this->product_id[$key] = $detail->product_id;
-    //             $this->qty[$key] = $detail->qty;
-    //             $this->exp_date[$key] = $detail->exp_date;
-    //             $this->received[$key] = $detail->received;
-    //             $this->return[$key] = $detail->return;
-    //             $this->receivable[$key] = $detail->receivable;
-    //             $this->stock_receive_qty[$key] = $detail->stock_receive_qty;
-    //             $this->serial[$key] = $detail->serial;
-    //         }
-    //     }
-    // }
+            foreach ($this->materialCollect->details as $key => $detail) {
+                $this->product_id[$key] = $detail->product_id;
+                $this->qty[$key] = $detail->qty;
+            }
+        }
+    }
 
     protected array $rules = [
         'collected_for' => 'required',
         'date' => 'required',
-        'warehouser_id' => 'required',
+        'warehouse_id' => 'required',
+        'produce_product_id' => 'required',
+        'will_produce' => 'required',
+        'product_id.*' => 'required',
+        'avl_stock.*' => 'required',
+        'qty.*' => 'required',
     ];
 
     public function update()
     {
-        $this->service->update($this->stockReceive, $this->validate());
+        $this->service->update($this->materialCollect, $this->validate());
         $this->dispatchBrowserEvent('notify');
         // $this->redirect('stock-receive');
     }

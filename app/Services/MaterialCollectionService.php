@@ -19,11 +19,10 @@ class MaterialCollectionService
     {
         try {
             DB::beginTransaction();
-            [$stockRec, $data] = $this->collectStockReceive($validated);
-            $stockReceive = $this->repo->store($stockRec);
-            dd($data);
-            $stockReceiveDetailsInfos = $this->collectStockReceiveDetailsInfos($data);
-            $stockReceive->details()->createMany($stockReceiveDetailsInfos);
+            [$materialCollect, $data] = $this->collectMaterialCollect($validated);
+            $materialCollect = $this->repo->store($materialCollect);
+            $materialCollectDetailsInfos = $this->collectMaterialCollectDetailsInfos($data);
+            $materialCollect->details()->createMany($materialCollectDetailsInfos);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
@@ -31,44 +30,36 @@ class MaterialCollectionService
         }
     }
 
-    private function collectStockReceive(array $validated)
+    private function collectMaterialCollect(array $validated)
     {
-        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['collected_for', 'date', 'warehouser_id']);
-
-        return [$stockReceive, $data];
+        [$materialCollect, $data] = extractNecessaryFieldsFromData($validated, ['collected_for', 'date', 'warehouse_id', 'produce_product_id', 'will_produce']);
+        $materialCollect['created_by'] = auth()->id();
+        return [$materialCollect, $data];
     }
 
-    private function collectStockReceiveDetailsInfos(mixed $data): array
+    private function collectMaterialCollectDetailsInfos(mixed $data): array
     {
-        [$stockReceiveDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'exp_date', 'qty', 'received', 'return', 'receivable', 'stock_receive_qty', 'serial']);
-        for ($i = 0; $i < count($stockReceiveDetailInfos['product_id']); $i++) {
+        [$materialCollectDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty']);
+        for ($i = 0; $i < count($materialCollectDetailInfos['product_id']); $i++) {
             $custom[$i] = [
-                'product_id' => $stockReceiveDetailInfos['product_id'][$i],
-                'exp_date' => $stockReceiveDetailInfos['exp_date'][$i],
-                'qty' => $stockReceiveDetailInfos['qty'][$i],
-                'received' => $stockReceiveDetailInfos['received'][$i],
-                'return' => $stockReceiveDetailInfos['return'][$i],
-                'receivable' => $stockReceiveDetailInfos['receivable'][$i],
-                'stock_receive_qty' => $stockReceiveDetailInfos['stock_receive_qty'][$i],
-                'serial' => $stockReceiveDetailInfos['serial'][$i],
+                'product_id' => $materialCollectDetailInfos['product_id'][$i],
+                'qty' => $materialCollectDetailInfos['qty'][$i],
             ];
         }
-
 
         return $custom ?? [];
     }
 
-    public function update($stockReceive, array $validated)
+    public function update($materialCollect, array $validated)
     {
 
         try {
             DB::beginTransaction();
-            [$stockRec, $data] = $this->collectStockReceive($validated);
-            $stockReceive = $this->repo->update($stockReceive, $stockRec);
-            $stockReceive->details()->delete();
-            $stockReceiveDetailsInfos = $this->collectStockReceiveDetailsInfos($data);
-
-            $stockReceive->details()->createMany($stockReceiveDetailsInfos);
+            [$materialCollectData, $data] = $this->collectMaterialCollect($validated);
+            $materialCollect = $this->repo->update($materialCollect, $materialCollectData);
+            $materialCollect->details()->delete();
+            $materialCollectDetailsInfos = $this->collectMaterialCollectDetailsInfos($data);
+            $materialCollect->details()->createMany($materialCollectDetailsInfos);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();

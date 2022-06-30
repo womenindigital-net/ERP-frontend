@@ -2,28 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StockAssignRequest;
-use App\Repositories\ProductRepository;
-use App\Repositories\WarehouseRepository;
-use App\Services\StockAssignService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use App\Models\StockAssign;
+
 
 class StockAssignController extends Controller
 {
-    private WarehouseRepository $warehouseRepo;
-    private ProductRepository $productRepo;
-    private StockAssignService $service;
-
-    public function __construct(WarehouseRepository $warehouseRepository, ProductRepository $productRepository, StockAssignService $service)
-    {
-        $this->warehouseRepo = $warehouseRepository;
-        $this->productRepo = $productRepository;
-        $this->service = $service;
-    }
 
     /**
      * Display a listing of the resource.
@@ -42,12 +25,7 @@ class StockAssignController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        $data = [
-            'warehouses' => $this->warehouseRepo->getData(),
-            'products' => $this->productRepo->getData(),
-        ];
-
-        return view('inventory-management.stock_assign', $data);
+        return view('inventory-management.stock_assign.create');
     }
 
     /**
@@ -59,11 +37,6 @@ class StockAssignController extends Controller
      */
     public function store(StockAssignRequest $request)
     {
-        $this->service->store($request->validated());
-
-        Session::flash('success');
-
-        return redirect()->back();
     }
 
     /**
@@ -72,9 +45,13 @@ class StockAssignController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(StockAssign $stock_assign)
     {
-        //
+        $data = [
+            'records' => $stock_assign,
+        ];
+
+        return view('stock-management.stock_transfer.show', $data);
     }
 
     /**

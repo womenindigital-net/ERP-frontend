@@ -45,10 +45,10 @@ class MaterialCollectionController extends Controller
      * @param  \App\Models\MaterialCollection  $materialCollection
      * @return \Illuminate\Http\Response
      */
-    public function show(MaterialCollection $materialCollection)
+    public function show(MaterialCollection $material_collect)
     {
         $data = [
-            'records' => $materialCollection,
+            'records' => $material_collect,
         ];
 
         return view('stock-management.material_collects.show', $data);
@@ -60,10 +60,10 @@ class MaterialCollectionController extends Controller
      * @param  \App\Models\MaterialCollection  $materialCollection
      * @return \Illuminate\Http\Response
      */
-    public function edit(MaterialCollection $materialCollection)
+    public function edit(MaterialCollection $material_collect)
     {
         $data = [
-            'records' => $materialCollection,
+            'records' => $material_collect,
         ];
 
         return view('stock-management.material_collects.edit', $data);

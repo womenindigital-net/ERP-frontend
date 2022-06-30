@@ -28,7 +28,6 @@ class StockReceiveList extends Component
 
     public function render()
     {
-
         $data = [
             'records' => $this->repo->getListData($this->perPage, $this->search)
         ];

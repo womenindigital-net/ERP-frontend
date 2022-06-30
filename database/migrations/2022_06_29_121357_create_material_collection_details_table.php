@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\MaterialCollection;
+use App\Models\Product;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,6 +17,9 @@ return new class extends Migration
     {
         Schema::create('material_collection_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(MaterialCollection::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Product::class, 'product_id')->constrained('products')->cascadeOnDelete();
+            $table->string('qty')->nullable();
             $table->timestamps();
         });
     }
