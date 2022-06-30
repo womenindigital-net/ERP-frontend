@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class, 'collected_for')->nullable()->constrained('users')->nullOnDelete();
             $table->string('date');
+            
             $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
