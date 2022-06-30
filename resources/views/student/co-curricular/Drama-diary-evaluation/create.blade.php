@@ -261,8 +261,7 @@
                         </div> <!-- end col -->
                     </div>
                     <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                        {{--
-                        <livewire:drama-diary-evaluation-list /> --}}
+                        <livewire:drama-diary-evaluation-list />
                     </div>
                 </div>
 
