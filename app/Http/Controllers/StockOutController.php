@@ -25,7 +25,7 @@ class StockOutController extends Controller
      */
     public function create()
     {
-        //
+        return view('inventory-management.stock_out.create');
     }
 
     /**
@@ -47,7 +47,11 @@ class StockOutController extends Controller
      */
     public function show(StockOut $stockOut)
     {
-        //
+        $data = [
+            'records' => $stockOut,
+        ];
+
+        return view('inventory-management.stock_out.show', $data);
     }
 
     /**
@@ -58,7 +62,11 @@ class StockOutController extends Controller
      */
     public function edit(StockOut $stockOut)
     {
-        //
+        $data = [
+            'records' => $stockOut,
+        ];
+
+        return view('inventory-management.stock_out.edit', $data);
     }
 
     /**
@@ -81,6 +89,6 @@ class StockOutController extends Controller
      */
     public function destroy(StockOut $stockOut)
     {
-        //
+        return $stockOut->delete();
     }
 }

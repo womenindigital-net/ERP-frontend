@@ -10,6 +10,7 @@ use App\Http\Controllers\RequisitionController;
 use App\Http\Controllers\SaleVoucherController;
 use App\Http\Controllers\StockAssignController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\StockOutController;
 use App\Http\Controllers\StockReceiveController;
 use App\Http\Controllers\StockTransferController;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,9 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'material-collect' => MaterialCollectionController::class,
         'stock-transfer' => StockTransferController::class,
 
-        
+
         'stock-assign' => StockAssignController::class,
+        'stock-out' => StockOutController::class,
 
     ]);
 
@@ -61,7 +63,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     // Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');
     Route::get('stock-count', [StockController::class, 'stockCount'])->name('stock-count');
 
-    Route::get('stock-out', [StockController::class, 'stockOut'])->name('stock-out');
+    // Route::get('stock-out', [StockController::class, 'stockOut'])->name('stock-out');
     Route::get('stock-hand-report', [StockController::class, 'stockHandReport'])->name('stock-hand-report');
     Route::get('stock-product-report', [StockController::class, 'stockProductReport'])->name('stock-product-report');
     Route::get('stock-reorder-report', [StockController::class, 'stockReorderReport'])->name('stock-reorder-report');

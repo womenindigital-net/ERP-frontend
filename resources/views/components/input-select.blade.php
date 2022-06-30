@@ -3,11 +3,12 @@
         {{$multiple}} {{$wireModel}}>
         <option value="">--Select--</option>
         @foreach($records as $key => $record)
-            @php($val = $record->id ?? $key)
-            <option value="{{$val}}" {{ old($name) ? (old($name)==$val ? 'selected' : '' ) : ($isSelected($val) ? 'selected'
+        @php($val = $record->id ?? $key)
+        <option value="{{$val}}" {{ old($name) ? (old($name)==$val ? 'selected' : '' ) : ($isSelected($val) ? 'selected'
             : '' )}}>
-                {{$targetColumn ? $record->$targetColumn : ($record->name ?? $record)}} {{$additional ? '(' . $record->{$additional} . ')' : ''}}
-            </option>
+            {{$targetColumn ? $record->$targetColumn : ($record->name ?? $record)}} {{$additional ? '(' .
+            $record->{$additional} . ')' : ''}}
+        </option>
         @endforeach
     </select>
     @error($name)<span style="color: red">{{$message}}</span>@enderror
