@@ -2407,7 +2407,7 @@
                         <!-- end row -->
                     </div>
                     <div class="tab-pane" id="list" role="tabpanel">
-                        <livewire:trip-report-list>
+                        {{-- <livewire:trip-report-list> --}}
                     </div>
                 </div>
             </div>

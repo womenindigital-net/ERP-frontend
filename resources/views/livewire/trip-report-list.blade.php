@@ -1,16 +1,10 @@
 <div>
-    <br>
-    @include('elements.per-page-item-and-search')
-    <br>
+    {{-- <x-record-list :records="$records">
     <div class="table-responsive">
         <table class="table table-bordered w-100">
             <thead>
                 <tr class="table-primary">
                     <th>Created At
-                        {{--<span>
-                            <i class="dripicons-arrow-thin-down"></i>
-                            <i class="dripicons-arrow-thin-up"></i>
-                        </span>--}}
                     </th>
                     <th>Action</th>
                 </tr>
@@ -54,4 +48,5 @@
             </tbody>
         </table>
     </div>
+    </x-record-list> --}}
 </div>

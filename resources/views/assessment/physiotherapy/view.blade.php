@@ -131,7 +131,7 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Birth history</label>
-                                                                    <x-input-text :checked="$general->birth_history ?? ''" name="name"
+                                                                    <x-input-text :checked="$general->birth_history ?? ''" 
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -141,14 +141,16 @@
                                                                         class="form-label">Before birth</label>
                                                                     <x-input-text
                                                                         value="{{ $general->before_birth ?? '' }}"
-                                                                        name="name" placeholder="">
+                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- row end -->
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Pregnancy</label>
-                                                                    <x-input-text :checked="$general->pregnancy ?? ''" name="name"
+                                                                    <x-input-text 
+                                                                    value="{{ $general->pregnancy ?? '' }}"
+                                                                    
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -156,7 +158,9 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">During Birth</label>
-                                                                    <x-input-text :checked="$general->during_birth ?? ''" name="name"
+                                                                    <x-input-text 
+                                                                    value="{{ $general->during_birth ?? '' }}"
+                                                                   
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -164,7 +168,8 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Delivery</label>
-                                                                    <x-input-text :checked="$general->delivery ?? ''" name="name"
+                                                                    <x-input-text 
+                                                                         value="{{ $general->delivery ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -172,7 +177,8 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">After Birth</label>
-                                                                    <x-input-text :checked="$general->after_birth ?? ''" name="name"
+                                                                    <x-input-text 
+                                                                    value="{{ $general->after_birth ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -180,22 +186,25 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">History</label>
-                                                                    <x-input-text :checked="$general->history ?? ''" name="name"
+                                                                    <x-input-text 
+                                                                     value="{{ $general->history ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check :checked="$general->medication_treatment ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$general->medication_treatment ?? ''" 
                                                                     label="Medication Treatment" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
-                                                                <x-input-radio-or-check :checked="$general->any_present_medicines ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$general->any_present_medicines ?? ''" 
                                                                     label="Any present medicines" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- row end -->
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Home equipment</label>
-                                                                    <x-input-text :checked="$general->home_equipment ?? ''" name="name"
+                                                                    <x-input-text
+                                                                    value="{{ $general->home_equipment ?? '' }}"
+                                                                     
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -210,64 +219,64 @@
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->visual_discrimination ??
                                                                         ''"
-                                                                        name="name" label="Visual Discrimination"
+                                                                         label="Visual Discrimination"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->visual_memory ?? ''"
-                                                                        name="name" label="Visual Memory"
+                                                                         label="Visual Memory"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->visual_figure_ground ??
                                                                         ''"
-                                                                        name="name" label="Visual Figure ground"
+                                                                         label="Visual Figure ground"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->visual_spatial ?? ''"
-                                                                        name="name" label="Visual Spatial"
+                                                                         label="Visual Spatial"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->oral_motor ?? ''"
-                                                                        name="name" label="Oral Motor"
+                                                                         label="Oral Motor"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->sucking ?? ''"
-                                                                        name="name" label="Sucking" :records="$constants::$yesNoEn">
+                                                                         label="Sucking" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->drooling ?? ''"
-                                                                        name="name" label="Drooling"
+                                                                         label="Drooling"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->swollen ?? ''"
-                                                                        name="name" label="Swollen" :records="$constants::$yesNoEn">
+                                                                         label="Swollen" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->chewing ?? ''"
-                                                                        name="name" label="Chewing" :records="$constants::$yesNoEn">
+                                                                         label="Chewing" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->choking ?? ''"
-                                                                        name="name" label="Choking" :records="$constants::$yesNoEn">
+                                                                         label="Choking" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$visual_perception->drinking ?? ''"
-                                                                        name="name" label="Drinking"
+                                                                         label="Drinking"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -281,34 +290,34 @@
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$activities_of_daily_living->eating ??
                                                                         ''"
-                                                                        name="name" label="Eating" :records="$constants::$yesNoEn">
+                                                                         label="Eating" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$activities_of_daily_living->brushing_teeth ??
                                                                         ''"
-                                                                        name="name" label="Brushing teeth"
+                                                                         label="Brushing teeth"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$activities_of_daily_living->dressing ??
                                                                         ''"
-                                                                        name="name" label="Dressing"
+                                                                         label="Dressing"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$activities_of_daily_living->toilet ??
                                                                         ''"
-                                                                        name="name" label="Toilet" :records="$constants::$yesNoEn">
+                                                                         label="Toilet" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$activities_of_daily_living->bathing ??
                                                                         ''"
-                                                                        name="name" label="Bathing" :records="$constants::$yesNoEn">
+                                                                         label="Bathing" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$activities_of_daily_living->does_the_child_attend_school ??
                                                                         ''"
-                                                                        name="name"
+                                                                        
                                                                         label="Does The Child attend school?"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
@@ -316,15 +325,15 @@
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">If Yes, Enter school
                                                                             name</label>
-                                                                        <x-input-text :checked="$activities_of_daily_living->if_yes_enter_school_name ??
-                                                                            ''" name="name"
+                                                                        <x-input-text 
+                                                                            value="{{ $activities_of_daily_living->if_yes_enter_school_name ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$activities_of_daily_living->leisure_or_play_activities_of_interest ??
                                                                         ''"
-                                                                        name="name"
+                                                                        
                                                                         label="Leisure/ Play: activities of interest."
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
@@ -341,8 +350,8 @@
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Please explain
                                                                             strength area</label>
-                                                                        <x-input-text :checked="$strength->please_explain_strength_area ??
-                                                                            ''" name="name"
+                                                                        <x-input-text  
+                                                                             value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
@@ -357,34 +366,34 @@
 
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$functional_gross_motor->sitting ?? ''"
-                                                                        name="name" label="Sitting" :records="$constants::$yesNoEn">
+                                                                         label="Sitting" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$functional_gross_motor->crawling ?? ''"
-                                                                        name="name" label="Crawling"
+                                                                         label="Crawling"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$functional_gross_motor->standing ?? ''"
-                                                                        name="name" label="Standing"
+                                                                         label="Standing"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$functional_gross_motor->walking ?? ''"
-                                                                        name="name" label="Walking" :records="$constants::$yesNoEn">
+                                                                         label="Walking" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$functional_gross_motor->jumping ?? ''"
-                                                                        name="name" label="Jumping" :records="$constants::$yesNoEn">
+                                                                         label="Jumping" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$functional_gross_motor->running ?? ''"
-                                                                        name="name" label="Running" :records="$constants::$yesNoEn">
+                                                                         label="Running" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$functional_gross_motor->ball_skill ??
                                                                         ''"
-                                                                        name="name" label="Ball skill"
+                                                                         label="Ball skill"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -399,41 +408,41 @@
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$transitional_movements->prone_to_supine ??
                                                                         ''"
-                                                                        name="name" label="Prone to Supine"
+                                                                         label="Prone to Supine"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$transitional_movements->continuous_rolling ??
                                                                         ''"
-                                                                        name="name" label="Continuous Rolling"
+                                                                         label="Continuous Rolling"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$transitional_movements->lying_to_sit ??
                                                                         ''"
-                                                                        name="name" label="Lying to Sit"
+                                                                         label="Lying to Sit"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$transitional_movements->box_sit_to_stand ??
                                                                         ''"
-                                                                        name="name" label="Box sit to stand"
+                                                                         label="Box sit to stand"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$transitional_movements->jumping ?? ''"
-                                                                        name="name" label="Jumping" :records="$constants::$yesNoEn">
+                                                                         label="Jumping" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$transitional_movements->cross_sit_to_stand ??
                                                                         ''"
-                                                                        name="name" label="Cross sit to stand"
+                                                                         label="Cross sit to stand"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$transitional_movements->kneeling_to_stand ??
                                                                         ''"
-                                                                        name="name" label="Kneeling to stand:"
+                                                                         label="Kneeling to stand:"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -446,63 +455,65 @@
                                                                 <div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->dominance ?? ''"
-                                                                        name="name" label="Dominance"
+                                                                         label="Dominance"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text :checked="$fine_motor_skill->left ?? ''" name="name"
+                                                                        <x-input-text :checked="$fine_motor_skill->left ?? ''" 
+                                                                            value="{{ $fine_motor_skill->left ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text :checked="$fine_motor_skill->right ?? ''" name="name"
+                                                                        <x-input-text :checked="$fine_motor_skill->right ?? ''"
+                                                                            value="{{ $fine_motor_skill->right ?? '' }}" 
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->reach ?? ''"
-                                                                        name="name" label="Reach" :records="$constants::$yesNoEn">
+                                                                         label="Reach" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->release ?? ''"
-                                                                        name="name" label="Release" :records="$constants::$yesNoEn">
+                                                                         label="Release" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->symmetrical_use ?? ''"
-                                                                        name="name" label="Symmetrical use"
+                                                                         label="Symmetrical use"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->bilateral_use ?? ''"
-                                                                        name="name" label="Bilateral use"
+                                                                         label="Bilateral use"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->in_hand_manipulation ??
                                                                         ''"
-                                                                        name="name" label="In-hand manipulation"
+                                                                         label="In-hand manipulation"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->eye_hand_co_ordination ??
                                                                         ''"
-                                                                        name="name" label="Eye hand co-ordination"
+                                                                         label="Eye hand co-ordination"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->transfer ?? ''"
-                                                                        name="name" label="Transfer"
+                                                                         label="Transfer"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$fine_motor_skill->writing_skill ?? ''"
-                                                                        name="name" label="Writing skill"
+                                                                         label="Writing skill"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -517,13 +528,13 @@
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$automatic_reaction->protective_reactions ??
                                                                         ''"
-                                                                        name="name" label="Protective reactions"
+                                                                         label="Protective reactions"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$automatic_reaction->equilibrium_reaction ??
                                                                         ''"
-                                                                        name="name" label="Equilibrium reaction"
+                                                                         label="Equilibrium reaction"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -539,27 +550,27 @@
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$sensory_skill_normal_hypo_response->tactile ??
                                                                         ''"
-                                                                        name="name" label="Tactile"
+                                                                         label="Tactile"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$sensory_skill_normal_hypo_response->auditory ??
                                                                         ''"
-                                                                        name="name" label="Auditory"
+                                                                         label="Auditory"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$sensory_skill_normal_hypo_response->vestibular ??
                                                                         ''"
-                                                                        name="name" label="Vestibular"
+                                                                         label="Vestibular"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$sensory_skill_normal_hypo_response->proprioceptive ??
                                                                         ''"
-                                                                        name="name" label="Proprioceptive"
+                                                                         label="Proprioceptive"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -574,51 +585,51 @@
                                                                 <div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->attention ?? ''"
-                                                                        name="name" label="Attention"
+                                                                         label="Attention"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->problem_solving ?? ''"
-                                                                        name="name" label="Problem Solving"
+                                                                         label="Problem Solving"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->able_to_follow_instruction ??
                                                                         ''"
-                                                                        name="name" label="Able to Follow instruction"
+                                                                         label="Able to Follow instruction"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->memory ?? ''"
-                                                                        name="name" label="Memory" :records="$constants::$yesNoEn">
+                                                                         label="Memory" :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->perceptual_motor ??
                                                                         ''"
-                                                                        name="name" label="Perceptual Motor"
+                                                                         label="Perceptual Motor"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->body_awareness ?? ''"
-                                                                        name="name" label="Body Awareness"
+                                                                         label="Body Awareness"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->body_co_ordination ??
                                                                         ''"
-                                                                        name="name" label="Body Co-ordination"
+                                                                         label="Body Co-ordination"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$cognitive_skills->bilateral_integration ??
                                                                         ''"
-                                                                        name="name" label="Bilateral integration"
+                                                                         label="Bilateral integration"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
                                                                     <!-- end row -->
@@ -633,7 +644,8 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Problem List</label>
-                                                                    <x-input-text :checked="$treatment->problam_list ?? ''" name="name"
+                                                                    <x-input-text :checked="$treatment->problam_list ?? ''" 
+                                                                        value="{{ $treatment->please_explain_strength_area ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -641,7 +653,8 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Treatment plan</label>
-                                                                    <x-input-text :checked="$treatment->treatment_plan ?? ''" name="name"
+                                                                    <x-input-text :checked="$treatment->treatment_plan ?? ''" 
+                                                                        value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -650,7 +663,8 @@
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Treatment plan
                                                                         implementation details</label>
-                                                                    <x-input-text :checked="$treatment->treatment_plann ?? ''" name="name"
+                                                                    <x-input-text :checked="$treatment->treatment_plann ?? ''"
+                                                                        value="{{ $strength->please_explain_strength_area ?? '' }}" 
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -658,7 +672,8 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Progress</label>
-                                                                    <x-input-text :checked="$treatment->progress ?? ''" name="name"
+                                                                    <x-input-text :checked="$treatment->progress ?? ''" 
+                                                                        value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -675,7 +690,8 @@
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Therapist
                                                                         Signature</label>
-                                                                    <x-input-text :checked="$signature->therapist_signature ?? ''" name="name"
+                                                                    <x-input-text :checked="$signature->therapist_signature ?? ''" 
+                                                                        value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                         type="file" placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -683,7 +699,8 @@
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Designation and
                                                                         organizations name</label>
-                                                                    <x-input-text :checked="$signature->designation ?? ''" name="name"
+                                                                    <x-input-text :checked="$signature->designation ?? ''" 
+                                                                        value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -698,45 +715,51 @@
                                                                 <div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$muscle_power->upper_limbs ?? ''"
-                                                                        name="name" label="Upper limbs"
+                                                                         label="Upper limbs"
                                                                         :records="$physiotherapyConstants::$limbs">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text :checked="$muscle_power->left ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_power->left ?? ''" 
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text :checked="$muscle_power->right ?? ''" name="name">
+                                                                        <x-input-text :checked="$muscle_power->right ?? ''" 
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}">
+                                                                            
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$muscle_power->lower_limbs ?? ''"
-                                                                        name="name" label="Lower Limbs"
+                                                                         label="Lower Limbs"
                                                                         :records="$physiotherapyConstants::$limbs">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text :checked="$muscle_power->left ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_power->left ?? ''" 
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text :checked="$muscle_power->right ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_power->right ?? ''" 
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Trunk/neck</label>
-                                                                        <x-input-text :checked="$muscle_power->trunk ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_power->trunk ?? ''"
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}" 
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
@@ -752,39 +775,43 @@
 
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$muscle_tone->upper_limbs ?? ''"
-                                                                        name="name" label="Upper limbs"
+                                                                         label="Upper limbs"
                                                                         :records="$physiotherapyConstants::$limbsTone">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text :checked="$muscle_tone->left ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_tone->left ?? ''" 
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text :checked="$muscle_tone->right ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_tone->right ?? ''"
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}" 
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check :checked="$muscle_tone->lower_limbs ?? ''"
-                                                                        name="name" label="Lower Limbs"
+                                                                         label="Lower Limbs"
                                                                         :records="$physiotherapyConstants::$limbsTone">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text :checked="$muscle_tone->left ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_tone->left ?? ''"
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}" 
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text :checked="$muscle_tone->right ?? ''" name="name"
+                                                                        <x-input-text :checked="$muscle_tone->right ?? ''" 
+                                                                            value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                             placeholder="">
                                                                         </x-input-text>
                                                                     </div>
@@ -797,22 +824,22 @@
                                                             <section>
 
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$behavior->independence ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$behavior->independence ?? ''" 
                                                                     label="Independence" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$behavior->social_interaction ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$behavior->social_interaction ?? ''" 
                                                                     label="Social interaction" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$behavior->social_communication ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$behavior->social_communication ?? ''" 
                                                                     label="Social Communication" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$behavior->interpersonal ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$behavior->interpersonal ?? ''" 
                                                                     label="Interpersonal" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
@@ -831,7 +858,7 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$domain_area->cognitive ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$domain_area->cognitive ?? ''" 
                                                                     label="Cognitive" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
@@ -840,7 +867,8 @@
                                                                         class="form-label">If
                                                                         yes write
                                                                         below</label>
-                                                                    <x-input-text :checked="$domain_area->if_yes ?? ''" name="name"
+                                                                    <x-input-text :checked="$domain_area->if_yes ?? ''" 
+                                                                        value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
@@ -848,21 +876,22 @@
                                                                 <div class="mb-3">
                                                                     <label for="formrow-firstname-input"
                                                                         class="form-label">Behavioral</label>
-                                                                    <x-input-text :checked="$domain_area->behavioral ?? ''" name="name"
+                                                                    <x-input-text :checked="$domain_area->behavioral ?? ''" 
+                                                                        value="{{ $strength->please_explain_strength_area ?? '' }}"
                                                                         placeholder="">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- row end -->
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$domain_area->communication ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$domain_area->communication ?? ''" 
                                                                     label="Communication" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$domain_area->social ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$domain_area->social ?? ''" 
                                                                     label="Social" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$domain_area->emotional ?? ''" name="name"
+                                                                <x-input-radio-or-check :checked="$domain_area->emotional ?? ''" 
                                                                     label="Emotional" :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
