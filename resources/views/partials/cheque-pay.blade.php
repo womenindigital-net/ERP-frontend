@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="form-check form-check-primary mb-3">
+    <div class="form-check form-check-primary mb-3 ms-3">
         <input class="form-check-input" name="cheque" type="checkbox"
                id="formCheckBox">
         <label class="form-check-label" for="formCheckBoxForm">Cheque

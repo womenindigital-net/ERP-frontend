@@ -13,15 +13,18 @@ use App\Http\Controllers\StockAssignController;
 use App\Http\Controllers\FinishedGoodController;
 use App\Http\Controllers\StockReceiveController;
 use App\Http\Controllers\StockTransferController;
+use App\Http\Controllers\SupplierPaymentController;
 use App\Http\Controllers\MaterialCollectionController;
-
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
+
+
         'requisition' => RequisitionController::class,
+        'supplier-payment' => SupplierPaymentController::class,
 
 
         'stock-receive' => StockReceiveController::class,
@@ -52,7 +55,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
     Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 
-    Route::get('payment-supplier', [PaymentController::class, 'supplier'])->name('payment-supplier');
+    // Route::get('payment-supplier', [PaymentController::class, 'supplier'])->name('payment-supplier');
     Route::get('direct-payment-add', [PaymentController::class, 'directPaymentAdd'])->name('direct-payment-add');
     Route::get('cash-payment-list', [PaymentController::class, 'casePaymentList'])->name('cash-payment-list');
     Route::get('advance-payment-list', [PaymentController::class, 'advancePaymentList'])->name('advance.payment.list');

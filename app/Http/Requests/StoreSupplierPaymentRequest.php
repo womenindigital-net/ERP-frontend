@@ -13,7 +13,7 @@ class StoreSupplierPaymentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,19 @@ class StoreSupplierPaymentRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'project_id' => 'required',
+            'supplier_id' => 'required',
+            'date' => 'required',
+            'purchase_id' => 'nullable',
+            'invoice_id' => 'required',
+            'remark' => 'nullable',
+            'note' => 'nullable',
+            'cheque' => 'nullable',
+            'cheque_amount' => 'nullable',
+            // 'cheque_no' => 'nullable',
+            // 'cheque_account_no' => 'nullable',
+            // 'cheque_account_name' => 'nullable',
+            // 'cheque_bank_name' => 'nullable',
         ];
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\PaymentType::class)->nullable()->constrained()->nullOnDelete();
+            $table->string('type')->nullable();
+            $table->string('date')->nullable();
             $table->foreignIdFor(\App\Models\Project::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(\App\Models\Purchase::class)->nullable()->constrained()->nullOnDelete();
             $table->double('amount', 8, 2)->nullable();

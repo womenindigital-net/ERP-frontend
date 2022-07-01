@@ -60,7 +60,7 @@ class StockOutController extends Controller
      * @param  \App\Models\StockOut  $stockOut
      * @return \Illuminate\Http\Response
      */
-    public function edit(StockOut $stockOut)
+    public function edit(StockOut $stockOut): \Illuminate\Http\Response
     {
         $data = [
             'records' => $stockOut,
