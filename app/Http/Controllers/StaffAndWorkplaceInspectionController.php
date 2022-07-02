@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
 use App\Models\StaffAndWorkplaceInspection;
 use App\Http\Requests\StaffAndWorkplaceInspectionRequest;
@@ -10,10 +12,15 @@ use App\Http\Requests\UpdateStaffAndWorkplaceInspectionRequest;
 
 class StaffAndWorkplaceInspectionController extends Controller
 {
-     private StaffAndWorkplaceinspectionRepository $stafAndWorkRepo;
+    private StaffAndWorkplaceinspectionRepository $stafAndWorkRepo;
+    private UserRepository $userRepo;
+    private StudentRepository $studentRepo;
+    public $record;
 
-    public function __construct(StaffAndWorkplaceinspectionRepository $stafAndWorkRepo)
+    public function __construct(StaffAndWorkplaceinspectionRepository $stafAndWorkRepo, UserRepository $userRepository, StudentRepository $studentRepository)
     {
+        $this->userRepo    = $userRepository;
+        $this->studentRepo = $studentRepository;
         $this->stafAndWorkRepo = $stafAndWorkRepo;
     }
     /**
@@ -33,7 +40,11 @@ class StaffAndWorkplaceInspectionController extends Controller
      */
     public function create()
     {
-        return view('student.employment.Staff-and-workplace-inspection.create');
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('student.employment.Staff-and-workplace-inspection.create', $data);
     }
 
     /**
@@ -45,10 +56,9 @@ class StaffAndWorkplaceInspectionController extends Controller
      */
     public function store(StaffAndWorkplaceInspectionRequest $request)
     {
-        //  $this->stafAndWorkRepo->store($request->validated());
-        //  return redirect()->back();
+        $this->stafAndWorkRepo->store($request->validated());
+        return redirect()->back();
         Session::flash('success');
-         dd($request);
     }
 
     /**
@@ -57,9 +67,15 @@ class StaffAndWorkplaceInspectionController extends Controller
      * @param  \App\Models\StaffAndWorkplaceInspection  $staffAndWorkplaceInspection
      * @return \Illuminate\Http\Response
      */
-    public function show(StaffAndWorkplaceInspection $staffAndWorkplaceInspection)
+    public function show(StaffAndWorkplaceInspection $staff_and_workplaceinspection)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $staff_and_workplaceinspection,
+
+        ];
+        return view('student.employment.Staff-and-workplace-inspection.view', $data);
     }
 
     /**
@@ -68,9 +84,14 @@ class StaffAndWorkplaceInspectionController extends Controller
      * @param  \App\Models\StaffAndWorkplaceInspection  $staffAndWorkplaceInspection
      * @return \Illuminate\Http\Response
      */
-    public function edit(StaffAndWorkplaceInspection $staffAndWorkplaceInspection)
+    public function edit(StaffAndWorkplaceInspection $staff_and_workplaceinspection)
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+            'record' => $staff_and_workplaceinspection,
+        ];
+        return view('student.employment.Staff-and-workplace-inspection.Edit', $data);
     }
 
     /**
@@ -80,7 +101,7 @@ class StaffAndWorkplaceInspectionController extends Controller
      * @param  \App\Models\StaffAndWorkplaceInspection  $staffAndWorkplaceInspection
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateStaffAndWorkplaceInspectionRequest $request, StaffAndWorkplaceInspection $staffAndWorkplaceInspection)
+    public function update(UpdateStaffAndWorkplaceInspectionRequest $request, StaffAndWorkplaceInspection $staff_and_workplaceinspection)
     {
         //
     }
@@ -91,8 +112,8 @@ class StaffAndWorkplaceInspectionController extends Controller
      * @param  \App\Models\StaffAndWorkplaceInspection  $staffAndWorkplaceInspection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StaffAndWorkplaceInspection $staffAndWorkplaceInspection)
+    public function destroy(StaffAndWorkplaceInspection $staff_and_workplaceinspection)
     {
-        //
+        return $staff_and_workplaceinspection->delete();
     }
 }
