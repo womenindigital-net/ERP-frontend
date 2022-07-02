@@ -26,9 +26,8 @@ class SupplierPaymentService
 
     public function store(mixed $validated)
     {
-        // payment
+        // supplier_payment
         // payment_history
-        // supplier
         try {
             DB::beginTransaction();
 
@@ -58,7 +57,7 @@ class SupplierPaymentService
 
         $supplierPaymentInfo = [
             'supplier_id' => $validated['supplier_id'],
-            'invoice_id' => $validated['invoice_id'],
+            'invoice_number' => $validated['invoice_number'],
             'remark' => $validated['remark'],
             'note' => $validated['note']
         ];
