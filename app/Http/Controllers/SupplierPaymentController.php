@@ -19,7 +19,6 @@ class SupplierPaymentController extends Controller
     private ProjectRepository $projectRepo;
     private SupplierRepository $supplierRepo;
     private PurchaseOrderRepository $purchaseOrderRepo;
-    // private invoice $supplierRepo;
     private SupplierPaymentService $service;
     private SupplierPaymentRepository $repo;
 
@@ -104,11 +103,17 @@ class SupplierPaymentController extends Controller
     {
         $data = [
             'projects' => $this->projectRepo->getData(),
-            'customers' => $this->customerRepo->getData(),
-            'record' => $this->repo->getRelatedData($supplierPayment, ['income.history', 'customer', 'income.project']),
+            'suppliers' => $this->supplierRepo->getData(),
+            'purchaseOrder' => $this->purchaseOrderRepo->getData(),
+            'invoices' => [
+                '1' => 'SDT-1211',
+                '2' => 'SDT-1212',
+                '3' => 'SDT-1213',
+            ],
+            'record' => $this->repo->getRelatedData($supplierPayment, ['payment.supplierPayment', 'payment.history']),
         ];
-
-        return view('accounting.income.donation_and_other_edit', $data);
+        // dd($data['record']);
+        return view('accounting.purchase.supplier_payment.edit', $data);
     }
 
     /**

@@ -10,7 +10,7 @@ use App\Repositories\SupplierPaymentRepository;
 class SupplierPaymentService
 {
     private SupplierPaymentRepository $repo;
-    private PaymentRepository $PaymentRepo;
+    private PaymentRepository $paymentRepo;
 
     /**
      * @param SupplierPaymentRepository $repository
@@ -26,16 +26,17 @@ class SupplierPaymentService
 
     public function store(mixed $validated)
     {
+        // dd($validated);
         // supplier_payment
         // payment_history
         try {
             DB::beginTransaction();
 
             [$paymentInfo, $supplierPaymentInfo] = $this->segregateInfo($validated);
-            // dd($paymentInfo, $supplierPaymentInfo);
+            // dd($paymentInfo, $supplierPaymentInfo, 'Date, invoice Num, remark Data Not Save');
 
             $payment = $this->paymentRepo->store($paymentInfo);
-            
+
             $payment->supplierPayment()->create($supplierPaymentInfo);
 
             // $payment->history()->create($this->collectIncomeHistoryInfo($validated));
@@ -50,24 +51,26 @@ class SupplierPaymentService
     private function segregateInfo(mixed $validated): array
     {
         [$paymentInfo, $data] = $this->collectPaymentInfo($validated);
-
         $paymentInfo['amount'] = ($validated['cash'] ?? 0) + ($validated['cheque_amount'] ?? 0);
-        $paymentInfo['type']   = 'supplier_payment';
+        $paymentInfo['method']   = 'supplier_payment';
         $paymentInfo['user_id']   = auth()->id();
+        $paymentInfo['note']   = $validated['note'];
+
 
         $supplierPaymentInfo = [
-            'supplier_id' => $validated['supplier_id'],
-            'invoice_number' => $validated['invoice_number'],
+            'date' => $validated['date'],
+            'invoice_num' => $validated['invoice_num'],
             'remark' => $validated['remark'],
             'note' => $validated['note']
         ];
+        // dd($paymentInfo,$supplierPaymentInfo, $data);
 
         return [$paymentInfo, $supplierPaymentInfo];
     }
 
     private function collectPaymentInfo(array $data): array
     {
-        return extractNecessaryFieldsFromData($data, ['project_id', 'date', 'purchase_id']);
+        return extractNecessaryFieldsFromData($data, ['project_id', 'purchase_id']);
     }
 
     private function collectIncomeHistoryInfo(array $data): array

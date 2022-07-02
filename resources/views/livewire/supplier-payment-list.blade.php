@@ -1,99 +1,66 @@
 <div class="tab-pane" id="supplier_payment_list" role="tabpanel">
-    <!-- end row -->
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
-            <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                    class="form-control form-control-sm form-select form-select-sm">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select> entries
-            </label>
-        </div>
-        <div class="col-sm-12 col-md-6 text-end">
-            <label style="display: inline-flex;align-items: center;">Search:
-                <input type="search" class="form-control form-control-sm" placeholder="">
-            </label>
-        </div>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-bordered w-100">
-            <thead>
-                <tr class="table-primary">
-                    <th>SL</th>
-                    <th>Supplier</th>
-                    <th>Project</th>
-                    <th>Date</th>
-                    <th>Cash Payment</th>
-                    <th>Cheque Payment</th>
-                    <th>Total Payment</th>
-                    <th>Reference</th>
-                    <th>Send for Approval</th>
-                    <th>Account</th>
-                    <th>Check No.</th>
-                    <th>Log</th>
-                    <th>action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Puja</td>
-                    <td>puja</td>
-                    <td>reading</td>
-                    <td>first to last</td>
-                    <td>Puja</td>
-                    <td>puja</td>
-                    <td>reading</td>
-                    <td>first to last</td>
-                    <td>yousuf</td>
-                    <td>reading</td>
-                    <td>first to last</td>
-                    <td>first to last</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                            <i class=" fas fa-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                            <i class="fas fa-pen"></i></button>
-                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                            <i class="fas fa-trash-alt"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
-            Showing 1 to 2 of 2 entries
-        </div>
-        <div class="col-sm-12 col-md-6 text-end">
-            <nav>
-                <ul class="pagination" style="justify-content: end;">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <x-record-list :records="$records">
+        <div class="table-responsive">
+            <table class="table table-bordered w-100">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Supplier</th>
+                        <th>Project</th>
+                        <th>Date</th>
+                        <th>Payment Method</th>
+                        <th>Total Payment</th>
+                        <th>Reference</th>
+                        <th>Send for Approval</th>
+                        <th>Account</th>
+                        <th>Check No.</th>
+                        <th>Log</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
 
+                    {{-- @dd($records); --}}
+                    @foreach($records as $record)
+                    <tr>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{ $record->payment->project_id }}</td>
+                        <td>{{ $record->date }}</td>
+                        <td>{{ $record->payment->method }}</td>
+                        <td>{{ $record->payment->amount }}</td>
+                        <td>{{ $record->payment->user_id }}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{ $record->created_at }}</td>
+                        <td>
+                            <a href="{{route('supplier-payment.show', $record->id)}}" type="button"
+                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2">
+                                <i class=" fas fa-eye"></i>
+                            </a>
+                            <button type="button"
+                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button type="button"
+                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
+                                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <a href="{{route('supplier-payment.edit', $record->id)}}" type="button"
+                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                <i class="mdi mdi-pencil"></i>
+                            </a>
+                            <button type="button"
+                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
+                                wire:click="confirmDelete({{$record->id}})">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </x-record-list>
 </div>
