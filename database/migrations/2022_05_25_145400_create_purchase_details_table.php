@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('available_qty')->nullable();
             $table->integer('purchase_qty')->nullable();
             $table->double('price', 8, 2)->nullable();
+            $table->integer('qty')->nullable();
             $table->double('vat', 4, 2)->nullable();
             $table->double('sub_total', 4, 2)->nullable();
             $table->boolean('is_paid', 4, 2)->nullable();

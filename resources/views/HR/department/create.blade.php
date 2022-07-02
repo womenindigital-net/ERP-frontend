@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -21,7 +19,6 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
@@ -38,8 +35,7 @@
                                 <div class="col-12 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Head of Department:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="teachers_id"
-                                        :records="[]" />
+                                        <x-input-select name="head_of_department" :records="[]" />
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex  mb-3">
@@ -50,16 +46,15 @@
                                     </x-input-text>
                                     </div>
                                 </div>
+                                <div class=" d-flex justify-content-end gap-2">
+                                  <div class="col-md-1 ">
+                                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                  </div>
+                                  <div class="col-md-1">
+                                    <button class="btn btn-success">Save</button>
+                                  </div>
+                                </div>
                           </div>
-                          <div class="row modal-footer">
-                              <div class="col-md-1">
-                                  <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-                              </div>
-                              <div class="col-md-1">
-                                  <button class="btn btn-success w-100">Save</button>
-                              </div>
-                          </div>
-                        
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                       <div class="row">
@@ -151,7 +146,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
 @endsection

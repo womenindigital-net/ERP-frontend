@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -21,13 +19,11 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
                         <div class="modal-body p-0">
                             <div class="container">
-                                
                                 <div class="row d-flex">
                                     <div class="col-12 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Organization Name:</label>
@@ -61,14 +57,17 @@
                                             </x-input-text>
                                         </div>
                                     </div>
+                                    <div class=" d-flex justify-content-end gap-1">
+                                    <div>
+                                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-success">Save</button>
+                                    </div>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn font-size-16 btn-danger" data-bs-dismiss="modal"> Close</button>
-                            <button type="button" class="btn font-size-16 btn-success" id="sa-position"> Save</button>
-                        </div>
-                        
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                         <div class="row">
@@ -158,8 +157,6 @@
                       </div>
                     </div>
                 </div>
-
-
                 <div class="modal fade material-callects-modal-xl-view" id="material-callects-modal-xl-view" tabindex="-2" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -212,7 +209,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Http\Livewire\Traits\CommonListElements;
+use App\Models\Requisition;
 use App\Repositories\ProjectRepository;
 use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\RequisitionRepository;
@@ -54,8 +55,6 @@ class PurchaseOrderCreate extends Component
 
     public function mount()
     {
-//        dd($this->requisition);
-
         if ($this->requisition && $this->requisition->id) {
             $this->project_id = $this->requisition->project_id;
             $this->requisition_id = $this->requisition->id;
@@ -105,8 +104,6 @@ class PurchaseOrderCreate extends Component
 
     public function render(): Factory|View|Application
     {
-//        dd($this->requisitionRepo->getApprovedList());
-
         $data = [
             'projects' => $this->projectRepo->getData(),
             'suppliers' => $this->supplierRepo->getData(),

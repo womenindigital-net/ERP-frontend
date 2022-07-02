@@ -1,4 +1,5 @@
 <div class="tab-pane active" id="purchase_order" role="tabpanel">
+    @if($requisition)
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">
@@ -190,4 +191,7 @@
         </div>
     </div>
     <!-- end row -->
+    @else
+    <h2 class="text-center">Come Through Requisition</h2>
+    @endif
 </div>
