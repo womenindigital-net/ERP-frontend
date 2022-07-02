@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -21,7 +19,6 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
@@ -104,17 +101,16 @@
                                         <x-input-textarea rows="1" name="overall_comment" type="date"></x-input-textarea>
                                     </div>
                                 </div>
+                                <div class=" d-flex justify-content-end gap-2">
+                                    <div class="col-md-1 ">
+                                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button class="btn btn-success">Save</button>
+                                    </div>
+                                </div>                             
                             </div>
                         </div>
-                          <div class="row modal-footer">
-                              <div class="col-md-1">
-                                  <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-                              </div>
-                              <div class="col-md-1">
-                                  <button class="btn btn-success w-100">Save</button>
-                              </div>
-                          </div>
-                        
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                       <div class="row">
@@ -249,13 +245,13 @@
                                 </div>
                                 <form class="repeater pb-5" enctype="multipart/form-data">
                                     <div class="row">
-                                        <div class="col-lg-3 p-0 pe-1">
+                                        <div class="col-lg-4 text-center p-0">
                                             <label for="product">Criteria</label>
                                         </div>
-                                        <div class="col-lg-3 p-0 pe-1">
+                                        <div class="col-lg-4 text-center p-0">
                                             <label for="quality">Rating </label>
                                         </div>
-                                        <div class="col-lg-3 p-0 pe-1">
+                                        <div class="col-lg-4 text-center p-0">
                                             <label for="subtotal">Comment</label>
                                         </div>
                                         
@@ -263,15 +259,14 @@
                                     <div data-repeater-list="group-a">
                                         <div data-repeater-item class="row removeRow">
     
-                                            <div  class="col-lg-3 d-flex p-0 pe-1 pb-1 ">
+                                            <div  class="col-lg-4 d-flex p-0 pe-1 pb-1 ">
                                                 <x-input-textarea rows="1" name="criteria" type="text"></x-input-textarea>
                                             </div>
     
-                                            <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                                <x-input-select name="rating"
-                                            :records="[]" />
+                                            <div class=" col-lg-4 p-0 pe-1 pb-1">
+                                                <x-input-select name="rating" :records="[]" />
                                             </div>
-                                            <div class="col-lg-3 p-0 pe-1 pb-1 d-flex">
+                                            <div class="col-lg-4 p-0 pe-1 pb-1 d-flex">
                                                 <x-input-textarea rows="1" name="comment" type="text"></x-input-textarea>
                                                 <div class="">
                                                     <button class="btn btn-danger ms-2 removeBtn">
@@ -281,7 +276,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
+                                    <input data-repeater-create type="button" class="btn btn-success mt-lg-0" value="Add"/>
                                 </form>
                                 <div class="row pb-5">
                                     <div class="col-6 d-flex  mb-3">

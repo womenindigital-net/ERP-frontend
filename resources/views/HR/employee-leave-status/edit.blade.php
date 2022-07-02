@@ -1,10 +1,4 @@
 @extends('layouts.master')
-
-@section('title') @lang('translation.Starter_Page') @endsection
-@section('css')
-    
-@endsection
-
 @section('content')
     <div class="">
         <div class="">
@@ -88,11 +82,8 @@
                             </div>
                         </div> 
                     </div> 
-                   
             </div> 
         </div>
-        
-        
         <footer class="footer">
             <div class="container-fluid">
                 <div class="row">
@@ -108,9 +99,4 @@
             </div>
         </footer>
     </div>
- 
-
-@endsection
-
-@section('script')
 @endsection

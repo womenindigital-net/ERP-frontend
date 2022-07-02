@@ -1,10 +1,4 @@
 @extends('layouts.master')
-@section('title')
-@lang('translation.Data_Tables')
-@endsection
-@section('css')
-<link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -72,20 +66,19 @@
                                         class="col-md-4 col-form-label text-center">Message:</label>
                                     <div class="col-md-8 pe-5">
                                         <form method="post">
-                                            <x-input-textarea name="area" />
+                                            <x-input-textarea name="area" rows="1" />
                                         </form>
                                     </div>
                                 </div>
                                 {{-- --}}
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="row modal-footer">
-                                            <div class="col-md-2">
-                                                <button type="submit" class="btn btn-success w-100">Save</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                              <div class=" d-flex justify-content-end gap-1">
+                                <div>
+                                  <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                 </div>
+                                <div>
+                                  <button class="btn btn-success">Save</button>
+                                </div>
+                              </div>
                             </div>
                         </form>
                     </div>

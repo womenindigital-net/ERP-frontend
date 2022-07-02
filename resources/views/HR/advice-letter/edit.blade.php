@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -53,20 +51,18 @@
                                                 </div>
                                             </div>
                                         </div> 
+                                        <div class=" d-flex justify-content-end gap-2">
+                                            <div class="col-md-1 ">
+                                                <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button class="btn btn-success w-100">Save</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row modal-footer">
-
-                            <div class="col-md-1">
-                                <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-                            </div>
-                            <div class="col-md-1">
-                                <button class="btn btn-success w-100">Save</button>
-                            </div>
-                        </div>
-                        
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                         <div class="row">
@@ -200,7 +196,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
 @endsection
