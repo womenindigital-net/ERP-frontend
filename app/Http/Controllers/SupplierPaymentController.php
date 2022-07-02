@@ -2,12 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SupplierPayment;
+use App\Repositories\ProjectRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\CustomerRepository;
+use App\Repositories\SupplierRepository;
+use App\Services\SupplierPaymentService;
+use App\Repositories\PurchaseOrderRepository;
+use App\Repositories\SupplierPaymentRepository;
 use App\Http\Requests\StoreSupplierPaymentRequest;
 use App\Http\Requests\UpdateSupplierPaymentRequest;
-use App\Models\SupplierPayment;
 
 class SupplierPaymentController extends Controller
 {
+
+    private ProjectRepository $projectRepo;
+    private SupplierRepository $supplierRepo;
+    private PurchaseOrderRepository $purchaseOrderRepo;
+    private SupplierPaymentService $service;
+    private SupplierPaymentRepository $repo;
+
+    public function __construct(
+        ProjectRepository $projectRepository,
+        SupplierRepository $supplierRepository,
+        PurchaseOrderRepository $purchaseOrderRepository,
+        SupplierPaymentService $service,
+        SupplierPaymentRepository $repository,
+    ) {
+        $this->projectRepo = $projectRepository;
+        $this->supplierRepo = $supplierRepository;
+        $this->purchaseOrderRepo = $purchaseOrderRepository;
+        $this->service = $service;
+        $this->repo = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +53,18 @@ class SupplierPaymentController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'suppliers' => $this->supplierRepo->getData(),
+            'purchaseOrder' => $this->purchaseOrderRepo->getData(),
+            'invoices' => [
+                '1' => 'SDT-1211',
+                '2' => 'SDT-1212',
+                '3' => 'SDT-1213',
+            ],
+        ];
+
+        return view('accounting.purchase.supplier_payment.create', $data);
     }
 
     /**
@@ -36,7 +75,11 @@ class SupplierPaymentController extends Controller
      */
     public function store(StoreSupplierPaymentRequest $request)
     {
-        //
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return back();
     }
 
     /**
@@ -58,7 +101,19 @@ class SupplierPaymentController extends Controller
      */
     public function edit(SupplierPayment $supplierPayment)
     {
-        //
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'suppliers' => $this->supplierRepo->getData(),
+            'purchaseOrder' => $this->purchaseOrderRepo->getData(),
+            'invoices' => [
+                '1' => 'SDT-1211',
+                '2' => 'SDT-1212',
+                '3' => 'SDT-1213',
+            ],
+            'record' => $this->repo->getRelatedData($supplierPayment, ['payment.supplierPayment', 'payment.history']),
+        ];
+        // dd($data['record']);
+        return view('accounting.purchase.supplier_payment.edit', $data);
     }
 
     /**

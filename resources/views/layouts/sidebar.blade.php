@@ -49,7 +49,7 @@
                         <li><a href="{{ route('requisition.create') }}">Requisition</a></li>
                         <li><a href="{{ route('purchase-order.create') }}">Purchase Order</a></li>
                         <li><a href="{{ route('purchase-return') }}">Purchase Return</a></li>
-                        <li><a href="{{ route('payment-supplier') }}">Supplier Payment</a></li>
+                        <li><a href="{{ route('supplier-payment.create') }}">Supplier Payment</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
                             <ul class="sub-menu">
@@ -91,7 +91,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('stock-assign.create') }}">Stock Assign</a></li>
-                        <li><a href="{{ route('stock-out') }}">Stock Out</a></li>
+                        <li><a href="{{ route('stock-out.create') }}">Stock Out</a></li>
                         <li><a href="{{ route('stock-hand-report') }}">Stock On Hand Report</a></li>
                         <li><a href="{{ route('stock-product-report') }}">Location Wise Product Report</a></li>
                         <li><a href="{{ route('stock-reorder-report') }}">Stock Reorder Report</a></li>
@@ -560,20 +560,23 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Recruitment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('HR.employee-requisition.create') }}">Employee Requisition</a></li> 
-                                <li><a href="{{ route('HR.apply-for-job.create') }}">Apply for Job</a></li> 
-                                <li><a href="{{ route('HR.applicant-list.create') }}">Applicant List</a></li> 
-                                <li><a href="{{ route('HR.sent-mail.create') }}">Sent Mail</a></li> 
-                                <li><a href="{{ route('HR.assign-interviewer.create') }}">Assign Interviewer</a></li> 
-                                <li><a href="{{ route('HR.interview-rating-form.create') }}">Interview Rating Form</a></li> 
+                                <li><a href="{{ route('HR.employee-requisition.create') }}">Employee Requisition</a>
+                                </li>
+                                <li><a href="{{ route('HR.apply-for-job.create') }}">Apply for Job</a></li>
+                                <li><a href="{{ route('HR.applicant-list.create') }}">Applicant List</a></li>
+                                <li><a href="{{ route('HR.sent-mail.create') }}">Sent Mail</a></li>
+                                <li><a href="{{ route('HR.assign-interviewer.create') }}">Assign Interviewer</a></li>
+                                <li><a href="{{ route('HR.interview-rating-form.create') }}">Interview Rating Form</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Recruit</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('HR.recruit.job-confirmation.create') }}">Job Confirmation</a></li> 
-                                <li><a href="{{ route('HR.recruit.job-contact.create') }}">Job Contact</a></li> 
-                                <li><a href="{{ route('HR.recruit.reporting-memo.create') }}">Reporting Memo</a></li> 
+                                <li><a href="{{ route('HR.recruit.job-confirmation.create') }}">Job Confirmation</a>
+                                </li>
+                                <li><a href="{{ route('HR.recruit.job-contact.create') }}">Job Contact</a></li>
+                                <li><a href="{{ route('HR.recruit.reporting-memo.create') }}">Reporting Memo</a></li>
                             </ul>
                         </li>
                         <li>

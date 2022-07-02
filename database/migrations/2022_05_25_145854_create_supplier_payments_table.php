@@ -1,8 +1,11 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Payment;
+use App\Models\Purchase;
+use App\Models\Supplier;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,11 +18,11 @@ return new class extends Migration
     {
         Schema::create('supplier_payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Project::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Supplier::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\PurchaseDetail::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Payment::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Payment::class)->constrained()->cascadeOnDelete();
             $table->string('date')->nullable();
+            $table->string('invoice_num')->nullable();
+            $table->string('remark')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

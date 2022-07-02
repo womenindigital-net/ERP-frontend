@@ -34,7 +34,7 @@ class StockTransferService
     {
         $total_qty = 0;
 
-        [$stockTransfer, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'issue_type', 'reference', 'date', 'warehouse_id_from', 'warehouse_id_to']);
+        [$stockTransfer, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'issue_type', 'reference', 'date', 'warehouse_id_from', 'warehouse_id_to', 'note']);
         
         for ($i = 0; $i < count($data['transfer_quantity']); $i++) {
             $total_qty = $data['transfer_quantity'][$i] +  $total_qty;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\StockAssign;
+use App\Http\Requests\StockAssignRequest;
 
 
 class StockAssignController extends Controller
@@ -23,7 +24,7 @@ class StockAssignController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function create(): View|Factory|Application
+    public function create()
     {
         return view('inventory-management.stock_assign.create');
     }
@@ -42,7 +43,7 @@ class StockAssignController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\StockAssign  $stock_assign
      * @return \Illuminate\Http\Response
      */
     public function show(StockAssign $stock_assign)
@@ -51,18 +52,22 @@ class StockAssignController extends Controller
             'records' => $stock_assign,
         ];
 
-        return view('stock-management.stock_transfer.show', $data);
+        return view('inventory-management.stock_assign.show', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\StockAssign  $stock_assign
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(StockAssign $stock_assign)
     {
-        //
+        $data = [
+            'records' => $stock_assign,
+        ];
+
+        return view('inventory-management.stock_assign.edit', $data);
     }
 
     /**
@@ -72,7 +77,7 @@ class StockAssignController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StockAssignRequest $request, $id)
     {
         //
     }
@@ -80,11 +85,11 @@ class StockAssignController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\StockAssign  $stock_assign
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(StockAssign $stock_assign)
     {
-        //
+        return $stock_assign->delete();
     }
 }

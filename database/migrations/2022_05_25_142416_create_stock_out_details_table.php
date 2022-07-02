@@ -1,9 +1,10 @@
 <?php
 
 use App\Models\Product;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\StockOut;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -16,8 +17,9 @@ return new class extends Migration
     {
         Schema::create('stock_out_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(StockOut::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
-            $table->string('qty');
+            $table->string('stock_out');
             $table->timestamps();
         });
     }

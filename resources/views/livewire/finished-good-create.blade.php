@@ -6,9 +6,9 @@
                 <label class="form-label">Warehouse</label>
                 <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
             </div>
-            <div class="row mb-2">
+            <div class="mb-2">
                 <label class="form-label">Note</label>
-                <x-input-textarea wireModel="note" placeholder="Enter Note">
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note">
                 </x-input-textarea>
             </div>
         </div>

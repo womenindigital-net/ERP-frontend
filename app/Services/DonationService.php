@@ -3,9 +3,9 @@
 namespace App\Services;
 
 use App\Models\Donation;
-use App\Repositories\DonationRepository;
-use App\Repositories\IncomeRepository;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\IncomeRepository;
+use App\Repositories\DonationRepository;
 
 class DonationService
 {
@@ -31,7 +31,7 @@ class DonationService
             DB::beginTransaction();
 
             [$incomeInfo, $donationInfo] = $this->segregateInfo($validated);
-
+            dd($incomeInfo, $donationInfo);
             $income = $this->incomeRepo->store($incomeInfo);
 
             $income->donation()->create($donationInfo);

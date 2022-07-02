@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Product;
 use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\MaterialCollectionDetail;
@@ -20,18 +19,12 @@ class MaterialCollection extends Model
         return $this->hasMany(MaterialCollectionDetail::class);
     }
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function product(): BelongsTo
-    {
-        return $this->belongsTo(Product::class);
-    }
-
     public function warehouse(): BelongsTo
     {
         return $this->belongsTo(Warehouse::class);
+    }
+    public function creator(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by', 'id');
     }
 }

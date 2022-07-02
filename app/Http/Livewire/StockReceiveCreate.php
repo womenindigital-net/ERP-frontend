@@ -9,7 +9,6 @@ use App\Repositories\UserRepository;
 use App\Repositories\StockRepository;
 use App\Services\StockReceiveService;
 use App\Repositories\ProjectRepository;
-use Illuminate\Support\Facades\Session;
 use App\Repositories\WarehouseRepository;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\StockReceiveRepository;
@@ -24,6 +23,7 @@ class StockReceiveCreate extends Component
     public $purchase_type;
     public $return_type;
     public $date;
+    public $note;
     public $exp_date;
     public $qty;
     public $received;
@@ -118,6 +118,7 @@ class StockReceiveCreate extends Component
         'purchase_type' => 'nullable',
         'return_type' => 'nullable',
         'date' => 'required',
+        'note' => 'nullable',
         'product_id.*' => 'required',
         'exp_date.*' => 'required',
         'qty.*' => 'nullable',

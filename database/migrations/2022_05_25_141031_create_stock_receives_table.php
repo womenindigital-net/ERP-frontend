@@ -1,11 +1,11 @@
 <?php
 
-use App\Models\Project;
 use App\Models\User;
+use App\Models\Project;
 use App\Models\Warehouse;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('return_type')->nullable();
             $table->string('date')->nullable();
             $table->string('note')->nullable();
+            $table->string('is_approved')->default(0);
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });

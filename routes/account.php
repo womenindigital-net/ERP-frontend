@@ -1,25 +1,30 @@
 <?php
 
-use App\Http\Controllers\DonationController;
-use App\Http\Controllers\FinishedGoodController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\JournalController;
-use App\Http\Controllers\MaterialCollectionController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\StockOutController;
 use App\Http\Controllers\RequisitionController;
 use App\Http\Controllers\SaleVoucherController;
 use App\Http\Controllers\StockAssignController;
-use App\Http\Controllers\StockController;
+use App\Http\Controllers\FinishedGoodController;
 use App\Http\Controllers\StockReceiveController;
 use App\Http\Controllers\StockTransferController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SupplierPaymentController;
+use App\Http\Controllers\MaterialCollectionController;
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
+
+
         'requisition' => RequisitionController::class,
+        'supplier-payment' => SupplierPaymentController::class,
 
 
         'stock-receive' => StockReceiveController::class,
@@ -27,8 +32,9 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'material-collect' => MaterialCollectionController::class,
         'stock-transfer' => StockTransferController::class,
 
-        
+
         'stock-assign' => StockAssignController::class,
+        'stock-out' => StockOutController::class,
 
     ]);
 
@@ -49,7 +55,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
     Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 
-    Route::get('payment-supplier', [PaymentController::class, 'supplier'])->name('payment-supplier');
+    // Route::get('payment-supplier', [PaymentController::class, 'supplier'])->name('payment-supplier');
     Route::get('direct-payment-add', [PaymentController::class, 'directPaymentAdd'])->name('direct-payment-add');
     Route::get('cash-payment-list', [PaymentController::class, 'casePaymentList'])->name('cash-payment-list');
     Route::get('advance-payment-list', [PaymentController::class, 'advancePaymentList'])->name('advance.payment.list');
@@ -61,7 +67,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     // Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');
     Route::get('stock-count', [StockController::class, 'stockCount'])->name('stock-count');
 
-    Route::get('stock-out', [StockController::class, 'stockOut'])->name('stock-out');
+    // Route::get('stock-out', [StockController::class, 'stockOut'])->name('stock-out');
     Route::get('stock-hand-report', [StockController::class, 'stockHandReport'])->name('stock-hand-report');
     Route::get('stock-product-report', [StockController::class, 'stockProductReport'])->name('stock-product-report');
     Route::get('stock-reorder-report', [StockController::class, 'stockReorderReport'])->name('stock-reorder-report');

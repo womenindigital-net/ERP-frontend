@@ -14,8 +14,8 @@
                 <tbody>
                     @foreach ( $records as $record)
                     <tr>
-                        <td>{{ $record->created_by }}</td>
-                        <td>{{ $record->warehouse_id }}</td>
+                        <td>{{ $record->creator->name }}</td>
+                        <td>{{ $record->warehouse->title }}</td>
                         <td>{{ $record->date }}</td>
                         <td>{{-- $record-> --}}</td>
                         <td>

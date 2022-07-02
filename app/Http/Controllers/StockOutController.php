@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StockOut;
 use App\Http\Requests\StoreStockOutRequest;
 use App\Http\Requests\UpdateStockOutRequest;
-use App\Models\StockOut;
 
 class StockOutController extends Controller
 {
@@ -25,7 +25,7 @@ class StockOutController extends Controller
      */
     public function create()
     {
-        //
+        return view('inventory-management.stock_out.create');
     }
 
     /**
@@ -47,7 +47,11 @@ class StockOutController extends Controller
      */
     public function show(StockOut $stockOut)
     {
-        //
+        $data = [
+            'records' => $stockOut,
+        ];
+
+        return view('inventory-management.stock_out.show', $data);
     }
 
     /**
@@ -56,9 +60,13 @@ class StockOutController extends Controller
      * @param  \App\Models\StockOut  $stockOut
      * @return \Illuminate\Http\Response
      */
-    public function edit(StockOut $stockOut)
+    public function edit(StockOut $stockOut): \Illuminate\Http\Response
     {
-        //
+        $data = [
+            'records' => $stockOut,
+        ];
+
+        return view('inventory-management.stock_out.edit', $data);
     }
 
     /**
@@ -81,6 +89,6 @@ class StockOutController extends Controller
      */
     public function destroy(StockOut $stockOut)
     {
-        //
+        return $stockOut->delete();
     }
 }

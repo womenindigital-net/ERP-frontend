@@ -38,11 +38,18 @@
                 <x-input-select wireModel="warehouse_id_to" :records="$warehouses" targetColumn="title" />
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="mb-3">
+                <label class="text-end form-label">Note</label>
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note ..." />
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-12 p-0">
             <div class="card">
                 <div class="card-body">
+                    <h2 class=" text-center mb-4">Transfer Product Lists</h2>
                     <form class="repeater" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-3 p-0 pe-1">
@@ -99,7 +106,6 @@
 
                             @endif
                         </div>
-
                     </form>
                 </div>
             </div>
