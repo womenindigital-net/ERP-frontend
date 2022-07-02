@@ -238,7 +238,7 @@
                         <li><a href="{{ route('assign-task.create') }}">Assign Task</a></li>
                         <li><a href="{{ route('create-itp.create') }}">Create ITP</a></li>
                         <li><a href="{{ route('run-mitp.create') }}">Run MITP</a></li>
-                        <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li>
+                        {{-- <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li> --}}
                         <li><a href="{{ route('assign-teacher.create') }}"> Assign Teacher</a></li>
                         {{-- <li><a href="/">Score Calculator </a></li>
                         <li><a href="/p-create-task">Create Task </a></li>
@@ -270,7 +270,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Setup</span>
+                        <span>Setup Option</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
@@ -289,7 +289,7 @@
                                 </li>
                                 <li> <a href="{{ route('setup.program-setup.tesk-create.create') }}">Task create</a>
                                 </li>
-
+    
                                 <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight
                                         Setup</a></li>
                                 <li> <a href="{{ route('setup.program-setup.course-setup.create') }}">Course Setup</a>
@@ -297,7 +297,7 @@
                                 <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence
                                         card
                                         setup</a></li>
-
+    
                                 <li> <a
                                         href="{{ route('setup.program-setup.vocational-category-subcategory-setup.create') }}">Vocational
                                         Category and subcategory setup</a></li>
@@ -307,13 +307,40 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="javascript: void(0);" class="has-arrow">Account Modules Setup</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="{{ route('setup.project-setup.create') }}">Project Setup</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer
+                                        Reg.</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.customers-list.customer-type.create') }}">Customer
+                                        Type</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.vendor-list.supplier-setup.create') }}">Supplier Setup</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
+                                        Setup</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Project Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="{{ route('setup.project-setup.create') }}">Project Setup</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Doctor Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
@@ -353,7 +380,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Vendor List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
@@ -364,8 +391,8 @@
                                         Setup</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
+                        </li> --}}
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Customer List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
@@ -377,14 +404,14 @@
                                         Type</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="{{ route('setup.course-and-admission.create') }}">Course </a>
                                 </li>
-
+    
                             </ul>
                         </li>
                         <li>
@@ -416,7 +443,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow">HR & Admin Links</a>
+                            <a href="javascript: void(0);" class="has-arrow">HR & Admin Module Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="{{ route('setup.employee-information.create') }}">Employee information </a>
@@ -433,6 +460,20 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('setup.create-product.create') }}">create product</a>
+                                </li>
+                                <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
+                                <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
+                                <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
+                                <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
+                                <li><a href="{{ route('HR.facility-package.create') }}">Facility Package Setup</a></li>
+                                <li><a href="{{ route('HR.bonous-package.create') }}">Bonous Package Setup</a></li>
+                                <li><a href="{{ route('HR.currency-setup.create') }}">Currency Setup</a></li>
+                                <li><a href="{{ route('HR.result-setup.create') }}">Result Setup</a></li>
+                                <li><a href="{{ route('HR.Institute-setup.create') }}">Institute Setup</a></li>
+                                <li><a href="{{ route('HR.organization-setup.create') }}">Organization Setup </a></li>
+                                <li><a href="{{ route('HR.section-setup.create') }}">Section Setup</a></li>
+                                <li><a href="{{ route('HR.designation-setup.create') }}">Designation Setup</a></li>
+                                <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a>
                                 </li>
                             </ul>
                         </li>
@@ -549,16 +590,31 @@
                         </li>
                     </ul>
                 </li>
+                    
 
-                <li class="menu-title">HR Admin</li>
+                <li class="menu-title">Notice Board</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span> All Notice</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{ route('HR.warning-notice.create') }}">Warning Notice</a></li>
+                        <li><a href="{{ route('HR.show-case-notice.create') }}">Show Case Notice</a></li>
+                        <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="menu-title">HR Admin Modules</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span>HR Admin</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="true">
+                    <ul class="sub-menu " aria-expanded="true">
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow">Recruitment</a>
+                            <a href="javascript: void(0);" class="has-arrow waves-effects">Recruitment</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ route('HR.employee-requisition.create') }}">Employee Requisition</a>
                                 </li>
@@ -571,7 +627,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow">Recruit</a>
+                            <a href="javascript: void(0);" class="has-arrow waves-effects">Recruit</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ route('HR.recruit.job-confirmation.create') }}">Job Confirmation</a>
                                 </li>
@@ -579,7 +635,7 @@
                                 <li><a href="{{ route('HR.recruit.reporting-memo.create') }}">Reporting Memo</a></li>
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">HR Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
@@ -597,14 +653,14 @@
                                 <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li><a href="{{ route('HR.warning-notice.create') }}">Warning Notice</a></li>
-                        <li><a href="{{ route('HR.show-case-notice.create') }}">Show Case Notice</a></li>
+                        </li> --}}
+                        {{-- <li><a href="{{ route('HR.warning-notice.create') }}">Warning Notice</a></li> --}}
+                        {{-- <li><a href="{{ route('HR.show-case-notice.create') }}">Show Case Notice</a></li> --}}
                         <li><a href="{{ route('HR.advice-letter.create') }}">Advice Letter</a></li>
                         <li><a href="{{ route('HR.employee-leave-status.create') }}">Employee Leave Status</a></li>
                         <li><a href="{{ route('HR.attendence.create') }}">Attendence</a></li>
                         <li><a href="{{ route('HR.leave-application.create') }}">Leave Application</a></li>
-                        <li><a href="{{ route('HR.notice-board.create') }}">Notice Board</a></li>
+                        {{-- <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li> --}}
                         {{-- <li><a href="">Employee Attendance</a></li>
                         <li><a href="">Employee Attendance (short)</a></li> --}}
                     </ul>

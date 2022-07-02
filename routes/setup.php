@@ -45,7 +45,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
     // Customer List 
     Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
-    Route::get('customers-list/customer-type/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-type.create');
+    Route::get('customers-list/customer-type/create', [SetupController::class, 'customerType'])->name('setup.customers-list.customer-type.create');
     // Course and Admission
     Route::get('course-and-admission.create', [SetupController::class, 'courseAdmission'])->name('setup.course-and-admission.create');
 
