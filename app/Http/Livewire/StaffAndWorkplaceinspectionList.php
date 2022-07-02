@@ -10,10 +10,9 @@ use App\Repositories\StaffAndWorkplaceinspectionRepository;
 class StaffAndWorkplaceinspectionList extends Component
 {
     use WithPagination, CommonListElements;
-
     private StaffAndWorkplaceinspectionRepository $staffAndWorkplaceRepo;
     public $reportList;
-
+    protected string $destroyRoute = 'staff-and-workplaceinspection.destroy';
     public function boot(StaffAndWorkplaceinspectionRepository $staffAndWorkplaceRepo)
     {
         $this->staffAndWorkplaceRepo = $staffAndWorkplaceRepo;

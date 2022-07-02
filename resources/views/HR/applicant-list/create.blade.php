@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -77,7 +75,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
 @endsection

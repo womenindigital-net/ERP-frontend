@@ -12,7 +12,7 @@ class SupplierPayment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_id', 'note'];
+    protected $guarded = [];
 
     public function payment(): BelongsTo
     {
@@ -23,4 +23,5 @@ class SupplierPayment extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+    // public function 
 }

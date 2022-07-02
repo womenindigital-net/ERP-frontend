@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -21,7 +19,6 @@
                         </a>
                     </li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
@@ -68,8 +65,7 @@
                                     </div>
 
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                        <x-input-text name="available_qty" placeholder=""
-                                                      :readonly="true" class="available-qty">
+                                        <x-input-text name="available_qty" placeholder=""  :readonly="true" class="available-qty">
                                         </x-input-text>
                                     </div>
 
@@ -77,16 +73,14 @@
                                         <input type="checkbox" class="form-check-input">
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                        <x-input-select name="student_id"
-                                         :records="[]" />
+                                        <x-input-select name="student_id"  :records="[]" />
                                     </div>
                                     <div class=" col-lg-1 p-0 pe-1 pb-1">
                                         <x-input-select name="student_id"
                                          :records="[]" />
                                     </div>
                                     <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-text name="price" placeholder="" class="price"
-                                                      :readonly="true">
+                                        <x-input-text name="price" placeholder="" class="price" :readonly="true">
                                         </x-input-text>
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
@@ -102,15 +96,14 @@
                                    class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"
                                    id="AddMore"/>
                         </div>
-                          <div class="row modal-footer">
-                              <div class="col-md-1">
-                                  <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-                              </div>
-                              <div class="col-md-1">
-                                  <button class="btn btn-success w-100">Save</button>
-                              </div>
+                        <div class=" d-flex justify-content-end gap-2">
+                          <div class="col-md-1 ">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                           </div>
-                        
+                          <div class="col-md-1">
+                            <button class="btn btn-success">Save</button>
+                          </div>
+                        </div>                                                
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                       <div class="row">
@@ -200,7 +193,6 @@
     </div>
 </div>
 @endsection
-
 @section('script')
 <!-- form repeater js -->
 <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>

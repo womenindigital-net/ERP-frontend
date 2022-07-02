@@ -1,8 +1,7 @@
 <?php
 
+use App\Models\Cheque;
 use App\Models\Payment;
-use App\Models\Purchase;
-use App\Models\Supplier;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -16,13 +15,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('supplier_payments', function (Blueprint $table) {
+        Schema::create('payment_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Payment::class)->constrained()->cascadeOnDelete();
-            $table->string('date')->nullable();
-            $table->string('invoice_num')->nullable();
-            $table->string('remark')->nullable();
-            $table->string('note')->nullable();
+            $table->string('type');
+            $table->double('amount', 10, 2);
+            $table->foreignIdFor(Cheque::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supplier_payments');
+        Schema::dropIfExists('payment_histories');
     }
 };

@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -143,15 +141,14 @@
                                    class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"
                                    id="AddMore"/>
                         </div>
-                          <div class="row modal-footer">
-                              <div class="col-md-1">
-                                  <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-                              </div>
-                              <div class="col-md-1">
-                                  <button class="btn btn-success w-100">Save</button>
-                              </div>
+                        <div class=" d-flex justify-content-end gap-1">
+                          <div class="">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                           </div>
-                        
+                          <div class="">
+                            <button class="btn btn-success">Save</button>
+                          </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                       <div class="row">
@@ -251,13 +248,11 @@
                       </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 @endsection
-
 @section('script')
 <!-- form repeater js -->
 <script src="{{ asset('assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
