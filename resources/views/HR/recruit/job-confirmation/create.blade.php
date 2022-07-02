@@ -60,15 +60,15 @@
                                       <x-input-text name="workStation"/>
                                     </div>
                                 </div>
+                                <div class=" d-flex justify-content-end gap-1">
+                                  <div>
+                                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                  </div>
+                                  <div>
+                                    <button class="btn btn-success">Save</button>
+                                  </div>
+                                </div>                                
                             </div>
-                          </div>
-                          <div class="row modal-footer">
-                              <div class="col-md-1">
-                                  <button class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Close</button>
-                              </div>
-                              <div class="col-md-1">
-                                  <button class="btn btn-outline-success w-100">Save</button>
-                              </div>
                           </div>
                     </div>
                     <div class="tab-pane" id="case-histroy_list" role="tabpanel">
