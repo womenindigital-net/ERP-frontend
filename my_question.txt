@@ -1,16 +1,25 @@
+accounting Problem
 
-////////////////////////////////////////////
-record->student->name ?? 'nameNotFound'
-file uploding
-referral form Doctor view
-vocational-evaluation category
-categorySeeder
-
-sell voucher no edit
-sell return needed
-secondary value not come
-Success! mgs always Flash
-vocational-evaluation 
+Avl Stock all
+Supplier payment
+Direct payment
+all Report
 
 
-medicine Admin 'expire_check['
+///
+
+Account setup
+bank list
+
+Account setup
+Cheque setup
+
+cheque  (Array pass)
+Bank > account 
+cheque
+amount
+
+
+
+
+

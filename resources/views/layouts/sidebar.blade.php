@@ -54,10 +54,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="{{ route('direct-payment-add') }}">Payment Add</a>
+                                    <a href="{{ route('direct-payment.create') }}">Payment Add</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('cash-payment-list') }}">Cash Payment List</a>
+                                    <a href="{{ route('cash-payment.list') }}">Cash Payment List</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('advance.payment.list') }}">Advance Payment
@@ -334,10 +334,10 @@
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
-                                    <a href="{{ route('setup.account-details.create') }}">Account Details</a>
+                                    <a href="{{ route('bank-account.create') }}">Account Details</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('setup.manage-chequebook.create') }}">Manage Chequebook</a>
+                                    <a href="{{ route('cheque.create') }}">Manage Chequebook</a>
                                 </li>
                             </ul>
                         </li>

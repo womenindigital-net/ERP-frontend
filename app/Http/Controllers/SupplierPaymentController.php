@@ -112,7 +112,7 @@ class SupplierPaymentController extends Controller
             ],
             'record' => $this->repo->getRelatedData($supplierPayment, ['payment.supplierPayment', 'payment.history']),
         ];
-        // dd($data['record']);
+        dd($data['record']);
         return view('accounting.purchase.supplier_payment.edit', $data);
     }
 

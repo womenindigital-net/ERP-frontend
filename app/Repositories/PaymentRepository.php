@@ -10,7 +10,7 @@ class PaymentRepository extends BaseRepository
 
     public function withSaleRelations()
     {
-        return $this->model::with('project', 'creator', 'history', 'saleIncome.details.product', 'saleIncome.warehouse');
+        return $this->model::with('project', 'creator', 'history');
     }
 
     public function getListData($perPage, $search)

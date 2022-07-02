@@ -13,7 +13,7 @@ class StoreChequeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class StoreChequeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'nullable',
+            'bank_account_id' => 'nullable',
+            'start_page' => 'nullable',
+            'end_page' => 'nullable',
+            'date' => 'nullable',
         ];
     }
 }

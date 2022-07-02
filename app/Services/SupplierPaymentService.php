@@ -39,7 +39,7 @@ class SupplierPaymentService
 
             $payment->supplierPayment()->create($supplierPaymentInfo);
 
-            // $payment->history()->create($this->collectIncomeHistoryInfo($validated));
+            $payment->history()->create($this->collectIncomeHistoryInfo($validated));
 
             DB::commit();
         } catch (\Exception $e) {

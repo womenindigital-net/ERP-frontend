@@ -18,13 +18,13 @@
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
                     <!-- form start -->
-                    <form action="{{ route('direct-payment.store') }}" method="post">
+                    <form action="{{ route('direct-payment.update', $record->id) }}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Payment Type</label>
-                                    <x-input-select name="payment_type_id" :records="$paymentType" targetColumn="title">
+                                    <x-input-select :selected="$payment->payment_type_id" name="payment_type_id" :records="$paymentType" targetColumn="title">
                                     </x-input-select>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Project</label>
-                                    <x-input-select name="project_id" :records="$projects" targetColumn="title">
+                                    <x-input-select :selected="$payment->project_id" name="project_id" :records="$projects" targetColumn="title">
                                     </x-input-select>
                                 </div>
                             </div>

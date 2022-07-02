@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreBankAccountRequest extends FormRequest
+class StoreDirectPaymentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,11 @@ class StoreBankAccountRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable',
-            'account_name' => 'nullable',
-            'current_balance' => 'nullable',
+            'payment_type_id' => 'nullable',
+            'project_id' => 'nullable',
+            'from_account' => 'nullable',
+            'to_account' => 'nullable',
+            'amount' => 'nullable',
             'note' => 'nullable',
         ];
     }

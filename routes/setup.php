@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\SetupController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SetupController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Setup ->> Store Management Route
@@ -29,8 +29,8 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // account setup 
     Route::get('chart-of-accounts.create', [SetupController::class, 'chartAccountSetup'])->name('setup.chart-of-accounts.create');
     // bank details setup 
-    Route::get('account-details.create', [SetupController::class, 'accountDetailsSetup'])->name('setup.account-details.create');
-    Route::get('manage-chequebook.create', [SetupController::class, 'manageChequebook'])->name('setup.manage-chequebook.create');
+    // Route::get('account-details.create', [SetupController::class, 'accountDetailsSetup'])->name('setup.account-details.create');
+    // Route::get('manage-chequebook.create', [SetupController::class, 'manageChequebook'])->name('setup.manage-chequebook.create');
     // bank reconcilation 
     Route::get('bank-reconcilation-new.create', [SetupController::class, 'bankReconcilationNew'])->name('setup.bank-reconcilation-new.create');
     Route::get('bank-reconcilation.create', [SetupController::class, 'bankReconcilation'])->name('setup.bank-reconcilation.create');

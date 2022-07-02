@@ -6,25 +6,21 @@ use App\Utility\Gymouting;
 use App\Utility\TripReport;
 use App\Utility\MitpConstent;
 use App\Utility\OtAssessment;
+use App\Utility\BankConstants;
 use App\Utility\PhysioTherapy;
 use App\Utility\IncidentRecord;
 use App\Utility\ProjectConstants;
-use App\Utility\SensoryCheckList;
 use App\Utility\StaffAndWorkPlace;
-use App\Utility\AssigntaskConstant;
-use App\Utility\FunctionalMovement;
 use Illuminate\Support\Facades\View;
 use App\Utility\CaseHistoryConstants;
 use App\Utility\DramaDiaryEvaluation;
 use App\Utility\ExecutiveFunctionTest;
-use App\Utility\SensoryCheckListChild;
 use App\Utility\CareNeedsFormConstants;
 use Illuminate\Support\ServiceProvider;
 use App\Utility\BreadcrumbsMappingConstants;
 use App\Utility\IndividualRiskAssessmentForm;
 use App\Utility\OccupationalTherapyConstants;
 use App\Utility\SensoryCheckListChildConstants;
-use App\Utility\individual_risk_assessment_form;
 use App\Utility\FunctionalMovementSkillsConstents;
 
 class ViewServiceProvider extends ServiceProvider
@@ -75,6 +71,7 @@ class ViewServiceProvider extends ServiceProvider
         View::share('caseConstants', CaseHistoryConstants::class);
         View::share('staffAndWork', StaffAndWorkPlace::class);
         View::share('movementSkillsConstants', FunctionalMovementSkillsConstents::class);
+        // View::share('bankConstants', BankConstants::class);
         /*
         View::share('careConstants', CareNeedsFormConstants::class);
         /*

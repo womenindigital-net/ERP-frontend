@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('cheques', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignIdFor(\App\Models\BankAccount::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\BankAccount::class)->nullable()->constrained()->cascadeOnDelete();
             $table->integer('page_no')->nullable();
             $table->string('note')->nullable();
             $table->boolean('is_invalid')->default(0);
+            $table->boolean('used')->default(0);
             $table->integer('order_no')->nullable();
             $table->timestamps();
         });

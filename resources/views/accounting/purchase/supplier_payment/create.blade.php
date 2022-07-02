@@ -75,7 +75,6 @@
                                     </div>
                                 </div>
                             </div>
-                            @include('partials.cheque-pay')
                             <div class="row">
                                 <div class="col-md-4">
                                 </div>

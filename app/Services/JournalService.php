@@ -3,8 +3,8 @@
 namespace App\Services;
 
 use App\Models\Journal;
-use App\Repositories\JournalRepository;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\JournalRepository;
 
 class JournalService
 {
@@ -59,7 +59,7 @@ class JournalService
 
         $detailInfos = $validated['journal'];
         unset($validated['journal']);
-        
+
         return [$validated, $detailInfos];
     }
 

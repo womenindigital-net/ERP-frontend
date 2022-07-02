@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cheque;
+use App\Services\ChequeService;
+use App\Repositories\ChequeRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoreChequeRequest;
 use App\Http\Requests\UpdateChequeRequest;
-use App\Models\Cheque;
 
 class ChequeController extends Controller
 {
+    private ChequeRepository $repo;
+    private ChequeService $service;
+
+    public function __construct(ChequeRepository $repository, ChequeService $service)
+    {
+        $this->repo = $repository;
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +37,7 @@ class ChequeController extends Controller
      */
     public function create()
     {
-        //
+        return view('setup.manage-chequeBook.create');
     }
 
     /**
@@ -36,7 +48,11 @@ class ChequeController extends Controller
      */
     public function store(StoreChequeRequest $request)
     {
-        //
+        $this->service->store($request->validated());
+
+        Session::flash('success');
+
+        return back();
     }
 
     /**
@@ -47,7 +63,7 @@ class ChequeController extends Controller
      */
     public function show(Cheque $cheque)
     {
-        //
+        // 
     }
 
     /**
@@ -81,6 +97,6 @@ class ChequeController extends Controller
      */
     public function destroy(Cheque $cheque)
     {
-        //
+        return $cheque->delete();
     }
 }
