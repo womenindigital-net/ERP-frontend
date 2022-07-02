@@ -20,6 +20,7 @@ use Livewire\WithPagination;
 class RequisitionCreate extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
+
     private string $destroyRoute = 'requisition.destroy';
 
     public $requisition;
@@ -114,7 +115,7 @@ class RequisitionCreate extends Component
                 return;
 
             if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
-                $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - ($this->discount[$targetKey] ?? 0);
+                $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
             }
         }
     }

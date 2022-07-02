@@ -21,6 +21,7 @@ class PurchaseOrderService
             DB::beginTransaction();
             [$purchaseInfo, $data] = $this->collectPurchaseInfo($validated);
             $purchase = $this->repo->store($purchaseInfo);
+
             $purchaseDetailInfo = $this->collectPurchaseDetailInfo($data);
             $purchase->details()->createMany($purchaseDetailInfo);
             DB::commit();
@@ -32,11 +33,12 @@ class PurchaseOrderService
 
     private function collectPurchaseDetailInfo(array $data): array
     {
-        [$purchaseDetailInfo, $data] = extractNecessaryFieldsFromData($data, ['qty', 'available_qty', 'product_id', 'price', 'vat', 'discount', 'sub_total']);
+        [$purchaseDetailInfo, $data] = extractNecessaryFieldsFromData($data, ['qty', 'available_qty', 'supplier_id', 'product_id', 'price', 'vat', 'discount', 'sub_total']);
 
         for ($i = 0; $i < count($purchaseDetailInfo['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $purchaseDetailInfo['product_id'][$i],
+                'supplier_id' => $purchaseDetailInfo['supplier_id'][$i],
                 'qty' => $purchaseDetailInfo['qty'][$i],
                 'sub_total' => $purchaseDetailInfo['sub_total'][$i],
                 'price' => $purchaseDetailInfo['price'][$i],

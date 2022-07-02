@@ -24,7 +24,7 @@
                 <li class="menu-title">Accounting</li>
 
                 <li>
-                    <a href="{{ route('journal.index') }}" class="waves-effect">
+{{--                    <a href="{{ route('journal.index') }}" class="waves-effect">--}}
                         <i class="bx bx-share-alt"></i>
                         <span>Journal</span>
                     </a>
@@ -289,7 +289,7 @@
                                 </li>
                                 <li> <a href="{{ route('setup.program-setup.tesk-create.create') }}">Task create</a>
                                 </li>
-    
+
                                 <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight
                                         Setup</a></li>
                                 <li> <a href="{{ route('setup.program-setup.course-setup.create') }}">Course Setup</a>
@@ -297,7 +297,7 @@
                                 <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence
                                         card
                                         setup</a></li>
-    
+
                                 <li> <a
                                         href="{{ route('setup.program-setup.vocational-category-subcategory-setup.create') }}">Vocational
                                         Category and subcategory setup</a></li>
@@ -330,7 +330,7 @@
                                     <a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
                                         Setup</a>
                                 </li>
-                                
+
                             </ul>
                         </li>
                         {{-- <li>
@@ -411,7 +411,7 @@
                                 <li>
                                     <a href="{{ route('setup.course-and-admission.create') }}">Course </a>
                                 </li>
-    
+
                             </ul>
                         </li>
                         <li>
@@ -590,7 +590,7 @@
                         </li>
                     </ul>
                 </li>
-                    
+
 
                 <li class="menu-title">Notice Board</li>
                 <li>

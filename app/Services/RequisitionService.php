@@ -14,7 +14,7 @@ class RequisitionService
         $this->repo = $repository;
     }
 
-    public function store(array $validated)
+    public function store(array $validated): void
     {
         try {
             DB::beginTransaction();
@@ -30,7 +30,7 @@ class RequisitionService
         }
     }
 
-    private function collectRequisitionInfos(array $validated)
+    private function collectRequisitionInfos(array $validated): array
     {
         [$requisitionInfos, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'requested_by', 'date', 'title', 'warehouse_id', 'note']);
 
