@@ -102,15 +102,10 @@ class SaleVoucherController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function edit($id): View|Factory|Application
+    public function edit(Income $sale_voucher): View|Factory|Application
     {
         $data = [
-            'projects' => $this->projectRepo->getData(),
-            'customers' => $this->customerRepo->getData(),
-            'warehouses' => $this->warehouseRepo->getData(),
-            'categories' => $this->categoryRepo->getData(),
-            'products' => $this->productRepo->getData(),
-            'record' => $this->repo->getRelatedData(Income::find($id), ['saleIncome.warehouse', 'saleIncome.details.product', 'project', 'history', 'creator'])
+            'record' => $sale_voucher,
         ];
 
         return view('accounting.income.sale_voucher_edit', $data);

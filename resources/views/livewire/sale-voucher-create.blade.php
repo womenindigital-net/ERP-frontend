@@ -113,7 +113,7 @@
                                         <label for="horizontal-firstname-input"
                                                class="col-4 text-end col-form-label text-end">Reference</label>
                                         <div class="col-8">
-                                            <x-input-text name="note"
+                                            <x-input-text wireModel="note"
                                                           placeholder="Enter reference if any">
                                             </x-input-text>
                                         </div>

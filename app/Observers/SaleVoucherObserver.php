@@ -59,9 +59,18 @@ class SaleVoucherObserver
      *
      * @return void
      */
-    public function deleted(SaleIncomeDetail $saleIncomeDetail)
+    public function deleting(SaleIncomeDetail $saleIncomeDetail)
     {
-        //
+        $saleIncomeDetail = $this->repo->getRelatedData($saleIncomeDetail, ['saleIncome.income']);
+
+        $projectId = $saleIncomeDetail->saleIncome->income->project_id;
+        $productId = $saleIncomeDetail->product_id;
+        $warehouseId = $saleIncomeDetail->saleIncome->warehouse_id;
+
+        $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
+
+        $stock->qty += $saleIncomeDetail->qty;
+        $stock->saveQuietly();
     }
 
     /**

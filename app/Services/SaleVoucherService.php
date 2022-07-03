@@ -18,7 +18,6 @@ class SaleVoucherService
     {
         try{
             DB::beginTransaction();
-
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
             $income = $this->repo->store($incomeInfo);
 
@@ -29,7 +28,6 @@ class SaleVoucherService
             $saleIncome->details()->createMany($details);
 
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
-
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
@@ -78,29 +76,33 @@ class SaleVoucherService
         return array_merge($custom, $paymentInfo);
     }
 
-    public function update($id, $validated)
+    public function update($income, $validated)
     {
-        $income = $this->repo->specificIncomeWithSaleIncomeRelations($id);
-
         try{
             DB::beginTransaction();
-
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
             $income = $this->repo->update($income, $incomeInfo);
 
+            $incomeWithRelatedInfo = $this->repo->specificIncomeWithSaleIncomeRelations($income);
+
+            foreach ($incomeWithRelatedInfo->saleIncome->details as $detail) {
+                $detail->delete();
+            }
+
             $income->saleIncome()->delete();
+            $income->history()->delete();
+
             $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
 
-            $productInfos = array_filter($validated['details'], [$this, 'getOnlyNotEmptyRecords']);
-            $saleIncome->details()->createMany($productInfos);
+            $details = $this->collectDetails($data);
 
-            $income->history()->delete();
+            $saleIncome->details()->createMany($details);
+
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
-
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e->getMessage(), $e->getLine());
+            dd($e->getMessage(), $e->getFile(), $e->getLine());
         }
     }
 

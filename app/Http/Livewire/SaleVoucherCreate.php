@@ -16,6 +16,7 @@ use App\Services\SaleVoucherService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -104,17 +105,34 @@ class SaleVoucherCreate extends Component
     public function mount()
     {
         if ($this->record) {
-            $this->record = $this->repo->getRelatedData($this->record, ['details']);
+            $this->mode = 'edit';
+            $this->record = $this->repo->getRelatedData($this->record, ['saleIncome.warehouse', 'saleIncome.details.product', 'project', 'history', 'creator']);
 
             $this->project_id   = $this->record->project_id;
-            $this->requested_by = $this->record->requested_by;
+            $this->customer_id = $this->record->saleIncome->customer_id;
+            $this->ship_to_address = $this->record->saleIncome->ship_to_address;
             $this->date         = $this->record->date;
-            $this->title        = $this->record->title;
-            $this->warehouse_id = $this->record->warehouse_id;
+            $this->warehouse_id = $this->record->saleIncome->warehouse_id;
+            $this->note = $this->record->note;
+            $history = $this->record->history->info;
 
-            $this->inputs = $this->record->details->toArray();
+            $this->cash = $history->cash;
+            $this->cheque = $history->cheque;
+            $this->cheque_account_name = $history->cheque_account_name;
+            $this->cheque_account_no = $history->cheque_account_no;
+            $this->cheque_amount = $history->cheque_amount;
+            $this->cheque_bank_name = $history->cheque_bank_name;
+            $this->cheque_no = $history->cheque_no;
 
-            foreach ($this->record->details as $key => $detail) {
+            $this->card = $history->card;
+            $this->card_name = $history->card_name;
+            $this->card_no = $history->card_no;
+            $this->card_amount = $history->card_amount;
+            $this->card_type = $history->card_type;
+
+            $this->inputs = $this->record->saleIncome->details->toArray();
+
+            foreach ($this->record->saleIncome->details as $key => $detail) {
                 $this->product_id[$key]    = $detail->product_id;
                 $this->qty[$key]           = $detail->qty;
                 $this->available_qty[$key] = $detail->available_qty;
@@ -151,6 +169,13 @@ class SaleVoucherCreate extends Component
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
             }
         }
+    }
+
+    public function update()
+    {
+        $this->service->update($this->record, $this->validate());
+        Session::flash('success');
+        return $this->redirectRoute('sale-voucher.create');
     }
 
     public function render(): Factory|View|Application
