@@ -27,11 +27,11 @@ class DonationService
         // income
         // income_history
         // donation
-        try{
+        try {
             DB::beginTransaction();
 
             [$incomeInfo, $donationInfo] = $this->segregateInfo($validated);
-            dd($incomeInfo, $donationInfo);
+
             $income = $this->incomeRepo->store($incomeInfo);
 
             $income->donation()->create($donationInfo);
@@ -92,7 +92,7 @@ class DonationService
     {
         $donation = $this->repo->getRelatedData($donation, ['income.history', 'customer', 'income.project']);
 
-        try{
+        try {
             DB::beginTransaction();
 
             [$incomeInfo, $donationInfo] = $this->segregateInfo($validated);
