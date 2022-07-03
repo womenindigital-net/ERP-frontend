@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Session;
 
 trait CommonAddMore
 {
-    public $project_id;
     public $mode;
+    public $project_id;
     public $warehouse_id;
     public $product_id;
     public $available_qty;
@@ -16,6 +16,7 @@ trait CommonAddMore
     public $note;
     public $price;
     public $discount;
+    public $date;
     public array $inputs = [];
     public int $numberOfItems = 1;
 
@@ -35,6 +36,7 @@ trait CommonAddMore
 
     public function submit()
     {
+//        dd($this->validate());
         $this->service->store($this->validate());
         $this->dispatchBrowserEvent('notify');
         $this->dispatchBrowserEvent('reload');

@@ -24,7 +24,9 @@ class SaleVoucherService
 
             $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
 
-            $saleIncome->details()->createMany($validated['details']);
+            $details = $this->collectDetails($data);
+
+            $saleIncome->details()->createMany($details);
 
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
 
@@ -41,7 +43,7 @@ class SaleVoucherService
 
         [$saleIncomeInfo, $data] = $this->collectSaleIncomeInfo($data);
 
-        $incomeInfo['amount'] = array_sum(array_column($validated['details'], 'sub_total'));
+        $incomeInfo['amount'] = array_sum($validated['sub_total']);
         $incomeInfo['type']   = 'sale';
 
         return [$incomeInfo, $saleIncomeInfo, $data];
@@ -61,18 +63,10 @@ class SaleVoucherService
     {
         $custom = [
             'type' => 'sale',
-            'amount' => array_sum(array_column($data['details'], 'sub_total')),
+            'amount' => array_sum($data['sub_total']),
         ];
 
-        $searchString = 'cash';
-
-        if (isset($data['cheque'])) {
-            $searchString = "$searchString|cheque*";
-        }
-
-        if (isset($data['card'])) {
-            $searchString = "$searchString|card*";
-        }
+        $searchString = 'cash|cheque*|card*';
 
         $paymentInfo = [];
         foreach ($data as $key => $val) {
@@ -122,4 +116,20 @@ class SaleVoucherService
         return $data;
     }
 
+    private function collectDetails(array $data): array
+    {
+        [$details, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty']);
+
+        for ($i = 0; $i < count($details['product_id']); $i++) {
+            $custom[$i] = [
+                'product_id' => $details['product_id'][$i],
+                'qty' => $details['qty'][$i],
+                'sub_total' => $details['sub_total'][$i],
+                'price' => $details['price'][$i],
+                'available_qty' => $details['available_qty'][$i],
+            ];
+        }
+
+        return $custom ?? [];
+    }
 }

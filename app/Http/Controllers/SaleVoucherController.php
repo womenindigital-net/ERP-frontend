@@ -65,15 +65,7 @@ class SaleVoucherController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        $data = [
-            'projects' => $this->projectRepo->getData(),
-            'customers' => $this->customerRepo->getData(),
-            'warehouses' => $this->warehouseRepo->getData(),
-            'categories' => $this->categoryRepo->getData(),
-            'products' => $this->productRepo->getData(),
-        ];
-
-        return view('accounting.income.sale_voucher', $data);
+        return view('accounting.income.sale_voucher');
     }
 
     /**
