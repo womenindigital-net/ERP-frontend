@@ -18,32 +18,62 @@ cheque  (Array pass)
 Bank > account 
 cheque
 amount
+http://127.0.0.1:8000/account/journal
+View | Edit -> 30m
 
-Jou : View And Edit 
+http://127.0.0.1:8000/student/student-income/create
+view | [Subsidy] | (main Payment table data add) | Delete -> 40m unknown
 
-Student Income: View
+http://127.0.0.1:8000/account/sale-voucher/create
+Avl Qty from Stock| Sub Total | Edit Cheque Pay | Item | Cost | Paid | Edit Credit Card Pay | View -> 2h unknown
 
-Sale : Avl Qty Sub TOtal, Cheque Pay, Item, Cost, Paid, Edit in pay, View
+http://127.0.0.1:8000/account/donation-and-other/create
+Cheque Payment | cheque_amount | Cheque Pay | Cash Edit | cash OR Cheque Pay ->  1h unknown
 
-Donation: Cheque Payment, cheque_amount, Cheque Pay, Cash Edit
+http://127.0.0.1:8000/account/requisition/create
+Discount (%) | Approve | Update | Avl Qty from Stock| Delete -> 1h unknown
 
-requisition: Discount (%) , Approve, Update, Avl Qty, Delete
+http://127.0.0.1:8000/account/purchase-order/requisition
+PerOrder not like that |  | Total | Product change no Effect -> 1h unknown
 
-purchase-order: Problem
+http://127.0.0.1:8000/account/purchase-return
+need to complete full -> 3h
 
-purchase-order: QTY (Problem) With 
+http://127.0.0.1:8000/account/supplier-payment/create
+Pur. Order list Show | payment option
 
-supplier-payment: Pur. Order list Show, payment option
+http://127.0.0.1:8000/account/direct-payment/create
+From Account show | To account show | livewire -> 1h unknown
 
-direct-payment: pay type, payment_type_id
+http://127.0.0.1:8000/account/stock-receive/create
+| Purchase - Return list show input according this -> 30m 
 
-stock-receive: return - Purch list, avl Qty, error,
+http://127.0.0.1:8000/account/material-collect/create
+Select Name = Department Type | Avl Qty from Stock | Delete {project insert | category id remove}
 
-Unit Setup
 
-material-collect: Select Name = dept Type, Avl Stock, Delete 
+http://127.0.0.1:8000/account/stock-transfer/create
+Avl Qty from Stock | -> 15m unknown
 
-stock-transfer: 
+http://127.0.0.1:8000/account/stock-assign/create
 
+
+http://127.0.0.1:8000/account/stock-out/create
+Avl Qty from Stock | Edit | Delete -> 1h
+
+
+
+Setup
+
+Unit 
+Project
+Warehouse
+Product
+Category
+user
+Supplier
+Student
+Course
+Customer
 
 
