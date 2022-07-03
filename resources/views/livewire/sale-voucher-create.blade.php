@@ -94,7 +94,7 @@
                                         <div class=" col-lg-3 p-0 pe-1 pb-1 d-flex">
                                             <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
                                             <div>
-                                                <button class="btn btn-danger ms-2 removeBtn">
+                                                <button class="btn btn-danger ms-2 removeBtn" wire:click="removeItem({{$key}})">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </div>
