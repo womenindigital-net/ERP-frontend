@@ -19,7 +19,31 @@ Bank > account
 cheque
 amount
 
+Jou : View And Edit 
 
+Student Income: View
+
+Sale : Avl Qty Sub TOtal, Cheque Pay, Item, Cost, Paid, Edit in pay, View
+
+Donation: Cheque Payment, cheque_amount, Cheque Pay, Cash Edit
+
+requisition: Discount (%) , Approve, Update, Avl Qty, Delete
+
+purchase-order: Problem
+
+purchase-order: QTY (Problem) With 
+
+supplier-payment: Pur. Order list Show, payment option
+
+direct-payment: pay type, payment_type_id
+
+stock-receive: return - Purch list, avl Qty, error,
+
+Unit Setup
+
+material-collect: Select Name = dept Type, Avl Stock, Delete 
+
+stock-transfer: 
 
 
 
