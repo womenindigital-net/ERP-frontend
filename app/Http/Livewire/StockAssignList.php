@@ -11,6 +11,7 @@ class StockAssignList extends Component
 {
 
     use WithPagination, CommonListElements;
+
     private string $destroyRoute = 'stock-assign.destroy';
     private StockAssignRepository $repo;
 
