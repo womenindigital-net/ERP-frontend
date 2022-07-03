@@ -16,7 +16,7 @@ trait CommonListElements
         $this->resetPage();
     }
 
-    public function confirmDelete($recordId)
+    public function confirmDelete($recordId): void
     {
         $data = [
             'routeName' => route($this->destroyRoute, $recordId),

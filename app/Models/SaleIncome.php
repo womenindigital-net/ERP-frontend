@@ -22,4 +22,9 @@ class SaleIncome extends Model
     {
         return $this->belongsTo(Warehouse::class);
     }
+
+    public function income(): BelongsTo
+    {
+        return $this->belongsTo(Income::class);
+    }
 }

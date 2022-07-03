@@ -48,17 +48,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Purchase Order</label>
-                                        <x-input-select name="purchase_id" :records="$purchaseOrder"
-                                            additional="mobile">
-                                        </x-input-select>
-                                    </div>
-                                </div>
-                                {{-- @dd($purchaseOrder) --}}
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="validationCustom02" class="form-label">Invoice Number</label>
-                                        <x-input-select name="invoice_num" :records="$invoices">
+                                        <label for="validationCustom02" class="form-label">Invoice (Purchase Order)</label>
+                                        <x-input-select name="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
                                         </x-input-select>
                                     </div>
                                 </div>
