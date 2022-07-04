@@ -28,26 +28,46 @@
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
                                             title:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="job_title" :records="[]" />
+                                            <x-input-select name="job_title" :records="[
+                                                'TEACHER' => 'Teacher',
+                                                'DEVELOPER' => 'Developer',
+                                                'GRAPHICSDESIGNER' => 'Graphics Designer',
+                                                'COMPUTEROPERATOR' => 'Computer Operator',
+                                                'DRIVER' => 'Driver',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input"
                                             class="col-md-4 col-form-label  pe-2">Department:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="depertment" :records="[]" />
+                                            <x-input-select name="dept_id" :records="[
+                                                'ACCOUNT' => 'Account',
+                                                'INVENTORYMANAGEMENT' => 'Inventory Management',
+                                                'PARPERWORKSECTION' => 'Paper Work Section',
+                                                'PROCURMENTSECTION' => 'Procurement Section',
+                                                'PROGRAMMESECTION' => 'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT' => 'Research And Development',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applicant
                                             Name:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="applicant_name" :records="[]" />
+                                            <x-input-select name="applicant_name" :records="[
+                                                'PINTUSANGMA' => 'Pintu  Sangma',
+                                                'MDFAISAL' => 'Md Faisal',
+                                                'MSSHAMIMASIKDER' => 'Ms. Shamima Sikder',
+                                                'MSOZIFAKHATUN' => 'Ms Ozifa khatun',
+                                                'MSTNAJNINAKHTER' => 'Mst Najnin Akhter',
+                                                'AKMSHAHIDUKKAH' => 'A.K.M  Shahidullah',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input"
-                                            class="col-md-4 col-form-label  pe-2">WorkStation:</label>
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Work
+                                            Station:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="workStation" />
                                         </div>
@@ -65,14 +85,14 @@
                                             <x-input-text name="workStation" />
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row modal-footer">
-                                <div class="col-md-1">
-                                    <button class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Close</button>
-                                </div>
-                                <div class="col-md-1">
-                                    <button class="btn btn-outline-success w-100">Save</button>
+                                    <div class=" d-flex justify-content-end gap-1">
+                                        <div>
+                                            <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-success">Save</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -181,8 +201,7 @@
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title text-primary">Job Confirmation (Generated for single person)
-                                    </h5>
+                                    <h5 class="modal-title text-primary">Job Confirmation</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -191,26 +210,46 @@
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
                                             title:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="job_title" :records="[]" />
+                                            <x-input-select name="job_title" :records="[
+                                                'TEACHER' => 'Teacher',
+                                                'DEVELOPER' => 'Developer',
+                                                'GRAPHICSDESIGNER' => 'Graphics Designer',
+                                                'COMPUTEROPERATOR' => 'Computer Operator',
+                                                'DRIVER' => 'Driver',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input"
                                             class="col-md-4 col-form-label  pe-2">Department:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="depertment" :records="[]" />
+                                            <x-input-select name="dept_id" :records="[
+                                                'ACCOUNT' => 'Account',
+                                                'INVENTORYMANAGEMENT' => 'Inventory Management',
+                                                'PARPERWORKSECTION' => 'Paper Work Section',
+                                                'PROCURMENTSECTION' => 'Procurement Section',
+                                                'PROGRAMMESECTION' => 'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT' => 'Research And Development',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applicant
                                             Name:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="applicant_name" :records="[]" />
+                                            <x-input-select name="applicant_name" :records="[
+                                                'PINTUSANGMA' => 'Pintu  Sangma',
+                                                'MDFAISAL' => 'Md Faisal',
+                                                'MSSHAMIMASIKDER' => 'Ms. Shamima Sikder',
+                                                'MSOZIFAKHATUN' => 'Ms Ozifa khatun',
+                                                'MSTNAJNINAKHTER' => 'Mst Najnin Akhter',
+                                                'AKMSHAHIDUKKAH' => 'A.K.M  Shahidullah',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input"
-                                            class="col-md-4 col-form-label  pe-2">WorkStation:</label>
+                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Work
+                                            Station:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="workStation" />
                                         </div>
@@ -220,13 +259,6 @@
                                             date:</label>
                                         <div class="col-md-8">
                                             <x-input-text name="start_date" type="date" />
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input"
-                                            class="col-md-4 col-form-label  pe-2">Logs:</label>
-                                        <div class="col-md-8">
-                                            <x-input-text name="workStation" />
                                         </div>
                                     </div>
                                 </div>

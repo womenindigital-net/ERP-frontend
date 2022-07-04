@@ -24,7 +24,20 @@ class StoreEmployeeRequisitionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'requisition_for'  => 'nullable',
+            'job_title'        => 'nullable',
+            'dept_id'          => 'nullable',
+            'project_id'       => 'nullable',
+            'job_type'         => 'nullable',
+            'vacancy_for'      => 'nullable',
+            'when_required'    => 'nullable',
+            'requested_by'     => 'nullable',
+            'responsibilities' => 'nullable',
+            'requirements'     => 'nullable',
+            'last_date'        => 'nullable',
+            'new_position'     => 'nullable',
+            'replacement'      => 'nullable',
+
         ];
     }
 }

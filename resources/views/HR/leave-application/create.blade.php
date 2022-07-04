@@ -31,11 +31,33 @@
                                 </div> 
                                 <div class="col-4">
                                     <label>Employee</label>
-                                    <x-input-select name="employee" :records="[]" />
+                                    <x-input-select name="employee" :records="[
+                                      'Test Muhammad Employee' => 'Test Muhammad Employee',
+                                      'Sahanaj  Akter' => 'Sahanaj  Akter',
+                                      'Ashiqur Rahman Majumder' => 'Ashiqur Rahman Majumder',
+                                      'Md. Kutub Uddin' => 'Md. Kutub Uddin',
+                                      'Arup  Mandal' => 'Arup  Mandal',
+                                      'Md. Rizwanur Rahman' => 'Md. Rizwanur Rahman',
+                                      'Angon  Rahman' => 'Angon  Rahman',
+                                      'Tausif  Alam' => 'Tausif  Alam',
+                                      'Parvez Parvez Ahmad' => 'Parvez Parvez Ahmad',
+                                      'Mariam  Begum' => 'Mariam  Begum'
+                                    ]" />
                                 </div>
                                 <div class="col-4">
                                     <label>Support Employee</label>
-                                    <x-input-select name="support_employee" :records="[]" />
+                                    <x-input-select name="support_employee" :records="[
+                                      'Test Muhammad Employee' => 'Test Muhammad Employee',
+                                      'Sahanaj  Akter' => 'Sahanaj  Akter',
+                                      'Ashiqur Rahman Majumder' => 'Ashiqur Rahman Majumder',
+                                      'Md. Kutub Uddin' => 'Md. Kutub Uddin',
+                                      'Arup  Mandal' => 'Arup  Mandal',
+                                      'Md. Rizwanur Rahman' => 'Md. Rizwanur Rahman',
+                                      'Angon  Rahman' => 'Angon  Rahman',
+                                      'Tausif  Alam' => 'Tausif  Alam',
+                                      'Parvez Parvez Ahmad' => 'Parvez Parvez Ahmad',
+                                      'Mariam  Begum' => 'Mariam  Begum'
+                                    ]" />
                                 </div>
                               </div>
                               <div class="col-12 d-flex gap-2">
@@ -108,14 +130,18 @@
                                 <div data-repeater-item class="row removeRow">
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
                                         <x-input-select name="type"
-                                         :records="[]" />
+                                         :records="[
+                                          'Annual Leave'=>'Annual Leave',
+                                          'Sick Leave'=>'Sick Leave',
+                                          'Paternity Leave'=>'Paternity Leave',
+                                         ]" />
                                     </div>
                                     <div class=" col-lg-2 p-0 pe-1 pb-1">
                                         <x-input-text name="start_date" type="date" placeholder="dd/mm/yyyy" :readonly="true" />
                                     </div>
 
                                     <div class=" col-lg-2 p-0 pe-1 pb-1 text-center">
-                                       <x-input-text name="end-date" type="date" placeholder="dd/mm/yyyy" :readonly="true" /> 
+                                       <x-input-text name="end_date" type="date" placeholder="dd/mm/yyyy" :readonly="true" /> 
                                     </div>
                                     <div class=" col-lg-1 p-0 pe-1 pb-1">
                                         <x-input-text name="duration" type="number"/>
@@ -140,7 +166,7 @@
                             <input data-repeater-create type="button"
                                    class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"
                                    id="AddMore"/>
-                        </div>
+                          </div>
                         <div class=" d-flex justify-content-end gap-1">
                           <div class="">
                             <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -198,7 +224,7 @@
                                 <td>No</td>
                                 <td> 	Create: Karishma Cultural @ 2019-09-01 17:01:51 Md. Kutubuddin .. @ 2019-11-04 15:09:04 </td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
                                         <i class="mdi mdi-eye"></i>
                                       </button>
                                     <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
@@ -248,6 +274,167 @@
                       </div>
                     </div>
                 </div>
+
+                <div class="modal fade student-income-modal-xl-view" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title text-primary">Leave Application</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="col-12 d-flex gap-2">
+                              <div class="col-4">
+                                  <label>Reason</label>
+                                  <x-input-textarea name="reason" type="text"
+                                          placeholder=""/>
+                              </div> 
+                              <div class="col-4">
+                                  <label>Employee</label>
+                                  <x-input-select name="employee" :records="[
+                                    'Test Muhammad Employee' => 'Test Muhammad Employee',
+                                    'Sahanaj  Akter' => 'Sahanaj  Akter',
+                                    'Ashiqur Rahman Majumder' => 'Ashiqur Rahman Majumder',
+                                    'Md. Kutub Uddin' => 'Md. Kutub Uddin',
+                                    'Arup  Mandal' => 'Arup  Mandal',
+                                    'Md. Rizwanur Rahman' => 'Md. Rizwanur Rahman',
+                                    'Angon  Rahman' => 'Angon  Rahman',
+                                    'Tausif  Alam' => 'Tausif  Alam',
+                                    'Parvez Parvez Ahmad' => 'Parvez Parvez Ahmad',
+                                    'Mariam  Begum' => 'Mariam  Begum'
+                                  ]" />
+                              </div>
+                              <div class="col-4">
+                                  <label>Support Employee</label>
+                                  <x-input-select name="support_employee" :records="[
+                                    'Test Muhammad Employee' => 'Test Muhammad Employee',
+                                    'Sahanaj  Akter' => 'Sahanaj  Akter',
+                                    'Ashiqur Rahman Majumder' => 'Ashiqur Rahman Majumder',
+                                    'Md. Kutub Uddin' => 'Md. Kutub Uddin',
+                                    'Arup  Mandal' => 'Arup  Mandal',
+                                    'Md. Rizwanur Rahman' => 'Md. Rizwanur Rahman',
+                                    'Angon  Rahman' => 'Angon  Rahman',
+                                    'Tausif  Alam' => 'Tausif  Alam',
+                                    'Parvez Parvez Ahmad' => 'Parvez Parvez Ahmad',
+                                    'Mariam  Begum' => 'Mariam  Begum'
+                                  ]" />
+                              </div>
+                            </div>
+                            <div class="col-12 d-flex gap-2">
+                              <div class="col-4">
+                                  <label>Duration in days</label>
+                                  <x-input-text name="duration_in_days" type="number"/>
+                              </div> 
+                              <div class="col-4">
+                                  <label>Duration In Hours</label>
+                                  <x-input-text name="duration_in_hours" type="number"/>
+                              </div>
+                              <div class="col-4">
+                                 <label for="LvAppType" class="control-label">Leave App. Type</label>
+                                  <div class=" d-flex gap-2">
+                                    <div class="radio radio-success">
+                                      <input type="checkbox" class="form-check-input">
+                                      <label> Request </label>
+                                    </div>
+                                    <div class="radio radio-success">
+                                       <input type="checkbox" class="form-check-input">
+                                      <label> Plan </label>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-12 d-flex gap-2">
+                              <div class="col-4">
+                                  <label>Address At Leave</label>
+                                  <x-input-text name="address_at_leave"/>
+                              </div> 
+                              <div class="col-4">
+                                  <label>Phone At Leave</label>
+                                  <x-input-text name="phone_at_leave"/>
+                              </div>
+                              <div class="col-4">
+                                  <label>Available Leave Attachment</label>
+                                  <x-input-text name="available_leave_ttachment" type="file"/>
+                              </div>
+                            </div>
+                        </div>
+                        <label class="text-center">Leave Application Details </label>
+                        <div class="repeater p-4" enctype="multipart/form-data">
+                          <div class="row">
+                              <div class="col-lg-2 p-0 pe-1">
+                                  <label for="Type">Type</label>
+                              </div>
+                              <div class="col-lg-2 p-0 pe-1">
+                                  <label for="start_date">Start Date</label>
+                              </div>
+                              <div class="col-lg-2 p-0 pe-1">
+                                  <label for="start_date">End Date</label>
+                              </div>
+                              <div class="col-lg-1 p-0 pe-1 text-center">
+                                  <label for="duration">Duration</label>
+                              </div>
+                              <div class="col-lg-1 p-0  text-center">
+                                  <label for="is_houe">Is Hour</label>
+                              </div>
+                              <div class="col-lg-1 p-0">
+                                  <label for="avl_time">Avl. Time</label>
+                              </div>
+                              <div class="col-lg-1 p-0  text-center">
+                                  <label for="half_day">Half-Day</label>
+                              </div>
+                              <div class="col-lg-1 p-0">
+                                  <label for="hour">1st Hour</label>
+                              </div>
+                          </div>
+                          <div data-repeater-list="details" id="ProductGroup">
+                              <div data-repeater-item class="row removeRow">
+                                  <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                      <x-input-select name="type"
+                                       :records="[
+                                        'Annual Leave'=>'Annual Leave',
+                                        'Sick Leave'=>'Sick Leave',
+                                        'Paternity Leave'=>'Paternity Leave',
+                                       ]" />
+                                  </div>
+                                  <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                      <x-input-text name="start_date" type="date" placeholder="dd/mm/yyyy" :readonly="true" />
+                                  </div>
+
+                                  <div class=" col-lg-2 p-0 pe-1 pb-1 text-center">
+                                     <x-input-text name="end_date" type="date" placeholder="dd/mm/yyyy" :readonly="true" /> 
+                                  </div>
+                                  <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                      <x-input-text name="duration" type="number"/>
+                                  </div>
+                                  <div class=" col-lg-1  p-0 pb-1 text-center">
+                                    <input type="checkbox" class="form-check-input " name="is_houe">
+                                  </div>
+                                  <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                     <x-input-text name="avl_time" />
+                                  </div>
+                                  <div class=" col-lg-1 p-0  pb-1 text-center">
+                                    <input type="checkbox" class="form-check-input " name="half_day">
+                                  </div>
+                                  <div class=" col-lg-1 p-0  pb-1 d-flex ps-3 ">
+                                    <input type="checkbox" class="form-check-input " name="hour">
+                                      <button class="btn btn-danger ms-2 removeBtn">
+                                          <i class="fas fa-trash-alt"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                          <input data-repeater-create type="button"
+                                 class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"
+                                 id="AddMore"/>
+                        </div>
+                          <div class="row modal-footer">
+                              <div class="col-md-1">
+                                  <button class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
