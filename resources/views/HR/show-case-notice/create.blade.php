@@ -34,7 +34,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Select Name</label>
-                                                <x-input-select name="student_id" :records="[]" />
+                                                <x-input-select name="student_id" :records="['1' => 'ONE', '2' => 'TWO']" />
                                             </div>
                                         </div>
                                         {{-- Show Cause Subject --}}
