@@ -146,8 +146,10 @@ class SaleVoucherCreate extends Component
     public function updated($name, $value)
     {
         if (str_starts_with($name, 'product_id.')) {
-            if (!$value || !$this->project_id || !$this->warehouse_id)
+            if (!$value || !$this->project_id || !$this->warehouse_id) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
                 return;
+            }
 
             $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
             if (!$productInfo)

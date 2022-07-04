@@ -36,8 +36,10 @@ class SaleVoucherObserver
 
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
 
-        $stock->qty -= $saleIncomeDetail->qty;
-        $stock->saveQuietly();
+        if ($stock) {
+            $stock->qty -= $saleIncomeDetail->qty;
+            $stock->saveQuietly();
+        }
     }
 
     /**
@@ -69,8 +71,10 @@ class SaleVoucherObserver
 
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
 
-        $stock->qty += $saleIncomeDetail->qty;
-        $stock->saveQuietly();
+        if ($stock) {
+            $stock->qty += $saleIncomeDetail->qty;
+            $stock->saveQuietly();
+        }
     }
 
     /**
