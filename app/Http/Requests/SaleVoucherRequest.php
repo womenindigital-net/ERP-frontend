@@ -30,7 +30,6 @@ class SaleVoucherRequest extends FormRequest
             'date'                => 'nullable',
             'ship_to_address'     => 'nullable',
             'warehouse_id'        => 'nullable',
-            'details.*'           => 'nullable',
             'note'                => 'nullable',
             'cash'                => 'nullable',
             'cheque'              => 'nullable',
@@ -44,6 +43,7 @@ class SaleVoucherRequest extends FormRequest
             "card_no"             => 'nullable',
             "card_name"           => 'nullable',
             "card_type"           => 'nullable',
+            'details.*'           => 'nullable',
         ];
     }
 }

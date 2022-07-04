@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Session;
 
 trait CommonAddMore
 {
-    public $project_id;
     public $mode;
+    public $project_id;
     public $warehouse_id;
     public $product_id;
     public $available_qty;
@@ -16,25 +16,42 @@ trait CommonAddMore
     public $note;
     public $price;
     public $discount;
+    public $date;
     public array $inputs = [];
     public int $numberOfItems = 1;
 
     public function addMore()
     {
         $this->numberOfItems += 1;
-        $this->inputs[] = $this->numberOfItems;
+        $this->inputs[]      = $this->numberOfItems;
     }
 
-    public function removeRow($key)
+    public function removeItem($key)
     {
-        // dump($this->inputs);
         unset($this->inputs[$key]);
-        // dd($this->inputs);
-    }
 
+        if (isset($this->product_id[$key]))
+            unset($this->product_id[$key]);
+
+        if (isset($this->available_qty[$key]))
+            unset($this->available_qty[$key]);
+
+        if (isset($this->qty[$key]))
+            unset($this->qty[$key]);
+
+        if (isset($this->sub_total[$key]))
+            unset($this->sub_total[$key]);
+
+        if (isset($this->price[$key]))
+            unset($this->price[$key]);
+
+        if (isset($this->discount[$key]))
+            unset($this->discount[$key]);
+    }
 
     public function submit()
     {
+        dd($this->validate());
         $this->service->store($this->validate());
         $this->dispatchBrowserEvent('notify');
         $this->dispatchBrowserEvent('reload');
@@ -50,6 +67,7 @@ trait CommonAddMore
     private function getTargetKey($name): bool|string
     {
         $extractedRecordName = explode('.', $name);
+
         return end($extractedRecordName);
     }
 }

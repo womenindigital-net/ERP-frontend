@@ -13,7 +13,7 @@ class BankAccountList extends Component
     use WithPagination, CommonListElements;
     private BankAccountRepository $repo;
 
-    protected string $destroyRoute = 'cheque.destroy';
+    protected string $destroyRoute = 'bank-account.destroy';
 
     public function boot(BankAccountRepository $repository)
     {

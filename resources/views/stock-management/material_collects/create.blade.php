@@ -1,7 +1,5 @@
 @extends('layouts.master')
 @section('content')
-@component('components.breadcrumb')
-@endcomponent
 <div class="row">
     <div class="col-xl-12 p-0">
         <div class="card">

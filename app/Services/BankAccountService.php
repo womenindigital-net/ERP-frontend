@@ -10,16 +10,18 @@ class BankAccountService
 {
     private BankAccountRepository $repo;
 
-    public function __construct(ChequeRepository $repository)
+    public function __construct(BankAccountRepository $repository)
     {
         $this->repo = $repository;
     }
 
     public function store(array $validated)
     {
-        dd($validated);
         try {
             DB::beginTransaction();
+
+            $validated['current_balance'] = $validated['initial_balance'];
+            // dd($validated);
 
             $this->repo->store($validated);
 

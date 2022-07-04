@@ -22,8 +22,8 @@
                     <td>{{$record->income->project->title}}</td>
                     <td>{{$record->income->date}}</td>
                     <td>{{$record->income->history->info->cash}}</td>
-                    <td>{{$record->income->history->info->cheque_amount}}</td>
-                    <td>{{$record->income->history->info->cash + $record->income->history->info->cheque_amount }}</td>
+                    {{-- <td>{{$record->income->history->info->cheque_amount}}</td> --}}
+                    {{-- <td>{{$record->income->history->info->cash + $record->income->history->info->cheque_amount }}</td> --}}
                     <td>{{$record->note}}</td>
                     <td>
                         <button type="button"
