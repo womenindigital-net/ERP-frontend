@@ -70,6 +70,12 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
+                                        <label for="validationCustom02" class="form-label">Account</label>
+                                        <x-input-text name="remark" type="text"></x-input-text>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
                                         <label for="validationCustom02" class="form-label">Note</label>
                                         <x-input-textarea name="note" rows="1"></x-input-textarea>
                                     </div>

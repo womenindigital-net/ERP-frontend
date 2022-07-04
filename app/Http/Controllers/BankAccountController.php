@@ -6,23 +6,17 @@ use App\Models\BankAccount;
 use App\Utility\BankConstants;
 use App\Services\BankAccountService;
 use Illuminate\Support\Facades\Session;
-use App\Repositories\BankAccountRepository;
 use App\Http\Requests\StoreBankAccountRequest;
 use App\Http\Requests\UpdateBankAccountRequest;
 
 class BankAccountController extends Controller
 {
+    private BankAccountService $service;
 
-
-
-    // private BankAccountRepository $repo;
-    // private BankAccountService $service;
-
-    // public function __construct(BankAccountRepository $repository, BankAccountService $service)
-    // {
-    //     $this->repo = $repository;
-    //     $this->service = $service;
-    // }
+    public function __construct(BankAccountService $service)
+    {
+        $this->service = $service;
+    }
 
     /**
      * Display a listing of the resource.
@@ -56,7 +50,6 @@ class BankAccountController extends Controller
      */
     public function store(StoreBankAccountRequest $request)
     {
-
         $this->service->store($request->validated());
 
         Session::flash('success');

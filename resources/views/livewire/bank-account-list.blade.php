@@ -3,6 +3,7 @@
         <table class="table w-100 table-bordered">
             <thead>
                 <tr class="table-primary">
+                    <th>Bank</th>
                     <th>Account No</th>
                     <th>Account Name</th>
                     <th>Initial Balance</th>
@@ -12,13 +13,14 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($records as $record)
                 <tr>
-                    <td class="col-1">12345678</td>
-                    <td class="col-1">test account</td>
-                    <td class="col-1">0.00</td>
-                    <td class="col-1">testing purpose</td>
-                    <td class="col-4">Create: Shamima Shikder @ 2020-12-22 15:03:12
-                        Update: Ohidul Hassan @ 2022-05-12 13:11:49</td>
+                    <td>{{ $record->bank }}</td>
+                    <td>{{ $record->account_no }}</td>
+                    <td>{{ $record->account_name }}</td>
+                    <td>{{ $record->initial_balance }}</td>
+                    <td>{{ $record->note }}</td>
+                    <td><small>{{ $record->created_at }}</small></td>
                     <td>
                         <button type="button" wire:click="confirmDelete({{$record->id}})"
                             class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light">
@@ -26,6 +28,7 @@
                         </button>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </x-record-list>

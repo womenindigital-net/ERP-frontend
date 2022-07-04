@@ -8,16 +8,22 @@ use App\Repositories\ChequeRepository;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoreChequeRequest;
 use App\Http\Requests\UpdateChequeRequest;
+use App\Repositories\BankAccountRepository;
 
 class ChequeController extends Controller
 {
     private ChequeRepository $repo;
     private ChequeService $service;
+    private BankAccountRepository $bankAccRepo;
 
-    public function __construct(ChequeRepository $repository, ChequeService $service)
-    {
+    public function __construct(
+        ChequeRepository $repository,
+        ChequeService $service,
+        BankAccountRepository $bankAccRepository
+    ) {
         $this->repo = $repository;
         $this->service = $service;
+        $this->bankAccRepo = $bankAccRepository;
     }
 
     /**
@@ -37,7 +43,11 @@ class ChequeController extends Controller
      */
     public function create()
     {
-        return view('setup.manage-chequeBook.create');
+        $data = [
+            'bankAccount' => $this->bankAccRepo->getData(),
+        ];
+
+        return view('setup.manage-chequeBook.create', $data);
     }
 
     /**
