@@ -12,6 +12,7 @@ use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\SupplierPaymentRepository;
 use App\Http\Requests\StoreSupplierPaymentRequest;
 use App\Http\Requests\UpdateSupplierPaymentRequest;
+use App\Repositories\BankAccountRepository;
 
 class SupplierPaymentController extends Controller
 {
@@ -19,6 +20,7 @@ class SupplierPaymentController extends Controller
     private ProjectRepository $projectRepo;
     private SupplierRepository $supplierRepo;
     private PurchaseOrderRepository $purchaseOrderRepo;
+    private BankAccountRepository $bankAccRepo;
     private SupplierPaymentService $service;
     private SupplierPaymentRepository $repo;
 
@@ -26,12 +28,14 @@ class SupplierPaymentController extends Controller
         ProjectRepository $projectRepository,
         SupplierRepository $supplierRepository,
         PurchaseOrderRepository $purchaseOrderRepository,
+        BankAccountRepository $bankAccRepository,
         SupplierPaymentService $service,
         SupplierPaymentRepository $repository,
     ) {
         $this->projectRepo = $projectRepository;
         $this->supplierRepo = $supplierRepository;
         $this->purchaseOrderRepo = $purchaseOrderRepository;
+        $this->bankAccRepo = $bankAccRepository;
         $this->service = $service;
         $this->repo = $repository;
     }
@@ -57,6 +61,7 @@ class SupplierPaymentController extends Controller
             'projects' => $this->projectRepo->getData(),
             'suppliers' => $this->supplierRepo->getData(),
             'purchaseOrder' => $this->purchaseOrderRepo->getData(),
+            'bankAccount' => $this->bankAccRepo->getData(),
         ];
 
         return view('accounting.purchase.supplier_payment.create', $data);
@@ -96,18 +101,10 @@ class SupplierPaymentController extends Controller
      */
     public function edit(SupplierPayment $supplierPayment)
     {
+
         $data = [
-            'projects' => $this->projectRepo->getData(),
-            'suppliers' => $this->supplierRepo->getData(),
-            'purchaseOrder' => $this->purchaseOrderRepo->getData(),
-            'invoices' => [
-                '1' => 'SDT-1211',
-                '2' => 'SDT-1212',
-                '3' => 'SDT-1213',
-            ],
-            'record' => $this->repo->getRelatedData($supplierPayment, ['payment.supplierPayment', 'payment.history']),
+            'record' => $this->repo->getRelatedData($supplierPayment, ['payment', 'payment.history']),
         ];
-        dd($data['record']);
         return view('accounting.purchase.supplier_payment.edit', $data);
     }
 
@@ -131,6 +128,6 @@ class SupplierPaymentController extends Controller
      */
     public function destroy(SupplierPayment $supplierPayment)
     {
-        //
+        return $supplierPayment->delete();
     }
 }

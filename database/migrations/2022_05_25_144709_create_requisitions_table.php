@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Warehouse::class)->nullable()->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->string('note')->nullable();
-            $table->string('approved_status')->nullable();
+            $table->string('is_approved')->nullable();
             $table->foreignIdFor(\App\Models\User::class, 'approved_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });

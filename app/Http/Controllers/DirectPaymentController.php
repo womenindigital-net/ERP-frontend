@@ -60,7 +60,7 @@ class DirectPaymentController extends Controller
             'paymentType' => $this->paymentTypeRepo->getData(),
         ];
 
-        return view('accounting.purchase.direct_payment.payment_add', $data);
+        return view('accounting.purchase.direct_payment.payment_create', $data);
     }
 
     /**
@@ -98,12 +98,8 @@ class DirectPaymentController extends Controller
     public function edit(Payment $payment)
     {
         $data = [
-            'projects' => $this->projectRepo->getData(),
-            'paymentType' => $this->paymentTypeRepo->getData(),
-            'record' => $this->paymentRepo->getData(),
+            'record' => $payment,
         ];
-
-        dd($data['record']);
         return view('accounting.purchase.direct_payment.payment_edit', $data);
     }
 
@@ -125,9 +121,9 @@ class DirectPaymentController extends Controller
      * @param  \App\Models\DirectPayment  $directPayment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DirectPayment $directPayment)
+    public function destroy(Payment $payment)
     {
-        //
+        return $payment->delete();
     }
 
 

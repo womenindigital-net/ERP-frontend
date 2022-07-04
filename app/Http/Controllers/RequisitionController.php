@@ -93,6 +93,6 @@ class RequisitionController extends Controller
      */
     public function destroy(Requisition $requisition)
     {
-        //
+        return $requisition->delete();
     }
 }

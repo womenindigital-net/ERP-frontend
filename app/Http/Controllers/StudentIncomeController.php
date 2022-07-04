@@ -74,7 +74,7 @@ class StudentIncomeController extends Controller
             'courses' => $this->courseService->getFormattedDataAsOptGroup(),
         ];
 
-        return view('accounting.income.student_income', $data);
+        return view('accounting.income.student_income.create', $data);
     }
 
     /**
@@ -102,9 +102,16 @@ class StudentIncomeController extends Controller
      *
      * @return Response
      */
-    public function show(StudentIncome $studentIncome): Response
+    public function show(StudentIncome $studentIncome)
     {
-        //
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'students' => $this->studentRepo->getData(),
+            'courses' => $this->courseService->getFormattedDataAsOptGroup(),
+            'record' => $this->repo->getRelatedData($studentIncome, ['income.project', 'incomeDetails']),
+        ];
+
+        return view('accounting.income.student_income.show', $data);
     }
 
     /**
@@ -123,7 +130,7 @@ class StudentIncomeController extends Controller
             'record' => $this->repo->getRelatedData($studentIncome, ['income.project', 'incomeDetails']),
         ];
 
-        return view('accounting.income.student_income_edit', $data);
+        return view('accounting.income.student_income.edit', $data);
     }
 
     /**

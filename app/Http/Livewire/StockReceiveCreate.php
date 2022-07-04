@@ -25,7 +25,7 @@ class StockReceiveCreate extends Component
     public $date;
     public $note;
     public $exp_date;
-    public $qty;
+    public $available_qty;
     public $received;
     public $receivable;
     public $return;
@@ -100,7 +100,7 @@ class StockReceiveCreate extends Component
 
             foreach ($this->stockReceive->details as $key => $detail) {
                 $this->product_id[$key] = $detail->product_id;
-                $this->qty[$key] = $detail->qty;
+                $this->available_qty[$key] = $detail->available_qty;
                 $this->exp_date[$key] = $detail->exp_date;
                 $this->received[$key] = $detail->received;
                 $this->return[$key] = $detail->return;
@@ -121,7 +121,7 @@ class StockReceiveCreate extends Component
         'note' => 'nullable',
         'product_id.*' => 'required',
         'exp_date.*' => 'required',
-        'qty.*' => 'nullable',
+        'available_qty.*' => 'nullable',
         'received.*' => 'nullable',
         'return.*' => 'nullable',
         'receivable.*' => 'nullable',
@@ -133,7 +133,7 @@ class StockReceiveCreate extends Component
     {
         $this->service->update($this->stockReceive, $this->validate());
         $this->dispatchBrowserEvent('notify');
-        // $this->redirect('stock-receive');
+        // $this->redirect()->;
     }
 
     // public function updated($name, $value)

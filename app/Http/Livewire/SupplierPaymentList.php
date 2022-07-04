@@ -13,7 +13,7 @@ class SupplierPaymentList extends Component
 
     use WithPagination, CommonListElements;
 
-    protected string $destroyRoute = 'donation-and-other.destroy';
+    protected string $destroyRoute = 'supplier-payment.destroy';
 
     private SupplierPaymentService $service;
     private SupplierPaymentRepository $repo;

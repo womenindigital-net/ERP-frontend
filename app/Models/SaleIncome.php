@@ -11,7 +11,8 @@ class SaleIncome extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_id', 'ship_to_address', 'warehouse_id'];
+    // protected $fillable = ['customer_id', 'ship_to_address', 'warehouse_id'];
+    protected $guarded = [];
 
     public function details(): HasMany
     {

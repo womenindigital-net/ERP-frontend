@@ -61,7 +61,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'staff-and-workplaceinspection' => StaffAndWorkplaceInspectionController::class,
         'referral' => ReferralController::class,
         'vocational-evaluation' => VocationalEvalutionController::class,
-        'student-income' => StudentIncomeController::class,
+    
         'student-attendance' => StudentAttendanceController::class,
         // 'another' => \App\Http\Controllers\StudentController::class,
     ]);

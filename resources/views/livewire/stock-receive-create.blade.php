@@ -57,18 +57,19 @@
                                     <div class="col-lg-2 p-0">
                                         <label>Exp. Date</label>
                                     </div>
-                                    <div class="col-lg-1 p-0">
-                                        <label>Quantity</label>
+                                    <div class="col-lg-2 p-0">
+                                        <label>Avl Qty</label>
                                     </div>
+                                    {{-- @if($purchaseInput) --}}
                                     <div class="col-lg-1 p-0">
                                         <label>Received</label>
                                     </div>
+                                    {{-- @endif --}}
+                                    {{-- @if($receiveInput) --}}
                                     <div class="col-lg-1 p-0">
                                         <label>Return</label>
                                     </div>
-                                    <div class=" col-lg-1 p-0">
-                                        <label>Receiveble</label>
-                                    </div>
+                                    {{-- @endif --}}
                                     <div class="col-lg-2 p-0">
                                         <label>Stock Receive Qty.</label>
                                     </div>
@@ -97,23 +98,23 @@
                                             <x-input-text wireModel="exp_date.{{ $key }}" type="date">
                                             </x-input-text>
                                         </div>
-                                        <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="qty.{{ $key }}" type="number" placeholder="0">
+                                        <div class="col-lg-2 p-0 pe-1">
+                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number"
+                                                placeholder="0">
                                             </x-input-text>
                                         </div>
-
+                                        {{-- @if($purchaseInput) --}}
                                         <div class="col-lg-1 p-0 pe-1">
                                             <x-input-text wireModel="received.{{ $key }}" placeholder="0">
                                             </x-input-text>
                                         </div>
+                                        {{-- @endif --}}
+                                        {{-- @if($receiveInput) --}}
                                         <div class="col-lg-1 p-0 pe-1">
                                             <x-input-text wireModel="return.{{ $key }}" placeholder="0">
                                             </x-input-text>
                                         </div>
-                                        <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="receivable.{{ $key }}" placeholder="0">
-                                            </x-input-text>
-                                        </div>
+                                        {{-- @endif --}}
                                         <div class="col-lg-2 p-0 pe-1">
                                             <x-input-text wireModel="stock_receive_qty.{{ $key }}"></x-input-text>
                                         </div>

@@ -24,6 +24,16 @@ class Payment extends Model
         return $this->hasOne(PaymentHistory::class);
     }
 
+    public function paymentType(): HasOne
+    {
+        return $this->hasOne(paymentType::class);
+    }
+
+    public function bankAccount(): HasOne
+    {
+        return $this->hasOne(BankAccount::class);
+    }
+
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by', 'id');
