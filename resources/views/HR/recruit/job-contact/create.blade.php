@@ -27,21 +27,41 @@
                                     <div class="col-6 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job title:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="job_title" :records="[]" />
+                                            <x-input-select name="job_title" :records="[
+                                                'TEACHER'=>'Teacher',
+                                                'DEVELOPER'=>'Developer',
+                                                'GRAPHICSDESIGNER'=>'Graphics Designer',
+                                                'COMPUTEROPERATOR'=>'Computer Operator',
+                                                'DRIVER'=>'Driver',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input"
                                             class="col-md-4 col-form-label  pe-2">Department:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="depertment" :records="[]" />
+                                            <x-input-select name="depertment" :records="[
+                                                'ACCOUNT'=>'Account',
+                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
+                                                'PARPERWORKSECTION'=>'Paper Work Section',
+                                                'PROCURMENTSECTION'=>'Procurement Section',
+                                                'PROGRAMMESECTION'=>'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applicant
                                             Name:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="applicant_name" :records="[]" />
+                                            <x-input-select name="applicant_name" :records="[
+                                                'Angon  Rahman' => 'Angon  Rahman',
+                                                'Parvez Parvez Ahmad' => 'Parvez Parvez Ahmad',
+                                                'Begum Nurjahan Dipa' => 'Begum Nurjahan Dipa',
+                                                'Md. Abu Bakar Siddique' => 'Md. Abu Bakar Siddique',
+                                                'Mohammad Amir Hossain' => 'Mohammad Amir Hossain',
+                                                'Airin  Shiddique' => 'Airin  Shiddique',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
@@ -223,21 +243,41 @@
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
                                             Title:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="job_title" :records="[]" />
+                                            <x-input-select name="job_title" :records="[
+                                                'TEACHER'=>'Teacher',
+                                                'DEVELOPER'=>'Developer',
+                                                'GRAPHICSDESIGNER'=>'Graphics Designer',
+                                                'COMPUTEROPERATOR'=>'Computer Operator',
+                                                'DRIVER'=>'Driver',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input"
                                             class="col-md-4 col-form-label  pe-2">Department:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="depertment" :records="[]" />
+                                            <x-input-select name="depertment" :records="[
+                                                'ACCOUNT'=>'Account',
+                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
+                                                'PARPERWORKSECTION'=>'Paper Work Section',
+                                                'PROCURMENTSECTION'=>'Procurement Section',
+                                                'PROGRAMMESECTION'=>'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applicant
                                             Name:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="applicant_name" :records="[]" />
+                                            <x-input-select name="applicant_name" :records="[
+                                                'Angon  Rahman' => 'Angon  Rahman',
+                                                'Parvez Parvez Ahmad' => 'Parvez Parvez Ahmad',
+                                                'Begum Nurjahan Dipa' => 'Begum Nurjahan Dipa',
+                                                'Md. Abu Bakar Siddique' => 'Md. Abu Bakar Siddique',
+                                                'Mohammad Amir Hossain' => 'Mohammad Amir Hossain',
+                                                'Airin  Shiddique' => 'Airin  Shiddique',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">

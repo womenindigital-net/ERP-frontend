@@ -30,7 +30,16 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Select Name</label>
-                                                <x-input-select name="student_id" :records="[]" />
+                                                <x-input-select name="student_id" :records="[
+                                                    'Aalliyah Tehzeeb Ahmed' => 'Aalliyah Tehzeeb Ahmed',
+                                                    'abdullah-al-nafi antor' => 'abdullah-al-nafi antor',
+                                                    'Abdullahil Baki' => 'Abdullahil Baki',
+                                                    'Abdur Rahman Sajid' => 'Abdur Rahman Sajid',
+                                                    'Abdur Rahman Shudais' => 'Abdur Rahman Shudais',
+                                                    'Abid Hossain Turjo' => 'Abid Hossain Turjo',
+                                                    'Abid Kabir Chowdhury' => 'Abid Kabir Chowdhury',
+                                                    'Abrar Ahosab Talha' => 'Abrar Ahosab Talha',
+                                                ]" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
