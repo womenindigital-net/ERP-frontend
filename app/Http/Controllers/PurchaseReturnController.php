@@ -43,7 +43,7 @@ class PurchaseReturnController extends Controller
      */
     public function store(StorePurchaseReturnRequest $request)
     {
-        //
+        return view('accounting.purchase.purchase_return.edit');
     }
 
     /**
@@ -54,7 +54,7 @@ class PurchaseReturnController extends Controller
      */
     public function show(PurchaseReturn $purchaseReturn)
     {
-        //
+        return view('accounting.purchase.purchase_return.view');
     }
 
     /**

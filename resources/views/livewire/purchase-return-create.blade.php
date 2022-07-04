@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Purchase</label>
-                <x-input-select wireModel="Purchase" :records="$projects" targetColumn="title" />
+                <x-input-select wireModel="purchase" :records="$purchase" targetColumn="invoice_no" />
             </div>
         </div>
         <div class="col-md-6">
@@ -21,13 +21,8 @@
         </div>
         <div class="col-md-6">
             <div class="mb-3">
-                <label for="validationCustom02" class="form-label">Order Purchase</label>
-                <select class="form-control select2">
-                    <option>--Select--</option>
-                    <option value="1">R-1-1</option>
-                    <option value="2">R-1-2</option>
-                    <option value="3">R-1-3</option>
-                </select>
+                <label for="validationCustom02" class="form-label">Reference</label>
+                <x-input-text wireModel="reference" type="text"></x-input-text>
             </div>
         </div>
         <div class="col-md-6">
