@@ -15,6 +15,19 @@ return new class extends Migration
     {
         Schema::create('employee_requisitions', function (Blueprint $table) {
             $table->id();
+            $table->string('requisition_for')->nullable();
+            $table->string('job_title')->nullable();
+            $table->string('dept_id')->nullable();
+            $table->string('project_id')->nullable();
+            $table->string('job_type')->nullable();
+            $table->string('vacancy_for')->nullable();
+            $table->string('when_required')->nullable();
+            $table->string('requested_by')->nullable();
+            $table->string('responsibilities')->nullable();
+            $table->string('requirements')->nullable();
+            $table->string('last_date')->nullable();
+            $table->string('new_position')->nullable();
+            $table->string('replacement')->nullable();
             $table->timestamps();
         });
     }
