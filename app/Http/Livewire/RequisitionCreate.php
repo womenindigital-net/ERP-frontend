@@ -14,6 +14,7 @@ use App\Services\RequisitionService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -118,6 +119,13 @@ class RequisitionCreate extends Component
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
             }
         }
+    }
+
+    public function update()
+    {
+        $this->service->update($this->requisition, $this->validate());
+        Session::flash('success');
+        return $this->redirectRoute('requisition.create');
     }
 
     public function render(): Factory|View|Application

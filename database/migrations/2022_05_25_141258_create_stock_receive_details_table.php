@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(StockReceive::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->string('exp_date')->nullable();
-            $table->string('qty')->nullable();
+            $table->string('available_qty')->nullable();
             $table->string('received')->nullable();
             $table->string('return')->nullable();
             $table->string('receivable')->nullable();

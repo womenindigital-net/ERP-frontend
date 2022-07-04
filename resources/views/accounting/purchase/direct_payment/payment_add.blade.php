@@ -1,15 +1,4 @@
 @extends('layouts.master')
-@section('css')
-{{-- <style>
-    #from_account {
-        display: none;
-    }
-
-    #to_account {
-        display: none;
-    }
-</style> --}}
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -23,16 +12,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Payment Type</label>
-                                    <x-input-select name="payment_type_id" :records="$paymentType" targetColumn="title">
+                                    <label class="form-label">Project</label>
+                                    <x-input-select name="project_id" :records="$projects" targetColumn="title">
                                     </x-input-select>
                                 </div>
                             </div>
-
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Project</label>
-                                    <x-input-select name="project_id" :records="$projects" targetColumn="title">
+                                    <label class="form-label">Payment Type</label>
+                                    <x-input-select name="payment_type_id" :records="$paymentType" targetColumn="title">
                                     </x-input-select>
                                 </div>
                             </div>

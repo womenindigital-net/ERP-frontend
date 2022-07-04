@@ -57,11 +57,6 @@ class SupplierPaymentController extends Controller
             'projects' => $this->projectRepo->getData(),
             'suppliers' => $this->supplierRepo->getData(),
             'purchaseOrder' => $this->purchaseOrderRepo->getData(),
-            'invoices' => [
-                '1' => 'SDT-1211',
-                '2' => 'SDT-1212',
-                '3' => 'SDT-1213',
-            ],
         ];
 
         return view('accounting.purchase.supplier_payment.create', $data);

@@ -35,7 +35,7 @@
                     <div class="row mb-3">
                       <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Bank Account</label>
                       <div class="col-sm-9">
-                        <x-input-select name="bank_account_id" :records="[]" />
+                        <x-input-select name="bank_account_id" :records="$bankAccount" targetColumn="bank" />
                       </div>
                     </div>
                     <div class="row mb-3">
@@ -50,15 +50,9 @@
                         <x-input-text name="end_page" placeholder="Enter End Page"></x-input-text>
                       </div>
                     </div>
-                    <div class="row mb-3">
-                      <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Creation Date</label>
-                      <div class="col-sm-9">
-                        <x-input-text type="date" name="date" placeholder="mm/dd/yyyy"></x-input-text>
-                      </div>
-                    </div>
-                    <div class="row justify-content-end">
+                    <div class="row">
                       <div class="modal-footer">
-                        <button type="submit" class="btn btn-outline-success  waves-light"> Save</button>
+                        <button type="submit" class="btn btn-lg btn-success  waves-light">Save</button>
                       </div>
                     </div>
                   </form>

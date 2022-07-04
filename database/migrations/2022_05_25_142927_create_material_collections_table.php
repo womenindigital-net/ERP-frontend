@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Warehouse;
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class, 'collected_for')->nullable()->constrained('users')->nullOnDelete();
             $table->string('date')->nullable();
+            $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Product::class, 'produce_product_id')->constrained('products')->cascadeOnDelete();
             $table->string('will_produce')->nullable();

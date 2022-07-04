@@ -30,8 +30,8 @@ class IncomeRepository extends BaseRepository
             })->latest()->paginate($perPage);
     }
 
-    public function specificIncomeWithSaleIncomeRelations(int $id)
+    public function specificIncomeWithSaleIncomeRelations($income)
     {
-        return $this->withSaleRelations()->whereId($id)->first();
+        return $this->withSaleRelations()->whereId($income->id)->first();
     }
 }

@@ -24,9 +24,10 @@ class StoreBankAccountRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable',
-            'account_name' => 'nullable',
-            'current_balance' => 'nullable',
+            'bank' => 'required',
+            'account_name' => 'required',
+            'account_no' => 'required',
+            'initial_balance' => 'required',
             'note' => 'nullable',
         ];
     }
