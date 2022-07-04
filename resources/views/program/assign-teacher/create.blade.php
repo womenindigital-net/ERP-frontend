@@ -79,10 +79,12 @@
                                             </div>
                                         </div>
 
-                                        <x-input-radio-or-check name="subject"
+                                        <div class="">
+                                            <x-input-radio-or-check name="subject"
                                             :records="$projectConstants::$assignTeacher" type="checkbox"
                                             :multiple="true" :isVertical="false">
-                                        </x-input-radio-or-check>
+                                            </x-input-radio-or-check>
+                                        </div>
 
                                         {{-- <div class="row pt-3">
                                             <div class="col-3">
@@ -214,17 +216,21 @@
             </div>
         </div>
     </div>
-<<<<<<< Updated upstream
-</div>
-</div>
-=======
->>>>>>> Stashed changes
 @endsection
 @section('script')
-<<script type="text/javascript">
+<script type="text/javascript">
     function selects() {
     var ele = document.getElementsByName('chk');
-    for (var i = 0; i < ele.length; i++) { if (ele[i].type=='checkbox' ) ele[i].checked=true; } } function deSelect() {
-        var ele=document.getElementsByName('chk'); for (var i=0; i < ele.length; i++) { if (ele[i].type=='checkbox' )
-        ele[i].checked=false; } } </script>
-        @endsection
+    for (var i = 0; i < ele.length; i++) 
+    { if (ele[i].type=='checkbox' )
+     ele[i].checked=true; } 
+    }
+    function deSelect() 
+    {
+        var ele=document.getElementsByName('chk'); 
+        for (var i=0; i < ele.length; i++) 
+        { if (ele[i].type=='checkbox' )
+        ele[i].checked=false; }
+    }
+</script>
+@endsection

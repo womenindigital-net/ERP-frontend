@@ -16,4 +16,9 @@ class SaleIncomeDetail extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function saleIncome(): BelongsTo
+    {
+        return $this->belongsTo(SaleIncome::class);
+    }
 }

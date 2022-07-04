@@ -5,6 +5,9 @@ namespace App\Http\Livewire\StudentIncome;
 use App\Http\Livewire\Traits\CommonListElements;
 use App\Services\StudentIncomeService;
 use App\Utility\ProjectConstants;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -29,7 +32,7 @@ class StudentIncomeList extends Component
         $this->emit('show-student-income', $studentIncome, $mode, $recordId);
     }
 
-    public function render()
+    public function render(): Factory|View|Application
     {
         $data = [
             'records' => $this->service->getListData($this->perPage, $this->search),

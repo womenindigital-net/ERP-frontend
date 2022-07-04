@@ -141,11 +141,11 @@
                                    class="btn btn-success mt-3 px-4 mt-lg-0" value="Add"
                                    id="AddMore"/>
                         </div>
-                        <div class=" d-flex justify-content-end gap-2">
-                          <div class="col-md-1 ">
+                        <div class=" d-flex justify-content-end gap-1">
+                          <div class="">
                             <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                           </div>
-                          <div class="col-md-1">
+                          <div class="">
                             <button class="btn btn-success">Save</button>
                           </div>
                         </div>

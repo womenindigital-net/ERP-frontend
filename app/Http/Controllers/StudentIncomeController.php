@@ -149,10 +149,10 @@ class StudentIncomeController extends Controller
      *
      * @param StudentIncome $studentIncome
      *
-     * @return Response
+     * @return bool
      */
-    public function destroy(StudentIncome $studentIncome): Response
+    public function destroy(StudentIncome $studentIncome): bool
     {
-        $studentIncome->delete();
+        return $studentIncome->delete();
     }
 }

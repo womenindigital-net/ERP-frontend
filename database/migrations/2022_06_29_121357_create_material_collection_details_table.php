@@ -15,13 +15,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('material_collection_details', function (Blueprint $table) {
+        /*Schema::create('material_collection_details', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(MaterialCollection::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class, 'product_id')->constrained('products')->cascadeOnDelete();
             $table->string('qty')->nullable();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
