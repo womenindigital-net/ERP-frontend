@@ -28,12 +28,13 @@
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
                                             title:</label>
                                         <div class="col-md-8">
-                                          <x-input-select name="applying_for" :records="[
-                                            'TEACHER'=>'Teacher',
-                                            'DEVELOPER'=>'Developer',
-                                            'GRAPHICSDESIGNER'=>'Graphics Designer',
-                                            'COMPUTEROPERATOR'=>'Computer Operator',
-                                            'DRIVER'=>'Driver', ]" />
+                                            <x-input-select name="applying_for" :records="[
+                                                'TEACHER' => 'Teacher',
+                                                'DEVELOPER' => 'Developer',
+                                                'GRAPHICSDESIGNER' => 'Graphics Designer',
+                                                'COMPUTEROPERATOR' => 'Computer Operator',
+                                                'DRIVER' => 'Driver',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
@@ -41,43 +42,45 @@
                                             class="col-md-4 col-form-label  pe-2">Department:</label>
                                         <div class="col-md-8">
                                             <x-input-select name="dept_id" :records="[
-                                                'ACCOUNT'=>'Account',
-                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
-                                                'PARPERWORKSECTION'=>'Paper Work Section',
-                                                'PROCURMENTSECTION'=>'Procurement Section',
-                                                'PROGRAMMESECTION'=>'Programme Section',
-                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',]" />
+                                                'ACCOUNT' => 'Account',
+                                                'INVENTORYMANAGEMENT' => 'Inventory Management',
+                                                'PARPERWORKSECTION' => 'Paper Work Section',
+                                                'PROCURMENTSECTION' => 'Procurement Section',
+                                                'PROGRAMMESECTION' => 'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT' => 'Research And Development',
+                                            ]" />
                                         </div>
                                     </div>
                                 </div>
                                 <form class="repeater pb-5" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col p-0 pe-1 text-center">
-                                          <label for="to">To</label>
+                                            <label for="to">To</label>
                                         </div>
                                         <div class="col p-0 pe-1 text-center">
-                                          <label for="subject">Subject</label>
+                                            <label for="subject">Subject</label>
                                         </div>
                                         <div class="col p-0 pe-1 text-center">
-                                          <label for="date">Date</label>
+                                            <label for="date">Date</label>
                                         </div>
                                         <div class="col p-0 ps-5 text-center">
-                                          <label for="time">time</label>
+                                            <label for="time">time</label>
                                         </div>
                                         <div class="col p-0 ps-5 text-center">
-                                          <label for="logs">Logs</label>
+                                            <label for="logs">Logs</label>
                                         </div>
                                     </div>
                                     <div data-repeater-list="group-a">
                                         <div data-repeater-item="" class="row ms-1 removeRow">
                                             <div class=" col p-0 pe-1 pb-1">
-                                                <x-input-text name="to"  placeholder="To"></x-input-text>
+                                                <x-input-text name="to" placeholder="To"></x-input-text>
                                             </div>
                                             <div class=" col p-0 pe-1 pb-1">
                                                 <x-input-select name="subject" :records="[]" />
                                             </div>
                                             <div class=" col p-0 pe-1 pb-1">
-                                                <x-input-text name="date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
+                                                <x-input-text name="date" type="date" placeholder="mm/dd/yyyy">
+                                                </x-input-text>
                                             </div>
                                             <div class=" col p-0 pe-1 pb-1">
                                                 <x-input-text name="time" type="time"></x-input-text>
@@ -220,25 +223,27 @@
                                             <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
                                                 title:</label>
                                             <div class="col-md-8">
-                                          <x-input-select name="job_title" :records="[
-                                            'TEACHER'=>'Teacher',
-                                            'DEVELOPER'=>'Developer',
-                                            'GRAPHICSDESIGNER'=>'Graphics Designer',
-                                            'COMPUTEROPERATOR'=>'Computer Operator',
-                                            'DRIVER'=>'Driver', ]" />
+                                                <x-input-select name="job_title" :records="[
+                                                    'TEACHER' => 'Teacher',
+                                                    'DEVELOPER' => 'Developer',
+                                                    'GRAPHICSDESIGNER' => 'Graphics Designer',
+                                                    'COMPUTEROPERATOR' => 'Computer Operator',
+                                                    'DRIVER' => 'Driver',
+                                                ]" />
                                             </div>
                                         </div>
                                         <div class="col-6 d-flex mb-3">
                                             <label for="example-text-input"
                                                 class="col-md-4 col-form-label  pe-2">Department:</label>
                                             <div class="col-md-8">
-                                            <x-input-select name="dept_id" :records="[
-                                                'ACCOUNT'=>'Account',
-                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
-                                                'PARPERWORKSECTION'=>'Paper Work Section',
-                                                'PROCURMENTSECTION'=>'Procurement Section',
-                                                'PROGRAMMESECTION'=>'Programme Section',
-                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',]" />
+                                                <x-input-select name="dept_id" :records="[
+                                                    'ACCOUNT' => 'Account',
+                                                    'INVENTORYMANAGEMENT' => 'Inventory Management',
+                                                    'PARPERWORKSECTION' => 'Paper Work Section',
+                                                    'PROCURMENTSECTION' => 'Procurement Section',
+                                                    'PROGRAMMESECTION' => 'Programme Section',
+                                                    'RESEARCHANDDEVELOPMENT' => 'Research And Development',
+                                                ]" />
                                             </div>
                                         </div>
                                         <div class="col-6 d-flex  mb-3">
@@ -271,11 +276,11 @@
                                         </div>
                                         <div class="row modal-footer">
                                             <div class="col-md-1">
-                                                <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                                <button class="btn btn-danger w-100"
+                                                    data-bs-dismiss="modal">Close</button>
                                             </div>
-                                        </div>                                        
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
@@ -283,6 +288,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection
 

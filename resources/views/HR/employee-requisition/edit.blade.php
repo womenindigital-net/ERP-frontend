@@ -27,7 +27,7 @@
                                 <div class="col-6 d-flex  mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Requisition for:</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="job_title" type="text" />
+                                        <x-input-text name="requisition_for" type="text" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex  mb-3">
@@ -39,19 +39,38 @@
                                 <div class="col-6 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Department:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="dept_id" :records="[]" />
+                                        <x-input-select name="dept_id" :records="[
+                                                'ACCOUNT'=>'Account',
+                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
+                                                'PARPERWORKSECTION'=>'Paper Work Section',
+                                                'PROCURMENTSECTION'=>'Procurement Section',
+                                                'PROGRAMMESECTION'=>'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development', ]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex  mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Project</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="project_id" :records="[]" />
+                                        <x-input-select name="project_id" :records="[
+                                            'ANGELCHEFBAKERY'=>'Angel Chef Bakery',
+                                            'ARTCRAFTSANDPAINTINGS'=>'Art, Crafts  and Paintings',
+                                            'BOUTIQUESECTION'=>'Boutique Section (Tie-Dye and Block)',
+                                            'COMPUTERSECTION'=>'Computer Section',
+                                            'COREPROGRAMME'=>'Core Programme',
+                                            'CRICKET'=>'Cricket',
+                                            'DANCE'=>'Dance',
+                                            'DRAMA'=>'Drama',
+                                            'EMPLOYMENT'=>'Employment',
+                                            'GYM'=>'Gym', ]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job Type:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="job_type" :records="[]" />
+                                        <x-input-select name="job_type" :records="[
+                                            'FULLTIME'=>'Full Time',
+                                            'PARTTIME'=>'Part Time',
+                                            'CONTRACTUALBASED'=>'Contractual Based',]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
@@ -69,7 +88,15 @@
                                 <div class="col-6 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Requested By:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="requested_by" :records="[]" />
+                                        <x-input-select name="requested_by" :records="[
+                                            'ASHIQURRAHAMNMAJUMDER'=>'Ashiqur Rahman Majumder',
+                                            'MDKUTUNUDDIN'=>'Md. Kutub Uddin',
+                                            'ARUPMANDAL'=>'Arup  Mandal',
+                                            'MDRIZWANURRAHMAN'=>'Md. Rizwanur Rahman',
+                                            'SHIHABSHAHRIAR'=>'Shihab  Shahriar',
+                                            'BIJOYURBANROSARIO'=>'Bijoy Urban Rosario',
+                                            'SUMAIYASULTANA'=>'Sumaiya  Sultana',
+                                            'FARHANA'=>'Farhana', ]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
@@ -216,7 +243,6 @@
                               <h5 class="modal-title text-primary">Employee Requisition Form</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            
                             <div class="modal-body pb-0">
                                 <div class="row">
                                     <div class="col-6 d-flex  mb-3">
@@ -234,22 +260,38 @@
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Department:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="dept_id"
-                                            :records="[]" />
+                                            <x-input-select name="dept_id" :records="[
+                                                'ACCOUNT'=>'Account',
+                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
+                                                'PARPERWORKSECTION'=>'Paper Work Section',
+                                                'PROCURMENTSECTION'=>'Procurement Section',
+                                                'PROGRAMMESECTION'=>'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex  mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Project</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="project_id"
-                                            :records="[]" />
+                                            <x-input-select name="project_id" :records="[
+                                            'ANGELCHEFBAKERY'=>'Angel Chef Bakery',
+                                            'ARTCRAFTSANDPAINTINGS'=>'Art, Crafts  and Paintings',
+                                            'BOUTIQUESECTION'=>'Boutique Section (Tie-Dye and Block)',
+                                            'COMPUTERSECTION'=>'Computer Section',
+                                            'COREPROGRAMME'=>'Core Programme',
+                                            'CRICKET'=>'Cricket',
+                                            'DANCE'=>'Dance',
+                                            'DRAMA'=>'Drama',
+                                            'EMPLOYMENT'=>'Employment',
+                                            'GYM'=>'Gym', ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job Type:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="job_type"
-                                            :records="[]" />
+                                            <x-input-select name="job_type" :records="[
+                                            'FULLTIME'=>'Full Time',
+                                            'PARTTIME'=>'Part Time',
+                                            'CONTRACTUALBASED'=>'Contractual Based', ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
@@ -267,20 +309,27 @@
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Requested By:</label>
                                         <div class="col-md-8">
-                                            <x-input-select name="requested_by"
-                                            :records="[]" />
+                                            <x-input-select name="requested_by" :records="[
+                                            'ASHIQURRAHAMNMAJUMDER'=>'Ashiqur Rahman Majumder',
+                                            'MDKUTUNUDDIN'=>'Md. Kutub Uddin',
+                                            'ARUPMANDAL'=>'Arup  Mandal',
+                                            'MDRIZWANURRAHMAN'=>'Md. Rizwanur Rahman',
+                                            'SHIHABSHAHRIAR'=>'Shihab  Shahriar',
+                                            'BIJOYURBANROSARIO'=>'Bijoy Urban Rosario',
+                                            'SUMAIYASULTANA'=>'Sumaiya  Sultana',
+                                            'FARHANA'=>'Farhana', ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Responsibilities:</label>
                                         <div class="col-md-8">
-                                            <x-input-textarea name="responsibilities" type="text" />
+                                            <x-input-textarea name="responsibilities" rows='1' />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Requirements:</label>
                                         <div class="col-md-8">
-                                            <x-input-textarea name="requirements" type="text" />
+                                            <x-input-textarea name="requirements" rows='1' />
                                         </div>
                                     </div>
                                     

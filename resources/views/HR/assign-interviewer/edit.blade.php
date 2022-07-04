@@ -28,62 +28,68 @@
                                         <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
                                             title:</label>
                                         <div class="col-md-8">
-                                          <x-input-select name="applying_for" :records="[
-                                            'TEACHER'=>'Teacher',
-                                            'DEVELOPER'=>'Developer',
-                                            'GRAPHICSDESIGNER'=>'Graphics Designer',
-                                            'COMPUTEROPERATOR'=>'Computer Operator',
-                                            'DRIVER'=>'Driver', ]" />
+                                            <x-input-select name="job_title" :records="[
+                                                'TEACHER' => 'Teacher',
+                                                'DEVELOPER' => 'Developer',
+                                                'GRAPHICSDESIGNER' => 'Graphics Designer',
+                                                'COMPUTEROPERATOR' => 'Computer Operator',
+                                                'DRIVER' => 'Driver',
+                                            ]" />
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex mb-3">
                                         <label for="example-text-input"
-                                            class="col-md-4 col-form-label  pe-2">Department:</label>
+                                            class="col-md-4 col-form-label  pe-2">Depertment:</label>
                                         <div class="col-md-8">
                                             <x-input-select name="dept_id" :records="[
-                                                'ACCOUNT'=>'Account',
-                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
-                                                'PARPERWORKSECTION'=>'Paper Work Section',
-                                                'PROCURMENTSECTION'=>'Procurement Section',
-                                                'PROGRAMMESECTION'=>'Programme Section',
-                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',]" />
+                                                'ACCOUNT' => 'Account',
+                                                'INVENTORYMANAGEMENT' => 'Inventory Management',
+                                                'PARPERWORKSECTION' => 'Paper Work Section',
+                                                'PROCURMENTSECTION' => 'Procurement Section',
+                                                'PROGRAMMESECTION' => 'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT' => 'Research And Development',
+                                            ]" />
                                         </div>
                                     </div>
                                 </div>
                                 <form class="repeater pb-5" enctype="multipart/form-data">
                                     <div class="row">
-                                        <div class="col p-0 pe-1 text-center">
-                                          <label for="to">To</label>
+                                        <div class="col p-0 text-center">
+                                            <label for="name">Name</label>
                                         </div>
-                                        <div class="col p-0 pe-1 text-center">
-                                          <label for="subject">Subject</label>
+                                        <div class="col p-0 text-center">
+                                            <label for="date">Date</label>
                                         </div>
-                                        <div class="col p-0 pe-1 text-center">
-                                          <label for="date">Date</label>
+                                        <div class="col p-0 text-center">
+                                            <label for="time">time</label>
                                         </div>
-                                        <div class="col p-0 ps-5 text-center">
-                                          <label for="time">time</label>
-                                        </div>
-                                        <div class="col p-0 ps-5 text-center">
-                                          <label for="logs">Logs</label>
+                                        <div class="col p-0 text-center">
+                                            <label for="interviewer_name">Interviewer</label>
                                         </div>
                                     </div>
                                     <div data-repeater-list="group-a">
                                         <div data-repeater-item="" class="row ms-1 removeRow">
                                             <div class=" col p-0 pe-1 pb-1">
-                                                <x-input-text name="to"  placeholder="To"></x-input-text>
+                                                <x-input-text name="name" placeholder="Name" />
                                             </div>
                                             <div class=" col p-0 pe-1 pb-1">
-                                                <x-input-select name="subject" :records="[]" />
+                                                <x-input-text name="applying_date" type="date"
+                                                    placeholder="mm/dd/yyyy" />
                                             </div>
                                             <div class=" col p-0 pe-1 pb-1">
-                                                <x-input-text name="date" type="date" placeholder="mm/dd/yyyy"></x-input-text>
-                                            </div>
-                                            <div class=" col p-0 pe-1 pb-1">
-                                                <x-input-text name="time" type="time"></x-input-text>
+                                                <x-input-text name="applying_time" type="time" />
                                             </div>
                                             <div class=" col p-0 gap-1 pb-1 me-4 d-flex">
-                                                <x-input-text name="logs" placeholder="Logs"></x-input-text>
+                                                <x-input-select name="interviewer_name" :records="[
+                                                    'ASHIQURRAHAMNMAJUMDER' => 'Ashiqur Rahman Majumder',
+                                                    'MDKUTUNUDDIN' => 'Md. Kutub Uddin',
+                                                    'ARUPMANDAL' => 'Arup  Mandal',
+                                                    'MDRIZWANURRAHMAN' => 'Md. Rizwanur Rahman',
+                                                    'SHIHABSHAHRIAR' => 'Shihab  Shahriar',
+                                                    'BIJOYURBANROSARIO' => 'Bijoy Urban Rosario',
+                                                    'SUMAIYASULTANA' => 'Sumaiya  Sultana',
+                                                    'FARHANA' => 'Farhana',
+                                                ]" />
                                                 <button class="btn btn-danger waves-effect waves-light  removeBtn">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
@@ -93,16 +99,15 @@
                                     <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0"
                                         value="Add" />
                                 </form>
-                            </div>
-                            <div class="row modal-footer">
-                                <div class="col-md-1">
-                                    <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                <div class=" d-flex justify-content-end gap-2">
+                                    <div class="col-md-1 ">
+                                        <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button class="btn btn-success w-100">Save</button>
+                                    </div>
                                 </div>
-                                <div class="col-md-1">
-                                    <button class="btn btn-success w-100">Save</button>
-                                </div>
                             </div>
-
                         </div>
                         <div class="tab-pane" id="case-histroy_list" role="tabpanel">
                             <div class="row">
@@ -127,10 +132,10 @@
                                     <thead>
                                         <tr class="table-primary">
                                             <th>Depertmnet</th>
-                                            <th>To</th>
-                                            <th>Subject</th>
-                                            <th>Date </th>
+                                            <th>Name</th>
+                                            <th>Date</th>
                                             <th>time</th>
+                                            <th>Interviewer</th>
                                             <th>Log</th>
                                             <th>Action</th>
                                         </tr>
@@ -139,9 +144,9 @@
                                         <tr>
                                             <td>HR</td>
                                             <td>Demo</td>
-                                            <td>Application</td>
                                             <td>12/02</td>
                                             <td>12.00pm</td>
+                                            <td>Application</td>
                                             <td>Create: Karishma Cultural @ 2018-12-27 19:24:14</td>
                                             <td>
                                                 <button type="button"
@@ -209,73 +214,92 @@
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title text-primary">Mail Information</h5>
+                                    <h5 class="modal-title text-primary">Assigning Interviewer Information</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-
                                 <div class="modal-body pb-0">
                                     <div class="row pb-5">
                                         <div class="col-6 d-flex  mb-3">
                                             <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job
                                                 title:</label>
                                             <div class="col-md-8">
-                                          <x-input-select name="job_title" :records="[
-                                            'TEACHER'=>'Teacher',
-                                            'DEVELOPER'=>'Developer',
-                                            'GRAPHICSDESIGNER'=>'Graphics Designer',
-                                            'COMPUTEROPERATOR'=>'Computer Operator',
-                                            'DRIVER'=>'Driver', ]" />
+                                                <x-input-select name="job_title" :records="[
+                                                    'TEACHER' => 'Teacher',
+                                                    'DEVELOPER' => 'Developer',
+                                                    'GRAPHICSDESIGNER' => 'Graphics Designer',
+                                                    'COMPUTEROPERATOR' => 'Computer Operator',
+                                                    'DRIVER' => 'Driver',
+                                                ]" />
                                             </div>
                                         </div>
                                         <div class="col-6 d-flex mb-3">
                                             <label for="example-text-input"
-                                                class="col-md-4 col-form-label  pe-2">Department:</label>
+                                                class="col-md-4 col-form-label  pe-2">Depertment:</label>
                                             <div class="col-md-8">
-                                            <x-input-select name="dept_id" :records="[
-                                                'ACCOUNT'=>'Account',
-                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
-                                                'PARPERWORKSECTION'=>'Paper Work Section',
-                                                'PROCURMENTSECTION'=>'Procurement Section',
-                                                'PROGRAMMESECTION'=>'Programme Section',
-                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',]" />
+                                                <x-input-select name="dept_id" :records="[
+                                                    'ACCOUNT' => 'Account',
+                                                    'INVENTORYMANAGEMENT' => 'Inventory Management',
+                                                    'PARPERWORKSECTION' => 'Paper Work Section',
+                                                    'PROCURMENTSECTION' => 'Procurement Section',
+                                                    'PROGRAMMESECTION' => 'Programme Section',
+                                                    'RESEARCHANDDEVELOPMENT' => 'Research And Development',
+                                                ]" />
                                             </div>
                                         </div>
-                                        <div class="col-6 d-flex  mb-3">
-                                            <label for="example-text-input"
-                                                class="col-md-4 col-form-label  pe-2">To:</label>
-                                            <div class="col-md-8">
-                                                <x-input-text name="to" type="text"></x-input-text>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 d-flex mb-3">
-                                            <label for="example-text-input"
-                                                class="col-md-4 col-form-label  pe-2">Subject:</label>
-                                            <div class="col-md-8">
-                                                <x-input-text name="subject" type="text"></x-input-text>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 d-flex mb-3">
-                                            <label for="example-text-input"
-                                                class="col-md-4 col-form-label  pe-2">Date:</label>
-                                            <div class="col-md-8">
-                                                <x-input-text name="date" type="date"></x-input-text>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 d-flex  mb-3">
-                                            <label for="example-text-input"
-                                                class="col-md-4 col-form-label  pe-2">Time:</label>
-                                            <div class="col-md-8">
-                                                <x-input-text name="time" type="time"></x-input-text>
-                                            </div>
-                                        </div>
-                                        <div class="row modal-footer">
-                                            <div class="col-md-1">
-                                                <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>                                        
                                     </div>
-                                </div>
+                                    <form class="repeater pb-5" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col p-0 text-center">
+                                                <label for="name">Name</label>
+                                            </div>
+                                            <div class="col p-0 text-center">
+                                                <label for="applying_date">Date</label>
+                                            </div>
+                                            <div class="col p-0 text-center">
+                                                <label for="applying_time">time</label>
+                                            </div>
+                                            <div class="col p-0 text-center">
+                                                <label for="interviewer_name">Interviewer</label>
+                                            </div>
+                                        </div>
+                                        <div data-repeater-list="group-a">
+                                            <div data-repeater-item="" class="row ms-1 removeRow">
+                                                <div class=" col p-0 pe-1 pb-1">
+                                                    <x-input-text name="name" placeholder="Name" />
+                                                </div>
+                                                <div class=" col p-0 pe-1 pb-1">
+                                                    <x-input-text name="applying_date" type="date"
+                                                        placeholder="mm/dd/yyyy" />
+                                                </div>
+                                                <div class=" col p-0 pe-1 pb-1">
+                                                    <x-input-text name="applying_time" type="time" />
+                                                </div>
+                                                <div class=" col p-0 gap-1 pb-1 me-4 d-flex">
+                                                    <x-input-select name="interviewer_name" :records="[
+                                                        'ASHIQURRAHAMNMAJUMDER' => 'Ashiqur Rahman Majumder',
+                                                        'MDKUTUNUDDIN' => 'Md. Kutub Uddin',
+                                                        'ARUPMANDAL' => 'Arup  Mandal',
+                                                        'MDRIZWANURRAHMAN' => 'Md. Rizwanur Rahman',
+                                                        'SHIHABSHAHRIAR' => 'Shihab  Shahriar',
+                                                        'BIJOYURBANROSARIO' => 'Bijoy Urban Rosario',
+                                                        'SUMAIYASULTANA' => 'Sumaiya  Sultana',
+                                                        'FARHANA' => 'Farhana',
+                                                    ]" />
+                                                    <button class="btn btn-danger waves-effect waves-light  removeBtn">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0"
+                                            value="Add" />
+                                    </form>
+                                    <div class="row modal-footer">
+                                        <div class="col-md-1">
+                                            <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -283,11 +307,9 @@
                 </div>
             </div>
         </div>
-    </div>
-@endsection
-
-@section('script')
-    <!-- form repeater js -->
-    <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
-@endsection
+    @endsection
+    @section('script')
+        <!-- form repeater js -->
+        <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
+        <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
+    @endsection

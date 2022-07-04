@@ -27,88 +27,101 @@
                                 <div class="col-6 d-flex  mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job title:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="job_title_select"
-                                        :records="[]" />
+                                          <x-input-select name="job_title" :records="[
+                                            'TEACHER'=>'Teacher',
+                                            'DEVELOPER'=>'Developer',
+                                            'GRAPHICSDESIGNER'=>'Graphics Designer',
+                                            'COMPUTEROPERATOR'=>'Computer Operator',
+                                            'DRIVER'=>'Driver', ]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Depertmnet:</label>
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Depertment:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="deaprtment_select"
-                                        :records="[]" />
+                                        <x-input-select name="dept_id" :records="[
+                                                'ACCOUNT'=>'Account',
+                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
+                                                'PARPERWORKSECTION'=>'Paper Work Section',
+                                                'PROCURMENTSECTION'=>'Procurement Section',
+                                                'PROGRAMMESECTION'=>'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex  mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Requisition for:</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="requisition_for" type="text"></x-input-text>
+                                        <x-input-text name="requisition_for"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applicant name:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="applicant_name"
-                                        :records="[]" />
+                                        <x-input-select name="applicant_name" :records="[
+                                            'PINTUSANGMA'=>'Pintu  Sangma',
+                                            'MDFAISAL'=>'Md Faisal',
+                                            'MSSHAMIMASIKDER'=>'Ms. Shamima Sikder',
+                                            'MSOZIFAKHATUN'=>'Ms Ozifa khatun',
+                                            'MSTNAJNINAKHTER'=>'Mst Najnin Akhter',
+                                            'AKMSHAHIDUKKAH'=>'A.K.M  Shahidullah', ]"/>
                                     </div>
                                 </div>
                             </div>
                             <form class="repeater pb-5" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-lg-3 p-0 pe-1">
-                                        <label for="product">Criteria</label>
-                                    </div>
-                                    <div class="col-lg-3 p-0 pe-1">
-                                        <label for="quality">Rating </label>
-                                    </div>
-                                    <div class="col-lg-3 p-0 pe-1">
-                                        <label for="subtotal">Comment</label>
-                                    </div>
-                                    
-                                </div>
-                                <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="row removeRow">
-
-                                        <div  class="col-lg-3 d-flex p-0 pe-1 pb-1 ">
-                                            <x-input-textarea rows="1" name="criteria" type="text"></x-input-textarea>
+                                    <div class="row">
+                                        <div class="col p-0 text-center">
+                                          <label for="criteria">Criteria</label>
                                         </div>
-
-                                        <div class=" col-lg-3 p-0 pe-1 pb-1">
-                                            <x-input-select name="rating"
-                                        :records="[]" />
+                                        <div class="col p-0 text-center">
+                                          <label for="rating">Rating</label>
                                         </div>
-                                        <div class="col-lg-3 p-0 pe-1 pb-1 d-flex">
-                                            <x-input-textarea rows="1" name="comment" type="text"></x-input-textarea>
-                                            <div class="">
-                                                <button class="btn btn-danger ms-2 removeBtn">
-                                                    <i class="fas fa-trash-alt"></i>
+                                        <div class="col p-0 text-center">
+                                          <label for="comment">Comment</label>
+                                        </div>
+                                    </div>
+                                    <div data-repeater-list="group-a">
+                                        <div data-repeater-item="" class="row ms-1 removeRow">
+                                            <div class=" col p-0 pe-1 pb-1">
+                                                <x-input-textarea name="criteria" rows='1'/>
+                                            </div>
+                                            <div class=" col p-0 pe-1 pb-1">
+                                              <x-input-select name="rating" :records="[
+                                                'ONE'=>'1',
+                                                'TWO'=>'2',
+                                                'THREE'=>'3',
+                                                'FOUR'=>'4',
+                                                'FIVE'=>'5',]"/>
+                                            </div>
+                                            <div class=" col p-0 gap-1 pb-1 me-4 d-flex">
+                                                <x-input-textarea name="comment" rows='1'/>
+                                                <button class="btn btn-danger waves-effect waves-light  removeBtn">
+                                                 <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
                             </form>
-                            <div class="row pb-5">
+                            <div class="row d-flex">
                                 <div class="col-6 d-flex  mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Recommendation:</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="recommendation" type="date"></x-input-text>
+                                        <x-input-text name="recommendation" type="date"/>
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Overall Comment:</label>
                                     <div class="col-md-8">
-                                        <x-input-textarea rows="1" name="overall_comment" type="date"></x-input-textarea>
+                                        <x-input-textarea rows="1" name="overall_comment"/>
                                     </div>
                                 </div>
-                                <div class=" d-flex justify-content-end gap-2">
-                                    <div class="col-md-1 ">
-                                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <button class="btn btn-success">Save</button>
-                                    </div>
-                                </div>                             
+                              </div>                            
+                            <div class=" d-flex justify-content-end gap-2">
+                                <div class="col-md-1 ">
+                                    <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
+                                </div>
+                                <div class="col-md-1">
+                                    <button class="btn btn-success w-100">Save</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -134,24 +147,22 @@
                         <table class="table table-bordered w-100">
                           <thead>
                             <tr class="table-primary">
-                                <th>Applicant name</th>
-                                <th>Requisition for</th>
                                 <th>Depertmnet</th>
-                                <th>Recommendation </th>
-                                <th>Criteria</th>
-                                <th>Rating</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>time</th>
+                                <th>Interviewer</th>
                                 <th>Log</th>
                                 <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                                <td>Test</td>
-                                <td>Demo</td>
                                 <td>HR</td>
-                                <td></td>
-                                <td></td>
-                                <td>5</td>
+                                <td>Demo</td>
+                                <td>12/02</td>
+                                <td>12.00pm</td>
+                                <td>Application</td>
                                 <td>Create: Karishma Cultural @ 2018-12-27 19:24:14</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
@@ -209,96 +220,108 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title text-primary">Interviewer Information</h5>
+                              <h5 class="modal-title text-primary">Assigning Interviewer Information</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            
-                            <div class="modal-body pb-0">
-                                <div class="row pb-5">
-                                    <div class="col-6 d-flex  mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job title:</label>
-                                        <div class="col-md-8">
-                                            <x-input-select name="job_title_select"
-                                            :records="[]" />
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Depertmnet:</label>
-                                        <div class="col-md-8">
-                                            <x-input-select name="deaprtment_select"
-                                            :records="[]" />
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex  mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Requisition for:</label>
-                                        <div class="col-md-8">
-                                            <x-input-text name="requisition_for" type="text"></x-input-text>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applicant name:</label>
-                                        <div class="col-md-8">
-                                            <x-input-select name="applicant_name"
-                                            :records="[]" />
-                                        </div>
+                        <div class="modal-body pb-0">
+                            <div class="row pb-5">
+                                <div class="col-6 d-flex  mb-3">
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Job title:</label>
+                                    <div class="col-md-8">
+                                          <x-input-select name="job_title" :records="[
+                                            'TEACHER'=>'Teacher',
+                                            'DEVELOPER'=>'Developer',
+                                            'GRAPHICSDESIGNER'=>'Graphics Designer',
+                                            'COMPUTEROPERATOR'=>'Computer Operator',
+                                            'DRIVER'=>'Driver', ]" />
                                     </div>
                                 </div>
-                                <form class="repeater pb-5" enctype="multipart/form-data">
-                                    <div class="row">
-                                        <div class="col-lg-4 text-center p-0">
-                                            <label for="product">Criteria</label>
-                                        </div>
-                                        <div class="col-lg-4 text-center p-0">
-                                            <label for="quality">Rating </label>
-                                        </div>
-                                        <div class="col-lg-4 text-center p-0">
-                                            <label for="subtotal">Comment</label>
-                                        </div>
-                                        
+                                <div class="col-6 d-flex mb-3">
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Depertment:</label>
+                                    <div class="col-md-8">
+                                        <x-input-select name="dept_id" :records="[
+                                                'ACCOUNT'=>'Account',
+                                                'INVENTORYMANAGEMENT'=>'Inventory Management',
+                                                'PARPERWORKSECTION'=>'Paper Work Section',
+                                                'PROCURMENTSECTION'=>'Procurement Section',
+                                                'PROGRAMMESECTION'=>'Programme Section',
+                                                'RESEARCHANDDEVELOPMENT'=>'Research And Development',]" />
                                     </div>
-                                    <div data-repeater-list="group-a">
-                                        <div data-repeater-item class="row removeRow">
-    
-                                            <div  class="col-lg-4 d-flex p-0 pe-1 pb-1 ">
-                                                <x-input-textarea rows="1" name="criteria" type="text"></x-input-textarea>
-                                            </div>
-    
-                                            <div class=" col-lg-4 p-0 pe-1 pb-1">
-                                                <x-input-select name="rating" :records="[]" />
-                                            </div>
-                                            <div class="col-lg-4 p-0 pe-1 pb-1 d-flex">
-                                                <x-input-textarea rows="1" name="comment" type="text"></x-input-textarea>
-                                                <div class="">
-                                                    <button class="btn btn-danger ms-2 removeBtn">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="col-6 d-flex  mb-3">
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Requisition for:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="requisition_for" type="text"></x-input-text>
                                     </div>
-                                    <input data-repeater-create type="button" class="btn btn-success mt-lg-0" value="Add"/>
-                                </form>
-                                <div class="row pb-5">
-                                    <div class="col-6 d-flex  mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Recommendation:</label>
-                                        <div class="col-md-8">
-                                            <x-input-text name="recommendation" type="date"></x-input-text>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex mb-3">
-                                        <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Overall Comment:</label>
-                                        <div class="col-md-8">
-                                            <x-input-textarea rows="1" name="overall_comment" type="date"></x-input-textarea>
-                                        </div>
+                                </div>
+                                <div class="col-6 d-flex mb-3">
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Applicant name:</label>
+                                    <div class="col-md-8">
+                                        <x-input-select name="applicant_name" :records="[
+                                            'PINTUSANGMA'=>'Pintu  Sangma',
+                                            'MDFAISAL'=>'Md Faisal',
+                                            'MSSHAMIMASIKDER'=>'Ms. Shamima Sikder',
+                                            'MSOZIFAKHATUN'=>'Ms Ozifa khatun',
+                                            'MSTNAJNINAKHTER'=>'Mst Najnin Akhter',
+                                            'AKMSHAHIDUKKAH'=>'A.K.M  Shahidullah', ]"/>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row modal-footer">
-                                <div class="col-md-1">
+                            <form class="repeater pb-5" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col p-0 text-center">
+                                          <label for="criteria">Criteria</label>
+                                        </div>
+                                        <div class="col p-0 text-center">
+                                          <label for="rating">Rating</label>
+                                        </div>
+                                        <div class="col p-0 text-center">
+                                          <label for="comment">Comment</label>
+                                        </div>
+                                    </div>
+                                    <div data-repeater-list="group-a">
+                                        <div data-repeater-item="" class="row ms-1 removeRow">
+                                            <div class=" col p-0 pe-1 pb-1">
+                                                <x-input-textarea name="criteria" rows='1'/>
+                                            </div>
+                                            <div class=" col p-0 pe-1 pb-1">
+                                              <x-input-select name="rating" :records="[
+                                                'ONE'=>'1',
+                                                'TWO'=>'2',
+                                                'THREE'=>'3',
+                                                'FOUR'=>'4',
+                                                'FIVE'=>'5',]"/>
+                                            </div>
+                                            <div class=" col p-0 gap-1 pb-1 me-4 d-flex">
+                                                <x-input-textarea name="comment" rows='1'/>
+                                                <button class="btn btn-danger waves-effect waves-light  removeBtn">
+                                                 <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                </div>
+                                <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"/>
+                            </form>
+                            <div class="row d-flex">
+                                <div class="col-6 d-flex  mb-3">
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Recommendation:</label>
+                                    <div class="col-md-8">
+                                        <x-input-text name="recommendation" type="date"/>
+                                    </div>
+                                </div>
+                                <div class="col-6 d-flex mb-3">
+                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Overall Comment:</label>
+                                    <div class="col-md-8">
+                                        <x-input-textarea rows="1" name="overall_comment"/>
+                                    </div>
+                                </div>
+                            <div class=" d-flex justify-content-end pb-3">
+                                <div class="col-md-1 ">
                                     <button class="btn btn-danger w-100" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
-                        </div>
+
+                              </div> 
                     </div>
                 </div>
             </div>
@@ -306,7 +329,6 @@
     </div>
 </div>
 @endsection
-
 @section('script')
 <!-- form repeater js -->
 <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
