@@ -19,6 +19,7 @@ use App\Http\Controllers\StockTransferController;
 use App\Http\Controllers\StudentIncomeController;
 use App\Http\Controllers\SupplierPaymentController;
 use App\Http\Controllers\MaterialCollectionController;
+use App\Http\Controllers\PurchaseReturnController;
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -41,6 +42,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
         'cheque' => ChequeController::class,
         'bank-account' => BankAccountController::class,
+
+         'purchase-return' => PurchaseReturnController::class,
 
     ]);
 
@@ -66,7 +69,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::put('purchase-order/{purchase_order}/requisition/{requisition}/update', [PurchaseController::class, 'update'])->name('purchase-order.update');
     Route::delete('purchase-order/{purchase_order}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
 
-    Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
+    // Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 
     // Route::get('payment-supplier', [PaymentController::class, 'supplier'])->name('payment-supplier');
     // Route::get('direct-payment-add', [PaymentController::class, 'directPaymentAdd'])->name('direct-payment-add');

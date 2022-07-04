@@ -77,7 +77,6 @@ class ViewServiceProvider extends ServiceProvider
         /*
         View::share('careConstants', CareNeedsFormConstants::class);
         View::share('functionalConstants', FunctionalMovement::class);
-
         View::share('assigntaskConstant', AssigntaskConstant::class);*/
     }
 }

@@ -27,13 +27,31 @@
                                 <div class="col-6 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Department:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="depertment" :records="[]" />
+                                        <x-input-select name="depertment" :records="[
+                                            'Account'=>'Account',
+                                            'Inventory Management'=>'Inventory Management',
+                                            'Paper Work Section'=>'Paper Work Section',
+                                            'Procurement Section'=>'Procurement Section',
+                                            'Programme Section'=>'Programme Section',
+                                            'Research And Development'=>'Research And Development',
+                                        ]" />
                                     </div>
                                 </div>
                                  <div class="col-6 d-flex  mb-3">
                                     <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Name:</label>
                                     <div class="col-md-8">
-                                         <x-input-select name="job_contact_name" :records="[]" />
+                                         <x-input-select name="job_contact_name" :records="[
+                                          'A.K.M  Shahidullah' => 'A.K.M  Shahidullah',
+                                          'Abdullah Al Asif' => 'Abdullah Al Asif',
+                                          'Airin  Shiddique' => 'Airin  Shiddique',
+                                          'Anas Bin Iqbal' => 'Anas Bin Iqbal',
+                                          'Angon  Rahman' => 'Angon  Rahman',
+                                          'Arup  Mandal' => 'Arup  Mandal',
+                                          'Ashiqur Rahman Majumder' => 'Ashiqur Rahman Majumder',
+                                          'Begum Nurjahan Dipa' => 'Begum Nurjahan Dipa',
+                                          'Bijoy Gharami' => 'Bijoy Gharami',
+                                          'Bijoy Urban Rosario' => 'Bijoy Urban Rosario',
+                                         ]" />
                                     </div>
                                 </div>
                                 <div class="col-6 d-flex  mb-3">
@@ -153,25 +171,51 @@
                               <h5 class="modal-title text-primary">Reporting Memo</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                              <div class="row p-3">
-                                <div class="col-6 d-flex  mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Title:</label>
-                                    <div class="col-md-8">
-                                            <x-input-text name="title"/>
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Notice Type:</label>
-                                    <div class="col-md-8">
-                                        <x-input-select name="notice_type" :records="[]" />
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex  mb-3">
-                                    <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Message:</label>
-                                    <div class="col-md-8">
-                                            <x-input-textarea  name="essage" rows="1" />
-                                    </div>
-                                </div>
+                            <div class="modal-body pb-0">
+                              <div class="row">
+                                  <div class="col-6 d-flex mb-3">
+                                      <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Department:</label>
+                                      <div class="col-md-8">
+                                          <x-input-select name="depertment" :records="[
+                                              'Account'=>'Account',
+                                              'Inventory Management'=>'Inventory Management',
+                                              'Paper Work Section'=>'Paper Work Section',
+                                              'Procurement Section'=>'Procurement Section',
+                                              'Programme Section'=>'Programme Section',
+                                              'Research And Development'=>'Research And Development',
+                                          ]" />
+                                      </div>
+                                  </div>
+                                   <div class="col-6 d-flex  mb-3">
+                                      <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Name:</label>
+                                      <div class="col-md-8">
+                                           <x-input-select name="job_contact_name" :records="[
+                                            'A.K.M  Shahidullah' => 'A.K.M  Shahidullah',
+                                            'Abdullah Al Asif' => 'Abdullah Al Asif',
+                                            'Airin  Shiddique' => 'Airin  Shiddique',
+                                            'Anas Bin Iqbal' => 'Anas Bin Iqbal',
+                                            'Angon  Rahman' => 'Angon  Rahman',
+                                            'Arup  Mandal' => 'Arup  Mandal',
+                                            'Ashiqur Rahman Majumder' => 'Ashiqur Rahman Majumder',
+                                            'Begum Nurjahan Dipa' => 'Begum Nurjahan Dipa',
+                                            'Bijoy Gharami' => 'Bijoy Gharami',
+                                            'Bijoy Urban Rosario' => 'Bijoy Urban Rosario',
+                                           ]" />
+                                      </div>
+                                  </div>
+                                  <div class="col-6 d-flex  mb-3">
+                                      <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Designation:</label>
+                                      <div class="col-md-8">
+                                           <x-input-text name="designation"/>
+                                      </div>
+                                  </div>
+                                  <div class="col-6 d-flex mb-3">
+                                      <label for="example-text-input" class="col-md-4 col-form-label  pe-2">Joining Date:</label>
+                                      <div class="col-md-8">
+                                          <x-input-text name="joining_date" type="date"/>
+                                      </div>
+                                  </div>
+                              </div>
                             </div>
                             <div class="row modal-footer">
                                 <div class="col-md-1">
