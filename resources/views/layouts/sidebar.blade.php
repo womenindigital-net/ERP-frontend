@@ -48,7 +48,7 @@
                     <ul class="sub-menu">
                         <li><a href="{{ route('requisition.create') }}">Requisition</a></li>
                         <li><a href="{{ route('purchase-order.create') }}">Purchase Order</a></li>
-                        <li><a href="{{ route('purchase-return') }}">Purchase Return</a></li>
+                        <li><a href="{{ route('purchase-return.create') }}">Purchase Return</a></li>
                         <li><a href="{{ route('supplier-payment.create') }}">Supplier Payment</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
