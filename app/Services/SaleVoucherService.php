@@ -18,16 +18,16 @@ class SaleVoucherService
     {
         try{
             DB::beginTransaction();
-
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
             $income = $this->repo->store($incomeInfo);
 
             $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
 
-            $saleIncome->details()->createMany($validated['details']);
+            $details = $this->collectDetails($data);
+
+            $saleIncome->details()->createMany($details);
 
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
-
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
@@ -41,7 +41,7 @@ class SaleVoucherService
 
         [$saleIncomeInfo, $data] = $this->collectSaleIncomeInfo($data);
 
-        $incomeInfo['amount'] = array_sum(array_column($validated['details'], 'sub_total'));
+        $incomeInfo['amount'] = array_sum($validated['sub_total']);
         $incomeInfo['type']   = 'sale';
 
         return [$incomeInfo, $saleIncomeInfo, $data];
@@ -61,18 +61,10 @@ class SaleVoucherService
     {
         $custom = [
             'type' => 'sale',
-            'amount' => array_sum(array_column($data['details'], 'sub_total')),
+            'amount' => array_sum($data['sub_total']),
         ];
 
-        $searchString = 'cash';
-
-        if (isset($data['cheque'])) {
-            $searchString = "$searchString|cheque*";
-        }
-
-        if (isset($data['card'])) {
-            $searchString = "$searchString|card*";
-        }
+        $searchString = 'cash|cheque*|card*';
 
         $paymentInfo = [];
         foreach ($data as $key => $val) {
@@ -84,29 +76,33 @@ class SaleVoucherService
         return array_merge($custom, $paymentInfo);
     }
 
-    public function update($id, $validated)
+    public function update($income, $validated)
     {
-        $income = $this->repo->specificIncomeWithSaleIncomeRelations($id);
-
         try{
             DB::beginTransaction();
-
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
             $income = $this->repo->update($income, $incomeInfo);
 
+            $incomeWithRelatedInfo = $this->repo->specificIncomeWithSaleIncomeRelations($income);
+
+            foreach ($incomeWithRelatedInfo->saleIncome->details as $detail) {
+                $detail->delete();
+            }
+
             $income->saleIncome()->delete();
+            $income->history()->delete();
+
             $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
 
-            $productInfos = array_filter($validated['details'], [$this, 'getOnlyNotEmptyRecords']);
-            $saleIncome->details()->createMany($productInfos);
+            $details = $this->collectDetails($data);
 
-            $income->history()->delete();
+            $saleIncome->details()->createMany($details);
+
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
-
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e->getMessage(), $e->getLine());
+            dd($e->getMessage(), $e->getFile(), $e->getLine());
         }
     }
 
@@ -122,4 +118,20 @@ class SaleVoucherService
         return $data;
     }
 
+    private function collectDetails(array $data): array
+    {
+        [$details, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty']);
+
+        for ($i = 0; $i < count($details['product_id']); $i++) {
+            $custom[$i] = [
+                'product_id' => $details['product_id'][$i],
+                'qty' => $details['qty'][$i],
+                'sub_total' => $details['sub_total'][$i],
+                'price' => $details['price'][$i],
+                'available_qty' => $details['available_qty'][$i],
+            ];
+        }
+
+        return $custom ?? [];
+    }
 }

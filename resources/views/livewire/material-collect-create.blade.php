@@ -2,10 +2,17 @@
     <div class="row">
         <div class="col-12">
             <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Project</label>
+                        <x-input-select name="project_id" :records="$projects" targetColumn="title">
+                        </x-input-select>
+                    </div>
+                </div>
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Select Name</label>
-                        <x-input-select wireModel="collected_for" :records="$users" targetColumn="title" />
+                        <x-input-select wireModel="collected_for" :records="$users"/>
                     </div>
                 </div>
                 <div class="col-lg-6">

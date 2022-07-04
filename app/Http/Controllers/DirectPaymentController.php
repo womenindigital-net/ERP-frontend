@@ -7,6 +7,9 @@ use App\Models\DirectPayment;
 use App\Services\DirectPaymentService;
 use App\Repositories\PaymentRepository;
 use App\Repositories\ProjectRepository;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\PaymentTypeRepository;
 use App\Repositories\DirectPaymentRepository;
@@ -15,8 +18,6 @@ use App\Http\Requests\UpdateDirectPaymentRequest;
 
 class DirectPaymentController extends Controller
 {
-
-
     private ProjectRepository $projectRepo;
     private PaymentTypeRepository $paymentTypeRepo;
     private PaymentRepository $paymentRepo;
@@ -50,9 +51,9 @@ class DirectPaymentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
-    public function create()
+    public function create(): View|Factory|Application
     {
         $data = [
             'projects' => $this->projectRepo->getData(),

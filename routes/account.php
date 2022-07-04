@@ -25,17 +25,14 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
 
-
         'requisition' => RequisitionController::class,
         'supplier-payment' => SupplierPaymentController::class,
         'direct-payment' => DirectPaymentController::class,
-
 
         'stock-receive' => StockReceiveController::class,
         'finished-goods' => FinishedGoodController::class,
         'material-collect' => MaterialCollectionController::class,
         'stock-transfer' => StockTransferController::class,
-
 
         'stock-assign' => StockAssignController::class,
         'stock-out' => StockOutController::class,
