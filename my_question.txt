@@ -17,8 +17,9 @@ Cheque setup
 cheque  (Array pass)
 
 Bank > account 
-cheque
+cheque       info
 amount
+
 http://127.0.0.1:8000/account/journal
 View | Edit -> 30m
 
@@ -34,8 +35,7 @@ Cheque Payment | cheque_amount | Cheque Pay | Cash Edit | cash OR Cheque Pay -> 
 http://127.0.0.1:8000/account/requisition/create
 Discount (%) | Approve | Update | Avl Qty from Stock| Delete -> 1h unknown
 
-http://127.0.0.1:8000/account/purchase-order/requisition
-PerOrder not like that |  | Total | Product change no Effect -> 1h unknown
+
 
 http://127.0.0.1:8000/account/purchase-return
 need to complete full -> 3h
@@ -77,4 +77,16 @@ Student
 Course
 Customer
 
+http://127.0.0.1:8000/account/purchase-order/requisition
+Edit : view : Delete
 
+http://127.0.0.1:8000/account/purchase-return
+Full
+
+http://127.0.0.1:8000/account/stock-receive/create
+Receive Type list 
+
+http://127.0.0.1:8000/account/stock-receive/create
+Qty
+http://127.0.0.1:8000/account/material-collect/create
+Database issue

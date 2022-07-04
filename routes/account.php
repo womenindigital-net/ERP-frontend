@@ -16,6 +16,7 @@ use App\Http\Controllers\FinishedGoodController;
 use App\Http\Controllers\StockReceiveController;
 use App\Http\Controllers\DirectPaymentController;
 use App\Http\Controllers\StockTransferController;
+use App\Http\Controllers\StudentIncomeController;
 use App\Http\Controllers\SupplierPaymentController;
 use App\Http\Controllers\MaterialCollectionController;
 use App\Http\Controllers\PurchaseReturnController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\PurchaseReturnController;
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
+        'student-income' => StudentIncomeController::class,
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
 

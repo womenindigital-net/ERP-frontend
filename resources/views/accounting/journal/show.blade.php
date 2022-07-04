@@ -14,7 +14,7 @@
         <div class="card">
             <div class="card-body p-0">
                 <div class="tab-content p-3 text-muted">
-                    <div class="tab-pane active" id="journal" role="tabpanel">
+                    <div class="tab-pane active apply-view-only" id="journal" role="tabpanel">
                         <form method="post" action="{{route('journal.update', $record->id)}}">
                             @method('put')
                             @csrf
@@ -127,10 +127,12 @@
                                 <div class="col-md-4">
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger w-100">Reset</button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-success w-100">Save</button>
+                                    <a href="{{route('journal.index')}}"
+                                        class="btn btn-success w-100">
+                                        Go Back
+                                    </a>
                                 </div>
                             </div>
                             <!-- end row -->

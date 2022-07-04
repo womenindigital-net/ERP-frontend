@@ -37,8 +37,7 @@ class SaleVoucherController extends Controller
         ProductRepository $productRepository,
         SaleVoucherService $service,
         IncomeRepository $repo,
-    )
-    {
+    ) {
         $this->projectRepo  = $projectRepository;
         $this->customerRepo = $customerRepository;
         $this->warehouseRepo = $warehouseRepository;
@@ -90,9 +89,13 @@ class SaleVoucherController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Income $sale_voucher)
     {
-        //
+        $data = [
+            'record' => $sale_voucher,
+        ];
+
+        return view('accounting.income.sale_voucher_show', $data);
     }
 
     /**

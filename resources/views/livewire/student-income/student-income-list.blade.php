@@ -18,9 +18,10 @@
                     <td class="text-center">
                         {{--<button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2">
                             <i class="fas fa-check"></i></button>--}}
-                        <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2">
-                            <i class=" fas fa-eye"></i>
-                        </button>
+                            <a href="{{route('student-income.show', $record->id)}}"
+                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2">
+                                <i class=" fas fa-eye"></i>
+                                </a>
                         <a href="{{route('student-income.edit', $record->id)}}"
                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2">
                             <i class="fas fa-pen"></i></a>

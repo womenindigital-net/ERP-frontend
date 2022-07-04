@@ -35,7 +35,6 @@ class JournalService
     public function update(Journal $journal, array $validated): void
     {
         [$info, $detailInfo] = $this->segregateInfo($validated);
-
         try {
             DB::beginTransaction();
             /** @var Journal $obj */

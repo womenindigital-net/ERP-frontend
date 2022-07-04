@@ -1,5 +1,10 @@
 <?php
 
+use App\Models\User;
+use App\Models\Cheque;
+use App\Models\Project;
+use App\Models\Purchase;
+use App\Models\BankAccount;
 use App\Models\PaymentType;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,14 +22,15 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('method')->nullable();
-            $table->foreignIdFor(\App\Models\PaymentType::class)->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(\App\Models\Project::class)->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(\App\Models\Purchase::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(PaymentType::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(Purchase::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(Cheque::class)->nullable()->constrained()->cascadeOnDelete();
             $table->double('amount', 8, 2)->nullable();
             $table->string('note')->nullable();
-            $table->foreignIdFor(\App\Models\BankAccount::class, 'from_account')->nullable()->constrained('bank_accounts')->nullOnDelete();
-            $table->foreignIdFor(\App\Models\BankAccount::class, 'to_account')->nullable()->constrained('bank_accounts')->nullOnDelete();
-            $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(BankAccount::class, 'from_account')->nullable()->constrained('bank_accounts')->nullOnDelete();
+            $table->foreignIdFor(BankAccount::class, 'to_account')->nullable()->constrained('bank_accounts')->nullOnDelete();
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->double('due', 8, 2)->nullable();
             $table->timestamps();
         });

@@ -26,8 +26,8 @@ class DonationRequest extends FormRequest
         //        dd($this->request->all());
         return [
             'project_id'          => 'required',
-            'customer_id'         => 'nullable',
-            'date'                => 'nullable',
+            'customer_id'         => 'required',
+            'date'                => 'required',
             'note'                => 'nullable',
             'cash'                => 'nullable',
             'cheque'              => 'nullable',
