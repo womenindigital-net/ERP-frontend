@@ -2,17 +2,21 @@
 
 namespace App\Services;
 
+use App\Models\Purchase;
 use App\Repositories\PurchaseOrderRepository;
+use App\Repositories\PurchaseReturnRepository;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Rfc4122\UuidV4;
 
 class PurchaseOrderService
 {
     private PurchaseOrderRepository $repo;
+    private PurchaseReturnRepository $purchaseReturnRepo;
 
-    public function __construct(PurchaseOrderRepository $repository)
+    public function __construct(PurchaseOrderRepository $repository, PurchaseReturnRepository $purchaseReturnRepository)
     {
-        $this->repo = $repository;
+        $this->repo               = $repository;
+        $this->purchaseReturnRepo = $purchaseReturnRepository;
     }
 
     public function store(array $validated)
@@ -33,16 +37,19 @@ class PurchaseOrderService
 
     private function collectPurchaseDetailInfo(array $data): array
     {
-        [$purchaseDetailInfo, $data] = extractNecessaryFieldsFromData($data, ['qty', 'available_qty', 'supplier_id', 'product_id', 'price', 'vat', 'discount', 'sub_total']);
+        [$purchaseDetailInfo, $data] = extractNecessaryFieldsFromData($data, ['qty', 'available_qty', 'supplier_id', 'product_id', 'price', 'vat', 'discount', 'sub_total', 'exp_date']);
 
         for ($i = 0; $i < count($purchaseDetailInfo['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $purchaseDetailInfo['product_id'][$i],
-                'supplier_id' => $purchaseDetailInfo['supplier_id'][$i],
+                'supplier_id' => $purchaseDetailInfo['supplier_id'][$i] ?? null,
                 'qty' => $purchaseDetailInfo['qty'][$i],
                 'sub_total' => $purchaseDetailInfo['sub_total'][$i],
                 'price' => $purchaseDetailInfo['price'][$i],
                 'available_qty' => $purchaseDetailInfo['available_qty'][$i],
+                'vat' => $purchaseDetailInfo['vat'][$i],
+                'discount' => $purchaseDetailInfo['discount'][$i],
+                'exp_date' => $purchaseDetailInfo['exp_date'][$i],
             ];
         }
 
@@ -55,5 +62,26 @@ class PurchaseOrderService
         $purchaseInfo['code'] = UuidV4::uuid4();
 
         return [$purchaseInfo, $data];
+    }
+
+    public function storeReturn(Purchase $purchase, array $validate)
+    {
+        // purchase return
+            // purchase_id, date, note
+//        $purchase->details()->createMany($purchaseDetailInfo);
+        $purchaseReturnInfo = $this->collectPurchaseReturnInfo($validate);
+
+//        dd($purchaseReturnInfo, $this->collectPurchaseDetailInfo($validate));
+        $purchaseReturn = $purchase->return()->create($purchaseReturnInfo);
+        // purchase return detail
+            // purchase_return_id, purchase_detail_id
+        $purchaseDetailInfo = $this->collectPurchaseDetailInfo($validate);
+        $purchaseReturn->details()->createMany($purchaseDetailInfo);
+    }
+
+    private function collectPurchaseReturnInfo(array $validate): array
+    {
+        [$purchaseReturnInfo, $data] = extractNecessaryFieldsFromData($validate, ['date', 'note']);
+        return $purchaseReturnInfo;
     }
 }

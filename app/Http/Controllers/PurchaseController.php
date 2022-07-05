@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Purchase;
 use App\Models\Requisition;
 use App\Services\ProductService;
-use Illuminate\Contracts\View\View;
+use App\Repositories\PurchaseRepository;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use App\Repositories\ProjectRepository;
 use App\Repositories\SupplierRepository;
 use App\Http\Requests\StorePurchaseRequest;
@@ -21,19 +22,20 @@ class PurchaseController extends Controller
     private SupplierRepository $supplierRepo;
     private ProductService $productService;
     private RequisitionRepository $requisitionRepo;
+    private PurchaseRepository $repo;
 
     public function __construct(
         ProjectRepository $projectRepository,
         SupplierRepository $supplierRepository,
         ProductService $productService,
         RequisitionRepository $requisitionRepository,
-    )
-    {
+        PurchaseRepository $repository
+    ) {
         $this->projectRepo = $projectRepository;
         $this->supplierRepo = $supplierRepository;
         $this->productService = $productService;
         $this->requisitionRepo = $requisitionRepository;
-        
+        $this->repo = $repository;
     }
 
 
@@ -76,7 +78,8 @@ class PurchaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Purchase  $purchase
+     * @param Purchase $purchase
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -86,7 +89,7 @@ class PurchaseController extends Controller
             'suppliers' => $this->supplierRepo->getData(),
             'products' => $this->productService->getFormattedDataAsOptGroup(),
             'requisitions' => $this->requisitionRepo->getApprovedList(),
-            'purchases' => Purchase::with('details','requisition')->find($id),
+            'purchases' => Purchase::with('details', 'requisition')->find($id),
         ];
         return view('accounting.purchase.purchase_order_show', $data);
     }
@@ -94,7 +97,8 @@ class PurchaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Purchase  $purchase
+     * @param Purchase $purchase
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Purchase $purchase)
@@ -106,7 +110,8 @@ class PurchaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdatePurchaseRequest  $request
-     * @param  \App\Models\Purchase  $purchase
+     * @param Purchase  $purchase
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePurchaseRequest $request, Purchase $purchase)
@@ -117,20 +122,25 @@ class PurchaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Purchase  $purchase
-     * @return \Illuminate\Http\Response
+     * @param  Purchase  $purchase
+     *
+     * @return bool
      */
-    public function destroy($id)
+
+    public function destroy(Purchase $purchase): bool
     {
-        return purchase::find($id)->delete();
+        return $purchase->delete();
     }
 
     public function purchaseOrder()
     {
     }
 
-    public function purchaseReturn()
+    public function purchaseReturn(Purchase $purchase): Factory|View|Application
     {
-        return view('accounting.purchase.purchase_return');
+        $data = [
+            'record' => $this->repo->getRelatedData($purchase, ['details', 'requisition']),
+        ];
+        return view('accounting.purchase.purchase_return', $data);
     }
 }

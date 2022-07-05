@@ -13,6 +13,7 @@ use Livewire\WithPagination;
 class PurchaseOrderList extends Component
 {
     use WithPagination, CommonListElements;
+    protected string $destroyRoute = 'purchase-order.delete';
 
     private PurchaseOrderRepository $repo;
 

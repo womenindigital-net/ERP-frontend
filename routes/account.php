@@ -68,7 +68,9 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::post('purchase-order/requisition/{requisition}/store', [PurchaseController::class, 'store'])->name('purchase-order.store');
     Route::get('purchase-order/{purchase_order}/requisition/{requisition}/edit', [PurchaseController::class, 'edit'])->name('purchase-order.edit');
     Route::put('purchase-order/{purchase_order}/requisition/{requisition}/update', [PurchaseController::class, 'update'])->name('purchase-order.update');
-    Route::delete('purchase-order/{purchase_order}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
+    Route::delete('purchase-order/{purchase}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
+
+    Route::get('purchase-order-return/{purchase}', [PurchaseController::class, 'purchaseReturn'])->name('purchase-order.return');
 
     // Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 
