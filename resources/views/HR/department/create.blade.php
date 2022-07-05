@@ -35,7 +35,14 @@
                                 <div class="col-12 d-flex mb-3">
                                     <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Head of Department:</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="head_of_department" :records="[]" />
+                                        <x-input-select name="head_of_department" :records="[
+                                          'Test Muhammad Employee' => 'Test Muhammad Employee',
+                                          'Sahanaj  Akter' => 'Sahanaj  Akter',
+                                          'Md. Kutub Uddin' => 'Md. Kutub Uddin',
+                                          'Arup  Mandal' => 'Arup  Mandal',
+                                          'Md. Rizwanur Rahman' => 'Md. Rizwanur Rahman',
+                                          'Angon  Rahman' => 'Angon  Rahman',
+                                        ]" />
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex  mb-3">
@@ -70,7 +77,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 text-end">
                           <label style="display: inline-flex;align-items: center;">Search:
-                            <input type="search" class="form-control form-control-sm" placeholder="">
+                            <input type="search" name="search" class="form-control form-control-sm" placeholder="">
                           </label>
                         </div>
                       </div>

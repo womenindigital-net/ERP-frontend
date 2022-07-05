@@ -42,7 +42,7 @@
                             <div class="col-12 d-flex mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Amount:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="number"
+                                    <x-input-text name="ammount" type="number"
                                     placeholder="">
                                 </x-input-text>
                                 </div>
@@ -61,14 +61,22 @@
                             <div class="col-12 d-flex  mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Sal Head Id:</label>
                                 <div class="col-md-8">
-                                  <x-input-select name="student_id"
-                                  :records="[]" />
+                                  <x-input-select name="sal_id"
+                                  :records="[
+                                    'Basic' => 'Basic',
+                                    'House Rent' => 'House Rent',
+                                    'Medical Allowance' => 'Medical Allowance',
+                                    'Advance' => 'Advance',
+                                    'Fooding' => 'Fooding',
+                                    'Transport' => 'Transport',
+                                    'AIT' => 'AIT',
+                                  ]" />
                                 </div>
                             </div>
                             <div class="col-12 d-flex mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Total Amount Each Year:</label>
                                 <div class="col-md-8">
-                                    <x-input-text name="type_desc" type="text"
+                                    <x-input-text name="total_ammount" type="text"
                                     placeholder="">
                                 </x-input-text>
                                 </div>
@@ -76,8 +84,11 @@
                             <div class="col-12 d-flex mb-3">
                                 <label for="example-text-input" class="col-md-2 col-form-label  pe-2">Curnc Id:</label>
                                 <div class="col-md-8">
-                                  <x-input-select name="student_id"
-                                  :records="[]" />
+                                  <x-input-select name="curnc_id"
+                                  :records="[
+                                    'Bangladeshi Taka' => 'Bangladeshi Taka',
+                                    'USD' => 'USD',
+                                  ]" />
                                 </div>
                             </div>
                               <div class=" d-flex justify-content-end gap-2">
@@ -179,7 +190,6 @@
                       </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
