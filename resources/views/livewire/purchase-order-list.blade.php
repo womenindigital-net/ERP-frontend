@@ -32,7 +32,11 @@
                             class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                         <i class="fas fa-arrow-circle-right"></i>
                     </button>
-                    <button type="button"
+                    <a href="{{route('purchase-order.return', $record->id)}}" type="button"
+                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                        <i class="fas fa-backward"></i>
+                    </a>
+                    <button type="button" wire:click="confirmDelete({{$record->id}})"
                             class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                         <i class="fas fa-trash-alt"></i>
                     </button>

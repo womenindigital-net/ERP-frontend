@@ -6,12 +6,20 @@ use App\Http\Requests\StorePurchaseRequest;
 use App\Http\Requests\UpdatePurchaseRequest;
 use App\Models\Purchase;
 use App\Models\Requisition;
+use App\Repositories\PurchaseRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
 class PurchaseController extends Controller
 {
+    private PurchaseRepository $repo;
+
+    public function __construct(PurchaseRepository $repository)
+    {
+        $this->repo = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +59,8 @@ class PurchaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Purchase  $purchase
+     * @param Purchase $purchase
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Purchase $purchase)
@@ -62,7 +71,8 @@ class PurchaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Purchase  $purchase
+     * @param Purchase $purchase
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Purchase $purchase)
@@ -74,7 +84,8 @@ class PurchaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdatePurchaseRequest  $request
-     * @param  \App\Models\Purchase  $purchase
+     * @param Purchase  $purchase
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePurchaseRequest $request, Purchase $purchase)
@@ -85,12 +96,13 @@ class PurchaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Purchase  $purchase
-     * @return \Illuminate\Http\Response
+     * @param  Purchase  $purchase
+     *
+     * @return bool
      */
-    public function destroy(Purchase $purchase)
+    public function destroy(Purchase $purchase): bool
     {
-        //
+        return $purchase->delete();
     }
 
     public function purchaseOrder()
@@ -98,8 +110,11 @@ class PurchaseController extends Controller
 
     }
 
-    public function purchaseReturn()
+    public function purchaseReturn(Purchase $purchase): Factory|View|Application
     {
-        return view('accounting.purchase.purchase_return');
+        $data = [
+            'record' => $this->repo->getRelatedData($purchase, ['details', 'requisition']),
+        ];
+        return view('accounting.purchase.purchase_return', $data);
     }
 }

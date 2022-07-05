@@ -20,4 +20,9 @@ class Purchase extends Model
     {
         return $this->belongsTo(Requisition::class);
     }
+
+    public function return(): HasMany
+    {
+        return $this->hasMany(PurchaseReturn::class);
+    }
 }

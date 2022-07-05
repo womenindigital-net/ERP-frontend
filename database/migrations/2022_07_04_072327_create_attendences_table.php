@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('date')->nullable();
             $table->string('employee')->nullable();
-            $table->string('remark')->nullable();
             $table->string('search')->nullable();
             $table->string('sing_out')->nullable();
             $table->timestamps();
