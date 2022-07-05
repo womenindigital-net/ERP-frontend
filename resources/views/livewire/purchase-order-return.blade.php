@@ -151,9 +151,6 @@
                                     </div>
                                     <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
                                         <x-input-text wireModel="sub_total.{{$key}}" type="number"/>
-                                        <button class="btn btn-danger ms-2">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
                                     </div>
                                 </div>
                             </div>

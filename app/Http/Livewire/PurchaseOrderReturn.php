@@ -17,7 +17,7 @@ use Illuminate\Contracts\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class PurchaseOrderEdit extends Component
+class PurchaseOrderReturn extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
 
@@ -129,6 +129,6 @@ class PurchaseOrderEdit extends Component
             'requisitions' => $this->requisitionRepo->getApprovedList(),
         ];
 
-        return view('livewire.purchase-order-edit', $data);
+        return view('livewire.purchase-order-return', $data);
     }
 }

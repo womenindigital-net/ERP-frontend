@@ -22,7 +22,7 @@
 
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
-                        <livewire:purchase-order-edit :record="$record"/>
+                        <livewire:purchase-order-return :record="$record"/>
                         <livewire:purchase-order-list/>
                     </div>
 
