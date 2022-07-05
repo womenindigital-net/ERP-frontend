@@ -67,7 +67,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Cheque</label>
-                <x-input-select wireModel="cheque_id" :records="$suppliers" additional="mobile">
+                <x-input-select wireModel="cheque_id" :records="$cheque" targetColumn="title">
                 </x-input-select>
             </div>
         </div>

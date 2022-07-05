@@ -19,9 +19,7 @@ return new class extends Migration
             $table->string('employee')->nullable();
             $table->string('remark')->nullable();
             $table->string('search')->nullable();
-            $table->string('date')->nullable();
             $table->string('sing_out')->nullable();
-            $table->string('remark')->nullable();
             $table->timestamps();
         });
     }

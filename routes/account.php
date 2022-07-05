@@ -43,7 +43,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
         'cheque' => ChequeController::class,
         'bank-account' => BankAccountController::class,
 
-         'purchase-return' => PurchaseReturnController::class,
+        'purchase-return' => PurchaseReturnController::class,
 
     ]);
 
@@ -64,6 +64,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     //    Route::get('purchase-order', [PurchaseController::class, 'purchaseOrder'])->name('purchase-order');
 
     Route::get('purchase-order/requisition/{requisition?}', [PurchaseController::class, 'create'])->name('purchase-order.create');
+    Route::get('purchase-order/{requisition}', [PurchaseController::class, 'show'])->name('purchase-order.show');
     Route::post('purchase-order/requisition/{requisition}/store', [PurchaseController::class, 'store'])->name('purchase-order.store');
     Route::get('purchase-order/{purchase_order}/requisition/{requisition}/edit', [PurchaseController::class, 'edit'])->name('purchase-order.edit');
     Route::put('purchase-order/{purchase_order}/requisition/{requisition}/update', [PurchaseController::class, 'update'])->name('purchase-order.update');

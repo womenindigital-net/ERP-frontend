@@ -16,7 +16,7 @@ class MaterialCollection extends Model
 
     public function details(): HasMany
     {
-        return $this->hasMany(MaterialCollectionDetail::class);
+        return $this->hasMany(MaterialCollectionProduct::class);
     }
 
     public function warehouse(): BelongsTo

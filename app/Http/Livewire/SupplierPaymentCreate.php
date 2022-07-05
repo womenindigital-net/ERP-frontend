@@ -13,6 +13,8 @@ use App\Repositories\BankAccountRepository;
 use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\SupplierPaymentRepository;
 use App\Http\Livewire\Traits\CommonListElements;
+use App\Models\BankAccount;
+use App\Repositories\ChequeRepository;
 
 class SupplierPaymentCreate extends Component
 {
@@ -24,9 +26,11 @@ class SupplierPaymentCreate extends Component
     private ProjectRepository $projectRepo;
     private SupplierRepository $supplierRepo;
     private PurchaseOrderRepository $purchaseOrderRepo;
+    private ChequeRepository $cheque;
     private BankAccountRepository $bankAccRepo;
     private SupplierPaymentService $service;
     private SupplierPaymentRepository $repo;
+    private BankAccount $bankAccount;
 
     public function boot(
         ProjectRepository $projectRepository,
@@ -35,6 +39,8 @@ class SupplierPaymentCreate extends Component
         BankAccountRepository $bankAccRepository,
         SupplierPaymentService $service,
         SupplierPaymentRepository $repository,
+        BankAccount $bankAccount,
+        ChequeRepository $cheque,
     ) {
         $this->projectRepo = $projectRepository;
         $this->supplierRepo = $supplierRepository;
@@ -42,6 +48,8 @@ class SupplierPaymentCreate extends Component
         $this->bankAccRepo = $bankAccRepository;
         $this->service = $service;
         $this->repo = $repository;
+        $this->bankAccount = $bankAccount;
+        $this->cheque = $cheque;
     }
 
     public $record;
@@ -136,6 +144,7 @@ class SupplierPaymentCreate extends Component
             'suppliers' => $this->supplierRepo->getData(),
             'purchaseOrder' => $this->purchaseOrderRepo->getData(),
             'bankAccount' => $this->bankAccRepo->getData(),
+            'cheque' => $this->cheque->getData(),
         ];
         return view('livewire.supplier-payment-create', $data);
     }

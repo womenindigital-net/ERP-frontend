@@ -119,8 +119,6 @@ class StockReceiveCreate extends Component
         'project_id' => 'required',
         'warehouse_id' => 'required',
         'type' => 'required',
-        'purchase_type' => 'nullable',
-        'return_type' => 'nullable',
         'date' => 'required',
         'note' => 'nullable',
         'product_id.*' => 'required',
@@ -178,9 +176,9 @@ class StockReceiveCreate extends Component
             'warehouses' => $this->warehouseRepository->getData(),
             'purchases' => $this->purchaseRepo->getData(),
             'receiveTypes' => [
-                'purchase' => 'Purchase',
-                'return' => 'Return',
-                'temporary' => 'Temporary'
+                'Purchase' => 'Purchase',
+                'Return' => 'Return',
+                'Temporary' => 'Temporary'
             ]
         ];
 
