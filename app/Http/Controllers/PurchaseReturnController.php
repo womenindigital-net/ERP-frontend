@@ -32,7 +32,9 @@ class PurchaseReturnController extends Controller
      */
     public function create()
     {
-        return view('accounting.purchase.purchase_return.create');
+        
+
+        return view('accounting.purchase.purchase_return');
     }
 
     /**

@@ -17,12 +17,18 @@ class PurchaseOrderList extends Component
 
     private PurchaseOrderRepository $repo;
 
-    protected string $destroyRoute = 'purchase-order.delete';
 
     public function boot(PurchaseOrderRepository $repo)
     {
         $this->repo = $repo;
     }
+
+    public function toggleApprove($recordId)
+    {
+        $this->repo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
+    }
+
 
     public function render(): Factory|View|Application
     {

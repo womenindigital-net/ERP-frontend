@@ -57,16 +57,16 @@
                                     <a href="{{ route('direct-payment.create') }}">Payment Add</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('cash-payment.list') }}">Cash Payment List</a>
+                                    <a href="{{ route('cash-payment.list') }}">Payment List</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="{{ route('advance.payment.list') }}">Advance Payment
                                         List</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('bank.to.bank.list') }}">Bank to Bank Transfer
                                         List</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>

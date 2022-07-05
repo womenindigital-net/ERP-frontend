@@ -52,7 +52,10 @@ class RequisitionController extends Controller
      */
     public function show(Requisition $requisition)
     {
-        //
+        $data = [
+            'record' => $requisition,
+        ];
+        return view('accounting.purchase.requisition_show', $data);
     }
 
     /**

@@ -81,37 +81,43 @@
                                     </select>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="available_qty.{{$key}}" type="number" sub_total="true">
+                                    <x-input-text type="text" wireModel="available_qty.{{$key}}" type="number"
+                                        sub_total="true" :readOnly="true">
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="price.{{$key}}"></x-input-text>
+                                    <x-input-text type="text" wireModel="price.{{$key}}"  :readOnly="true"></x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
                                 </div>
 
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="sub_total.{{$key}}" type="number" sub_total="true">
+                                    <x-input-text type="text" wireModel="sub_total.{{$key}}" type="number"
+                                        sub_total="true"  :readOnly="true">
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
                                     <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
-                                    <div>
-                                        <button class="btn btn-danger ms-2 removeBtn" wire:click="removeItem({{$key}})">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </div>
+                                    @if (!($this->mode == 'show'))
+                                    <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                        wire:click="removeItem({{ $key }})">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach
                         </div>
+                        @if (!($this->mode == 'show'))
                         <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                             wire:click="addMore()" />
+
+                        @endif
                     </div>
                     <!-- 7th row start  -->
                     <div class="row justify-content-center">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mt-3">
                             <div class="row mb-2">
                                 <label for="horizontal-firstname-input"
                                     class="col-3 text-end col-form-label">Note</label>
@@ -128,13 +134,14 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <button class="btn btn-danger w-100">Reset</button>
         </div>
         <div class="col-md-4">
             @if($this->mode == 'edit')
             <button class="btn btn-success w-100" wire:click="update()">Update</button>
-            @else
+            @elseif (!($this->mode) == 'show')
             <button class="btn btn-success w-100" wire:click="submit()">Save</button>
+            @else
+
             @endif
         </div>
     </div>

@@ -28,6 +28,8 @@ class PurchaseReturnCreate extends Component
     }
 
     public $project_id;
+    public $purchase;
+    public $reference;
     public $collection_date;
     public $warehouse_id;
 
