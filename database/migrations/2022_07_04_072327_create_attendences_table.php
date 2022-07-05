@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('remark')->nullable();
             $table->string('search')->nullable();
             $table->string('sing_out')->nullable();
-            $table->string('remark')->nullable();
             $table->timestamps();
         });
     }
