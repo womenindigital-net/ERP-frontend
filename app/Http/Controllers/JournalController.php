@@ -76,7 +76,12 @@ class JournalController extends Controller
      */
     public function show(Journal $journal)
     {
-        //
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'record' => Journal::with('project', 'details')->whereId($journal->id)->first(),
+        ];
+
+        return view('accounting.journal.show', $data);
     }
 
     /**
@@ -88,6 +93,7 @@ class JournalController extends Controller
      */
     public function edit(Journal $journal)
     {
+
         $data = [
             'projects' => $this->projectRepo->getData(),
             'record' => Journal::with('project', 'details')->whereId($journal->id)->first(),
@@ -110,7 +116,7 @@ class JournalController extends Controller
 
         Session::flash('success');
 
-        return redirect()->back();
+        return redirect()->route('journal.index');
     }
 
     /**

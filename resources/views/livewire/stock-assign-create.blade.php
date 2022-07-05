@@ -64,8 +64,7 @@
                                     <x-input-text wireModel="depreciation_percent.{{$key}}" placeholder="" />
                                 </div>
                                 <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                    <x-input-select wireModel="assigned_to.{{$key}}" :records="$users"
-                                        targetColumn="title" />
+                                    <x-input-select wireModel="assigned_to.{{$key}}" :records="$users" />
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
                                         wire:click="removeRow({{ $key }})">

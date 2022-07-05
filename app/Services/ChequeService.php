@@ -38,6 +38,7 @@ class ChequeService
     {
 
         $chequeData['title'] = $validated['title'];
+        $chequeData['bank_account_id'] = $validated['bank_account_id'];
         $chequeData['page_no'] = $chequeNum;
 
         return $chequeData;

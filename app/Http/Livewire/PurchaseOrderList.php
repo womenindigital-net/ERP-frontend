@@ -13,13 +13,22 @@ use Livewire\WithPagination;
 class PurchaseOrderList extends Component
 {
     use WithPagination, CommonListElements;
+    protected string $destroyRoute = 'purchase-order.delete';
 
     private PurchaseOrderRepository $repo;
+
 
     public function boot(PurchaseOrderRepository $repo)
     {
         $this->repo = $repo;
     }
+
+    public function toggleApprove($recordId)
+    {
+        $this->repo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
+    }
+
 
     public function render(): Factory|View|Application
     {

@@ -21,8 +21,6 @@ return new class extends Migration
             $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
             $table->string('type')->nullable();
-            $table->string('purchase_type')->nullable();
-            $table->string('return_type')->nullable();
             $table->string('date')->nullable();
             $table->string('note')->nullable();
             $table->string('is_approved')->default(0);

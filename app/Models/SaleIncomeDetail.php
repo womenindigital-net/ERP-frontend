@@ -10,7 +10,8 @@ class SaleIncomeDetail extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['category_id', 'product_id', 'available_qty', 'qty', 'price', 'discount', 'sub_total'];
+    // protected $fillable = ['category_id', 'product_id', 'available_qty', 'qty', 'price', 'discount', 'sub_total'];
+    protected $guarded = [];
 
     public function product(): BelongsTo
     {

@@ -4,7 +4,7 @@
     <div class="col-xl-12 p-0">
         <div class="card">
             <div class="card-body p-0">
-                <livewire:stock-out-create :stockOut="$records" mode="show" />
+                <livewire:stock-out-create :records="$records" mode="show" />
             </div>
         </div>
     </div>

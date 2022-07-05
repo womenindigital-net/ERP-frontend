@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Purchase;
+use App\Models\Requisition;
+use App\Models\PurchaseReturn;
+use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 use App\Http\Requests\StorePurchaseReturnRequest;
 use App\Http\Requests\UpdatePurchaseReturnRequest;
-use App\Models\PurchaseReturn;
 
 class PurchaseReturnController extends Controller
 {
@@ -21,11 +26,15 @@ class PurchaseReturnController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Requisition $requisition
+     *
+     * @return Application|Factory|View
      */
     public function create()
     {
-        //
+        
+
+        return view('accounting.purchase.purchase_return');
     }
 
     /**
@@ -36,7 +45,7 @@ class PurchaseReturnController extends Controller
      */
     public function store(StorePurchaseReturnRequest $request)
     {
-        //
+        return view('accounting.purchase.purchase_return.edit');
     }
 
     /**
@@ -47,7 +56,7 @@ class PurchaseReturnController extends Controller
      */
     public function show(PurchaseReturn $purchaseReturn)
     {
-        //
+        return view('accounting.purchase.purchase_return.view');
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Requisition extends Model
 {
@@ -24,5 +25,10 @@ class Requisition extends Model
     public function scopeApproved($query)
     {
         return $query->whereApproved(1);
+    }
+
+    public function purchase(): HasOne
+    {
+        return $this->hasOne(Purchase::class);
     }
 }

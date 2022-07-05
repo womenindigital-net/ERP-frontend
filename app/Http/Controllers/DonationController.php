@@ -26,8 +26,7 @@ class DonationController extends Controller
         ProjectRepository $projectRepository,
         CustomerRepository $customerRepository,
         DonationRepository $repository,
-    )
-    {
+    ) {
         $this->projectRepo = $projectRepository;
         $this->customerRepo = $customerRepository;
         $this->service = $service;
@@ -56,7 +55,7 @@ class DonationController extends Controller
             'customers' => $this->customerRepo->getData(),
         ];
 
-        return view('accounting.income.donation_and_other', $data);
+        return view('accounting.income.donation_and_other.create', $data);
     }
 
     /**
@@ -82,9 +81,15 @@ class DonationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Donation $donation)
+    public function show(Donation $donation_and_other)
     {
-        //
+        $data = [
+            'projects' => $this->projectRepo->getData(),
+            'customers' => $this->customerRepo->getData(),
+            'record' => $this->repo->getRelatedData($donation_and_other, ['income.history', 'customer', 'income.project']),
+        ];
+
+        return view('accounting.income.donation_and_other.show', $data);
     }
 
     /**
@@ -102,8 +107,7 @@ class DonationController extends Controller
             'record' => $this->repo->getRelatedData($donation_and_other, ['income.history', 'customer', 'income.project']),
         ];
 
-        return view('accounting.income.donation_and_other_edit', $data);
-
+        return view('accounting.income.donation_and_other.edit', $data);
     }
 
     /**

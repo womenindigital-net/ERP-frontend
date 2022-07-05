@@ -77,10 +77,10 @@ class SaleVoucherCreate extends Component
 
     protected array $rules = [
         'project_id'          => 'required',
-        'customer_id'         => 'nullable',
-        'date'                => 'nullable',
-        'ship_to_address'     => 'nullable',
-        'warehouse_id'        => 'nullable',
+        'customer_id'         => 'required',
+        'date'                => 'required',
+        'ship_to_address'     => 'required',
+        'warehouse_id'        => 'required',
         'note'                => 'nullable',
         'cash'                => 'nullable',
         'cheque'              => 'nullable',
@@ -97,7 +97,7 @@ class SaleVoucherCreate extends Component
         'product_id.*'        => 'required',
         'available_qty.*'     => 'required',
         'qty.*'               => 'required',
-        'sub_total.*'         => 'nullable',
+        'sub_total.*'         => 'required',
         'price.*'             => 'nullable',
         'discount.*'          => 'nullable',
     ];
@@ -146,8 +146,10 @@ class SaleVoucherCreate extends Component
     public function updated($name, $value)
     {
         if (str_starts_with($name, 'product_id.')) {
-            if (!$value || !$this->project_id || !$this->warehouse_id)
+            if (!$value || !$this->project_id || !$this->warehouse_id) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
                 return;
+            }
 
             $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
             if (!$productInfo)

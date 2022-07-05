@@ -19,6 +19,8 @@ class CashPaymentList extends Component
     {
         $this->repo = $repository;
     }
+
+
     public function render()
     {
 

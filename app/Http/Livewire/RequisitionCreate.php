@@ -82,14 +82,14 @@ class RequisitionCreate extends Component
 
     protected array $rules = [
         'project_id' => 'required',
-        'requested_by' => 'nullable',
+        'requested_by' => 'required',
         'date' => 'required',
         'title' => 'required',
         'warehouse_id' => 'required',
         'product_id.*' => 'required',
         'available_qty.*' => 'required',
         'qty.*' => 'required',
-        'sub_total.*' => 'nullable',
+        'sub_total.*' => 'required',
         'price.*' => 'nullable',
         'discount.*' => 'nullable',
     ];

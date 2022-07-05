@@ -2,7 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Donation;
+
+use App\Models\SupplierPayment;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\PaymentRepository;
 use App\Repositories\SupplierPaymentRepository;
@@ -14,7 +15,7 @@ class SupplierPaymentService
 
     /**
      * @param SupplierPaymentRepository $repository
-     * @param  $incomeRepository
+     * @param  $paymentRepository
      */
     public function __construct(
         SupplierPaymentRepository $repository,
@@ -26,20 +27,21 @@ class SupplierPaymentService
 
     public function store(mixed $validated)
     {
-        // dd($validated);
-        // supplier_payment
+        // Supplier Payment Table
+        // payment
         // payment_history
+        // dd($validated);
         try {
             DB::beginTransaction();
 
             [$paymentInfo, $supplierPaymentInfo] = $this->segregateInfo($validated);
-            // dd($paymentInfo, $supplierPaymentInfo, 'Date, invoice Num, remark Data Not Save');
+
 
             $payment = $this->paymentRepo->store($paymentInfo);
 
             $payment->supplierPayment()->create($supplierPaymentInfo);
 
-            $payment->history()->create($this->collectIncomeHistoryInfo($validated));
+            $payment->history()->create($this->collectPaymentHistoryInfo($validated));
 
             DB::commit();
         } catch (\Exception $e) {
@@ -58,8 +60,10 @@ class SupplierPaymentService
 
 
         $supplierPaymentInfo = [
+            'project_id' => $validated['project_id'],
+            'supplier_id' => $validated['supplier_id'],
             'date' => $validated['date'],
-            'invoice_num' => $validated['invoice_num'],
+            'purchase_id' => $validated['purchase_id'],
             'remark' => $validated['remark'],
             'note' => $validated['note']
         ];
@@ -73,43 +77,55 @@ class SupplierPaymentService
         return extractNecessaryFieldsFromData($data, ['project_id', 'purchase_id']);
     }
 
-    private function collectIncomeHistoryInfo(array $data): array
+    private function collectPaymentHistoryInfo(array $data): array
     {
+
+
         $custom = [
-            'type' => 'donation',
+            'type' => 'supplier_payment',
             'amount' => ($data['cash'] ?? 0) + ($data['cheque_amount'] ?? 0),
         ];
 
-        $searchString = 'cash';
+        // dd($data);
 
-        if (isset($data['cheque'])) {
-            $searchString = "$searchString|cheque*";
-        }
+        // $searchString = 'cash';
 
-        $paymentInfo = [];
-        foreach ($data as $key => $val) {
-            if (preg_match("/($searchString)/", $key)) {
-                $paymentInfo['info'][$key] = $val;
-            }
-        }
+        // if (isset($data['cheque'])) {
+        //     $searchString = "$searchString|cheque*";
+        // }
 
-        return array_merge($custom, $paymentInfo);
+        $info['info'] = [
+            'cash' => $data['cash'],
+            'bank_account_id' => $data['bank_account_id'],
+            'cheque_id' => $data['cheque_id'],
+            'cheque_amount' => $data['cheque_amount']
+        ];
+        // foreach ($data as $key => $val) {
+        //     if (preg_match("/($searchString)/", $key)) {
+        //         $paymentInfo['info'][$key] = $val;
+        //     }
+        // }
+
+        // dd(array_merge($custom, $info));
+
+        return array_merge($custom, $info);
     }
 
-    public function update(Donation $donation, array $validated)
+    public function update(SupplierPayment $supplierPayment, array $validated)
     {
-        $donation = $this->repo->getRelatedData($donation, ['income.history', 'customer', 'income.project']);
+        $supplierPayment = $this->repo->getRelatedData($supplierPayment, ['payment.history']);
 
         try {
             DB::beginTransaction();
 
             [$paymentInfo, $supplierPaymentInfo] = $this->segregateInfo($validated);
-            $income = $this->repo->update($donation->income, $paymentInfo);
 
-            $this->repo->update($donation, $supplierPaymentInfo);
+            $payment = $this->repo->update($supplierPayment->payment, $paymentInfo);
 
-            $income->history()->delete();
-            $income->history()->create($this->collectIncomeHistoryInfo($validated));
+            $this->repo->update($supplierPayment, $supplierPaymentInfo);
+
+            $payment->history()->delete();
+            $payment->history()->create($this->collectPaymentHistoryInfo($validated));
 
             DB::commit();
         } catch (\Exception $e) {

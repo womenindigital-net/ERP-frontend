@@ -11,7 +11,7 @@ class BankAccountRepository extends BaseRepository
 
     public function getListData(int $perPage, string $search)
     {
-        return $this->model::latest()->paginate($perPage);
+        return $this->model::With('chequeBook')->latest()->paginate($perPage);
     }
 
     public function getApprovedList()

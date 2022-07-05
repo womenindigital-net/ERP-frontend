@@ -26,10 +26,10 @@ class SaleVoucherRequest extends FormRequest
         //        dd(4, $this->request->all());
         return [
             'project_id'          => 'required',
-            'customer_id'         => 'nullable',
-            'date'                => 'nullable',
-            'ship_to_address'     => 'nullable',
-            'warehouse_id'        => 'nullable',
+            'customer_id'         => 'required',
+            'date'                => 'required',
+            'ship_to_address'     => 'required',
+            'warehouse_id'        => 'required',
             'note'                => 'nullable',
             'cash'                => 'nullable',
             'cheque'              => 'nullable',

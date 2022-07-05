@@ -51,6 +51,7 @@ class StockOutCreate extends Component
 
     public $stockOut;
 
+    public $records;
     public $project_id;
     public $warehouse_id;
     public $date;
@@ -73,16 +74,16 @@ class StockOutCreate extends Component
 
     public function mount()
     {
-        if ($this->stockOut) {
-            $this->stockOut = $this->repo->getRelatedData($this->stockOut, ['details']);
+        if ($this->records) {
+            $this->records = $this->repo->getRelatedData($this->records, ['details']);
 
-            $this->project_id = $this->stockOut->project_id;
-            $this->date = $this->stockOut->date;
-            $this->warehouse_id = $this->stockOut->warehouse_id;
+            $this->project_id = $this->records->project_id;
+            $this->date = $this->records->date;
+            $this->warehouse_id = $this->records->warehouse_id;
 
-            $this->inputs = $this->stockOut->details->toArray();
+            $this->inputs = $this->records->details->toArray();
 
-            foreach ($this->stockOut->details as $key => $detail) {
+            foreach ($this->records->details as $key => $detail) {
                 $this->product_id[$key] = $detail->product_id;
                 $this->stock_out[$key] = $detail->stock_out;
             }
@@ -91,9 +92,9 @@ class StockOutCreate extends Component
 
     public function update()
     {
-        $this->service->update($this->stockOut, $this->validate());
+        $this->service->update($this->records, $this->validate());
         $this->dispatchBrowserEvent('notify');
-        // $this->redirect('stock-receive');
+        $this->redirectRoute('stock-out.create');
     }
 
 

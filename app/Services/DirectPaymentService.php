@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Donation;
+use App\Models\Payment;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\PaymentRepository;
 use App\Repositories\SupplierPaymentRepository;
@@ -39,48 +40,18 @@ class DirectPaymentService
     }
 
 
-    // private function collectIncomeHistoryInfo(array $data): array
-    // {
-    //     $custom = [
-    //         'type' => 'donation',
-    //         'amount' => ($data['cash'] ?? 0) + ($data['cheque_amount'] ?? 0),
-    //     ];
+    public function update(Payment $donation, array $validated)
+    {
 
-    //     $searchString = 'cash';
+        try {
+            DB::beginTransaction();
+            
+            $this->repo->update($donation, $validated);
 
-    //     if (isset($data['cheque'])) {
-    //         $searchString = "$searchString|cheque*";
-    //     }
-
-    //     $paymentInfo = [];
-    //     foreach ($data as $key => $val) {
-    //         if (preg_match("/($searchString)/", $key)) {
-    //             $paymentInfo['info'][$key] = $val;
-    //         }
-    //     }
-
-    //     return array_merge($custom, $paymentInfo);
-    // }
-
-    // public function update(Donation $donation, array $validated)
-    // {
-    //     $donation = $this->repo->getRelatedData($donation, ['income.history', 'customer', 'income.project']);
-
-    //     try {
-    //         DB::beginTransaction();
-
-    //         [$paymentInfo, $supplierPaymentInfo] = $this->segregateInfo($validated);
-    //         $income = $this->repo->update($donation->income, $paymentInfo);
-
-    //         $this->repo->update($donation, $supplierPaymentInfo);
-
-    //         $income->history()->delete();
-    //         $income->history()->create($this->collectIncomeHistoryInfo($validated));
-
-    //         DB::commit();
-    //     } catch (\Exception $e) {
-    //         DB::rollBack();
-    //         dd($e->getMessage(), $e->getLine());
-    //     }
-    // }
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage(), $e->getLine());
+        }
+    }
 }

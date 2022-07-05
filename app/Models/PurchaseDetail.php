@@ -10,7 +10,7 @@ class PurchaseDetail extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id', 'supplier_id', 'qty', 'available_qty', 'price', 'discount', 'vat'];
+    protected $fillable = ['product_id', 'supplier_id', 'qty', 'available_qty', 'price', 'discount', 'vat', 'exp_date', 'sub_total'];
 
     public function supplier(): BelongsTo
     {

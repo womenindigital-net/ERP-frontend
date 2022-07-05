@@ -14,7 +14,7 @@ class StockOutList extends Component
     use WithPagination, CommonListElements;
     private StockOutRepository $repo;
 
-    protected string $destroyRoute = 'stock-receive.destroy';
+    protected string $destroyRoute = 'stock-out.destroy';
 
     public function boot(StockOutRepository $repository)
     {

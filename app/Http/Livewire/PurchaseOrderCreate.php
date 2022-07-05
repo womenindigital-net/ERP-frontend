@@ -102,6 +102,18 @@ class PurchaseOrderCreate extends Component
         }
     }
 
+    public function submit()
+    {
+        if ($this->requisition->purchase) {
+            $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'A purchase order already enlisted for this requisition']);
+            return $this->redirectRoute('purchase-order.create');
+        }
+
+        $this->service->store($this->validate());
+        $this->dispatchBrowserEvent('notify');
+        $this->dispatchBrowserEvent('reload');
+    }
+
     public function render(): Factory|View|Application
     {
         $data = [

@@ -48,7 +48,7 @@
                     <ul class="sub-menu">
                         <li><a href="{{ route('requisition.create') }}">Requisition</a></li>
                         <li><a href="{{ route('purchase-order.create') }}">Purchase Order</a></li>
-                        <li><a href="{{ route('purchase-return') }}">Purchase Return</a></li>
+                        <li><a href="{{ route('purchase-return.create') }}">Purchase Return</a></li>
                         <li><a href="{{ route('supplier-payment.create') }}">Supplier Payment</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Direct Payment</a>
@@ -57,16 +57,16 @@
                                     <a href="{{ route('direct-payment.create') }}">Payment Add</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('cash-payment.list') }}">Cash Payment List</a>
+                                    <a href="{{ route('cash-payment.list') }}">Payment List</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="{{ route('advance.payment.list') }}">Advance Payment
                                         List</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('bank.to.bank.list') }}">Bank to Bank Transfer
                                         List</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>

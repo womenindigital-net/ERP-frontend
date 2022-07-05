@@ -5,14 +5,14 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Project</label>
-                <x-input-select wireModel="project_id" :records="$projects" targetColumn="title"/>
+                <x-input-select wireModel="project_id" :records="$projects" targetColumn="title" :disabled="true"/>
             </div>
         </div>
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Requisition</label>
                 <x-input-select wireModel="requisition_id" :records="$requisitions" targetColumn="title"
-                                :selected="$requisition->id"/>
+                                :selected="$requisition->id" :disabled="true"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -113,7 +113,7 @@
                             <div data-repeater-list="group-a">
                                 <div data-repeater-item class="row">
                                     <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
-                                        <select class="form-control form-select" wire:model="product_id.{{$key}}">
+                                        <select class="form-control form-select" wire:model="product_id.{{$key}}" disabled>
                                             <option>--Select--</option>
                                             @foreach($products as $product)
                                                 <optgroup label="{{$product['name']}}">

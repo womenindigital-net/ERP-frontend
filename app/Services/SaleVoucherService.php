@@ -19,12 +19,13 @@ class SaleVoucherService
         try{
             DB::beginTransaction();
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
+            
             $income = $this->repo->store($incomeInfo);
 
             $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
 
             $details = $this->collectDetails($data);
-
+            
             $saleIncome->details()->createMany($details);
 
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
