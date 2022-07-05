@@ -17,11 +17,11 @@ use Illuminate\Contracts\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class PurchaseOrderCreate extends Component
+class PurchaseOrderEdit extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
 
-    public $requisition;
+    public $record;
     public $requisition_id;
     public $date;
     public $exp_date;
@@ -55,28 +55,30 @@ class PurchaseOrderCreate extends Component
 
     public function mount()
     {
-        if ($this->requisition && $this->requisition->id) {
-            $this->project_id = $this->requisition->project_id;
-            $this->requisition_id = $this->requisition->id;
-            $this->inputs = $this->requisition->details->toArray();
+        if ($this->record) {
+            $this->project_id = $this->record->requisition->project_id;
+            $this->requisition_id = $this->record->requisition_id;
+            $this->supplier_id = $this->record->details[0]->supplier_id;
+            $this->date = $this->record->date;
+            $this->note = $this->record->note;
+            $this->inputs = $this->record->details->toArray();
 
-            foreach ($this->requisition->details as $key => $detail) {
+            foreach ($this->record->details as $key => $detail) {
                 $this->product_id[$key] = $detail->product_id;
                 $this->qty[$key] = $detail->qty;
                 $this->available_qty[$key] = $detail->available_qty;
                 $this->price[$key] = $detail->price;
                 $this->sub_total[$key] = $detail->sub_total;
                 $this->discount[$key] = $detail->discount;
+                $this->vat[$key] = $detail->vat;
+                $this->exp_date[$key] = $detail->exp_date;
             }
         }
     }
 
     protected array $rules = [
-        'project_id' => 'required',
-        'requisition_id' => 'nullable',
-        'supplier_id' => 'nullable',
         'date' => 'required',
-
+        'note' => 'nullable',
         'product_id.*' => 'required',
         'exp_date.*' => 'nullable',
         'available_qty.*' => 'required',
@@ -85,12 +87,21 @@ class PurchaseOrderCreate extends Component
         'vat.*' => 'nullable',
         'discount.*' => 'nullable',
         'sub_total.*' => 'nullable',
-
-        'note' => 'nullable',
     ];
 
     public function updated($name, $value)
     {
+        if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.')) {
+            $targetKey = $this->getTargetKey($name);
+
+            if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
+                return;
+
+            if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
+                $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
+            }
+        }
+
         if (str_starts_with($name, 'vat.')) {
             $targetKey = $this->getTargetKey($name);
             if ($this->price[$targetKey] && $this->qty[$targetKey]) {
@@ -104,12 +115,7 @@ class PurchaseOrderCreate extends Component
 
     public function submit()
     {
-        if ($this->requisition->purchase) {
-            $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'A purchase order already enlisted for this requisition']);
-            return $this->redirectRoute('purchase-order.create');
-        }
-
-        $this->service->store($this->validate());
+        $this->service->storeReturn($this->record, $this->validate());
         $this->dispatchBrowserEvent('notify');
         $this->dispatchBrowserEvent('reload');
     }
@@ -123,6 +129,6 @@ class PurchaseOrderCreate extends Component
             'requisitions' => $this->requisitionRepo->getApprovedList(),
         ];
 
-        return view('livewire.purchase-order-create', $data);
+        return view('livewire.purchase-order-edit', $data);
     }
 }
