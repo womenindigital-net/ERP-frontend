@@ -13,6 +13,7 @@ use App\Repositories\WarehouseRepository;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\StockReceiveRepository;
 use App\Http\Livewire\Traits\CommonListElements;
+use App\Repositories\PurchaseRepository;
 
 class StockReceiveCreate extends Component
 {
@@ -20,8 +21,8 @@ class StockReceiveCreate extends Component
     private string $destroyRoute = 'stock-receive.destroy';
 
     public $stockReceive;
-    public $purchase_type;
-    public $return_type;
+    // public $purchase_type;
+    // public $return_type;
     public $date;
     public $note;
     public $exp_date;
@@ -40,6 +41,7 @@ class StockReceiveCreate extends Component
     private ProductService $productService;
     private ProjectRepository $projectRepo;
     private UserRepository $userRepo;
+    private PurchaseRepository $purchaseRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
 
@@ -51,10 +53,11 @@ class StockReceiveCreate extends Component
         UserRepository $userRepository,
         WarehouseRepository $warehouseRepository,
         StockRepository $stockRepository,
+        PurchaseRepository $purchaseRepository,
     ) {
         $this->inputs[] = $this->numberOfItems;
-        $this->receiveInput = false;
-        $this->purchaseInput = false;
+        // $this->receiveInput = false;
+        // $this->purchaseInput = false;
 
         $this->service = $service;
         $this->repo = $repository;
@@ -63,23 +66,24 @@ class StockReceiveCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+        $this->purchaseRepo = $purchaseRepository;
     }
 
-    public function updating($name, $value)
-    {
-        if ($name == 'type') {
-            if ($value == 'purchase') {
-                $this->purchaseInput = true;
-                $this->receiveInput = false;
-            } elseif ($value == 'return') {
-                $this->receiveInput = true;
-                $this->purchaseInput = false;
-            } else {
-                $this->receiveInput = false;
-                $this->purchaseInput = false;
-            }
-        }
-    }
+    // public function updating($name, $value)
+    // {
+    //     if ($name == 'type') {
+    //         if ($value == 'purchase') {
+    //             $this->purchaseInput = true;
+    //             $this->receiveInput = false;
+    //         } elseif ($value == 'return') {
+    //             $this->receiveInput = true;
+    //             $this->purchaseInput = false;
+    //         } else {
+    //             $this->receiveInput = false;
+    //             $this->purchaseInput = false;
+    //         }
+    //     }
+    // }
 
     public function mount()
     {
@@ -172,6 +176,7 @@ class StockReceiveCreate extends Component
             'products' => $this->productService->getFormattedDataAsOptGroup(),
             'users' => $this->userRepo->getData(),
             'warehouses' => $this->warehouseRepository->getData(),
+            'purchases' => $this->purchaseRepo->getData(),
             'receiveTypes' => [
                 'purchase' => 'Purchase',
                 'return' => 'Return',

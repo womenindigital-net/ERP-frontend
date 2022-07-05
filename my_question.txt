@@ -78,7 +78,7 @@ Course
 Customer
 
 http://127.0.0.1:8000/account/purchase-order/requisition
-Edit : view : Delete
+ view : Delete
 
 http://127.0.0.1:8000/account/purchase-return
 Full
@@ -88,5 +88,6 @@ Receive Type list
 
 http://127.0.0.1:8000/account/stock-receive/create
 Qty
+
 http://127.0.0.1:8000/account/material-collect/create
 Database issue

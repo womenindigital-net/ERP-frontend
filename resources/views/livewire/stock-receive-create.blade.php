@@ -24,20 +24,6 @@
                             <label class="form-label">Reveive Type</label>
                             <x-input-select :records="$receiveTypes" wireModel="type" />
                         </div>
-                        @if($purchaseInput)
-                        <div class="mb-3">
-                            <label for="validationCustom02" class="form-label">Purchase</label>
-                            <x-input-text wireModel="purchase_type" placeholder="Purchase no here">
-                            </x-input-text>
-                        </div>
-                        @elseif($receiveInput)
-                        <div class="mb-3">
-                            <label for="validationCustom02" class="form-label">Return</label>
-                            <x-input-text wireModel="return_type" placeholder="Return here">
-                            </x-input-text>
-                        </div>
-                        @else
-                        @endif
                         <div class="mb-3">
                             <label class="text-end form-label">Note</label>
                             <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note ..." />
