@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Session;
 use App\Repositories\CustomerRepository;
 use App\Repositories\SupplierRepository;
 use App\Services\SupplierPaymentService;
+use App\Repositories\BankAccountRepository;
 use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\SupplierPaymentRepository;
 use App\Http\Requests\StoreSupplierPaymentRequest;
 use App\Http\Requests\UpdateSupplierPaymentRequest;
-use App\Repositories\BankAccountRepository;
 
 class SupplierPaymentController extends Controller
 {
@@ -90,7 +90,10 @@ class SupplierPaymentController extends Controller
      */
     public function show(SupplierPayment $supplierPayment)
     {
-        //
+        $data = [
+            'record' => $this->repo->getRelatedData($supplierPayment, ['payment', 'payment.history']),
+        ];
+        return view('accounting.purchase.supplier_payment.show', $data);
     }
 
     /**

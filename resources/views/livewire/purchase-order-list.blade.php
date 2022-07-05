@@ -24,10 +24,6 @@
                             class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                             <i class="fas fa-check"></i>
                         </button>
-                        <button type="button"
-                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                            <i class="fas fa-arrow-circle-right"></i>
-                        </button>
                         <a href="{{route('purchase-order.return', $record->id)}}" type="button"
                             class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                             <i class="fas fa-backward"></i>

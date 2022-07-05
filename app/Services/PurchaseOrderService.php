@@ -3,10 +3,10 @@
 namespace App\Services;
 
 use App\Models\Purchase;
+use Ramsey\Uuid\Rfc4122\UuidV4;
+use Illuminate\Support\Facades\DB;
 use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\PurchaseReturnRepository;
-use Illuminate\Support\Facades\DB;
-use Ramsey\Uuid\Rfc4122\UuidV4;
 
 class PurchaseOrderService
 {
@@ -21,6 +21,7 @@ class PurchaseOrderService
 
     public function store(array $validated)
     {
+        dd($validated);
         try{
             DB::beginTransaction();
             [$purchaseInfo, $data] = $this->collectPurchaseInfo($validated);
@@ -37,7 +38,9 @@ class PurchaseOrderService
 
     private function collectPurchaseDetailInfo(array $data): array
     {
+        // dd($data);
         [$purchaseDetailInfo, $data] = extractNecessaryFieldsFromData($data, ['qty', 'available_qty', 'supplier_id', 'product_id', 'price', 'vat', 'discount', 'sub_total', 'exp_date']);
+
 
         for ($i = 0; $i < count($purchaseDetailInfo['product_id']); $i++) {
             $custom[$i] = [

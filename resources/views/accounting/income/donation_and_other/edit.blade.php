@@ -64,10 +64,10 @@
 
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger w-100">Reset</button>
+
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-success w-100">Save</button>
+                                    <button class="btn btn-lg btn-success w-100">Update</button>
                                 </div>
                             </div>
                             <!-- end row -->

@@ -92,6 +92,7 @@ class StockAssignCreate extends Component
     {
         $this->service->update($this->stockAssign, $this->validate());
         $this->dispatchBrowserEvent('notify');
+        $this->redirectRoute('stock-assign.create');
     }
 
     public function render()

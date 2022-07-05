@@ -84,7 +84,7 @@ class FinishedGoodCreate extends Component
     {
         $this->service->update($this->finishedGood, $this->validate());
         $this->dispatchBrowserEvent('notify');
-        // $this->redirect('stock-receive');
+        $this->redirectRoute('stock-receive.create');
     }
 
     public function render()

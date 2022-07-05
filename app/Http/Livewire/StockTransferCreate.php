@@ -17,7 +17,6 @@ use App\Http\Livewire\Traits\CommonListElements;
 class StockTransferCreate extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
-    private string $destroyRoute = 'stock-receive.destroy';
 
     public $stockTransfer;
 
@@ -102,7 +101,7 @@ class StockTransferCreate extends Component
     {
         $this->service->update($this->stockTransfer, $this->validate());
         $this->dispatchBrowserEvent('notify');
-        // $this->redirect('stock-receive');
+        $this->redirectRoute('stock-transfer.create');
     }
     public function render()
     {

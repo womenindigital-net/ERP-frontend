@@ -9,11 +9,11 @@ use App\Repositories\UserRepository;
 use App\Repositories\StockRepository;
 use App\Services\StockReceiveService;
 use App\Repositories\ProjectRepository;
+use App\Repositories\PurchaseRepository;
 use App\Repositories\WarehouseRepository;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\StockReceiveRepository;
 use App\Http\Livewire\Traits\CommonListElements;
-use App\Repositories\PurchaseRepository;
 
 class StockReceiveCreate extends Component
 {
@@ -135,7 +135,7 @@ class StockReceiveCreate extends Component
     {
         $this->service->update($this->stockReceive, $this->validate());
         $this->dispatchBrowserEvent('notify');
-        // $this->redirect()->;
+        $this->redirectRoute('stock-receive.create');
     }
 
     // public function updated($name, $value)

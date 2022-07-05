@@ -2,23 +2,23 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Livewire\Traits\CommonAddMore;
-use App\Http\Livewire\Traits\CommonListElements;
-use App\Repositories\CategoryRepository;
-use App\Repositories\CustomerRepository;
-use App\Repositories\IncomeRepository;
-use App\Repositories\ProductRepository;
-use App\Repositories\ProjectRepository;
-use App\Repositories\StockRepository;
-use App\Repositories\WarehouseRepository;
-use App\Services\ProductService;
-use App\Services\SaleVoucherService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Services\ProductService;
+use Illuminate\Contracts\View\View;
+use App\Services\SaleVoucherService;
+use App\Repositories\StockRepository;
+use App\Repositories\IncomeRepository;
+use Illuminate\Contracts\View\Factory;
+use App\Repositories\ProductRepository;
+use App\Repositories\ProjectRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\CategoryRepository;
+use App\Repositories\CustomerRepository;
+use App\Repositories\WarehouseRepository;
+use App\Http\Livewire\Traits\CommonAddMore;
+use App\Http\Livewire\Traits\CommonListElements;
+use Illuminate\Contracts\Foundation\Application;
 
 class SaleVoucherCreate extends Component
 {
@@ -105,7 +105,7 @@ class SaleVoucherCreate extends Component
     public function mount()
     {
         if ($this->record) {
-            $this->mode = 'edit';
+            // $this->mode = 'edit';
             $this->record = $this->repo->getRelatedData($this->record, ['saleIncome.warehouse', 'saleIncome.details.product', 'project', 'history', 'creator']);
 
             $this->project_id   = $this->record->project_id;

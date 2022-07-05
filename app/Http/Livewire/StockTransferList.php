@@ -4,13 +4,14 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Http\Livewire\Traits\CommonListElements;
 use App\Repositories\StockTransferRepository;
+use App\Http\Livewire\Traits\CommonListElements;
 
 class StockTransferList extends Component
 {
     use WithPagination, CommonListElements;
-    protected string $destroyRoute = 'stock-receive.destroy';
+    private string $destroyRoute = 'stock-transfer.destroy';
+    
     private StockTransferRepository $repo;
 
     public function boot(StockTransferRepository $repository)

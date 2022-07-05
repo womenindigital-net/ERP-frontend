@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Repositories\IncomeRepository;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\IncomeRepository;
 
 class SaleVoucherService
 {
@@ -16,16 +16,16 @@ class SaleVoucherService
 
     public function store(mixed $validated)
     {
-        try{
+        try {
             DB::beginTransaction();
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
-            
+
             $income = $this->repo->store($incomeInfo);
 
             $saleIncome = $income->saleIncome()->create($saleIncomeInfo);
 
             $details = $this->collectDetails($data);
-            
+
             $saleIncome->details()->createMany($details);
 
             $income->history()->create($this->collectIncomeHistoryInfo($validated));
@@ -79,7 +79,7 @@ class SaleVoucherService
 
     public function update($income, $validated)
     {
-        try{
+        try {
             DB::beginTransaction();
             [$incomeInfo, $saleIncomeInfo, $data] = $this->segregateInfo($validated);
             $income = $this->repo->update($income, $incomeInfo);

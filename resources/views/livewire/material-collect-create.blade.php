@@ -12,7 +12,7 @@
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Select Name</label>
-                        <x-input-select wireModel="collected_for" :records="$users"/>
+                        <x-input-select wireModel="collected_for" :records="$users" />
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -121,15 +121,20 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="row justify-content-end">
-                            <div class="col-md-2">
-                                @if($this->mode == 'edit')
+                        <div class="modal-footer">
+                            <div class="w-25">
+                                @if ($this->mode == 'edit')
                                 <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
-                                @elseif (!($this->mode == 'show'))
+                                @elseif (!($this->mode) == 'show')
                                 <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+                                @else
+                                <a href="{{route('material-collect.create')}}" class="btn btn-lg btn-success w-100">
+                                    Go Back
+                                </a>
                                 @endif
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Payment;
 use App\Models\DirectPayment;
+use Illuminate\Contracts\View\View;
 use App\Services\DirectPaymentService;
+use Illuminate\Contracts\View\Factory;
 use App\Repositories\PaymentRepository;
 use App\Repositories\ProjectRepository;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\PaymentTypeRepository;
 use App\Repositories\DirectPaymentRepository;
 use App\Http\Requests\StoreDirectPaymentRequest;
+use Illuminate\Contracts\Foundation\Application;
 use App\Http\Requests\UpdateDirectPaymentRequest;
 
 class DirectPaymentController extends Controller
@@ -95,11 +95,12 @@ class DirectPaymentController extends Controller
      * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment $payment)
+    public function edit($id)
     {
         $data = [
-            'record' => $payment,
+            'record' => Payment::find($id),
         ];
+        // dd($data['record']);
         return view('accounting.purchase.direct_payment.payment_edit', $data);
     }
 
@@ -121,9 +122,9 @@ class DirectPaymentController extends Controller
      * @param  \App\Models\DirectPayment  $directPayment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Payment $payment)
+    public function destroy($id)
     {
-        return $payment->delete();
+        return Payment::find($id)->delete();
     }
 
 

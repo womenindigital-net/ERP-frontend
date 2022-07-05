@@ -75,17 +75,20 @@
                                     </select>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="available_qty.{{$key}}" :readOnly="true" ></x-input-text>
+                                    <x-input-text type="text" wireModel="available_qty.{{$key}}" :readOnly="true">
+                                    </x-input-text>
                                 </div>
 
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="sub_total.{{$key}}" :readOnly="true"></x-input-text>
+                                    <x-input-text type="text" wireModel="sub_total.{{$key}}" :readOnly="true">
+                                    </x-input-text>
                                 </div>
                                 <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="price.{{$key}}" :readOnly="true"></x-input-text>
+                                    <x-input-text type="text" wireModel="price.{{$key}}" :readOnly="true">
+                                    </x-input-text>
                                 </div>
                                 <div class=" col-lg-3 p-0 pe-1 pb-1 d-flex">
                                     <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
@@ -176,17 +179,16 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-danger w-100">Reset</button>
-        </div>
-        <div class="col-md-4">
-            @if($this->mode == 'edit')
-            <button class="btn btn-success w-100" wire:click="update()">Update</button>
+    <div class="modal-footer">
+        <div class="w-25">
+            @if ($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode) == 'show')
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-            <button class="btn btn-success w-100" wire:click="submit()">Save</button>
+            <a href="{{route('sale-voucher.create')}}" class="btn btn-lg btn-success w-100">
+                Go Back
+            </a>
             @endif
         </div>
     </div>

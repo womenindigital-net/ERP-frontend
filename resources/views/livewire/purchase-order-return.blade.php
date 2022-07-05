@@ -5,20 +5,20 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Project</label>
-                <x-input-select wireModel="project_id" :records="$projects" targetColumn="title" :disabled="true"/>
+                <x-input-select wireModel="project_id" :records="$projects" targetColumn="title" :disabled="true" />
             </div>
         </div>
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Requisition</label>
                 <x-input-select wireModel="requisition_id" :records="$requisitions" targetColumn="title"
-                                :selected="$record->id" :disabled="true"/>
+                    :selected="$record->id" :disabled="true" />
             </div>
         </div>
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Supplier</label>
-                <x-input-select wireModel="supplier_id" :records="$suppliers"/>
+                <x-input-select wireModel="supplier_id" :records="$suppliers" />
             </div>
         </div>
         <div class="col-md-6">
@@ -27,14 +27,14 @@
                 <x-input-text wireModel="date" type="date"></x-input-text>
             </div>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="m-3 mt-4">
                 <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light"
-                        data-bs-toggle="modal" data-bs-target=".purchase-order-view">
+                    data-bs-toggle="modal" data-bs-target=".purchase-order-view">
                     <i class="fas fa-eye"></i>
                 </button>
             </div>
-        </div>
+        </div> --}}
 
     </div>
     <div class="row">
@@ -45,8 +45,8 @@
                     <div class="row py-3 bg-secondary text-light rounded-3 mb-4">
                         <div class="col-md-3">
                             <div class="row">
-                                <label for="horizontal-firstname-input"
-                                       class="col-4 text-end col-form-label"> Discount</label>
+                                <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
+                                    Discount</label>
                                 <div class="col-8">
                                     <strong class="form-control">0</strong>
                                 </div>
@@ -54,8 +54,8 @@
                         </div>
                         <div class="col-md-3">
                             <div class="row">
-                                <label for="horizontal-firstname-input"
-                                       class="col-4 text-end col-form-label"> Item</label>
+                                <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
+                                    Item</label>
                                 <div class="col-8">
                                     <strong class="form-control">0</strong>
                                 </div>
@@ -63,8 +63,8 @@
                         </div>
                         <div class="col-md-3">
                             <div class="row">
-                                <label for="horizontal-firstname-input"
-                                       class="col-4 text-end col-form-label"> Cost</label>
+                                <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
+                                    Cost</label>
                                 <div class="col-8">
                                     <strong class="form-control">0</strong>
                                 </div>
@@ -72,8 +72,8 @@
                         </div>
                         <div class="col-md-3">
                             <div class="row">
-                                <label for="horizontal-firstname-input"
-                                       class="col-4 text-end col-form-label"> VAT</label>
+                                <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
+                                    VAT</label>
                                 <div class="col-8">
                                     <strong class="form-control">0</strong>
                                 </div>
@@ -110,50 +110,49 @@
                             </div>
                         </div>
                         @foreach($inputs as $key => $item)
-                            <div data-repeater-list="group-a">
-                                <div data-repeater-item class="row">
-                                    <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
-                                        <select class="form-control form-select" wire:model="product_id.{{$key}}" disabled>
-                                            <option>--Select--</option>
-                                            @foreach($products as $product)
-                                                <optgroup label="{{$product['name']}}">
-                                                    @foreach($product['children'] as $childCourse)
-                                                        <option
-                                                            value="{{$childCourse['id']}}">{{$childCourse['name']}}</option>
-                                                    @endforeach
-                                                </optgroup>
+                        <div data-repeater-list="group-a">
+                            <div data-repeater-item class="row">
+                                <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
+                                    <select class="form-control form-select" wire:model="product_id.{{$key}}" disabled>
+                                        <option>--Select--</option>
+                                        @foreach($products as $product)
+                                        <optgroup label="{{$product['name']}}">
+                                            @foreach($product['children'] as $childCourse)
+                                            <option value="{{$childCourse['id']}}">{{$childCourse['name']}}</option>
                                             @endforeach
-                                        </select>
-                                    </div>
-                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                        <x-input-text wireModel="exp_date.{{$key}}" type="date"></x-input-text>
-                                    </div>
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-text wireModel="available_qty.{{$key}}" type="number" :readOnly="true">
-                                        </x-input-text>
-                                    </div>
+                                        </optgroup>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                    <x-input-text wireModel="exp_date.{{$key}}" type="date"></x-input-text>
+                                </div>
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                    <x-input-text wireModel="available_qty.{{$key}}" type="number" :readOnly="true">
+                                    </x-input-text>
+                                </div>
 
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-text wireModel="qty.{{$key}}" type="number">
-                                        </x-input-text>
-                                    </div>
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-text wireModel="price.{{$key}}" type="number" :readOnly="true">
-                                        </x-input-text>
-                                    </div>
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-text wireModel="vat.{{$key}}" type="number">
-                                        </x-input-text>
-                                    </div>
-                                    <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                        <x-input-text wireModel="discount.{{$key}}" type="number" :readOnly="true">
-                                        </x-input-text>
-                                    </div>
-                                    <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                                        <x-input-text wireModel="sub_total.{{$key}}" type="number"/>
-                                    </div>
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                    <x-input-text wireModel="qty.{{$key}}" type="number">
+                                    </x-input-text>
+                                </div>
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                    <x-input-text wireModel="price.{{$key}}" type="number" :readOnly="true">
+                                    </x-input-text>
+                                </div>
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                    <x-input-text wireModel="vat.{{$key}}" type="number">
+                                    </x-input-text>
+                                </div>
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                    <x-input-text wireModel="discount.{{$key}}" type="number" :readOnly="true">
+                                    </x-input-text>
+                                </div>
+                                <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
+                                    <x-input-text wireModel="sub_total.{{$key}}" type="number" />
                                 </div>
                             </div>
+                        </div>
                         @endforeach
                     </form>
                     <!-- 7th row start  -->
@@ -161,7 +160,7 @@
                         <div class="col-lg-6">
                             <div class="row mb-2">
                                 <label for="horizontal-firstname-input"
-                                       class="col-2 text-end col-form-label">Note</label>
+                                    class="col-2 text-end col-form-label">Note</label>
                                 <div class="col-10">
                                     <x-input-textarea wireModel="note" rows="1"></x-input-textarea>
                                 </div>
@@ -173,17 +172,16 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-danger w-100">Reset</button>
-        </div>
-        <div class="col-md-4">
-            @if($this->mode == 'edit')
-                <button class="btn btn-success w-100" wire:click="update()">Update</button>
+    <div class="modal-footer">
+        <div class="w-25">
+            @if ($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode) == 'show')
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-                <button class="btn btn-success w-100" wire:click="submit()">Save</button>
+            <a href="{{route('.create')}}" class="btn btn-lg btn-success w-100">
+                Go Back
+            </a>
             @endif
         </div>
     </div>

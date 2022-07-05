@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\DonationRequest;
 use App\Models\Donation;
-use App\Repositories\CustomerRepository;
-use App\Repositories\DonationRepository;
-use App\Repositories\ProjectRepository;
 use App\Services\DonationService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\DonationRequest;
+use Illuminate\Contracts\View\Factory;
+use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Session;
+use App\Repositories\CustomerRepository;
+use App\Repositories\DonationRepository;
+use Illuminate\Contracts\Foundation\Application;
 
 class DonationController extends Controller
 {
@@ -87,6 +87,7 @@ class DonationController extends Controller
             'projects' => $this->projectRepo->getData(),
             'customers' => $this->customerRepo->getData(),
             'record' => $this->repo->getRelatedData($donation_and_other, ['income.history', 'customer', 'income.project']),
+            'mode' => 'show',
         ];
 
         return view('accounting.income.donation_and_other.show', $data);

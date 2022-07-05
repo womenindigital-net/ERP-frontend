@@ -174,9 +174,9 @@
                                                     <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
                                                         <x-input-text value="{{ $detail->sub_total }}"
                                                             wireModel="sub_total" type="number" />
-                                                        <button class="btn btn-danger ms-2">
+                                                        {{-- <button class="btn btn-danger ms-2">
                                                             <i class="fas fa-trash-alt"></i>
-                                                        </button>
+                                                        </button> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,13 +199,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4">
+                        <div class="modal-footer">
+                            <div class="w-25">
+                                <a href="{{route('purchase-order.create')}}" class="btn btn-lg btn-success w-100">
+                                    Go Back
+                                </a>
                             </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-danger w-100">Reset</button>
-                            </div>
-
                         </div>
                         <!-- end row -->
                     </div>

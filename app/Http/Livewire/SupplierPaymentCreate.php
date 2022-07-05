@@ -3,7 +3,9 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\BankAccount;
 use Livewire\WithPagination;
+use App\Repositories\ChequeRepository;
 use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\SupplierRepository;
@@ -13,8 +15,6 @@ use App\Repositories\BankAccountRepository;
 use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\SupplierPaymentRepository;
 use App\Http\Livewire\Traits\CommonListElements;
-use App\Models\BankAccount;
-use App\Repositories\ChequeRepository;
 
 class SupplierPaymentCreate extends Component
 {
@@ -82,7 +82,7 @@ class SupplierPaymentCreate extends Component
     {
         if ($this->record) {
             // dd($this->record);
-            $this->mode = 'edit';
+            // $this->mode = 'edit';
             $this->record = $this->repo->getRelatedData($this->record, ['payment.history']);
 
             $this->project_id   = $this->record->project_id;

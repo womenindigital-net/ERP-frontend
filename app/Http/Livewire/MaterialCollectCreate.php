@@ -93,7 +93,7 @@ class MaterialCollectCreate extends Component
     {
         $this->service->update($this->materialCollect, $this->validate());
         $this->dispatchBrowserEvent('notify');
-        // $this->redirect('stock-receive');
+        $this->redirectRoute('material-collect.create');
     }
 
     // public function updated($name, $value)

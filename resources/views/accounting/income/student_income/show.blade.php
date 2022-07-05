@@ -110,9 +110,11 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a href="{{route('student-income.create')}}" class="btn btn-success w-100">
-                                Go Back
-                            </a>
+                            <div class="w-25">
+                                <a href="{{route('student-income.create')}}" class="btn btn-success w-100">
+                                    Go Back
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

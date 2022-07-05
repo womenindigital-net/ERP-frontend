@@ -82,11 +82,11 @@
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="available_qty.{{$key}}" type="number"
-                                        sub_total="true" :readOnly="true">
+                                        sub_total="true">
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="price.{{$key}}"  :readOnly="true"></x-input-text>
+                                    <x-input-text type="text" wireModel="price.{{$key}}"></x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
@@ -94,7 +94,7 @@
 
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="sub_total.{{$key}}" type="number"
-                                        sub_total="true"  :readOnly="true">
+                                        sub_total="true">
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
@@ -132,16 +132,16 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-            @if($this->mode == 'edit')
-            <button class="btn btn-success w-100" wire:click="update()">Update</button>
+    <div class="modal-footer">
+        <div class="w-25">
+            @if ($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
             @elseif (!($this->mode) == 'show')
-            <button class="btn btn-success w-100" wire:click="submit()">Save</button>
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-
+            <a href="{{route('requisition.create')}}" class="btn btn-lg btn-success w-100">
+                Go Back
+            </a>
             @endif
         </div>
     </div>

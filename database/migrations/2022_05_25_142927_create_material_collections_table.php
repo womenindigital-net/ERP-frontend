@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Project;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Project;
 use App\Models\Warehouse;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('will_produce')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->string('note')->nullable();
+            $table->string('is_approved')->default(0);
             $table->timestamps();
         });
     }

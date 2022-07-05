@@ -4,9 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Http\Livewire\Traits\CommonListElements;
-use App\Repositories\SupplierPaymentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Services\SupplierPaymentService;
+use App\Repositories\SupplierPaymentRepository;
+use App\Http\Livewire\Traits\CommonListElements;
 
 class SupplierPaymentList extends Component
 {
@@ -22,6 +23,13 @@ class SupplierPaymentList extends Component
     {
         $this->service = $service;
         $this->repo = $repository;
+    }
+
+
+    public function toggleApprove($recordId)
+    {
+        $this->repo->toggleColumn($recordId, 'is_approved');
+        $this->dispatchBrowserEvent('notify');
     }
 
     public function render()

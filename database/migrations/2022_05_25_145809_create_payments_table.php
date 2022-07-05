@@ -28,6 +28,7 @@ return new class extends Migration
             $table->foreignIdFor(Cheque::class)->nullable()->constrained()->cascadeOnDelete();
             $table->double('amount', 8, 2)->nullable();
             $table->string('note')->nullable();
+            $table->string('is_approved')->default(0);
             $table->foreignIdFor(BankAccount::class, 'from_account')->nullable()->constrained('bank_accounts')->nullOnDelete();
             $table->foreignIdFor(BankAccount::class, 'to_account')->nullable()->constrained('bank_accounts')->nullOnDelete();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();

@@ -2,21 +2,21 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Livewire\Traits\CommonAddMore;
-use App\Http\Livewire\Traits\CommonListElements;
-use App\Repositories\ProjectRepository;
-use App\Repositories\RequisitionRepository;
-use App\Repositories\StockRepository;
-use App\Repositories\UserRepository;
-use App\Repositories\WarehouseRepository;
-use App\Services\ProductService;
-use App\Services\RequisitionService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Services\ProductService;
+use Illuminate\Contracts\View\View;
+use App\Repositories\UserRepository;
+use App\Services\RequisitionService;
+use App\Repositories\StockRepository;
+use Illuminate\Contracts\View\Factory;
+use App\Repositories\ProjectRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\WarehouseRepository;
+use App\Http\Livewire\Traits\CommonAddMore;
+use App\Repositories\RequisitionRepository;
+use App\Http\Livewire\Traits\CommonListElements;
+use Illuminate\Contracts\Foundation\Application;
 
 class RequisitionCreate extends Component
 {
@@ -87,7 +87,7 @@ class RequisitionCreate extends Component
         'title' => 'required',
         'warehouse_id' => 'required',
         'product_id.*' => 'required',
-        'available_qty.*' => 'required',
+        'available_qty.*' => 'nullable',
         'qty.*' => 'required',
         'sub_total.*' => 'required',
         'price.*' => 'nullable',
@@ -109,11 +109,11 @@ class RequisitionCreate extends Component
             $this->price[$targetKey] = $productInfo->product->selling_price;
         }
 
-        if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.')) {
+        if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.') || str_starts_with($name, 'price.')) {
             $targetKey = $this->getTargetKey($name);
-
-            if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
-                return;
+            // dd($targetKey);
+            // if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
+            //     return;
 
             if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);

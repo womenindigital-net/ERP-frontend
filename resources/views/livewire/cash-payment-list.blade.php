@@ -35,14 +35,8 @@
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2">
                                 <i class=" fas fa-eye"></i>
                             </a> --}}
-                            <button type="button"
-                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="button"
-                                class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                            <button wire:click="toggleApprove({{$record->id}})"
+                                class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-check"></i>
                             </button>
                             <a href="{{route('direct-payment.edit', $record->id)}}"
