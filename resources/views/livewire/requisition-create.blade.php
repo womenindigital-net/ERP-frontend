@@ -81,7 +81,7 @@
                                     </select>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="available_qty.{{$key}}" type="number" :readOnly="true">
+                                    <x-input-text type="text" wireModel="available_qty.{{$key}}" type="number" sub_total="true">
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
@@ -92,7 +92,7 @@
                                 </div>
 
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="sub_total.{{$key}}" type="number" :readOnly="true">
+                                    <x-input-text type="text" wireModel="sub_total.{{$key}}" type="number" sub_total="true">
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
