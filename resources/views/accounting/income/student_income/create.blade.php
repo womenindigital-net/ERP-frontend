@@ -112,8 +112,8 @@
                                                         <div class="mb-3 d-flex col-lg-5">
                                                             <x-input-text name='amount' type="number" placeholder='Payment Amount'>
                                                             </x-input-text>
-                                                            <div>
-                                                                <button class="btn btn-danger ms-2 removeBtn">
+                                                            <div onclick="this.parentNode.parentNode.remove(this)">
+                                                                <button class="btn btn-danger ms-2 removeBtn" type="button">
                                                                     <i class="fas fa-trash-alt"></i>
                                                                 </button>
                                                             </div>
@@ -144,7 +144,6 @@
 
 @endsection
 @section('script')
-<!-- form repeater js -->
 <script src="{{ URL::asset('/assets/libs/jquery-repeater/jquery-repeater.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/pages/form-repeater.int.js') }}"></script>
 @endsection

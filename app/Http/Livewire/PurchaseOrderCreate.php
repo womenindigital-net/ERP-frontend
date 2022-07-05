@@ -76,17 +76,16 @@ class PurchaseOrderCreate extends Component
         'requisition_id' => 'nullable',
         'supplier_id' => 'nullable',
         'date' => 'required',
+        'note' => 'nullable',
 
+        'vat.*' => 'required',
         'product_id.*' => 'required',
         'exp_date.*' => 'nullable',
         'available_qty.*' => 'required',
         'qty.*' => 'required',
         'price.*' => 'nullable',
-        'vat.*' => 'nullable',
         'discount.*' => 'nullable',
         'sub_total.*' => 'nullable',
-
-        'note' => 'nullable',
     ];
 
     public function updated($name, $value)

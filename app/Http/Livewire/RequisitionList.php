@@ -13,6 +13,7 @@ use Livewire\WithPagination;
 class RequisitionList extends Component
 {
     use WithPagination, CommonListElements;
+
     protected string $destroyRoute = 'requisition.destroy';
     private RequisitionRepository $repo;
 
@@ -20,7 +21,6 @@ class RequisitionList extends Component
     {
         $this->repo = $repository;
     }
-
 
     public function toggleApprove($recordId)
     {

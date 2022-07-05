@@ -32,9 +32,10 @@ class StockReceiveObserver
         $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
 
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
-
-        $stock->qty += $stockReceiveDetail->received;
-        $stock->saveQuietly();
+        if ($stock) {
+            $stock->qty += $stockReceiveDetail->received;
+            $stock->saveQuietly();
+        }
     }
 
     /**

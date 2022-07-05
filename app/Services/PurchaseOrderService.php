@@ -21,7 +21,7 @@ class PurchaseOrderService
 
     public function store(array $validated)
     {
-        dd($validated);
+//        dd($validated);
         try{
             DB::beginTransaction();
             [$purchaseInfo, $data] = $this->collectPurchaseInfo($validated);

@@ -58,7 +58,6 @@ function swalConfirmDelete(data) {
 }
 
 window.addEventListener('swal', event => {
-    console.log (event.currentTarget, event.target, event.target.parentNode);
     switch (event.detail.type) {
         case 'confirm':
             swalConfirmDelete(event.detail);

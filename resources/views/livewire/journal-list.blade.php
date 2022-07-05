@@ -3,7 +3,7 @@
         <label class="col-2 col-form-label">Journals List</label>
         <div class="col-10">
             <select class="form-select" wire:model="filter">
-                <option>--Select--</option>
+                <option value="">--Select--</option>
                 <option value="1">Approved Journals</option>
                 <option value="0">Un Approval Journals</option>
             </select>
