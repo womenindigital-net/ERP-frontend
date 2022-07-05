@@ -66,7 +66,7 @@
                                 <div data-repeater-list="group-a">
                                     @foreach ($inputs as $key => $item)
                                     <div data-repeater-item class="row removeRow">
-                                        <div class="col-lg-2  d-flex p-0 pe-1 pb-2 align-items-center ">
+                                        <div class="col-lg-2 p-0 pe-1 pb-2 align-items-center ">
                                             <select class="form-control form-select" wire:model="product_id.{{$key}}">
                                                 <option>--Select--</option>
                                                 @foreach($products as $product)
@@ -85,24 +85,24 @@
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number"
-                                                placeholder="0">
+                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number">
                                             </x-input-text>
                                         </div>
                                         {{-- @if($purchaseInput) --}}
                                         <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="received.{{ $key }}" placeholder="0">
+                                            <x-input-text wireModel="received.{{ $key }}" type="number">
                                             </x-input-text>
                                         </div>
                                         {{-- @endif --}}
                                         {{-- @if($receiveInput) --}}
                                         <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="return.{{ $key }}" placeholder="0">
+                                            <x-input-text wireModel="return.{{ $key }}" type="number">
                                             </x-input-text>
                                         </div>
                                         {{-- @endif --}}
                                         <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="stock_receive_qty.{{ $key }}"></x-input-text>
+                                            <x-input-text wireModel="stock_receive_qty.{{ $key }}" type="number">
+                                            </x-input-text>
                                         </div>
                                         <div class="col-lg-2 d-flex">
                                             <x-input-text wireModel="serial.{{ $key }}" type="number">

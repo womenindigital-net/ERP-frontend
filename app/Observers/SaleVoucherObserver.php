@@ -2,11 +2,11 @@
 
 namespace App\Observers;
 
+use App\Models\Stock;
 use App\Models\SaleIncome;
 use App\Models\SaleIncomeDetail;
-use App\Models\Stock;
-use App\Repositories\SaleIncomeDetailRepository;
 use App\Repositories\StockRepository;
+use App\Repositories\SaleIncomeDetailRepository;
 
 class SaleVoucherObserver
 {
@@ -37,7 +37,7 @@ class SaleVoucherObserver
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
 
         if ($stock) {
-            $stock->qty -= $saleIncomeDetail->qty;
+            $stock->qty += $saleIncomeDetail->stock_receive_qty;
             $stock->saveQuietly();
         }
     }

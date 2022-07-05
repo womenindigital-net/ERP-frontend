@@ -3,9 +3,21 @@
 namespace App\Observers;
 
 use App\Models\StockReceiveDetail;
+use App\Repositories\StockRepository;
+use App\Repositories\StockReceiveDetailRepository;
 
 class StockAssignObserver
 {
+
+    private StockReceiveDetailRepository $repo;
+    private StockRepository $stockRepo;
+
+    public function __construct(StockReceiveDetailRepository $repository, StockRepository $stockRepository)
+    {
+        $this->repo = $repository;
+        $this->stockRepo = $stockRepository;
+    }
+
     /**
      * Handle the StockReceiveDetail "created" event.
      *
@@ -15,6 +27,18 @@ class StockAssignObserver
     public function created(StockReceiveDetail $stockReceiveDetail)
     {
 
+        $stockReceiveDetail = $this->repo->getRelatedData($stockReceiveDetail, ['stockReceive']);
+        
+        $projectId = $stockReceiveDetail->stockReceive->project_id;
+        $productId = $stockReceiveDetail->stockReceive->product_id;
+        $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
+
+        $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
+
+        if ($stock) {
+            $stock->qty -= $stockReceiveDetail->qty;
+            $stock->saveQuietly();
+        }
     }
 
     /**

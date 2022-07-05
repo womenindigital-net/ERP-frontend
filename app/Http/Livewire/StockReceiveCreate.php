@@ -120,15 +120,14 @@ class StockReceiveCreate extends Component
         'warehouse_id' => 'required',
         'type' => 'required',
         'date' => 'required',
-        'note' => 'nullable',
+        'note' => 'required',
         'product_id.*' => 'required',
         'exp_date.*' => 'required',
-        'available_qty.*' => 'nullable',
-        'received.*' => 'nullable',
-        'return.*' => 'nullable',
-        'receivable.*' => 'nullable',
-        'stock_receive_qty.*' => 'nullable',
-        'serial.*' => 'nullable',
+        'available_qty.*' => 'required',
+        'received.*' => 'required',
+        'return.*' => 'required',
+        'stock_receive_qty.*' => 'required',
+        'serial.*' => 'required',
     ];
 
     public function update()

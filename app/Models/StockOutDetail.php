@@ -9,4 +9,9 @@ class StockOutDetail extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function stockOut()
+    {
+        return $this->belongsTo(StockOut::class);
+    }
 }
