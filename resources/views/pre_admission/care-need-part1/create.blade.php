@@ -105,169 +105,171 @@
                                     <p>Enter common information</p>
                                   </div>
                                 </div>
-                              <x-input-radio-or-check name="from_where_you_learned_about_us?"
+                              <x-input-radio-or-check name="from_where_you_learned_about_us?" type="checkbox"
                                 label="From where you learned about us?"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                                :records="$projectConstants::$learnAbout" :isVertical="false" multiple="true" secondaryInputLabel="If other, specify name"/>
                               <!-- row end -->
-                              <x-input-radio-or-check name="seems_not_to_hear"
-                                label="Seems not to hear, so that a hearing loss is suspected"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>Doctor / physician (under medical treatment) name </h6>
+                                            <div class="mb-2">
+                                                <x-input-text name="Doctor_physician_under_medical_treatment_name" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                               <!-- row end -->
-                              <x-input-radio-or-check name="sometimes_shows_no_startle_response"
-                                label="Sometimes shows no “startle response” to ”loud noise”"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>Contact Number</h6>
+                                            <div class="mb-2">
+                                                <x-input-text name="contact_umber " />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                               <!-- row end -->
-                              <x-input-radio-or-check name="sometimes_painful_stimuli_such_as_bruises"
-                                label="Sometimes painful stimuli such as bruises, cuts, and injections evoke no reaction"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="govt_disability_registration"
+                                label="Govt.Disability registration"
+                                :records="$projectConstants::$yesNoEn" secondaryInputLabel="If not, why?" />
+                               <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>If yes, enter registration number </h6>
+                                            <div class="mb-2">
+                                                <x-input-text name="If_yes_enter_registration_number" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                               
                               <!-- row end -->
-                              <x-input-radio-or-check name="sometimes_painful_stimuli_such_as_bruises"
-                                label="Often will not blink when bright light is directed toward eyes"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="suggestion_on_obtaining_registration"
+                                label="Suggestion on obtaining registration" :records="$projectConstants::$yesNoEn"/>
                               <!-- row end -->
-                              <x-input-radio-or-check name="covers_ears_at_many_sounds"
-                                label="Covers ears at many sounds" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check
-                                name="squints_frowns_covers_eyes_when_in_the_presence_of_natural_light"
-                                label="Squints, frowns, or covers eyes when in the presence of natural light"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="frequently_has_no_visual_reaction"
-                                label="Frequently has no visual reaction to a “new” person"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="stares_into_space_for_long_periods_of_time"
-                                label="Stares into space for long periods of time"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="referred_to_parents_forum "
+                                label="Referred to Parents Forum" :records="$projectConstants::$yesNoEn"/>
                               <!-- end row -->
                             </section>
                           </div>
                           <div class="tab-pane" id="TypesOfSpecialty">
                             <section>
+                               <div class="col-lg-12">
+                                  <div class="mb-3">
+                                    <label for="verticalnav-phoneno-input">Instruction:</label>
+                                    <p>Enter Types of speciality / disability / impairments information</p>
+                                  </div>
+                                </div>                              
                               <!-- row end -->
-                              <x-input-radio-or-check label="Frequently does not attend to social/environmental stimuli"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="iss_she_has_utism"
+                                label="Is S/he has Autism?" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Has no social smile"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_down_syndrome"
+                                label="Is S/he has Down Syndrome" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Does not reach out when reached for "
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_cerebral_palsy"
+                                label="Is S/he has Cerebral Palsy" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check
-                                label="Not responsive to other people’s facial expressions/feelings"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_intellectual_disability"
+                                label="Is S/he has Intellectual Disability" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Actively avoids eye contact"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_dyslexia "
+                                label="Is S/he has Dyslexia " :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Resists being touched or held"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_learning_disability"
+                                label="Is S/he has Learning disability" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Is flaccid when held in arms"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_anxiety_disorder"
+                                label="Is S/he has Anxiety disorder" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Is stiff and hard to held"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="=is_she_has_adhd "
+                                label="Is S/he has ADHD " :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Does not imitate other children at play "
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_bipolar_disorder "
+                                label="Is S/he has Bipolar Disorder " :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Has not developed any friendships"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_he_has_speech_disorder "
+                                label="Is S/he has Speech disorder " :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
-                              <x-input-radio-or-check label="Often frightened or very anxious "
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- end row -->
-                              <x-input-radio-or-check label="Looks through people"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
+                              <x-input-radio-or-check name="is_she_has_language_disorder"
+                                label="Is S/he has Language disorder" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_ocd"
+                                label="Is S/he has OCD" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_eating_disorder"
+                                label="Is S/he has Eating disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_chizophrenia"
+                                label="Is S/he has Schizophrenia" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_multiple_personality_disorder"
+                                label="Is S/he has Multiple Personality Disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_tic_disorder"
+                                label="Is S/he has TIC disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_sluttering"
+                                label="Is S/he has Sluttering" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_depression"
+                                label="Is S/he has Depression" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_writing_disorder"
+                                label="Is S/he has Writing disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_reading_disorder"
+                                label="Is S/he has Reading disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_match_disorder"
+                                label="Is S/he has Match Disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_attachment_disorder"
+                                label="Is S/he has Attachment Disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_separation_anxiety_disorder"
+                                label="Is S/he has Separation Anxiety Disorder" :records="$projectConstants::$yesNoDontknow"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="is_she_has_sleep_disorder"
+                                label="Is S/he has Sleep disorder" :records="$projectConstants::$yesNoDontknow"/>
                               <!-- end row -->
                             </section>
                           </div>
                           <div class="tab-pane" id="Assessment">
                             <section>
-                              <x-input-radio-or-check name="whirls_self_for_long_periods_time"
-                                label="Whirls self for long periods of time"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_not_use_toys_appropriately"
-                                label="Does not use toys appropriately" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="sometimes_shows_no_startle_response_to_loud_noise"
-                                label="Sometimes shows no “startle response” to ”loud noise”"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="insists_on_keeping_certain_objects"
-                                label="Insists on keeping certain objects with him/ her"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="rocks_self_for_long_periods_time"
-                                label="Rocks self for long periods of time" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_lot_lunging_and_darting"
-                                label="Does a lot of lunging and darting" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="flaps_hands" label="Flaps hands"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="walks_on_toes" label="Walks on toes"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="hurts_self_banging_head"
-                                label="Hurts self by banging head, biting hand, etc…"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="twirls_spins_bangs_objects_lot"
-                                label="Twirls, spins, and bangs objects a lot"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="will_feel_smell_taste_objects_environment"
-                                label="Will feel, smell, and/or taste objects in the environment"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="gets_involved_complicated"
-                                label="Gets involved in complicated “rituals” such as lining things up, etc…"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="is_very_destructive" label="Is very destructive"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
+                                 <div class="col-lg-12">
+                                  <div class="mb-3">
+                                    <label for="verticalnav-phoneno-input">Instruction:</label>
+                                    <p>Enter Assessment information</p>
+                                  </div>
+                                </div> 
+                            <x-input-radio-or-check name="is_social_communication_checklist_has_completed?"
+                                label="Is Social Communication checklist has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_sensory_checklist_has_completed?"
+                                label="Is Sensory Checklist has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_occupational_assessment_has_completed?"
+                                label="Is Occupational Assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_speech_and_language_assessment_has_completed"
+                                label="Is Speech and Language Assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_physiotherapy_assessment_has_ompleted"
+                                label="Is Physiotherapy assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_fundamental_movement_skills_has_completed"
+                                label="Is Fundamental Movement Skills has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_functional_evaluation_has_completed"
+                                label="Is Functional evaluation has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_psychological_assessment_has_completed"
+                                label="Is Psychological assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
+                              <!-- end row -->
+                            <x-input-radio-or-check name="is_cademic_assessment_has_completed"
+                                label="Is Academic Assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
                               <!-- end row -->
                             </section>
                           </div>
