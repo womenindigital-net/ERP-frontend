@@ -216,7 +216,7 @@ final class ProjectConstants
     ];
     const WANTTODO  = 'Want to do';
 
-    public static array $yesNoDontknow = [
+    public static array $yesNoWantdo = [
         self::YES => 'Yes',
         self::NO  => 'No',
         self::WANTTODO  => 'Want to do',
