@@ -176,7 +176,50 @@ final class ProjectConstants
         self::PHYSICALEXERCISE => 'Physical Exercise(PE)',
     ];
 
-    // Teacher
+    // ====================
+    // care Need Part 1
+    // ====================
+
+    // where you learned about us
+    const DOCTORS  = 'Doctors ';
+    const COUNSELOR  = 'Counselor';
+    const PEDIATRICIAN  = 'Pediatrician ';
+    const LEAFLET  = 'Leaflet';
+    const NEWSPAPER  = 'News paper ';
+    const FACEBOOK  = 'Facebook ';
+    const WEBSITE  = 'Website';
+    const SCHOOL  = 'School';
+    const ORGANIZATION  = 'Organization';
+    const PARENTS  = 'Parents';
+    const OTHERS  = 'Others';
+
+    public static array $learnAbout = [
+        self::DOCTORS  => 'Doctors',
+        self::COUNSELOR  => 'Counselor',
+        self::PEDIATRICIAN  => 'Pediatrician',
+        self::LEAFLET  => 'Leaflet',
+        self::NEWSPAPER  => 'News',
+        self::FACEBOOK  => 'Facebook',
+        self::WEBSITE  => 'Website',
+        self::SCHOOL  => 'School',
+        self::ORGANIZATION  => 'Organization',
+        self::PARENTS  => 'Parents',
+        self::OTHERS  => 'Others',
+    ];
+
+    const DONTKNOW  = "Don't know";
+
+    public static array $yesNoDontknow = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::DONTKNOW  => "Don't know",
+    ];
+    const WANTTODO  = 'Want to do';
+
+    public static array $yesNoDontknow = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::WANTTODO  => 'Want to do',
+    ];
     
-    // Teacher
 }
