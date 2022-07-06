@@ -343,6 +343,86 @@
                                 label="Knowledge on Daily life requirement. (Please select (tick) only those items s/he has knowledge)"
                                 :records="$projectConstants::$dailyLife" :isVertical="false" multiple="true"/>
                               <!-- row end -->
+                                <x-input-radio-or-check name="is_she_follow_instructions"
+                                label="Is S/he Follow instructions?" :records="$projectConstants::$followInstruction" />
+                              <!-- end row -->                             
+                                <x-input-radio-or-check name="is_she_ has_sitting_habit_and_how_long"
+                                label="Is S/he has Sitting habit and how long?" :records="$projectConstants::$havit" secondaryInputLabel="If others, specify the duration"/>
+                              <!-- end row -->                             
+                                <x-input-radio-or-check name="is_she_has_hyperness"
+                                label="Is S/he has Hyperness? how long it remain?" :records="$projectConstants::$havittime" secondaryInputLabel="Cooling time? How much time it take to cool down."/>
+                                  <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>Specify the cooling process</h6>
+                                            <div class="mb-2">
+                                                <x-input-textarea rows="1" name="specify_the_cooling_process" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>                                
+                              <!-- end row -->                             
+                                <x-input-radio-or-check name="is_she_do_tantrum"
+                                label="Is S/he do Tantrum ? how long it remain?" :records="$projectConstants::$havittime" secondaryInputLabel="Cooling time ( How long it takes to cool down?)"/>
+                                    <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>Specify the cooling process</h6>
+                                            <div class="mb-2">
+                                                <x-input-textarea rows="1" name="specify_the_cooling_process" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>                              
+                              <!-- end row -->                             
+                              <x-input-radio-or-check name="is_she_do_self_injury"
+                                label="Is S/he Do Self injury?" :records="$projectConstants::$havittime" secondaryInputLabel="Cooling time ( How long it takes to cool down?)"/>
+                                  <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>Specify the cooling process</h6>
+                                            <div class="mb-2">
+                                                <x-input-textarea rows="1" name="specify_the_cooling_process" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>                              
+                              <!-- end row -->
+                            <x-input-radio-or-check name="follow_any_specific_life_style"
+                                label="Follow any specific life style?" :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->  
+                               <x-input-radio-or-check name="what_is_the_way_of_communication" type="checkbox"
+                                label="What is the way of Communication?" :records="$projectConstants::$communicate" :isVertical="false" multiple="true"/>
+                              <!-- row end -->
+                              <x-input-radio-or-check name="how_he_she_can_follow_instructions"
+                                label="How he/she can Follow instructions?" :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->                                                           
+                              <x-input-radio-or-check name="is_she_do_temper_how_long_it_remain"
+                                label="Is s/he do Temper? how long it remain?" :records="$projectConstants::$yesNoEn"  secondaryInputLabel="Cooling time ( How long it takes to cool down?)" />
+                                   <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>Specify the cooling process</h6>
+                                            <div class="mb-2">
+                                                <x-input-textarea rows="1" name="specify_the_cooling_process" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>                       
+                              <!-- end row -->                                                           
+                              <x-input-radio-or-check name="is_she_hit_others"
+                                label="Is S/he Hit Others?" :records="$projectConstants::$yesNoEn"  secondaryInputLabel="Cooling time ( How long it takes to cool down?)" />
+                                   <div class="row border-top py-2">
+                                    <div class="col-xl-12 col-sm-12">
+                                        <div class="m-0">
+                                            <h6>Specify the cooling process</h6>
+                                            <div class="mb-2">
+                                                <x-input-textarea rows="1" name="specify_the_cooling_process" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>                       
+                              <!-- end row -->                                                           
                             </section>
                           </div>
                           <div class="tab-pane" id=" NumberOfChildrenInTheFamily">
