@@ -120,7 +120,7 @@ class StockReceiveCreate extends Component
         'warehouse_id' => 'required',
         'type' => 'required',
         'date' => 'required',
-        'note' => 'required',
+        'note' => 'nullable',
         'product_id.*' => 'required',
         'exp_date.*' => 'required',
         'available_qty.*' => 'required',

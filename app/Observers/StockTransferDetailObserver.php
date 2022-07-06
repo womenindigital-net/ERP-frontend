@@ -31,13 +31,20 @@ class StockTransferDetailObserver
 
         $projectId = $stockTransferDetail->stockTransfer->project_id;
         $productId = $stockTransferDetail->product_id;
-        $warehouseId = $stockTransferDetail->stockTransfer->warehouse_id;
+        $warehouseIdForm = $stockTransferDetail->stockTransfer->warehouse_id_from;
+        $warehouseIdTo = $stockTransferDetail->stockTransfer->warehouse_id_to;
 
-        $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
+        $stockForm = $this->stockRepo->getDetailAccordingly($projectId, $warehouseIdForm, $productId);
+        if ($stockForm) {
+            $stockForm->qty -= $stockTransferDetail->transfer_quantity;
+            $stockForm->saveQuietly();
+        }
 
-        if ($stock) {
-            $stock->qty -= $stockTransferDetail->transfer_quantity;
-            $stock->saveQuietly();
+        $stockTo = $this->stockRepo->getDetailAccordingly($projectId, $warehouseIdTo, $productId);
+
+        if ($stockTo) {
+            $stockTo->qty += $stockTransferDetail->transfer_quantity;
+            $stockTo->saveQuietly();
         }
     }
 

@@ -5,6 +5,12 @@
     <div class="row">
         <div class="col-md-6">
             <div class="mb-3">
+                <label class="form-label">Project</label>
+                <x-input-select wireModel="project_id" :records="$projects" targetColumn="title" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
                 <label class="form-label">Warehouse</label>
                 <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
             </div>

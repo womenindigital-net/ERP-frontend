@@ -49,6 +49,7 @@ class StockAssignCreate extends Component
 
     public $stockAssign;
 
+    public $project_id;
     public $warehouse_id;
     public $date;
     public $note;
@@ -58,6 +59,7 @@ class StockAssignCreate extends Component
     public $assigned_to;
 
     protected array $rules = [
+        'project_id' => 'required',
         'warehouse_id' => 'required',
         'date' => 'required',
         'note' => 'required',

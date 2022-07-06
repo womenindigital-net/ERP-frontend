@@ -31,7 +31,7 @@ class StockAssignService
 
     private function collectStockAssign(array $validated)
     {
-        [$stockAssign, $data] = extractNecessaryFieldsFromData($validated, ['warehouse_id', 'date', 'note']);
+        [$stockAssign, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'date', 'note']);
 
         $stockAssign['created_by'] = auth()->id();
 

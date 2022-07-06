@@ -49,17 +49,23 @@
                             <div class="col-lg-2 p-0 pe-1">
                                 <label for="product">Product</label>
                             </div>
-                            <div class="col-lg-2 p-0 pe-1">
+                            <div class="col-lg-1 p-0 pe-1">
                                 <label for="product">Available Quality </label>
                             </div>
-                            <div class="col-lg-2 p-0 pe-1">
+                            <div class="col-lg-1 p-0 pe-1">
                                 <label for="discount">Price</label>
                             </div>
-                            <div class="col-lg-2 p-0 pe-1">
+                            <div class="col-lg-1 p-0 pe-1">
                                 <label for="quality">Quantity</label>
                             </div>
-                            <div class="col-lg-2 p-0 pe-1">
+                            <div class="col-lg-1 p-0 pe-1">
                                 <label for="total">Sub-total</label>
+                            </div>
+                            <div class="col-lg-2 p-0 pe-1">
+                                <label for="total">Budget Head</label>
+                            </div>
+                            <div class="col-lg-2 p-0 pe-1">
+                                <label for="total">Budget Sub Head</label>
                             </div>
                             <div class="col-lg-2 p-0 pe-1">
                                 <label for="subtotal">Discount</label>
@@ -80,22 +86,30 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="available_qty.{{$key}}" type="number"
                                         sub_total="true">
                                     </x-input-text>
                                 </div>
-                                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="price.{{$key}}"></x-input-text>
                                 </div>
-                                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
                                 </div>
 
-                                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                <div class=" col-lg-1 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="sub_total.{{$key}}" type="number"
                                         sub_total="true">
                                     </x-input-text>
+                                </div>
+                                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                    <x-input-select :records="$budgetHead" wireModel="budget_head_id.{{$key}}" targetColumn="title">
+                                    </x-input-select>
+                                </div>
+                                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                    <x-input-select :records="$budgetHead" wireModel="budget_sub_head_id.{{$key}}" targetColumn="title">
+                                    </x-input-select>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
                                     <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>

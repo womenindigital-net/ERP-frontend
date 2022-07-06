@@ -9,5 +9,5 @@ class RequisitionDetail extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id', 'qty', 'sub_total', 'price', 'available_qty', 'discount'];
+    protected $fillable = ['product_id', 'qty','budget_sub_head_id','budget_head_id', 'sub_total', 'price', 'available_qty', 'discount'];
 }
