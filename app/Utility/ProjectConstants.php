@@ -176,7 +176,173 @@ final class ProjectConstants
         self::PHYSICALEXERCISE => 'Physical Exercise(PE)',
     ];
 
-    // Teacher
-    
-    // Teacher
+    // ====================
+    // care Need Part 1
+    // ====================
+
+    // where you learned about us
+    const DOCTORS  = 'Doctors ';
+    const COUNSELOR  = 'Counselor';
+    const PEDIATRICIAN  = 'Pediatrician ';
+    const LEAFLET  = 'Leaflet';
+    const NEWSPAPER  = 'News paper ';
+    const FACEBOOK  = 'Facebook ';
+    const WEBSITE  = 'Website';
+    const SCHOOL  = 'School';
+    const ORGANIZATION  = 'Organization';
+    const PARENTS  = 'Parents';
+    const OTHERS  = 'Others';
+
+    public static array $learnAbout = [
+        self::DOCTORS  => 'Doctors',
+        self::COUNSELOR  => 'Counselor',
+        self::PEDIATRICIAN  => 'Pediatrician',
+        self::LEAFLET  => 'Leaflet',
+        self::NEWSPAPER  => 'News',
+        self::FACEBOOK  => 'Facebook',
+        self::WEBSITE  => 'Website',
+        self::SCHOOL  => 'School',
+        self::ORGANIZATION  => 'Organization',
+        self::PARENTS  => 'Parents',
+        self::OTHERS  => 'Others',
+    ];
+
+    const DONTKNOW  = "Don't know";
+
+    public static array $yesNoDontknow = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::DONTKNOW  => "Don't know",
+    ];
+
+    const WANTTODO  = 'Want to do';
+
+    public static array $yesNoWantdo = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::WANTTODO  => 'Want to do',
+    ];
+
+    // Schooling
+    const PSCHOOL  = 'Primary School';
+    const HSCHOOL  = 'High School';
+    const DC  = 'Day care ';
+    const SSCHOOL  = 'Special School';
+    const HSCHOOOL  = 'Home school';
+    const COLLEGE  = 'College';
+    const UNIVERSITY  = 'University';
+    const OTHERINSTITUTE  = 'Other Institute';
+
+    public static array $school = [
+        self::PSCHOOL => 'Primary School',
+        self::HSCHOOL => 'High School',
+        self::DC => 'Day care',
+        self::SSCHOOL => 'Special School',
+        self::HSCHOOOL => 'Home school',
+        self::COLLEGE => 'College',
+        self::UNIVERSITY => 'University',
+        self::OTHERINSTITUTE => 'Other Institute',
+    ];
+
+    const MID  = 'Mid';
+
+    public static array $yesMidNo = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::MID  => 'Mid',
+    ];
+
+    const VERBAL  = 'Verbal';
+    const SVERBAL  = 'Semi Verbal';
+    const NVERBAL  = 'Non-Verbal';
+    const SIGN  = 'Sign';
+    const PECS  = 'PECs';
+    const GESTURE  = 'Gesture';
+
+    public static array $communicate = [
+        self::VERBAL => 'Verbal',
+        self::SVERBAL => 'Semi Verbal',
+        self::NVERBAL => 'Non-Verbal',
+        self::SIGN => 'Sign',
+        self::PECS => 'PECs',
+        self::GESTURE => 'Gesture',
+    ];
+
+    const FOOD  = 'Food';
+    const NFOOD  = 'Non-Food';
+    const CLOTHING  = 'Clothing';
+    const EXPRESS  = 'Express ';
+    const DEMANDING  = 'Demanding';
+    const LOVE  = 'Love';
+    const HATE  = 'Hate';
+    const FAMILY  = 'Family';
+    const FRIENDS  = 'Friends';
+    const SHOPPING  = 'Shopping ';
+    const GROCERIES  = 'Groceries';
+    const BASICNEEDS  = 'Basic needs';
+    const GAMES  = 'Games';
+    const SAFETY  = 'Safety';
+    const EMERGENCY  = 'Emergency';
+    const ACCIDENT  = ' Accident ';
+    const IMPORTANCE  = ' Importance ';
+    const TRANSPORT  = 'Transport';
+    const RIGHT  = 'Right';
+    const WRONG  = 'Wrong';
+    const GOOD  = 'Good';
+    const BAD  = 'Bad';
+
+    public static array $dailyLife = [
+        self::FOOD => 'Food',
+        self::NFOOD => 'Non',
+        self::CLOTHING => 'Clothing',
+        self::EXPRESS => 'Express',
+        self::DEMANDING => 'Demanding',
+        self::LOVE => 'Love',
+        self::HATE => 'Hate',
+        self::FAMILY => 'Family',
+        self::FRIENDS => 'Friends',
+        self::SHOPPING => 'Shopping',
+        self::GROCERIES => 'Groceries',
+        self::BASICNEEDS => 'Basic needs',
+        self::GAMES => 'Games',
+        self::SAFETY => 'Safety',
+        self::EMERGENCY => 'Emergency',
+        self::ACCIDENT => ' Accident',
+        self::IMPORTANCE => ' Importance',
+        self::TRANSPORT => 'Transport',
+        self::RIGHT => 'Right',
+        self::WRONG => 'Wrong',
+        self::GOOD => 'Good',
+        self::BAD => 'Bad',
+    ];
+
+
+    const REGULAR  = 'Regular';
+    const SOMETIMES  = 'Sometimes';
+    const ONEINS  = 'Follow One way instructions';
+    const BOTHINS  = 'Follow both way instructions';
+
+    public static array $followInstruction = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::REGULAR  => 'Regular',
+        self::SOMETIMES  => 'Sometimes',
+        self::ONEINS  => 'Follow One way instructions',
+        self::BOTHINS  => 'Follow both way instructions',
+    ];
+
+    const REGULAR  = '5 mins';
+    const REGULAR  = '15 mins';
+    const SOMETIMES  = '30 mins';
+    const ONEINS  = 'Till targeted time';
+    const BOTHINS  = 'Others';
+
+    public static array $followInstruction = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::REGULAR  => 'Regular',
+        self::SOMETIMES  => 'Sometimes',
+        self::ONEINS  => 'Follow One way instructions',
+        self::BOTHINS  => 'Follow both way instructions',
+    ];
 }
