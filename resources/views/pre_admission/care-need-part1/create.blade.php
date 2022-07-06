@@ -54,7 +54,7 @@
                       </div>
                     </div>
                     <div class="col-sm-9 col-md-9">
-                      <form action="{{ route('autisum-behaviour.store') }}" method="POST">
+                      <form action="" method="POST">
                         @csrf
                         <div class="tab-content">
                           <div class="tab-pane" id="AutismBehaviorChecklist">
@@ -69,13 +69,13 @@
                                 <div class="col-lg-4">
                                   <div class="mb-3">
                                     <label for="basicpill-lastname-input">Teacher:</label>
-                                    <x-input-select name="teacher_id" :records="$teachers" />
+                                    <x-input-select name="teacher_id" :records="[]" />
                                   </div>
                                 </div>
                                 <div class="col-lg-4">
                                   <div class="mb-3">
                                     <label for="basicpill-phoneno-input">Candidate ID:</label>
-                                    <x-input-select name="student_id" :records="$students" />
+                                    <x-input-select name="student_id" :records="[]" />
                                   </div>
                                 </div>
                               </div>
