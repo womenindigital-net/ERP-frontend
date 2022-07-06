@@ -32,7 +32,7 @@ class StockReceiveService
 
     private function collectStockReceive(array $validated)
     {
-        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'type', 'date', 'note']);
+        [$stockReceive, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'purchase_id', 'warehouse_id', 'type', 'date', 'note']);
 
         $stockReceive['created_by'] = auth()->id();
 

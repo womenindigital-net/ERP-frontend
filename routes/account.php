@@ -70,6 +70,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::put('purchase-order/{purchase_order}/requisition/{requisition}/update', [PurchaseController::class, 'update'])->name('purchase-order.update');
     Route::delete('purchase-order/{purchase}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
     Route::get('purchase-order-return/{purchase}', [PurchaseController::class, 'purchaseReturn'])->name('purchase-order.return');
+    Route::get('purchase-order-return', [PurchaseController::class, 'purchaseReturnShow'])->name('purchase-order.return.show');
 
 
 

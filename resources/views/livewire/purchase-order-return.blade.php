@@ -179,7 +179,7 @@
             @elseif (!($this->mode) == 'show')
             <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-            <a href="{{route('.create')}}" class="btn btn-lg btn-success w-100">
+            <a href="{{route('purchase-order-return.create')}}" class="btn btn-lg btn-success w-100">
                 Go Back
             </a>
             @endif

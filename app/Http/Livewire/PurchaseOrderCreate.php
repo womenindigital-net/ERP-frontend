@@ -23,10 +23,10 @@ class PurchaseOrderCreate extends Component
 
     public $requisition;
     public $requisition_id;
+    public $supplier_id;
     public $date;
     public $exp_date;
     public $vat;
-    public $supplier_id;
 
     private PurchaseOrderRepository $repo;
     private PurchaseOrderService $service;
@@ -42,8 +42,7 @@ class PurchaseOrderCreate extends Component
         SupplierRepository $supplierRepository,
         ProductService $productService,
         RequisitionRepository $requisitionRepository,
-    )
-    {
+    ) {
         $this->service = $service;
         $this->repo = $repository;
         $this->projectRepo = $projectRepository;
@@ -95,7 +94,7 @@ class PurchaseOrderCreate extends Component
             if ($this->price[$targetKey] && $this->qty[$targetKey]) {
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - ($this->discount[$targetKey] ?? 0);
                 if ($value) {
-                    $this->sub_total[$targetKey] += $this->sub_total[$targetKey] * ($this->vat[$targetKey]/100);
+                    $this->sub_total[$targetKey] += $this->sub_total[$targetKey] * ($this->vat[$targetKey] / 100);
                 }
             }
         }

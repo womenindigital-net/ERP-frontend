@@ -10,7 +10,6 @@
                         <th>Payment Method</th>
                         <th>Total Payment</th>
                         <th>Reference</th>
-                        <th>Send for Approval</th>
                         <th>Account</th>
                         <th>Check No.</th>
                         <th>Log</th>
@@ -28,9 +27,8 @@
                         <td>{{ $record->payment->method }}</td>
                         <td>{{ $record->payment->amount }}</td>
                         <td>{{ $record->payment->user_id }}</td>
-                        <td>{{-- $record-> --}}</td>
-                        <td>{{-- $record->payment->history --}}</td>
-                        <td>{{-- $record-> --}}</td>
+                        <td>{{ $record->payment->history->info->bank_account_id }}</td>
+                        <td>{{ $record->payment->history->info->cheque_id }}</td>
                         <td>{{ $record->created_at }}</td>
                         <td>
                             <a href="{{route('supplier-payment.show', $record->id)}}" type="button"

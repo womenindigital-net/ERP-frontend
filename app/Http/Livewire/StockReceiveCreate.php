@@ -13,6 +13,7 @@ use App\Repositories\PurchaseRepository;
 use App\Repositories\WarehouseRepository;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\StockReceiveRepository;
+use App\Repositories\PurchaseOrderRepository;
 use App\Http\Livewire\Traits\CommonListElements;
 
 class StockReceiveCreate extends Component
@@ -24,6 +25,7 @@ class StockReceiveCreate extends Component
     // public $purchase_type;
     // public $return_type;
     public $date;
+    public $purchase_id;
     public $note;
     public $exp_date;
     public $available_qty;
@@ -39,6 +41,7 @@ class StockReceiveCreate extends Component
     private StockReceiveService $service;
     private StockReceiveRepository $repo;
     private ProductService $productService;
+    private PurchaseOrderRepository $purchaseOrderRepo;
     private ProjectRepository $projectRepo;
     private UserRepository $userRepo;
     private PurchaseRepository $purchaseRepo;
@@ -50,6 +53,7 @@ class StockReceiveCreate extends Component
         StockReceiveRepository $repository,
         ProductService $productService,
         ProjectRepository $projectRepository,
+        PurchaseOrderRepository $purchaseOrderRepository,
         UserRepository $userRepository,
         WarehouseRepository $warehouseRepository,
         StockRepository $stockRepository,
@@ -58,7 +62,7 @@ class StockReceiveCreate extends Component
         $this->inputs[] = $this->numberOfItems;
         // $this->receiveInput = false;
         // $this->purchaseInput = false;
-
+        $this->purchaseOrderRepo = $purchaseOrderRepository;
         $this->service = $service;
         $this->repo = $repository;
         $this->productService = $productService;
@@ -94,6 +98,7 @@ class StockReceiveCreate extends Component
             $this->project_id = $this->stockReceive->project_id;
             $this->type = $this->stockReceive->type;
             $this->purchase_type = $this->stockReceive->purchase_type;
+            $this->purchase_id = $this->stockReceive->purchase_id;
             $this->purchase_type ? $this->purchaseInput = true : $this->purchaseInput = false;
             $this->return_type = $this->stockReceive->return_type;
             $this->return_type ? $this->receiveInput = true : $this->receiveInput = false;
@@ -117,6 +122,7 @@ class StockReceiveCreate extends Component
 
     protected array $rules = [
         'project_id' => 'required',
+        'purchase_id' => 'nullable',
         'warehouse_id' => 'required',
         'type' => 'required',
         'date' => 'required',
@@ -173,6 +179,7 @@ class StockReceiveCreate extends Component
             'products' => $this->productService->getFormattedDataAsOptGroup(),
             'users' => $this->userRepo->getData(),
             'warehouses' => $this->warehouseRepository->getData(),
+            'purchaseOrder' => $this->purchaseOrderRepo->getData(),
             'purchases' => $this->purchaseRepo->getData(),
             'receiveTypes' => [
                 'Purchase' => 'Purchase',

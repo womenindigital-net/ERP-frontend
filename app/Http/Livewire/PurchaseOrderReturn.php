@@ -117,7 +117,8 @@ class PurchaseOrderReturn extends Component
     {
         $this->service->storeReturn($this->record, $this->validate());
         $this->dispatchBrowserEvent('notify');
-        $this->dispatchBrowserEvent('reload');
+        return $this->redirectRoute('purchase-order.return.show');
+        // $this->dispatchBrowserEvent('reload');
     }
 
     public function render(): Factory|View|Application

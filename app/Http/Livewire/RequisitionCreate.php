@@ -81,6 +81,8 @@ class RequisitionCreate extends Component
                 $this->available_qty[$key] = $detail->available_qty;
                 $this->price[$key] = $detail->price;
                 $this->sub_total[$key] = $detail->sub_total;
+                $this->budget_head_id[$key] = $detail->budget_head_id;
+                $this->budget_sub_head_id[$key] = $detail->budget_sub_head_id;
                 $this->discount[$key] = $detail->discount;
             }
         }

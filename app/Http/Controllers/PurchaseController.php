@@ -143,4 +143,9 @@ class PurchaseController extends Controller
         ];
         return view('accounting.purchase.purchase_return', $data);
     }
+
+    public function purchaseReturnShow()
+    {
+        return view('accounting.purchase.purchase_return');
+    }
 }

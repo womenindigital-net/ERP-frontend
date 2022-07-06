@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Purchase;
 use App\Models\Warehouse;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
+            $table->string('purchase_id')->nullable();
             $table->string('type')->nullable();
             $table->string('date')->nullable();
             $table->string('note')->nullable();

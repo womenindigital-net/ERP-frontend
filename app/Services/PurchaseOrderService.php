@@ -21,13 +21,13 @@ class PurchaseOrderService
 
     public function store(array $validated)
     {
-//        dd($validated);
-        try{
+        // dd($validated);
+        try {
             DB::beginTransaction();
             [$purchaseInfo, $data] = $this->collectPurchaseInfo($validated);
             $purchase = $this->repo->store($purchaseInfo);
-
             $purchaseDetailInfo = $this->collectPurchaseDetailInfo($data);
+            // dd($purchaseDetailInfo);
             $purchase->details()->createMany($purchaseDetailInfo);
             DB::commit();
         } catch (\Exception $e) {
@@ -45,7 +45,7 @@ class PurchaseOrderService
         for ($i = 0; $i < count($purchaseDetailInfo['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $purchaseDetailInfo['product_id'][$i],
-                'supplier_id' => $purchaseDetailInfo['supplier_id'][$i] ?? null,
+                'supplier_id' => $purchaseDetailInfo['supplier_id'] ?? null,
                 'qty' => $purchaseDetailInfo['qty'][$i],
                 'sub_total' => $purchaseDetailInfo['sub_total'][$i],
                 'price' => $purchaseDetailInfo['price'][$i],
@@ -70,14 +70,14 @@ class PurchaseOrderService
     public function storeReturn(Purchase $purchase, array $validate)
     {
         // purchase return
-            // purchase_id, date, note
-//        $purchase->details()->createMany($purchaseDetailInfo);
+        // purchase_id, date, note
+        //        $purchase->details()->createMany($purchaseDetailInfo);
         $purchaseReturnInfo = $this->collectPurchaseReturnInfo($validate);
 
-//        dd($purchaseReturnInfo, $this->collectPurchaseDetailInfo($validate));
+        //        dd($purchaseReturnInfo, $this->collectPurchaseDetailInfo($validate));
         $purchaseReturn = $purchase->return()->create($purchaseReturnInfo);
         // purchase return detail
-            // purchase_return_id, purchase_detail_id
+        // purchase_return_id, purchase_detail_id
         $purchaseDetailInfo = $this->collectPurchaseDetailInfo($validate);
         $purchaseReturn->details()->createMany($purchaseDetailInfo);
     }

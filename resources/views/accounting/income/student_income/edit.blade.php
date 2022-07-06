@@ -101,8 +101,8 @@
                                                         <x-input-text name='amount' type="number"
                                                                       placeholder='Payment Amount' value="{{$detail->amount}}">
                                                         </x-input-text>
-                                                        <div>
-                                                            <button class="btn btn-danger ms-2 removeBtn">
+                                                        <div onclick="this.parentNode.parentNode.remove(this)">
+                                                            <button class="btn btn-danger ms-2 removeBtn" type="button">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                         </div>

@@ -101,6 +101,9 @@
                             </div>
                             @endforeach
                         </div>
+                        @if (!($this->mode) == 'show')
+
+                        @endif
                         <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                             wire:click="addMore()" />
                     </div>
