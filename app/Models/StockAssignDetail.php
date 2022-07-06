@@ -10,4 +10,9 @@ class StockAssignDetail extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function stockAssign()
+    {
+        return $this->belongsTo(StockAssign::class);
+    }
 }

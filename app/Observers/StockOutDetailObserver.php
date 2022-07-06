@@ -27,18 +27,6 @@ class StockOutDetailObserver
      */
     public function created(StockOutDetail $stockOutDetail)
     {
-        //
-    }
-
-    /**
-     * Handle the StockOutDetail "updated" event.
-     *
-     * @param  \App\Models\StockOutDetail  $stockOutDetail
-     * @return void
-     */
-    public function updated(StockOutDetail $stockOutDetail)
-    {
-
         $stockReceiveDetail = $this->repo->getRelatedData($stockOutDetail, ['stockOut']);
 
         $projectId = $stockReceiveDetail->stockOut->project_id;
@@ -51,6 +39,17 @@ class StockOutDetailObserver
             $stock->qty -= $stockReceiveDetail->stock_out;
             $stock->saveQuietly();
         }
+    }
+
+    /**
+     * Handle the StockOutDetail "updated" event.
+     *
+     * @param  \App\Models\StockOutDetail  $stockOutDetail
+     * @return void
+     */
+    public function updated(StockOutDetail $stockOutDetail)
+    {
+        //
     }
 
     /**

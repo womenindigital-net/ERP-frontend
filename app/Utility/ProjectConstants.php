@@ -331,18 +331,105 @@ final class ProjectConstants
         self::BOTHINS  => 'Follow both way instructions',
     ];
 
-    // const REGULAR  = '5 mins';
-    // const REGULAR  = '15 mins';
-    // const SOMETIMES  = '30 mins';
-    // const ONEINS  = 'Till targeted time';
-    // const BOTHINS  = 'Others';
+    const FIVEMIN  = '5 mins';
+    const FIFTINMIN  = '15 mins';
+    const MIN  = '30 mins';
+    const TTIME  = 'Till targeted time';
 
-    // public static array $followInstruction = [
-    //     self::YES => 'Yes',
-    //     self::NO  => 'No',
-    //     self::REGULAR  => 'Regular',
-    //     self::SOMETIMES  => 'Sometimes',
-    //     self::ONEINS  => 'Follow One way instructions',
-    //     self::BOTHINS  => 'Follow both way instructions',
-    // ];
+    public static array $havit = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::FIVEMIN  => '5 mins',
+        self::FIFTINMIN  => '15 mins',
+        self::MIN  => '30 mins',
+        self::TTIME  => 'Till targeted time',
+        self::OTHERS  => 'Others',
+    ];
+
+    // Till targeted time
+    public static array $havittime = [
+        self::YES => 'Yes',
+        self::NO  => 'No',
+        self::FIVEMIN  => '5 mins',
+        self::MIN  => '30 mins',
+        self::OTHERS  => 'Others',
+    ];
+
+    // Family Economical condition
+    const RICH  = 'Rich';
+    const MIDDLE  = 'Middle';
+    const INC  = 'Low Income';
+
+    public static array $famCon = [
+        self::RICH => 'Rich',
+        self::MIDDLE => 'MIDDLE',
+        self::INC => 'Low Income',
+    ];
+
+    // Going to school?
+
+    const NOTGOING  = 'Other Institute';
+
+    public static array $goingSchool = [
+        self::NOTGOING => 'Not Going',
+        self::SSCHOOL => 'Special School',
+        self::PSCHOOL => 'Primary School',
+        self::HSCHOOL => 'High School',
+        self::COLLEGE => 'College',
+        self::UNIVERSITY => 'University',
+        self::OTHERINSTITUTE => 'Other Institute',
+    ];
+
+    // Studied till which class?
+
+    const SSC  = 'SSC';
+    const HSC  = 'HSC';
+    const U  = 'University';
+
+    public static array $class = [
+        self::SSC => 'SSC',
+        self::HSC => 'HSC',
+        self::U => 'University',
+        self::COLLEGE => 'College',
+    ];
+
+    // Why not attending school?
+
+
+    const CHILDS  = "Child didn't like it";
+    const SKEEPS  = 'School didn’t keep';
+    const FDS  = 'Father didn’t want';
+    const MS  = 'Mother didn’t want';
+    const T  = 'Transportation problem';
+    const FP  = 'Financial problem';
+    const WM  = 'Wastage of money';
+    const NOUT  = 'No output';
+    const DOTHE  = 'Doing the same thing everyday at school';
+
+    public static array $attendSchool = [
+        self::CHILD => "Child didn't like it",
+        self::SKEEP => 'School didn’t keep',
+        self::FD => 'Father didn’t want',
+        self::M => 'Mother didn’t want',
+        self::T => 'Transportation problem',
+        self::FP => 'Financial problem',
+        self::WM => 'Wastage of money',
+        self::NOUT => 'No output',
+        self::DOTHE => 'Doing the same thing everyday at school',
+    ];
+    
+
+    // Own equipment
+    
+    const CHILD  = 'Phone';
+    const SKEEP  = 'Laptop ';
+    const FD  = 'Computer';
+    const M  = 'Game Console';
+
+    public static array $Ph = [
+        self::CHILD => 'Phone',
+        self::SKEEP => 'Laptop',
+        self::FD => 'Computer',
+        self::M => 'Game Console',
+    ];
 }

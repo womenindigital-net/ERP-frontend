@@ -9,10 +9,10 @@ class MaterialCollectionProduct extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['product_id', 'qty'];
 
     public function materialCollect()
     {
-        return $this->belongsTo(MaterialCollection::class);
+        return $this->belongsTo(MaterialCollection::class, 'material_collection_id', 'id');
     }
 }

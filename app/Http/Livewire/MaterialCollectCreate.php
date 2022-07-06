@@ -50,9 +50,11 @@ class MaterialCollectCreate extends Component
 
     public $materialCollect;
     public $collected_for;
+    public $project_id;
     public $date;
     public $warehouse_id;
     public $produce_product_id;
+    public $product_id;
     public $will_produce;
     public $avl_stock;
     public $qty;
@@ -79,6 +81,7 @@ class MaterialCollectCreate extends Component
     }
 
     protected array $rules = [
+        'project_id' => 'required',
         'collected_for' => 'required',
         'date' => 'required',
         'warehouse_id' => 'required',

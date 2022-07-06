@@ -5,7 +5,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Project</label>
-                        <x-input-select name="project_id" :records="$projects" targetColumn="title">
+                        <x-input-select wireModel="project_id" :records="$projects" targetColumn="title">
                         </x-input-select>
                     </div>
                 </div>

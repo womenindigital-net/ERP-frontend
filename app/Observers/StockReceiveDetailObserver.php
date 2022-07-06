@@ -6,17 +6,17 @@ use App\Models\StockReceiveDetail;
 use App\Repositories\StockRepository;
 use App\Repositories\StockReceiveDetailRepository;
 
-class StockAssignObserver
+class StockReceiveDetailObserver
 {
 
-    // private StockReceiveDetailRepository $repo;
-    // private StockRepository $stockRepo;
+    private StockReceiveDetailRepository $repo;
+    private StockRepository $stockRepo;
 
-    // public function __construct(StockReceiveDetailRepository $repository, StockRepository $stockRepository)
-    // {
-    //     $this->repo = $repository;
-    //     $this->stockRepo = $stockRepository;
-    // }
+    public function __construct(StockReceiveDetailRepository $repository, StockRepository $stockRepository)
+    {
+        $this->repo = $repository;
+        $this->stockRepo = $stockRepository;
+    }
 
     /**
      * Handle the StockReceiveDetail "created" event.
@@ -27,20 +27,20 @@ class StockAssignObserver
     public function created(StockReceiveDetail $stockReceiveDetail)
     {
 
-        // $stockReceiveDetail = $this->repo->getRelatedData($stockReceiveDetail, ['stockReceive']);
+        $stockReceiveDetail = $this->repo->getRelatedData($stockReceiveDetail, ['stockReceive']);
 
-        // $projectId = $stockReceiveDetail->stockReceive->project_id;
-        // $productId = $stockReceiveDetail->product_id;
-        // $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
+        $projectId = $stockReceiveDetail->stockReceive->project_id;
+        $productId = $stockReceiveDetail->product_id;
+        $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
 
-        // $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
+        $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
 
-        // dd( $projectId,$productId, $warehouseId,$stock);
+        // dd($projectId, $productId, $warehouseId, $stock);
 
-        // if ($stock) {
-        //     $stock->qty += $stockReceiveDetail->stock_receive_qty;
-        //     $stock->saveQuietly();
-        // }
+        if ($stock) {
+            $stock->qty += $stockReceiveDetail->stock_receive_qty;
+            $stock->saveQuietly();
+        }
     }
 
     /**

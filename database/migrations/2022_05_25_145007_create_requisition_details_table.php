@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\BudgetHead;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,8 +16,10 @@ return new class extends Migration
     {
         Schema::create('requisition_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Requisition::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Product::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Requisition::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Product::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->string('budget_head_id')->nullable();
+            $table->string('budget_sub_head_id')->nullable();
             $table->integer('available_qty')->nullable();
             $table->integer('qty')->nullable();
             $table->integer('sub_total')->nullable();
