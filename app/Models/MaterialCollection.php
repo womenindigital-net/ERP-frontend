@@ -14,6 +14,9 @@ class MaterialCollection extends Model
 {
     use HasFactory;
 
+
+    protected $guarded = [];
+
     public function details(): HasMany
     {
         return $this->hasMany(MaterialCollectionProduct::class);
@@ -23,6 +26,7 @@ class MaterialCollection extends Model
     {
         return $this->belongsTo(Warehouse::class);
     }
+
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by', 'id');

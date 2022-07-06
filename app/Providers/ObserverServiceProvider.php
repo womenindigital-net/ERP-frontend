@@ -17,8 +17,10 @@ use App\Observers\MaterialCollectionProductObserver;
 use App\Observers\PurchaseObserver;
 use App\Observers\PurchaseReturnDetailObserver;
 use App\Observers\SaleVoucherObserver;
+use App\Observers\StockAssignDetailObserver;
 use App\Observers\StockAssignObserver;
 use App\Observers\StockOutDetailObserver;
+use App\Observers\StockReceiveDetailObserver;
 use App\Observers\StockReceiveObserver;
 use App\Observers\StockTransferDetailObserver;
 use Illuminate\Support\ServiceProvider;
@@ -47,9 +49,11 @@ class ObserverServiceProvider extends ServiceProvider
         StockReceiveDetail::observe(StockReceiveObserver::class);
         Purchase::observe(PurchaseObserver::class);
         PurchaseReturnDetail::observe(PurchaseReturnDetailObserver::class);
-        StockAssignDetail::observe(StockAssignObserver::class);
+        StockReceiveDetail::observe(StockReceiveDetailObserver::class);
         MaterialCollectionProduct::observe(MaterialCollectionProductObserver::class);
         StockTransferDetail::observe(StockTransferDetailObserver::class);
+        // StockAssignDetail::observe(StockAssignObserver::class);
+        StockAssignDetail::observe(StockAssignDetailObserver::class);
         StockOutDetail::observe(StockOutDetailObserver::class);
     }
 }

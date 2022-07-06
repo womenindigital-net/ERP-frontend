@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Project;
 use App\Models\Warehouse;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,6 +18,7 @@ return new class extends Migration
     {
         Schema::create('stock_assigns', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Warehouse::class)->nullable()->constrained()->nullOnDelete();
             $table->string('is_approved')->default(0);
             $table->string('date')->nullable();

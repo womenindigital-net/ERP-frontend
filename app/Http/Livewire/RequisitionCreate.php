@@ -13,6 +13,7 @@ use Illuminate\Contracts\View\Factory;
 use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\WarehouseRepository;
+use App\Repositories\BudgetHeadRepository;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\RequisitionRepository;
 use App\Http\Livewire\Traits\CommonListElements;
@@ -28,6 +29,8 @@ class RequisitionCreate extends Component
     public $requested_by;
     public $date;
     public $title;
+    public $budget_head_id;
+    public $budget_sub_head_id;
 
     private RequisitionService $service;
     private RequisitionRepository $repo;
@@ -36,6 +39,7 @@ class RequisitionCreate extends Component
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    private BudgetHeadRepository $budgetHeadRepo;
 
     public function boot(
         RequisitionService $service,
@@ -45,6 +49,7 @@ class RequisitionCreate extends Component
         UserRepository $userRepository,
         WarehouseRepository $warehouseRepository,
         StockRepository $stockRepository,
+        BudgetHeadRepository $budgetHeadRepository,
     ) {
         $this->inputs[] = $this->numberOfItems;
         $this->service = $service;
@@ -54,6 +59,7 @@ class RequisitionCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+        $this->budgetHeadRepo = $budgetHeadRepository;
     }
 
     public function mount()
@@ -91,6 +97,8 @@ class RequisitionCreate extends Component
         'qty.*' => 'required',
         'sub_total.*' => 'required',
         'price.*' => 'nullable',
+        'budget_head_id.*' => 'required',
+        'budget_sub_head_id.*' => 'required',
         'discount.*' => 'nullable',
     ];
 
@@ -135,6 +143,7 @@ class RequisitionCreate extends Component
             'products' => $this->productService->getFormattedDataAsOptGroup(),
             'users' => $this->userRepo->getData(),
             'warehouses' => $this->warehouseRepository->getData(),
+            'budgetHead' => $this->budgetHeadRepo->getData(),
         ];
 
         return view('livewire.requisition-create', $data);

@@ -71,7 +71,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::delete('purchase-order/{purchase}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
     Route::get('purchase-order-return/{purchase}', [PurchaseController::class, 'purchaseReturn'])->name('purchase-order.return');
 
-    
+
 
     // Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
 

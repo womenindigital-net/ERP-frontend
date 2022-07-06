@@ -41,13 +41,15 @@ class RequisitionService
 
     private function collectRequisitionDetailsInfos(mixed $data): array
     {
-        [$requisitionDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty']);
+        [$requisitionDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty', 'budget_head_id', 'budget_sub_head_id']);
 
         for ($i = 0; $i < count($requisitionDetailInfos['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $requisitionDetailInfos['product_id'][$i],
                 'qty' => $requisitionDetailInfos['qty'][$i],
                 'sub_total' => $requisitionDetailInfos['sub_total'][$i],
+                'budget_head_id' => $requisitionDetailInfos['budget_head_id'][$i],
+                'budget_sub_head_id' => $requisitionDetailInfos['budget_sub_head_id'][$i],
                 'price' => $requisitionDetailInfos['price'][$i],
                 'available_qty' => $requisitionDetailInfos['available_qty'][$i],
             ];
