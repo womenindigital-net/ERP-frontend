@@ -33,7 +33,7 @@ class FinishedGoodService
     {
         $total_qty = 0;
 
-        [$finishedGoods, $data] = extractNecessaryFieldsFromData($validated, ['warehouse_id', 'date', 'note', 'total_qty']);
+        [$finishedGoods, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'date', 'note', 'total_qty']);
 
         for ($i = 0; $i < count($data['qty']); $i++) {
             $total_qty = $data['qty'][$i] +  $total_qty;

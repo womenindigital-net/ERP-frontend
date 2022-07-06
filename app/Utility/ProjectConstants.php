@@ -318,9 +318,9 @@ final class ProjectConstants
 
 
     const REGULAR  = 'Regular';
-    // const SOMETIMES  = 'Sometimes';
-    // const ONEINS  = 'Follow One way instructions';
-    // const BOTHINS  = 'Follow both way instructions';
+    const SOMETIMES  = 'Sometimes';
+    const ONEINS  = 'Follow One way instructions';
+    const BOTHINS  = 'Follow both way instructions';
 
     public static array $followInstruction = [
         self::YES => 'Yes',
@@ -331,22 +331,7 @@ final class ProjectConstants
         self::BOTHINS  => 'Follow both way instructions',
     ];
 
-<<<<<<< HEAD
-    // const REGULAR  = '5 mins';
-    // const REGULAR  = '15 mins';
-    const SOMETIMES  = '30 mins';
-    const ONEINS  = 'Till targeted time';
-    const BOTHINS  = 'Others';
 
-    // public static array $followInstruction = [
-    //     self::YES => 'Yes',
-    //     self::NO  => 'No',
-    //     self::REGULAR  => 'Regular',
-    //     self::SOMETIMES  => 'Sometimes',
-    //     self::ONEINS  => 'Follow One way instructions',
-    //     self::BOTHINS  => 'Follow both way instructions',
-    // ];
-=======
     const FIVEMIN  = '5 mins';
     const FIFTINMIN  = '15 mins';
     const MIN  = '30 mins';
@@ -433,10 +418,10 @@ final class ProjectConstants
         self::NOUT => 'No output',
         self::DOTHE => 'Doing the same thing everyday at school',
     ];
-    
+
 
     // Own equipment
-    
+
     const CHILD  = 'Phone';
     const SKEEP  = 'Laptop ';
     const FD  = 'Computer';
@@ -448,5 +433,4 @@ final class ProjectConstants
         self::FD => 'Computer',
         self::M => 'Game Console',
     ];
->>>>>>> 7e3b0ff3fbefc03f87107b18292cd71af68e14c4
 }

@@ -22,6 +22,7 @@ class FinishedGoodCreate extends Component
     public $finishedGood;
     public $date;
     public $note;
+    public $project_id;
     public $qty;
     public $unit;
     // public $unit;
@@ -72,6 +73,7 @@ class FinishedGoodCreate extends Component
 
 
     protected array $rules = [
+        'project_id' => 'required',
         'warehouse_id' => 'required',
         'date' => 'required',
         'note' => 'nullable',

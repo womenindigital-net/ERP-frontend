@@ -10,4 +10,9 @@ class FinishedGoodDetail extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function finishedGood()
+    {
+        return $this->belongsTo(FinishedGood::class);
+    }
 }

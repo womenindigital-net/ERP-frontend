@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\FinishedGoodDetail;
 use App\Models\Income;
 use App\Models\MaterialCollectionProduct;
 use App\Models\Purchase;
@@ -12,6 +13,7 @@ use App\Models\StockAssignDetail;
 use App\Models\StockOutDetail;
 use App\Models\StockReceiveDetail;
 use App\Models\StockTransferDetail;
+use App\Observers\FinishedGoodDetailObserver;
 use App\Observers\IncomeObserver;
 use App\Observers\MaterialCollectionProductObserver;
 use App\Observers\PurchaseObserver;
@@ -50,6 +52,7 @@ class ObserverServiceProvider extends ServiceProvider
         Purchase::observe(PurchaseObserver::class);
         PurchaseReturnDetail::observe(PurchaseReturnDetailObserver::class);
         StockReceiveDetail::observe(StockReceiveDetailObserver::class);
+        FinishedGoodDetail::observe(FinishedGoodDetailObserver::class);
         MaterialCollectionProduct::observe(MaterialCollectionProductObserver::class);
         StockTransferDetail::observe(StockTransferDetailObserver::class);
         // StockAssignDetail::observe(StockAssignObserver::class);
