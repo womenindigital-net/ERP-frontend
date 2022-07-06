@@ -331,18 +331,18 @@ final class ProjectConstants
         self::BOTHINS  => 'Follow both way instructions',
     ];
 
-    const REGULAR  = '5 mins';
-    const REGULAR  = '15 mins';
-    const SOMETIMES  = '30 mins';
-    const ONEINS  = 'Till targeted time';
-    const BOTHINS  = 'Others';
+    // const REGULAR  = '5 mins';
+    // const REGULAR  = '15 mins';
+    // const SOMETIMES  = '30 mins';
+    // const ONEINS  = 'Till targeted time';
+    // const BOTHINS  = 'Others';
 
-    public static array $followInstruction = [
-        self::YES => 'Yes',
-        self::NO  => 'No',
-        self::REGULAR  => 'Regular',
-        self::SOMETIMES  => 'Sometimes',
-        self::ONEINS  => 'Follow One way instructions',
-        self::BOTHINS  => 'Follow both way instructions',
-    ];
+    // public static array $followInstruction = [
+    //     self::YES => 'Yes',
+    //     self::NO  => 'No',
+    //     self::REGULAR  => 'Regular',
+    //     self::SOMETIMES  => 'Sometimes',
+    //     self::ONEINS  => 'Follow One way instructions',
+    //     self::BOTHINS  => 'Follow both way instructions',
+    // ];
 }

@@ -105,7 +105,7 @@
                                     <p>Enter common information</p>
                                   </div>
                                 </div>
-                              <x-input-radio-or-check name="from_where_you_learned_about_us?" type="checkbox"
+                              <x-input-radio-or-check name="from_where_you_learned_about_us" type="checkbox"
                                 label="From where you learned about us?"
                                 :records="$projectConstants::$learnAbout" :isVertical="false" multiple="true" secondaryInputLabel="If other, specify name"/>
                               <!-- row end -->
@@ -275,236 +275,74 @@
                           </div>
                           <div class="tab-pane" id="EducationalInformation">
                             <section>
-                              <x-input-radio-or-check name="does_not_follow_simple_commands_given_once"
-                                label="Does not follow simple commands given once"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="has_pronoun_reversal" label="Has pronoun reversal"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="atonalspeech_pattern" label="Atonal Speech pattern"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check
-                                name="does_not_respond_to_own_name_when_called_out_among_two_others"
-                                label="Does not respond to own name when called out among two others"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="seldom_says_yes_or_I" label="Seldom says “yes” or “I”"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_not_follow_simple_commands_involving_prepositions"
-                                label="Does not follow simple commands involving prepositions"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="gets_desired_objects_by_gesturing"
-                                label="Gets desired objects by gesturing" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="repeats_phrases_over_and_over"
-                                label="Repeats phrases over and over" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="cannot_point_to_more_than_five_named_objects"
-                                label="Cannot point to more than five named objects"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="uses_5_spontaneous_words_per_day"
-                                label="Uses 0-5 spontaneous words per day to communicate wants and needs"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="repeats_sounds_or_words" label="Repeats sounds or words"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="echoes_questions_or_statements"
-                                label="Echoes questions or statements made by others"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="uses_at_least_15_but_less_than_30"
-                                label="Uses at least 15 but less than 30 spontaneous phrases daily to communicate"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="learns_a_simple_task"
-                                label="Learns a simple task but “forgets” quickly"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="strong_reactions_changes_in_routine_environment"
-                                label="Strong reactions to changes in routine-environment"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="has_special_abilities_in_one_area_of_development" label="Has “special abilities” in one area of development, which seems to rule out mental
-                                retardation" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="severe_temper_tantrums"
-                                label="Severe temper tantrums and-or frequent minor tantrums"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="hurts_others_by_biting_hitting_kicking"
-                                label="Hurts others by biting, hitting, kicking, etc…"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_not_wait_for_needs_to_be_met"
-                                label="Does not wait for needs to be met" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="difficulties_with_toileting"
-                                label="Difficulties with toileting" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_not_dress_self_without_frequent_help"
-                                label="Does not dress self without frequent help"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="frequently_unaware_surroundings"
-                                label="Frequently unaware of surroundings, and may be oblivious to dangerous situations"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->>
-                              <x-input-radio-or-check name="prefers_to_manipulate_and_be_occupied_with_inanimate_things"
-                                label="Prefers to manipulate and be occupied with inanimate things"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="a_developmental_delay_was_identified"
-                                label="A developmental delay was identified at or before 30 months of age"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
+                                <div class="col-lg-12">
+                                  <div class="mb-3">
+                                    <label for="verticalnav-phoneno-input">Instruction:</label>
+                                    <p>Enter Educational Information</p>
+                                  </div>
+                                </div> 
+                              <!-- end row -->
+                                <x-input-radio-or-check name="schooling" type="checkbox"
+                                label="Schooling"
+                                :records="$projectConstants::$learnAbout" :isVertical="false" multiple="true" secondaryInputLabel="Please provide other school name"/>
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_has_speaking_capacity"
+                                label="Is S/he has Speaking Capacity?" :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_has_listening_capacity"
+                                label="Is S/he has Listening Capacity?" :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_has_reading_capacity"
+                                label="Is S/he has Reading Capacity?" :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_has_writing_capacity"
+                                label="Is S/he has Writing capacity?" :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_has"
+                                label="Is S/he has" :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_has_counting_capacity"
+                                label="Is S/he has Counting capacity? " :records="$projectConstants::$yesNoEn" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_has_money_concept"
+                                label="Is S/he has Money concept?" :records="$projectConstants::$yesNoEn" />
                               <!-- end row -->
                             </section>
                           </div>
                           <div class="tab-pane" id="ChildConditionAtHisFamily">
                             <section>
-                              <x-input-radio-or-check name="does_not_follow_simple_commands_given_once"
-                                label="Does not follow simple commands given once"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="has_pronoun_reversal" label="Has pronoun reversal"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="atonalspeech_pattern" label="Atonal Speech pattern"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check
-                                name="does_not_respond_to_own_name_when_called_out_among_two_others"
-                                label="Does not respond to own name when called out among two others"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="seldom_says_yes_or_I" label="Seldom says “yes” or “I”"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_not_follow_simple_commands_involving_prepositions"
-                                label="Does not follow simple commands involving prepositions"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="gets_desired_objects_by_gesturing"
-                                label="Gets desired objects by gesturing" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="repeats_phrases_over_and_over"
-                                label="Repeats phrases over and over" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="cannot_point_to_more_than_five_named_objects"
-                                label="Cannot point to more than five named objects"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="uses_5_spontaneous_words_per_day"
-                                label="Uses 0-5 spontaneous words per day to communicate wants and needs"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="repeats_sounds_or_words" label="Repeats sounds or words"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="echoes_questions_or_statements"
-                                label="Echoes questions or statements made by others"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="uses_at_least_15_but_less_than_30"
-                                label="Uses at least 15 but less than 30 spontaneous phrases daily to communicate"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="learns_a_simple_task"
-                                label="Learns a simple task but “forgets” quickly"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="strong_reactions_changes_in_routine_environment"
-                                label="Strong reactions to changes in routine-environment"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="has_special_abilities_in_one_area_of_development" label="Has “special abilities” in one area of development, which seems to rule out mental
-                                retardation" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="severe_temper_tantrums"
-                                label="Severe temper tantrums and-or frequent minor tantrums"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="hurts_others_by_biting_hitting_kicking"
-                                label="Hurts others by biting, hitting, kicking, etc…"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_not_wait_for_needs_to_be_met"
-                                label="Does not wait for needs to be met" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="difficulties_with_toileting"
-                                label="Difficulties with toileting" :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="does_not_dress_self_without_frequent_help"
-                                label="Does not dress self without frequent help"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="frequently_unaware_surroundings"
-                                label="Frequently unaware of surroundings, and may be oblivious to dangerous situations"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->>
-                              <x-input-radio-or-check name="prefers_to_manipulate_and_be_occupied_with_inanimate_things"
-                                label="Prefers to manipulate and be occupied with inanimate things"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
-                              <x-input-radio-or-check name="a_developmental_delay_was_identified"
-                                label="A developmental delay was identified at or before 30 months of age"
-                                :records="$constants::$autismBehaviorCheck">
-                              </x-input-radio-or-check>
-                              <!-- row end -->
+                                <div class="col-lg-12">
+                                  <div class="mb-3">
+                                    <label for="verticalnav-phoneno-input">Instruction:</label>
+                                    <p>Enter Educational Information</p>
+                                  </div>
+                                </div> 
                               <!-- end row -->
+                                <x-input-radio-or-check name="is_she_happy_at_home"
+                                label="Is S/he Happy at home? " :records="$projectConstants::$yesMidNo" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_lonely"
+                                label="Is S/he Lonely?" :records="$projectConstants::$yesMidNo" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_protective"
+                                label="Is S/he Protective?" :records="$projectConstants::$yesMidNo" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_well_protective"
+                                label="Is S/he Well protective?" :records="$projectConstants::$yesMidNo" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_withdrawal"
+                                label="Is S/he Withdrawal?" :records="$projectConstants::$yesMidNo" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_confident"
+                                label="Is S/he Confident?" :records="$projectConstants::$yesMidNo" />
+                              <!-- end row -->
+                                <x-input-radio-or-check name="is_she_Communicate"
+                                label="Is S/he Communicate?" :records="$projectConstants::$communicate" />
+                              <!-- end row -->
+                               <x-input-radio-or-check name="knowledge_on_aily_life_requirement" type="checkbox"
+                                label="Knowledge on Daily life requirement. (Please select (tick) only those items s/he has knowledge)"
+                                :records="$projectConstants::$dailyLife" :isVertical="false" multiple="true"/>
+                              <!-- row end -->
                             </section>
                           </div>
                           <div class="tab-pane" id=" NumberOfChildrenInTheFamily">
