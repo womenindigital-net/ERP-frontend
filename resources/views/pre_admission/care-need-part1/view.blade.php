@@ -11,7 +11,6 @@
   }
 </style>
 @endsection
-
 @section('content')
 <div class="row">
   <div class="col-xl-12 p-0">
@@ -48,7 +47,7 @@
                               <div class="col-lg-4">
                                 <div class="mb-3">
                                   <label for="basicpill-firstname-input">Collection Date:</label>
-                                  <x-input-text name="date" type="date" placeholder=""></x-input-text>
+                                  <x-input-text name="collection_date" type="date" placeholder=""></x-input-text>
                                 </div>
                               </div>
                               <div class="col-lg-4">
@@ -108,7 +107,7 @@
                                       <div class="m-0">
                                           <h6>Contact Number</h6>
                                           <div class="mb-2">
-                                              <x-input-text name="contact_umber " />
+                                              <x-input-text name="contact_umber" />
                                           </div>
                                       </div>
                                   </div>
