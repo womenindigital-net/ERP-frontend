@@ -31,25 +31,6 @@ return new class extends Migration
              $table->string('is_she_has_intellectual_disability')->nullable();
              $table->string('is_she_has_dyslexia')->nullable();
              $table->string('is_she_has_learning_disability')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
-             $table->string('')->nullable();
             $table->timestamps();
         });
     }
