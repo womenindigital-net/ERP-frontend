@@ -226,19 +226,19 @@
                                   <p>Enter Assessment information</p>
                                 </div>
                               </div> 
-                          <x-input-radio-or-check name="is_social_communication_checklist_has_completed"
+                          <x-input-radio-or-check name="is_social_communication_checklist_has_completed?"
                               label="Is Social Communication checklist has completed?" :records="$projectConstants::$yesNoWantdo"/>
                             <!-- end row -->
-                          <x-input-radio-or-check name="is_sensory_checklist_has_completed"
+                          <x-input-radio-or-check name="is_sensory_checklist_has_completed?"
                               label="Is Sensory Checklist has completed?" :records="$projectConstants::$yesNoWantdo"/>
                             <!-- end row -->
-                          <x-input-radio-or-check name="is_occupational_assessment_has_completed"
+                          <x-input-radio-or-check name="is_occupational_assessment_has_completed?"
                               label="Is Occupational Assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
                             <!-- end row -->
                           <x-input-radio-or-check name="is_speech_and_language_assessment_has_completed"
                               label="Is Speech and Language Assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
                             <!-- end row -->
-                          <x-input-radio-or-check name="is_physiotherapy_assessment_has_completed"
+                          <x-input-radio-or-check name="is_physiotherapy_assessment_has_ompleted"
                               label="Is Physiotherapy assessment has completed?" :records="$projectConstants::$yesNoWantdo"/>
                             <!-- end row -->
                           <x-input-radio-or-check name="is_fundamental_movement_skills_has_completed"
@@ -587,7 +587,7 @@
                                   <div class="m-0">
                                       <h6>Parents Signature</h6>
                                       <div class="mb-2">
-                                          <x-input-text type="file" name="parents_signature" />
+                                          <x-input-text type="file" name="teachers_signature" />
                                       </div>
                                   </div>
                               </div>
