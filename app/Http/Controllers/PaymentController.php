@@ -115,4 +115,17 @@ class PaymentController extends Controller
     {
         return view('accounting.purchase.direct_payment.bank_to_bank_list');
     }
+    // Reporting
+    public function trailBalance(){
+        return view('accounting.reporting.trail-balance.create');
+    }
+
+    public function plStatement(){
+        return view('accounting.reporting.p&l-statement.create');
+    }
+    
+    public function balanceSheet(){
+        return view('accounting.reporting.balance-sheet.create');
+    }
+
 }
