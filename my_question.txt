@@ -1,2 +1,11 @@
 http://127.0.0.1:8000/account/requisition/create
 Avl qty not required;
+
+
+18 + 8
+
+5 -> UNV
+5 -> P + 2 -> PD 
+2 -> M
+3 -> R
+1 -> B

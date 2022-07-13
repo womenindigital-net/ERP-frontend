@@ -67,7 +67,6 @@ return new class extends Migration
              $table->string('is_she_has')->nullable();
              $table->string('is_she_has_counting_capacity')->nullable();
              $table->string('is_she_has_money_concept')->nullable();
-
              $table->string('is_she_happy_at_home')->nullable();
              $table->string('is_she_lonely')->nullable();
              $table->string('is_she_protective')->nullable();

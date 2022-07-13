@@ -99,6 +99,17 @@
                         <li><a href="{{ route('product-analysis-report') }}">Report::Product Analysis</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Reporting</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{ route('accounting.reporting.trail-balance.create') }}">Trail Balance</a></li>
+                        <li><a href="{{ route('accounting.reporting.p&l-statement.create') }}">P&L Statement</a></li>
+                        <li><a href="{{ route('accounting.reporting.balance-sheet.create') }}">Balance Sheet</a></li>
+                    </ul>
+                </li>
 
                 <li class="menu-title">Program Modules</li>
 
@@ -268,10 +279,28 @@
                     </ul>
                 </li> --}}
                 <li class="menu-title">Setup</li>
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Accounting Setup</span>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span>Programing Setup</span>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-share-alt"></i>
+                        <span> HR Setup</span>
+                    </a>
+                  </li> 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
-                        <span>Setup Option</span>
+                        <span>General Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
@@ -331,6 +360,22 @@
                                     <a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
                                         Setup</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('setup.chart-of-accounts.create') }}">Chart Of Accounts</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('bank-account.create') }}">Bank Account Details</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('cheque.create') }}">Manage Bank Ac. Chequebook</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation
+                                        New</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.bank-reconcilation.create') }}">Bank Reconcilation</a>
+                                </li>
 
                             </ul>
                         </li>
@@ -350,15 +395,15 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Chart Of Accounts</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="{{ route('setup.chart-of-accounts.create') }}">Chart Of Accounts</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
+                        </li> --}}
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
@@ -368,9 +413,9 @@
                                     <a href="{{ route('cheque.create') }}">Manage Chequebook</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
+                            {{-- <a href="javascript: void(0);" class="has-arrow">Bank Reconcilation</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation
@@ -380,7 +425,7 @@
                                     <a href="{{ route('setup.bank-reconcilation.create') }}">Bank Reconcilation</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Vendor List</a>
                             <ul class="sub-menu" aria-expanded="true">
@@ -447,6 +492,33 @@
                             <a href="javascript: void(0);" class="has-arrow">HR & Admin Module Setup</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
+                                    <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_grade_setup.create') }}">Salary
+                                                Grade Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary
+                                                Step Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_head_setup.create') }}">Salary
+                                                Head
+                                                Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_package_setup.create') }}">Salary
+                                                Package Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_budget_setup.create') }}">Salary
+                                                Budget
+                                                Setup</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <a href="{{ route('setup.employee-information.create') }}">Employee information </a>
                                 </li>
                                 <li>
@@ -483,8 +555,7 @@
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="{{ route('setup.payroll-management.salary_grade_setup.create') }}">Salary
-                                        Grade
-                                        Setup</a>
+                                        Grade Setup</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary
