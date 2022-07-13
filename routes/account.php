@@ -96,8 +96,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     //    Route::get('stock-assign', [StockController::class, 'stockAssign'])->name('stock-assign');
 
     // Reporting
-    Route::get('accounting.reporting.trail-balance.create', [PaymentController::class, 'trailBalance'])->name('accounting.reporting.trail-balance.create');
-    Route::get('accounting.reporting.p&l-statement.create',[PaymentController::class, 'plStatement'])->name('accounting.reporting.p&l-statement.create');
-    Route::get('accounting.reporting.balance-sheet.create',[PaymentController::class,'balanceSheet'])->name('accounting.reporting.balance-sheet.create');
+    Route::get('reporting.trail-balance.create', [PaymentController::class, 'trailBalance'])->name('accounting.reporting.trail-balance.create');
+    Route::get('reporting.p&l-statement.create',[PaymentController::class, 'plStatement'])->name('accounting.reporting.p&l-statement.create');
+    Route::get('reporting.balance-sheet.create',[PaymentController::class,'balanceSheet'])->name('accounting.reporting.balance-sheet.create');
 
 });
