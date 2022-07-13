@@ -25,7 +25,7 @@
                                             <label for="example-text-input" class="col-md-4 col-form-label  pe-2">From:</label>
                                             <div class="col-md-8">
                                                 <div class="w-100">
-                                                    <input type="date" name="last_date" class="form-control " value="" placeholder="">
+                                                    <x-input-text type="date" name="form" placeholder="dd/mm/yyyy"/>
                                                  </div>
                                             </div>
                                         </div>
@@ -33,7 +33,7 @@
                                             <label for="example-text-input" class="col-md-4 col-form-label  pe-2">To:</label>
                                             <div class="col-md-8">
                                                 <div class="w-100">
-                                                    <input type="date" name="last_date" class="form-control " value="" placeholder="">
+                                                    <x-input-text type="date" name="form" placeholder="dd/mm/yyyy"/>
                                                  </div>
                                             </div>
                                         </div>
@@ -51,7 +51,7 @@
                                             </div>
                                             <div class="col-sm-12 col-md-6 text-end">
                                             <label style="display: inline-flex;align-items: center;">Search:
-                                                <input type="search" class="form-control form-control-sm" placeholder="">
+                                                <x-input-text type="search" name="search" />
                                             </label>
                                             </div>
                                          </div>
