@@ -105,9 +105,9 @@
                         <span>Reporting</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="accounting.reporting.trail-balance.create">Trail Balance</a></li>
-                        <li><a href="accounting.reporting.p&l-statement.create">P&L Statement</a></li>
-                        <li><a href="accounting.reporting.balance-sheet.create">Balance Sheet</a></li>
+                        <li><a href="{{ route('accounting.reporting.trail-balance.create') }}">Trail Balance</a></li>
+                        <li><a href="{{ route('accounting.reporting.p&l-statement.create') }}">P&L Statement</a></li>
+                        <li><a href="{{ route('accounting.reporting.balance-sheet.create') }}">Balance Sheet</a></li>
                     </ul>
                 </li>
 
