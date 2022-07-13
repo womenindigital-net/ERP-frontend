@@ -41,7 +41,7 @@
                                             <button class="btn btn-primary" type="button" id="expend">Show</button>
                                         </div>
                                         <div class="col-2">
-                                            <button class="btn btn-success" type="button" id="expend">Print</button>
+                                            <button onclick="window.print()" class="btn btn-success" type="button" id="expend">Print</button>
                                         </div>
 
                                     </div>
