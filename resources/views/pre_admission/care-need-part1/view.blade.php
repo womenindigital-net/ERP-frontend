@@ -598,7 +598,7 @@
                                   <div class="m-0">
                                       <h6>Name of parent/ guardian</h6>
                                       <div class="mb-2">
-                                          <x-input-text name="teacher_name_and_designation" />
+                                          <x-input-text name="parent_name_and_designation" />
                                       </div>
                                   </div>
                               </div>

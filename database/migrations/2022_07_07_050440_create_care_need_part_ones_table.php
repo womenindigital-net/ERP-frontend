@@ -110,7 +110,7 @@ return new class extends Migration
              $table->string('teacher_name_and_designation')->nullable();
              $table->string('date')->nullable();
              $table->string('parents_signature')->nullable();
-             $table->string('teacher_name_and_designation')->nullable();
+             $table->string('parent_name_and_designation')->nullable();
             $table->timestamps();
         });
     }

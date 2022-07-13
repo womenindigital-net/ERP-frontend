@@ -116,7 +116,7 @@ class StoreCareNeedPartOneRequest extends FormRequest
             "teacher_name_and_designation"                                  => 'nullable',
             "date"                                                          => 'nullable',
             "parents_signature"                                             => 'nullable',
-            "teacher_name_and_designation"                                  => 'nullable',
+            "parent_name_and_designation"                                  => 'nullable',
         ];
     }
 }
