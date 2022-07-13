@@ -45,14 +45,6 @@
                                   </div>
                                     <div class="row">
                                       <div class="col-sm-12 col-md-6">
-                                        <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                                            class="form-control form-control-sm form-select form-select-sm">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                          </select> entries
-                                        </label>
                                       </div>
                                       <div class="col-sm-12 col-md-6 text-end">
                                         <label style="display: inline-flex;align-items: center;">Search:
@@ -63,7 +55,7 @@
                                     <div class="table-responsive">
                                       <table class="table w-100 table-bordered">
                                         <thead>
-                                          <tr class="table-primary">
+                                          <tr>
                                         <th>Label</th>
                                         <th>Debit</th>
                                         <th>Credit</th>
@@ -73,6 +65,56 @@
                                           <tr>
                                           <td>Accounting /Tally/ Audit/Legal expenses</td>
                                           <td>135000.00</td>
+                                          <td></td>
+                                          </tr>
+                                          <tr>
+                                          <td>Accounts Staff Salary</td>
+                                          <td>67667.00</td>
+                                          <td></td>
+                                          </tr>
+                                          <tr>
+                                          <td>Administration Staff Salary</td>
+                                          <td>192090.00</td>
+                                          <td></td>
+                                          </tr>
+                                          <tr>
+                                          <td>Art and Craft Teachers Salary</td>
+                                          <td>16000.00</td>
+                                          <td></td>
+                                          </tr>
+                                          <tr>
+                                          <td>Art, Crafts and Painting class related expenses</td>
+                                          <td>56000.00</td>
+                                          <td></td>
+                                          </tr>
+                                          <tr>
+                                          <td>Assessment fees</td>
+                                          <td></td>
+                                          <td>(5000)</td>
+                                          </tr>
+                                          <tr>
+                                          <td>Bank - Brac Bank (A/c # 1555204025093001)</td>
+                                          <td>743889.00</td>
+                                          <td></td>
+                                          </tr>
+                                          <tr>
+                                          <td>Bank - FSIB Ltd. (010311100012296)</td>
+                                          <td></td>
+                                          <td>(310000)</td>
+                                          </tr>
+                                          <tr>
+                                          <td>Bank - SCB (01-1308636-01)</td>
+                                          <td></td>
+                                          <td>(700000)</td>
+                                          </tr>
+                                          <tr>
+                                          <td>Bank-The City Bank Ltd (3101829023001)</td>
+                                          <td></td>
+                                          <td>(16567073.43)</td>
+                                          </tr>
+                                          <tr>
+                                          <td>Block and tie-dye Section staff Salary</td>
+                                          <td>25800.00</td>
                                           <td></td>
                                           </tr>
                                         </tbody>
