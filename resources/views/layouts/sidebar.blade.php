@@ -112,7 +112,7 @@
                         <li><a href="{{ route('case-history.create') }}">Case History</a></li>
                         <li><a href="{{ route('care-need.create') }}">Care Needs Form</a></li>
                         <li><a href="{{ route('referral.create') }}">Referral Form</a></li>
-                        <li><a href="{{ route('care-need-part1.create') }}">CARE needs - Part 1 (PA1OT)</a></li>
+                        <li><a href="{{ route('care-need-part-one.create') }}">CARE needs - Part 1 (PA1OT)</a></li>
                     </ul>
                 </li>
                 <li>

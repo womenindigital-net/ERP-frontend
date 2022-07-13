@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Requests;
+
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreCareNeedPartOneRequest extends FormRequest
@@ -11,7 +13,7 @@ class StoreCareNeedPartOneRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -37,18 +39,6 @@ class StoreCareNeedPartOneRequest extends FormRequest
             "is_she_has_cerebral_palsy"    => 'nullable',
             "is_she_has_intellectual_disability"    => 'nullable',
             "is_she_has_dyslexia"    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
-            ""    => 'nullable',
         ];
     }
 }

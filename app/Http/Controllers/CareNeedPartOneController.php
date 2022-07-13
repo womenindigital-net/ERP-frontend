@@ -3,11 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\CareNeedPartOne;
+use App\Repositories\UserRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\CareNeedPartOneRepository;
 use App\Http\Requests\StoreCareNeedPartOneRequest;
 use App\Http\Requests\UpdateCareNeedPartOneRequest;
 
 class CareNeedPartOneController extends Controller
 {
+    private UserRepository $userRepo;
+    private CareNeedPartOneRepository $careNeddpartOneRepo;
+    private StudentRepository $studentRepo;
+
+    public function __construct(StudentRepository $studentRepo, UserRepository $userRepository, CareNeedPartOneRepository $careNeddpartOneRepo)
+    {
+        $this->userRepo = $userRepository;
+        $this->careNeddpartOneRepo = $careNeddpartOneRepo;
+        $this->studentRepo = $studentRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +40,11 @@ class CareNeedPartOneController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('pre_admission.care-need-part-one.create', $data);
     }
 
     /**
@@ -36,7 +55,9 @@ class CareNeedPartOneController extends Controller
      */
     public function store(StoreCareNeedPartOneRequest $request)
     {
-        //
+        $this->careNeddpartOneRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +68,12 @@ class CareNeedPartOneController extends Controller
      */
     public function show(CareNeedPartOne $careNeedPartOne)
     {
-        //
+        $data = [
+            'record' => $this->careNeedPartOne = $careNeedPartOne,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('pre_admission.care-need-part-one.view', $data);
     }
 
     /**
@@ -58,7 +84,12 @@ class CareNeedPartOneController extends Controller
      */
     public function edit(CareNeedPartOne $careNeedPartOne)
     {
-        //
+        $data = [
+            'record' => $this->careNeedPartOne = $careNeedPartOne,
+            'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
+            'students' => $this->studentRepo->getData(),
+        ];
+        return view('pre_admission.care-need-part-one.edit', $data);
     }
 
     /**
