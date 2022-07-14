@@ -864,7 +864,7 @@
                                                                                 <x-input-text 
                                                                                 value="{{ $record->teachers_signature }}"
                                                                                 type="file"
-                                                                                    name="teachers_signature" />
+                                                                                    name="teachers_signature_one" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
