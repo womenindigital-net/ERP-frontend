@@ -291,12 +291,71 @@
                         <span>Programing Setup</span>
                     </a>
                   </li> 
-                  <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-share-alt"></i>
-                        <span> HR Setup</span>
-                    </a>
-                  </li> 
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                              <i class="bx bx-share-alt"></i>
+                              <span>HR Setup</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_grade_setup.create') }}">Salary
+                                                Grade Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary
+                                                Step Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_head_setup.create') }}">Salary
+                                                Head
+                                                Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_package_setup.create') }}">Salary
+                                                Package Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setup.payroll-management.salary_budget_setup.create') }}">Salary
+                                                Budget
+                                                Setup</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.employee-information.create') }}">Employee information </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.attendance-policy-setup.create') }}">Attendance policy
+                                        setup</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.leave-type.create') }}">Leave Type</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.leave-package.create') }}">Leave Package</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('setup.create-product.create') }}">create product</a>
+                                </li>
+                                <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
+                                <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
+                                <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
+                                <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
+                                <li><a href="{{ route('HR.facility-package.create') }}">Facility Package Setup</a></li>
+                                <li><a href="{{ route('HR.bonous-package.create') }}">Bonous Package Setup</a></li>
+                                <li><a href="{{ route('HR.currency-setup.create') }}">Currency Setup</a></li>
+                                <li><a href="{{ route('HR.result-setup.create') }}">Result Setup</a></li>
+                                <li><a href="{{ route('HR.Institute-setup.create') }}">Institute Setup</a></li>
+                                <li><a href="{{ route('HR.organization-setup.create') }}">Organization Setup </a></li>
+                                <li><a href="{{ route('HR.section-setup.create') }}">Section Setup</a></li>
+                                <li><a href="{{ route('HR.designation-setup.create') }}">Designation Setup</a></li>
+                                <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a>
+                                </li>
+                            </ul>
+                        </li> 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
@@ -485,68 +544,6 @@
                                     <a href="{{ route('setup.vocational-student-evolution.create') }}">Vocational
                                         Student
                                         Evolution</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">HR & Admin Module Setup</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li>
-                                    <a href="javascript: void(0);" class="has-arrow">Payroll Management</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="{{ route('setup.payroll-management.salary_grade_setup.create') }}">Salary
-                                                Grade Setup</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('setup.payroll-management.salary_step_setup.create') }}">Salary
-                                                Step Setup</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('setup.payroll-management.salary_head_setup.create') }}">Salary
-                                                Head
-                                                Setup</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('setup.payroll-management.salary_package_setup.create') }}">Salary
-                                                Package Setup</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('setup.payroll-management.salary_budget_setup.create') }}">Salary
-                                                Budget
-                                                Setup</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{ route('setup.employee-information.create') }}">Employee information </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('setup.attendance-policy-setup.create') }}">Attendance policy
-                                        setup</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('setup.leave-type.create') }}">Leave Type</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('setup.leave-package.create') }}">Leave Package</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('setup.create-product.create') }}">create product</a>
-                                </li>
-                                <li><a href="{{ route('HR.certificate-setup.create') }}">Certificate Setup</a></li>
-                                <li><a href="{{ route('HR.employee-type.create') }}">Employee Type Setup</a></li>
-                                <li><a href="{{ route('HR.department.create') }}">Department setup</a></li>
-                                <li><a href="{{ route('HR.weekend-package.create') }}">Weekend Package Setup</a></li>
-                                <li><a href="{{ route('HR.facility-package.create') }}">Facility Package Setup</a></li>
-                                <li><a href="{{ route('HR.bonous-package.create') }}">Bonous Package Setup</a></li>
-                                <li><a href="{{ route('HR.currency-setup.create') }}">Currency Setup</a></li>
-                                <li><a href="{{ route('HR.result-setup.create') }}">Result Setup</a></li>
-                                <li><a href="{{ route('HR.Institute-setup.create') }}">Institute Setup</a></li>
-                                <li><a href="{{ route('HR.organization-setup.create') }}">Organization Setup </a></li>
-                                <li><a href="{{ route('HR.section-setup.create') }}">Section Setup</a></li>
-                                <li><a href="{{ route('HR.designation-setup.create') }}">Designation Setup</a></li>
-                                <li><a href="{{ route('HR.notice-template-setup.create') }}">Notice Template Setup</a>
                                 </li>
                             </ul>
                         </li>
