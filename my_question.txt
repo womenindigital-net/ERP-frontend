@@ -1,2 +1,20 @@
-http://127.0.0.1:8000/account/requisition/create
-Avl qty not required;
+Journal: Calculation problem.
+
+Sale voucher: Total cost and total paid amount have to be shown.
+
+Requisition: - Requisition id needed. 
+             - Delete cancel view gone 
+             - Requisition has no discount. 
+Purchase order: - Vat default value problem 
+                - Purchase order id needed 
+                - Purchase order multiple rows should be deleted available.
+Purchase Return: Delete button pressed view gone.
+Supplier payment:  - Supplier payment is against a purchase order. 
+Must have to show the purchase order list.
+Direct Payment: Difference between own and other accounts.
+Finished Goods:  - Project should include. 
+                 - Product should include in stock if the project and warehouse are valid. 
+
+
+Reports: All reports are pending 
+Setup: The setup is not done yet.

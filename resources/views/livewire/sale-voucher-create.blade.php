@@ -130,7 +130,7 @@
                                 <label for="horizontal-firstname-input"
                                     class="col-4 text-end col-form-label">Discount</label>
                                 <div class="col-8">
-                                    <strong class="form-control">0</strong>
+                                    <strong class="form-control">{{ $total_discount ?? 0 }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                 <label for="horizontal-firstname-input"
                                     class="col-4 text-end col-form-label">Item</label>
                                 <div class="col-8">
-                                    <strong class="form-control">0</strong>
+                                    <strong class="form-control">{{ $total_item ?? 0 }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                                 <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
                                     Cost</label>
                                 <div class="col-8">
-                                    <strong class="form-control">0</strong>
+                                    <strong class="form-control">{{ $total_cost ?? 0 }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                                 <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
                                     Paid</label>
                                 <div class="col-8">
-                                    <strong class="form-control">0</strong>
+                                    <strong class="form-control">{{ $total_paid ?? 0 }}</strong>
                                 </div>
                             </div>
                         </div>
