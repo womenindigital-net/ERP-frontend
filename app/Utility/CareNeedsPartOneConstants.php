@@ -97,7 +97,7 @@ final class CareNeedsPartOneConstants
             'why_not_attending_school',
             'any_exam_degree_achieved',
         ],
-        'Home' => [
+        'home' => [
             'collection_date',
             'separate_room',
             'separate_bed',

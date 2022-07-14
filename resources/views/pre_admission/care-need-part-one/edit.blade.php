@@ -123,7 +123,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->from_where_you_learned_about_us"
+                                                                :checked="$common->from_where_you_learned_about_us"
                                                                     name="from_where_you_learned_about_us" type="checkbox"
                                                                     label="From where you learned about us?"
                                                                     :records="$projectConstants::$learnAbout" :isVertical="false" multiple="true"
@@ -136,7 +136,7 @@
                                                                                 name </h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text
-                                                                                value="{{ $record->Doctor_physician_under_medical_treatment_name }}"
+                                                                                value="{{ $common->Doctor_physician_under_medical_treatment_name }}"
                                                                                     name="Doctor_physician_under_medical_treatment_name" />
                                                                             </div>
                                                                         </div>
@@ -149,7 +149,7 @@
                                                                             <h6>Contact Number</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text 
-                                                                                value="{{ $record->contact_umber }}"
+                                                                                value="{{ $common->contact_umber }}"
                                                                                 name="contact_umber " />
                                                                             </div>
                                                                         </div>
@@ -157,7 +157,7 @@
                                                                 </div>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->govt_disability_registration"
+                                                                :checked="$common->govt_disability_registration"
                                                                 name="govt_disability_registration"
                                                                     label="Govt.Disability registration" :records="$projectConstants::$yesNoEn"
                                                                     secondaryInputLabel="If not, why?" />
@@ -167,7 +167,7 @@
                                                                             <h6>If yes, enter registration number </h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text
-                                                                                value="{{ $record->If_yes_enter_registration_number }}"
+                                                                                value="{{ $common->If_yes_enter_registration_number }}"
                                                                                     name="If_yes_enter_registration_number" />
                                                                             </div>
                                                                         </div>
@@ -175,13 +175,13 @@
                                                                 </div>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->suggestion_on_obtaining_registration"
+                                                                :checked="$common->suggestion_on_obtaining_registration"
                                                                     name="suggestion_on_obtaining_registration"
                                                                     label="Suggestion on obtaining registration"
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->referred_to_parents_forum"
+                                                                :checked="$common->referred_to_parents_forum"
                                                                 name="referred_to_parents_forum "
                                                                     label="Referred to Parents Forum" :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
@@ -199,138 +199,138 @@
                                                                 </div>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->iss_she_has_utism"
+                                                                :checked="$types_of_specialty_disability_impairments->iss_she_has_utism"
                                                                 name="iss_she_has_utism"
                                                                     label="Is S/he has Autism?" :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_down_syndrome"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_down_syndrome"
                                                                 name="is_she_has_down_syndrome"
                                                                     label="Is S/he has Down Syndrome" :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_cerebral_palsy"
+                                                                :checked="$rectypes_of_specialty_disability_impairmentsord->is_she_has_cerebral_palsy"
                                                                 name="is_she_has_cerebral_palsy"
                                                                     label="Is S/he has Cerebral Palsy"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_intellectual_disability"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_intellectual_disability"
                                                                     name="is_she_has_intellectual_disability"
                                                                     label="Is S/he has Intellectual Disability"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
 
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_dyslexia"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_dyslexia"
                                                                 name="is_she_has_dyslexia "
                                                                     label="Is S/he has Dyslexia " :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_learning_disability"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_learning_disability"
                                                                     name="is_she_has_learning_disability"
                                                                     label="Is S/he has Learning disability"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_anxiety_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_anxiety_disorder"
                                                                 name="is_she_has_anxiety_disorder"
                                                                     label="Is S/he has Anxiety disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_adhd"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_adhd"
                                                                  name="=is_she_has_adhd "
                                                                     label="Is S/he has ADHD " :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_bipolar_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_bipolar_disorder"
                                                                 name="is_she_has_bipolar_disorder "
                                                                     label="Is S/he has Bipolar Disorder "
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_he_has_speech_disorder"
+                                                                :checked="$rectypes_of_specialty_disability_impairmentsrd->is_he_has_speech_disorder"
                                                                 name="is_he_has_speech_disorder "
                                                                     label="Is S/he has Speech disorder "
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_language_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_language_disorder"
                                                                  name="is_she_has_language_disorder"
                                                                     label="Is S/he has Language disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_ocd"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_ocd"
                                                                 name="is_she_has_ocd"
                                                                     label="Is S/he has OCD" :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_eating_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_eating_disorder"
                                                                 name="is_she_has_eating_disorder"
                                                                     label="Is S/he has Eating disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_chizophrenia"
+                                                                :checked="$recotypes_of_specialty_disability_impairmentsrd->is_she_has_chizophrenia"
                                                                 name="is_she_has_chizophrenia"
                                                                     label="Is S/he has Schizophrenia" :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_multiple_personality_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_multiple_personality_disorder"
                                                                     name="is_she_has_multiple_personality_disorder"
                                                                     label="Is S/he has Multiple Personality Disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_tic_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_tic_disorder"
                                                                 name="is_she_has_tic_disorder"
                                                                     label="Is S/he has TIC disorder" :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_sluttering"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_sluttering"
                                                                 name="is_she_has_sluttering"
                                                                     label="Is S/he has Sluttering" :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_depression"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_depression"
                                                                 name="is_she_has_depression"
                                                                     label="Is S/he has Depression" :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_writing_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_writing_disorder"
                                                                 name="is_she_has_writing_disorder"
                                                                     label="Is S/he has Writing disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_reading_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_reading_disorder"
                                                                 name="is_she_has_reading_disorder"
                                                                     label="Is S/he has Reading disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
 
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_match_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_match_disorder"
                                                                 name="is_she_has_match_disorder"
                                                                     label="Is S/he has Match Disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_attachment_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_attachment_disorder"
                                                                     name="is_she_has_attachment_disorder"
                                                                     label="Is S/he has Attachment Disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_separation_anxiety_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_separation_anxiety_disorder"
                                                                     name="is_she_has_separation_anxiety_disorder"
                                                                     label="Is S/he has Separation Anxiety Disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_sleep_disorder"
+                                                                :checked="$types_of_specialty_disability_impairments->is_she_has_sleep_disorder"
                                                                 name="is_she_has_sleep_disorder"
                                                                     label="Is S/he has Sleep disorder"
                                                                     :records="$projectConstants::$yesNoDontknow" />
@@ -347,55 +347,55 @@
                                                                     </div>
                                                                 </div>
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_social_communication_checklist_has_completed"
+                                                                :checked="$assessment->is_social_communication_checklist_has_completed"
                                                                     name="is_social_communication_checklist_has_completed?"
                                                                     label="Is Social Communication checklist has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_sensory_checklist_has_completed"
+                                                                :checked="$assessment->is_sensory_checklist_has_completed"
                                                                     name="is_sensory_checklist_has_completed?"
                                                                     label="Is Sensory Checklist has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_occupational_assessment_has_completed"
+                                                                :checked="$assessment->is_occupational_assessment_has_completed"
                                                                     name="is_occupational_assessment_has_completed?"
                                                                     label="Is Occupational Assessment has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_speech_and_language_assessment_has_completed"
+                                                                :checked="$assessment->is_speech_and_language_assessment_has_completed"
                                                                     name="is_speech_and_language_assessment_has_completed"
                                                                     label="Is Speech and Language Assessment has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_physiotherapy_assessment_has_ompleted"
+                                                                :checked="$assessment->is_physiotherapy_assessment_has_ompleted"
                                                                     name="is_physiotherapy_assessment_has_ompleted"
                                                                     label="Is Physiotherapy assessment has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_fundamental_movement_skills_has_completed"
+                                                                :checked="$assessment->is_fundamental_movement_skills_has_completed"
                                                                     name="is_fundamental_movement_skills_has_completed"
                                                                     label="Is Fundamental Movement Skills has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_functional_evaluation_has_completed"
+                                                                :checked="$assessment->is_functional_evaluation_has_completed"
                                                                     name="is_functional_evaluation_has_completed"
                                                                     label="Is Functional evaluation has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_psychological_assessment_has_completed"
+                                                                :checked="$assessment->is_psychological_assessment_has_completed"
                                                                     name="is_psychological_assessment_has_completed"
                                                                     label="Is Psychological assessment has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_cademic_assessment_has_completed"
+                                                                :checked="$assessment->is_cademic_assessment_has_completed"
                                                                     name="is_cademic_assessment_has_completed"
                                                                     label="Is Academic Assessment has completed?"
                                                                     :records="$projectConstants::$yesNoWantdo" />
@@ -413,49 +413,49 @@
                                                                 </div>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->schooling"
+                                                                :checked="$educational_information->schooling"
                                                                 name="schooling" type="checkbox"
                                                                     label="Schooling" :records="$projectConstants::$learnAbout" :isVertical="false"
                                                                     multiple="true"
                                                                     secondaryInputLabel="Please provide other school name" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_speaking_capacity"
+                                                                :checked="$educational_information->is_she_has_speaking_capacity"
                                                                  name="is_she_has_speaking_capacity"
                                                                     label="Is S/he has Speaking Capacity?"
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_listening_capacity"
+                                                                :checked="$educational_information->is_she_has_listening_capacity"
                                                                     name="is_she_has_listening_capacity"
                                                                     label="Is S/he has Listening Capacity?"
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_reading_capacity"
+                                                                :checked="$educational_information->is_she_has_reading_capacity"
                                                                 name="is_she_has_reading_capacity"
                                                                     label="Is S/he has Reading Capacity?"
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_writing_capacity"
+                                                                :checked="$educational_information->is_she_has_writing_capacity"
                                                                  name="is_she_has_writing_capacity"
                                                                     label="Is S/he has Writing capacity?"
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has"
+                                                                :checked="$educational_information->is_she_has"
                                                                  name="is_she_has"
                                                                     label="Is S/he has" :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_counting_capacity"
+                                                                :checked="$educational_information->is_she_has_counting_capacity"
                                                                 name="is_she_has_counting_capacity"
                                                                     label="Is S/he has Counting capacity? "
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_money_concept"
+                                                                :checked="$educational_information->is_she_has_money_concept"
                                                                 name="is_she_has_money_concept"
                                                                     label="Is S/he has Money concept?"
                                                                     :records="$projectConstants::$yesNoEn" />
@@ -473,43 +473,43 @@
                                                                 </div>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_happy_at_home"
+                                                                :checked="$childs_condition_at_his_family->is_she_happy_at_home"
                                                                 name="is_she_happy_at_home"
                                                                     label="Is S/he Happy at home? " :records="$projectConstants::$yesMidNo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_lonely"
+                                                                :checked="$childs_condition_at_his_family->is_she_lonely"
                                                                 name="is_she_lonely"
                                                                     label="Is S/he Lonely?" :records="$projectConstants::$yesMidNo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_protective"
+                                                                :checked="$childs_condition_at_his_family->is_she_protective"
                                                                  name="is_she_protective"
                                                                     label="Is S/he Protective?" :records="$projectConstants::$yesMidNo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_well_protective"
+                                                                :checked="$childs_condition_at_his_family->is_she_well_protective"
                                                                  name="is_she_well_protective"
                                                                     label="Is S/he Well protective?" :records="$projectConstants::$yesMidNo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_withdrawal"
+                                                                :checked="$childs_condition_at_his_family->is_she_withdrawal"
                                                                 name="is_she_withdrawal"
                                                                     label="Is S/he Withdrawal?" :records="$projectConstants::$yesMidNo" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_confident"
+                                                                :checked="$childs_condition_at_his_family->is_she_confident"
                                                                  name="is_she_confident"
                                                                     label="Is S/he Confident?" :records="$projectConstants::$yesMidNo" />
                                                                 <!-- end row -->
 
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_Communicate"
+                                                                :checked="$childs_condition_at_his_family->is_she_Communicate"
                                                                 name="is_she_Communicate"
                                                                     label="Is S/he Communicate?" :records="$projectConstants::$communicate" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->knowledge_on_aily_life_requirement"
+                                                                :checked="$childs_condition_at_his_family->knowledge_on_aily_life_requirement"
                                                                     name="knowledge_on_aily_life_requirement"
                                                                     type="checkbox"
                                                                     label="Knowledge on Daily life requirement. (Please select (tick) only those items s/he has knowledge)"
@@ -517,20 +517,20 @@
                                                                     multiple="true" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_follow_instructions"
+                                                                :checked="$childs_condition_at_his_family->is_she_follow_instructions"
                                                                  name="is_she_follow_instructions"
                                                                     label="Is S/he Follow instructions?"
                                                                     :records="$projectConstants::$followInstruction" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_has_sitting_habit_and_how_long"
+                                                                :checked="$childs_condition_at_his_family->is_she_has_sitting_habit_and_how_long"
                                                                     name="is_she_has_sitting_habit_and_how_long"
                                                                     label="Is S/he has Sitting habit and how long?"
                                                                     :records="$projectConstants::$havit"
                                                                     secondaryInputLabel="If others, specify the duration" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_has_hyperness"
+                                                                :checked="$childs_condition_at_his_family->is_she_has_hyperness"
                                                                 name="is_she_has_hyperness"
                                                                     label="Is S/he has Hyperness? how long it remain?"
                                                                     :records="$projectConstants::$havittime"
@@ -541,7 +541,7 @@
                                                                             <h6>Specify the cooling process</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-textarea rows="1"
-                                                                                value="{{ $record->specify_the_cooling_process }}"
+                                                                                value="{{ $childs_condition_at_his_family->specify_the_cooling_process }}"
                                                                                     name="specify_the_cooling_process" />
                                                                             </div>
                                                                         </div>
@@ -550,7 +550,7 @@
                                                                 <!-- end row -->
 
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_do_tantrum"
+                                                                :checked="$childs_condition_at_his_family->is_she_do_tantrum"
                                                                  name="is_she_do_tantrum"
                                                                     label="Is S/he do Tantrum ? how long it remain?"
                                                                     :records="$projectConstants::$havittime"
@@ -561,7 +561,7 @@
                                                                             <h6>Specify the cooling process</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-textarea rows="1"
-                                                                                value="{{ $record->specify_the_cooling_process }}"
+                                                                                value="{{ $childs_condition_at_his_family->specify_the_cooling_process }}"
                                                                                     name="specify_the_cooling_process" />
                                                                             </div>
                                                                         </div>
@@ -569,7 +569,7 @@
                                                                 </div>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->is_she_do_self_injury"
+                                                                :checked="$childs_condition_at_his_family->is_she_do_self_injury"
                                                                 name="is_she_do_self_injury"
                                                                     label="Is S/he Do Self injury?" :records="$projectConstants::$havittime"
                                                                     secondaryInputLabel="Cooling time ( How long it takes to cool down?)" />
@@ -579,7 +579,7 @@
                                                                             <h6>Specify the cooling process</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-textarea rows="1"
-                                                                                value="{{ $record->specify_the_cooling_process }}"
+                                                                                value="{{ $childs_condition_at_his_family->specify_the_cooling_process }}"
                                                                                     name="specify_the_cooling_process" />
                                                                             </div>
                                                                         </div>
@@ -587,13 +587,13 @@
                                                                 </div>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->follow_any_specific_life_style"
+                                                                :checked="$childs_condition_at_his_family->follow_any_specific_life_style"
                                                                     name="follow_any_specific_life_style"
                                                                     label="Follow any specific life style?"
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->what_is_the_way_of_communication"
+                                                                :checked="$childs_condition_at_his_family->what_is_the_way_of_communication"
                                                                     name="what_is_the_way_of_communication"
                                                                     type="checkbox"
                                                                     label="What is the way of Communication?"
@@ -601,13 +601,13 @@
                                                                     multiple="true" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->how_he_she_can_follow_instructions"
+                                                                :checked="$childs_condition_at_his_family->how_he_she_can_follow_instructions"
                                                                     name="how_he_she_can_follow_instructions"
                                                                     label="How he/she can Follow instructions?"
                                                                     :records="$projectConstants::$yesNoEn" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_she_do_temper_how_long_it_remain"
+                                                                :checked="$childs_condition_at_his_family->is_she_do_temper_how_long_it_remain"
                                                                     name="is_she_do_temper_how_long_it_remain"
                                                                     label="Is s/he do Temper? how long it remain?"
                                                                     :records="$projectConstants::$yesNoEn"
@@ -618,14 +618,14 @@
                                                                             <h6>Specify the cooling process</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-textarea rows="1"
-                                                                                value="{{ $record->specify_the_cooling_process }}"
+                                                                                value="{{ $childs_condition_at_his_family->specify_the_cooling_process }}"
                                                                                     name="specify_the_cooling_process" />
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check :checked="$record->from_where_you_learned_about_us"
+                                                                <x-input-radio-or-check :checked="$childs_condition_at_his_family->from_where_you_learned_about_us"
                                                                      name="from_where_you_learned_about_us"
                                                                     label="Is S/he Hit Others?" :records="$projectConstants::$yesNoEn"
                                                                     secondaryInputLabel="Cooling time ( How long it takes to cool down?)" />
@@ -635,7 +635,7 @@
                                                                             <h6>Specify the cooling process</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-textarea rows="1"
-                                                                                value="{{ $record->specify_the_cooling_process }}"
+                                                                                value="{{ $childs_condition_at_his_family->specify_the_cooling_process }}"
                                                                                     name="specify_the_cooling_process" />
                                                                             </div>
                                                                         </div>
@@ -654,7 +654,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->from_where_you_learned_about_us"
+                                                                :checked="$number_of_children_in_the_family->from_where_you_learned_about_us"
                                                                     name="from_where_you_learned_about_us"
                                                                     label="Is your other child support towards sibling?"
                                                                     :records="$projectConstants::$yesNoEn"
@@ -665,7 +665,7 @@
                                                                             <h6>Age</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-textarea rows="1"
-                                                                                value="{{ $record->age }}"
+                                                                                value="{{ $number_of_children_in_the_family->age }}"
                                                                                     name="age" />
                                                                             </div>
                                                                         </div>
@@ -674,21 +674,21 @@
 
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->marriage_within_family_relative"
+                                                                :checked="$number_of_children_in_the_family->marriage_within_family_relative"
                                                                     name="marriage_within_family_relative"
                                                                     label="Marriage within family/ relative?"
                                                                     :records="$projectConstants::$yesNoEn"
                                                                     secondaryInputLabel="If yes, please share relation" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->is_any_other_relative_have_disabilities"
+                                                                :checked="$number_of_children_in_the_family->is_any_other_relative_have_disabilities"
                                                                     name="is_any_other_relative_have_disabilities"
                                                                     label="Is any other relative have disabilities?"
                                                                     :records="$projectConstants::$yesNoEn"
                                                                     secondaryInputLabel="If yes, disability type" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->family_economical_condition"
+                                                                :checked="$number_of_children_in_the_family->family_economical_condition"
                                                                  name="family_economical_condition"
                                                                     label="Family Economical condition" :records="$projectConstants::$famCon"
                                                                     secondaryInputLabel="Net earning of a year" />
@@ -718,7 +718,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->going_to_school"
+                                                                :checked="$schooling->going_to_school"
                                                                  name="going_to_school"
                                                                     label="Going to school?" :records="$projectConstants::$goingSchool"
                                                                     secondaryInputLabel="Since when DD/mm/YYYY" />
@@ -728,7 +728,7 @@
                                                                             <h6>If other, enter name</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-textarea rows="1"
-                                                                                value="{{ $record->if_other_enter_name }}"
+                                                                                value="{{ $schooling->if_other_enter_name }}"
                                                                                     name="if_other_enter_name" />
                                                                             </div>
                                                                         </div>
@@ -740,7 +740,7 @@
                                                                         <div class="m-0">
                                                                             <h6>Name of the school</h6>
                                                                             <div class="mb-2">
-                                                                                value="{{ $record->name_of_the_school }}"
+                                                                                value="{{ $schooling->name_of_the_school }}"
                                                                                 <x-input-text name="name_of_the_school" />
                                                                             </div>
                                                                         </div>
@@ -748,20 +748,20 @@
                                                                 </div>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->studied_till_which_class"
+                                                                :checked="$schooling->studied_till_which_class"
                                                                 name="studied_till_which_class"
                                                                     label="Studied till which class?" :records="$projectConstants::$class"
                                                                     secondaryInputLabel="If yes, please share relation" />
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->why_not_attending_school"
+                                                                :checked="$schooling->why_not_attending_school"
                                                                 name="why_not_attending_school"
                                                                     type="checkbox" label="Why not attending school?"
                                                                     :records="$projectConstants::$attendSchool" :isVertical="false" multiple="true"
                                                                     secondaryInputLabel="Please provide other information" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->any_exam_degree_achieved"
+                                                                :checked="$schooling->any_exam_degree_achieved"
                                                                 name="any_exam_degree_achieved"
                                                                     label="Any exam/ degree achieved?" :records="$projectConstants::$yesNoEn"
                                                                     secondaryInputLabel="Please provide degree name" />
@@ -779,38 +779,38 @@
                                                                 </div>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->separate_room"
+                                                                :checked="$home->separate_room"
                                                                 name="separate_room"
                                                                     label="Separate room" :records="$projectConstants::$yesNoEn" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->separate_bed"
+                                                                :checked="$home->separate_bed"
                                                                 name="separate_bed"
                                                                     label="Separate bed" :records="$projectConstants::$yesNoEn" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->sleep_alone"
+                                                                :checked="$home->sleep_alone"
                                                                 name="sleep_alone"
                                                                     label="Sleep alone?" :records="$projectConstants::$yesNoEn" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->separate_cupboard"
+                                                                :checked="$home->separate_cupboard"
                                                                 name="separate_cupboard"
                                                                     label="Separate Cupboard?" :records="$projectConstants::$yesNoEn" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check
-                                                                :checked="$record->separate_toilet"
+                                                                :checked="$home->separate_toilet"
                                                                 name="separate_toilet"
                                                                     label="Separate toilet ?" :records="$projectConstants::$yesNoEn" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->own_equipment"
+                                                                :checked="$home->own_equipment"
                                                                 name="own_equipment"
                                                                     label="Own equipment" :records="$projectConstants::$Ph"
                                                                     secondaryInputLabel="Other" />
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$record->anything_else"
+                                                                :checked="$home->anything_else"
                                                                 name="anything_else"
                                                                     label="Anything else" :records="$projectConstants::$yesNoEn"
                                                                     secondaryInputLabel="Please specify" />
@@ -821,7 +821,7 @@
                                                                             <h6>Teachers Signature</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text type="file"
-                                                                                value="{{ $record->teachers_signature }}"
+                                                                                value="{{ $home->teachers_signature }}"
                                                                                     name="teachers_signature" />
                                                                             </div>
                                                                         </div>
@@ -834,7 +834,7 @@
                                                                             <h6>Teacher name and Designation</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text
-                                                                                value="{{ $record->teacher_name_and_designation }}"
+                                                                                value="{{ $home->teacher_name_and_designation }}"
                                                                                     name="teacher_name_and_designation" />
                                                                             </div>
                                                                         </div>
@@ -847,7 +847,7 @@
                                                                             <h6>Date</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text 
-                                                                                value="{{ $record->date }}"
+                                                                                value="{{ $home->date }}"
                                                                                 type="date"
                                                                                     name="date" />
                                                                             </div>
@@ -862,7 +862,7 @@
                                                                             <h6>Parents Signature</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text 
-                                                                                value="{{ $record->teachers_signature }}"
+                                                                                value="{{ $home->teachers_signature }}"
                                                                                 type="file"
                                                                                     name="teachers_signature_one" />
                                                                             </div>
@@ -876,7 +876,7 @@
                                                                             <h6>Name of parent/ guardian</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text
-                                                                                value="{{ $record->teacher_name_and_designation }}"
+                                                                                value="{{ $home->teacher_name_and_designation }}"
                                                                                     name="teacher_name_and_designation" />
                                                                             </div>
                                                                         </div>
@@ -889,7 +889,7 @@
                                                                             <h6>Date</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text 
-                                                                                value="{{ $record->date }}"
+                                                                                value="{{ $home->date }}"
                                                                                 type="date"
                                                                                     name="date" />
                                                                             </div>
