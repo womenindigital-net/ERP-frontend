@@ -93,6 +93,11 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::get('stock-product-report', [StockController::class, 'stockProductReport'])->name('stock-product-report');
     Route::get('stock-reorder-report', [StockController::class, 'stockReorderReport'])->name('stock-reorder-report');
     Route::get('product-analysis-report', [StockController::class, 'stockProductAnalysisReport'])->name('product-analysis-report');
-
     //    Route::get('stock-assign', [StockController::class, 'stockAssign'])->name('stock-assign');
+
+    // Reporting
+    Route::get('reporting.trail-balance.create', [PaymentController::class, 'trailBalance'])->name('accounting.reporting.trail-balance.create');
+    Route::get('reporting.p&l-statement.create',[PaymentController::class, 'plStatement'])->name('accounting.reporting.p&l-statement.create');
+    Route::get('reporting.balance-sheet.create',[PaymentController::class,'balanceSheet'])->name('accounting.reporting.balance-sheet.create');
+
 });

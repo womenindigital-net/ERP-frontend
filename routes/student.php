@@ -31,7 +31,8 @@ use App\Http\Controllers\FunctionalMovementskillController;
 use App\Http\Controllers\StaffAndWorkplaceInspectionController;
 use App\Http\Controllers\StudentAttendanceController;
 use App\Http\Controllers\VocationalEvalutionController;
-use App\Http\Controllers\CareNeedPart1Controller;
+use App\Http\Controllers\CareNeedPartOneController;
+
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -43,7 +44,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'ot-assessment' => OtAssessmentController::class,
         'trip' => TripController::class,
         'care-need' => CareNeedController::class,
-        'care-need-part1' => CareNeedPart1Controller::class,
+        'care-need-part-one' => CareNeedPartOneController::class,
         'autisum-behaviour' => AutisumBhehaviourController::class,
         'executive-function' => ExecutiveFunctionController::class,
         'sensory-checklist-adult' => SensoryAdultController::class,
@@ -63,7 +64,6 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth']], function () {
         'staff-and-workplaceinspection' => StaffAndWorkplaceInspectionController::class,
         'referral' => ReferralController::class,
         'vocational-evaluation' => VocationalEvalutionController::class,
-    
         'student-attendance' => StudentAttendanceController::class,
         // 'another' => \App\Http\Controllers\StudentController::class,
     ]);
