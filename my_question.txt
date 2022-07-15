@@ -1,4 +1,4 @@
-Journal: Calculation problem.
+Journal: Calculation problem. > me
 
 Sale voucher: Total cost and total paid amount have to be shown.
 
