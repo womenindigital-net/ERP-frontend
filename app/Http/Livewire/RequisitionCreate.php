@@ -83,7 +83,7 @@ class RequisitionCreate extends Component
                 $this->sub_total[$key] = $detail->sub_total;
                 $this->budget_head_id[$key] = $detail->budget_head_id;
                 $this->budget_sub_head_id[$key] = $detail->budget_sub_head_id;
-                $this->discount[$key] = $detail->discount;
+                // $this->discount[$key] = $detail->discount;
             }
         }
     }
@@ -101,7 +101,7 @@ class RequisitionCreate extends Component
         'price.*' => 'nullable',
         'budget_head_id.*' => 'required',
         'budget_sub_head_id.*' => 'required',
-        'discount.*' => 'nullable',
+        // 'discount.*' => 'nullable',
     ];
 
     public function updated($name, $value)
@@ -119,14 +119,11 @@ class RequisitionCreate extends Component
             $this->price[$targetKey] = $productInfo->product->selling_price;
         }
 
-        if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.') || str_starts_with($name, 'price.')) {
+        if (str_starts_with($name, 'qty.') || str_starts_with($name, 'price.')) {
             $targetKey = $this->getTargetKey($name);
-            // dd($targetKey);
-            // if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
-            //     return;
 
             if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
-                $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
+                $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]);
             }
         }
     }

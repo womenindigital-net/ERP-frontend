@@ -168,7 +168,7 @@ class SaleVoucherCreate extends Component
         if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.')) {
             $targetKey = $this->getTargetKey($name);
 
-            // dd($this->validate());
+            // $this
 
             if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
                 return;

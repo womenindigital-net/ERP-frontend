@@ -1,9 +1,9 @@
 <?php
 
 use App\Models\BudgetHead;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('qty')->nullable();
             $table->integer('sub_total')->nullable();
             $table->double('price', 8, 2);
-            $table->double('discount', 8, 2)->nullable();
+            // $table->double('discount', 8, 2)->nullable();
             $table->boolean('is_approved')->default(0);
             $table->timestamps();
         });

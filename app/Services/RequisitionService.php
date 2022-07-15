@@ -2,11 +2,14 @@
 
 namespace App\Services;
 
-use App\Repositories\RequisitionRepository;
 use Illuminate\Support\Facades\DB;
+use App\Traits\CommonServiceElements;
+use App\Repositories\RequisitionRepository;
 
 class RequisitionService
 {
+    use CommonServiceElements;
+    
     private RequisitionRepository $repo;
 
     public function __construct(RequisitionRepository $repository)
