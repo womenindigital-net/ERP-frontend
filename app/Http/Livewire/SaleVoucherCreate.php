@@ -168,21 +168,17 @@ class SaleVoucherCreate extends Component
         if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.')) {
             $targetKey = $this->getTargetKey($name);
 
-            // $this
-
             if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
                 return;
 
             if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
             }
+
+            $this->total_discount = $this->discount ? array_sum($this->discount) : 0;
+            $this->total_item = $this->qty ? array_sum($this->qty) : 0;
+            $this->total_cost = $this->sub_total ? array_sum($this->sub_total) : 0;
         }
-
-
-        
-        // if (str_starts_with($name, 'discount.')) {
-        //     dd($value);
-        // }
     }
 
     public function update()

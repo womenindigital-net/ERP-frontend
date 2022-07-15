@@ -50,6 +50,10 @@ trait CommonAddMore
 
         if (isset($this->discount[$key]))
             unset($this->discount[$key]);
+
+        $this->total_discount = array_sum($this->discount);
+        $this->total_item = array_sum($this->product_id);
+        $this->total_cost = array_sum($this->sub_total);
     }
 
     public function submit()

@@ -157,7 +157,7 @@
                                 <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
                                     Paid</label>
                                 <div class="col-8">
-                                    <strong class="form-control">{{ $total_paid ?? 0 }}</strong>
+                                    <strong class="form-control">{{ $cheque_amount + $cash + $card_amount }}</strong>
                                 </div>
                             </div>
                         </div>
