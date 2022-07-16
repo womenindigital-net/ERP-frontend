@@ -20,10 +20,15 @@ trait CommonAddMore
     public array $inputs = [];
     public int $numberOfItems = 1;
 
-    public function addMore()
+    public function addMore(): void
     {
         $this->numberOfItems += 1;
         $this->inputs[]      = $this->numberOfItems;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
     public function removeItem($key)
@@ -51,9 +56,14 @@ trait CommonAddMore
         if (isset($this->discount[$key]))
             unset($this->discount[$key]);
 
-        $this->total_discount = array_sum($this->discount);
-        $this->total_item = array_sum($this->product_id);
-        $this->total_cost = array_sum($this->sub_total);
+        if (isset($this->total_discount))
+            $this->total_discount = array_sum($this->discount);
+
+        if (isset($this->total_item))
+            $this->total_item = array_sum($this->product_id);
+
+        if (isset($this->total_cost))
+            $this->total_cost = array_sum($this->sub_total);
     }
 
     public function submit()

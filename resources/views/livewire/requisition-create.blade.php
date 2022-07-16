@@ -76,7 +76,7 @@
                             <div data-repeater-item class="row removeRow">
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <select class="form-control form-select" wire:model="product_id.{{$key}}">
-                                        <option>--Select--</option>
+                                        <option></option>
                                         @foreach($products as $product)
                                         <optgroup label="{{$product['name']}}">
                                             @foreach($product['children'] as $childCourse)

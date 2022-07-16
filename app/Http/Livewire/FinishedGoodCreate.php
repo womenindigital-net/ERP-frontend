@@ -15,9 +15,15 @@ use App\Http\Livewire\Traits\CommonListElements;
 
 class FinishedGoodCreate extends Component
 {
-
     use WithPagination, CommonListElements, CommonAddMore;
+
     private string $destroyRoute = 'finished-goods.destroy';
+    private FinishedGoodService $service;
+    private FinishedGoodRepository $repo;
+    private ProductService $productService;
+    private ProjectRepository $projectRepo;
+    private UserRepository $userRepo;
+    private WarehouseRepository $warehouseRepository;
 
     public $finishedGood;
     public $date;
@@ -25,14 +31,6 @@ class FinishedGoodCreate extends Component
     public $project_id;
     public $qty;
     public $unit;
-    // public $unit;
-
-    private FinishedGoodService $service;
-    private FinishedGoodRepository $repo;
-    private ProductService $productService;
-    private ProjectRepository $projectRepo;
-    private UserRepository $userRepo;
-    private WarehouseRepository $warehouseRepository;
 
     public function boot(
         FinishedGoodService $service,
@@ -71,15 +69,14 @@ class FinishedGoodCreate extends Component
         }
     }
 
-
     protected array $rules = [
         'project_id' => 'required',
         'warehouse_id' => 'required',
         'date' => 'required',
         'note' => 'nullable',
         'product_id.*' => 'required',
-        'unit.*' => 'nullable',
-        'qty.*' => 'nullable',
+        'unit.*' => 'required',
+        'qty.*' => 'required',
     ];
 
     public function update()
