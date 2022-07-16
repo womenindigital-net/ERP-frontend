@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\JournalRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class JournalRequest extends FormRequest
@@ -25,11 +26,19 @@ class JournalRequest extends FormRequest
     {
         return [
             'project_id' => 'required|exists:projects,id',
-            'transaction_amount' => 'required',
+            'transaction_amount' => [
+                'required',
+            ],
             'voucher_date' => 'required',
             'particulars' => 'nullable',
             'reference' => 'nullable',
-            'journal.*' => 'nullable',
+            'journal.*.debit' => [
+                new JournalRule(),
+            ],
+            'journal.*' => [
+                'nullable'
+            ],
+            // new JournalRule(),
         ];
     }
 }

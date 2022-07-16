@@ -26,7 +26,6 @@ class CareNeedController extends Controller
         $this->careRepo = $careNeedRepository;
         $this->studentRepo = $studentRepo;
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -44,6 +43,7 @@ class CareNeedController extends Controller
      */
     public function create()
     {
+
         $data = [
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),

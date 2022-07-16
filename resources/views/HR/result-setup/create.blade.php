@@ -1,6 +1,4 @@
 @extends('layouts.master')
-@section('css')
-@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -167,8 +165,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer ">
-                                <button type="button" class="btn font-size-14 btn-danger" data-bs-dismiss="modal"> Print</button>
-                                <button type="button" class="btn font-size-14 btn-success" id="sa-position" data-bs-dismiss="modal"> Close</button>
+                                <button type="button" onclick="window.print()" class="btn font-size-14 btn-success" data-bs-dismiss="modal"> Print</button>
+                                <button type="button" class="btn font-size-14 btn-danger" id="sa-position" data-bs-dismiss="modal"> Close</button>
                             </div>
                         </div><!-- /.modal-content -->
                     </div>
@@ -178,7 +176,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('script')
 @endsection
