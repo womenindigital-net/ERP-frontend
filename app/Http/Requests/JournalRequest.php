@@ -32,9 +32,9 @@ class JournalRequest extends FormRequest
             'voucher_date' => 'required',
             'particulars' => 'nullable',
             'reference' => 'nullable',
-            'journal.*.debit' => [
-                new JournalRule(),
-            ],
+            // 'journal.*.debit' => [
+            //     new JournalRule(),
+            // ],
             'journal.*' => [
                 'nullable'
             ],
