@@ -55,10 +55,10 @@
                             <div class="col-lg-1 p-0 pe-1">
                                 <label for="discount">Price</label>
                             </div>
-                            <div class="col-lg-1 p-0 pe-1">
+                            <div class="col-lg-2 p-0 pe-1">
                                 <label for="quality">Quantity</label>
                             </div>
-                            <div class="col-lg-1 p-0 pe-1">
+                            <div class="col-lg-2 p-0 pe-1">
                                 <label for="total">Sub-total</label>
                             </div>
                             <div class="col-lg-2 p-0 pe-1">
@@ -67,9 +67,9 @@
                             <div class="col-lg-2 p-0 pe-1">
                                 <label for="total">Budget Sub Head</label>
                             </div>
-                            <div class="col-lg-2 p-0 pe-1">
+                            {{-- <div class="col-lg-2 p-0 pe-1">
                                 <label for="subtotal">Discount</label>
-                            </div>
+                            </div> --}}
                         </div>
                         <div data-repeater-list="group-a">
                             @foreach($inputs as $key => $item)
@@ -94,25 +94,24 @@
                                 <div class=" col-lg-1 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="price.{{$key}}"></x-input-text>
                                 </div>
-                                <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
                                 </div>
 
-                                <div class=" col-lg-1 p-0 pe-1 pb-1">
+                                <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="sub_total.{{$key}}" type="number"
                                         sub_total="true">
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-select :records="$budgetHead" wireModel="budget_head_id.{{$key}}" targetColumn="title">
-                                    </x-input-select>
-                                </div>
-                                <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-select :records="$budgetHead" wireModel="budget_sub_head_id.{{$key}}" targetColumn="title">
+                                    <x-input-select :records="$budgetHead" wireModel="budget_head_id.{{$key}}"
+                                        targetColumn="title">
                                     </x-input-select>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
-                                    <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
+                                    <x-input-select :records="$budgetHead" wireModel="budget_sub_head_id.{{$key}}"
+                                        targetColumn="title">
+                                    </x-input-select>
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
                                         wire:click="removeItem({{ $key }})">
@@ -120,6 +119,10 @@
                                     </button>
                                     @endif
                                 </div>
+                                {{-- <div class=" col-lg-2 p-0 pe-1 pb-1 d-flex">
+                                    <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
+
+                                </div> --}}
                             </div>
                             @endforeach
                         </div>

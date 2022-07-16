@@ -2,20 +2,20 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Livewire\Traits\CommonAddMore;
-use App\Http\Livewire\Traits\CommonListElements;
-use App\Models\Requisition;
-use App\Repositories\ProjectRepository;
-use App\Repositories\PurchaseOrderRepository;
-use App\Repositories\RequisitionRepository;
-use App\Repositories\SupplierRepository;
-use App\Services\ProductService;
-use App\Services\PurchaseOrderService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Livewire\Component;
+use App\Models\Requisition;
 use Livewire\WithPagination;
+use App\Services\ProductService;
+use Illuminate\Contracts\View\View;
+use App\Services\PurchaseOrderService;
+use Illuminate\Contracts\View\Factory;
+use App\Repositories\ProjectRepository;
+use App\Repositories\SupplierRepository;
+use App\Http\Livewire\Traits\CommonAddMore;
+use App\Repositories\RequisitionRepository;
+use App\Repositories\PurchaseOrderRepository;
+use App\Http\Livewire\Traits\CommonListElements;
+use Illuminate\Contracts\Foundation\Application;
 
 class PurchaseOrderCreate extends Component
 {
@@ -26,7 +26,8 @@ class PurchaseOrderCreate extends Component
     public $supplier_id;
     public $date;
     public $exp_date;
-    public $vat;
+    public $discount;
+    public array $vat;
 
     private PurchaseOrderRepository $repo;
     private PurchaseOrderService $service;
@@ -64,8 +65,9 @@ class PurchaseOrderCreate extends Component
                 $this->qty[$key] = $detail->qty;
                 $this->available_qty[$key] = $detail->available_qty;
                 $this->price[$key] = $detail->price;
-                $this->sub_total[$key] = $detail->sub_total;
-                $this->discount[$key] = $detail->discount;
+                $this->vat[$key] = $detail->vat ?? 0;
+                $this->discount[$key] = $detail->discount ?? 0;
+                $this->sub_total[$key] = $detail->sub_total ?? 0;
             }
         }
     }

@@ -109,9 +109,9 @@
                                 <label for="subtotal">Subtotal</label>
                             </div>
                         </div>
-                        @foreach($inputs as $key => $item)
-                        <div data-repeater-list="group-a">
-                            <div data-repeater-item class="row">
+                        <div data-repeater-list="group-a" class="">
+                            @foreach($inputs as $key => $item)
+                            <div data-repeater-item class="row removeRow">
                                 <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
                                     <select class="form-control form-select" wire:model="product_id.{{$key}}" disabled>
                                         <option>--Select--</option>
@@ -145,18 +145,19 @@
                                     </x-input-text>
                                 </div>
                                 <div class=" col-lg-1 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="discount.{{$key}}" type="number" :readOnly="true">
+                                    <x-input-text wireModel="discount.{{$key}}" type="number">
                                     </x-input-text>
                                 </div>
                                 <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
                                     <x-input-text wireModel="sub_total.{{$key}}" type="number" />
-                                    {{-- <button class="btn btn-danger ms-2">
+                                    <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                        wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
-                                    </button> --}}
+                                    </button>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        @endforeach
                     </form>
                     <!-- 7th row start  -->
                     <div class="row mt-3 justify-content-center ">

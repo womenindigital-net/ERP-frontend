@@ -51,6 +51,10 @@ class SaleVoucherCreate extends Component
     public $card_no;
     public $card_name;
     public $card_type;
+    public $total_discount;
+    public $total_item;
+    public $total_cost;
+    public $total_paid;
 
     public function boot(
         ProjectRepository $projectRepository,
@@ -164,6 +168,8 @@ class SaleVoucherCreate extends Component
         if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.')) {
             $targetKey = $this->getTargetKey($name);
 
+            // $this
+
             if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
                 return;
 
@@ -171,6 +177,12 @@ class SaleVoucherCreate extends Component
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
             }
         }
+
+
+        
+        // if (str_starts_with($name, 'discount.')) {
+        //     dd($value);
+        // }
     }
 
     public function update()

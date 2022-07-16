@@ -21,13 +21,12 @@ class PurchaseOrderService
 
     public function store(array $validated)
     {
-        // dd($validated);
         try {
             DB::beginTransaction();
             [$purchaseInfo, $data] = $this->collectPurchaseInfo($validated);
             $purchase = $this->repo->store($purchaseInfo);
             $purchaseDetailInfo = $this->collectPurchaseDetailInfo($data);
-            // dd($purchaseDetailInfo);
+
             $purchase->details()->createMany($purchaseDetailInfo);
             DB::commit();
         } catch (\Exception $e) {
@@ -38,7 +37,6 @@ class PurchaseOrderService
 
     private function collectPurchaseDetailInfo(array $data): array
     {
-        // dd($data);
         [$purchaseDetailInfo, $data] = extractNecessaryFieldsFromData($data, ['qty', 'available_qty', 'supplier_id', 'product_id', 'price', 'vat', 'discount', 'sub_total', 'exp_date']);
 
 
@@ -69,15 +67,10 @@ class PurchaseOrderService
 
     public function storeReturn(Purchase $purchase, array $validate)
     {
-        // purchase return
-        // purchase_id, date, note
-        //        $purchase->details()->createMany($purchaseDetailInfo);
         $purchaseReturnInfo = $this->collectPurchaseReturnInfo($validate);
 
-        //        dd($purchaseReturnInfo, $this->collectPurchaseDetailInfo($validate));
         $purchaseReturn = $purchase->return()->create($purchaseReturnInfo);
-        // purchase return detail
-        // purchase_return_id, purchase_detail_id
+
         $purchaseDetailInfo = $this->collectPurchaseDetailInfo($validate);
         $purchaseReturn->details()->createMany($purchaseDetailInfo);
     }

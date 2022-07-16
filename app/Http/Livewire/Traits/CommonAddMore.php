@@ -39,6 +39,9 @@ trait CommonAddMore
         if (isset($this->qty[$key]))
             unset($this->qty[$key]);
 
+        if (isset($this->vat[$key]))
+            unset($this->vat[$key]);
+
         if (isset($this->sub_total[$key]))
             unset($this->sub_total[$key]);
 
