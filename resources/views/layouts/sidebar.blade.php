@@ -198,20 +198,14 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('drama-diary-evaluation.create') }}">Drama Diary
-                                        Evaluation</a>
-                                </li>
+                                <li> <a href="{{ route('drama-diary-evaluation.create') }}">Drama Diary Evaluation</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="{{ route('student-attendance.create') }}">Student Attendence</a>
-                        </li>
+                        <li><a href="{{ route('student-attendance.create') }}">Student Attendence</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Employment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('staff-and-workplaceinspection.create') }}">কর্মী
-                                        ও কর্মস্থল পরিদর্শন টুল</a>
-                                </li>
+                                <li> <a href="{{ route('staff-and-workplaceinspection.create') }}">কর্মী ও কর্মস্থল পরিদর্শন টুল</a> </li>
                             </ul>
                         </li>
                         <li><a href="{{ route('vocational-evaluation.create') }}">Vocational Evalution</a></li>
