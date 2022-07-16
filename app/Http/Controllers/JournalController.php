@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\JournalRequest;
-use App\Http\Requests\UpdateJournalRequest;
 use App\Models\Journal;
+use Illuminate\Http\Response;
+use App\Services\JournalService;
+use Illuminate\Contracts\View\View;
+use App\Http\Requests\JournalRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
 use App\Repositories\JournalRepository;
 use App\Repositories\ProjectRepository;
-use App\Services\JournalService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
-use Illuminate\Routing\RoutingServiceProvider;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\UpdateJournalRequest;
+use Illuminate\Routing\RoutingServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
 
 class JournalController extends Controller
 {
@@ -62,6 +62,8 @@ class JournalController extends Controller
      */
     public function store(JournalRequest $request)
     {
+
+        dd($request->validated());
         $this->service->store($request->validated());
         Session::flash('success');
         return redirect()->route('journal.index');
