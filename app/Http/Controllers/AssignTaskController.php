@@ -25,8 +25,6 @@ class AssignTaskController extends Controller
      */
     public function create()
     {
-        
-
         return view('program.assign-task.create',);
     }
 
