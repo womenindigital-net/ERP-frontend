@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="receive_payment" role="tabpanel">
+<div>
     <div class="row">
         <div class="col-md-6">
             <div class="mb-3">

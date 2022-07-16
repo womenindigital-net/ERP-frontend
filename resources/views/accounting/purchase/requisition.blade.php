@@ -22,8 +22,12 @@
 
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
-                        <livewire:requisition-create/>
-                        <livewire:requisition-list/>
+                        <div class="tab-pane active" id="receive_payment" role="tabpanel">
+                            <livewire:requisition-create/>
+                        </div>
+                        <div class="tab-pane" id="received_payment_details" role="tabpanel">
+                            <livewire:requisition-list/>
+                        </div>
                     </div>
 
                 </div>

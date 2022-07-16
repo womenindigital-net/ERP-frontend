@@ -1,4 +1,4 @@
-<div class="tab-pane" id="received_payment_details" role="tabpanel">
+<div>
     <x-record-list :records="$records">
         <table class="table table-bordered w-100">
             <thead>
