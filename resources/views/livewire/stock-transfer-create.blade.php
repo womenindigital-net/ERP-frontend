@@ -35,7 +35,13 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Warehouse to</label>
+                @if ($warehouse_to_warehouse)
                 <x-input-select wireModel="warehouse_id_to" :records="$warehouses" targetColumn="title" />
+                @elseif ($warehouse_to_customer)
+                <x-input-select wireModel="warehouse_id_to" :records="$customers" />
+                @elseif ($warehouse_to_service_provider)
+                <x-input-select wireModel="warehouse_id_to" :records="$suppliers" />
+                @endif
             </div>
         </div>
         <div class="col-lg-6">
