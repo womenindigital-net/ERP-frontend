@@ -37,6 +37,7 @@ class StockReceiveCreate extends Component
     public $type;
     public $purchaseInput;
     public $receiveInput;
+    public $purchaseProduct;
 
     private StockReceiveService $service;
     private StockReceiveRepository $repo;
@@ -77,6 +78,7 @@ class StockReceiveCreate extends Component
         foreach ($this->addMoreItems as $each) {
             $this->{$each}[$targetKey] = null;
         }
+        $this->purchaseProduct =[];
     }
 
     // public function updating($name, $value)
@@ -123,6 +125,34 @@ class StockReceiveCreate extends Component
                 $this->stock_receive_qty[$key] = $detail->stock_receive_qty;
                 $this->serial[$key] = $detail->serial;
             }
+        }
+    }
+
+    public function updated($name, $value)
+    {
+        if (str_starts_with($name, 'product_id.')) {
+            $targetKey = $this->getTargetKey($name);
+
+            if (!$value || !$this->project_id || !$this->warehouse_id) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->available_qty[$targetKey] = 0;
+                return;
+            }
+
+            $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
+            if (!$productInfo) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->available_qty[$targetKey] = 0;
+                return;
+            }
+
+            $this->available_qty[$targetKey] = $productInfo->qty;
+            // $this->price[$targetKey]         = $productInfo->product->selling_price;
+        }
+
+        if (str_starts_with($name, 'purchase_id')) {
+            $detail =  $this->purchaseOrderRepo->getPurchaseProduct($value);
+            $this->purchaseProduct =  $detail->details;
         }
     }
 

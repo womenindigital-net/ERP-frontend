@@ -1,8 +1,6 @@
-<div class="row">
-    <div class="form-check form-check-primary mb-3">
-        {{-- <input class="form-check-input" wireModel="cheque" type="checkbox" id="formCheckBox"> --}}
-        <label class="form-check-label ms-2" for="formCheckBoxForm">Cheque Pay</label>
-    </div>
+<div class="row mt">
+    <label class="form-check-label mb-5" for="formCheckBoxForm">Cheque Pay</label>
+
     <div class="row" id="formCheckBoxForm">
         <div class="row">
             <div class="row">

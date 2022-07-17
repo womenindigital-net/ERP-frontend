@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="case-histroy" role="tabpanel">
+<div>
     <div class="row">
         <div class="col-12">
             <div class="row">
@@ -69,7 +69,7 @@
                             <form class="repeater" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-lg-4 p-0 pe-1">
-                                        <label for="name">Category Name</label>
+                                        <label for="name">Product Name</label>
                                     </div>
                                     <div class="col-lg-4 p-0 pe-1">
                                         <label for="product">Avl Stock</label>

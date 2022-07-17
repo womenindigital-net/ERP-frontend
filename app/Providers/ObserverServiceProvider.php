@@ -2,30 +2,32 @@
 
 namespace App\Providers;
 
-use App\Models\FinishedGoodDetail;
 use App\Models\Income;
-use App\Models\MaterialCollectionProduct;
 use App\Models\Purchase;
-use App\Models\PurchaseReturnDetail;
-use App\Models\SaleIncomeDetail;
+use App\Models\Requisition;
 use App\Models\StockAssign;
-use App\Models\StockAssignDetail;
 use App\Models\StockOutDetail;
+use App\Models\SaleIncomeDetail;
+use App\Models\StockAssignDetail;
+use App\Observers\IncomeObserver;
+use App\Models\FinishedGoodDetail;
 use App\Models\StockReceiveDetail;
 use App\Models\StockTransferDetail;
-use App\Observers\FinishedGoodDetailObserver;
-use App\Observers\IncomeObserver;
-use App\Observers\MaterialCollectionProductObserver;
 use App\Observers\PurchaseObserver;
-use App\Observers\PurchaseReturnDetailObserver;
+use App\Models\PurchaseReturnDetail;
+use App\Observers\RequisitionObserver;
 use App\Observers\SaleVoucherObserver;
-use App\Observers\StockAssignDetailObserver;
 use App\Observers\StockAssignObserver;
-use App\Observers\StockOutDetailObserver;
-use App\Observers\StockReceiveDetailObserver;
 use App\Observers\StockReceiveObserver;
-use App\Observers\StockTransferDetailObserver;
 use Illuminate\Support\ServiceProvider;
+use App\Models\MaterialCollectionProduct;
+use App\Observers\StockOutDetailObserver;
+use App\Observers\StockAssignDetailObserver;
+use App\Observers\FinishedGoodDetailObserver;
+use App\Observers\StockReceiveDetailObserver;
+use App\Observers\StockTransferDetailObserver;
+use App\Observers\PurchaseReturnDetailObserver;
+use App\Observers\MaterialCollectionProductObserver;
 
 class ObserverServiceProvider extends ServiceProvider
 {
@@ -58,5 +60,6 @@ class ObserverServiceProvider extends ServiceProvider
         // StockAssignDetail::observe(StockAssignObserver::class);
         StockAssignDetail::observe(StockAssignDetailObserver::class);
         StockOutDetail::observe(StockOutDetailObserver::class);
+        Requisition::observe(RequisitionObserver::class);
     }
 }
