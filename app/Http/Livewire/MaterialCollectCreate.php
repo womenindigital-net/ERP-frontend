@@ -27,6 +27,7 @@ class MaterialCollectCreate extends Component
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    protected array $addMoreItems = ['product_id', 'avl_stock', 'qty'];
 
     public function boot(
         MaterialCollectionService $service,
@@ -45,6 +46,11 @@ class MaterialCollectCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
         
     }
 
