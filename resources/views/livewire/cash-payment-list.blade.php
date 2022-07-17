@@ -5,14 +5,15 @@
                 <thead>
                     <tr class="table-primary">
                         <th>Purpose</th>
+                        <th>Project </th>
+                        <th>Date</th>
+                        <th>Reference</th>
+                        <th>Items</th>
+                        <th>Cost</th>
+                        <th>VAT</th>
+                        <th>Discount</th>
+                        <th>Deduct</th>
                         <th>Amount</th>
-                        <th>Trans Date</th>
-                        <th>Is Sent For Approval</th>
-                        <th>Is Approved</th>
-                        <th>Approved By</th>
-                        <th>Approved Date</th>
-                        <th>Is Transfer Done</th>
-                        <th>Transfer Date</th>
                         <th>Log</th>
                         <th>Action</th>
                     </tr>
