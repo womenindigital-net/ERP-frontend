@@ -74,7 +74,7 @@
 
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger w-100">Reset</button>
+                                    {{-- <button class="btn btn-danger w-100">Reset</button> --}}
                                 </div>
                                 <div class="col-md-4">
                                     <button class="btn btn-success w-100">Save</button>
