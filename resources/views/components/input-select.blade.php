@@ -11,5 +11,5 @@
         </option>
         @endforeach
     </select>
-    @error($name)<span style="color: red">{{$message}}</span>@enderror
+    {{-- @error($name)<span style="color: red">{{$message}}</span>@enderror --}}
 </div>

@@ -97,7 +97,7 @@
                                     <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn ms-2 btn-danger t removeBtn"
-                                        wire:click="removeRow({{ $key }})">
+                                        wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                     @endif

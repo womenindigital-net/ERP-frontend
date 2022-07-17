@@ -85,6 +85,7 @@ class StockTransferCreate extends Component
             foreach ($this->stockTransfer->details as $key => $detail) {
                 $this->product_id[$key] = $detail->product_id;
                 $this->transfer_quantity[$key] = $detail->transfer_quantity;
+                $this->available_Quantity[$key] = $detail->available_qty;
                 $this->serial[$key] = $detail->serial;
             }
         }

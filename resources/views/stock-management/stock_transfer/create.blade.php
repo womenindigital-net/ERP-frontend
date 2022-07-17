@@ -22,12 +22,18 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <livewire:stock-transfer-create />
-                    <livewire:stock-transfer-list />
-                </div>
+                    <div class="tab-pane active" id="stock_transfer" role="tabpanel">
+                        <livewire:stock-transfer-create />
+                    </div>
+                    <div class="tab-pane" id="stock_transfer_list" role="tabpanel">
 
+                        <livewire:stock-transfer-list />
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
+</div>
 </div>
 @endsection

@@ -1,4 +1,4 @@
-<div class="tab-pane" id="stock_transfer_list" role="tabpanel">
+<div>
     <x-record-list :records="$records">
         <div class="table-responsive">
             <table class="table table-bordered w-100">

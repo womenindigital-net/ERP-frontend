@@ -81,7 +81,7 @@ class MaterialCollectCreate extends Component
 
             foreach ($this->materialCollect->details as $key => $detail) {
                 $this->product_id[$key] = $detail->product_id;
-                // $this->avl_stock[$key] = $detail->avl_stock ?? 0;
+                $this->avl_stock[$key] = $detail->available_qty ?? 0;
                 $this->qty[$key] = $detail->qty;
             }
         }
