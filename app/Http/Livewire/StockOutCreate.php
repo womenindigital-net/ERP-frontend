@@ -27,6 +27,7 @@ class StockOutCreate extends Component
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    protected array $addMoreItems = ['product_id', 'total_stock', 'stock_out'];
 
     public function boot(
         StockOutService $service,
@@ -46,6 +47,11 @@ class StockOutCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
 
@@ -66,7 +72,9 @@ class StockOutCreate extends Component
         'warehouse_id' => 'required',
         'date' => 'required',
         'product_id.*' => 'required',
-        'stock_out.*' => 'nullable',
+        'stock_out.*' => 'required',
+        'total_stock.*' => 'required',
+        
     ];
 
 
