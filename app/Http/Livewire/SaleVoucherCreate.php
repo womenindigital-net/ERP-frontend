@@ -35,6 +35,7 @@ class SaleVoucherCreate extends Component
     private IncomeRepository $repo;
     private StockRepository $stockRepo;
     private SaleVoucherService $service;
+    protected array $addMoreItems = ['product_id', 'available_qty', 'qty', 'sub_total', 'price', 'discount'];
 
     public $customer_id;
     public $ship_to_address;
@@ -77,6 +78,11 @@ class SaleVoucherCreate extends Component
         $this->stockRepo      = $stockRepository;
         $this->service        = $service;
         $this->inputs[]       = $this->numberOfItems;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
     protected array $rules = [
@@ -98,12 +104,12 @@ class SaleVoucherCreate extends Component
         "card_no"             => 'nullable',
         "card_name"           => 'nullable',
         "card_type"           => 'nullable',
-        'product_id.*'        => 'required',
+        'produc t_id.*'        => 'required',
         'available_qty.*'     => 'required',
         'qty.*'               => 'required',
         'sub_total.*'         => 'required',
-        'price.*'             => 'nullable',
-        'discount.*'          => 'nullable',
+        'price.*'             => 'required',
+        'discount.*'          => 'required',
     ];
 
     public function mount()

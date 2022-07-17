@@ -39,6 +39,7 @@ class StockTransferCreate extends Component
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    protected array $addMoreItems = ['product_id', 'available_Quantity', 'transfer_quantity', 'serial'];
 
     public function boot(
         StockTransferService $service,
@@ -58,6 +59,11 @@ class StockTransferCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
 
@@ -91,10 +97,10 @@ class StockTransferCreate extends Component
         'date' => 'required',
         'warehouse_id_from' => 'required',
         'warehouse_id_to' => 'required',
-        'product_id' => 'required',
-        // 'available_Quantity' => 'required',
-        'transfer_quantity' => 'required',
-        'serial' => 'required',
+        'product_id.*' => 'required',
+        'available_Quantity.*' => 'required',
+        'transfer_quantity.*' => 'required',
+        'serial.*' => 'required',
     ];
 
     public function update()
