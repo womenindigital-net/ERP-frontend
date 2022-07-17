@@ -27,6 +27,7 @@ class StoreCareNeedPartOneRequest extends FormRequest
             "collection_date"                                               => 'nullable',
             "teacher_id"                                                    => 'nullable',
             "student_id"                                                    => 'nullable',
+
             "from_where_you_learned_about_us"                               => 'nullable',
             "Doctor_physician_under_medical_treatment_name"                 => 'nullable',
             "contact_umber"                                                 => 'nullable',
@@ -34,6 +35,7 @@ class StoreCareNeedPartOneRequest extends FormRequest
             "If_yes_enter_registration_number"                              => 'nullable',
             "suggestion_on_obtaining_registration"                          => 'nullable',
             "referred_to_parents_forum"                                     => 'nullable',
+
             "iss_she_has_utism"                                             => 'nullable',
             "is_she_has_down_syndrome"                                      => 'nullable',
             "is_she_has_cerebral_palsy"                                     => 'nullable',
@@ -58,6 +60,7 @@ class StoreCareNeedPartOneRequest extends FormRequest
             "is_she_has_attachment_disorder"                                => 'nullable',
             "is_she_has_separation_anxiety_disorder"                        => 'nullable',
             "is_she_has_sleep_disorder"                                     => 'nullable',
+
             "is_social_communication_checklist_has_completed"               => 'nullable',
             "is_sensory_checklist_has_completed"                            => 'nullable',
             "is_occupational_assessment_has_completed"                      => 'nullable',
@@ -67,12 +70,14 @@ class StoreCareNeedPartOneRequest extends FormRequest
             "is_functional_evaluation_has_completed"                        => 'nullable',
             "is_psychological_assessment_has_completed"                     => 'nullable',
             "is_cademic_assessment_has_completed"                           => 'nullable',
+
             "schooling"                                                     => 'nullable',
             "is_she_has_speaking_capacity"                                  => 'nullable',
             "is_she_has_reading_capacity"                                   => 'nullable',
             "is_she_has"                                                    => 'nullable',
             "is_she_has_counting_capacity"                                  => 'nullable',
             "is_she_has_money_concept"                                      => 'nullable',
+            
             "is_she_happy_at_home"                                          => 'nullable',
             "is_she_lonely"                                                 => 'nullable',
             "is_she_protective"                                             => 'nullable',
@@ -92,21 +97,23 @@ class StoreCareNeedPartOneRequest extends FormRequest
             "what_is_the_way_of_communication"                              => 'nullable',
             "how_he_she_can_follow_instructions"                            => 'nullable',
             "is_she_do_temper_how_long_it_remain"                           => 'nullable',
+            "specify_the_cooling_process"                                   => 'nullable',
+            
             "is_she_hit_others"                                             => 'nullable',
-            "is_your_other_child_support_towards_sibling"                   => 'nullable',
             "age"                                                           => 'nullable',
-            "is_your_other_child_support_towards_sibling"                   => 'nullable',
             "is_your_other_child_support_towards_sibling"                   => 'nullable',
             "marriage_within_family_relative"                               => 'nullable',
             "is_any_other_relative_have_disabilities"                       => 'nullable',
             "family_economical_condition"                                   => 'nullable',
             "any_other_family_information_that_may_relevant_to_share"       => 'nullable',
+
             "going_to_school"                                               => 'nullable',
             "if_other_enter_name"                                           => 'nullable',
             "name_of_the_school"                                            => 'nullable',
             "studied_till_which_class"                                      => 'nullable',
             "why_not_attending_school"                                      => 'nullable',
             "any_exam_degree_achieved"                                      => 'nullable',
+
             "separate_room"                                                 => 'nullable',
             "separate_bed"                                                  => 'nullable',
             "sleep_alone"                                                   => 'nullable',

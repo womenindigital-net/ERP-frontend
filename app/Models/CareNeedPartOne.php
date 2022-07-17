@@ -28,14 +28,6 @@ class CareNeedPartOne extends Model
         );
     }
 
-    protected function schooling(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($val) => json_decode($val),
-            set: fn ($val) => json_encode($val),
-        );
-    }
-
     protected function knowledgeOnAilyLifeRequirement(): Attribute
     {
         return Attribute::make(
@@ -59,6 +51,60 @@ class CareNeedPartOne extends Model
             set: fn ($val) => json_encode($val),
         );
     }
-
-
+    protected function common(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function typesOfSpecialtyDisabilityImpairments(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function assessment(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function educationalInformation(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function childsConditionAtHisFamily(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function numberOfChildrenInTheFamily(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function schooling(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
+    protected function home(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
 }

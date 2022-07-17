@@ -64,7 +64,7 @@ class DirectPaymentCreate extends Component
     {
         if ($this->record) {
             // dd($this->record);
-            $this->mode = 'edit';
+            // $this->mode = 'edit';
             $this->record = $this->repo->getRelatedData($this->record, ['project']);
 
             // dd($this->record->project_id);
