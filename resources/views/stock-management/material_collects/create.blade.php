@@ -21,8 +21,12 @@
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <livewire:material-collect-create />
-                    <livewire:material-collect-list />
+                    <div class="tab-pane active" id="case-histroy" role="tabpanel">
+                        <livewire:material-collect-create />
+                    </div>
+                    <div class="tab-pane" id="case-histroy_list" role="tabpanel">
+                        <livewire:material-collect-list />
+                    </div>
 
                 </div>
             </div>

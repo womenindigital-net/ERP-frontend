@@ -51,7 +51,6 @@ class MaterialCollectCreate extends Component
         foreach ($this->addMoreItems as $each) {
             $this->{$each}[$targetKey] = null;
         }
-        
     }
 
 
@@ -85,6 +84,29 @@ class MaterialCollectCreate extends Component
                 // $this->avl_stock[$key] = $detail->avl_stock ?? 0;
                 $this->qty[$key] = $detail->qty;
             }
+        }
+    }
+
+    public function updated($name, $value)
+    {
+        if (str_starts_with($name, 'product_id.')) {
+            $targetKey = $this->getTargetKey($name);
+
+            if (!$value || !$this->project_id || !$this->warehouse_id) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->avl_stock[$targetKey] = 0;
+                return;
+            }
+
+            $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
+            if (!$productInfo) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->avl_stock[$targetKey] = 0;
+                return;
+            }
+
+            $this->avl_stock[$targetKey] = $productInfo->qty;
+            // $this->price[$targetKey]         = $productInfo->product->selling_price;
         }
     }
 
