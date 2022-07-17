@@ -81,7 +81,7 @@ class PurchaseOrderCreate extends Component
 
         'vat.*' => 'required',
         'product_id.*' => 'required',
-        'exp_date.*' => 'nullable',
+        'exp_date.*' => 'required',
         'available_qty.*' => 'required',
         'qty.*' => 'required',
         'price.*' => 'nullable',
@@ -112,6 +112,7 @@ class PurchaseOrderCreate extends Component
         $this->service->store($this->validate());
         $this->dispatchBrowserEvent('notify');
         $this->dispatchBrowserEvent('reload');
+        return $this->redirectRoute('purchase-order.create');
     }
 
     public function render(): Factory|View|Application

@@ -26,6 +26,7 @@ class StockAssignCreate extends Component
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    protected array $addMoreItems = ['product_id', 'product_details', 'depreciation_percent', 'assigned_to'];
 
     public function boot(
         StockAssignService $service,
@@ -45,6 +46,11 @@ class StockAssignCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
     public $stockAssign;
@@ -63,10 +69,10 @@ class StockAssignCreate extends Component
         'warehouse_id' => 'required',
         'date' => 'required',
         'note' => 'required',
-        'product_id' => 'required',
-        'product_details' => 'required',
-        'depreciation_percent' => 'required',
-        'assigned_to' => 'required'
+        'product_id.*' => 'required',
+        'product_details.*' => 'required',
+        'depreciation_percent.*' => 'required',
+        'assigned_to.*' => 'required'
     ];
 
 
@@ -75,6 +81,7 @@ class StockAssignCreate extends Component
         if ($this->stockAssign) {
             $this->stockAssign = $this->repo->getRelatedData($this->stockAssign, ['details']);
 
+            $this->project_id = $this->stockAssign->project_id;
             $this->warehouse_id = $this->stockAssign->warehouse_id;
             $this->date = $this->stockAssign->date;
             $this->note = $this->stockAssign->note;

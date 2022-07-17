@@ -1,5 +1,8 @@
+
 <div class="tab-pane" id="purchase_order_list" role="tabpanel">
     <x-record-list :records="$records">
+<div>
+    <div class="table-responsive">
         <table class="table table-bordered w-100">
             <thead>
                 <tr class="table-primary">

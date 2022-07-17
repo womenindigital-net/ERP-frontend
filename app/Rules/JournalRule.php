@@ -24,10 +24,13 @@ class JournalRule implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $value): bool
     {
-        dd(Journal::where('transaction_amount', '==', $value));
-        return Journal::where('transaction_amount', '==', $value);
+        $allCredit = array_sum(array_column(request()->journal, 'credit'));
+        $allDebit = array_sum(array_column(request()->journal, 'debit'));
+        $transitionAmount = request()->transaction_amount;
+
+        return ($allDebit == $allCredit) && ($allCredit == $transitionAmount);
     }
 
     /**
@@ -37,6 +40,6 @@ class JournalRule implements Rule
      */
     public function message()
     {
-        return 'Not Match with Transaction Amount.';
+        return 'Total Debit And Total Credit Not Matched With Transaction Amount';
     }
 }

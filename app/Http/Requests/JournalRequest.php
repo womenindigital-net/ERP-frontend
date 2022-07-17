@@ -26,19 +26,11 @@ class JournalRequest extends FormRequest
     {
         return [
             'project_id' => 'required|exists:projects,id',
-            'transaction_amount' => [
-                'required',
-            ],
+            'transaction_amount' => ['required', new JournalRule()],
             'voucher_date' => 'required',
             'particulars' => 'nullable',
             'reference' => 'nullable',
-            'journal.*.debit' => [
-                new JournalRule(),
-            ],
-            'journal.*' => [
-                'nullable'
-            ],
-            // new JournalRule(),
+            'journal.*' => 'required'
         ];
     }
 }

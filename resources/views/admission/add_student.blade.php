@@ -8,7 +8,7 @@
 @endsection
 @section('content')
 
-    <livewire:admission-add-student/>
+ <livewire:admission-add-student/>
 
 @endsection
 @section('script')

@@ -20,10 +20,15 @@ trait CommonAddMore
     public array $inputs = [];
     public int $numberOfItems = 1;
 
-    public function addMore()
+    public function addMore(): void
     {
         $this->numberOfItems += 1;
         $this->inputs[]      = $this->numberOfItems;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
     public function removeItem($key)
@@ -51,9 +56,40 @@ trait CommonAddMore
         if (isset($this->discount[$key]))
             unset($this->discount[$key]);
 
-        $this->total_discount = array_sum($this->discount);
-        $this->total_item = array_sum($this->product_id);
-        $this->total_cost = array_sum($this->sub_total);
+        if (isset($this->total_discount))
+            $this->total_discount = array_sum($this->discount);
+
+        if (isset($this->total_item))
+            $this->total_item = array_sum($this->product_id);
+
+        if (isset($this->total_cost))
+            $this->total_cost = array_sum($this->sub_total);
+    }
+    
+    public function removeRow($key)
+    {
+        unset($this->inputs[$key]);
+
+        if (isset($this->product_id[$key]))
+            unset($this->product_id[$key]);
+
+        if (isset($this->available_qty[$key]))
+            unset($this->available_qty[$key]);
+
+        if (isset($this->qty[$key]))
+            unset($this->qty[$key]);
+
+        if (isset($this->vat[$key]))
+            unset($this->vat[$key]);
+
+        if (isset($this->sub_total[$key]))
+            unset($this->sub_total[$key]);
+
+        if (isset($this->price[$key]))
+            unset($this->price[$key]);
+
+        if (isset($this->discount[$key]))
+            unset($this->discount[$key]);
     }
 
     public function submit()

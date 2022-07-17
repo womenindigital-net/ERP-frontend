@@ -95,7 +95,7 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-4 p-0 pe-1 pb-1">
-                                            <x-input-text wireModel="avl_stock.{{$key}}" type="number" :readOnly="true">
+                                            <x-input-text wireModel="avl_stock.{{$key}}" type="number">
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-4 p-0 pe-1 pb-1 d-flex">

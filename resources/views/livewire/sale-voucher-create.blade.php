@@ -92,20 +92,21 @@
                                 </div>
                                 <div class=" col-lg-3 p-0 pe-1 pb-1 d-flex">
                                     <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
-                                    <div>
-                                        <button class="btn btn-danger ms-2 removeBtn" wire:click="removeItem({{$key}})">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </div>
+                                    @if (!($this->mode == 'show'))
+                                    <button type="button" class="btn ms-2 btn-danger t removeBtn"
+                                        wire:click="removeRow({{ $key }})">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach
                         </div>
-                        @if (!($this->mode) == 'show')
+                        @if (!($this->mode == 'show'))
+                            <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
+                                wire:click="addMore()" />
 
-                        @endif
-                        <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
-                            wire:click="addMore()" />
+                            @endif
                     </div>
                     <!-- 5th row start -->
                     <div class="row justify-content-center pt-3">
@@ -157,7 +158,7 @@
                                 <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
                                     Paid</label>
                                 <div class="col-8">
-                                    <strong class="form-control">{{ $cheque_amount + $cash + $card_amount }}</strong>
+                                    <strong class="form-control">{{ (int)$cheque_amount + (int)$cash + (int)$card_amount }}</strong>
                                 </div>
                             </div>
                         </div>

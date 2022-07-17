@@ -28,7 +28,7 @@ class StudentIncomeRequest extends FormRequest
             'project_id' => 'required',
             'student_id' => 'required',
             'date' => 'required',
-            'details.*' => 'nullable',
+            'details.*' => 'required',
         ];
     }
 }
