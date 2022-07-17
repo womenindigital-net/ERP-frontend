@@ -45,6 +45,7 @@ class MaterialCollectCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+        
     }
 
 
@@ -75,6 +76,7 @@ class MaterialCollectCreate extends Component
 
             foreach ($this->materialCollect->details as $key => $detail) {
                 $this->product_id[$key] = $detail->product_id;
+                // $this->avl_stock[$key] = $detail->avl_stock ?? 0;
                 $this->qty[$key] = $detail->qty;
             }
         }
@@ -129,7 +131,6 @@ class MaterialCollectCreate extends Component
 
     public function render()
     {
-
 
         $data = [
             'projects' => $this->projectRepo->getData(),

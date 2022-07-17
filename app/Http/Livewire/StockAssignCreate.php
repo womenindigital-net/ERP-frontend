@@ -75,6 +75,7 @@ class StockAssignCreate extends Component
         if ($this->stockAssign) {
             $this->stockAssign = $this->repo->getRelatedData($this->stockAssign, ['details']);
 
+            $this->project_id = $this->stockAssign->project_id;
             $this->warehouse_id = $this->stockAssign->warehouse_id;
             $this->date = $this->stockAssign->date;
             $this->note = $this->stockAssign->note;

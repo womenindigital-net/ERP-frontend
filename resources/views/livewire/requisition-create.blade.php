@@ -10,7 +10,7 @@
             <div class="mb-3">
                 <label class="form-label">Requested By</label>
                 <x-input-select :records="$users" wireModel="requested_by" additional="email"></x-input-select>
-            </div>
+            </div>                                               
         </div>
     </div>
     <div class="row">

@@ -47,6 +47,7 @@ class StockReceiveCreate extends Component
     private PurchaseRepository $purchaseRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    protected array $addMoreItems = ['product_id', 'exp_date', 'available_qty', 'received', 'return', 'stock_receive_qty', 'serial'];
 
     public function boot(
         StockReceiveService $service,
@@ -71,6 +72,11 @@ class StockReceiveCreate extends Component
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
         $this->purchaseRepo = $purchaseRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
     // public function updating($name, $value)

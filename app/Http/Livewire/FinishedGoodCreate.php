@@ -56,6 +56,7 @@ class FinishedGoodCreate extends Component
             $this->finishedGood = $this->repo->getRelatedData($this->finishedGood, ['details']);
 
             $this->date = $this->finishedGood->date;
+            $this->project_id = $this->finishedGood->project_id;
             $this->warehouse_id = $this->finishedGood->warehouse_id;
             $this->note = $this->finishedGood->note;
 
