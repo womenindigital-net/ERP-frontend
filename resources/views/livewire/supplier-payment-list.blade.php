@@ -1,4 +1,5 @@
-<div class="tab-pane" id="supplier_payment_list" role="tabpanel">
+<div>
+
     <x-record-list :records="$records">
         <div class="table-responsive">
             <table class="table table-bordered">

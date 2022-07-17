@@ -21,8 +21,12 @@
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <livewire:supplier-payment-create />
-                    <livewire:supplier-payment-list />
+                    <div class="tab-pane active" id="supplier_payment" role="tabpanel">
+                        <livewire:supplier-payment-create />
+                    </div>
+                    <div class="tab-pane" id="supplier_payment_list" role="tabpanel">
+                        <livewire:supplier-payment-list />
+                    </div>
                 </div>
 
             </div>

@@ -1,5 +1,4 @@
-<div class="tab-pane active" id="stock_recive" role="tabpanel">
-
+<div>
     <div class="row">
         <div class="col-12">
             <div class="card">

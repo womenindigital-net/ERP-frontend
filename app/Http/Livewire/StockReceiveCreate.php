@@ -120,6 +120,25 @@ class StockReceiveCreate extends Component
         }
     }
 
+    public function updated($name, $value)
+    {
+        if (str_starts_with($name, 'product_id.')) {
+            if (!$value || !$this->project_id || !$this->warehouse_id) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                return;
+            }
+
+            $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
+            if (!$productInfo)
+                return;
+
+            $targetKey = $this->getTargetKey($name);
+
+            $this->available_qty[$targetKey] = $productInfo->qty;
+            // $this->price[$targetKey]         = $productInfo->product->selling_price;
+        }
+    }
+
     protected array $rules = [
         'project_id' => 'required',
         'purchase_id' => 'nullable',
