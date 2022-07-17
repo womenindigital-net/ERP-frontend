@@ -28,6 +28,11 @@
                                 Order)</label>
                             <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
                             </x-input-select>
+                            <p>
+                                @foreach ($purchaseProduct as $item )
+                                <label class="form-label">{{ $item->product->name }}</label>
+                                @endforeach
+                            </p>
                         </div>
                         <div class="mb-3">
                             <label class="text-end form-label">Note</label>
@@ -90,7 +95,8 @@
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number">
+                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number"
+                                                :readOnly='true'>
                                             </x-input-text>
                                         </div>
                                         {{-- @if($purchaseInput) --}}

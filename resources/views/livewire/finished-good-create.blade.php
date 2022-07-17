@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="finished_good" role="tabpanel">
+<div>
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">

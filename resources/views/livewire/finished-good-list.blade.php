@@ -1,20 +1,19 @@
-<div class="tab-pane" id="finished_good_list" role="tabpanel">
+<div>
     <x-record-list :records="$records">
         <div class="table-responsive">
             <table class="table table-bordered w-100">
                 <thead>
                     <tr class="table-primary">
-                        <th class="">Warehouse</th>
-                        <th class="">Added Date</th>
-                        <th class="">Added By</th>
-                        <th class="">Total Qty</th>
-                        <th class="">Log</th>
-                        <th class="">action</th>
+                        <th>Warehouse</th>
+                        <th>Added Date</th>
+                        <th>Added By</th>
+                        <th>Total Qty</th>
+                        <th>Log</th>
+                        <th>action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($records as $record)
-
                     <tr>
                         <td>{{ $record->warehouse->title }}</td>
                         <td>{{ $record->date }}</td>

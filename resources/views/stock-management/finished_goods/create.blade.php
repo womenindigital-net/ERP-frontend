@@ -22,8 +22,12 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <livewire:finished-good-create />
-                    <livewire:finished-good-list />
+                    <div class="tab-pane active" id="finished_good" role="tabpanel">
+                        <livewire:finished-good-create />
+                    </div>
+                    <div class="tab-pane" id="finished_good_list" role="tabpanel">
+                        <livewire:finished-good-list />
+                    </div>
                 </div>
 
             </div>
