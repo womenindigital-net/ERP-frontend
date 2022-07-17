@@ -24,6 +24,7 @@ class FinishedGoodCreate extends Component
     private ProjectRepository $projectRepo;
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
+    protected array $addMoreItems = ['product_id', 'unit', 'qty'];
 
     public $finishedGood;
     public $date;
@@ -47,6 +48,11 @@ class FinishedGoodCreate extends Component
         $this->projectRepo = $projectRepository;
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
 
