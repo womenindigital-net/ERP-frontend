@@ -23,12 +23,12 @@ class StudentIncomeRequest extends FormRequest
      */
     public function rules(): array
     {
-//        dd($this->request->all());
         return [
             'project_id' => 'required',
             'student_id' => 'required',
             'date' => 'required',
-            'details.*' => 'required',
+            'details.*.course_id' => 'required',
+            'details.*.amount' => 'required',
         ];
     }
 }
