@@ -63,7 +63,9 @@
                             @foreach($inputs as $key => $item)
                             <div data-repeater-item class="row removeRow">
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <select class="form-control form-select" wire:model="product_id.{{$key}}">
+                                    <select
+                                        class="form-control form-select @error($product_id[$key]) is-invalid @enderror"
+                                        wire:model="product_id.{{$key}}">
                                         <option>--Select--</option>
                                         @foreach($products as $product)
                                         <optgroup label="{{$product['name']}}">
@@ -73,6 +75,7 @@
                                         </optgroup>
                                         @endforeach
                                     </select>
+
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="available_qty.{{$key}}" :readOnly="true">
@@ -103,10 +106,10 @@
                             @endforeach
                         </div>
                         @if (!($this->mode == 'show'))
-                            <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
-                                wire:click="addMore()" />
+                        <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
+                            wire:click="addMore()" />
 
-                            @endif
+                        @endif
                     </div>
                     <!-- 5th row start -->
                     <div class="row justify-content-center pt-3">
@@ -158,7 +161,8 @@
                                 <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
                                     Paid</label>
                                 <div class="col-8">
-                                    <strong class="form-control">{{ (int)$cheque_amount + (int)$cash + (int)$card_amount }}</strong>
+                                    <strong class="form-control">{{ (int)$cheque_amount + (int)$cash + (int)$card_amount
+                                        }}</strong>
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,6 @@ final class CareNeedsPartOneConstants
             'suggestion_on_obtaining_registration',
             'referred_to_parents_forum',
         ],
-
         'types_of_specialty_disability_impairments' => [
             'is_she_has_utism',
             'is_she_has_down_syndrome',
@@ -52,7 +51,6 @@ final class CareNeedsPartOneConstants
             'is_cademic_assessment_has_completed',
         ],
         'educational_information' => [
-
             'schooling',
             'is_she_has_speaking_capacity',
             'is_she_has_listening_capacity',
@@ -63,7 +61,6 @@ final class CareNeedsPartOneConstants
             'is_she_has_money_concept',
         ],
         'childs_condition_at_his_family' => [
-            'collection_date',
             'is_she_happy_at_home',
             'is_she_lonely',
             'is_she_protective',
@@ -84,13 +81,15 @@ final class CareNeedsPartOneConstants
             'specify_the_cooling_process',
         ],
         'number_of_children_in_the_family' => [
-            'collection_date',
+            'is_she_hit_others',
+            'age',
+            'is_your_other_child_support_towards_sibling',
             'marriage_within_family_relative',
             'is_any_other_relative_have_disabilities',
+            'family_economical_condition',
             'any_other_family_information_that_may_relevant_to_share',
         ],
         'schooling' => [
-            'collection_date',
             'going_to_school',
             'name_of_the_school',
             'studied_till_which_class',
@@ -98,7 +97,6 @@ final class CareNeedsPartOneConstants
             'any_exam_degree_achieved',
         ],
         'home' => [
-            'collection_date',
             'separate_room',
             'separate_bed',
             'sleep_alone',

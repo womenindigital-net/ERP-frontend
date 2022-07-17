@@ -27,6 +27,7 @@ class StockOutCreate extends Component
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    protected array $addMoreItems = ['product_id', 'total_stock', 'stock_out'];
 
     public function boot(
         StockOutService $service,
@@ -46,6 +47,11 @@ class StockOutCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
 
@@ -66,7 +72,9 @@ class StockOutCreate extends Component
         'warehouse_id' => 'required',
         'date' => 'required',
         'product_id.*' => 'required',
-        'stock_out.*' => 'nullable',
+        'stock_out.*' => 'required',
+        'total_stock.*' => 'required',
+
     ];
 
 
@@ -87,6 +95,29 @@ class StockOutCreate extends Component
                 $this->product_id[$key] = $detail->product_id;
                 $this->stock_out[$key] = $detail->stock_out;
             }
+        }
+    }
+
+    public function updated($name, $value)
+    {
+        if (str_starts_with($name, 'product_id.')) {
+            $targetKey = $this->getTargetKey($name);
+
+            if (!$value || !$this->project_id || !$this->warehouse_id) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->total_stock[$targetKey] = 00;
+                return;
+            }
+
+            $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
+            if (!$productInfo) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->total_stock[$targetKey] = 0;
+                return;
+            }
+
+            $this->total_stock[$targetKey] = $productInfo->qty;
+            // $this->price[$targetKey]         = $productInfo->product->selling_price;
         }
     }
 

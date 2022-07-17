@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Models\Stock;
 use App\Models\FinishedGoodDetail;
 use App\Repositories\StockRepository;
 use App\Repositories\FinishedGoodDetailRepository;
@@ -37,6 +38,13 @@ class FinishedGoodDetailObserver
         if ($stock) {
             $stock->qty += $finishedGoodDetail->qty;
             $stock->saveQuietly();
+        } else {
+            Stock::create([
+                'project_id' => $projectId,
+                'product_id' => $productId,
+                'warehouse_id' => $warehouseId,
+                'qty' => $finishedGoodDetail->qty,
+            ]);
         }
     }
 

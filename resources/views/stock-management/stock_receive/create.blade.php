@@ -22,8 +22,12 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <livewire:stock-receive-create />
-                    <livewire:stock-receive-list />
+                    <div class="tab-pane active" id="stock_recive" role="tabpanel">
+                        <livewire:stock-receive-create />
+                    </div>
+                    <div class="tab-pane" id="stock_recive_list" role="tabpanel">
+                        <livewire:stock-receive-list />
+                    </div>
                 </div>
             </div>
         </div>

@@ -29,7 +29,8 @@
                         <h1>Come Through Purchase Order</h1>
                     </div>
                     @endif
-                    <livewire:purchase-order-list />
+                    <livewire:purchase-return-list />
+                    
                 </div>
 
             </div>
