@@ -1,5 +1,5 @@
-<div class="row mt">
-    <label class="form-check-label mb-5" for="formCheckBoxForm">Cheque Pay</label>
+<div class="row mt-5">
+    <label class="form-check-label mb-3 fs-5" for="formCheckBoxForm"><b>Cheque Pay</b></label>
 
     <div class="row" id="formCheckBoxForm">
         <div class="row">
