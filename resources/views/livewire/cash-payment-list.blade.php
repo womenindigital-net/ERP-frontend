@@ -31,10 +31,10 @@
                         <td>{{-- $record-> --}}</td>
                         <td>{{ $record->created_at }}</td>
                         <td>
-                            {{-- <a href="{{route('supplier-payment.show', $record->id)}}" type="button"
+                            <a href="{{route('direct-payment.show', $record->id)}}" type="button"
                                 class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2">
                                 <i class=" fas fa-eye"></i>
-                            </a> --}}
+                            </a>
                             <button wire:click="toggleApprove({{$record->id}})"
                                 class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="fas fa-check"></i>

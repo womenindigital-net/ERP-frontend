@@ -50,7 +50,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-9 col-md-9">
-                                                <form action="{{ route('care-need-part-one.update', $record->id) }}"
+                                                <form action="{{ route('care-need-part-one.update', $id) }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('PUT')
@@ -62,7 +62,7 @@
                                                                         <div class="mb-3">
                                                                             <label>Collection Date:</label>
                                                                             <x-input-text name="collection_date"
-                                                                                value="{{ $record->collection_date }}"
+                                                                                value="{{ $collection_date }}"
                                                                                 type="date" placeholder="mm/dd/yyyy">
                                                                             </x-input-text>
                                                                         </div>
@@ -71,7 +71,7 @@
                                                                         <div class="mb-3">
                                                                             <label>Teacher:</label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="$teachers" :selected="$record->teacher_id">
+                                                                                :records="$teachers" :selected="$teacher_id">
                                                                             </x-input-select>
                                                                         </div>
                                                                     </div>
@@ -79,7 +79,7 @@
                                                                         <div class="mb-3">
                                                                             <label>Candidate ID:</label>
                                                                             <x-input-select :records="$students"
-                                                                                name="student_id" :selected="$record->student_id">
+                                                                                name="student_id" :selected="$student_id">
                                                                             </x-input-select>
                                                                         </div>
                                                                     </div>
@@ -149,7 +149,7 @@
                                                                             <h6>Contact Number</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text 
-                                                                                value="{{ $common->contact_umber }}"
+                                                                                value="{{ $common->contact_umber ?? ''}}"
                                                                                 name="contact_umber " />
                                                                             </div>
                                                                         </div>
@@ -157,7 +157,7 @@
                                                                 </div>
                                                                 <!-- row end -->
                                                                 <x-input-radio-or-check 
-                                                                :checked="$common->govt_disability_registration"
+                                                                :checked="$common->govt_disability_registration "
                                                                 name="govt_disability_registration"
                                                                     label="Govt.Disability registration" :records="$projectConstants::$yesNoEn"
                                                                     secondaryInputLabel="If not, why?" />
@@ -699,7 +699,7 @@
                                                                                 relevant to share</h6>
                                                                             <div class="mb-2">
                                                                                 <x-input-text rows="1"
-                                                                                value="{{ $record->any_other_family_information_that_may_relevant_to_share }}"
+                                                                                value="{{ $any_other_family_information_that_may_relevant_to_share }}"
                                                                                     name="any_other_family_information_that_may_relevant_to_share" />
                                                                             </div>
                                                                         </div>
