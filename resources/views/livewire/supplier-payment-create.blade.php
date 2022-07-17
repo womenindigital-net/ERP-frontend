@@ -1,4 +1,5 @@
-<div class="tab-pane active" id="supplier_payment" role="tabpanel">
+<div>
+
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">

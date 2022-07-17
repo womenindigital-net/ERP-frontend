@@ -90,6 +90,29 @@ class StockTransferCreate extends Component
         }
     }
 
+    public function updated($name, $value)
+    {
+        if (str_starts_with($name, 'product_id.')) {
+            $targetKey = $this->getTargetKey($name);
+
+            if (!$value || !$this->project_id || !$this->warehouse_id_from) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->available_Quantity[$targetKey] = 00;
+                return;
+            }
+
+            $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id_from, $value);
+            if (!$productInfo) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
+                $this->available_Quantity[$targetKey] = 0;
+                return;
+            }
+
+            $this->available_Quantity[$targetKey] = $productInfo->qty;
+            // $this->price[$targetKey]         = $productInfo->product->selling_price;
+        }
+    }
+
     protected array $rules = [
         'project_id' => 'required',
         'issue_type' => 'required',

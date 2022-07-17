@@ -84,9 +84,12 @@ class DirectPaymentController extends Controller
      * @param  \App\Models\DirectPayment  $directPayment
      * @return \Illuminate\Http\Response
      */
-    public function show(DirectPayment $directPayment)
+    public function show($id)
     {
-        //
+        $data = [
+            'record' => Payment::find($id),
+        ];
+        return view('accounting.purchase.direct_payment.payment_view', $data);
     }
 
     /**

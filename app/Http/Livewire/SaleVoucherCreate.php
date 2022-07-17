@@ -104,13 +104,14 @@ class SaleVoucherCreate extends Component
         "card_no"             => 'nullable',
         "card_name"           => 'nullable',
         "card_type"           => 'nullable',
-        'produc t_id.*'        => 'required',
+        'product_id.*'        => 'required',
         'available_qty.*'     => 'required',
         'qty.*'               => 'required',
         'sub_total.*'         => 'required',
         'price.*'             => 'required',
         'discount.*'          => 'required',
     ];
+
 
     public function mount()
     {
@@ -155,6 +156,9 @@ class SaleVoucherCreate extends Component
 
     public function updated($name, $value)
     {
+
+        $this->validateOnly($name);
+
         if (str_starts_with($name, 'product_id.')) {
             if (!$value || !$this->project_id || !$this->warehouse_id) {
                 $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
