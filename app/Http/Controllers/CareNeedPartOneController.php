@@ -69,12 +69,23 @@ class CareNeedPartOneController extends Controller
      * @param  \App\Models\CareNeedPartOne  $careNeedPartOne
      * @return \Illuminate\Http\Response
      */
-    public function show(CareNeedPartOne $careNeedPartOne)
+    public function show(CareNeedPartOne $care_need_part_one)
     {
         $data = [
-            'record' => $this->careNeedPartOne = $careNeedPartOne,
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
+            'id' => $care_need_part_one['id'],
+            'collection_date' => $care_need_part_one['collection_date'],
+            'teacher_id' => $care_need_part_one['teacher_id'],
+            'student_id' => $care_need_part_one['student_id'],
+            'common' => $care_need_part_one['common'],
+            'types_of_specialty_disability_impairments' => $care_need_part_one['types_of_specialty_disability_impairments'],
+            'assessment' => $care_need_part_one['assessment'],
+            'educational_information' => $care_need_part_one['educational_information'],
+            'childs_condition_at_his_family' => $care_need_part_one['childs_condition_at_his_family'],
+            'number_of_children_in_the_family' => $care_need_part_one['number_of_children_in_the_family'],
+            'schooling' => $care_need_part_one['schooling'],
+            'home' => $care_need_part_one['home'],
         ];
         return view('pre_admission.care-need-part-one.view', $data);
     }
