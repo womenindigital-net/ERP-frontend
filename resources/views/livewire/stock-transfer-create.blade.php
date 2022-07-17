@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="stock_transfer" role="tabpanel">
+<div>
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">

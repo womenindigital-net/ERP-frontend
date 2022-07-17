@@ -10,6 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class StockTransferList extends Component
 {
     use WithPagination, CommonListElements;
+    
     private string $destroyRoute = 'stock-transfer.destroy';
     
     private StockTransferRepository $repo;

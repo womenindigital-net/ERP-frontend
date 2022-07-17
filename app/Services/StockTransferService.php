@@ -48,11 +48,12 @@ class StockTransferService
 
     private function collectStockTransferDetailsInfos(mixed $data): array
     {
-        [$stockReceiveDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'transfer_quantity', 'serial']);
+        [$stockReceiveDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id','available_Quantity', 'transfer_quantity', 'serial']);
         for ($i = 0; $i < count($stockReceiveDetailInfos['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $stockReceiveDetailInfos['product_id'][$i],
                 'transfer_quantity' => $stockReceiveDetailInfos['transfer_quantity'][$i],
+                'available_qty' => $stockReceiveDetailInfos['available_Quantity'][$i],
                 'serial' => $stockReceiveDetailInfos['serial'][$i]
             ];
         }

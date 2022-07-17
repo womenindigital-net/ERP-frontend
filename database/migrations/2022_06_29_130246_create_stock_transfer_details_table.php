@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(StockTransfer::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
+            $table->string('available_qty')->nullable();
             $table->string('transfer_quantity')->nullable();
             $table->string('serial')->nullable();
             $table->timestamps();

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MaterialCollection;
 use App\Http\Requests\StoreMaterialCollectionRequest;
 use App\Http\Requests\UpdateMaterialCollectionRequest;
-use App\Models\MaterialCollection;
 
 class MaterialCollectionController extends Controller
 {
@@ -87,8 +87,8 @@ class MaterialCollectionController extends Controller
      * @param  \App\Models\MaterialCollection  $materialCollection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MaterialCollection $materialCollection)
+    public function destroy(MaterialCollection $material_collect)
     {
-        return $materialCollection->delete();
+        return $material_collect->delete();
     }
 }
