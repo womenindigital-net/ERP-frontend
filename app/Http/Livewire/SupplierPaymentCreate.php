@@ -50,6 +50,8 @@ class SupplierPaymentCreate extends Component
         $this->repo = $repository;
         $this->bankAccount = $bankAccount;
         $this->cheque = $cheque;
+
+        $this->purchaseProduct =[];
     }
 
     public $record;
@@ -63,6 +65,7 @@ class SupplierPaymentCreate extends Component
     public $bank_account_id;
     public $cheque_id;
     public $cheque_amount;
+    public $purchaseProduct;
 
 
     protected array $rules = [
@@ -98,6 +101,14 @@ class SupplierPaymentCreate extends Component
             $this->bank_account_id = $history->bank_account_id;
             $this->cheque_id = $history->cheque_id;
             $this->cheque_amount = $history->cheque_amount;
+        }
+    }
+
+    public function updated($name, $value)
+    {
+        if (str_starts_with($name, 'purchase_id')) {
+            $detail =  $this->purchaseOrderRepo->getPurchaseProduct($value);
+            $this->purchaseProduct =  $detail->details;
         }
     }
 

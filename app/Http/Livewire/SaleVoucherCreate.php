@@ -150,7 +150,14 @@ class SaleVoucherCreate extends Component
                 $this->price[$key]         = $detail->price;
                 $this->sub_total[$key]     = $detail->sub_total;
                 $this->discount[$key]      = $detail->discount;
+                
+                $this->total_discount += $detail->discount;
+                $this->total_item += 1;
+                $this->total_cost += $detail->sub_total;
             }
+
+            $this->total_paid = $history->card_amount + $history->cash + $history->cheque_amount;
+            
         }
     }
 

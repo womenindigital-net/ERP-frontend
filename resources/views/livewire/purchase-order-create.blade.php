@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="purchase_order" role="tabpanel">
+<div>
     @if($requisition)
     <!-- form start -->
     <div class="row">
