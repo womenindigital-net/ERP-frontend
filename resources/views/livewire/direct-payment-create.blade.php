@@ -32,13 +32,13 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Amount</label>
-                <x-input-text wireModel="amount" placeholder="Enter Amount here"></x-input-text>
+                <x-input-text type="number" wireModel="amount" placeholder="Enter Amount here"></x-input-text>
             </div>
         </div>
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Note</label>
-                <x-input-textarea rows="1" wireModel="note" placeholder="Enter Purpose here">
+                <x-input-textarea rows="1" wireModel="note" placeholder="Enter note here">
                 </x-input-textarea>
             </div>
         </div>

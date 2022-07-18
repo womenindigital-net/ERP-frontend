@@ -61,7 +61,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="validationCustom02" class="form-label">Cash Pay</label>
-                                        <x-input-text name="cash" placeholder="">
+                                        <x-input-text type="number" name="cash" placeholder="">
                                         </x-input-text>
                                     </div>
                                 </div>

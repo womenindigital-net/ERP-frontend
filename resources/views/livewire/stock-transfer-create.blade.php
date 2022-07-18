@@ -49,7 +49,7 @@
         <div class="col-lg-6">
             <div class="mb-3">
                 <label class="text-end form-label">Note</label>
-                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note ..." />
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note Here" />
             </div>
         </div>
     </div>
