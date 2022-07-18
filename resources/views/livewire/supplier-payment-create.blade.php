@@ -24,18 +24,24 @@
         </div>
         <div class="col-md-6">
             <div class="mb-3">
-                <label for="validationCustom02" class="form-label">Invoice (Purchase
-                    Order)</label>
-                <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
-                </x-input-select>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="mb-3">
                 <label for="validationCustom02" class="form-label">Remarks</label>
                 <x-input-text wireModel="remark" type="text"></x-input-text>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="validationCustom02" class="form-label">Invoice (Purchase
+                    Order)</label>
+                <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
+                </x-input-select>
+                <p>
+                    @foreach ($purchaseProduct as $item )
+                    <label class="form-label">{{ $item->product->name }}</label>,
+                    @endforeach
+                </p>
+            </div>
+        </div>
+
         {{-- <div class="col-md-6">
             <div class="mb-3">
                 <label for="validationCustom02" class="form-label">Account</label>

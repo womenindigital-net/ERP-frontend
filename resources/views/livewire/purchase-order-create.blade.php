@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="purchase_order" role="tabpanel">
+<div>
     @if($requisition)
     <!-- form start -->
     <div class="row">
@@ -27,14 +27,14 @@
                 <x-input-text wireModel="date" type="date"></x-input-text>
             </div>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="m-3 mt-4">
                 <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light"
                     data-bs-toggle="modal" data-bs-target=".purchase-order-view">
                     <i class="fas fa-eye"></i>
                 </button>
             </div>
-        </div>
+        </div> --}}
 
     </div>
     <div class="row">

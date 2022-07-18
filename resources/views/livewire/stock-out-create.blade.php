@@ -68,7 +68,7 @@
                                     </x-input-text>
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
-                                        wire:click="removeRow({{ $key }})">
+                                        wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                     @endif

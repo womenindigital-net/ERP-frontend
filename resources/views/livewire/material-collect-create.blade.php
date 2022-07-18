@@ -80,7 +80,7 @@
                                 </div>
                                 <div data-repeater-list="group-a">
                                     @foreach ($inputs as $key => $item)
-                                    <div data-repeater-item class="row">
+                                    <div data-repeater-item class="row removeRow">
                                         <div class="col-lg-4 d-flex p-0 pe-1 pb-1 align-items-center">
                                             <select class="form-control form-select" wire:model="product_id.{{$key}}">
                                                 <option>--Select--</option>
@@ -104,7 +104,7 @@
                                             @if (!($this->mode == 'show'))
                                             <button type="button"
                                                 class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
-                                                wire:click="removeRow({{ $key }})">
+                                                wire:click="removeItem({{ $key }})">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
                                             @endif

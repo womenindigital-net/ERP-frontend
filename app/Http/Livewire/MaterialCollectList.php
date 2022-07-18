@@ -11,9 +11,11 @@ class MaterialCollectList extends Component
 {
 
     use WithPagination, CommonListElements;
-    private MaterialCollectionRepository $repo;
 
     protected string $destroyRoute = 'material-collect.destroy';
+
+    private MaterialCollectionRepository $repo;
+
 
     public function boot(MaterialCollectionRepository $repository)
     {

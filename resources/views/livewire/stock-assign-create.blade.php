@@ -73,7 +73,7 @@
                                     <x-input-select wireModel="assigned_to.{{$key}}" :records="$users" />
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
-                                        wire:click="removeRow({{ $key }})">
+                                        wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                     @endif

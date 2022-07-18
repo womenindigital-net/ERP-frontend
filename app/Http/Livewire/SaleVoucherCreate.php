@@ -35,7 +35,7 @@ class SaleVoucherCreate extends Component
     private IncomeRepository $repo;
     private StockRepository $stockRepo;
     private SaleVoucherService $service;
-    protected array $addMoreItems = ['product_id', 'available_qty', 'qty', 'sub_total', 'price', 'discount'];
+    protected array $addMoreItems = ['product_id', 'available_qty', 'qty', 'sub_total', 'price'];
 
     public $customer_id;
     public $ship_to_address;
@@ -109,7 +109,7 @@ class SaleVoucherCreate extends Component
         'qty.*'               => 'required',
         'sub_total.*'         => 'required',
         'price.*'             => 'required',
-        'discount.*'          => 'required',
+        'discount.*'          => 'nullable',
     ];
 
 
@@ -150,7 +150,14 @@ class SaleVoucherCreate extends Component
                 $this->price[$key]         = $detail->price;
                 $this->sub_total[$key]     = $detail->sub_total;
                 $this->discount[$key]      = $detail->discount;
+                
+                $this->total_discount += $detail->discount;
+                $this->total_item += 1;
+                $this->total_cost += $detail->sub_total;
             }
+
+            $this->total_paid = $history->card_amount + $history->cash + $history->cheque_amount;
+            
         }
     }
 

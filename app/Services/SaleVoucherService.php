@@ -121,13 +121,14 @@ class SaleVoucherService
 
     private function collectDetails(array $data): array
     {
-        [$details, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty']);
+        [$details, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'discount', 'price', 'available_qty']);
 
         for ($i = 0; $i < count($details['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $details['product_id'][$i],
                 'qty' => $details['qty'][$i],
                 'sub_total' => $details['sub_total'][$i],
+                'discount' => $details['discount'][$i],
                 'price' => $details['price'][$i],
                 'available_qty' => $details['available_qty'][$i],
             ];

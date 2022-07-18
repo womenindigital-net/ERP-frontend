@@ -9,6 +9,8 @@ use App\Repositories\UserRepository;
 use App\Repositories\StockRepository;
 use App\Services\StockTransferService;
 use App\Repositories\ProjectRepository;
+use App\Repositories\CustomerRepository;
+use App\Repositories\SupplierRepository;
 use App\Repositories\WarehouseRepository;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\StockTransferRepository;
@@ -29,6 +31,9 @@ class StockTransferCreate extends Component
     public $available_Quantity;
     public $transfer_quantity;
     public $serial;
+    public $warehouse_to_warehouse;
+    public $warehouse_to_customer;
+    public $warehouse_to_service_provider;
 
 
 
@@ -39,6 +44,8 @@ class StockTransferCreate extends Component
     private UserRepository $userRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
+    private CustomerRepository $customerRepo;
+    private SupplierRepository $supplierRepo;
     protected array $addMoreItems = ['product_id', 'available_Quantity', 'transfer_quantity', 'serial'];
 
     public function boot(
@@ -49,6 +56,8 @@ class StockTransferCreate extends Component
         UserRepository $userRepository,
         WarehouseRepository $warehouseRepository,
         StockRepository $stockRepository,
+        CustomerRepository $customerRepo,
+        SupplierRepository $supplierRepo
     ) {
         $this->inputs[] = $this->numberOfItems;
 
@@ -59,11 +68,17 @@ class StockTransferCreate extends Component
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
+        $this->customerRepo = $customerRepo;
+        $this->supplierRepo = $supplierRepo;
 
         $targetKey = count($this->inputs) - 1;
         foreach ($this->addMoreItems as $each) {
             $this->{$each}[$targetKey] = null;
         }
+
+        $this->warehouse_to_warehouse = true;
+        $this->warehouse_to_customer = false;
+        $this->warehouse_to_service_provider = false;
     }
 
 
@@ -85,6 +100,7 @@ class StockTransferCreate extends Component
             foreach ($this->stockTransfer->details as $key => $detail) {
                 $this->product_id[$key] = $detail->product_id;
                 $this->transfer_quantity[$key] = $detail->transfer_quantity;
+                $this->available_Quantity[$key] = $detail->available_qty;
                 $this->serial[$key] = $detail->serial;
             }
         }
@@ -110,6 +126,27 @@ class StockTransferCreate extends Component
 
             $this->available_Quantity[$targetKey] = $productInfo->qty;
             // $this->price[$targetKey]         = $productInfo->product->selling_price;
+        }
+
+        if (str_starts_with($name, 'issue_type')) {
+            if ($value === 'Warehouse to Warehouse'){
+                $this->warehouse_to_warehouse = true;
+                $this->warehouse_to_customer = false;
+                $this->warehouse_to_service_provider = false;
+            }
+
+            if ($value === 'Warehouse to Customer') {
+                $this->warehouse_to_warehouse = false;
+                $this->warehouse_to_customer = true;
+                $this->warehouse_to_service_provider = false;
+            }
+
+            if ($value === 'Warehouse to Service Provider'){
+                $this->warehouse_to_warehouse = false;
+                $this->warehouse_to_customer = false;
+                $this->warehouse_to_service_provider = true;
+            }
+               
         }
     }
 
@@ -139,10 +176,12 @@ class StockTransferCreate extends Component
             'products' => $this->productService->getFormattedDataAsOptGroup(),
             'users' => $this->userRepo->getData(),
             'warehouses' => $this->warehouseRepository->getData(),
+            'customers' => $this->customerRepo->getData(),
+            'suppliers' => $this->supplierRepo->getData(),
             'issueType' => [
-                'warehouse_to_warehouse' => 'Warehouse to Warehouse',
-                'warehouse_to_customer' => 'Warehouse to Customer',
-                'warehouse_to_service_provider' => 'Warehouse to Service Provider'
+                'Warehouse to Warehouse' => 'Warehouse to Warehouse',
+                'Warehouse to Customer' => 'Warehouse to Customer',
+                'Warehouse to Service Provider' => 'Warehouse to Service Provider'
             ],
         ];
         return view('livewire.stock-transfer-create', $data);
