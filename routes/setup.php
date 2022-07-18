@@ -2,12 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
+
+use App\Http\Controllers\ProjectController;
+
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\ProjectSetupController;
 use App\Http\Controllers\CustomerRegListController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
+
+        'project' => ProjectController::class,
         'project-setup' => ProjectSetupController::class,
         'customer-Type' => CustomerTypeController::class,
         'customer-reg-list' => CustomerRegListController::class,
