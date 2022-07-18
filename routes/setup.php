@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProjectSetupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\CustomerTypeController;
+use App\Http\Controllers\ProjectSetupController;
 use App\Http\Controllers\CustomerTypeSetupController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
@@ -10,7 +11,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
 
         'project-setup' => ProjectSetupController::class,
 
-        'customer-Type' => CustomerTypeSetupController::class,
+        'customer-Type' => CustomerTypeController::class,
         
 
     ]);
@@ -57,7 +58,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Vendor List
     Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
     Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
-    
+
     Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
     // Route::get('customers-list/customer-type/create', [SetupController::class, 'customerType'])->name('setup.customers-list.customer-type.create');
 
