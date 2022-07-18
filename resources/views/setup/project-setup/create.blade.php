@@ -26,7 +26,7 @@
                         <div class="tab-pane active" id="home" role="tabpanel">
                             <form action="{{ route('project.store') }}" method="POST">
                                 @csrf
-                                <div class="modal-body p-0">
+                                <div class="modal-body p-0 apply-view-only">
                                     <div class="card p-0 m-0">
                                         <div class="card-body">
                                             <div class="row pb-3">

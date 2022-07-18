@@ -22,7 +22,7 @@
                                                         class="col-md-2 col-form-label">Name:</label>
                                                     <div class="col-md-10">
                                                         <x-input-text
-                                                        value="{{ $title ?? '' }}" 
+                                                        value="{{ $record->title  }}"
                                                         placeholder="Name" name="title"></x-input-text>
                                                     </div>
                                                 </div>
@@ -31,7 +31,7 @@
                                                         class="col-md-2 col-form-label">Seq.No:</label>
                                                     <div class="col-md-10">
                                                         <x-input-text
-                                                        value="{{ $order_no ?? '' }}" 
+                                                        value="{{ $record->order_no  }}"
                                                          placeholder="Seq No" name="order_no" type="number">
                                                         </x-input-text>
                                                     </div>
@@ -43,7 +43,7 @@
                                                         No:</label>
                                                     <div class="col-md-10">
                                                         <x-input-text 
-                                                        value="{{ $tier_no ?? '' }}" 
+                                                        value="{{ $record->tier_no  }}" 
                                                         placeholder="Tier No" name="tier_no" type="number">
                                                         </x-input-text>
                                                     </div>
@@ -52,7 +52,7 @@
                                                     <label class="col-2 col-form-label"> Parent:</label>
                                                     <div class="col-10">
                                                         <x-input-select
-                                                        :selected="$parent_id ?? ''"
+                                                        :selected="$record->parent_id "
                                                          name="parent_id " :records="$projects"
                                                             targetColumn='name' />
                                                     </div>
@@ -63,7 +63,7 @@
                                                     <label for="example-date-input"
                                                         class="col-md-1 col-form-label">Description:</label>
                                                     <div class="col-md-11">
-                                                        <x-input-textarea value="{{ $description ?? '' }}"  name="description"></x-input-textarea>
+                                                        <x-input-textarea value="{{ $record->description  }}"  name="description"></x-input-textarea>
                                                     </div>
                                                 </div>
                                             </div>

@@ -65,7 +65,11 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('setup.project-setup.view');
+        $data = [
+            'projects' => $this->projectSetupRepo->getData(),
+            'record' => $project,
+        ];
+        return view('setup.project-setup.view',$data);
     }
 
     /**
@@ -78,7 +82,7 @@ class ProjectController extends Controller
     {
         $data = [
             'projects' => $this->projectSetupRepo->getData(),
-            'record' => $this->record = $project,
+            'record' => $project,
         ];
         return view('setup.project-setup.edit', $data);
     }
