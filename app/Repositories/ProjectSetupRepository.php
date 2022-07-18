@@ -8,6 +8,7 @@ class ProjectSetupRepository extends BaseRepository
 {
     protected string $model = projectSetup::class;
 
+
     public function getListData($perPage, $search)
     {
         return $this->model::when($search, function ($query) use ($search) {
@@ -18,4 +19,8 @@ class ProjectSetupRepository extends BaseRepository
             ;
         })->latest()->paginate($perPage);
     }
+
 }
+
+
+
