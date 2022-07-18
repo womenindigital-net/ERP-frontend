@@ -279,7 +279,7 @@
                         <span>Accounting Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('setup.project-setup.create') }}">Project Setup</a></li>
+                        <li><a href="{{ route('project-setup.create') }}">Project Setup</a></li>
                         <li><a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer Reg.</a></li>
                         <li><a href="{{ route('setup.customers-list.customer-type.create') }}">Customer Type</a></li>
                         <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>

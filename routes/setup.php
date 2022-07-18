@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\ProjectSetupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
+    Route::resources([
+        'project-setup' => ProjectSetupController::class,
+    ]);
     // Setup ->> Store Management Route
     Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
     Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
@@ -23,7 +27,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // setup ->> Company Setup
     Route::get('company-setup/company-setup/create', [SetupController::class, 'companySetup'])->name('setup.company-setup.create');
     //setup ->> project setup 
-    Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
+   // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
     //setup ->> Doctor setup
     Route::get('doctor-setup.create', [SetupController::class, 'doctorSetup'])->name('setup.doctor-setup.create');
     // account setup 
