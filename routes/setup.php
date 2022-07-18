@@ -3,11 +3,16 @@
 use App\Http\Controllers\ProjectSetupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
-use App\Http\Controllers\CustomerRegListController;
+use App\Http\Controllers\CustomerTypeSetupController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
+
         'project-setup' => ProjectSetupController::class,
+
+        'customer-Type' => CustomerTypeSetupController::class,
+        
+
     ]);
     // Setup ->> Store Management Route
     Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
@@ -52,9 +57,10 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Vendor List
     Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
     Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
-    // Customer List
-    Route::get('customers-list/customer-reg/create', [CustomerRegListController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
-    Route::get('customers-list/customer-type/create', [SetupController::class, 'customerType'])->name('setup.customers-list.customer-type.create');
+    
+    Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
+    // Route::get('customers-list/customer-type/create', [SetupController::class, 'customerType'])->name('setup.customers-list.customer-type.create');
+
     // Course and Admission
     Route::get('course-and-admission.create', [SetupController::class, 'courseAdmission'])->name('setup.course-and-admission.create');
 
