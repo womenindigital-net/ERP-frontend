@@ -1,5 +1,15 @@
 @extends('layouts.master')
 @section('title') Journal @endsection
+
+@section('css')
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+<!-- Sweet Alert-->
+
+
+@endsection
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -101,16 +111,12 @@
 
                                                         <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
                                                             <x-input-text name="credit" placeholder="Credit" />
-                                                            <button type="button"
-                                                                class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light removeBtn"
-                                                                id="">
-                                                                <i class="fas fa-trash-alt"></i>
-                                                            </button>
-                                                            {{-- <button type="button"
-                                                                class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light"
-                                                                id="sa-warning">
-                                                                <i class="fas fa-trash-alt"></i>
-                                                            </button> --}}
+                                                            <div onclick="this.parentNode.parentNode.remove(this)">
+                                                                <button class="btn btn-danger ms-2 removeBtn"
+                                                                    type="button">
+                                                                    <i class="fas fa-trash-alt"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -126,7 +132,7 @@
                                 <div class="col-md-4">
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger w-100">Reset</button>
+                                    {{-- <button class="btn btn-danger w-100">Reset</button> --}}
                                 </div>
                                 <div class="col-md-4">
                                     <button class="btn btn-success w-100">Save</button>

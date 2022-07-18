@@ -25,7 +25,13 @@
                         <td>{{ $record->date }}</td>
                         <td>{{ $record->total_transfer_quantity }}</td>
                         <td>{{ $record->warehouseFrom->title }}</td>
+                        @if ($record->issue_type === 'Warehouse to Warehouse')
                         <td>{{ $record->warehouseTo->title }}</td>
+                        @elseif ($record->issue_type === 'Warehouse to Customer')
+                        <td>{{ $record->customer->name }}</td>
+                        @elseif ($record->issue_type === 'Warehouse to Service Provider')
+                        <td>{{ $record->supplier->name }}</td>
+                        @endif
                         <td>{{ $record->is_approved ? "YES" : "NO" }}</td>
                         <td><small>{{ $record->created_at }}</small></td>
                         <td>
@@ -39,10 +45,6 @@
                             <a href="{{route('stock-transfer.edit', $record->id)}}" type="button"
                                 class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                 <i class="mdi mdi-pencil"></i>
-                            </a>
-                            <a href="#" type="button"
-                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                <i class="fas fa-arrow-circle-right"></i>
                             </a>
                             <button type="button" wire:click="confirmDelete({{$record->id}})"
                                 class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light">
