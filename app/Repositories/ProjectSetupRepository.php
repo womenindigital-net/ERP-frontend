@@ -2,12 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Http\Livewire\ProjectSetup;
-use App\Models\MedicineAdmin;
+use App\Models\projectSetup;
 
 class ProjectSetupRepository extends BaseRepository
 {
-    protected string $model = ProjectSetup::class;
+    protected string $model = projectSetup::class;
+
 
     public function getListData($perPage, $search)
     {
@@ -19,4 +19,8 @@ class ProjectSetupRepository extends BaseRepository
             ;
         })->latest()->paginate($perPage);
     }
+
 }
+
+
+
