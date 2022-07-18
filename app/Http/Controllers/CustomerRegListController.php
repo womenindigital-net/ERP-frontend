@@ -32,7 +32,7 @@ class CustomerRegListController extends Controller
      */
     public function create()
     {
-            $data = [
+        $data = [
             'customers' => $this->customerRegRepo->getData(),
         ];
        return view('setup.customers-list.customer-reg.create' ,$data);
@@ -59,7 +59,10 @@ class CustomerRegListController extends Controller
      */
     public function show(CustomerRegList $customerRegList)
     {
-        //
+            $data = [
+            'record' => $customerRegList,
+        ];
+      return view('setup.customers-list.customer-reg.view' ,$data );
     }
 
     /**
@@ -70,7 +73,10 @@ class CustomerRegListController extends Controller
      */
     public function edit(CustomerRegList $customerRegList)
     {
-        //
+             $data = [
+            'record' => $customerRegList,
+        ];
+      return view('setup.customers-list.customer-reg.edit' ,$data );
     }
 
     /**
