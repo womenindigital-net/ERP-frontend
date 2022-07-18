@@ -34,11 +34,11 @@
                             </x-input-select>
                             <p>
                                 @foreach ($purchaseProduct as $item )
-                                <label class="form-label">{{ $item->product->name }}</label>, 
+                                <label class="form-label">{{ $item->product->name }}</label>,
                                 @endforeach
                             </p>
                         </div>
-                        
+
                     </div>
                 </div>
                 <!--form end -->
@@ -113,7 +113,8 @@
                                         </div>
                                         {{-- @endif --}}
                                         <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="stock_receive_qty.{{ $key }}" type="number">
+                                            <x-input-text wireModel="stock_receive_qty.{{ $key }}" type="number"
+                                                :readOnly='true'>
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-2 d-flex">
