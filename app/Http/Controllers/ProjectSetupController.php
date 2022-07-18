@@ -25,7 +25,7 @@ class ProjectSetupController extends Controller
      */
     public function create()
     {
-        //
+        return view('setup.project-setup.create');
     }
 
     /**

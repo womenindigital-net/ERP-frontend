@@ -78,7 +78,7 @@ class StockReceiveCreate extends Component
         foreach ($this->addMoreItems as $each) {
             $this->{$each}[$targetKey] = null;
         }
-        $this->purchaseProduct =[];
+        $this->purchaseProduct = [];
     }
 
     // public function updating($name, $value)
@@ -130,8 +130,9 @@ class StockReceiveCreate extends Component
 
     public function updated($name, $value)
     {
+        $targetKey = $this->getTargetKey($name);
+
         if (str_starts_with($name, 'product_id.')) {
-            $targetKey = $this->getTargetKey($name);
 
             if (!$value || !$this->project_id || !$this->warehouse_id) {
                 $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);
@@ -153,6 +154,16 @@ class StockReceiveCreate extends Component
         if (str_starts_with($name, 'purchase_id')) {
             $detail =  $this->purchaseOrderRepo->getPurchaseProduct($value);
             $this->purchaseProduct =  $detail->details;
+        }
+        if (str_starts_with($name, 'received.')) {
+            $targetKey = $this->getTargetKey($name);
+            $this->stock_receive_qty[$targetKey] = $value;
+            // dd($stock_receive_qty);
+        }
+
+        if (str_starts_with($name, 'return.')) {
+            $targetKey = $this->getTargetKey($name);
+            $this->stock_receive_qty[$targetKey] =  $this->received[$targetKey] -  (int)$value;
         }
     }
 
