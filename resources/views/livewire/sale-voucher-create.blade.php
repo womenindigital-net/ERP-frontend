@@ -83,7 +83,7 @@
                                 </div>
 
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
+                                    <x-input-text type="number" wireModel="qty.{{$key}}"></x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="sub_total.{{$key}}" :readOnly="true">
@@ -175,7 +175,7 @@
                                 <label for="horizontal-firstname-input" class="col-3 text-end col-form-label">Cash
                                     Pay</label>
                                 <div class="col-9">
-                                    <x-input-text wireModel="cash" placeholder="Enter Cash Amount">
+                                    <x-input-text type="number" wireModel="cash" placeholder="Enter Cash Amount">
                                     </x-input-text>
                                 </div>
                             </div>

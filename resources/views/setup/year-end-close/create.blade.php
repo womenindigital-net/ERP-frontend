@@ -102,7 +102,7 @@
                                             <div class="row mb-2">
                                                 <label for="horizontal-firstname-input" class="col-3 text-end col-form-label">Note</label>
                                                 <div class="col-9">
-                                                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Note ">
+                                                <input type="text" class="form-control" id="horizontal-firstname-input" placeholder="Enter Note Here ">
                                                 </div>
                                             </div>
                                         </div>

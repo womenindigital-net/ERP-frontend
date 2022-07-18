@@ -8,7 +8,7 @@
             </div>
             <div class="mb-2">
                 <label class="form-label">Note</label>
-                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note">
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note Here">
                 </x-input-textarea>
             </div>
         </div>
