@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CustomerTypeSetup;
-use App\Http\Requests\StoreCustomerTypeSetupRequest;
-use App\Http\Requests\UpdateCustomerTypeSetupRequest;
+use App\Models\CustomerType;
+use App\Http\Requests\StoreCustomerTypeRequest;
+use App\Http\Requests\UpdateCustomerTypeRequest;
 
-class CustomerTypeSetupController extends Controller
+class CustomerTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,10 +36,10 @@ class CustomerTypeSetupController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCustomerTypeSetupRequest  $request
+     * @param  \App\Http\Requests\StoreCustomerTypeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCustomerTypeSetupRequest $request)
+    public function store(StoreCustomerTypeRequest $request)
     {
         //
     }
@@ -47,10 +47,10 @@ class CustomerTypeSetupController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CustomerTypeSetup  $customerTypeSetup
+     * @param  \App\Models\CustomerType  $customerType
      * @return \Illuminate\Http\Response
      */
-    public function show(CustomerTypeSetup $customerTypeSetup)
+    public function show(CustomerType $customerType)
     {
         //
     }
@@ -58,10 +58,10 @@ class CustomerTypeSetupController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CustomerTypeSetup  $customerTypeSetup
+     * @param  \App\Models\CustomerType  $customerType
      * @return \Illuminate\Http\Response
      */
-    public function edit(CustomerTypeSetup $customerTypeSetup)
+    public function edit(CustomerType $customerType)
     {
         //
     }
@@ -69,11 +69,11 @@ class CustomerTypeSetupController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCustomerTypeSetupRequest  $request
-     * @param  \App\Models\CustomerTypeSetup  $customerTypeSetup
+     * @param  \App\Http\Requests\UpdateCustomerTypeRequest  $request
+     * @param  \App\Models\CustomerType  $customerType
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCustomerTypeSetupRequest $request, CustomerTypeSetup $customerTypeSetup)
+    public function update(UpdateCustomerTypeRequest $request, CustomerType $customerType)
     {
         //
     }
@@ -81,10 +81,10 @@ class CustomerTypeSetupController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CustomerTypeSetup  $customerTypeSetup
+     * @param  \App\Models\CustomerType  $customerType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CustomerTypeSetup $customerTypeSetup)
+    public function destroy(CustomerType $customerType)
     {
         //
     }
