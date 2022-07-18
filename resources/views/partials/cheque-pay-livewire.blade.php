@@ -7,14 +7,14 @@
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Amount</label>
-                        <x-input-text wireModel="cheque_amount" placeholder="Enter Bank Name Here">
+                        <x-input-text wireModel="cheque_amount" placeholder="Enter Amount Here">
                         </x-input-text>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Cheque No</label>
-                        <x-input-text wireModel="cheque_no" placeholder="Phone One Here ">
+                        <x-input-text wireModel="cheque_no" placeholder="Cheque No Here ">
                         </x-input-text>
 
                     </div>
