@@ -8,15 +8,15 @@ use App\Http\Controllers\CustomerTypeSetupController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
-
         'project-setup' => ProjectSetupController::class,
 
+        'customer-Type' => CustomerTypeSetupController::class,  
+        
         'customer-reg-list' => CustomerRegListController::class,
 
         'customer-Type' => CustomerTypeSetupController::class,
-
-
     ]);
+    
     // Setup ->> Store Management Route
     Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
     Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
