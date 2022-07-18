@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Models\projectSetup;
+use App\Models\Project;
 
 class ProjectSetupRepository extends BaseRepository
 {
-    protected string $model = projectSetup::class;
+    protected string $model = Project::class;
 
 
     public function getListData($perPage, $search)
