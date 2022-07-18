@@ -118,10 +118,10 @@ class SetupController extends Controller
     {
         return view('setup.vendor-list.supplier-type-setup.create');
     }
-    public function customerReg()
-    {
-        return view('setup.customers-list.customer-reg.create');
-    }
+    // public function customerReg()
+    // {
+    //     return view('setup.customers-list.customer-reg.create');
+    // }
     // public function customerType()
     // {
     //     return view('setup.customers-list.customer-Type.create');
@@ -211,5 +211,5 @@ class SetupController extends Controller
         return view('setup.other-settings.user-permission-setup.create');
     }
 
-}            
+}
 

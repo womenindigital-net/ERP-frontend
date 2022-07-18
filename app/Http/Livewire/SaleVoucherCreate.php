@@ -156,7 +156,7 @@ class SaleVoucherCreate extends Component
                 $this->total_cost += $detail->sub_total;
             }
 
-            $this->total_paid = $history->card_amount + $history->cash + $history->cheque_amount;
+            $this->total_paid = $history->card_amount ?? 0 + $history->cash ?? 0  + $history->cheque_amount ?? 0;
             
         }
     }
