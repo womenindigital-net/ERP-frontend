@@ -1,4 +1,5 @@
 <div> 
+    <x-record-list :records="$records">
     <div class="table-responsive">
         <table class="table w-100 table-bordered">
             <thead>
@@ -49,4 +50,5 @@
             </tbody>
         </table>
     </div>
+     </x-record-list>
 </div>
