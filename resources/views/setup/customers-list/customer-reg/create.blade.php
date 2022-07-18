@@ -159,7 +159,6 @@
                                     <button type="button" class="btn btn-outline-danger w-md">Reset</button>
                                     <button type="submit" class="btn btn-outline-info w-md">Save</button>
                                 </div>
-                                <div class="col-lg-3"> </div>
                             </div>
                         </div>
                     </div>

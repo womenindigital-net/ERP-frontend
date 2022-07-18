@@ -24,7 +24,19 @@ class StoreCustomerRegListRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-        ];
+        'name'             => 'nullable',
+        'mobile'           => 'nullable',
+        'address_1'        => 'nullable',
+        'city'             => 'nullable',
+        'state'            => 'nullable',
+        'phone_1'          => 'nullable',
+        'email'            => 'nullable',
+        'select'           => 'nullable',
+        'address'          => 'nullable',
+        'zip_code'         => 'nullable',
+        'country'          => 'nullable',
+        'phone_2'          => 'nullable',
+        'advance'          => 'nullable',
+
     }
 }

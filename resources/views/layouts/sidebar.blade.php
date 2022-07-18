@@ -282,7 +282,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('project-setup.create') }}">Project Setup</a></li>
-                        <li><a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer Reg.</a></li>
+                        <li><a href="{{ route('customer-reg-list.create') }}">Customer Reg.</a></li>
                         <li><a href="{{ route('customer-Type.create') }}">Customer Type</a></li>
                         <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>
                         <li><a href="{{ route('setup.vendor-list.supplier-setup.create') }}">Supplier Setup</a></li>
