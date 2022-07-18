@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
-use App\Models\Project;
+use App\Repositories\ProjectSetupRepository;
 
 class ProjectController extends Controller
 {
+    private StudentRepository $studentRepo;
+    private ProjectSetupRepository $projectSetupRepo;
+    public $record;
+
+    public function __construct(StudentRepository $studentRepo, ProjectSetupRepository $projectSetupRepo)
+    {
+        $this->studentRepo = $studentRepo;
+        $this->projectSetupRepo = $projectSetupRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +38,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'projects' => $this->projectSetupRepo->getData(),
+        ];
+        return view('setup.project-setup.create', $data);
     }
 
     /**
@@ -36,7 +52,9 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        $this->projectSetupRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +65,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('setup.project-setup.view');
     }
 
     /**
@@ -58,7 +76,11 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        $data = [
+            'projects' => $this->projectSetupRepo->getData(),
+            'record' => $this->record = $project,
+        ];
+        return view('setup.project-setup.edit', $data);
     }
 
     /**

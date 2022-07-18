@@ -24,7 +24,7 @@
                     <!-- Tab Panes One -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="home" role="tabpanel">
-                            <form action="{{ route('project-setup.store') }}" method="POST">
+                            <form action="{{ route('project.store') }}" method="POST">
                                 @csrf
                                 <div class="modal-body p-0">
                                     <div class="card p-0 m-0">
@@ -34,14 +34,14 @@
                                                     <label for="example-text-input"
                                                         class="col-md-2 col-form-label">Name:</label>
                                                     <div class="col-md-10">
-                                                        <x-input-text placeholder="Name" name="name"></x-input-text>
+                                                        <x-input-text placeholder="Name" name="title"></x-input-text>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 d-flex">
                                                     <label for="example-text-input"
                                                         class="col-md-2 col-form-label">Seq.No:</label>
                                                     <div class="col-md-10">
-                                                        <x-input-text placeholder="Seq No" name="seq_no" type="number">
+                                                        <x-input-text placeholder="Seq No" name="order_no" type="number">
                                                         </x-input-text>
                                                     </div>
                                                 </div>
@@ -74,8 +74,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-outline-success  waves-light">
-                                                Save</button>
+                                            <button type="submit" class="btn btn-outline-success  waves-light"> Save</button>
                                         </div>
                                     </div>
                                 </div>

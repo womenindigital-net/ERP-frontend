@@ -13,7 +13,7 @@ class StoreCustomerRegListRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -37,6 +37,7 @@ class StoreCustomerRegListRequest extends FormRequest
         'country'          => 'nullable',
         'phone_2'          => 'nullable',
         'advance'          => 'nullable',
+        ];
 
     }
 }
