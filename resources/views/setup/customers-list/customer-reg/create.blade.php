@@ -23,7 +23,8 @@
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="home" role="tabpanel">
                         <section>
-                            <form>
+                            <form  action="{{ route('customer-reg-list.store') }}" method="POST">
+                                @csrf
                                 <div class="row">
                                     <div class="col">
                                         <div class="card">
@@ -148,19 +149,14 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-outline-success  waves-light"> Save</button>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </section>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-end">
-                                    <button type="button" class="btn btn-outline-danger w-md">Reset</button>
-                                    <button type="submit" class="btn btn-outline-info w-md">Save</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="tab-pane" id="profile" role="tabpanel">
                         <div class="row">

@@ -74,8 +74,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-outline-success  waves-light">
-                                                Save</button>
+                                            <button type="submit" class="btn btn-outline-success  waves-light"> Save</button>
                                         </div>
                                     </div>
                                 </div>
