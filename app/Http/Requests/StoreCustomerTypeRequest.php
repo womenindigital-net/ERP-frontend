@@ -13,7 +13,7 @@ class StoreCustomerTypeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,7 @@ class StoreCustomerTypeRequest extends FormRequest
     {
         return [
             "type_name"  => 'nullable',
+            "description"  => 'nullable',
         ];
     }
 }

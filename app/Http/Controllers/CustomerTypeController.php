@@ -3,11 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\CustomerType;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\CustomerTypeRepository;
 use App\Http\Requests\StoreCustomerTypeRequest;
 use App\Http\Requests\UpdateCustomerTypeRequest;
 
 class CustomerTypeController extends Controller
 {
+
+    private StudentRepository $studentRepo;
+    private CustomerTypeRepository $customerTypeRepo;
+
+    public function __construct(StudentRepository $studentRepo, CustomerTypeRepository $customerTypeRepo)
+    {
+        $this->studentRepo = $studentRepo;
+        $this->customerTypeRepo = $customerTypeRepo;
+    }   
     /**
      * Display a listing of the resource.
      *
@@ -25,12 +37,10 @@ class CustomerTypeController extends Controller
      */
     public function create()
     {
-        // $data = [
-        //     // 'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
-        //     // 'students' => $this->studentRepo->getData(),
-        //     // 'doctors' => $this->doctorRepo->getData(),
-        // ];
-        return view('setup.customers-list.customer-Type.create');
+        $data = [
+            'projects' => $this->customerTypeRepo->getData(),
+        ];
+        return view('setup.customers-list.customer-Type.create', $data);
     }
 
     /**
@@ -41,7 +51,9 @@ class CustomerTypeController extends Controller
      */
     public function store(StoreCustomerTypeRequest $request)
     {
-        //
+        $this->customerTypeRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -52,7 +64,10 @@ class CustomerTypeController extends Controller
      */
     public function show(CustomerType $customerType)
     {
-        //
+        $data = [
+            'projects' => $this->customerTypeRepo->getData(),
+        ];
+        return view('setup.customers-list.customer-Type.edit', $data);
     }
 
     /**

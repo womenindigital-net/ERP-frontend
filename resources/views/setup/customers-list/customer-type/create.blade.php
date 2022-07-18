@@ -29,26 +29,25 @@
                             <div class="col-xl-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form>
+                                        <form action="{{ route('customer-Type.store') }}" method="POST">
+                                            @csrf
                                             <div class="row mb-4">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Type Name</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="type_name" class="form-control" id="horizontal-firstname-input" placeholder="Enter your name ">
-                                                </div>
+                                                
+                                                    <x-input-text type="text" name="type_name" placeholder="Enter your name "/>
+                                                
                                             </div>
                                             <div class="row mb-4">
                                                 <label for="horizontal-email-input" class="col-sm-3 col-form-label">Description</label>
-                                                <div class="col-sm-9">
-                                                    <textarea id="message" class="form-control" placeholder="Enter your description here"></textarea>
-                                                </div>
+                                                
+                                                    <x-input-textarea name="description" id="message" placeholder="Enter your description here"></x-input-textarea>
+                                                
                                             </div>
-                                         
-                        
                                             <div class="row justify-content-end">
                                                 <div class="col-sm-9">
-                                                    <div>
-                                                        <button type="button" class="btn  btn-danger" data-bs-dismiss="modal"> Close</button>
-                                                        <button type="button" class="btn  btn-success" data-bs-dismiss="modal"> Save</button>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-outline-success waves-light">
+                                                            Save</button>
                                                     </div>
                                                 </div>
                                             </div>

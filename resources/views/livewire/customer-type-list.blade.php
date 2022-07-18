@@ -14,31 +14,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($records as $record)
                                 <tr>
-                                    <td>Organization</td>
-                                    <td>Organization</td>
-                                    <td>Create: Arif Dev @ 2018-12-09 22:45:45 There is no update record.</td>
-                                    <td><button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="mdi mdi-pencil"></i>
-                                       </button>
+                                    <td>{{ $record->type_name }}</td>
+                                    <td>{{ $record->description }}</td>
+                                    <td>{{ $record->created_at }}</td>
+                                    <td>
+                                        <a href="{{ route('customer-Type.edit', $record->id) }}" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                                            <i class="mdi mdi-pencil"></i>
+                                        </a>
                                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                                         <i class="fas fa-trash-alt"></i>
                                         </button> 
                                     </td>
                                 </tr>
-
-                                <tr>
-                                    <td>Individual (In House)</td>
-                                    <td>Individual (In House)</td>
-                                    <td>Create: Md. Rizwanur Rahman @ 2019-01-12 23:04:38 There is no update record</td>
-                                    <td><button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                        <i class="mdi mdi-pencil"></i>
-                                       </button>
-                                       <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                        <i class="fas fa-trash-alt"></i>
-                                        </button> 
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
