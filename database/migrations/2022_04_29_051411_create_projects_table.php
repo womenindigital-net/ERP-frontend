@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('order_no')->nullable();
             $table->integer('tier_no')->nullable(); // TODO: why
+            $table->integer('parent_id')->nullable(); // TODO: why
             $table->foreignIdFor(Project::class)->nullable()->constrained()->cascadeOnDelete();
             $table->text('description')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();

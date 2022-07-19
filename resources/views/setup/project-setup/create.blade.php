@@ -58,8 +58,8 @@
                                                 <div class="col-6 d-flex">
                                                     <label class="col-2 col-form-label"> Parent:</label>
                                                     <div class="col-10">
-                                                        <x-input-select name="parent_id" :records="$parent"
-                                                            targetColumn='name' />
+                                                        <x-input-select name="parent_id" :records="$parent_id"
+                                                            targetColumn='title' />
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,7 +74,8 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-outline-success  waves-light"> Save</button>
+                                            <button type="submit" class="btn btn-outline-success  waves-light">
+                                                Save</button>
                                         </div>
                                     </div>
                                 </div>

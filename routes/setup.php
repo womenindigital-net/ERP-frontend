@@ -8,18 +8,19 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\ProjectSetupController;
 use App\Http\Controllers\CustomerRegListController;
+use App\Http\Controllers\WarehouseController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
 
         'project' => ProjectController::class,
-        'project-setup' => ProjectSetupController::class,
         'customer-type' => CustomerTypeController::class,
         'customer-reg-list' => CustomerRegListController::class,
+        'warehouse' => WarehouseController::class,
     ]);
 
     // Setup ->> Store Management Route
-    Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
+    // Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
     Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
     Route::get('product-category-setup.create', [SetupController::class, 'productCategorySetup'])->name('product.category.setup.create');
     Route::get('product-create.create', [SetupController::class, 'productCreate'])->name('product.create.create');
@@ -38,9 +39,9 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('company-setup/company-setup/create', [SetupController::class, 'companySetup'])->name('setup.company-setup.create');
 
     //setup ->> project setup
-   // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
+    // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
     //setup ->> project setup
-   // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
+    // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
 
     //setup ->> Doctor setup
     Route::get('doctor-setup.create', [SetupController::class, 'doctorSetup'])->name('setup.doctor-setup.create');
@@ -97,14 +98,4 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('setup.other-settings.academic-calender.create', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic-calender.create');
     Route::get('other-settings.task-weight-settings.create', [SetupController::class, 'taskWeight'])->name('setup.other-settings.task-weight-settings.create');
     Route::get('other-settings.user-permission-setup.create', [SetupController::class, 'userPermission'])->name('setup.other-settings.user-permission-setup.create');
-
-
-
-
-
-
-
-
-
-
 });
