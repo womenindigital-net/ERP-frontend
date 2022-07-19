@@ -15,7 +15,7 @@
                                 @method('PUT')
                                 <div class="modal-body p-0">
                                     <div class="card p-0 m-0">
-                                        <div class="card-body">
+                                        <div class="card-body apply-view-only">
                                             <div class="row pb-3">
                                                 <div class="col-6 d-flex">
                                                     <label for="example-text-input"
@@ -53,7 +53,7 @@
                                                     <div class="col-10">
                                                         <x-input-select
                                                         :selected="$record->parent_id "
-                                                         name="parent_id " :records="$projects"
+                                                         name="parent_id " :records="$parent"
                                                             targetColumn='name' />
                                                     </div>
                                                 </div>

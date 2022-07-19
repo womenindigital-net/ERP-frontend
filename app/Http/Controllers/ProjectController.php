@@ -40,6 +40,7 @@ class ProjectController extends Controller
     {
         $data = [
             'projects' => $this->projectSetupRepo->getData(),
+            'parent' => $this->projectSetupRepo->getData(),
         ];
         return view('setup.project-setup.create', $data);
     }
@@ -67,6 +68,7 @@ class ProjectController extends Controller
     {
         $data = [
             'projects' => $this->projectSetupRepo->getData(),
+            'parent' => $this->projectSetupRepo->getData(),
             'record' => $project,
         ];
         return view('setup.project-setup.view',$data);
@@ -82,6 +84,7 @@ class ProjectController extends Controller
     {
         $data = [
             'projects' => $this->projectSetupRepo->getData(),
+            'parent' => $this->projectSetupRepo->getData(),
             'record' => $project,
         ];
         return view('setup.project-setup.edit', $data);
@@ -96,7 +99,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $this->projectSetupRepo->update($project, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -107,6 +112,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        return $project->delete();
     }
 }

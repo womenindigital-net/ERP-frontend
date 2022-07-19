@@ -26,7 +26,7 @@
                         <div class="tab-pane active" id="home" role="tabpanel">
                             <form action="{{ route('project.store') }}" method="POST">
                                 @csrf
-                                <div class="modal-body p-0 apply-view-only">
+                                <div class="modal-body p-0 ">
                                     <div class="card p-0 m-0">
                                         <div class="card-body">
                                             <div class="row pb-3">
@@ -58,7 +58,7 @@
                                                 <div class="col-6 d-flex">
                                                     <label class="col-2 col-form-label"> Parent:</label>
                                                     <div class="col-10">
-                                                        <x-input-select name="parent_id" :records="$projects"
+                                                        <x-input-select name="parent_id" :records="$parent"
                                                             targetColumn='name' />
                                                     </div>
                                                 </div>
