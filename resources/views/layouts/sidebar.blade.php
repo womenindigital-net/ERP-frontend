@@ -309,15 +309,14 @@
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>
                                 <li><a href="{{ route('measure.unit.setup.create') }}">Measure Unit Setup</a></li>
-                                <li><a href="{{ route('product.category.setup.create') }}">Product Category Setup</a>
-                                </li>
+                                <li><a href="{{ route('product.category.setup.create') }}">Product Category Setup</a></li>
                                 <li><a href="{{ route('product.create.create') }}">Product Create</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Budget & Forecasting</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('setup.budget-year-setup.create') }}">Budget Year Setup</a></li>
+                                <li><a href="{{ route('budget-year.create') }}">Budget Year Setup</a></li>
                                 <li><a href="{{ route('setup.budget-head-setup.create') }}">Budget Head Setup</a></li>
                                 <li><a href="{{ route('setup.Budget-Template-setup.create') }}">Budget Template
                                         Setup</a></li>
@@ -396,7 +395,7 @@
                                         Head Setup</a></li>
                                 <li><a href="{{ route('setup.payroll-management.salary_package_setup.create') }}">Salary
                                         Package Setup</a></li>
-                                <li><a href="{{ route('setup.payroll-management.salary_budget_setup.create') }}">Salary
+                                <li><a href="{{ route('budget-year.create') }}">Salary
                                         Budget Setup</a></li>
                             </ul>
                         </li>

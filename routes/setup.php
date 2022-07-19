@@ -5,17 +5,18 @@ use App\Http\Controllers\SetupController;
 
 use App\Http\Controllers\ProjectController;
 
+use App\Http\Controllers\BudgetYearController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\ProjectSetupController;
 use App\Http\Controllers\CustomerRegListController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
-
         'project' => ProjectController::class,
         'project-setup' => ProjectSetupController::class,
         'customer-type' => CustomerTypeController::class,
         'customer-reg-list' => CustomerRegListController::class,
+        'budget-year' => BudgetYearController::class,
     ]);
 
     // Setup ->> Store Management Route
@@ -57,7 +58,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('payroll-management/salary_step_setup.create', [SetupController::class, 'salaryStepSetup'])->name('setup.payroll-management.salary_step_setup.create');
     Route::get('payroll-management/salary_head_setup.create', [SetupController::class, 'salaryHeadSetup'])->name('setup.payroll-management.salary_head_setup.create');
     Route::get('payroll-management/salary_package_setup.create', [SetupController::class, 'salaryPackageSetup'])->name('setup.payroll-management.salary_package_setup.create');
-    Route::get('payroll-management/salary_budget_setup.create', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup.create');
+    // Route::get('payroll-management/salary_budget_setup.create', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup.create');
     // Vendor List
     Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
     Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
