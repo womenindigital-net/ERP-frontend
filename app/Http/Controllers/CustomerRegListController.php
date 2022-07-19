@@ -34,6 +34,7 @@ class CustomerRegListController extends Controller
     {
         $data = [
             'customers' => $this->customerRegRepo->getData(),
+            'select' => $this->customerRegRepo->getData(),
         ];
        return view('setup.customers-list.customer-reg.create' ,$data);
     }
