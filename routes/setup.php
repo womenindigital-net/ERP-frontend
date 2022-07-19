@@ -2,11 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\CustomerTypeSetupController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
         'customer-Type' => CustomerTypeSetupController::class,
+        'supplier' => SupplierController::class,
+        'supplier-type' => SupplierTypeController::class,
         
     ]);
     // Setup ->> Store Management Route
@@ -46,8 +50,8 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('payroll-management/salary_package_setup.create', [SetupController::class, 'salaryPackageSetup'])->name('setup.payroll-management.salary_package_setup.create');
     Route::get('payroll-management/salary_budget_setup.create', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup.create');
     // Vendor List
-    Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
-    Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
+    // Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
+    // Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
     
     Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
     // Route::get('customers-list/customer-type/create', [SetupController::class, 'customerType'])->name('setup.customers-list.customer-type.create');

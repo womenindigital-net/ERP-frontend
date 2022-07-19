@@ -19,4 +19,9 @@ class BankAccountRepository extends BaseRepository
         return $this->model::all();
         //        return $this->model::approved()->all();
     }
+
+    public function getCheque($value)
+    {
+        return $this->model::with('chequeBook')->where(['id' => $value])->first();
+    }
 }

@@ -285,9 +285,8 @@
                         <li><a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer Reg.</a></li>
                         <li><a href="{{ route('customer-Type.create') }}">Customer Type</a></li>
                         <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>
-                        <li><a href="{{ route('setup.vendor-list.supplier-setup.create') }}">Supplier Setup</a></li>
-                        <li><a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
-                                Setup</a> </li>
+                        <li><a href="{{ route('supplier.create') }}">Supplier Setup</a></li>
+                        <li><a href="{{ route('supplier-type.create') }}">Supplier Type Setup</a></li>
                         <li><a href="{{ route('setup.chart-of-accounts.create') }}">Chart Of Accounts</a></li>
                         <li><a href="{{ route('bank-account.create') }}">Bank Account Details</a></li>
                         <li><a href="{{ route('cheque.create') }}">Manage Bank Ac. Chequebook</a></li>

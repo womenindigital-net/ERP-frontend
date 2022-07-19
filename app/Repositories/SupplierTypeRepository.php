@@ -2,11 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Models\Supplier;
+use App\Models\SupplierType;
 
-class SupplierRepository extends BaseRepository
+class SupplierTypeRepository extends BaseRepository
 {
-    protected string $model = Supplier::class;
+    protected string $model = SupplierType::class;
+
 
     public function getListData(int $perPage, string $search)
     {
