@@ -64,10 +64,7 @@ class CustomerTypeController extends Controller
      */
     public function show(CustomerType $customerType)
     {
-        $data = [
-            'projects' => $this->customerTypeRepo->getData(),
-        ];
-        return view('setup.customers-list.customer-Type.edit', $data);
+       //
     }
 
     /**
@@ -78,7 +75,10 @@ class CustomerTypeController extends Controller
      */
     public function edit(CustomerType $customerType)
     {
-        //
+        $data = [
+            'record' => $customerType,
+        ];
+        return view('setup.customers-list.customer-Type.edit', $data);
     }
 
     /**
@@ -88,9 +88,11 @@ class CustomerTypeController extends Controller
      * @param  \App\Models\CustomerType  $customerType
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCustomerTypeRequest $request, CustomerType $customerType)
+    public function update(StoreCustomerTypeRequest $request, CustomerType $customerType)
     {
-        //
+        $this->customerTypeRepo->update($customerType, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -101,6 +103,6 @@ class CustomerTypeController extends Controller
      */
     public function destroy(CustomerType $customerType)
     {
-        //
+        return $customerType->delete();
     }
 }
