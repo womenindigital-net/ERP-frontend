@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body">  
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">

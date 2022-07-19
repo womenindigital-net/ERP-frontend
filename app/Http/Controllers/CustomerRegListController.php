@@ -3,20 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\CustomerRegList;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\CustomerRegRepository;
 use App\Http\Requests\StoreCustomerRegListRequest;
 use App\Http\Requests\UpdateCustomerRegListRequest;
 
 class CustomerRegListController extends Controller
 {
+    private StudentRepository $studentRepo;
+
+    public function __construct(StudentRepository $studentRepo, CustomerRegRepository $customerRegRepo)
+    {
+        $this->studentRepo = $studentRepo;
+        $this->customerRegRepo = $customerRegRepo;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function customerReg()
-    {
-      return view('setup.customers-list.customer-reg.create');
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +32,11 @@ class CustomerRegListController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'customers' => $this->customerRegRepo->getData(),
+            'select' => $this->customerRegRepo->getData(),
+        ];
+       return view('setup.customers-list.customer-reg.create' ,$data);
     }
 
     /**
@@ -36,7 +47,9 @@ class CustomerRegListController extends Controller
      */
     public function store(StoreCustomerRegListRequest $request)
     {
-        //
+        $this->customerRegRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +60,10 @@ class CustomerRegListController extends Controller
      */
     public function show(CustomerRegList $customerRegList)
     {
-        //
+            $data = [
+            'record' => $customerRegList,
+        ];
+      return view('setup.customers-list.customer-reg.view' ,$data );
     }
 
     /**
@@ -58,7 +74,10 @@ class CustomerRegListController extends Controller
      */
     public function edit(CustomerRegList $customerRegList)
     {
-        //
+             $data = [
+            'record' => $customerRegList,
+        ];
+      return view('setup.customers-list.customer-reg.edit' ,$data );
     }
 
     /**
@@ -81,6 +100,6 @@ class CustomerRegListController extends Controller
      */
     public function destroy(CustomerRegList $customerRegList)
     {
-        //
+        return $customerRegList->delete();
     }
 }

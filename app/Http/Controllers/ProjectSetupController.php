@@ -3,11 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProjectSetup;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\ProjectSetupRepository;
 use App\Http\Requests\StoreProjectSetupRequest;
 use App\Http\Requests\UpdateProjectSetupRequest;
 
 class ProjectSetupController extends Controller
 {
+
+    private StudentRepository $studentRepo;
+    private ProjectSetupRepository $projectSetupRepo;
+
+    public function __construct(StudentRepository $studentRepo, ProjectSetupRepository $projectSetupRepo)
+    {
+        $this->studentRepo = $studentRepo;
+        $this->projectSetupRepo = $projectSetupRepo;
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +40,10 @@ class ProjectSetupController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'projects' => $this->projectSetupRepo->getData(),
+        ];
+        return view('setup.project-setup.create', $data);
     }
 
     /**
@@ -36,7 +54,9 @@ class ProjectSetupController extends Controller
      */
     public function store(StoreProjectSetupRequest $request)
     {
-        //
+        $this->projectSetupRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**

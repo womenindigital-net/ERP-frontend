@@ -198,7 +198,8 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Co Curricular</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('drama-diary-evaluation.create') }}">Drama Diary Evaluation</a>
+                                <li> <a href="{{ route('drama-diary-evaluation.create') }}">Drama Diary
+                                        Evaluation</a>
                                 </li>
                             </ul>
                         </li>
@@ -281,16 +282,20 @@
                         <span>Accounting Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('setup.project-setup.create') }}">Project Setup</a></li>
-                        <li><a href="{{ route('setup.customers-list.customer-reg.create') }}">Customer Reg.</a></li>
-                        <li><a href="{{ route('customer-Type.create') }}">Customer Type</a></li>
-                        <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>
+
                         <li><a href="{{ route('supplier.create') }}">Supplier Setup</a></li>
                         <li><a href="{{ route('supplier-type.create') }}">Supplier Type Setup</a></li>
+                        <li><a href="{{ route('project.create') }}">Project Setup</a></li>
+                        <li><a href="{{ route('customer-reg-list.create') }}">Customer Reg.</a></li>
+                        <li><a href="{{ route('customer-type.create') }}">Customer Type</a></li>
+                        <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
+
+
                         <li><a href="{{ route('setup.chart-of-accounts.create') }}">Chart Of Accounts</a></li>
                         <li><a href="{{ route('bank-account.create') }}">Bank Account Details</a></li>
                         <li><a href="{{ route('cheque.create') }}">Manage Bank Ac. Chequebook</a></li>
-                        <li><a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation New</a></li>
+                        <li><a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation New</a>
+                        </li>
                         <li><a href="{{ route('setup.bank-reconcilation.create') }}">Bank Reconcilation</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Accounting Mapping</a>
@@ -306,17 +311,25 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>
+                                <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
                                 <li><a href="{{ route('measure.unit.setup.create') }}">Measure Unit Setup</a></li>
+                                <li><a href="{{ route('product.category.setup.create') }}">Product Category
+                                        Setup</a>
+                                </li>
                                 <li><a href="{{ route('product.category.setup.create') }}">Product Category Setup</a>
                                 </li>
+
                                 <li><a href="{{ route('product.create.create') }}">Product Create</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Budget & Forecasting</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('setup.budget-year-setup.create') }}">Budget Year Setup</a></li>
+                                <li><a href="{{ route('setup.budget-year-setup.create') }}">Budget Year Setup</a>
+                                </li>
+                                <li><a href="{{ route('setup.budget-head-setup.create') }}">Budget Head Setup</a>
+                                </li>
+                                <li><a href="{{ route('budget-year.create') }}">Budget Year Setup</a></li>
                                 <li><a href="{{ route('setup.budget-head-setup.create') }}">Budget Head Setup</a></li>
                                 <li><a href="{{ route('setup.Budget-Template-setup.create') }}">Budget Template
                                         Setup</a></li>
@@ -326,7 +339,8 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('setup.year-end-close.create') }}">Year End Stock Count</a></li>
+                                <li> <a href="{{ route('setup.year-end-close.create') }}">Year End Stock Count</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -342,10 +356,12 @@
                         <li> <a href="{{ route('setup.program-setup.activity-create.create') }}">Activity create</a>
                         </li>
                         <li> <a href="{{ route('setup.program-setup.tesk-create.create') }}">Task create</a> </li>
-                        <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight Setup</a>
+                        <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight
+                                Setup</a>
                         </li>
                         <li> <a href="{{ route('setup.program-setup.course-setup.create') }}">Course Setup</a> </li>
-                        <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence card
+                        <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence
+                                card
                                 setup</a></li>
                         <li> <a href="{{ route('setup.program-setup.vocational-category-subcategory-setup.create') }}">Vocational
                                 Category and subcategory setup</a></li>
@@ -354,7 +370,8 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Vocational Marking</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('setup.vocational-marking-category.create') }}">Vocational Marking
+                                <li><a href="{{ route('setup.vocational-marking-category.create') }}">Vocational
+                                        Marking
                                         Category</a></li>
                                 <li><a href="{{ route('setup.vocational-marking-subcategory.create') }}">Vocational
                                         Marking Sub Category</a></li>
@@ -395,12 +412,14 @@
                                         Head Setup</a></li>
                                 <li><a href="{{ route('setup.payroll-management.salary_package_setup.create') }}">Salary
                                         Package Setup</a></li>
-                                <li><a href="{{ route('setup.payroll-management.salary_budget_setup.create') }}">Salary
+                                <li><a href="{{ route('budget-year.create') }}">Salary
                                         Budget Setup</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('setup.employee-information.create') }}">Employee information </a></li>
-                        <li><a href="{{ route('setup.attendance-policy-setup.create') }}">Attendance policy setup</a>
+                        <li><a href="{{ route('setup.employee-information.create') }}">Employee information </a>
+                        </li>
+                        <li><a href="{{ route('setup.attendance-policy-setup.create') }}">Attendance policy
+                                setup</a>
                         </li>
                         <li><a href="{{ route('setup.leave-type.create') }}">Leave Type</a></li>
                         <li><a href="{{ route('setup.leave-package.create') }}">Leave Package</a></li>
@@ -550,23 +569,28 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effects">Recruitment</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('HR.employee-requisition.create') }}">Employee Requisition</a>
+                                <li><a href="{{ route('HR.employee-requisition.create') }}">Employee
+                                        Requisition</a>
                                 </li>
                                 <li><a href="{{ route('HR.apply-for-job.create') }}">Apply for Job</a></li>
                                 <li><a href="{{ route('HR.applicant-list.create') }}">Applicant List</a></li>
                                 <li><a href="{{ route('HR.sent-mail.create') }}">Sent Mail</a></li>
-                                <li><a href="{{ route('HR.assign-interviewer.create') }}">Assign Interviewer</a></li>
-                                <li><a href="{{ route('HR.interview-rating-form.create') }}">Interview Rating Form</a>
+                                <li><a href="{{ route('HR.assign-interviewer.create') }}">Assign Interviewer</a>
+                                </li>
+                                <li><a href="{{ route('HR.interview-rating-form.create') }}">Interview Rating
+                                        Form</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effects">Recruit</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('HR.recruit.job-confirmation.create') }}">Job Confirmation</a>
+                                <li><a href="{{ route('HR.recruit.job-confirmation.create') }}">Job
+                                        Confirmation</a>
                                 </li>
                                 <li><a href="{{ route('HR.recruit.job-contact.create') }}">Job Contact</a></li>
-                                <li><a href="{{ route('HR.recruit.reporting-memo.create') }}">Reporting Memo</a></li>
+                                <li><a href="{{ route('HR.recruit.reporting-memo.create') }}">Reporting Memo</a>
+                                </li>
                             </ul>
                         </li>
                         {{-- <li>

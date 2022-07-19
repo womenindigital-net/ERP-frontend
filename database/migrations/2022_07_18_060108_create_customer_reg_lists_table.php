@@ -15,6 +15,19 @@ return new class extends Migration
     {
         Schema::create('customer_reg_lists', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('address_1')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('phone_1')->nullable();
+            $table->string('email')->nullable();
+            $table->string('select')->nullable();
+            $table->string('address')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phone_2')->nullable();
+            $table->string('advance')->nullable();
             $table->timestamps();
         });
     }

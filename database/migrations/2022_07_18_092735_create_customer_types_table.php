@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customer_type_setups', function (Blueprint $table) {
+        Schema::create('customer_types', function (Blueprint $table) {
             $table->id();
+            $table->string('type_name')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer_type_setups');
+        Schema::dropIfExists('customer_types');
     }
 };
