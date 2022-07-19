@@ -14,7 +14,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
 
         'project' => ProjectController::class,
         'project-setup' => ProjectSetupController::class,
-        'customer-Type' => CustomerTypeController::class,
+        'customer-type' => CustomerTypeController::class,
         'customer-reg-list' => CustomerRegListController::class,
     ]);
 

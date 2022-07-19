@@ -29,7 +29,7 @@
                             <div class="col-xl-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form action="{{ route('customer-Type.store') }}" method="POST">
+                                        <form action="{{ route('customer-type.store') }}" method="POST">
                                             @csrf
                                             <div class="row mb-4">
                                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Type Name</label>

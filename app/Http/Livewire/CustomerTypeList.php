@@ -11,7 +11,7 @@ class CustomerTypeList extends Component
 
 {
     use WithPagination, CommonListElements;
-    
+    protected string $destroyRoute = 'customer-type.destroy';
     private CustomerTypeRepository $customerTypeRepo;
     public $reportList;
 

@@ -8,11 +8,13 @@ use App\Repositories\CustomerRegRepository;
 use App\Http\Livewire\Traits\CommonListElements;
 
 class CustomerRegList extends Component
+
 {
     use WithPagination, CommonListElements;
 
     private CustomerRegRepository $customerRegRepo;
     public $reportList;
+    protected string $destroyRoute = 'customer-reg-list.destroy';
 
     public function boot(CustomerRegRepository $customerRegRepo)
     {
