@@ -99,6 +99,6 @@ class CustomerRegListController extends Controller
      */
     public function destroy(CustomerRegList $customerRegList)
     {
-        //
+        return $customerRegList->delete();
     }
 }
