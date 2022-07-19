@@ -8,7 +8,7 @@
                             <th>Name</th>
                             <th>Location</th>
                             <th>Store type</th>
-                            <th>Managed by</th>
+                         
                             <th>Log</th>
                             <th>Action</th>
                         </tr>
@@ -20,7 +20,6 @@
                                 <td>{{ $record->location }}</td>
                                 <td>{{ $record->store_type }}</td>
                                 <td>{{ $record->description }}</td>
-                                <td>{{ $record->managed_by }}</td>
                                 <td>
                                     <a href="{{ route('warehouse.show', $record->id) }}" target="_blank"
                                         rel="noopener noreferrer"

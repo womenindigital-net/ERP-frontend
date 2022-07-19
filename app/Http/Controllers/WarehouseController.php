@@ -85,6 +85,7 @@ class WarehouseController extends Controller
             'store_type' => $this->warehouseRepo->getData(),
             'managed_by' => $this->warehouseRepo->getData(),
             'record' => $warehouse,
+            
         ];
         return view('setup.store-management.warehouse_setup.edit', $data);
     }
