@@ -282,13 +282,15 @@
                         <span>Accounting Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
+
+                        <li><a href="{{ route('supplier.create') }}">Supplier Setup</a></li>
+                        <li><a href="{{ route('supplier-type.create') }}">Supplier Type Setup</a></li>
                         <li><a href="{{ route('project.create') }}">Project Setup</a></li>
                         <li><a href="{{ route('customer-reg-list.create') }}">Customer Reg.</a></li>
                         <li><a href="{{ route('customer-type.create') }}">Customer Type</a></li>
                         <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
-                        <li><a href="{{ route('setup.vendor-list.supplier-setup.create') }}">Supplier Setup</a></li>
-                        <li><a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
-                                Setup</a> </li>
+
+
                         <li><a href="{{ route('setup.chart-of-accounts.create') }}">Chart Of Accounts</a></li>
                         <li><a href="{{ route('bank-account.create') }}">Bank Account Details</a></li>
                         <li><a href="{{ route('cheque.create') }}">Manage Bank Ac. Chequebook</a></li>
@@ -309,12 +311,13 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                 <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
+                                <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
                                 <li><a href="{{ route('measure.unit.setup.create') }}">Measure Unit Setup</a></li>
                                 <li><a href="{{ route('product.category.setup.create') }}">Product Category
                                         Setup</a>
                                 </li>
-                                <li><a href="{{ route('product.category.setup.create') }}">Product Category Setup</a></li>
+                                <li><a href="{{ route('product.category.setup.create') }}">Product Category Setup</a>
+                                </li>
 
                                 <li><a href="{{ route('product.create.create') }}">Product Create</a></li>
                             </ul>
@@ -360,8 +363,7 @@
                         <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence
                                 card
                                 setup</a></li>
-                        <li> <a
-                                href="{{ route('setup.program-setup.vocational-category-subcategory-setup.create') }}">Vocational
+                        <li> <a href="{{ route('setup.program-setup.vocational-category-subcategory-setup.create') }}">Vocational
                                 Category and subcategory setup</a></li>
                         <li> <a href="{{ route('setup.program-setup.academic-calender-create.create') }}">Academic
                                 Celender Create</a></li>
@@ -497,7 +499,7 @@
                                 </li>
                             </ul>
                         </li> --}}
-                            {{-- <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Vendor List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
@@ -509,7 +511,7 @@
                                 </li>
                             </ul>
                         </li> --}}
-                            {{-- <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Customer List</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
