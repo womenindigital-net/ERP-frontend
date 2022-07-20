@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
-use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProjectController;
 
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BudgetYearController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\ProjectSetupController;
