@@ -288,10 +288,11 @@
                         <li><a href="{{ route('project.create') }}">Project Setup</a></li>
                         <li><a href="{{ route('customer-reg-list.create') }}">Customer Reg.</a></li>
                         <li><a href="{{ route('customer-type.create') }}">Customer Type</a></li>
-                        <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
-
-
-                        <li><a href="{{ route('setup.chart-of-accounts.create') }}">Chart Of Accounts</a></li>
+                        <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>
+                        <li><a href="{{ route('setup.vendor-list.supplier-setup.create') }}">Supplier Setup</a></li>
+                        <li><a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
+                                Setup</a> </li>
+                        <li><a href="{{ route('chartof-accounts.create') }}">Chart Of Accounts</a></li>
                         <li><a href="{{ route('bank-account.create') }}">Bank Account Details</a></li>
                         <li><a href="{{ route('cheque.create') }}">Manage Bank Ac. Chequebook</a></li>
                         <li><a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation New</a>

@@ -92,7 +92,7 @@ class CustomerTypeController extends Controller
     {
         $this->customerTypeRepo->update($customerType, $request->validated());
         Session::flash('success');
-        return redirect()->back();
+        return redirect()->route('customer-type.create');
     }
 
     /**
