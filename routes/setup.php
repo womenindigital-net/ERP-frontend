@@ -2,11 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
-use App\Http\Controllers\SupplierController;
-
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\BudgetHeadController;
 use App\Http\Controllers\BudgetYearController;
 use App\Http\Controllers\CustomerTypeController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\WarehouseController;
+use App\Http\Controllers\ProjectSetupController;
+use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\CustomerRegListController;
 
@@ -15,6 +18,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'project' => ProjectController::class,
         'customer-type' => CustomerTypeController::class,
         'customer-reg-list' => CustomerRegListController::class,
+        'chartof-accounts' => ChartofAccountsController::class,
         'warehouse' => WarehouseController::class,
         'budget-year' => BudgetYearController::class,
         'budget-head' => BudgetHeadController::class,
@@ -49,7 +53,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     //setup ->> Doctor setup
     Route::get('doctor-setup.create', [SetupController::class, 'doctorSetup'])->name('setup.doctor-setup.create');
     // account setup
-    Route::get('chart-of-accounts.create', [SetupController::class, 'chartAccountSetup'])->name('setup.chart-of-accounts.create');
+    //Route::get('chart-of-accounts.create', [SetupController::class, 'chartAccountSetup'])->name('setup.chart-of-accounts.create');
     // bank details setup
     // Route::get('account-details.create', [SetupController::class, 'accountDetailsSetup'])->name('setup.account-details.create');
     // Route::get('manage-chequebook.create', [SetupController::class, 'manageChequebook'])->name('setup.manage-chequebook.create');

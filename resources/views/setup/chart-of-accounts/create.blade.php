@@ -25,7 +25,8 @@
                             <div class="modal-body p-0">
                                 <div class="card p-0 m-0">
                                     <div class="card-body">
-                                        <div class="row">
+                                        <form action="{{ route('chartof-accounts.store') }}" method="POST">
+                                            @csrf
                                             <div class="mb-3 row">
                                                 <label for="example-search-input"
                                                     class="col-md-3 col-form-label ">Reporting
@@ -78,7 +79,7 @@
                                                     class="col-md-3 col-form-label ">Account Name
                                                 </label>
                                                 <div class="col-md-9 ">
-                                                    <x-input-text name="account_name" placeholder="Account number Here"/>
+                                                    <x-input-text name="account_name" placeholder="Account name Here"/>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -129,113 +130,26 @@
                                                     <label class="btn btn-outline-success " for="btnradio5">No</label>
                                                 </div>
                                             </div>
-                                              <div class="modal-footer">
-                                                <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>
-                                                <button type="button" class="btn btn-outline-danger waves-effect waves-light" data-bs-dismiss="modal"> Close</button> 
-                                              </div>
-                                        </div>
+                                            <div class="row justify-content-end">
+                                                <div class="col-sm-9">
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-outline-success waves-light">
+                                                            Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                     </div>
                      <!-- Tab Panes Two -->
                     <div class="tab-pane" id="profile" role="tabpanel">
-                       <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                          <label style="display: inline-flex;align-items: center;"> Show <select name="length"
-                              class="form-control form-control-sm form-select form-select-sm">
-                              <option value="10">10</option>
-                              <option value="25">25</option>
-                              <option value="50">50</option>
-                              <option value="100">100</option>
-                            </select> entries
-                          </label>
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                          <label style="display: inline-flex;align-items: center;">Search:
-                            <x-input-text type="search" name="search" />
-                          </label>
-                        </div>
-                       </div>
-                     <div class="table-responsive">
-                         <table class="table table-bordered w-100">
-                    <thead>
-                        <tr class="table-primary">
-                            <th>Acc. No. </th>
-                            <th>Acc. Name</th>
-                            <th>Parent Acc. </th>
-                            <th>Opening Balance</th>
-                            <th>Current Balance</th>
-                            <th>Acc. Group</th>
-                            <th>Defaolt Nature</th>
-                            <th>Log</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Airin Shiddique</td>
-                            <td>Office Outlet</td>
-                            <td>2021-03-03</td>
-                            <td>Airin Shiddique</td>
-                            <td>Airin Shiddique</td>
-                            <td>Office Outlet</td>
-                            <td>2021-03-03</td>
-                            <td>1</td>
-                            <td>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal"
-                                    data-bs-target=".material-callects-modal-xl-add">
-                                    <i class=" fas fa-eye"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                                    data-bs-toggle="modal"
-                                    data-bs-target=".material-callects-modal-xl-add">
-                                    <i class="fas fa-pen"></i></button>
-                                <button type="button"
-                                    class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                    <i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                      </div>
-                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                          Showing 1 to 2 of 2 entries
-                        </div>
-                        <div class="col-sm-12 col-md-6 text-end">
-                          <nav>
-                            <ul class="pagination" style="justify-content: end;">
-                              <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                              </li>
-                              <li class="page-item"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item active">
-                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                              </li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                              </li>
-                            </ul>
-                          </nav>
-                        </div>
-                      </div>
+                        <livewire:chartof-accounts-list />
                     </div>
                 </div>
             </div>
-        </div>
-    </div> 
-</div
+        </div> 
+    </div>
+</div>
 @endsection
