@@ -34,7 +34,7 @@
                             <div class="col-6 d-flex">
                                 <label class="col-2 col-form-label">Bank</label>
                                 <div class="col-10 mb-4">
-                                    <x-input-select name="bank" :records="[]" />
+                                    <x-input-select name="bank" :records="$bankList" />
                                 </div>
                                 <div class="col-md-4 ms-2">
                                     <button type="button" class="btn btn-outline-info  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Show</button>

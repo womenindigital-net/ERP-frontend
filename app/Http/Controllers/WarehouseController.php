@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Warehouse;
+use App\Utility\WarehouseConstant;
+use App\Repositories\UserRepository;
 use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\WarehouseRepository;
@@ -11,12 +13,14 @@ use App\Http\Requests\UpdateWarehouseRequest;
 
 class WarehouseController extends Controller
 {
+    private UserRepository $userRepo;
     private StudentRepository $studentRepo;
     private WarehouseRepository $warehouseRepo;
     public $record;
 
-    public function __construct(StudentRepository $studentRepo, WarehouseRepository $warehouseRepo)
+    public function __construct(UserRepository $userRepository, StudentRepository $studentRepo, WarehouseRepository $warehouseRepo)
     {
+        $this->userRepo = $userRepository;
         $this->studentRepo = $studentRepo;
         $this->warehouseRepo = $warehouseRepo;
     }
@@ -38,8 +42,8 @@ class WarehouseController extends Controller
     public function create()
     {
         $data = [
-            'store_type' => $this->warehouseRepo->getData(),
-            'managed_by' => $this->warehouseRepo->getData(),
+            'store_type' => WarehouseConstant::$StorType,
+            'user' => $this->userRepo->getData(),
         ];
         return view('setup.store-management.warehouse_setup.create', $data);
     }
@@ -66,8 +70,8 @@ class WarehouseController extends Controller
     public function show(Warehouse $warehouse)
     {
         $data = [
-            'store_type' => $this->warehouseRepo->getData(),
-            'managed_by' => $this->warehouseRepo->getData(),
+            'store_type' => WarehouseConstant::$StorType,
+            'user' => $this->userRepo->getData(),
             'record' => $warehouse,
         ];
         return view('setup.store-management.warehouse_setup.view', $data);
@@ -82,8 +86,8 @@ class WarehouseController extends Controller
     public function edit(Warehouse $warehouse)
     {
         $data = [
-            'store_type' => $this->warehouseRepo->getData(),
-            'managed_by' => $this->warehouseRepo->getData(),
+            'store_type' => WarehouseConstant::$StorType,
+            'user' => $this->userRepo->getData(),
             'record' => $warehouse,
             
         ];

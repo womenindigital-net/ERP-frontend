@@ -73,16 +73,13 @@
                                     </div>
                                 </div>
                                 <div data-repeater-list="group-a">
-                                    @foreach ($purchaseProduct as $key => $item)
+                                    @foreach ($inputs as $key => $item)
                                     <div data-repeater-item class="row removeRow">
                                         <div class="col-lg-2 p-0 pe-1 pb-2 align-items-center ">
-                                            {{-- @dd([$products,$item->product_id]); --}}
-                                            {{ $item->product_id }}
                                             <x-input-select :records="$products" wireModel="product_id.{{$key}}"/>
                                         </div>
                                         <div class="col-lg-2 p-0 pe-1">
-                                            {{ $item->exp_date }}
-                                            <x-input-text value="{{ $item->exp_date }}" wireModel="exp_date.{{ $key }}"
+                                            <x-input-text wireModel="exp_date.{{ $key }}"
                                                 type="date" :readOnly='true'>
                                             </x-input-text>
                                         </div>
