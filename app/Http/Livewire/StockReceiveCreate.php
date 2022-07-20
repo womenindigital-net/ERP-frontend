@@ -94,19 +94,6 @@ class StockReceiveCreate extends Component
             $this->return_type = $this->stockReceive->return_type;
             $this->date = $this->stockReceive->date;
             $this->warehouse_id = $this->stockReceive->warehouse_id;
-
-            $this->inputs = $this->stockReceive->details->toArray();
-
-            foreach ($this->stockReceive->details as $key => $detail) {
-                $this->product_id[$key] = $detail->product_id;
-                $this->available_qty[$key] = $detail->available_qty;
-                $this->exp_date[$key] = $detail->exp_date;
-                $this->received[$key] = $detail->received;
-                $this->return[$key] = $detail->return;
-                $this->receivable[$key] = $detail->receivable;
-                $this->stock_receive_qty[$key] = $detail->stock_receive_qty;
-                $this->serial[$key] = $detail->serial;
-            }
         }
     }
 
@@ -132,10 +119,29 @@ class StockReceiveCreate extends Component
             $this->available_qty[$targetKey] = $productInfo->qty;
         }
 
-        if (str_starts_with($name, 'purchase_id')) {
-            $detail =  $this->purchaseOrderRepo->getPurchaseProduct($value);
-            $this->purchaseProduct =  $detail->details;
+        if ($name === 'purchase_id') {
+            $purchaseProduct = $this->purchaseOrderRepo->getPurchaseProduct($value);
+            if ($purchaseProduct && $purchaseProduct->details->count()) {
+                $this->inputs = $purchaseProduct->details->toArray();
+                foreach ($purchaseProduct->details as $key => $detail) {
+                    $this->product_id[$key] = $detail->product_id;
+                    $this->available_qty[$key] = $detail->available_qty;
+                    $this->exp_date[$key] = $detail->exp_date;
+                    $this->received[$key] = $detail->received;
+                    $this->return[$key] = $detail->return;
+                    $this->receivable[$key] = $detail->receivable;
+                    $this->stock_receive_qty[$key] = $detail->stock_receive_qty;
+                    $this->serial[$key] = $detail->serial;
+                }
+            } else {
+                $this->inputs = [];
+                unset($this->product_id);
+            }
+
+//            $detail =  $this->purchaseOrderRepo->getPurchaseProduct($value);
+//            $this->purchaseProduct =  $detail->details;
         }
+
         if (str_starts_with($name, 'received.')) {
             $targetKey = $this->getTargetKey($name);
             $this->stock_receive_qty[$targetKey] = $value;
