@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\BudgetHead;
+use App\Repositories\StudentRepository;
+
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoreBudgetHeadRequest;
 use App\Http\Requests\UpdateBudgetHeadRequest;
+use App\Repositories\BudgetHeadRepository;
 
 class BudgetHeadController extends Controller
 {
+     private StudentRepository $studentRepo;
+    private BudgetHeadRepository $budgetYearRepo;
+
+
+    public function __construct(StudentRepository $studentRepo, BudgetHeadRepository $budgetHeadRepo)
+    {
+        $this->studentRepo = $studentRepo;
+        $this->budgetHeadRepo = $budgetHeadRepo;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +38,11 @@ class BudgetHeadController extends Controller
      */
     public function create()
     {
-        //
+            $data = [
+            'title' => $this->budgetHeadRepo->getData(),
+            'parent' => $this->budgetHeadRepo->getData(),
+        ];
+        return view('setup.budget-head-setup.create' ,$data);
     }
 
     /**
@@ -36,7 +53,9 @@ class BudgetHeadController extends Controller
      */
     public function store(StoreBudgetHeadRequest $request)
     {
-        //
+        $this->budgetHeadRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -58,7 +77,10 @@ class BudgetHeadController extends Controller
      */
     public function edit(BudgetHead $budgetHead)
     {
-        //
+            $data = [
+            'record' => $budgetHead,
+        ];
+      return view('setup.budget-head-setup.edit' ,$data);
     }
 
     /**
@@ -68,9 +90,12 @@ class BudgetHeadController extends Controller
      * @param  \App\Models\BudgetHead  $budgetHead
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBudgetHeadRequest $request, BudgetHead $budgetHead)
+    public function update(StoreBudgetHeadRequest $request, BudgetHead $budgetHead)
     {
-        //
+
+        $this->budgetHeadRepo->update($budgetHead, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +106,6 @@ class BudgetHeadController extends Controller
      */
     public function destroy(BudgetHead $budgetHead)
     {
-        //
+      return $budgetHead->delete();
     }
 }

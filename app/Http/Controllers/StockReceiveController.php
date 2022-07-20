@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StockReceive;
 use App\Http\Requests\StoreStockReceiveRequest;
 use App\Http\Requests\UpdateStockReceiveRequest;
-use App\Models\StockReceive;
 
 class StockReceiveController extends Controller
 {
@@ -62,11 +62,10 @@ class StockReceiveController extends Controller
      */
     public function edit(StockReceive $stockReceive)
     {
-        $data = [
-            'record' => $stockReceive,
-        ];
-
-        return view('stock-management.stock_receive.edit', $data);
+        // $data = [
+        //     'record' => $stockReceive,
+        // ];
+        // return view('stock-management.stock_receive.edit', $data);
     }
 
     /**

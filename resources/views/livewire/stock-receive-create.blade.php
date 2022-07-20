@@ -34,11 +34,10 @@
                             </x-input-select>
                             <p>
                                 @foreach ($purchaseProduct as $item )
-                                <label class="form-label">{{ $item->product->name }}</label>,
+                                <label class="form-label">{{ $item->product_id }}</label>,
                                 @endforeach
                             </p>
                         </div>
-
                     </div>
                 </div>
                 <!--form end -->
@@ -57,17 +56,16 @@
                                     <div class="col-lg-2 p-0">
                                         <label>Avl Qty</label>
                                     </div>
-                                    {{-- @if($purchaseInput) --}}
                                     <div class="col-lg-1 p-0">
                                         <label>Received</label>
                                     </div>
-                                    {{-- @endif --}}
-                                    {{-- @if($receiveInput) --}}
                                     <div class="col-lg-1 p-0">
                                         <label>Return</label>
                                     </div>
-                                    {{-- @endif --}}
-                                    <div class="col-lg-2 p-0">
+                                    <div class="col-lg-1 p-0">
+                                        <label>Receiveble</label>
+                                    </div>
+                                    <div class="col-lg-1 p-0">
                                         <label>Stock Receive Qty.</label>
                                     </div>
                                     <div class="col-lg-2 p-0">
@@ -75,24 +73,17 @@
                                     </div>
                                 </div>
                                 <div data-repeater-list="group-a">
-                                    @foreach ($inputs as $key => $item)
+                                    @foreach ($purchaseProduct as $key => $item)
                                     <div data-repeater-item class="row removeRow">
                                         <div class="col-lg-2 p-0 pe-1 pb-2 align-items-center ">
-                                            <select class="form-control form-select" wire:model="product_id.{{$key}}">
-                                                <option>--Select--</option>
-                                                @foreach($products as $product)
-                                                <optgroup label="{{$product['name']}}">
-                                                    @foreach($product['children'] as $childCourse)
-                                                    <option value="{{$childCourse['id']}}">{{$childCourse['name']}}
-                                                    </option>
-                                                    @endforeach
-                                                </optgroup>
-                                                @endforeach
-                                            </select>
+                                            {{-- @dd([$products,$item->product_id]); --}}
+                                            {{ $item->product_id }}
+                                            <x-input-select :records="$products" wireModel="product_id.{{$key}}"/>
                                         </div>
-
                                         <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="exp_date.{{ $key }}" type="date">
+                                            {{ $item->exp_date }}
+                                            <x-input-text value="{{ $item->exp_date }}" wireModel="exp_date.{{ $key }}"
+                                                type="date" :readOnly='true'>
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-2 p-0 pe-1">
@@ -100,19 +91,19 @@
                                                 :readOnly='true'>
                                             </x-input-text>
                                         </div>
-                                        {{-- @if($purchaseInput) --}}
                                         <div class="col-lg-1 p-0 pe-1">
                                             <x-input-text wireModel="received.{{ $key }}" type="number">
                                             </x-input-text>
                                         </div>
-                                        {{-- @endif --}}
-                                        {{-- @if($receiveInput) --}}
                                         <div class="col-lg-1 p-0 pe-1">
                                             <x-input-text wireModel="return.{{ $key }}" type="number">
                                             </x-input-text>
                                         </div>
-                                        {{-- @endif --}}
-                                        <div class="col-lg-2 p-0 pe-1">
+                                        <div class="col-lg-1 p-0 pe-1">
+                                            <x-input-text wireModel="receivable.{{ $key }}">
+                                            </x-input-text>
+                                        </div>
+                                        <div class="col-lg-1 p-0 pe-1">
                                             <x-input-text wireModel="stock_receive_qty.{{ $key }}" type="number"
                                                 :readOnly='true'>
                                             </x-input-text>
@@ -120,21 +111,9 @@
                                         <div class="col-lg-2 d-flex">
                                             <x-input-text wireModel="serial.{{ $key }}" type="number">
                                             </x-input-text>
-                                            @if (!($this->mode == 'show'))
-                                            <button type="button"
-                                                class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
-                                                wire:click="removeItem({{ $key }})">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </button>
-                                            @endif
                                         </div>
                                     </div>
                                     @endforeach
-                                    @if (!($this->mode == 'show'))
-                                    <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0"
-                                        value="Add" wire:click="addMore()" />
-
-                                    @endif
                                 </div>
                             </div>
                         </div>
