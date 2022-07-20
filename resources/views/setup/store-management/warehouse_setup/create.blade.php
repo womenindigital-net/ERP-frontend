@@ -47,7 +47,7 @@
                             <div class="row mb-4">
                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Store type</label>
                                 <div class="col-sm-9">
-                                    <x-input-select name="store_type" :records="$store_type" targetColumn="title" />
+                                    <x-input-select name="store_type" :records="['Warehouse','Office Location']"  />
                                 </div>
                             </div>
                             <div class="row mb-4">
