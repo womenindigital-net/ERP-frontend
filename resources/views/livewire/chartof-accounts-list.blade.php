@@ -27,12 +27,11 @@
                     <td>{{ $record->account_group }}</td>
                     <td>{{ $record->created_at }}</td>
                     <td>
-                        <button type="button"
-                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal"
-                            data-bs-target=".material-callects-modal-xl-add">
-                            <i class=" fas fa-eye"></i>
-                        </button>
+                        <a href="{{ route('chartof-accounts.show', $record->id) }}" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                            <i class="mdi mdi-eye"></i>
+                        </a>
                         <button type="button"
                             class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
                             <i class="fas fa-check"></i>
@@ -46,8 +45,8 @@
                             class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                             <i class="mdi mdi-pencil"></i>
                         </a>
-                        <button type="button"
-                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                        <button type="button" wire:click="confirmDelete({{$record->id}})"
+                            class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </td>

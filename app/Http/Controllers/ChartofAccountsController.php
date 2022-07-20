@@ -62,9 +62,12 @@ class ChartofAccountsController extends Controller
      * @param  \App\Models\ChartofAccounts  $chartofAccounts
      * @return \Illuminate\Http\Response
      */
-    public function show(ChartofAccounts $chartofAccounts)
+    public function show(ChartofAccounts $chartof_account)
     {
-        //
+        $data = [
+            'record' => $chartof_account,
+        ];
+        return view('setup.chart-of-accounts.view', $data);
     }
 
     /**
@@ -73,11 +76,10 @@ class ChartofAccountsController extends Controller
      * @param  \App\Models\ChartofAccounts  $chartofAccounts
      * @return \Illuminate\Http\Response
      */
-    public function edit(ChartofAccounts $chartof_accounts)
+    public function edit(ChartofAccounts $chartof_account)
     {
-        dd($chartof_accounts);
         $data = [
-            // 'record' => $chart_of_accounts,
+             'record' => $chartof_account,
         ];
         return view('setup.chart-of-accounts.edit', $data);
     }
@@ -89,12 +91,14 @@ class ChartofAccountsController extends Controller
      * @param  \App\Models\ChartofAccounts  $chartofAccounts
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreChartofAccountsRequest $request, ChartofAccounts $chartofAccounts)
+    public function update(StoreChartofAccountsRequest $request, ChartofAccounts $chartof_account)
     {
-        $this->chartofAccountRepo->update($chartofAccounts, $request->validated());
+        $this->chartofAccountRepo->update($chartof_account, $request->validated());
         Session::flash('success');
-        return redirect()->route('chart-of-accounts.create');
+        return redirect()->route('chartof-accounts.create');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -102,8 +106,8 @@ class ChartofAccountsController extends Controller
      * @param  \App\Models\ChartofAccounts  $chartofAccounts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ChartofAccounts $chart_of_accounts)
+    public function destroy(ChartofAccounts $chartof_account)
     {
-        //
+        return $chartof_account->delete();
     }
 }

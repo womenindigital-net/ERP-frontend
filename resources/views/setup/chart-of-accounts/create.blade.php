@@ -94,7 +94,7 @@
                                                     class="col-md-3 col-form-label ">Current
                                                     Balance:</label>
                                                 <div class="col-md-9 ">
-                                                    <x-input-text name="current_balance"  type="number"  placeholder="Current Balance hete"/>
+                                                    <x-input-text name="current_balance"  type="number"  placeholder="Current Balance here"/>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">

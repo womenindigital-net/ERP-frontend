@@ -8,8 +8,8 @@
                 <div class="modal-body p-0">
                     <div class="card p-0 m-0">
                         <div class="card-body">
-                            @dd($record->id)
-                            <form action="{{ route('chartof-accounts.update',$record->id) }}" method="POST">
+                            {{-- @dd($record->id) --}}
+                            <form action="{{ route('chartof-accounts.update', $record->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                

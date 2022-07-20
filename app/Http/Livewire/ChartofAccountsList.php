@@ -12,7 +12,7 @@ class ChartofAccountsList extends Component
 
 
     use WithPagination, CommonListElements;
-    protected string $destroyRoute = 'customer-type.destroy';
+    protected string $destroyRoute = 'chartof-accounts.destroy';
     private ChartofAccountsRepository $chartofAccountRepo;
     public $reportList;
 
