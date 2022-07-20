@@ -295,13 +295,13 @@
                         <li><a href="{{ route('chartof-accounts.create') }}">Chart Of Accounts</a></li>
                         <li><a href="{{ route('bank-account.create') }}">Bank Account Details</a></li>
                         <li><a href="{{ route('cheque.create') }}">Manage Bank Ac. Chequebook</a></li>
-                        <li><a href="{{ route('setup.bank-reconcilation-new.create') }}">Bank Reconcilation New</a>
+                        <li><a href="{{ route('bank-reconcilation-new.create') }}">Bank Reconcilation New</a>
                         </li>
                         <li><a href="{{ route('setup.bank-reconcilation.create') }}">Bank Reconcilation</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Accounting Mapping</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('setup.accounting-mapping.account_mapping.create') }}">Accounting
+                                <li><a href="{{ route('account_mapping.create') }}">Accounting
                                         Mapping</a></li>
                                 <li><a href="{{ route('setup.accounting-mapping.accounting_year_setup.create') }}">Accounting
                                         Year Setup</a></li>

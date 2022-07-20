@@ -47,7 +47,7 @@
                             <div class="row mb-4">
                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Store type</label>
                                 <div class="col-sm-9">
-                                    <x-input-select name="store_type" :records="['Warehouse','Office Location']"  />
+                                    <x-input-select name="store_type" :records="$store_type"  />
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -59,7 +59,7 @@
                             <div class="row mb-4">
                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Managed by</label>
                                 <div class="col-sm-9">
-                                    <x-input-select name="managed_by" :records="$managed_by" targetColumn="title" />
+                                    <x-input-select name="managed_by" :records="$user"  />
                                 </div>
                             </div>
                             <div class="d-flex  flex-wrap float-end gap-2">

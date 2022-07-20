@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AccountingMappingController;
+use App\Http\Controllers\BankReconcilationNewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
 use App\Http\Controllers\ProjectController;
@@ -13,6 +15,7 @@ use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\CustomerRegListController;
 use App\Http\Controllers\CustomerTypeSetupController;
+use App\Models\BankReconcilationNew;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -24,6 +27,8 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'budget-year' => BudgetYearController::class,
         'supplier' => SupplierController::class,
         'supplier-type' => SupplierTypeController::class,
+        'bank-reconcilation-new' =>BankReconcilationNewController::class,
+        'account_mapping' =>AccountingMappingController::class,
     ]);
 
     // Setup ->> Store Management Route
@@ -58,7 +63,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Route::get('account-details.create', [SetupController::class, 'accountDetailsSetup'])->name('setup.account-details.create');
     // Route::get('manage-chequebook.create', [SetupController::class, 'manageChequebook'])->name('setup.manage-chequebook.create');
     // bank reconcilation
-    Route::get('bank-reconcilation-new.create', [SetupController::class, 'bankReconcilationNew'])->name('setup.bank-reconcilation-new.create');
+    //Route::get('bank-reconcilation-new.create', [SetupController::class, 'bankReconcilationNew'])->name('setup.bank-reconcilation-new.create');
     Route::get('bank-reconcilation.create', [SetupController::class, 'bankReconcilation'])->name('setup.bank-reconcilation.create');
     // Payroll Management setup
     Route::get('payroll-management/salary_grade_setup.create', [SetupController::class, 'salaryGradeSetup'])->name('setup.payroll-management.salary_grade_setup.create');
@@ -80,7 +85,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
 
     // Route::get('customers-list/customer-type/create', [SetupController::class, 'customerType'])->name('setup.customers-list.customer-type.create');
 
-    // Course and Admission
+    // Course and Admissionp
     Route::get('course-and-admission.create', [SetupController::class, 'courseAdmission'])->name('setup.course-and-admission.create');
 
     // Vocational Marking
@@ -94,7 +99,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('leave-package.create', [SetupController::class, 'leavePackageSetup'])->name('setup.leave-package.create');
     Route::get('create-product.create', [SetupController::class, 'createProduct'])->name('setup.create-product.create');
     // Accounting Mapping
-    Route::get('accounting-mapping.account_mapping.create', [SetupController::class, 'accountMappingSetup'])->name('setup.accounting-mapping.account_mapping.create');
+   // Route::get('accounting-mapping.account_mapping.create', [SetupController::class, 'accountMappingSetup'])->name('setup.accounting-mapping.account_mapping.create');
     Route::get('accounting-mapping.accounting_year_setup.create', [SetupController::class, 'accountingYearSetup'])->name('setup.accounting-mapping.accounting_year_setup.create');
     Route::get('accounting-mapping.closing_account_setup.create', [SetupController::class, 'clossingAccountSetup'])->name('setup.accounting-mapping.closing_account_setup.create');
     // Budget & Forecasting
