@@ -288,7 +288,7 @@
                         <li><a href="{{ route('project.create') }}">Project Setup</a></li>
                         <li><a href="{{ route('customer-reg-list.create') }}">Customer Reg.</a></li>
                         <li><a href="{{ route('customer-type.create') }}">Customer Type</a></li>
-                        <li><a href="{{ route('warehouse.setup.create') }}">Warehouse Setup</a></li>
+                        <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
                         <li><a href="{{ route('setup.vendor-list.supplier-setup.create') }}">Supplier Setup</a></li>
                         <li><a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
                                 Setup</a> </li>
