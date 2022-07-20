@@ -39,7 +39,8 @@ class ProjectController extends Controller
     public function create()
     {
         $data = [
-            'projects' => $this->projectSetupRepo->getData(),
+
+            'parent_id' => $this->projectSetupRepo->getData(),
         ];
         return view('setup.project-setup.create', $data);
     }
@@ -66,10 +67,10 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         $data = [
-            'projects' => $this->projectSetupRepo->getData(),
+            'parent_id' => $this->projectSetupRepo->getData(),
             'record' => $project,
         ];
-        return view('setup.project-setup.view',$data);
+        return view('setup.project-setup.view', $data);
     }
 
     /**
@@ -81,7 +82,7 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $data = [
-            'projects' => $this->projectSetupRepo->getData(),
+            'parent_id' => $this->projectSetupRepo->getData(),
             'record' => $project,
         ];
         return view('setup.project-setup.edit', $data);
@@ -94,9 +95,11 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProjectRequest $request, Project $project)
+    public function update(StoreProjectRequest $request, Project $project)
     {
-        //
+        $this->projectSetupRepo->update($project, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -107,6 +110,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        return $project->delete();
     }
 }

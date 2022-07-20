@@ -27,14 +27,6 @@
                 <x-input-text wireModel="date" type="date"></x-input-text>
             </div>
         </div>
-        {{-- <div class="col-md-6">
-            <div class="m-3 mt-4">
-                <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light"
-                    data-bs-toggle="modal" data-bs-target=".purchase-order-view">
-                    <i class="fas fa-eye"></i>
-                </button>
-            </div>
-        </div> --}}
 
     </div>
     <div class="row">
@@ -42,7 +34,7 @@
             <div class="card">
                 <div class="card-body">
                     <!-- 6th row start  -->
-                    <div class="row py-3 bg-secondary text-light rounded-3 mb-4">
+                    {{-- <div class="row py-3 bg-secondary text-light rounded-3 mb-4">
                         <div class="col-md-3">
                             <div class="row">
                                 <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
@@ -79,9 +71,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- 6th row end  -->
-                    <h4 class="card-title mb-4">All product</h4>
+                    <h3 class="mb-4 text-center">All product</h3>
                     <form class="repeater" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-2 p-0 pe-1">
@@ -176,6 +168,8 @@
             </div>
         </div>
     </div>
+
+    
     <div class="modal-footer">
         <div class="w-25">
             @if ($this->mode == 'edit')

@@ -10,7 +10,7 @@ use App\Http\Livewire\Traits\CommonListElements;
 class ProjectSetupList extends Component
 {
     use WithPagination, CommonListElements;
-    
+    protected string $destroyRoute = 'project.destroy';
     private ProjectSetupRepository $projectSetupRepo;
     public $reportList;
 

@@ -18,7 +18,6 @@ class SupplierFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'type' => 'sample',
             'contact_person' => $this->faker->name,
             'designation' => $this->faker->title,
             'address' => $this->faker->address,

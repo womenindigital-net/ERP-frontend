@@ -53,8 +53,8 @@
                                                     <div class="col-10">
                                                         <x-input-select
                                                         :selected="$record->parent_id "
-                                                         name="parent_id " :records="$projects"
-                                                            targetColumn='name' />
+                                                         name="parent_id " :records="$parent_id"
+                                                            targetColumn='title' />
                                                     </div>
                                                 </div>
                                             </div>

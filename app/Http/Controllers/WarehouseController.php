@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Warehouse;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\WarehouseRepository;
 use App\Http\Requests\StoreWarehouseRequest;
 use App\Http\Requests\UpdateWarehouseRequest;
-use App\Models\Warehouse;
 
 class WarehouseController extends Controller
 {
+    private StudentRepository $studentRepo;
+    private WarehouseRepository $warehouseRepo;
+    public $record;
+
+    public function __construct(StudentRepository $studentRepo, WarehouseRepository $warehouseRepo)
+    {
+        $this->studentRepo = $studentRepo;
+        $this->warehouseRepo = $warehouseRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +28,6 @@ class WarehouseController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -25,7 +37,11 @@ class WarehouseController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'store_type' => $this->warehouseRepo->getData(),
+            'managed_by' => $this->warehouseRepo->getData(),
+        ];
+        return view('setup.store-management.warehouse_setup.create', $data);
     }
 
     /**
@@ -36,7 +52,9 @@ class WarehouseController extends Controller
      */
     public function store(StoreWarehouseRequest $request)
     {
-        //
+        $this->warehouseRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +65,12 @@ class WarehouseController extends Controller
      */
     public function show(Warehouse $warehouse)
     {
-        //
+        $data = [
+            'store_type' => $this->warehouseRepo->getData(),
+            'managed_by' => $this->warehouseRepo->getData(),
+            'record' => $warehouse,
+        ];
+        return view('setup.store-management.warehouse_setup.view', $data);
     }
 
     /**
@@ -58,7 +81,13 @@ class WarehouseController extends Controller
      */
     public function edit(Warehouse $warehouse)
     {
-        //
+        $data = [
+            'store_type' => $this->warehouseRepo->getData(),
+            'managed_by' => $this->warehouseRepo->getData(),
+            'record' => $warehouse,
+            
+        ];
+        return view('setup.store-management.warehouse_setup.edit', $data);
     }
 
     /**
@@ -68,9 +97,11 @@ class WarehouseController extends Controller
      * @param  \App\Models\Warehouse  $warehouse
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWarehouseRequest $request, Warehouse $warehouse)
+    public function update(StoreWarehouseRequest $request, Warehouse $warehouse)
     {
-        //
+        $this->warehouseRepo->update($warehouse, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +112,6 @@ class WarehouseController extends Controller
      */
     public function destroy(Warehouse $warehouse)
     {
-        //
+        return $warehouse->delete();
     }
 }

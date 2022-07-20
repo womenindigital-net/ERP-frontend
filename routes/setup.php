@@ -2,26 +2,31 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
-
 use App\Http\Controllers\ProjectController;
 
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\BudgetYearController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\ProjectSetupController;
 use App\Http\Controllers\ChartofAccountsController;
+use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\CustomerRegListController;
+use App\Http\Controllers\CustomerTypeSetupController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
-
         'project' => ProjectController::class,
-        'project-setup' => ProjectSetupController::class,
         'customer-type' => CustomerTypeController::class,
         'customer-reg-list' => CustomerRegListController::class,
         'chartof-accounts' => ChartofAccountsController::class,
+        'warehouse' => WarehouseController::class,
+        'budget-year' => BudgetYearController::class,
+        'supplier' => SupplierController::class,
+        'supplier-type' => SupplierTypeController::class,
     ]);
 
     // Setup ->> Store Management Route
-    Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
+    // Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
     Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
     Route::get('product-category-setup.create', [SetupController::class, 'productCategorySetup'])->name('product.category.setup.create');
     Route::get('product-create.create', [SetupController::class, 'productCreate'])->name('product.create.create');
@@ -40,9 +45,9 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('company-setup/company-setup/create', [SetupController::class, 'companySetup'])->name('setup.company-setup.create');
 
     //setup ->> project setup
-   // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
+    // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
     //setup ->> project setup
-   // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
+    // Route::get('project-setup/project-setup.create', [SetupController::class, 'projectSetup'])->name('setup.project-setup.create');
 
     //setup ->> Doctor setup
     Route::get('doctor-setup.create', [SetupController::class, 'doctorSetup'])->name('setup.doctor-setup.create');
@@ -59,11 +64,15 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('payroll-management/salary_step_setup.create', [SetupController::class, 'salaryStepSetup'])->name('setup.payroll-management.salary_step_setup.create');
     Route::get('payroll-management/salary_head_setup.create', [SetupController::class, 'salaryHeadSetup'])->name('setup.payroll-management.salary_head_setup.create');
     Route::get('payroll-management/salary_package_setup.create', [SetupController::class, 'salaryPackageSetup'])->name('setup.payroll-management.salary_package_setup.create');
-    Route::get('payroll-management/salary_budget_setup.create', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup.create');
+    // Route::get('payroll-management/salary_budget_setup.create', [SetupController::class, 'salaryBudgetSetup'])->name('setup.payroll-management.salary_budget_setup.create');
     // Vendor List
+
+    // Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
+    // Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
+
+
     Route::get('vendor-list/supplier-setup.create', [SetupController::class, 'supplierSetup'])->name('setup.vendor-list.supplier-setup.create');
     Route::get('vendor-list/supplier-type-setup.create', [SetupController::class, 'supplierTypeSetup'])->name('setup.vendor-list.supplier-type-setup.create');
-
 
     Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
     // Route::get('customers-list/customer-reg/create', [SetupController::class, 'customerReg'])->name('setup.customers-list.customer-reg.create');
@@ -99,14 +108,4 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('setup.other-settings.academic-calender.create', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic-calender.create');
     Route::get('other-settings.task-weight-settings.create', [SetupController::class, 'taskWeight'])->name('setup.other-settings.task-weight-settings.create');
     Route::get('other-settings.user-permission-setup.create', [SetupController::class, 'userPermission'])->name('setup.other-settings.user-permission-setup.create');
-
-
-
-
-
-
-
-
-
-
 });

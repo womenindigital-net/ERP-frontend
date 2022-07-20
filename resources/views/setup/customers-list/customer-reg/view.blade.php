@@ -19,7 +19,6 @@
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <div class="card-body">
-                                                            <h4 class="card-title">Student Create</h4>
                                                             <div class="mb-2 row">
                                                                 <label for="example-text-input"
                                                                     class="col-md-4 col-form-label">Name</label>

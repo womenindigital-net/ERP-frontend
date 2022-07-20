@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Supplier;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\SupplierRepository;
 use App\Http\Requests\StoreSupplierRequest;
 use App\Http\Requests\UpdateSupplierRequest;
-use App\Models\Supplier;
+use App\Repositories\SupplierTypeRepository;
 
 class SupplierController extends Controller
 {
+
+    private SupplierRepository $repo;
+    private SupplierTypeRepository $supplierTypeRepo;
+
+    public function __construct(SupplierRepository $repository, SupplierTypeRepository $supplierTypeRepository)
+    {
+        $this->repo = $repository;
+        $this->supplierTypeRepo = $supplierTypeRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +38,10 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'supplierType' => $this->supplierTypeRepo->getData(),
+        ];
+        return view('setup.vendor-list.supplier-setup.create', $data);
     }
 
     /**
@@ -36,7 +52,9 @@ class SupplierController extends Controller
      */
     public function store(StoreSupplierRequest $request)
     {
-        //
+        $this->repo->store($request->validated());
+        Session::flash('success');
+        return back();
     }
 
     /**
@@ -58,7 +76,12 @@ class SupplierController extends Controller
      */
     public function edit(Supplier $supplier)
     {
-        //
+        $data = [
+            'supplierType' => $this->supplierTypeRepo->getData(),
+            'record' => $supplier,
+        ];
+
+        return view('setup.vendor-list.supplier-setup.edit', $data);
     }
 
     /**
@@ -68,9 +91,12 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSupplierRequest $request, Supplier $supplier)
+    public function update(StoreSupplierRequest $request, Supplier $supplier)
     {
-        //
+
+        $this->repo->update($supplier, $request->validated());
+        Session::flash('success');
+        return redirect()->route('supplier.create');
     }
 
     /**
@@ -81,6 +107,6 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
-        //
+        return $supplier->delete();
     }
 }

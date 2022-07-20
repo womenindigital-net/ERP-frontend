@@ -27,6 +27,7 @@ class StoreProjectRequest extends FormRequest
             'title'               => 'required',
             'order_no'               => 'required',
             'tier_no'               => 'required',
+            'parent_id'             =>  'nullable',
             'description'               => 'required',
         ];
     }
