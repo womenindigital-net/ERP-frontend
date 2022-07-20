@@ -32,11 +32,6 @@
                                 Order)</label>
                             <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
                             </x-input-select>
-                            <p>
-                                @foreach ($purchaseProduct as $item )
-                                <label class="form-label">{{ $item->product_id }}</label>,
-                                @endforeach
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +71,7 @@
                                     @foreach ($inputs as $key => $item)
                                     <div data-repeater-item class="row removeRow">
                                         <div class="col-lg-2 p-0 pe-1 pb-2 align-items-center ">
-                                            <x-input-select :records="$products" wireModel="product_id.{{$key}}"/>
+                                            <x-input-select :records="$products" wireModel="product_id.{{$key}}" :disabled="true" />
                                         </div>
                                         <div class="col-lg-2 p-0 pe-1">
                                             <x-input-text wireModel="exp_date.{{ $key }}"
@@ -97,7 +92,7 @@
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="receivable.{{ $key }}">
+                                            <x-input-text wireModel="receivable.{{ $key }}" type="number" :readOnly='true'>
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-1 p-0 pe-1">
