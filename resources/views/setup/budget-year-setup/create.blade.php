@@ -55,9 +55,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="modal-footer">
-                                                                                    <button type="submit"
-                                                                                        class="btn btn-outline-success  waves-light">
-                                                                                        Save</button>
+                                                                                    <button type="submit" class="btn btn-outline-success  waves-light">  Save</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -74,7 +72,6 @@
                             </div>
                         </div>
                         <div class="tab-pane mt-4" id="profile" role="tabpanel">
-
                                 <livewire:budget-year-list />
                         </div>
                     </div>
@@ -83,5 +80,4 @@
         </div>
     </div>
 @endsection
-@section('script')
-@endsection
+
