@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="finished_good" role="tabpanel">
+<div>
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">
@@ -8,7 +8,7 @@
             </div>
             <div class="mb-2">
                 <label class="form-label">Note</label>
-                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note">
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note Here">
                 </x-input-textarea>
             </div>
         </div>
@@ -62,7 +62,7 @@
                                     <x-input-text type="number" wireModel="qty.{{ $key }}"></x-input-text>
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn ms-2 btn-danger t removeBtn"
-                                        wire:click="removeRow({{ $key }})">
+                                        wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                     @endif
@@ -72,7 +72,6 @@
                             @if (!($this->mode == 'show'))
                             <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                                 wire:click="addMore()" />
-
                             @endif
                         </div>
                     </form>

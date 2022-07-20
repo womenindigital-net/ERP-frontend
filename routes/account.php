@@ -17,9 +17,9 @@ use App\Http\Controllers\StockReceiveController;
 use App\Http\Controllers\DirectPaymentController;
 use App\Http\Controllers\StockTransferController;
 use App\Http\Controllers\StudentIncomeController;
+use App\Http\Controllers\PurchaseReturnController;
 use App\Http\Controllers\SupplierPaymentController;
 use App\Http\Controllers\MaterialCollectionController;
-use App\Http\Controllers\PurchaseReturnController;
 
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -47,6 +47,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
     ]);
 
+    Route::get('stock-count', [StockController::class, 'stockCount'])->name('stock-count');
 
 
     // direct Payment route Start
@@ -86,7 +87,6 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     // Route::get('finished-goods', [StockController::class, 'finishedGoods'])->name('finished-goods');
     // Route::get('material-collect', [StockController::class, 'materialCollect'])->name('material-collect');
     // Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');
-    Route::get('stock-count', [StockController::class, 'stockCount'])->name('stock-count');
 
     // Route::get('stock-out', [StockController::class, 'stockOut'])->name('stock-out');
     Route::get('stock-hand-report', [StockController::class, 'stockHandReport'])->name('stock-hand-report');

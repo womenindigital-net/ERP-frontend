@@ -1,5 +1,4 @@
-<div class="tab-pane active" id="stock_recive" role="tabpanel">
-
+<div>
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -25,15 +24,21 @@
                             <x-input-select :records="$receiveTypes" wireModel="type" />
                         </div>
                         <div class="mb-3">
+                            <label class="text-end form-label">Note</label>
+                            <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note Here" />
+                        </div>
+                        <div class="mb-3">
                             <label for="validationCustom02" class="form-label">Invoice (Purchase
                                 Order)</label>
                             <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
                             </x-input-select>
+                            <p>
+                                @foreach ($purchaseProduct as $item )
+                                <label class="form-label">{{ $item->product->name }}</label>,
+                                @endforeach
+                            </p>
                         </div>
-                        <div class="mb-3">
-                            <label class="text-end form-label">Note</label>
-                            <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note ..." />
-                        </div>
+
                     </div>
                 </div>
                 <!--form end -->
@@ -91,7 +96,8 @@
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number">
+                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number"
+                                                :readOnly='true'>
                                             </x-input-text>
                                         </div>
                                         {{-- @if($purchaseInput) --}}
@@ -107,7 +113,8 @@
                                         </div>
                                         {{-- @endif --}}
                                         <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="stock_receive_qty.{{ $key }}" type="number">
+                                            <x-input-text wireModel="stock_receive_qty.{{ $key }}" type="number"
+                                                :readOnly='true'>
                                             </x-input-text>
                                         </div>
                                         <div class="col-lg-2 d-flex">
@@ -116,7 +123,7 @@
                                             @if (!($this->mode == 'show'))
                                             <button type="button"
                                                 class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
-                                                wire:click="removeRow({{ $key }})">
+                                                wire:click="removeItem({{ $key }})">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
                                             @endif

@@ -9,7 +9,7 @@ class MaterialCollectionProduct extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id', 'qty'];
+    protected $fillable = ['product_id','available_qty', 'qty'];
 
     public function materialCollect()
     {

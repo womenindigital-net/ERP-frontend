@@ -63,7 +63,9 @@
                             @foreach($inputs as $key => $item)
                             <div data-repeater-item class="row removeRow">
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <select class="form-control form-select" wire:model="product_id.{{$key}}">
+                                    <select
+                                        class="form-control form-select @error($product_id[$key]) is-invalid @enderror"
+                                        wire:model="product_id.{{$key}}">
                                         <option>--Select--</option>
                                         @foreach($products as $product)
                                         <optgroup label="{{$product['name']}}">
@@ -73,6 +75,7 @@
                                         </optgroup>
                                         @endforeach
                                     </select>
+
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="available_qty.{{$key}}" :readOnly="true">
@@ -80,7 +83,7 @@
                                 </div>
 
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
+                                    <x-input-text type="number" wireModel="qty.{{$key}}"></x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <x-input-text type="text" wireModel="sub_total.{{$key}}" :readOnly="true">
@@ -92,20 +95,21 @@
                                 </div>
                                 <div class=" col-lg-3 p-0 pe-1 pb-1 d-flex">
                                     <x-input-text type="text" wireModel="discount.{{$key}}"></x-input-text>
-                                    <div>
-                                        <button class="btn btn-danger ms-2 removeBtn" wire:click="removeItem({{$key}})">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </div>
+                                    @if (!($this->mode == 'show'))
+                                    <button type="button" class="btn ms-2 btn-danger t removeBtn"
+                                        wire:click="removeItem({{ $key }})">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach
                         </div>
-                        @if (!($this->mode) == 'show')
-
-                        @endif
+                        @if (!($this->mode == 'show'))
                         <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                             wire:click="addMore()" />
+
+                        @endif
                     </div>
                     <!-- 5th row start -->
                     <div class="row justify-content-center pt-3">
@@ -157,7 +161,8 @@
                                 <label for="horizontal-firstname-input" class="col-4 text-end col-form-label">
                                     Paid</label>
                                 <div class="col-8">
-                                    <strong class="form-control">{{ $cheque_amount + $cash + $card_amount }}</strong>
+                                    <strong class="form-control">{{ (int)$cheque_amount + (int)$cash + (int)$card_amount
+                                        }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +175,7 @@
                                 <label for="horizontal-firstname-input" class="col-3 text-end col-form-label">Cash
                                     Pay</label>
                                 <div class="col-9">
-                                    <x-input-text wireModel="cash" placeholder="Enter Cash Amount">
+                                    <x-input-text type="number" wireModel="cash" placeholder="Enter Cash Amount">
                                     </x-input-text>
                                 </div>
                             </div>

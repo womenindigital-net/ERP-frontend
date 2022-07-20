@@ -5,6 +5,7 @@
                 <tr class="table-primary">
                     <th>SL</th>
                     <th>Title</th>
+                    <th>Number</th>
                     <th>Date</th>
                     <th>Total Items</th>
                     <td>Created At</td>
@@ -16,6 +17,7 @@
                 <tr>
                     <td>{{ ++$key }}</td>
                     <td>{{$record->title}}</td>
+                    <td>{{$record->number}}</td>
                     <td>{{$record->date}}</td>
                     <td>{{$record->details->count()}}</td>
                     <td>{{$record->created_at}}</td>

@@ -10,7 +10,7 @@
             <div class="mb-3">
                 <label class="form-label">Requested By</label>
                 <x-input-select :records="$users" wireModel="requested_by" additional="email"></x-input-select>
-            </div>
+            </div>                                               
         </div>
     </div>
     <div class="row">
@@ -76,7 +76,7 @@
                             <div data-repeater-item class="row removeRow">
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
                                     <select class="form-control form-select" wire:model="product_id.{{$key}}">
-                                        <option>--Select--</option>
+                                        <option></option>
                                         @foreach($products as $product)
                                         <optgroup label="{{$product['name']}}">
                                             @foreach($product['children'] as $childCourse)
@@ -95,7 +95,7 @@
                                     <x-input-text type="text" wireModel="price.{{$key}}"></x-input-text>
                                 </div>
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text type="text" wireModel="qty.{{$key}}"></x-input-text>
+                                    <x-input-text type="number" wireModel="qty.{{$key}}"></x-input-text>
                                 </div>
 
                                 <div class=" col-lg-2 p-0 pe-1 pb-1">

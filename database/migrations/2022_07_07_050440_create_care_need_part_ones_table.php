@@ -27,7 +27,7 @@ return new class extends Migration
             $table->json('childs_condition_at_his_family')->nullable();
             $table->json('number_of_children_in_the_family')->nullable();
             $table->json('schooling')->nullable();
-            $table->json('Home')->nullable();
+            $table->json('home')->nullable();
             $table->timestamps();
 
             // $table->id();

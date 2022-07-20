@@ -32,4 +32,14 @@ class StockTransfer extends Model
     {
         return $this->belongsTo(Warehouse::class, 'warehouse_id_to', 'id');
     }
+
+    public function supplier(): BelongsTo
+    {
+        return $this->belongsTo(Supplier::class, 'warehouse_id_to', 'id');
+    }
+
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class, 'warehouse_id_to', 'id');
+    }
 }

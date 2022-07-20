@@ -15,9 +15,16 @@ use App\Http\Livewire\Traits\CommonListElements;
 
 class FinishedGoodCreate extends Component
 {
-
     use WithPagination, CommonListElements, CommonAddMore;
+
     private string $destroyRoute = 'finished-goods.destroy';
+    private FinishedGoodService $service;
+    private FinishedGoodRepository $repo;
+    private ProductService $productService;
+    private ProjectRepository $projectRepo;
+    private UserRepository $userRepo;
+    private WarehouseRepository $warehouseRepository;
+    protected array $addMoreItems = ['product_id', 'unit', 'qty'];
 
     public $finishedGood;
     public $date;
@@ -25,14 +32,6 @@ class FinishedGoodCreate extends Component
     public $project_id;
     public $qty;
     public $unit;
-    // public $unit;
-
-    private FinishedGoodService $service;
-    private FinishedGoodRepository $repo;
-    private ProductService $productService;
-    private ProjectRepository $projectRepo;
-    private UserRepository $userRepo;
-    private WarehouseRepository $warehouseRepository;
 
     public function boot(
         FinishedGoodService $service,
@@ -49,6 +48,11 @@ class FinishedGoodCreate extends Component
         $this->projectRepo = $projectRepository;
         $this->userRepo = $userRepository;
         $this->warehouseRepository = $warehouseRepository;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
 
@@ -58,6 +62,7 @@ class FinishedGoodCreate extends Component
             $this->finishedGood = $this->repo->getRelatedData($this->finishedGood, ['details']);
 
             $this->date = $this->finishedGood->date;
+            $this->project_id = $this->finishedGood->project_id;
             $this->warehouse_id = $this->finishedGood->warehouse_id;
             $this->note = $this->finishedGood->note;
 
@@ -71,15 +76,14 @@ class FinishedGoodCreate extends Component
         }
     }
 
-
     protected array $rules = [
         'project_id' => 'required',
         'warehouse_id' => 'required',
         'date' => 'required',
         'note' => 'nullable',
         'product_id.*' => 'required',
-        'unit.*' => 'nullable',
-        'qty.*' => 'nullable',
+        'unit.*' => 'required',
+        'qty.*' => 'required',
     ];
 
     public function update()

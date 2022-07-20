@@ -23,7 +23,7 @@
         <div class="col-lg-6">
             <div class="mb-3">
                 <label class="text-end form-label">Note</label>
-                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note ..." />
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note Here" />
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@
                                     </x-input-text>
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
-                                        wire:click="removeRow({{ $key }})">
+                                        wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                     @endif

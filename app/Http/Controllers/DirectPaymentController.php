@@ -6,7 +6,7 @@ use App\Models\Payment;
 use App\Models\DirectPayment;
 use Illuminate\Contracts\View\View;
 use App\Services\DirectPaymentService;
-use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\Factory; 
 use App\Repositories\PaymentRepository;
 use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Session;
@@ -84,9 +84,12 @@ class DirectPaymentController extends Controller
      * @param  \App\Models\DirectPayment  $directPayment
      * @return \Illuminate\Http\Response
      */
-    public function show(DirectPayment $directPayment)
+    public function show($id)
     {
-        //
+        $data = [
+            'record' => Payment::find($id),
+        ];
+        return view('accounting.purchase.direct_payment.payment_view', $data);
     }
 
     /**

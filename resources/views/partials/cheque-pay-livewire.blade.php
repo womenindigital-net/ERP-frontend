@@ -1,22 +1,20 @@
-<div class="row">
-    <div class="form-check form-check-primary mb-3">
-        {{-- <input class="form-check-input" wireModel="cheque" type="checkbox" id="formCheckBox"> --}}
-        <label class="form-check-label ms-2" for="formCheckBoxForm">Cheque Pay</label>
-    </div>
+<div class="row mt-5">
+    <label class="form-check-label mb-3 fs-5" for="formCheckBoxForm"><b>Cheque Pay</b></label>
+
     <div class="row" id="formCheckBoxForm">
         <div class="row">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Amount</label>
-                        <x-input-text wireModel="cheque_amount" placeholder="Enter Bank Name Here">
+                        <x-input-text wireModel="cheque_amount" placeholder="Enter Amount Here">
                         </x-input-text>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">Cheque No</label>
-                        <x-input-text wireModel="cheque_no" placeholder="Phone One Here ">
+                        <x-input-text wireModel="cheque_no" placeholder="Cheque No Here ">
                         </x-input-text>
 
                     </div>

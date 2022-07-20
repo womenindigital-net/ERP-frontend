@@ -70,10 +70,10 @@ class SetupController extends Controller
     {
         return view('setup.doctor-setup.create');
     }
-    public function chartAccountSetup()
-    {
-        return view('setup.chart-of-accounts.create');
-    }
+    // public function chartAccountSetup()
+    // {
+    //     return view('setup.chart-of-accounts.create');
+    // }
     public function accountDetailsSetup()
     {
         return view('setup.account-details.create');
@@ -118,14 +118,14 @@ class SetupController extends Controller
     {
         return view('setup.vendor-list.supplier-type-setup.create');
     }
-    public function customerReg()
-    {
-        return view('setup.customers-list.customer-reg.create');
-    }
-    public function customerType()
-    {
-        return view('setup.customers-list.customer-Type.create');
-    }
+    // public function customerReg()
+    // {
+    //     return view('setup.customers-list.customer-reg.create');
+    // }
+    // public function customerType()
+    // {
+    //     return view('setup.customers-list.customer-Type.create');
+    // }
     public function courseAdmission()
     {
         return view('setup.course-and-admission.create');
@@ -174,10 +174,10 @@ class SetupController extends Controller
     {
         return view('setup.accounting-mapping.closing_account_setup.create');
     }
-    public function budgetYearSetup()
-    {
-        return view('setup.budget-year-setup.create');
-    }
+    // public function budgetYearSetup()
+    // {
+    //     return view('setup.budget-year-setup.create');
+    // }
     public function budgetHeadSetup()
     {
         return view('setup.budget-head-setup.create');
@@ -211,5 +211,5 @@ class SetupController extends Controller
         return view('setup.other-settings.user-permission-setup.create');
     }
 
-}            
+}
 

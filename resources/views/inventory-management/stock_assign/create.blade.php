@@ -9,13 +9,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="tab" href="#product_details" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block">Add Product Details</span>
+                            <span class="d-none d-sm-block">Stock Assign</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#product_details_list" role="tab">
                             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                            <span class="d-none d-sm-block">Product Details List</span>
+                            <span class="d-none d-sm-block">Stock Assign List</span>
                         </a>
                     </li>
                 </ul>

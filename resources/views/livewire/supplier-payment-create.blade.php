@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="supplier_payment" role="tabpanel">
+<div>
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">
@@ -23,31 +23,94 @@
         </div>
         <div class="col-md-6">
             <div class="mb-3">
-                <label for="validationCustom02" class="form-label">Invoice (Purchase
-                    Order)</label>
-                <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
-                </x-input-select>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="mb-3">
                 <label for="validationCustom02" class="form-label">Remarks</label>
                 <x-input-text wireModel="remark" type="text"></x-input-text>
             </div>
         </div>
-        {{-- <div class="col-md-6">
+        <div class="col-md-6">
             <div class="mb-3">
-                <label for="validationCustom02" class="form-label">Account</label>
-                <x-input-text wireModel="remark" type="text"></x-input-text>
+                <label for="validationCustom02" class="form-label">Invoice (Purchase
+                    Order)</label>
+                <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
+                </x-input-select>
+                {{-- <p>
+                    @foreach ($purchaseProduct as $item )
+                    <label class="form-label">{{ $item->product->name }}</label>,
+                    @endforeach
+                </p> --}}
             </div>
-        </div> --}}
-        <div class="col-md-12">
+        </div>
+        <div class="col-md-6">
             <div class="mb-3">
                 <label for="validationCustom02" class="form-label">Note</label>
                 <x-input-textarea wireModel="note" rows="1"></x-input-textarea>
             </div>
         </div>
     </div>
+    @if ($purchaseOrderInfo)
+
+    {{-- Purchase Info Start --}}
+    <div class="row border border-3 border-danger">
+        <h3 class="mb-4 text-center">All product</h3>
+        <div class="row">
+            <div class="col-lg-2 p-0 pe-1">
+                <label for="name">Product</label>
+            </div>
+            <div class="col-lg-2 p-0 pe-1">
+                <label for="product">Exp. Date</label>
+            </div>
+            <div class="col-lg-1 p-0 pe-1">
+                <label for="product">Avl. Qnty </label>
+            </div>
+            <div class="col-lg-1 p-0 pe-1">
+                <label for="quality">Qnty</label>
+            </div>
+            <div class="col-lg-1 p-0 pe-1">
+                <label for="discount">Price</label>
+            </div>
+            <div class="col-lg-1 p-0 pe-1">
+                <label for="subtotal">VAT %</label>
+            </div>
+            <div class="col-lg-1 p-0 pe-1">
+                <label for="subtotal">Discount</label>
+            </div>
+            <div class="col-lg-2 p-0 pe-1">
+                <label for="subtotal">Subtotal</label>
+            </div>
+        </div>
+        @foreach($purchaseOrderInfo->details as $key => $item)
+        <div class="row my-2">
+            <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->product->name }}</p>
+            </div>
+            <div class=" col-lg-2 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->exp_date }}</p>
+            </div>
+            <div class=" col-lg-1 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->available_qty }}</p>
+            </div>
+
+            <div class=" col-lg-1 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->qty }}</p>
+            </div>
+            <div class=" col-lg-1 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->price }}</p>
+            </div>
+            <div class=" col-lg-1 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->vat }}</p>
+            </div>
+            <div class=" col-lg-1 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->discount }}</p>
+            </div>
+            <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
+                <p class="form-control">{{ $item->sub_total }}</p>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    {{-- Purchase Info End --}}
+    @endif
+
     <div class="row">
         <div class="col-md-6">
             <div class="mb-3">
@@ -67,7 +130,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Cheque</label>
-                <x-input-select wireModel="cheque_id" :records="$cheque" targetColumn="title">
+                <x-input-select wireModel="cheque_id" :records="$cheque" targetColumn="page_no">
                 </x-input-select>
             </div>
         </div>

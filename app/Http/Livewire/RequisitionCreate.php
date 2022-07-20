@@ -40,6 +40,7 @@ class RequisitionCreate extends Component
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
     private BudgetHeadRepository $budgetHeadRepo;
+    protected array $addMoreItems = ['product_id', 'available_qty', 'price', 'qty', 'sub_total', 'budget_head_id', 'budget_sub_head_id'];
 
     public function boot(
         RequisitionService $service,
@@ -51,7 +52,6 @@ class RequisitionCreate extends Component
         StockRepository $stockRepository,
         BudgetHeadRepository $budgetHeadRepository,
     ) {
-        $this->inputs[] = $this->numberOfItems;
         $this->service = $service;
         $this->repo = $repository;
         $this->productService = $productService;
@@ -60,6 +60,12 @@ class RequisitionCreate extends Component
         $this->warehouseRepository = $warehouseRepository;
         $this->stockRepo = $stockRepository;
         $this->budgetHeadRepo = $budgetHeadRepository;
+        $this->inputs[] = $this->numberOfItems;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
     public function mount()
@@ -95,10 +101,10 @@ class RequisitionCreate extends Component
         'title' => 'required',
         'warehouse_id' => 'required',
         'product_id.*' => 'required',
-        'available_qty.*' => 'nullable',
+        'available_qty.*' => 'required',
         'qty.*' => 'required',
         'sub_total.*' => 'required',
-        'price.*' => 'nullable',
+        'price.*' => 'required',
         'budget_head_id.*' => 'required',
         'budget_sub_head_id.*' => 'required',
         // 'discount.*' => 'nullable',

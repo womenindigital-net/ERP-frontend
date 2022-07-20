@@ -13,7 +13,7 @@ class StoreWarehouseRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class StoreWarehouseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'                 => 'nullable',
+            'location'             => 'nullable',
+            'store_type'           => 'nullable',
+            'description'          => 'nullable',
+            'managed_by'           => 'nullable',
         ];
     }
 }

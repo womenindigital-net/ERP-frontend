@@ -61,7 +61,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="validationCustom02" class="form-label">Cash Pay</label>
-                                        <x-input-text name="cash" placeholder="">
+                                        <x-input-text type="number" name="cash" placeholder="">
                                         </x-input-text>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
 
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-danger w-100">Reset</button>
+                                    {{-- <button class="btn btn-danger w-100">Reset</button> --}}
                                 </div>
                                 <div class="col-md-4">
                                     <button class="btn btn-success w-100">Save</button>

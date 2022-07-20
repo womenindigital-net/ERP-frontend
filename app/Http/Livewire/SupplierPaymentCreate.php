@@ -6,12 +6,14 @@ use Livewire\Component;
 use App\Models\BankAccount;
 use Livewire\WithPagination;
 use App\Repositories\ChequeRepository;
+use App\Repositories\ProductRepository;
 use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\SupplierRepository;
 use App\Services\SupplierPaymentService;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\BankAccountRepository;
+use App\Repositories\RequisitionRepository;
 use App\Repositories\PurchaseOrderRepository;
 use App\Repositories\SupplierPaymentRepository;
 use App\Http\Livewire\Traits\CommonListElements;
@@ -26,11 +28,13 @@ class SupplierPaymentCreate extends Component
     private ProjectRepository $projectRepo;
     private SupplierRepository $supplierRepo;
     private PurchaseOrderRepository $purchaseOrderRepo;
-    private ChequeRepository $cheque;
+    private ChequeRepository $chequeRepo;
     private BankAccountRepository $bankAccRepo;
     private SupplierPaymentService $service;
     private SupplierPaymentRepository $repo;
     private BankAccount $bankAccount;
+    private RequisitionRepository $requisitionRepo;
+    private ProductRepository $productRepo;
 
     public function boot(
         ProjectRepository $projectRepository,
@@ -40,7 +44,9 @@ class SupplierPaymentCreate extends Component
         SupplierPaymentService $service,
         SupplierPaymentRepository $repository,
         BankAccount $bankAccount,
-        ChequeRepository $cheque,
+        ChequeRepository $chequeRepository,
+        RequisitionRepository  $requisitionRepository,
+        ProductRepository  $productRepository,
     ) {
         $this->projectRepo = $projectRepository;
         $this->supplierRepo = $supplierRepository;
@@ -49,7 +55,12 @@ class SupplierPaymentCreate extends Component
         $this->service = $service;
         $this->repo = $repository;
         $this->bankAccount = $bankAccount;
-        $this->cheque = $cheque;
+        $this->chequeRepo = $chequeRepository;
+        $this->requisitionRepo = $requisitionRepository;
+        $this->productRepo = $productRepository;
+
+        $this->cheque = [];
+        $this->purchaseOrderInfo = false;
     }
 
     public $record;
@@ -62,7 +73,9 @@ class SupplierPaymentCreate extends Component
     public $cash;
     public $bank_account_id;
     public $cheque_id;
+    public $cheque;
     public $cheque_amount;
+    public mixed $purchaseOrderInfo;
 
 
     protected array $rules = [
@@ -101,33 +114,18 @@ class SupplierPaymentCreate extends Component
         }
     }
 
-    // public function updated($name, $value)
-    // {
-    //     if (str_starts_with($name, 'product_id.')) {
-    //         if (!$value || !$this->project_id || !$this->warehouse_id)
-    //             return;
+    public function updated($name, $value)
+    {
+        if (str_starts_with($name, 'purchase_id')) {
+            $this->purchaseOrderInfo =  $this->purchaseOrderRepo->getPurchaseProduct($value);
+            // $this->purchaseOrderInfo =  $detail->details;
+        }
 
-    //         $productInfo = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $value);
-    //         if (!$productInfo)
-    //             return;
-
-    //         $targetKey = $this->getTargetKey($name);
-
-    //         $this->available_qty[$targetKey] = $productInfo->qty;
-    //         $this->price[$targetKey]         = $productInfo->product->selling_price;
-    //     }
-
-    //     if (str_starts_with($name, 'qty.') || str_starts_with($name, 'discount.')) {
-    //         $targetKey = $this->getTargetKey($name);
-
-    //         if (!isset($this->available_qty[$targetKey]) or !$this->available_qty[$targetKey])
-    //             return;
-
-    //         if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
-    //             $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]) - (int)($this->discount[$targetKey] ?? 0);
-    //         }
-    //     }
-    // }
+        if (str_starts_with($name, 'bank_account_id')) {
+            $detail =  $this->bankAccRepo->getCheque($value);
+            $this->cheque =  $detail->chequeBook;
+        }
+    }
 
 
     public function update()
@@ -144,7 +142,9 @@ class SupplierPaymentCreate extends Component
             'suppliers' => $this->supplierRepo->getData(),
             'purchaseOrder' => $this->purchaseOrderRepo->getData(),
             'bankAccount' => $this->bankAccRepo->getData(),
-            'cheque' => $this->cheque->getData(),
+            'requisitions' => $this->requisitionRepo->getData(),
+            'products' => $this->productRepo->getData(),
+            'cheque' => $this->cheque,
         ];
         return view('livewire.supplier-payment-create', $data);
     }

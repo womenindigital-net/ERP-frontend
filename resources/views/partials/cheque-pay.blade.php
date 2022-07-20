@@ -12,7 +12,7 @@
                     <div class="mb-3">
                         <label class="form-label">Amount</label>
                         <x-input-text name="cheque_amount"
-                                      placeholder="Enter Bank Name Here">
+                                      placeholder="Enter Amount Here">
                         </x-input-text>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <div class="mb-3">
                         <label class="form-label">Cheque No</label>
                         <x-input-text name="cheque_no"
-                                      placeholder="Phone One Here ">
+                                      placeholder="Cheque No Here ">
                         </x-input-text>
 
                     </div>

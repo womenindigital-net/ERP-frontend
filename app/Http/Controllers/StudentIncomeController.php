@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Livewire\Traits\CommonListElements;
-use App\Http\Requests\StudentIncomeRequest;
-use App\Models\StudentIncome;
-use App\Repositories\CaseHistoryRepository;
-use App\Repositories\ProjectRepository;
-use App\Repositories\StudentIncomeRepository;
-use App\Repositories\StudentRepository;
-use App\Repositories\UserRepository;
-use App\Services\CourseService;
-use App\Services\StudentIncomeService;
 use Exception;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Session;
 use Livewire\WithPagination;
+use App\Models\StudentIncome;
+use Illuminate\Http\Response;
+use App\Services\CourseService;
+use Illuminate\Contracts\View\View;
+use App\Repositories\UserRepository;
+use Illuminate\Http\RedirectResponse;
+use App\Services\StudentIncomeService;
+use Illuminate\Contracts\View\Factory;
+use App\Repositories\ProjectRepository;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\StudentIncomeRequest;
+use App\Repositories\CaseHistoryRepository;
+use App\Repositories\StudentIncomeRepository;
+use App\Http\Livewire\Traits\CommonListElements;
+use Illuminate\Contracts\Foundation\Application;
 
 class StudentIncomeController extends Controller
 {
@@ -56,7 +56,7 @@ class StudentIncomeController extends Controller
      *
      * @return Response
      */
-    public function index(): Response
+    public function index()
     {
         //
     }

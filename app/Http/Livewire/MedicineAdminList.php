@@ -20,7 +20,7 @@ class MedicineAdminList extends Component
 
     public function toggleApprove($recordId)
     {
-        $this->medicineAdminRepo->toggleColumn($recordId, 'is_approved');
+        $this->repo->toggleColumn($recordId, 'is_approved');
         $this->dispatchBrowserEvent('notify');
     }
 

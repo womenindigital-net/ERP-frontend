@@ -1,3 +1,6 @@
+
+<div class="tab-pane" id="purchase_order_list" role="tabpanel">
+    <x-record-list :records="$records">
 <div>
     <div class="table-responsive">
         <table class="table table-bordered w-100">
@@ -17,46 +20,37 @@
                     <th>Paid Amount</th>
                     <th>Is Paid</th>
                     <th>Log</th>
-                    <th>action</th>
+                    <th class="nowrap">action</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($records as $record)
                 <tr>
-                    <td>Puja</td>
-                    <td>yousuf</td>
-                    <td>reading</td>
-                    <td>first to last</td>
-                    <td>Puja</td>
-                    <td>yousuf</td>
-                    <td>reading</td>
-                    <td>first to last</td>
-                    <td>Puja</td>
-                    <td>yousuf</td>
-                    <td>yousuf</td>
-                    <td>yousuf</td>
-                    <td>reading</td>
-                    <td>first to last</td>
+                    <td>{{$record->requisition->project->title}}</td>
+                    <td>{{$record->details->count()}}</td>
+                    <td>{{$record->date}}</td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                            <i class=" fas fa-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
+                        <a href="{{route('purchase-return.show', $record->id)}}" type="button"
+                            class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1">
+                            <i class="mdi mdi-eye"></i>
+                        </a>
+                        <button wire:click="toggleApprove({{$record->id}})"
+                            class="btn btn-sm btn-{{$record->is_approved ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
                             <i class="fas fa-check"></i>
                         </button>
-                        <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".student-income-modal-xl-view">
-                            <i class="fas fa-check"></i>
+                        <a href="{{route('purchase-return.return', $record->id)}}" type="button"
+                            class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
+                            <i class="fas fa-backward"></i>
+                        </a>
+                        <button type="button" wire:click="confirmDelete({{$record->id}})"
+                            class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
+                            <i class="fas fa-trash-alt"></i>
                         </button>
-                        <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2"
-                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">
-                            <i class="fas fa-pen"></i></button>
-                        <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                            <i class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
-    </div>
-</div>
+    </x-record-list>
+ </div>   
+    <!-- end row -->

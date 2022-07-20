@@ -38,10 +38,11 @@ class MaterialCollectionService
 
     private function collectMaterialCollectDetailsInfos(mixed $data): array
     {
-        [$materialCollectDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty']);
+        [$materialCollectDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'avl_stock', 'qty']);
         for ($i = 0; $i < count($materialCollectDetailInfos['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $materialCollectDetailInfos['product_id'][$i],
+                'available_qty' => $materialCollectDetailInfos['avl_stock'][$i],
                 'qty' => $materialCollectDetailInfos['qty'][$i],
             ];
         }

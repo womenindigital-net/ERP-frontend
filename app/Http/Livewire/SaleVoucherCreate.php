@@ -35,6 +35,7 @@ class SaleVoucherCreate extends Component
     private IncomeRepository $repo;
     private StockRepository $stockRepo;
     private SaleVoucherService $service;
+    protected array $addMoreItems = ['product_id', 'available_qty', 'qty', 'sub_total', 'price'];
 
     public $customer_id;
     public $ship_to_address;
@@ -77,6 +78,11 @@ class SaleVoucherCreate extends Component
         $this->stockRepo      = $stockRepository;
         $this->service        = $service;
         $this->inputs[]       = $this->numberOfItems;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
     protected array $rules = [
@@ -102,9 +108,10 @@ class SaleVoucherCreate extends Component
         'available_qty.*'     => 'required',
         'qty.*'               => 'required',
         'sub_total.*'         => 'required',
-        'price.*'             => 'nullable',
+        'price.*'             => 'required',
         'discount.*'          => 'nullable',
     ];
+
 
     public function mount()
     {
@@ -143,12 +150,22 @@ class SaleVoucherCreate extends Component
                 $this->price[$key]         = $detail->price;
                 $this->sub_total[$key]     = $detail->sub_total;
                 $this->discount[$key]      = $detail->discount;
+                
+                $this->total_discount += $detail->discount;
+                $this->total_item += 1;
+                $this->total_cost += $detail->sub_total;
             }
+
+            $this->total_paid = $history->card_amount ?? 0 + $history->cash ?? 0  + $history->cheque_amount ?? 0;
+            
         }
     }
 
     public function updated($name, $value)
     {
+
+        $this->validateOnly($name);
+
         if (str_starts_with($name, 'product_id.')) {
             if (!$value || !$this->project_id || !$this->warehouse_id) {
                 $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Sorry no related product found']);

@@ -12,7 +12,6 @@ class SupplierPaymentRepository extends BaseRepository
     {
         return $this->model::with('payment.supplierPayment')
             ->when($search, function ($query) use ($search) {
-
             })->latest()->paginate($perPage);
     }
 }

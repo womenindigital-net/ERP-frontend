@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="stock_transfer" role="tabpanel">
+<div>
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">
@@ -34,14 +34,22 @@
         </div>
         <div class="col-md-6">
             <div class="mb-3">
+                @if ($warehouse_to_warehouse)
                 <label class="form-label">Warehouse to</label>
                 <x-input-select wireModel="warehouse_id_to" :records="$warehouses" targetColumn="title" />
+                @elseif ($warehouse_to_customer)
+                <label class="form-label">Customer</label>
+                <x-input-select wireModel="warehouse_id_to" :records="$customers" />
+                @elseif ($warehouse_to_service_provider)
+                <label class="form-label">Supplier</label>
+                <x-input-select wireModel="warehouse_id_to" :records="$suppliers" />
+                @endif
             </div>
         </div>
         <div class="col-lg-6">
             <div class="mb-3">
                 <label class="text-end form-label">Note</label>
-                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note ..." />
+                <x-input-textarea wireModel="note" rows="1" placeholder="Enter Note Here" />
             </div>
         </div>
     </div>
@@ -93,7 +101,7 @@
                                     <x-input-text type="number" wireModel="serial.{{ $key }}"></x-input-text>
                                     @if (!($this->mode == 'show'))
                                     <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
-                                        wire:click="removeRow({{ $key }})">
+                                        wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                     @endif
