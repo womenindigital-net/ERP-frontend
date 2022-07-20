@@ -289,9 +289,6 @@
                         <li><a href="{{ route('customer-reg-list.create') }}">Customer Reg.</a></li>
                         <li><a href="{{ route('customer-type.create') }}">Customer Type</a></li>
                         <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
-                        <li><a href="{{ route('setup.vendor-list.supplier-setup.create') }}">Supplier Setup</a></li>
-                        <li><a href="{{ route('setup.vendor-list.supplier-type-setup.create') }}">Supplier Type
-                                Setup</a> </li>
                         <li><a href="{{ route('chartof-accounts.create') }}">Chart Of Accounts</a></li>
                         <li><a href="{{ route('bank-account.create') }}">Bank Account Details</a></li>
                         <li><a href="{{ route('cheque.create') }}">Manage Bank Ac. Chequebook</a></li>
@@ -312,12 +309,10 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('warehouse.create') }}">Warehouse Setup</a></li>
+                                
                                 <li><a href="{{ route('measure.unit.setup.create') }}">Measure Unit Setup</a></li>
                                 <li><a href="{{ route('product.category.setup.create') }}">Product Category
                                         Setup</a>
-                                </li>
-                                <li><a href="{{ route('product.category.setup.create') }}">Product Category Setup</a>
                                 </li>
 
                                 <li><a href="{{ route('product.create.create') }}">Product Create</a></li>
@@ -326,14 +321,9 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Budget & Forecasting</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('setup.budget-year-setup.create') }}">Budget Year Setup</a>
-                                </li>
-                                <li><a href="{{ route('setup.budget-head-setup.create') }}">Budget Head Setup</a>
-                                </li>
-                                <li><a href="{{ route('budget-year.create') }}">Budget Year Setup</a></li>
-                                <li><a href="{{ route('setup.budget-head-setup.create') }}">Budget Head Setup</a></li>
-                                <li><a href="{{ route('setup.Budget-Template-setup.create') }}">Budget Template
-                                        Setup</a></li>
+                                <li><a href="{{ route('budget-year.create') }}">Budget Year Setup</a> </li>
+                                <li><a href="{{ route('budget-head.create') }}">Budget Head Setup</a> </li>
+                                <li><a href="{{ route('setup.Budget-Template-setup.create') }}">Budget Template Setup</a></li>
                                 <li><a href="{{ route('setup.budget-review.create') }}">Budget Review</a></li>
                             </ul>
                         </li>
@@ -469,14 +459,8 @@
                                 </li>
                             </ul>
                         </li>
-                        {{-- <li>
-                            <a href="javascript: void(0);" class="has-arrow">Chart Of Accounts</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li>
-                                    <a href="{{ route('setup.chart-of-accounts.create') }}">Chart Of Accounts</a>
-                                </li>
-                            </ul>
-                        </li> --}}
+
+
                         {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow">Bank Details Setup</a>
                             <ul class="sub-menu" aria-expanded="true">

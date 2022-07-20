@@ -51,6 +51,7 @@ class PurchaseOrderCreate extends Component
         $this->productService = $productService;
         $this->requisitionRepo = $requisitionRepository;
         $this->inputs[] = $this->numberOfItems;
+        $this->requisition_id = null;
     }
 
     public function mount()
@@ -99,6 +100,9 @@ class PurchaseOrderCreate extends Component
                     $this->sub_total[$targetKey] += $this->sub_total[$targetKey] * ($this->vat[$targetKey] / 100);
                 }
             }
+        }
+        if ($name === 'requisition_id') {
+            return $this->redirectRoute('purchase-order.create', $value);
         }
     }
 
