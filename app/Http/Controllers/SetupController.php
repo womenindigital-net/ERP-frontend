@@ -70,10 +70,10 @@ class SetupController extends Controller
     {
         return view('setup.doctor-setup.create');
     }
-    public function chartAccountSetup()
-    {
-        return view('setup.chart-of-accounts.create');
-    }
+    // public function chartAccountSetup()
+    // {
+    //     return view('setup.chart-of-accounts.create');
+    // }
     public function accountDetailsSetup()
     {
         return view('setup.account-details.create');
