@@ -1,5 +1,5 @@
 <div class="tab-pane active" id="purchase_order" role="tabpanel">
-    @if($requisition)
+    @if(true)
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">
@@ -12,7 +12,7 @@
             <div class="mb-3">
                 <label class="form-label">Requisition</label>
                 <x-input-select wireModel="requisition_id" :records="$requisitions" targetColumn="title"
-                    :selected="$requisition->id" :disabled="true" />
+                    :selected="optional($requisition)->id"/>
             </div>
         </div>
         <div class="col-md-6">
