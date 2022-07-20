@@ -178,10 +178,10 @@ class SetupController extends Controller
     // {
     //     return view('setup.budget-year-setup.create');
     // }
-    public function budgetHeadSetup()
-    {
-        return view('setup.budget-head-setup.create');
-    }
+    // public function budgetHeadSetup()
+    // {
+    //     return view('setup.budget-head-setup.create');
+    // }
     public function budgetTemplateSetup()
     {
         return view('setup.Budget-Template-setup.create');

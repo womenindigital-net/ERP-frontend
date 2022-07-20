@@ -39,7 +39,6 @@ class BudgetYearController extends Controller
     {
         $data = [
             'budget' => $this->budgetYearRepo->getData(),
-
         ];
      return view('setup.budget-year-setup.create' ,$data);
     }
