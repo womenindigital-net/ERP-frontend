@@ -43,7 +43,7 @@ class WarehouseController extends Controller
     {
         $data = [
             'store_type' => WarehouseConstant::$StorType,
-            'user' => $this->userRepo->getData(),
+            'users' => $this->userRepo->getData(),
         ];
         return view('setup.store-management.warehouse_setup.create', $data);
     }
@@ -71,7 +71,7 @@ class WarehouseController extends Controller
     {
         $data = [
             'store_type' => WarehouseConstant::$StorType,
-            'user' => $this->userRepo->getData(),
+            'users' => $this->userRepo->getData(),
             'record' => $warehouse,
         ];
         return view('setup.store-management.warehouse_setup.view', $data);
@@ -87,7 +87,7 @@ class WarehouseController extends Controller
     {
         $data = [
             'store_type' => WarehouseConstant::$StorType,
-            'user' => $this->userRepo->getData(),
+            'users' => $this->userRepo->getData(),
             'record' => $warehouse,
             
         ];
