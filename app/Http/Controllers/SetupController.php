@@ -10,14 +10,14 @@ class SetupController extends Controller
     {
         return view('setup.store-management.warehouse_setup.create');
     }
-    public function measureUnitSetup()
-    {
-        return view('setup.store-management.measure-unit.create');
-    }
-    public function productCategorySetup()
-    {
-        return view('setup.store-management.product-category.create');
-    }
+    // public function measureUnitSetup()
+    // {
+    //     return view('setup.store-management.measure-unit.create');
+    // }
+    // public function productCategorySetup()
+    // {
+    //     return view('setup.store-management.product-category.create');
+    // }
     public function productCreate()
     {
         return view('setup.store-management.product_setup.create');

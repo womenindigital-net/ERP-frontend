@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\BankReconcilationNew;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
 use App\Http\Controllers\ProjectController;
@@ -17,7 +16,11 @@ use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\CustomerRegListController;
 use App\Http\Controllers\AccountingMappingController;
 use App\Http\Controllers\CustomerTypeSetupController;
+use App\Http\Controllers\MeaseureUnitController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Models\BankReconcilationNew;
 use App\Http\Controllers\BankReconcilationNewController;
+
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -30,17 +33,21 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'supplier-type' => SupplierTypeController::class,
         'bank-reconcilation-new' =>BankReconcilationNewController::class,
         'account_mapping' =>AccountingMappingController::class,
+
         // Budget & Forecasting Start
         'budget-year' => BudgetYearController::class,
         'budget-head' => BudgetHeadController::class,
         'budget-template' => BudgetTemplateController::class,
         'budget-review' => BudgetReviewController::class,
         // Budget & Forecasting Closed
+
+        'measure-unit' =>MeaseureUnitController::class,
+        'product-category' =>ProductCategoryController::class,
     ]);
 
     // Setup ->> Store Management Route
     // Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
-    Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
+   // Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
     Route::get('product-category-setup.create', [SetupController::class, 'productCategorySetup'])->name('product.category.setup.create');
     Route::get('product-create.create', [SetupController::class, 'productCreate'])->name('product.create.create');
     // Setup ->> Store Management Route
