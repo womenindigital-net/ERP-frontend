@@ -112,7 +112,6 @@
                 </li>
 
                 <li class="menu-title">Program Modules</li>
-
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-share-alt"></i>
@@ -309,10 +308,9 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
-
-                                <li><a href="{{ route('measure.unit.setup.create') }}">Measure Unit Setup</a></li>
-                                <li><a href="{{ route('product.category.setup.create') }}">Product Category
-                                        Setup</a>
+                                
+                                <li><a href="{{ route('measure-unit.create') }}">Measure Unit Setup</a></li>
+                                <li><a href="{{ route('product-category.create') }}">Product Category Setup</a>
                                 </li>
 
                                 <li><a href="{{ route('product.create.create') }}">Product Create</a></li>
@@ -324,7 +322,7 @@
                                 <li><a href="{{ route('budget-year.create') }}">Budget Year Setup</a> </li>
                                 <li><a href="{{ route('budget-head.create') }}">Budget Head Setup</a> </li>
                                 <li><a href="{{ route('budget-template.create') }}">Budget Template Setup</a></li>
-                                <li><a href="{{ route('setup.budget-review.create') }}">Budget Review</a></li>
+                                <li><a href="{{ route('budget-review.create') }}">Budget Review</a></li>
                             </ul>
                         </li>
                         <li>

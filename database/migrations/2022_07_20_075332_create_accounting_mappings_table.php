@@ -15,15 +15,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('accounting_mappings', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('location')->nullable();
-            $table->string('store_type')->nullable();
-            $table->foreignIdFor(User::class, 'managed_by')->nullable()->constrained('users')->nullOnDelete();
-            $table->string('description')->nullable();
-            $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
-            $table->timestamps();
-            $table->softDeletes();
+            // $table->id();
+            // $table->string('title');
+            // $table->string('location')->nullable();
+            // $table->string('store_type')->nullable();
+            // $table->foreignIdFor(User::class, 'managed_by')->nullable()->constrained('users')->nullOnDelete();
+            // $table->string('description')->nullable();
+            // $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
+            // $table->timestamps();
+            // $table->softDeletes();
         });
     }
 
