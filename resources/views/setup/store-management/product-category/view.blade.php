@@ -15,7 +15,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="finished_good" role="tabpanel">
-                            <form action="{{ route('product-category.update', $record->id) }}" method="POST">
+                            <form class="apply-view-only" action="{{ route('product-category.update', $record->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">

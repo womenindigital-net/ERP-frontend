@@ -66,7 +66,11 @@ class ProductCategoryController extends Controller
      */
     public function show(ProductCategory $productCategory)
     {
-        
+        $data = [
+            'parent_category' => $this->studentRepo->getData(),
+            'record' => $productCategory,
+        ];
+        return view('setup.store-management.product-category.view', $data);
     }
 
     /**
@@ -79,7 +83,7 @@ class ProductCategoryController extends Controller
     {
         $data = [
             'parent_category' => $this->studentRepo->getData(),
-            'record' =>
+             'record' => $productCategory,
         ];
         return view('setup.store-management.product-category.edit', $data);
     }
@@ -91,9 +95,11 @@ class ProductCategoryController extends Controller
      * @param  \App\Models\ProductCategory  $productCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductCategoryRequest $request, ProductCategory $productCategory)
+    public function update(StoreProductCategoryRequest $request, ProductCategory $productCategory)
     {
-        //
+        $this->productCategoryRepo->update($productCategory, $request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
