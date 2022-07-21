@@ -13,15 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('year_end_closes', function (Blueprint $table) {
+        Schema::create('bank_reconcilations', function (Blueprint $table) {
             $table->id();
-            $table->string('warehouse_id')->nullable();
-            $table->string('date')->nullable();
-            $table->string('student_id')->nullable();
-            $table->string('percent_field')->nullable();
-            $table->string('basic_provident')->nullable();
-            $table->string('note')->nullable();
-
             $table->timestamps();
         });
     }
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('year_end_closes');
+        Schema::dropIfExists('bank_reconcilations');
     }
 };

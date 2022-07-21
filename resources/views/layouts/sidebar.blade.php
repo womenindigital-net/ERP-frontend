@@ -322,13 +322,13 @@
                                 <li><a href="{{ route('budget-year.create') }}">Budget Year Setup</a> </li>
                                 <li><a href="{{ route('budget-head.create') }}">Budget Head Setup</a> </li>
                                 <li><a href="{{ route('budget-template.create') }}">Budget Template Setup</a></li>
-                                <li><a href="{{ route('setup.budget-review.create') }}">Budget Review</a></li>
+                                <li><a href="{{ route('budget-review.create') }}">Budget Review</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('setup.year-end-close.create') }}">Year End Stock Count</a>
+                                <li> <a href="{{ route('yearend-close.create') }}">Year End Stock Count</a>
                                 </li>
                             </ul>
                         </li>

@@ -3,19 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\YearEndClose;
+use App\Repositories\StudentRepository;
+use Illuminate\Support\Facades\Session;
+use App\Repositories\YearEndCloseRepository;
 use App\Http\Requests\StoreYearEndCloseRequest;
 use App\Http\Requests\UpdateYearEndCloseRequest;
 
 class YearEndCloseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    private StudentRepository $studentRepo;
+    private YearEndCloseRepository $yearEndCloseRepo;
+
+    public function __construct(StudentRepository $studentRepo, YearEndCloseRepository $yearEndCloseRepo)
+    {
+        $this->studentRepo = $studentRepo;
+        $this->yearEndCloseRepo = $yearEndCloseRepo;
+    }
+    
     public function index()
     {
         //
+        
     }
 
     /**
@@ -25,7 +33,10 @@ class YearEndCloseController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+             'projects' => $this->yearEndCloseRepo->getData(),
+        ];
+        return view('setup.year-end-close.create', $data);
     }
 
     /**
@@ -36,7 +47,9 @@ class YearEndCloseController extends Controller
      */
     public function store(StoreYearEndCloseRequest $request)
     {
-        //
+         $this->yearEndCloseRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
