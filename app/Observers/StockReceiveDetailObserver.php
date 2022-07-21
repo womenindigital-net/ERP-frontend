@@ -38,15 +38,14 @@ class StockReceiveDetailObserver
         $projectId = $stockReceiveDetail->stockReceive->project_id;
         $productId = $stockReceiveDetail->product_id;
         $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
-        
 
-        
+
+
         $purchaseId = $stockReceiveDetail->stockReceive->purchase_id;
-        
+
         $purchaseDetailData = $this->purchaseDetailRepo->getPurchaseData($productId, $purchaseId);
-        if($purchaseDetailData)
-        {
-            $purchaseDetailData->receivable = $stockReceiveDetail->receivable - $stockReceiveDetail->stock_receive_qty;
+        if ($purchaseDetailData) {
+            $purchaseDetailData->receivable += ($stockReceiveDetail->receivable - $stockReceiveDetail->stock_receive_qty);
             $purchaseDetailData->saveQuietly();
         }
 
