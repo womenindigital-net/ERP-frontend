@@ -7,9 +7,11 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\BudgetHeadController;
 use App\Http\Controllers\BudgetYearController;
+use App\Http\Controllers\BudgetReviewController;
 use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\ProjectSetupController;
 use App\Http\Controllers\SupplierTypeController;
+use App\Http\Controllers\YearEndCloseController;
 use App\Http\Controllers\BudgetTemplateController;
 use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\CustomerRegListController;
@@ -28,13 +30,19 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'customer-reg-list' => CustomerRegListController::class,
         'chartof-accounts' => ChartofAccountsController::class,
         'warehouse' => WarehouseController::class,
-        'budget-year' => BudgetYearController::class,
-        'budget-head' => BudgetHeadController::class,
-        'budget-template' => BudgetTemplateController::class,
         'supplier' => SupplierController::class,
         'supplier-type' => SupplierTypeController::class,
         'bank-reconcilation-new' =>BankReconcilationNewController::class,
         'account_mapping' =>AccountingMappingController::class,
+        'yearend-close' =>YearEndCloseController::class,
+
+        // Budget & Forecasting Start
+        'budget-year' => BudgetYearController::class,
+        'budget-head' => BudgetHeadController::class,
+        'budget-template' => BudgetTemplateController::class,
+        'budget-review' => BudgetReviewController::class,
+        // Budget & Forecasting Closed
+
         'measure-unit' =>MeaseureUnitController::class,
         'product-category' =>ProductCategoryController::class,
     ]);
@@ -114,9 +122,9 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Route::get('budget-year-setup.create', [SetupController::class, 'budgetYearSetup'])->name('setup.budget-year-setup.create');
     // Route::get('budget-head-setup.create', [SetupController::class, 'budgetHeadSetup'])->name('setup.budget-head-setup.create');
     // Route::get('Budget-Template-setup.create', [SetupController::class, 'budgetTemplateSetup'])->name('setup.Budget-Template-setup.create');
-    Route::get('budget-review.create', [SetupController::class, 'budgetReviewSetup'])->name('setup.budget-review.create');
+    // Route::get('budget-review.create', [SetupController::class, 'budgetReviewSetup'])->name('setup.budget-review.create');
     // Year End Close
-    Route::get('year-end-close.create', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.create');
+    //Route::get('year-end-close.create', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.create');
     // Other Setting
     Route::get('other-settings.user.create', [SetupController::class, 'otherUser'])->name('setup.other-settings.user.create');
     Route::get('setup.other-settings.academic-calender.create', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic-calender.create');

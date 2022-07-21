@@ -47,7 +47,7 @@ class StockReceiveCreate extends Component
     private PurchaseRepository $purchaseRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
-    protected array $addMoreItems = ['product_id', 'exp_date', 'available_qty', 'received', 'return','receivable', 'stock_receive_qty', 'serial'];
+    protected array $addMoreItems = ['product_id', 'exp_date', 'available_qty', 'received', 'return', 'receivable', 'stock_receive_qty', 'serial'];
 
     public function boot(
         StockReceiveService $service,
@@ -143,7 +143,11 @@ class StockReceiveCreate extends Component
                     if (isset($this->warehouse_id) && isset($this->project_id) && isset($detail->product_id)) {
 
                         $stock = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $detail->product_id);
-                        $this->available_qty[$key] = $stock->qty;
+
+                        if ($stock) {
+                            $this->available_qty[$key] = $stock->qty;
+                        } else
+                            $this->available_qty[$key] = 0;
                     }
                 }
             } else {

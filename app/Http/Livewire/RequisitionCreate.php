@@ -4,11 +4,13 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Validation\Rule;
 use App\Services\ProductService;
 use Illuminate\Contracts\View\View;
 use App\Repositories\UserRepository;
 use App\Services\RequisitionService;
 use App\Repositories\StockRepository;
+use App\Rules\RequisitionProductRule;
 use Illuminate\Contracts\View\Factory;
 use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Session;
@@ -131,6 +133,16 @@ class RequisitionCreate extends Component
             if (isset($this->price[$targetKey]) && $this->price[$targetKey] && isset($this->qty[$targetKey]) && $this->qty[$targetKey]) {
                 $this->sub_total[$targetKey] = ($this->price[$targetKey] * $this->qty[$targetKey]);
             }
+        }
+    }
+
+    public function submit()
+    {
+        $this->service->store($this->validate());
+        if (!Session::has('error')) {
+            $this->dispatchBrowserEvent('notify');
+            $this->dispatchBrowserEvent('reload');
+            Session::forget('error');
         }
     }
 

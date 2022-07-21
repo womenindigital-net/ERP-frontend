@@ -1,4 +1,9 @@
 <div>
+    @if (session()->has('error'))
+    <div class="alert alert-danger">
+        Some Product are Same
+    </div>
+    @endif
     <div class="row">
         <div class="col-md-6">
             <div class="mb-3">
@@ -10,7 +15,7 @@
             <div class="mb-3">
                 <label class="form-label">Requested By</label>
                 <x-input-select :records="$users" wireModel="requested_by" additional="email"></x-input-select>
-            </div>                                               
+            </div>
         </div>
     </div>
     <div class="row">
