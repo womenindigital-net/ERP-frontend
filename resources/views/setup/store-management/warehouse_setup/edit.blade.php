@@ -48,7 +48,7 @@
                                 <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Managed by</label>
                                 <div class="col-sm-9">
                                     <x-input-select :selected=" $record->managed_by " name="managed_by"
-                                        :records="$user" />
+                                        :records="$users" />
                                 </div>
                             </div>
                             <div class="d-flex  flex-wrap float-end gap-2">
