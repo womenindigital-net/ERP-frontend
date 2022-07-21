@@ -324,7 +324,7 @@
                                 <li><a href="{{ route('budget-year.create') }}">Budget Year Setup</a> </li>
                                 <li><a href="{{ route('budget-head.create') }}">Budget Head Setup</a> </li>
                                 <li><a href="{{ route('budget-template.create') }}">Budget Template Setup</a></li>
-                                <li><a href="{{ route('setup.budget-review.create') }}">Budget Review</a></li>
+                                <li><a href="{{ route('budget-review.create') }}">Budget Review</a></li>
                             </ul>
                         </li>
                         <li>
