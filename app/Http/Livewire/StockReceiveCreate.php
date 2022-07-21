@@ -23,8 +23,6 @@ class StockReceiveCreate extends Component
     private string $destroyRoute = 'stock-receive.destroy';
 
     public $stockReceive;
-    // public $purchase_type;
-    // public $return_type;
     public $date;
     public $purchase_id;
     public $note;
@@ -35,6 +33,7 @@ class StockReceiveCreate extends Component
     public $return;
     public $stock_receive_qty;
     public $serial;
+    public $stock;
     public $type;
     public $purchaseProduct;
 
@@ -48,7 +47,7 @@ class StockReceiveCreate extends Component
     private PurchaseRepository $purchaseRepo;
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
-    protected array $addMoreItems = ['product_id', 'exp_date', 'available_qty', 'received', 'return', 'stock_receive_qty', 'serial'];
+    protected array $addMoreItems = ['product_id', 'exp_date', 'available_qty', 'received', 'return','receivable', 'stock_receive_qty', 'serial'];
 
     public function boot(
         StockReceiveService $service,
@@ -94,6 +93,19 @@ class StockReceiveCreate extends Component
             $this->return_type = $this->stockReceive->return_type;
             $this->date = $this->stockReceive->date;
             $this->warehouse_id = $this->stockReceive->warehouse_id;
+
+            $this->inputs = $this->stockReceive->details->toArray();
+
+            foreach ($this->stockReceive->details as $key => $detail) {
+                $this->product_id[$key] = $detail->product_id;
+                $this->available_qty[$key] = $detail->available_qty;
+                $this->exp_date[$key] = $detail->exp_date;
+                $this->received[$key] = $detail->received;
+                $this->return[$key] = $detail->return;
+                $this->receivable[$key] = $detail->receivable;
+                $this->stock_receive_qty[$key] = $detail->stock_receive_qty;
+                $this->serial[$key] = $detail->serial;
+            }
         }
     }
 
@@ -125,21 +137,22 @@ class StockReceiveCreate extends Component
                 $this->inputs = $purchaseProduct->details->toArray();
                 foreach ($purchaseProduct->details as $key => $detail) {
                     $this->product_id[$key] = $detail->product_id;
-                    $this->available_qty[$key] = $detail->available_qty;
                     $this->exp_date[$key] = $detail->exp_date;
-                    $this->received[$key] = $detail->received;
-                    $this->return[$key] = $detail->return;
-                    $this->receivable[$key] = $detail->receivable;
-                    $this->stock_receive_qty[$key] = $detail->stock_receive_qty;
-                    $this->serial[$key] = $detail->serial;
+                    $this->receivable[$key] = $detail->qty;
+
+                    if (isset($this->warehouse_id) && isset($this->project_id) && isset($detail->product_id)) {
+
+                        $stock = $this->stockRepo->getDetailAccordingly($this->project_id, $this->warehouse_id, $detail->product_id);
+                        $this->available_qty[$key] = $stock->qty;
+                    }
                 }
             } else {
                 $this->inputs = [];
                 unset($this->product_id);
+                unset($this->available_qty);
+                unset($this->exp_date);
+                unset($this->receivable);
             }
-
-//            $detail =  $this->purchaseOrderRepo->getPurchaseProduct($value);
-//            $this->purchaseProduct =  $detail->details;
         }
 
         if (str_starts_with($name, 'received.')) {
@@ -165,6 +178,7 @@ class StockReceiveCreate extends Component
         'available_qty.*' => 'required',
         'received.*' => 'required',
         'return.*' => 'required',
+        'receivable.*' => 'required',
         'stock_receive_qty.*' => 'required',
         'serial.*' => 'required',
     ];

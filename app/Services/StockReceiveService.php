@@ -41,7 +41,7 @@ class StockReceiveService
 
     private function collectStockReceiveDetailsInfos(mixed $data): array
     {
-        [$stockReceiveDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'exp_date', 'available_qty', 'received', 'return', 'stock_receive_qty', 'serial']);
+        [$stockReceiveDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'exp_date', 'available_qty', 'received', 'return', 'receivable', 'stock_receive_qty', 'serial']);
         for ($i = 0; $i < count($stockReceiveDetailInfos['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $stockReceiveDetailInfos['product_id'][$i],
@@ -49,7 +49,7 @@ class StockReceiveService
                 'available_qty' => $stockReceiveDetailInfos['available_qty'][$i],
                 'received' => $stockReceiveDetailInfos['received'][$i],
                 'return' => $stockReceiveDetailInfos['return'][$i],
-                // 'receivable' => $stockReceiveDetailInfos['receivable'][$i],
+                'receivable' => $stockReceiveDetailInfos['receivable'][$i],
                 'stock_receive_qty' => $stockReceiveDetailInfos['stock_receive_qty'][$i],
                 'serial' => $stockReceiveDetailInfos['serial'][$i],
             ];
