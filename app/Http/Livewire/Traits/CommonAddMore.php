@@ -19,6 +19,7 @@ trait CommonAddMore
     public $date;
     public array $inputs = [];
     public int $numberOfItems = 1;
+    public $error;
 
     public function addMore(): void
     {

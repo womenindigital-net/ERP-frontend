@@ -4,12 +4,13 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\DB;
 use App\Traits\CommonServiceElements;
+use Illuminate\Support\Facades\Session;
 use App\Repositories\RequisitionRepository;
 
 class RequisitionService
 {
     use CommonServiceElements;
-    
+
     private RequisitionRepository $repo;
 
     public function __construct(RequisitionRepository $repository)
@@ -17,8 +18,13 @@ class RequisitionService
         $this->repo = $repository;
     }
 
-    public function store(array $validated): void
+    public function store(array $validated)
     {
+        if (count(array_unique($validated['product_id'])) < count($validated['product_id'])) {
+            Session::put('error', 'true');
+            return  redirect()->back();
+        }
+        Session::forget('error');
         try {
             DB::beginTransaction();
             [$requisitionInfos, $data] = $this->collectRequisitionInfos($validated);

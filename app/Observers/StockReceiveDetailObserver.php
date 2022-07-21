@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Models\StockReceiveDetail;
 use App\Repositories\StockRepository;
+use App\Repositories\PurchaseDetailRepository;
 use App\Repositories\StockReceiveDetailRepository;
 
 class StockReceiveDetailObserver
@@ -11,11 +12,16 @@ class StockReceiveDetailObserver
 
     private StockReceiveDetailRepository $repo;
     private StockRepository $stockRepo;
+    private PurchaseDetailRepository $purchaseDetailRepo;
 
-    public function __construct(StockReceiveDetailRepository $repository, StockRepository $stockRepository)
-    {
+    public function __construct(
+        StockReceiveDetailRepository $repository,
+        StockRepository $stockRepository,
+        PurchaseDetailRepository $purchaseDetailRepository
+    ) {
         $this->repo = $repository;
         $this->stockRepo = $stockRepository;
+        $this->purchaseDetailRepo = $purchaseDetailRepository;
     }
 
     /**
@@ -32,15 +38,26 @@ class StockReceiveDetailObserver
         $projectId = $stockReceiveDetail->stockReceive->project_id;
         $productId = $stockReceiveDetail->product_id;
         $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
+        
+
+        
+        $purchaseId = $stockReceiveDetail->stockReceive->purchase_id;
+        
+        $purchaseDetailData = $this->purchaseDetailRepo->getPurchaseData($productId, $purchaseId);
+        if($purchaseDetailData)
+        {
+            $purchaseDetailData->receivable = $stockReceiveDetail->receivable - $stockReceiveDetail->stock_receive_qty;
+            $purchaseDetailData->saveQuietly();
+        }
 
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
-
-        // dd($projectId, $productId, $warehouseId, $stock);
 
         if ($stock) {
             $stock->qty += $stockReceiveDetail->stock_receive_qty;
             $stock->saveQuietly();
         }
+
+        // $purchaseDetailProduct = $this->purchaseDetailRepo->getDueCell();
     }
 
     /**

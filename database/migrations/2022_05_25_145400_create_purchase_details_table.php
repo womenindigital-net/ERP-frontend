@@ -2,9 +2,9 @@
 
 
 use App\Models\Cheque;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Product::class)->constrained()->cascadeOnDelete();
             $table->integer('available_qty')->nullable();
             $table->integer('qty')->nullable();
+            $table->string('receivable')->nullable();
             $table->double('price', 8, 2)->nullable();
             $table->double('vat', 4, 2)->nullable();
             $table->double('discount', 4, 2)->nullable();

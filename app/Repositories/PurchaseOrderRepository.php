@@ -16,5 +16,5 @@ class PurchaseOrderRepository extends BaseRepository
     public function getPurchaseProduct($value)
     {
         return $this->model::with('details.supplier', 'details.product', 'requisition.project')->where(['id' => $value])->first();
-    }
+    }   
 }
