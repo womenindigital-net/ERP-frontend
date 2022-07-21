@@ -15,6 +15,8 @@ use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\CustomerRegListController;
 use App\Http\Controllers\CustomerTypeSetupController;
+use App\Http\Controllers\MeaseureUnitController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Models\BankReconcilationNew;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
@@ -30,11 +32,13 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'supplier-type' => SupplierTypeController::class,
         'bank-reconcilation-new' =>BankReconcilationNewController::class,
         'account_mapping' =>AccountingMappingController::class,
+        'measure-unit' =>MeaseureUnitController::class,
+        'product-category' =>ProductCategoryController::class,
     ]);
 
     // Setup ->> Store Management Route
     // Route::get('warehouse-setup.create', [SetupController::class, 'warehouseSetup'])->name('warehouse.setup.create');
-    Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
+   // Route::get('measure-unit-setup.create', [SetupController::class, 'measureUnitSetup'])->name('measure.unit.setup.create');
     Route::get('product-category-setup.create', [SetupController::class, 'productCategorySetup'])->name('product.category.setup.create');
     Route::get('product-create.create', [SetupController::class, 'productCreate'])->name('product.create.create');
     // Setup ->> Store Management Route

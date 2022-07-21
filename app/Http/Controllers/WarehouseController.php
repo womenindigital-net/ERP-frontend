@@ -89,7 +89,6 @@ class WarehouseController extends Controller
             'store_type' => WarehouseConstant::$StorType,
             'users' => $this->userRepo->getData(),
             'record' => $warehouse,
-            
         ];
         return view('setup.store-management.warehouse_setup.edit', $data);
     }
