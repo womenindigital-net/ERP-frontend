@@ -330,7 +330,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Year End Close</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li> <a href="{{ route('setup.year-end-close.create') }}">Year End Stock Count</a>
+                                <li> <a href="{{ route('yearend-close.create') }}">Year End Stock Count</a>
                                 </li>
                             </ul>
                         </li>

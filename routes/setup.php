@@ -1,21 +1,22 @@
 <?php
 
-use App\Http\Controllers\AccountingMappingController;
-use App\Http\Controllers\BankReconcilationNewController;
+use App\Models\BankReconcilationNew;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetupController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\BudgetHeadController;
 use App\Http\Controllers\BudgetYearController;
 use App\Http\Controllers\CustomerTypeController;
-use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\ProjectSetupController;
-use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\SupplierTypeController;
+use App\Http\Controllers\YearEndCloseController;
+use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\CustomerRegListController;
+use App\Http\Controllers\AccountingMappingController;
 use App\Http\Controllers\CustomerTypeSetupController;
-use App\Models\BankReconcilationNew;
+use App\Http\Controllers\BankReconcilationNewController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -30,6 +31,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'supplier-type' => SupplierTypeController::class,
         'bank-reconcilation-new' =>BankReconcilationNewController::class,
         'account_mapping' =>AccountingMappingController::class,
+        'yearend-close' =>YearEndCloseController::class,
     ]);
 
     // Setup ->> Store Management Route
@@ -109,7 +111,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('Budget-Template-setup.create', [SetupController::class, 'budgetTemplateSetup'])->name('setup.Budget-Template-setup.create');
     Route::get('budget-review.create', [SetupController::class, 'budgetReviewSetup'])->name('setup.budget-review.create');
     // Year End Close
-    Route::get('year-end-close.create', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.create');
+    //Route::get('year-end-close.create', [SetupController::class, 'yearEnd'])->name('setup.year-end-close.create');
     // Other Setting
     Route::get('other-settings.user.create', [SetupController::class, 'otherUser'])->name('setup.other-settings.user.create');
     Route::get('setup.other-settings.academic-calender.create', [SetupController::class, 'academicCalendar'])->name('setup.other-settings.academic-calender.create');

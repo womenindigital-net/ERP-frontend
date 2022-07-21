@@ -13,7 +13,7 @@ class StoreYearEndCloseRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class StoreYearEndCloseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'warehouse_id' => 'nullable',
+            'date' => 'nullable',
+            'student_id' => 'nullable',
+            'percent_field' => 'nullable',
+            'basic_provident' => 'nullable',
+            'note' => 'nullable',
+
         ];
     }
 }
