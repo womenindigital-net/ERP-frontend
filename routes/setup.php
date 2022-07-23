@@ -21,7 +21,7 @@ use App\Http\Controllers\MeaseureUnitController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Models\BankReconcilationNew;
 use App\Http\Controllers\BankReconcilationNewController;
-
+use App\Http\Controllers\UnitController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -43,7 +43,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'budget-review' => BudgetReviewController::class,
         // Budget & Forecasting Closed
 
-        'measure-unit' =>MeaseureUnitController::class,
+        'measure-unit' =>UnitController::class,
         'product-category' =>ProductCategoryController::class,
     ]);
 
