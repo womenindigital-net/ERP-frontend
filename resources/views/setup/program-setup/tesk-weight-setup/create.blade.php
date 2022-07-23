@@ -33,7 +33,7 @@
                                         <div class="col-6 row mb-3">
                                             <label class="col-4 col-form-label">Time</label>
                                             <div class="col-8">
-                                                <x-input-text type="time" name="time"  placeholder="">
+                                                <x-input-text type="text" name="time"  placeholder="">
                                                 </x-input-text>
                                             </div>
                                         </div>

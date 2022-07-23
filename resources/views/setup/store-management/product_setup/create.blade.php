@@ -114,12 +114,12 @@
                                 <x-input-text type="number" name="sell_price" placeholder="Sell Price">
                                 </x-input-text>
                             </div>
-                            <div class="col-4 hide_cost">
+                            <div class="col-4 pb-4 hide_cost">
                                 <label for="example-text-input" class=" col-form-label">Cost Price</label>
                                 <x-input-text name="cost_price" type="number" placeholder="Cost Price Here">
                                 </x-input-text>
                             </div>
-                            <div class="col-4 hide_expiry">
+                            <div class="col-4 pb-4 hide_expiry">
                                 <label for="example-text-input" class=" col-form-label ">Expiry Alert</label>
                                 <x-input-text type="number" name="expiry_alert" placeholder="Expiry Alert">
                                 </x-input-text>
