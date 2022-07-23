@@ -33,11 +33,6 @@
                     Order)</label>
                 <x-input-select wireModel="purchase_id" :records="$purchaseOrder" targetColumn="invoice_no">
                 </x-input-select>
-                {{-- <p>
-                    @foreach ($purchaseProduct as $item )
-                    <label class="form-label">{{ $item->product->name }}</label>,
-                    @endforeach
-                </p> --}}
             </div>
         </div>
         <div class="col-md-6">
@@ -66,6 +61,9 @@
                 <label for="quality">Qnty</label>
             </div>
             <div class="col-lg-1 p-0 pe-1">
+                <label for="quality">Stock Receive</label>
+            </div>
+            <div class="col-lg-1 p-0 pe-1">
                 <label for="discount">Price</label>
             </div>
             <div class="col-lg-1 p-0 pe-1">
@@ -74,7 +72,7 @@
             <div class="col-lg-1 p-0 pe-1">
                 <label for="subtotal">Discount</label>
             </div>
-            <div class="col-lg-2 p-0 pe-1">
+            <div class="col-lg-1 p-0 pe-1">
                 <label for="subtotal">Subtotal</label>
             </div>
         </div>
@@ -94,6 +92,9 @@
                 <p class="form-control">{{ $item->qty }}</p>
             </div>
             <div class=" col-lg-1 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $item->receivable }}</p>
+            </div>
+            <div class=" col-lg-1 p-0 pe-1 pb-1">
                 <p class="form-control">{{ $item->price }}</p>
             </div>
             <div class=" col-lg-1 p-0 pe-1 pb-1">
@@ -102,8 +103,8 @@
             <div class=" col-lg-1 p-0 pe-1 pb-1">
                 <p class="form-control">{{ $item->discount }}</p>
             </div>
-            <div class="col-lg-2 p-0 pe-1 pb-1 align-self-center d-flex">
-                <p class="form-control">{{ $item->sub_total }}</p>
+            <div class="col-lg-1 p-0 pe-1 pb-1 align-self-center d-flex">
+                <p class="form-control">{{ $item->price * $item->receivable }}</p>
             </div>
         </div>
         @endforeach

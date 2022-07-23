@@ -94,8 +94,6 @@ class SupplierPaymentCreate extends Component
     public function mount()
     {
         if ($this->record) {
-            // dd($this->record);
-            // $this->mode = 'edit';
             $this->record = $this->repo->getRelatedData($this->record, ['payment.history']);
 
             $this->project_id   = $this->record->project_id;
@@ -118,7 +116,6 @@ class SupplierPaymentCreate extends Component
     {
         if (str_starts_with($name, 'purchase_id')) {
             $this->purchaseOrderInfo =  $this->purchaseOrderRepo->getPurchaseProduct($value);
-            // $this->purchaseOrderInfo =  $detail->details;
         }
 
         if (str_starts_with($name, 'bank_account_id')) {
