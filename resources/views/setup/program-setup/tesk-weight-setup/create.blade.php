@@ -11,79 +11,59 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#Add" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
                             <span class="d-none d-sm-block">Add</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab">
+                        <a class="nav-link" data-bs-toggle="tab" href="#List" role="tab">
                             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
                             <span class="d-none d-sm-block">List</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#Edit" role="tab">
+                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                            <span class="d-none d-sm-block">Edit</span>
                         </a>
                     </li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <div class="tab-pane active" id="home" role="tabpanel">
+                    <div class="tab-pane active" id="Add" role="tabpanel">
                          <div class="modal-body p-0">  
                             <div class="card p-0 m-0">
                                 <div class="card-body">
                                     <div class="row pb-3">
                                         <div class="col-6 row mb-3">
-                                            <label class="col-4 col-form-label">Time</label>
+                                            <label class="col-4 col-form-label">Domain</label>
                                             <div class="col-8">
-                                                <x-input-text type="text" name="time"  placeholder="">
-                                                </x-input-text>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 row mb-3">
-                                            <label class="col-4 col-form-label">Domain Weight</label>
-                                            <div class="col-8">
-                                                <x-input-text type="number" name="domain_weight"  placeholder="">
-                                                </x-input-text>
+                                              <x-input-select name="domain" :records="[]" />
                                             </div>
                                         </div> 
                                         <div class="col-6 row mb-3">
-                                            <label class="col-4 col-form-label">Quantity</label>
+                                            <label class="col-4 col-form-label">Sub Domain</label>
                                             <div class="col-8">
-                                                <x-input-text type="number" name="quantity"  placeholder="">
-                                                </x-input-text>
+                                              <x-input-select name="sub_domain" :records="[]" />
                                             </div>
                                         </div> 
                                         <div class="col-6 row mb-3">
-                                            <label class="col-4 col-form-label">Quality</label>
+                                            <label class="col-4 col-form-label">Area</label>
                                             <div class="col-8">
-                                                <x-input-text type="number" name="quality"  placeholder="">
-                                                </x-input-text>
+                                              <x-input-select name="area" :records="[]" />
                                             </div>
                                         </div> 
                                         <div class="col-6 row mb-3">
-                                            <label class="col-4 col-form-label">Delivery</label>
+                                            <label class="col-4 col-form-label">Activity</label>
                                             <div class="col-8">
-                                                <x-input-text type="number" name="delivery"  placeholder="">
-                                                </x-input-text>
-                                            </div>
-                                        </div> 
-                                        <div class="col-6 row mb-3">
-                                            <label class="col-4 col-form-label">Time Taken</label>
-                                            <div class="col-8">
-                                                <x-input-text name="time_taken"  placeholder="">
-                                                </x-input-text>
-                                            </div>
-                                        </div> 
-                                        <div class="col-6 row mb-3">
-                                            <label class="col-4 col-form-label">Target</label>
-                                            <div class="col-8">
-                                                <x-input-text type="number" name="target"  placeholder="">
-                                            </x-input-text>
+                                              <x-input-select name="activity" :records="[]" />
                                             </div>
                                         </div> 
                                         <div class="col-6 row mb-3">
                                             <label class="col-4 col-form-label">Activity Type</label>
                                             <div class="col-8">
-                                                <x-input-select name="student_id"
-                                                :records="[]" />
+                                                <x-input-select name="activity_type" :records="[]" />
                                             </div>
                                         </div> 
                                           <div class="text-end pe-5">
@@ -96,7 +76,7 @@
                         </div>
 
                     </div>
-                    <div class="tab-pane" id="profile" role="tabpanel">
+                    <div class="tab-pane" id="List" role="tabpanel">
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                               <label style="display: inline-flex;align-items: center;"> Show <select name="length"
@@ -118,40 +98,24 @@
                         <table class="table table-bordered w-100">
                           <thead>
                             <tr class="table-primary">
-                                <th class="col-3 bold"> Activity</th>
-                                <th class="col-5 bold"> task</th>
-                                <th class="col-2 text-center">Log</th>
-                                <th class="col-2 text-center">Action</th>
+                                <th> Activity</th>
+                                <th> task</th>
+                                <th> Activity type</th>
+                                <th>Log</th>
+                                <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                                 <td>General Play</td>
                                 <td>Push and Pull Doors open and closed</td>
+                                <td></td>
                                 <td>Create: Nusrat Jahan @ <br> 2019-06-09 22:22:54 <br>
                                     There is no update record.
                                 </td>
                               <td>
-                                <button type="button" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".text-add-or-edit">
-                                  <i class="mdi mdi-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-info btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                                    class="fas fa-check"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1"> <i
-                                    class="fas fa-check"></i>
-                                </button>
                                 <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1" data-bs-toggle="modal" data-bs-target=".text-add-or-edit">
                                   <i class="mdi mdi-pencil"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                  <i class="bx bx-dollar"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                  <i class="fas fa-arrow-circle-right"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2">
-                                  <i class="fas fa-trash-alt"></i>
                                 </button>
                               </td>
                             </tr>
@@ -180,6 +144,60 @@
                               </nav>
                             </div>
                           </div>
+                    </div>
+                    <div class="tab-pane" id="Edit" role="tabpanel">
+                      <div class="row pb-3">
+                        <label class="pt-3 pb-2">Playing On Swings</label>
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Time</label>
+                            <div class="col-8">
+                             <x-input-text name="time"  type="number" />
+                            </div>
+                        </div> 
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Sequence</label>
+                            <div class="col-8">
+                             <x-input-text name="sequence"  type="number" /> 
+                            </div>
+                        </div> 
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Quantity</label>
+                            <div class="col-8">
+                              <x-input-text  name="quantity"  type="number"/>
+                            </div>
+                        </div>
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Quality</label>
+                            <div class="col-8">
+                             <x-input-text name="quality"  type="number" />
+                            </div>
+                        </div> 
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Delivery</label>
+                            <div class="col-8">
+                             <x-input-text name="delivery"  type="number" /> 
+                            </div>
+                        </div> 
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Time Taken</label>
+                            <div class="col-8">
+                              <x-input-text  name="time_taken"  type="number"/>
+                            </div>
+                        </div>
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Target</label>
+                            <div class="col-8">
+                             <x-input-text name="target"  type="number" />
+                            </div>
+                        </div> 
+                        <div class="col-4 row pb-2">
+                            <label class="col-4 col-form-label">Activity Type</label>
+                            <div class="col-8">
+                              <x-input-select name="activity_type" :records="[]" />
+                            </div>
+                        </div> 
+
+                      </div>
                     </div>
                 </div>
 
