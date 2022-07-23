@@ -27,7 +27,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="finished_good" role="tabpanel">
-                            <form action="{{ route('measure-unit.store') }}" method="POST">
+                            <form action="{{ route('unit.store') }}" method="POST">
                                 @csrf
                                 <!-- form start -->
                                 <div class="col-12 d-flex p-2">

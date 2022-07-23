@@ -309,7 +309,7 @@
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 
-                                <li><a href="{{ route('measure-unit.create') }}">Measure Unit Setup</a></li>
+                                <li><a href="{{ route('unit.create') }}">Measure Unit Setup</a></li>
                                 <li><a href="{{ route('product-category.create') }}">Product Category Setup</a>
                                 </li>
 

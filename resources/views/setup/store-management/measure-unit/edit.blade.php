@@ -27,7 +27,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="finished_good" role="tabpanel">
-                            <form action="{{ route('measure-unit.update', $record->id) }}" method="POST">
+                            <form action="{{ route('unit.update', $record->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <!-- form start -->

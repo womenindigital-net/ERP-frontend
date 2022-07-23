@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\BankReconcilationNew;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UnitController;
 use App\Http\Controllers\SetupController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SupplierController;
@@ -9,19 +11,17 @@ use App\Http\Controllers\BudgetHeadController;
 use App\Http\Controllers\BudgetYearController;
 use App\Http\Controllers\BudgetReviewController;
 use App\Http\Controllers\CustomerTypeController;
+use App\Http\Controllers\MeaseureUnitController;
 use App\Http\Controllers\ProjectSetupController;
 use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\YearEndCloseController;
 use App\Http\Controllers\BudgetTemplateController;
 use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\CustomerRegListController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\AccountingMappingController;
 use App\Http\Controllers\CustomerTypeSetupController;
-use App\Http\Controllers\MeaseureUnitController;
-use App\Http\Controllers\ProductCategoryController;
-use App\Models\BankReconcilationNew;
 use App\Http\Controllers\BankReconcilationNewController;
-use App\Http\Controllers\UnitController;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -43,7 +43,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'budget-review' => BudgetReviewController::class,
         // Budget & Forecasting Closed
 
-        'measure-unit' =>UnitController::class,
+        'unit' =>UnitController::class,
         'product-category' =>ProductCategoryController::class,
     ]);
 

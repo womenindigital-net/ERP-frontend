@@ -80,7 +80,6 @@ class UnitController extends Controller
             'small_unit' => MeasureUnitConstant::$SmallUnit,
             'record' => $unit,
         ];
-        dd($data);
         return view('setup.store-management.measure-unit.edit', $data);
     }
 
