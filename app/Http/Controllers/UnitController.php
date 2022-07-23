@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MeaseureUnit;
+use App\Models\Unit;
+use App\Utility\MeasureUnitConstant;
+use App\Http\Requests\StoreUnitRequest;
 use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\UpdateUnitRequest;
 use App\Repositories\MeasureUnitRepository;
-use App\Http\Requests\StoreMeaseureUnitRequest;
-use App\Http\Requests\UpdateMeaseureUnitRequest;
-use App\Utility\MeasureUnitConstant;
 
-class MeaseureUnitController extends Controller
+class UnitController extends Controller
 {
     private StudentRepository $studentRepo;
     private MeasureUnitRepository $measureUnitRepo;
@@ -41,16 +41,16 @@ class MeaseureUnitController extends Controller
         $data = [
             'small_unit' => MeasureUnitConstant::$SmallUnit,
         ];
-        return view('setup.store-management.measure-unit.create',$data);
+        return view('setup.store-management.measure-unit.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMeaseureUnitRequest  $request
+     * @param  \App\Http\Requests\StoreUnitRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreMeaseureUnitRequest $request)
+    public function store(StoreUnitRequest $request)
     {
         $this->measureUnitRepo->store($request->validated());
         Session::flash('success');
@@ -60,10 +60,10 @@ class MeaseureUnitController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MeaseureUnit  $measeureUnit
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function show(MeaseureUnit $measeureUnit)
+    public function show(Unit $unit)
     {
         //
     }
@@ -71,14 +71,14 @@ class MeaseureUnitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MeaseureUnit  $measeureUnit
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function edit(MeaseureUnit $measeureUnit)
+    public function edit(Unit $unit)
     {
         $data = [
             'small_unit' => MeasureUnitConstant::$SmallUnit,
-            'record' => $measeureUnit,
+            'record' => $unit,
         ];
         return view('setup.store-management.measure-unit.edit', $data);
     }
@@ -86,13 +86,13 @@ class MeaseureUnitController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMeaseureUnitRequest  $request
-     * @param  \App\Models\MeaseureUnit  $measeureUnit
+     * @param  \App\Http\Requests\UpdateUnitRequest  $request
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreMeaseureUnitRequest $request, MeaseureUnit $measeureUnit)
+    public function update(UpdateUnitRequest $request, Unit $unit)
     {
-        $this->measureUnitRepo->update($measeureUnit, $request->validated());
+        $this->measureUnitRepo->update($unit, $request->validated());
         Session::flash('success');
         return redirect()->back();
     }
@@ -100,11 +100,11 @@ class MeaseureUnitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MeaseureUnit  $measeureUnit
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MeaseureUnit $measeureUnit)
+    public function destroy(Unit $unit)
     {
-        //
+        return $unit->delete();
     }
 }

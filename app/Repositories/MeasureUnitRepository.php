@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Models\MeaseureUnit;
+use App\Models\Unit;
 
 class MeasureUnitRepository extends BaseRepository
 {
-    protected string $model = MeaseureUnit::class;
+    protected string $model = Unit::class;
 
 
     public function getListData($perPage, $search)

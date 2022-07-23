@@ -27,13 +27,13 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="finished_good" role="tabpanel">
-                            <form action="{{ route('measure-unit.store') }}" method="POST">
+                            <form action="{{ route('unit.store') }}" method="POST">
                                 @csrf
                                 <!-- form start -->
                                 <div class="col-12 d-flex p-2">
                                     <label for="example-text-input" class="col-md-4 col-form-label">Name</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="title" placeholder="Store Name Here"></x-input-text>
+                                        <x-input-text name="name" placeholder="Store Name Here"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex p-2">
@@ -51,7 +51,7 @@
                                 <div class="col-12 d-flex p-2">
                                     <label for="example-text-input" class="col-md-4 col-form-label">Description</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="descripiton" placeholder="Enter Description Here">
+                                        <x-input-text name="description" placeholder="Enter Description Here">
                                         </x-input-text>
                                     </div>
                                 </div>

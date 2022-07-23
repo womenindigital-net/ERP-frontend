@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreMeaseureUnitRequest extends FormRequest
+class UpdateUnitRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreMeaseureUnitRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,10 +24,7 @@ class StoreMeaseureUnitRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'        => 'nullable',
-            'small_unit'   => 'nullable',
-            'unit_factor'  => 'nullable',
-            'descripiton'  => 'nullable',
+            //
         ];
     }
 }

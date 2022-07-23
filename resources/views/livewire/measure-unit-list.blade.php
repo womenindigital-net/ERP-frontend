@@ -15,13 +15,13 @@
                 <tbody>
                     @foreach ($records as $record)
                         <tr>
-                            <td>{{ $record->title }}</td>
+                            <td>{{ $record->name }}</td>
                             <td>{{ $record->small_unit }}</td>
                             <td>{{ $record->unit_factor }}</td>
-                            <td>{{ $record->descripiton }}</td>
+                            <td>{{ $record->description }}</td>
                             <td>{{ $record->created_at }}</td>
                             <td>
-                                <a href="{{ route('measure-unit.edit', $record->id) }}" target="_blank"
+                                <a href="{{ route('unit.edit', $record->id) }}" target="_blank"
                                     rel="noopener noreferrer"
                                     class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
                                     <i class="mdi mdi-pencil"></i>
