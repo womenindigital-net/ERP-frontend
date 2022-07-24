@@ -12,7 +12,7 @@ use App\Repositories\BudgetHeadRepository;
 
 class BudgetHeadController extends Controller
 {
-     private StudentRepository $studentRepo;
+    private StudentRepository $studentRepo;
     private BudgetHeadRepository $budgetYearRepo;
 
 
@@ -107,5 +107,6 @@ class BudgetHeadController extends Controller
     public function destroy(BudgetHead $budgetHead)
     {
       return $budgetHead->delete();
+
     }
 }
