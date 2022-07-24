@@ -19,8 +19,8 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('code');
-            $table->string('type');
+            $table->string('code')->nullable();
+            $table->string('type')->nullable();
             $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Unit::class)->constrained()->cascadeOnUpdate();
             $table->integer('reorder_quantity')->nullable();
