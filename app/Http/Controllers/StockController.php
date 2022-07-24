@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreStockRequest;
-use App\Http\Requests\UpdateStockRequest;
 use App\Models\Stock;
 use App\Repositories\StockRepository;
+use App\Http\Requests\StoreStockRequest;
+use App\Http\Requests\UpdateStockRequest;
 
 class StockController extends Controller
 {
@@ -121,6 +121,8 @@ class StockController extends Controller
     {
         return view('stock-management.stock_count');
     }
+    
+    
 
     public function stockOut()
     {

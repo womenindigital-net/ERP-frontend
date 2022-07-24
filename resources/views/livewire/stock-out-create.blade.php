@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="stock_out" role="tabpanel">
+<div>
     <!-- form start -->
     <div class="row">
         <div class="col-md-6">
@@ -11,7 +11,6 @@
             <div class="mb-3">
                 <label class="form-label">Warehouse</label>
                 <x-input-select wireModel="warehouse_id" :records="$warehouses" targetColumn="title" />
-
             </div>
         </div>
         <div class="col-md-6">
@@ -78,7 +77,6 @@
                             @if (!($this->mode == 'show'))
                             <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                                 wire:click="addMore()" />
-
                             @endif
                         </div>
                     </form>

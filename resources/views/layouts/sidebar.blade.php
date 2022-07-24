@@ -1,9 +1,8 @@
 <!-- ========== Left Sidebar Start ========== -->
 <div class="vertical-menu">
+    <div class="h-100">
 
-    <div data-simplebar class="h-100">
-
-        <!--- Sidemenu -->
+        <!--- SideMenu -->
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
@@ -81,7 +80,7 @@
                         <li><a href="{{ route('finished-goods.create') }}">Finished Goods</a></li>
                         <li><a href="{{ route('material-collect.create') }}">Material Collects</a></li>
                         <li><a href="{{ route('stock-transfer.create') }}">Stock Transfer</a></li>
-                        <li><a href="{{ route('stock-count') }}">Stock Count</a></li>
+                        <li><a href="{{ route('stockCount.report') }}">Stock Count</a></li>
                     </ul>
                 </li>
                 <li>

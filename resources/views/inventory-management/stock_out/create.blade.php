@@ -21,8 +21,12 @@
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <livewire:stock-out-create />
-                    <livewire:stock-out-list />
+                    <div class="tab-pane active" id="stock_out" role="tabpanel">
+                        <livewire:stock-out-create />
+                    </div>
+                    <div class="tab-pane" id="stock_out_list" role="tabpanel">
+                        <livewire:stock-out-list />
+                    </div>
 
                 </div>
             </div>

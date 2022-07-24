@@ -12,6 +12,7 @@ use App\Http\Controllers\BankAccountController;
 use App\Http\Controllers\RequisitionController;
 use App\Http\Controllers\SaleVoucherController;
 use App\Http\Controllers\StockAssignController;
+use App\Http\Controllers\StockReportController;
 use App\Http\Controllers\FinishedGoodController;
 use App\Http\Controllers\StockReceiveController;
 use App\Http\Controllers\DirectPaymentController;
@@ -47,23 +48,6 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
     ]);
 
-    Route::get('stock-count', [StockController::class, 'stockCount'])->name('stock-count');
-
-
-    // direct Payment route Start
-    Route::get('account/direct-payment/cash-payment-list', [DirectPaymentController::class, 'cashPaymentList'])->name('cash-payment.list');
-    // direct Payment route End
-
-
-    Route::get('journal-toggle/{journal}', [JournalController::class, 'toggleApprove'])->name('journal.toggleApprove');
-
-    //    Route::get('journal', [JournalController::class, 'index'])->name('journal');
-    //    Route::get('sale-voucher', [SaleController::class, 'index'])->name('sale-voucher');
-    //    Route::get('donation-and-other', [\App\Http\Controllers\DonationController::class, 'create'])->name('donation-and-other');
-
-    //    Route::get('requisition', [PaymentController::class, 'requisition'])->name('requisition');
-    //    Route::get('purchase-order', [PurchaseController::class, 'purchaseOrder'])->name('purchase-order');
-
     Route::get('purchase-order/requisition/{requisition?}', [PurchaseController::class, 'create'])->name('purchase-order.create');
     Route::get('purchase-order/{requisition}', [PurchaseController::class, 'show'])->name('purchase-order.show');
     Route::post('purchase-order/requisition/{requisition}/store', [PurchaseController::class, 'store'])->name('purchase-order.store');
@@ -72,32 +56,24 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::delete('purchase-order/{purchase}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
     Route::get('purchase-order-return/{purchase}', [PurchaseController::class, 'purchaseReturn'])->name('purchase-order.return');
     Route::get('purchase-order-return', [PurchaseController::class, 'purchaseReturnShow'])->name('purchase-order.return.show');
-
-
-
-    // Route::get('purchase-return', [PurchaseController::class, 'purchaseReturn'])->name('purchase-return');
-
-    // Route::get('payment-supplier', [PaymentController::class, 'supplier'])->name('payment-supplier');
-    // Route::get('direct-payment-add', [PaymentController::class, 'directPaymentAdd'])->name('direct-payment-add');
+    
+    // direct Payment route Start
+    Route::get('account/direct-payment/cash-payment-list', [DirectPaymentController::class, 'cashPaymentList'])->name('cash-payment.list');
     Route::get('cash-payment-list', [PaymentController::class, 'casePaymentList'])->name('cash-payment-list');
     Route::get('advance-payment-list', [PaymentController::class, 'advancePaymentList'])->name('advance.payment.list');
     Route::get('bank-to-bank-list', [PaymentController::class, 'bankToBankList'])->name('bank.to.bank.list');
+    // direct Payment route End
 
-    // Route::get('stock-receive', [StockController::class, 'stockReceive'])->name('stock-receive');
-    // Route::get('finished-goods', [StockController::class, 'finishedGoods'])->name('finished-goods');
-    // Route::get('material-collect', [StockController::class, 'materialCollect'])->name('material-collect');
-    // Route::get('stock-transfer', [StockController::class, 'stockTransfer'])->name('stock-transfer');
+    
+    // Accounting Reporting
+    Route::get('stock-count/report', [StockReportController::class, 'stockCountReport'])->name('stockCount.report');
 
-    // Route::get('stock-out', [StockController::class, 'stockOut'])->name('stock-out');
     Route::get('stock-hand-report', [StockController::class, 'stockHandReport'])->name('stock-hand-report');
     Route::get('stock-product-report', [StockController::class, 'stockProductReport'])->name('stock-product-report');
     Route::get('stock-reorder-report', [StockController::class, 'stockReorderReport'])->name('stock-reorder-report');
     Route::get('product-analysis-report', [StockController::class, 'stockProductAnalysisReport'])->name('product-analysis-report');
-    //    Route::get('stock-assign', [StockController::class, 'stockAssign'])->name('stock-assign');
 
-    // Reporting
     Route::get('reporting.trail-balance.create', [PaymentController::class, 'trailBalance'])->name('accounting.reporting.trail-balance.create');
-    Route::get('reporting.p&l-statement.create',[PaymentController::class, 'plStatement'])->name('accounting.reporting.p&l-statement.create');
-    Route::get('reporting.balance-sheet.create',[PaymentController::class,'balanceSheet'])->name('accounting.reporting.balance-sheet.create');
-
+    Route::get('reporting.p&l-statement.create', [PaymentController::class, 'plStatement'])->name('accounting.reporting.p&l-statement.create');
+    Route::get('reporting.balance-sheet.create', [PaymentController::class, 'balanceSheet'])->name('accounting.reporting.balance-sheet.create');
 });
