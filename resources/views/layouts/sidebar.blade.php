@@ -313,7 +313,7 @@
                                 <li><a href="{{ route('product-category.create') }}">Product Category Setup</a>
                                 </li>
 
-                                <li><a href="{{ route('product.create.create') }}">Product Create</a></li>
+                                <li><a href="{{ route('product.create') }}">Product Create</a></li>
                             </ul>
                         </li>
                         <li>
