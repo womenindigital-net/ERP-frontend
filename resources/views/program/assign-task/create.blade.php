@@ -89,8 +89,22 @@
                                                         <th>Teacher</th>
                                                         <th>Routine</th>
                                                         <th>Comment</th>
+                                                        <th></th>
                                                     </tr>
                                                 </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="button" class="btn ms-2 btn-danger" wire:click="removeItem(1)">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
                                             </table>
                                         </div>
                                         <div class="row pb-2">

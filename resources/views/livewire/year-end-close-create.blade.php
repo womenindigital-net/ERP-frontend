@@ -23,7 +23,7 @@
                           </div>
                       </div>
                       <div class="col-12">
-                          <h4 class="card-title">Assign Tasks</h4>
+                          <h4 class="card-title">All Products</h4>
                           <form class="repeater" enctype="multipart/form-data">
                               <div class="row">
                                   <div class="col-2 p-0 ps-4">
