@@ -246,7 +246,7 @@
                         <li><a href="{{ route('assign-task.create') }}">Assign Task</a></li>
                         <li><a href="{{ route('create-itp.create') }}">Create ITP</a></li>
                         <li><a href="{{ route('run-mitp.create') }}">Run MITP</a></li>
-                        {{-- <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li> --}}
+                        <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li>
                         <li><a href="{{ route('assign-teacher.create') }}"> Assign Teacher</a></li>
                         {{-- <li><a href="/">Score Calculator </a></li>
                         <li><a href="/p-create-task">Create Task </a></li>
@@ -308,7 +308,7 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">Store Management</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                
+
                                 <li><a href="{{ route('unit.create') }}">Measure Unit Setup</a></li>
                                 <li><a href="{{ route('product-category.create') }}">Product Category Setup</a>
                                 </li>
@@ -537,7 +537,6 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('HR.warning-notice.create') }}">Warning Notice</a></li>
                         <li><a href="{{ route('HR.show-case-notice.create') }}">Show Case Notice</a></li>
-                        <li><a href="{{ route('notice-board.create') }}">Notice Board</a></li>
                     </ul>
                 </li>
 

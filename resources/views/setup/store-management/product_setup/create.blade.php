@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('title') @lang('translation.Starter_Page') @endsection
@@ -109,20 +110,26 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-4 pb-4 hide_sell">
+                            <div class="col-4 pb-4 ">
+                               <div class="hide_sell">
                                 <label for="example-text-input" class="col-form-label">Sell Price</label>
                                 <x-input-text type="number" name="sell_price" placeholder="Sell Price">
                                 </x-input-text>
+                               </div>
                             </div>
-                            <div class="col-4 hide_cost">
-                                <label for="example-text-input" class=" col-form-label">Cost Price</label>
+                            <div class="col-4 pb-4 ">
+                                <div class="hide_cost">
+                                    <label for="example-text-input" class=" col-form-label">Cost Price</label>
                                 <x-input-text name="cost_price" type="number" placeholder="Cost Price Here">
                                 </x-input-text>
+                                </div>
                             </div>
-                            <div class="col-4 hide_expiry">
-                                <label for="example-text-input" class=" col-form-label ">Expiry Alert</label>
+                            <div class="col-4 pb-4 ">
+                                <div class="hide_expiry">
+                                    <label for="example-text-input" class=" col-form-label ">Expiry Alert</label>
                                 <x-input-text type="number" name="expiry_alert" placeholder="Expiry Alert">
                                 </x-input-text>
+                                </div>
                             </div>
                         </div>
                         <h4 class="card-title mb-4">Product BOM</h4>
@@ -344,3 +351,4 @@
 @endsection
 @section('script-bottom')
 @endsection
+
