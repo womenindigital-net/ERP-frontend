@@ -24,10 +24,10 @@ class StoreUnitRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'        => 'nullable',
+            'name'        => 'nullable',
             'small_unit'   => 'nullable',
             'unit_factor'  => 'nullable',
-            'descripiton'  => 'nullable',
+            'description'  => 'nullable',
         ];
     }
 }

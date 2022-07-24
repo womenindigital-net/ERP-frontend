@@ -10,7 +10,7 @@ use App\Repositories\MeasureUnitRepository;
 class MeasureUnitList extends Component
 {
     use WithPagination, CommonListElements;
-    protected string $destroyRoute = 'measure-unit.destroy';
+    protected string $destroyRoute = 'unit.destroy';
     private MeasureUnitRepository $measureUnitRepo;
     public $reportList;
 

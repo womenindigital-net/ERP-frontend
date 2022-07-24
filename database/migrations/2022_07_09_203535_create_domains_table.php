@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('code')->nullable();
             $table->string('type')->nullable();
-            $table->foreignIdFor(\App\Models\Domain::class, 'parent_domain_id')->constrained('domains')->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Domain::class, 'parent_domain_id')->nullable()->constrained('domains')->cascadeOnDelete();
             $table->timestamps();
         });
     }

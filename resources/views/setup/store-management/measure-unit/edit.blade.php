@@ -34,13 +34,13 @@
                                 <div class="col-12 d-flex p-2">
                                     <label for="example-text-input" class="col-md-4 col-form-label">Name</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="name" placeholder="Store Name Here"></x-input-text>
+                                        <x-input-text value="{{ $record->name }}" name="name" placeholder="Store Name Here"></x-input-text>
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex p-2">
                                     <label for="example-text-input" class="col-md-4 col-form-label">Small Unit</label>
                                     <div class="col-md-8">
-                                        <x-input-select name="small_unit" :records="$small_unit" />
+                                        <x-input-select :selected="$record->small_unit" name="small_unit" :records="$small_unit" />
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex p-2">
@@ -53,13 +53,13 @@
                                 <div class="col-12 d-flex p-2">
                                     <label for="example-text-input" class="col-md-4 col-form-label">Description</label>
                                     <div class="col-md-8">
-                                        <x-input-text name="description" value="{{ $record->descripiton }}"
+                                        <x-input-text name="description" value="{{ $record->description }}"
                                             placeholder="Enter Description Here">
                                         </x-input-text>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-success waves-effect waves-light">Save </button>
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">Update </button>
                                 </div>
                             </form>
                         </div>
