@@ -107,7 +107,6 @@ class FinishedGoodCreate extends Component
                 'ton' => 'TON'
             ],
         ];
-
         return view('livewire.finished-good-create', $data);
     }
 }
