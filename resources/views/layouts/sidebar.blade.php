@@ -120,9 +120,10 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('student.appointment') }}">Appointment</a></li>
                         <li><a href="{{ route('case-history.create') }}">Case History</a></li>
-                        <li><a href="{{ route('care-need.create') }}">Care Needs Form</a></li>
+                        <li><a href="{{ route('care-need-part-one.create') }}">CARE Needs - Part 1 (PA1OT)</a></li>
+                        <li><a href="{{ route('care-need.create') }}">CARE Needs - Part 2 (PA2OT)</a></li>
                         <li><a href="{{ route('referral.create') }}">Referral Form</a></li>
-                        <li><a href="{{ route('care-need-part-one.create') }}">CARE needs - Part 1 (PA1OT)</a></li>
+
                     </ul>
                 </li>
                 <li>

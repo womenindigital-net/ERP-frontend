@@ -59,7 +59,7 @@
                                         <div class="col-6 d-flex">
                                             <label class="form-label col-md-4">Instruction</label>
                                             <div class="col-md-6">
-                                                <x-input-textarea name='instruction' rows='5'></x-input-textarea>
+                                                <x-input-textarea name='instruction' rows='1'></x-input-textarea>
                                             </div>
                                         </div>
                                         <div class="col-6 border border-2">
@@ -77,32 +77,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row pb-3">
-                                        <div class="row">
-                                            <div class="table-responsive">
-                                                <table class="table w-100 table-bordered">
-                                                  <thead>
-                                                    <tr class="table-primary">
-                                                      <th>Selected task</th>
-                                                      <th>Comment</th>
-                                                      <th></th>
-                                                    </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <button type="button" class="btn ms-2 btn-danger" wire:click="removeItem(1)">
+                                             <form class="repeater" enctype="multipart/form-data">
+                                                <div class="row pt-3">
+                                                    <div class="col-lg-6 p-0 pe-1">
+                                                        <label for="select_task">Selected Task</label>
+                                                    </div>
+                                                    <div class="col-lg-6 p-0 pe-1">
+                                                        <label for="comment">Comment</label>
+                                                    </div>
+                                                </div>
+                                                <div data-repeater-list="group-a">
+                                                    <div data-repeater-item class="row pb-3">
+                                                        <div class="col-lg-6 p-0 pe-1 pb-1">
+                                                            <x-input-select name="select_task" :records="[]" />
+                                                        </div>
+                                                        <div class="col-lg-6 p-0 pe-1 pb-1 align-self-center d-flex">
+                                                            <x-input-text  name="comment" />
+                                                            <button class="btn btn-danger ms-2">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                </table>
-                                              </div>
-                                        </div>
-                                    </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                     <div class="row pb-2">
                                         <div class="col-12">
                                             <button class="btn btn-primary collapsed" data-bs-toggle="collapse" data-bs-target=".collapse" type="button"
@@ -116,7 +113,7 @@
                                         <div class="col-lg-12">
                                             <div class="accordion" id="accordionExample">
                                                 <!-- Single item  -->
-                                                
+
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingOne">
                                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -339,7 +336,7 @@
                                                     </h2>
                                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                                         data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body">          
+                                                        <div class="accordion-body">
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -426,7 +423,7 @@
                                                     </h2>
                                                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                                         data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body"> 
+                                                        <div class="accordion-body">
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -549,7 +546,7 @@
                                                     </h2>
                                                     <div id="collapsefoure" class="accordion-collapse collapse" aria-labelledby="headingfoure"
                                                         data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body"> 
+                                                        <div class="accordion-body">
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -613,7 +610,7 @@
                                                     <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
                                                         data-bs-parent="#accordionExample">
                                                         <div class="accordion-body">
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -677,7 +674,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    broad jump Type: Pre-Vocational 
+                                                                    broad jump Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -689,13 +686,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    high jump Type: Pre-Vocational 
+                                                                    high jump Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Have the student jump so that both feet land at the same time Type: Pre-Vocational 
+                                                                    Have the student jump so that both feet land at the same time Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                                                                                 </div>
@@ -715,7 +712,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -782,7 +779,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -814,7 +811,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -875,7 +872,7 @@
                                                                     walk on heels; walk fast, slow, backward, or sideways Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
 
                                                         </div>
                                                     </div>
@@ -983,7 +980,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1041,7 +1038,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    bounce on trampoline Type: Pre-Vocational 
+                                                                    bounce on trampoline Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1068,7 +1065,7 @@
                                                                     should be encouraged to hump high Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
 
                                                         </div>
                                                     </div>
@@ -1087,7 +1084,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1154,8 +1151,8 @@
                                                     </h2>
                                                     <div id="collapsetwelve" class="accordion-collapse collapse" aria-labelledby="headingtwelve"
                                                         data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body">      
-                                                            
+                                                        <div class="accordion-body">
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1338,7 +1335,7 @@
                                                                     Perform Aerobics Activities: Run, Walk, Jump Rope, Swim, Use Exercise Equipment, Tricycle, Bicycle, Aerobic class Type: Vocational
                                                                 </label>
                                                             </div>
-                            
+
 
                                                         </div>
                                                     </div>
@@ -1357,7 +1354,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1371,7 +1368,7 @@
                                                                     Manage Your Stress i.e. yoga, meditation Type: Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1381,7 +1378,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Maintain dairy Type: Vocational  
+                                                                    Maintain dairy Type: Vocational
                                                                 </label>
                                                             </div>
 
@@ -1403,7 +1400,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1419,7 +1416,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Forward Type: Pre-Vocational 
+                                                                    Forward Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1437,7 +1434,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Fast Type: Vocational  
+                                                                    Fast Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1449,7 +1446,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Forward Type: Vocational 
+                                                                    Forward Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1483,7 +1480,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1581,7 +1578,7 @@
                                                                     Shoulder Type: Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
 
 
                                                         </div>
@@ -1601,7 +1598,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -1630,13 +1627,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Ardh Halasana and halasana Type: Pre-Vocational 
+                                                                    Ardh Halasana and halasana Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Taikonasana Type: Pre-Vocational 
+                                                                    Taikonasana Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1666,13 +1663,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Ardha Patchimothnan asana Type: Pre-Vocational 
+                                                                    Ardha Patchimothnan asana Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Patohimothan asana Type: Pre-Vocational   
+                                                                    Patohimothan asana Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1702,7 +1699,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Shanthi asana Type: Pre-Vocational 
+                                                                    Shanthi asana Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1750,7 +1747,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Salabhasana Type: Vocational 
+                                                                    Salabhasana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1798,7 +1795,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Hal asana Type: Vocational 
+                                                                    Hal asana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1810,7 +1807,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Simhasana Type: Vocational 
+                                                                    Simhasana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1834,7 +1831,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Uthithapadmasana Type: Vocational  
+                                                                    Uthithapadmasana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1846,7 +1843,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Nindrapadasana Type: Vocational 
+                                                                    Nindrapadasana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1858,7 +1855,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Veera asana Type: Vocational  
+                                                                    Veera asana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1876,7 +1873,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Back Bend Type: Vocational  
+                                                                    Back Bend Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1894,19 +1891,19 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Boat Type: Vocational   
+                                                                    Boat Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Bound ancke Type: Vocational 
+                                                                    Bound ancke Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Bow Type: Vocational 
+                                                                    Bow Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1924,7 +1921,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Full Lotus Type: Vocational 
+                                                                    Full Lotus Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1937,13 +1934,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Cat Type: Vocational 
+                                                                    Cat Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Child-2 Type: Vocational 
+                                                                    Child-2 Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -1968,7 +1965,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Crore-2 Type: Vocational 
+                                                                    Crore-2 Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2016,7 +2013,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Half moon-2 Type: Vocational 
+                                                                    Half moon-2 Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2028,25 +2025,25 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Hands to feet Type: Vocational 
+                                                                    Hands to feet Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Headstand Type: Vocational 
+                                                                    Headstand Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Heron Type: Vocational  
+                                                                    Heron Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Locust Type: Vocational 
+                                                                    Locust Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2058,7 +2055,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Manky Type: Vocational 
+                                                                    Manky Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2070,7 +2067,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Plow Type: Vocational 
+                                                                    Plow Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2088,19 +2085,19 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Seated Forward Bond Type: Vocational  
+                                                                    Seated Forward Bond Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Seated Forward fold Type: Vocational 
+                                                                    Seated Forward fold Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Seated Head to Knee Type: Vocational  
+                                                                    Seated Head to Knee Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2112,7 +2109,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Separated Leg stretch Type: Vocational 
+                                                                    Separated Leg stretch Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2184,13 +2181,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Dhanurasana Type: Vocational  
+                                                                    Dhanurasana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Makra asana Type: Vocational 
+                                                                    Makra asana Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2226,7 +2223,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Virabhadrasana ( Warrior pose) Type: Pre-Vocational 
+                                                                    Virabhadrasana ( Warrior pose) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2274,31 +2271,31 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Utkatasana ( chair pose) Type: Pre-Vocational  
+                                                                    Utkatasana ( chair pose) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Utthita Marjaryasana ( Extended cat pose) Type: Pre-Vocational 
+                                                                    Utthita Marjaryasana ( Extended cat pose) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Shalabhasana ( Locust pose) Type: Pre-Vocational 
+                                                                    Shalabhasana ( Locust pose) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Balasana (Child pose) Type: Pre-Vocational  
+                                                                    Balasana (Child pose) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Vajrasana (The Diamond pose) Type: Pre-Vocational  
+                                                                    Vajrasana (The Diamond pose) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2316,7 +2313,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Other pose ( for stress relief) Type: Pre-Vocational 
+                                                                    Other pose ( for stress relief) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2325,7 +2322,7 @@
                                                                     Trikonasana (Triangle pose) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
 
 
                                                         </div>
@@ -2345,7 +2342,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -2356,37 +2353,37 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Cut on a line Type: Pre-Vocational 
+                                                                    Cut on a line Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Cut out pictures to make a collage Type: Pre-Vocational 
+                                                                    Cut out pictures to make a collage Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    cut paper strips Type: Pre-Vocational 
+                                                                    cut paper strips Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    make a paper chain Type: Pre-Vocational  
+                                                                    make a paper chain Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    cut & paste Type: Pre-Vocational 
+                                                                    cut & paste Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Cut the dough Type: Pre-Vocational  
+                                                                    Cut the dough Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2399,7 +2396,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Cutting grass Type: Pre-Vocational 
+                                                                    Cutting grass Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2411,7 +2408,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    cut out pictures to make a collage Type: Vocational   
+                                                                    cut out pictures to make a collage Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2423,7 +2420,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    make a paper chain Type: Vocational  
+                                                                    make a paper chain Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2453,10 +2450,10 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Soft & hard item Type: Vocational  
+                                                                    Soft & hard item Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
 
 
                                                         </div>
@@ -2476,7 +2473,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -2579,7 +2576,7 @@
                                                                     knitting Type: Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
 
 
                                                         </div>
@@ -2599,7 +2596,7 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -2609,7 +2606,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Duplos Type: Pre-Vocational 
+                                                                    Duplos Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2646,7 +2643,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Geoboards Type: Pre-Vocational  
+                                                                    Geoboards Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2677,7 +2674,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Geoboards Type: Vocational 
+                                                                    Geoboards Type: Vocational
                                                                 </label>
                                                             </div>
 
@@ -2699,11 +2696,11 @@
                                                         <div class="accordion-body">
 
 
-                                                            
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    sudoku Type: Pre-Vocational   
+                                                                    sudoku Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2781,7 +2778,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Copying Type: Vocational 
+                                                                    Copying Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -2824,20 +2821,20 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Knowing Right from Wrong Type: Vocational 
+                                                                    Knowing Right from Wrong Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
 
 
                                                         </div>
 
 
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
                                                                             <h2 class="accordion-header" id="heading21">
@@ -2849,9 +2846,9 @@
                                                                             <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="heading21"
                                                                                 data-bs-parent="#accordionExample">
                                                                                 <div class="accordion-body">
-            
-            
-                                                                                    
+
+
+
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
@@ -2984,12 +2981,12 @@
                                                                                         <label class="form-check-label" for="formCheckcolor3">
                                                                                             Hand-clap games Type: Pre-Vocational
                                                                                         </label>
-                                                                                    </div>                       
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3001,7 +2998,7 @@
                                                                             </h2>
                                                                             <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="heading22"
                                                                                 data-bs-parent="#accordionExample">
-                                                                                <div class="accordion-body">      
+                                                                                <div class="accordion-body">
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
@@ -3044,14 +3041,14 @@
                                                                                             beanbag toss games Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
-            
-            
+
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
-            
+
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3152,7 +3149,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3266,7 +3263,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3349,7 +3346,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3398,12 +3395,12 @@
                                                                                             One suggestion is to have him/her walk along a line with legs crossed or crawl with arms crossed. Or have the student use just one arm and one leg at a time for ball games and throw the ball Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                            
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3487,7 +3484,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3551,19 +3548,19 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Dried fruit Type: Vocational 
+                                                                                            Dried fruit Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Dried fruit Type: Pre-Vocational 
+                                                                                            Dried fruit Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Bagels Type: Vocational 
+                                                                                            Bagels Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -3572,12 +3569,12 @@
                                                                                             Bagels Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                                
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3650,12 +3647,12 @@
                                                                                             Pretzels Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                            
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -3718,7 +3715,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>                                    
+                                                                        </div>
                                                                         <div class="accordion-item">
                                                                             <h2 class="accordion-header" id="heading31">
                                                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -3744,19 +3741,19 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Hidden Pictures Type: Pre-Vocational 
+                                                                                            Hidden Pictures Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            “I see something…”- Play this game Type: Pre-Vocational 
+                                                                                            “I see something…”- Play this game Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Matching Type: Pre-Vocational  
+                                                                                            Matching Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -3768,20 +3765,20 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Sorting Type: Pre-Vocational 
+                                                                                            Sorting Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
                                                                                             Dots Type: Pre-Vocational
-            
+
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Copying Type: Pre-Vocational  
+                                                                                            Copying Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -3805,22 +3802,22 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Matching Type: Vocational  
+                                                                                            Matching Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Visual Memory Type: Vocational 
+                                                                                            Visual Memory Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Copying Type: Vocational  
+                                                                                            Copying Type: Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                                
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -3855,13 +3852,13 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Bead stringing- across a string and/or toward the nose to encourage focusing on near objects would help Type: Pre-Vocational  
+                                                                                            Bead stringing- across a string and/or toward the nose to encourage focusing on near objects would help Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Ball Games-any catching, throwing, kicking, and dribbling activity encourages visual attention and tracking. Tetherball is especially good Type: Pre-Vocational 
+                                                                                            Ball Games-any catching, throwing, kicking, and dribbling activity encourages visual attention and tracking. Tetherball is especially good Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -3891,13 +3888,13 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Car/Train games- the same is true as in #9 for car or train games where the student builds a racecourse and runs the car through it. Type: Pre-Vocational  
+                                                                                            Car/Train games- the same is true as in #9 for car or train games where the student builds a racecourse and runs the car through it. Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Balloon-encourage the student to visually follow the path of a balloon and take turns with someone hitting it up in the air. Type: Vocational    
+                                                                                            Balloon-encourage the student to visually follow the path of a balloon and take turns with someone hitting it up in the air. Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -3909,28 +3906,28 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                        
-                                                                                            Mazes and Connect- the-Dot pictures also encourage smooth eye movements. Type: Vocational  
+
+                                                                                            Mazes and Connect- the-Dot pictures also encourage smooth eye movements. Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
                                                                                             Bead stringing- across a string and/or toward the nose to encourage focusing on near objects would help Type: Vocational
-            
+
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
                                                                                             Ball Games-any catching, throwing, kicking, and dribbling activity encourages visual attention and tracking. Tetherball is especially good Type: Vocational
-            
+
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Flashlight-have the student watch a flashlight beam as it moves in all directions. Type: Vocational   
+                                                                                            Flashlight-have the student watch a flashlight beam as it moves in all directions. Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -3942,26 +3939,26 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Suspended ball activities- using a small ball or whiff ball suspended from a string have the student lay on the floor and follow the movement of the ball. Then the student should try to bat Type: Vocational  
+                                                                                            Suspended ball activities- using a small ball or whiff ball suspended from a string have the student lay on the floor and follow the movement of the ball. Then the student should try to bat Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Marble games-there are many commercially available marble games in which the student builds a structure and then releases a marble through it. The student should keep his/her eyes on the mar Type: Vocational 
+                                                                                            Marble games-there are many commercially available marble games in which the student builds a structure and then releases a marble through it. The student should keep his/her eyes on the mar Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Car/Train games- the same is true as in #9 for car or train games where the student builds a racecourse and runs the car through it. Type: Vocational 
+                                                                                            Car/Train games- the same is true as in #9 for car or train games where the student builds a racecourse and runs the car through it. Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -4013,7 +4010,7 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Masturbation Type: Vocational 
+                                                                                            Masturbation Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -4025,13 +4022,13 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Birth Control Type: Vocational  
+                                                                                            Birth Control Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Emergency contraception Type: Vocational 
+                                                                                            Emergency contraception Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -4044,13 +4041,13 @@
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
                                                                                             Acne Type: Vocational
-            
+
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Homosexuality Type: Vocational   
+                                                                                            Homosexuality Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -4074,15 +4071,15 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Masturbation Type: Pre-Vocational 
+                                                                                            Masturbation Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                                
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -4104,7 +4101,7 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Male & female differences Type: Pre-Vocational 
+                                                                                            Male & female differences Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -4122,33 +4119,33 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Male & female differences Type: Vocational  
+                                                                                            Male & female differences Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Adjustment with physical change Type: Vocational 
+                                                                                            Adjustment with physical change Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Weight of physical development Type: Vocational 
+                                                                                            Weight of physical development Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            sexual maturation Type: Vocational  
+                                                                                            sexual maturation Type: Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                                    
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -4203,12 +4200,12 @@
                                                                                             Personal hygiene Type: Pre-Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                                    
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -4230,15 +4227,15 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Physical distance Type: Vocational                              
+                                                                                            Physical distance Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <!-- Single item  -->
-            
-            
+
+
                                                                         <!-- Single item  -->
                                                                         <!-- Single item  -->
                                                                         <div class="accordion-item">
@@ -4339,7 +4336,7 @@
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
                                                                                             Practice or Role Play Type: Vocational
-            
+
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -4382,7 +4379,7 @@
                                                                                     <div class="form-check form-check-info mb-3">
                                                                                         <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                                         <label class="form-check-label" for="formCheckcolor3">
-                                                                                            Roles of gender Type: Vocational  
+                                                                                            Roles of gender Type: Vocational
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="form-check form-check-info mb-3">
@@ -4391,7 +4388,7 @@
                                                                                             Gather knowledge on sexual orientation Type: Vocational
                                                                                         </label>
                                                                                     </div>
-                                                                        
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -4430,11 +4427,11 @@
                                                                     Safety and cleanliness Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                            
+
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="heading41">
@@ -4517,13 +4514,13 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Social story on the physical changes Type: Pre-Vocational  
+                                                                Social story on the physical changes Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Understanding on Emotional changes realted puberty Type: Pre-Vocational 
+                                                                Understanding on Emotional changes realted puberty Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
@@ -4591,19 +4588,19 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Involving in creative works in puberty period Type: Vocational 
+                                                                Involving in creative works in puberty period Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Engage in sports in puberty period Type: Vocational 
+                                                                Engage in sports in puberty period Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Find out recreation in puberty period Type: Vocational 
+                                                                Find out recreation in puberty period Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4642,7 +4639,7 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Find out favorite creative area at adulthood Type: Vocational 
+                                                                Find out favorite creative area at adulthood Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
@@ -4669,73 +4666,73 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Get suggestion from dietitian Type: Pre-Vocational  
+                                                            Get suggestion from dietitian Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Prepare foods with a variety of colors and textures. Type: Pre-Vocational 
+                                                                Prepare foods with a variety of colors and textures. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Use aromatic herbs and hot spices to add more flavor Type: Pre-Vocational 
+                                                            Use aromatic herbs and hot spices to add more flavor Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                avoid adding more sugar or salt to foods. Type: Pre-Vocational 
+                                                                avoid adding more sugar or salt to foods. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                If diet permits, add small amounts of cheese, bacon bits, butter, olive oil, or toasted nuts on vegetables. Type: Pre-Vocational 
+                                                                If diet permits, add small amounts of cheese, bacon bits, butter, olive oil, or toasted nuts on vegetables. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Avoid combination dishes, that can hide individual flavors and dilute taste. Type: Pre-Vocational 
+                                                            Avoid combination dishes, that can hide individual flavors and dilute taste. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Get suggestion from dietitian Type: Vocational 
+                                                            Get suggestion from dietitian Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Prepare foods with a variety of colors and textures. Type: Vocational 
+                                                            Prepare foods with a variety of colors and textures. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Use aromatic herbs and hot spices to add more flavor Type: Vocational 
+                                                            Use aromatic herbs and hot spices to add more flavor Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Avoid adding more sugar or salt to foods. Type: Vocational 
+                                                            Avoid adding more sugar or salt to foods. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            If diet permits, add small amounts of cheese, bacon bits, butter, olive oil, or toasted nuts on vegetables. Type: Vocational 
+                                                            If diet permits, add small amounts of cheese, bacon bits, butter, olive oil, or toasted nuts on vegetables. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Taste_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Avoid combination dishes, that can hide individual flavors and dilute taste. Type: Vocational 
+                                                            Avoid combination dishes, that can hide individual flavors and dilute taste. Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4754,73 +4751,73 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Read aloud Type: Pre-Vocational  
+                                                                Read aloud Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Music ( making songs / tunes) Type: Pre-Vocational  
+                                                                Music ( making songs / tunes) Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Verbal lectures, discussions, talking things through and listening Type: Pre-Vocational 
+                                                            Verbal lectures, discussions, talking things through and listening Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Story telling Type: Pre-Vocational   
+                                                            Story telling Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Text to speech software Type: Pre-Vocational  
+                                                                Text to speech software Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Poetry / rhythmic reading Type: Pre-Vocational 
+                                                            Poetry / rhythmic reading Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Use tunes or rhymes as mnemonic devices Type: Pre-Vocational 
+                                                            Use tunes or rhymes as mnemonic devices Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Drama Type: Pre-Vocational 
+                                                            Drama Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Talking books / audio books Type: Pre-Vocational 
+                                                            Talking books / audio books Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Recite information to learn. Type: Pre-Vocational 
+                                                            Recite information to learn. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Read aloud and tape test questions or directions. Type: Pre-Vocational 
+                                                            Read aloud and tape test questions or directions. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_Skills_Auditory_Sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Use verbal analogies and storytelling to demonstrate their point. Type: Pre-Vocational 
+                                                            Use verbal analogies and storytelling to demonstrate their point. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4839,145 +4836,145 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Touch Input- Rub the student’s arms, legs, face, etc. Type: Pre-Vocational 
+                                                                Touch Input- Rub the student’s arms, legs, face, etc. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Rolling- Have the student roll up in a carpet, blanket, towels or hammock. Type: Pre-Vocational 
+                                                                Rolling- Have the student roll up in a carpet, blanket, towels or hammock. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Tactile Play- Encourage the student to play with clay, Play-Doh, mud, water, soap bubbles Type: Pre-Vocational 
+                                                            Tactile Play- Encourage the student to play with clay, Play-Doh, mud, water, soap bubbles Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Matching- Present the student with a variety of textured objects with two of each and have the student put them into matching pairs by feeling them only (eyes closed). Type: Pre-Vocational 
+                                                                Matching- Present the student with a variety of textured objects with two of each and have the student put them into matching pairs by feeling them only (eyes closed). Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Feely Box- Put everyday objects in a box and have the student feel and identify them without looking. Type: Pre-Vocational   
+                                                            Feely Box- Put everyday objects in a box and have the student feel and identify them without looking. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Weights- Encourage the student to wear weights during the physical activity or play. Type: Pre-Vocational 
+                                                            Weights- Encourage the student to wear weights during the physical activity or play. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Obstacle Course- Set up an obstacle course in which the student has to go over, under, around and through objects and have the student go through the course first with eyes open and then with Type: Pre-Vocational 
+                                                                Obstacle Course- Set up an obstacle course in which the student has to go over, under, around and through objects and have the student go through the course first with eyes open and then with Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Matching- Give the student several jars with lids of various sizes and have him/her match the lid to the jar and screw them together without looking. Type: Pre-Vocational  
+                                                                Matching- Give the student several jars with lids of various sizes and have him/her match the lid to the jar and screw them together without looking. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Statues- Assume a position yourself and encourage the student to make his/her body match your position exactly. Type: Pre-Vocational 
+                                                            Statues- Assume a position yourself and encourage the student to make his/her body match your position exactly. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Spots- Touch the student quickly somewhere on his/her body while his/her eyes are closed and have him/her open his/her eyes and point to the exact spot. Type: Pre-Vocational 
+                                                            Spots- Touch the student quickly somewhere on his/her body while his/her eyes are closed and have him/her open his/her eyes and point to the exact spot. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            One or Two? – With the student facing away, touch him/her one time or twice simultaneously on arms, face, chest, legs, etc. and have him/her tell you if he/she felt one or two touches. Type: Pre-Vocational 
+                                                            One or Two? – With the student facing away, touch him/her one time or twice simultaneously on arms, face, chest, legs, etc. and have him/her tell you if he/she felt one or two touches. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Shapes/Letters- While the student’s eyes are closed, draw a shape, letter or number and have him/her guess what it was. Then have him/her try to draw exactly what he/she felt. Type: Pre-Vocational 
+                                                            Shapes/Letters- While the student’s eyes are closed, draw a shape, letter or number and have him/her guess what it was. Then have him/her try to draw exactly what he/she felt. Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Touch Input- Rub the student’s arms, legs, face, etc. Type: Vocational  
+                                                            Touch Input- Rub the student’s arms, legs, face, etc. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Rolling- Have the student roll up in a carpet, blanket, towels or hammock. Type: Vocational 
+                                                            Rolling- Have the student roll up in a carpet, blanket, towels or hammock. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Tactile Play- Encourage the student to play with clay, Play-Doh, mud, water, soap bubbles Type: Vocational 
+                                                            Tactile Play- Encourage the student to play with clay, Play-Doh, mud, water, soap bubbles Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Matching- Present the student with a variety of textured objects with two of each and have the student put them into matching pairs by feeling them only (eyes closed). Type: Vocational 
+                                                            Matching- Present the student with a variety of textured objects with two of each and have the student put them into matching pairs by feeling them only (eyes closed). Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Feely Box- Put everyday objects in a box and have the student feel and identify them without looking. Type: Vocational  
+                                                            Feely Box- Put everyday objects in a box and have the student feel and identify them without looking. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Weights- Encourage the student to wear weights during the physical activity or play. Type: Vocational 
+                                                            Weights- Encourage the student to wear weights during the physical activity or play. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Obstacle Course- Set up an obstacle course in which the student has to go over, under, around and through objects and have the student go through the course first with eyes open and then with Type: Vocational 
+                                                            Obstacle Course- Set up an obstacle course in which the student has to go over, under, around and through objects and have the student go through the course first with eyes open and then with Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Matching- Give the student several jars with lids of various sizes and have him/her match the lid to the jar and screw them together without looking. Type: Vocational 
+                                                            Matching- Give the student several jars with lids of various sizes and have him/her match the lid to the jar and screw them together without looking. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Statues- Assume a position yourself and encourage the student to make his/her body match your position exactly. Type: Vocational 
+                                                            Statues- Assume a position yourself and encourage the student to make his/her body match your position exactly. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Spots- Touch the student quickly somewhere on his/her body while his/her eyes are closed and have him/her open his/her eyes and point to the exact spot. Type: Vocational 
+                                                            Spots- Touch the student quickly somewhere on his/her body while his/her eyes are closed and have him/her open his/her eyes and point to the exact spot. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            One or Two? – With the student facing away, touch him/her one time or twice simultaneously on arms, face, chest, legs, etc. and have him/her tell you if he/she felt one or two touches. Type: Vocational 
+                                                            One or Two? – With the student facing away, touch him/her one time or twice simultaneously on arms, face, chest, legs, etc. and have him/her tell you if he/she felt one or two touches. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="sensory_skills_touch_sensory_diet_sensory_needs[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Shapes/Letters- While the student’s eyes are closed, draw a shape, letter or number and have him/her guess what it was. Then have him/her try to draw exactly what he/she felt. Type: Vocational 
+                                                            Shapes/Letters- While the student’s eyes are closed, draw a shape, letter or number and have him/her guess what it was. Then have him/her try to draw exactly what he/she felt. Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4996,61 +4993,61 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Personal hygiene Type: Pre-Vocational 
+                                                            Personal hygiene Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Describe Particular situation Type: Pre-Vocational   
+                                                            Describe Particular situation Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Rights Type: Vocational 
+                                                            Rights Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Speaking up Type: Vocational 
+                                                                Speaking up Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Saying no Type: Vocational 
+                                                            Saying no Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Describe Particular event elaborately Type: Vocational 
+                                                                Describe Particular event elaborately Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Describe Particular situation elaborately Type: Vocational 
+                                                            Describe Particular situation elaborately Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Writing story Type: Vocational 
+                                                            Writing story Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Writing message Type: Vocational 
+                                                            Writing message Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="cognitive_development_skill_development_planner_intrapersonal_skills_assertiveness[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Maintain dairy Type: Vocational  
+                                                            Maintain dairy Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -5069,38 +5066,38 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_decision_making[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Choice making (PECs, Sign, Non-Verbal Communication) Type: Pre-Vocational 
+                                                            Choice making (PECs, Sign, Non-Verbal Communication) Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_decision_making[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Choice sort out Type: Pre-Vocational   
+                                                            Choice sort out Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_decision_making[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Choice list Type: Pre-Vocational 
+                                                            Choice list Type: Pre-Vocational
                                                             </label>
                                                         </div>
-                                                
+
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_decision_making[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Making decision Type: Vocational 
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check form-check-info mb-3">
-                                                            <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_decision_making[]" type="checkbox" id="formCheckcolor3" >
-                                                            <label class="form-check-label" for="formCheckcolor3">
-                                                                Consequences of decisions Type: Vocational 
+                                                                Making decision Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_decision_making[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Clarifying own decision Type: Vocational 
+                                                                Consequences of decisions Type: Vocational
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-info mb-3">
+                                                            <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_decision_making[]" type="checkbox" id="formCheckcolor3" >
+                                                            <label class="form-check-label" for="formCheckcolor3">
+                                                            Clarifying own decision Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -5119,49 +5116,49 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Create Mock situation Type: Pre-Vocational 
+                                                                Create Mock situation Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Thinking Type: Pre-Vocational 
+                                                                Thinking Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Social story Type: Pre-Vocational 
+                                                            Social story Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Describe situation Type: Pre-Vocational 
+                                                            Describe situation Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Create Mock situation Type: Vocational  
+                                                                Create Mock situation Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Thinking Type: Vocational 
+                                                            Thinking Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Social story Type: Vocational 
+                                                            Social story Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_nderstanding_situation[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Describe situation Type: Vocational 
+                                                            Describe situation Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -5180,49 +5177,49 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Left the play with interest Type: Pre-Vocational 
+                                                                Left the play with interest Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Observe interesting situation Type: Pre-Vocational   
+                                                            Observe interesting situation Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Listen attentively Type: Pre-Vocational 
+                                                            Listen attentively Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Different working elements Type: Pre-Vocational   
+                                                            Different working elements Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Left the situation with interest Type: Vocational  
+                                                                Left the situation with interest Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Observe interesting situation Type: Vocational 
+                                                            Observe interesting situation Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Listen attentively Type: Vocational  
+                                                                Listen attentively Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_curiosity_and_asking_question[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Different working elements Type: Vocational 
+                                                            Different working elements Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -5241,115 +5238,115 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Use of toilet : home and outside Type: Pre-Vocational 
+                                                                Use of toilet : home and outside Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Greetings Type: Pre-Vocational  
+                                                                Greetings Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Clothing Type: Pre-Vocational 
+                                                            Clothing Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Use of household items Type: Pre-Vocational  
+                                                                Use of household items Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Household work : using oven, cleaning plates, combing hair, shower, brush teeth, organizing cloths, eating habit, cleaning Type: Pre-Vocational 
+                                                            Household work : using oven, cleaning plates, combing hair, shower, brush teeth, organizing cloths, eating habit, cleaning Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Recreation activities Type: Pre-Vocational 
+                                                                Recreation activities Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Accepting changes Type: Pre-Vocational 
+                                                            Accepting changes Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Behavior issues : home and outside Type: Pre-Vocational 
+                                                                Behavior issues : home and outside Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            follow instructions Type: Pre-Vocational 
+                                                            follow instructions Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                relationship Type: Pre-Vocational 
+                                                                relationship Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Greetings Type: Vocational 
+                                                            Greetings Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Clothing Type: Vocational  
+                                                                Clothing Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Use of household items Type: Vocational 
+                                                            Use of household items Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Household work : using oven, cleaning plates, combing hair, shower, brush teeth, organizing cloths, eating habit, cleaning Type: Vocational 
+                                                                Household work : using oven, cleaning plates, combing hair, shower, brush teeth, organizing cloths, eating habit, cleaning Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Recreation activities Type: Vocational 
+                                                            Recreation activities Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Accepting changes Type: Vocational  
+                                                                Accepting changes Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Behavior issues : home and outside Type: Vocational 
+                                                            Behavior issues : home and outside Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Follow instructions Type: Vocational  
+                                                                Follow instructions Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_generalization_ability[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            relationship Type: Vocational 
+                                                            relationship Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -5368,19 +5365,19 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_transition_and_changes[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Pre-counseling Type: Vocational 
+                                                                Pre-counseling Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_transition_and_changes[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Social story Type: Vocational 
+                                                                Social story Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_transition_and_changes[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Choice of work Type: Vocational 
+                                                            Choice of work Type: Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -5399,38 +5396,38 @@
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_building_enthusiasm[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Showing interest. Type: Vocational 
+                                                                Showing interest. Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_building_enthusiasm[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Positive attitude Type: Vocational  
+                                                                Positive attitude Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_building_enthusiasm[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Stay logical and reasonable Type: Vocational 
+                                                            Stay logical and reasonable Type: Vocational
                                                             </label>
                                                         </div>
-                                                
+
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_building_enthusiasm[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                                Passionate with patience Type: Vocational 
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check form-check-info mb-3">
-                                                            <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_building_enthusiasm[]" type="checkbox" id="formCheckcolor3" >
-                                                            <label class="form-check-label" for="formCheckcolor3">
-                                                                Intrapersonal skills Type: Pre-Vocational 
+                                                                Passionate with patience Type: Vocational
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-info mb-3">
                                                             <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_building_enthusiasm[]" type="checkbox" id="formCheckcolor3" >
                                                             <label class="form-check-label" for="formCheckcolor3">
-                                                            Feeling and saying sorry Type: Pre-Vocational 
+                                                                Intrapersonal skills Type: Pre-Vocational
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-info mb-3">
+                                                            <input class="form-check-input" name="skill_development_planner_intrapersonal_skills_building_enthusiasm[]" type="checkbox" id="formCheckcolor3" >
+                                                            <label class="form-check-label" for="formCheckcolor3">
+                                                            Feeling and saying sorry Type: Pre-Vocational
                                                             </label>
                                                         </div>
                                                     </div>
@@ -5748,7 +5745,7 @@
                                                                     Recognize/Memorize/Identify previous cause & condition/experience. Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -5967,7 +5964,7 @@
 
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
-                                                
+
                                                 <!-- Single item  -->
 
                                                 <!-- Single item  -->
@@ -6173,7 +6170,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Associate a word with its pictures Type: Pre-Vocational 
+                                                                    Associate a word with its pictures Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6216,13 +6213,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Open a book to look at Type: Pre-Vocational 
+                                                                    Open a book to look at Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Attempt reading by attending to picture clues & print Type: Vocational 
+                                                                    Attempt reading by attending to picture clues & print Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6234,7 +6231,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use memory to read text Type: Pre-Vocational 
+                                                                    Use memory to read text Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -6302,7 +6299,7 @@
                                                                     Name or identify rhyming words Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -6425,7 +6422,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Guess & predict words based on knowledge of sound-symbol correspondence Type: Vocational 
+                                                                    Guess & predict words based on knowledge of sound-symbol correspondence Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6694,7 +6691,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Read units on measuring cups/spoons Type: Pre-Vocational  
+                                                                    Read units on measuring cups/spoons Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6712,7 +6709,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Service providers such as dry cleaners, video store Type: Pre-Vocational 
+                                                                    Service providers such as dry cleaners, video store Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6724,7 +6721,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Identify environmental print out of context Type: Vocational  
+                                                                    Identify environmental print out of context Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6778,7 +6775,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Read a flyer to find information Type: Pre-Vocational  
+                                                                    Read a flyer to find information Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6790,7 +6787,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Read a menu Type: Vocational  
+                                                                    Read a menu Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6826,7 +6823,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Weather words Type: Vocational 
+                                                                    Weather words Type: Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -6963,7 +6960,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wrap and tie packages of various shape and sizes Type: Vocational 
+                                                                    Wrap and tie packages of various shape and sizes Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -6978,7 +6975,7 @@
                                                                     Assemble parts of an object to make a section of the project Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -7017,7 +7014,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Copy a circle with both ends of the circle closed Type: Pre-Vocational 
+                                                                    Copy a circle with both ends of the circle closed Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7047,7 +7044,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Make marks on paper to imitate adult writing Type: Vocational  
+                                                                    Make marks on paper to imitate adult writing Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7066,7 +7063,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Copy recognizable upper-case letters Type: Vocational 
+                                                                    Copy recognizable upper-case letters Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7114,7 +7111,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Print recognizable upper-case letters Type: Vocational 
+                                                                    Print recognizable upper-case letters Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7127,7 +7124,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Hold and move pencil making mark on paper Type: Pre-Vocational  
+                                                                    Hold and move pencil making mark on paper Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7170,7 +7167,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Trace recognizable lower-case letters Type: Vocational 
+                                                                    Trace recognizable lower-case letters Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7236,7 +7233,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Hold writing utensil with correct pincer grasp Type: Pre-Vocational 
+                                                                    Hold writing utensil with correct pincer grasp Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7248,13 +7245,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Copy letters made of straight lines and diagonals Type: Vocational 
+                                                                Copy letters made of straight lines and diagonals Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Make scribble-like letters or letter-like forms for writing Type: Pre-Vocational 
+                                                                    Make scribble-like letters or letter-like forms for writing Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7290,7 +7287,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Fill a large undefined space with color Type: Pre-Vocational   
+                                                                    Fill a large undefined space with color Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7338,7 +7335,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use a variety of writing and art tools to create a picture Type: Vocational  
+                                                                    Use a variety of writing and art tools to create a picture Type: Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -7377,7 +7374,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Address an envelope when presented with the receiver’s address Type: Vocational 
+                                                                    Address an envelope when presented with the receiver’s address Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7492,19 +7489,19 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Provide details when writing Type: Vocational  
+                                                                    Provide details when writing Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Fills in forms such as applications and banking Type: Vocational  
+                                                                    Fills in forms such as applications and banking Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Complete an application or other type of form Type: Vocational 
+                                                                    Complete an application or other type of form Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7547,7 +7544,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Print basic words Type: Vocational  
+                                                                    Print basic words Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7606,7 +7603,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Time concepts/telling time Type: Vocational 
+                                                                    Time concepts/telling time Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -7836,7 +7833,7 @@
                                                                     Write the words first, second, third, ETC Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -7857,7 +7854,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Follow a sequence of daily events Type: Pre-Vocational 
+                                                                    Follow a sequence of daily events Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8167,7 +8164,7 @@
                                                                     Name the months associated with the seasons Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                    
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -8200,7 +8197,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Name the linear units of measurement (I.E., MM, CM, & M) Type: Pre-Vocational 
+                                                                    Name the linear units of measurement (I.E., MM, CM, & M) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8230,7 +8227,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Measure & record the identify the basic computation symbols Type: Pre-Vocational 
+                                                                    Measure & record the identify the basic computation symbols Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8266,7 +8263,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use a measuring tool to obtain a linear measurement (I.E., MM, CM, & M) Type: Vocational 
+                                                                    Use a measuring tool to obtain a linear measurement (I.E., MM, CM, & M) Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8278,13 +8275,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Identify various measuring tools: Ruler, Measuring Tape, Timer, Measuring-Spoons, Scales, Thermometer, Clock, ETC. Type: Vocational 
+                                                                    Identify various measuring tools: Ruler, Measuring Tape, Timer, Measuring-Spoons, Scales, Thermometer, Clock, ETC. Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Set the temperature on a conventional stove Type: Vocational 
+                                                                    Set the temperature on a conventional stove Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8345,7 +8342,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Record the units of various measuring tools Type: Pre-Vocational 
+                                                                    Record the units of various measuring tools Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8379,7 +8376,7 @@
                                                                     Identify various measuring tools: Ruler, Measuring Tape, Timer, Measuring-Spoons, Scales, Thermometer, Clock, ETC. Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -8565,9 +8562,9 @@
 
                                                                 </label>
                                                             </div>
-                                                        
-                                                        
-                                                        
+
+
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -8717,7 +8714,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8793,7 +8790,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Music Type: Vocational  
+                                                                    Music Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8805,7 +8802,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Nature sound Type: Vocational  
+                                                                    Nature sound Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8830,7 +8827,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Announcements Type: Vocational  
+                                                                    Announcements Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -8842,9 +8839,9 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Soft sound Type: Vocational 
+                                                                    Soft sound Type: Vocational
                                                                 </label>
-                                                            </div>                                    
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -8973,7 +8970,7 @@
                                                                     Select common items from a given category Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9023,7 +9020,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Identify actions that a person, animal or thing cannot complete Type: Vocational 
+                                                                    Identify actions that a person, animal or thing cannot complete Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -9051,7 +9048,7 @@
                                                                     Use a phrase to describe action performed by self Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9093,13 +9090,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Answer a question about the attributes of an object Type: Vocational 
+                                                                    Answer a question about the attributes of an object Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    When provided with a word, identify it’s opposite Type: Vocational 
+                                                                    When provided with a word, identify it’s opposite Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -9142,7 +9139,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Answer true or false questions about the attributes of given objects Type: Pre-Vocational  
+                                                                    Answer true or false questions about the attributes of given objects Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -9152,12 +9149,12 @@
 
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -9174,7 +9171,7 @@
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                     Carry out action by pretending Type: Vocational
-                                    
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -9201,13 +9198,13 @@
                                                                     Carry out action two word direction (interaction with specific object) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                    
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
 
-                                                
+
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -9241,7 +9238,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Understanding & discuss texts Type: Vocational 
+                                                                    Understanding & discuss texts Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -9262,13 +9259,13 @@
                                                                     Deliver Message (Auditory Memory) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
 
-                                                
+
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -9444,13 +9441,13 @@
                                                                     Recall details about a spoken sentence, paragraph, short story Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
 
-                                                
+
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -9472,7 +9469,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    To get information Type: Vocational 
+                                                                    To get information Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -9481,15 +9478,15 @@
                                                                     To stories Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                    
-                                            
-                                                    
+
+
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
 
-                                                
+
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -9520,13 +9517,13 @@
                                                                     For specific information Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
 
-                                                
+
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -9562,7 +9559,7 @@
                                                 </div>
                                                 <!-- Single item  -->
 
-                                                
+
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -9605,7 +9602,7 @@
                                                                     Express rejection Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9653,7 +9650,7 @@
                                                                     Uses correct sentence structure/language patterns Type: Vocational
                                                                 </label>
                                                             </div>
-                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9737,7 +9734,7 @@
                                                                     Sign language in training Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9900,7 +9897,7 @@
                                                                     Retell a short story Type: Vocational
                                                                 </label>
                                                             </div>
-                                                    
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9957,7 +9954,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Request for help when anxious or nervous Type: Pre-Vocational 
+                                                                    Request for help when anxious or nervous Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -9969,7 +9966,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Smile when receiving a favorite object or seeing a favorite person Type: Pre-Vocational 
+                                                                    Smile when receiving a favorite object or seeing a favorite person Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -10209,7 +10206,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Express emotions by using appropriate body language say: Please, Thank you, & You’re welcome Type: Vocational 
+                                                                    Express emotions by using appropriate body language say: Please, Thank you, & You’re welcome Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -10463,7 +10460,7 @@
                                                                     How old are you? Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -10547,7 +10544,7 @@
                                                                     Is your mom working? Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -10568,13 +10565,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Show interests Type: Pre-Vocational 
+                                                                    Show interests Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Start a new topic Type: Pre-Vocational 
+                                                                    Start a new topic Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -10619,7 +10616,7 @@
                                                                     Stay on topic Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -10757,7 +10754,7 @@
                                                                     Festival days :Pohelaboishakh. Valentine days, boshondo, Christmas days Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -10767,7 +10764,7 @@
 
 
 
-                                            
+
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -12180,7 +12177,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Keep nails clean Type: Pre-Vocational  
+                                                                    Keep nails clean Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12192,7 +12189,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wash hair Type: Pre-Vocational 
+                                                                    Wash hair Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12228,19 +12225,19 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Identify when to make an appointment for a haircut, medical checkup, etc. Type: Vocational 
+                                                                    Identify when to make an appointment for a haircut, medical checkup, etc. Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Brush teeth Type: Pre-Vocational 
+                                                                    Brush teeth Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Take necessary steps to obtain an appointment with salon Type: Vocational  
+                                                                    Take necessary steps to obtain an appointment with salon Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12252,13 +12249,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Blow nose in tissue Type: Pre-Vocational 
+                                                                    Blow nose in tissue Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Explore hairstyles and communicate to hairdresser Type: Vocational   
+                                                                    Explore hairstyles and communicate to hairdresser Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12270,25 +12267,25 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use dental floss Type: Vocational  
+                                                                    Use dental floss Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Dispose of tissue Type: Pre-Vocational  
+                                                                    Dispose of tissue Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use Deodorant Type: Vocational 
+                                                                    Use Deodorant Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Clean ears with cotton swab Type: Pre-Vocational 
+                                                                    Clean ears with cotton swab Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12306,7 +12303,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Take a shower Type: Pre-Vocational 
+                                                                    Take a shower Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12318,7 +12315,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Comb hair Type: Pre-Vocational 
+                                                                    Comb hair Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12330,13 +12327,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Soap a washcloth Type: Pre-Vocational   
+                                                                    Soap a washcloth Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Demonstrate basic eye care Type: Pre-Vocational    
+                                                                    Demonstrate basic eye care Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12395,7 +12392,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wash & dry hands after toileting Type: Pre-Vocational  
+                                                                    Wash & dry hands after toileting Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12407,7 +12404,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Identify washroom signs (I.E. Male/Female) Type: Vocational      
+                                                                    Identify washroom signs (I.E. Male/Female) Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12419,7 +12416,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Exhibit bladder control Type: Pre-Vocational 
+                                                                    Exhibit bladder control Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12461,19 +12458,19 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Identify where the washroom is located in the school Type: Pre-Vocational      
+                                                                    Identify where the washroom is located in the school Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use toilet paper Type: Pre-Vocational  
+                                                                    Use toilet paper Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Understand difference between needing to urinate and needing to have a bowel movement Type: Pre-Vocational 
+                                                                    Understand difference between needing to urinate and needing to have a bowel movement Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12491,7 +12488,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Ensure privacy when using the washroom Type: Pre-Vocational 
+                                                                    Ensure privacy when using the washroom Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12503,7 +12500,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Put toilet seat down after using Type: Pre-Vocational 
+                                                                    Put toilet seat down after using Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -12574,7 +12571,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Using picture Type: Pre-Vocational 
+                                                                    Using picture Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -12597,13 +12594,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Follow Menstrual Hygiene Routine Type: Vocational  
+                                                                    Follow Menstrual Hygiene Routine Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Awareness of Starting Period Type: Pre-Vocational  
+                                                                    Awareness of Starting Period Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12615,19 +12612,19 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use of panty liner Type: Pre-Vocational  
+                                                                    Use of panty liner Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Maintain cleanliness during the period Type: Vocational 
+                                                                    Maintain cleanliness during the period Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Use of Sanitary Pad Type: Pre-Vocational 
+                                                                    Use of Sanitary Pad Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12692,7 +12689,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Take off undergarments Type: Pre-Vocational 
+                                                                    Take off undergarments Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -12715,31 +12712,31 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear pants Type: Pre-Vocational 
+                                                                    Wear pants Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear shirt Type: Pre-Vocational 
+                                                                    Wear shirt Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear footwear Type: Pre-Vocational 
+                                                                    Wear footwear Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear undergarments Type: Pre-Vocational 
+                                                                    Wear undergarments Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear jacket/ Wear pullover Type: Pre-Vocational   
+                                                                    Wear jacket/ Wear pullover Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -12768,44 +12765,44 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear Tie (Male) Type: Pre-Vocational 
+                                                                    Wear Tie (Male) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear Belt (Male) Type: Pre-Vocational     
+                                                                    Wear Belt (Male) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear Jewelry (Female) Type: Pre-Vocational    
+                                                                    Wear Jewelry (Female) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear Tie (Male) Type: Pre-Vocational    
+                                                                    Wear Tie (Male) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear Belt (Male) Type: Pre-Vocational   
+                                                                    Wear Belt (Male) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear Jewelry (Female) Type: Pre-Vocational    
+                                                                    Wear Jewelry (Female) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                        
+
 
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -12822,7 +12819,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear Perfume Type: Pre-Vocational   
+                                                                    Wear Perfume Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12834,13 +12831,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Tuck in shirt (Maintain a neat appearance) Type: Pre-Vocational 
+                                                                    Tuck in shirt (Maintain a neat appearance) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Polish nails Type: Vocational 
+                                                                    Polish nails Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12858,7 +12855,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Pull up socks Type: Pre-Vocational  
+                                                                    Pull up socks Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12888,13 +12885,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Tie shoe laces Type: Pre-Vocational  
+                                                                    Tie shoe laces Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Recognize appropriate/inappropriate grooming Type: Vocational     
+                                                                    Recognize appropriate/inappropriate grooming Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12954,19 +12951,19 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Keep hair short & Neat (Comb, Use Gel, Tie Hair, etc.) Type: Pre-Vocational  
+                                                                    Keep hair short & Neat (Comb, Use Gel, Tie Hair, etc.) Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Maintain neat & clean appearance Type: Vocational  
+                                                                    Maintain neat & clean appearance Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Change clothes when necessary Type: Vocational 
+                                                                    Change clothes when necessary Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12978,13 +12975,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Wear shoes according to the occasion / season / setup Type: Vocational  
+                                                                    Wear shoes according to the occasion / season / setup Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Keep nail short Type: Pre-Vocational 
+                                                                    Keep nail short Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -12996,7 +12993,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Dress up according to the occasion/ season Type: Vocational 
+                                                                    Dress up according to the occasion/ season Type: Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -13079,7 +13076,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Suck and swallow liquids Type: Pre-Vocational 
+                                                                Suck and swallow liquids Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13109,7 +13106,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Use a napkin Type: Pre-Vocational  
+                                                                Use a napkin Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13151,7 +13148,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Drink from a bottle Type: Pre-Vocational  
+                                                                Drink from a bottle Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13258,7 +13255,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Sit at dinning table Type: Pre-Vocational  
+                                                                Sit at dinning table Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13396,7 +13393,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -13515,7 +13512,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Recognize when First Aid treatment is required Type: Vocational  
+                                                                Recognize when First Aid treatment is required Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13544,7 +13541,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Maintaining Proper Body Language. Type: Vocational 
+                                                                Maintaining Proper Body Language. Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13575,7 +13572,7 @@
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                     Sit properly on the chair Type: Pre-Vocational
-                                                                    
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13630,13 +13627,13 @@
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                     Don’t fart, burp or use a toothpick. Type: Vocational
-                                                                    
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Wait for the Host /guest. Type: Pre-Vocational 
+                                                                Wait for the Host /guest. Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13839,7 +13836,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                Discuss dangerous substances Type: Pre-Vocational  
+                                                                Discuss dangerous substances Type: Pre-Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -13918,7 +13915,7 @@
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                 Use simple electric appliances Type: Vocational
-                                                                
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -14027,7 +14024,7 @@
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                 Prepare foods using an oven Type: Vocational
-                                                                
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -14088,7 +14085,7 @@
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                 Prepare foods using a microwave Type: Vocational
-                                                                
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -14106,7 +14103,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -14191,7 +14188,7 @@
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                 After-meal cleanup Type: Vocational
-                                                                
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -14278,7 +14275,7 @@
                                                                     Clean up spills Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                    
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -14291,7 +14288,7 @@
                                                                     Safety in cooking Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -14304,7 +14301,7 @@
                                                                     Practice basic kitchen hygiene Type: Vocational
                                                                 </label>
                                                             </div>
-                                                    
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -14317,12 +14314,12 @@
                                                                     Engage in safe practices in the kitchen Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                 Knowledge kitchen appliances Type: Vocational
-                                                                
+
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -14331,7 +14328,7 @@
                                                                     Prepare a ready made by following instruction on the package Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -14365,7 +14362,7 @@
                                                                     How to lit stove Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                    
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -14378,7 +14375,7 @@
                                                                     Identify basic appliances used in the kitchen Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                    
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -14391,7 +14388,7 @@
                                                                     Identify basic utensils used in the kitchen Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -14404,29 +14401,29 @@
                                                                     Use a toaster Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                 Prepare foods using a stove top Type: Vocational
                                                                 </label>
-                                                            </div> 
-                                                        
+                                                            </div>
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                     Wash &dry dishes by hand or dishwasher Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
                                                                 Warm foods using a microwave Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                        
-                                                        
+
+
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
@@ -14542,7 +14539,7 @@
                                                     <div id="collapse102" class="accordion-collapse collapse" aria-labelledby="heading102"
                                                         data-bs-parent="#accordionExample">
                                                         <div class="accordion-body">
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -15369,7 +15366,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -15620,7 +15617,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -15883,7 +15880,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                 <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -16363,7 +16360,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                     <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -16411,7 +16408,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                     <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -16437,7 +16434,7 @@
                                                                     Change & adjustment. Type: Vocational
                                                                 </label>
                                                             </div>
-                                                        
+
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
@@ -16450,7 +16447,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                     <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -16492,7 +16489,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Single item  -->
-                                                
+
 
                                                     <!-- Single item  -->
                                                 <!-- Single item  -->
@@ -18145,7 +18142,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
 
 
@@ -18238,7 +18235,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18327,7 +18324,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18403,7 +18400,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18467,7 +18464,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18519,7 +18516,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18565,7 +18562,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18605,7 +18602,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18633,7 +18630,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18667,7 +18664,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -18792,7 +18789,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -19374,7 +19371,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -19546,7 +19543,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="heading154">
@@ -19719,7 +19716,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -19785,7 +19782,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -19838,7 +19835,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -19879,7 +19876,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20021,7 +20018,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20086,7 +20083,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20169,7 +20166,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20210,7 +20207,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20240,7 +20237,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20275,7 +20272,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20321,7 +20318,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="heading165">
@@ -20476,7 +20473,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20517,7 +20514,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20533,7 +20530,7 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Selecting the Right Environment Type: Vocational                                                  
+                                                                    Selecting the Right Environment Type: Vocational
                                                                 </label>
                                                             </div>
                                                             <div class="form-check form-check-info mb-3">
@@ -20594,8 +20591,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
-                                                
+                                                <!-- Single item  -->
+
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20666,8 +20663,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
-                                                
+                                                <!-- Single item  -->
+
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20891,7 +20888,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -20961,13 +20958,13 @@
                                                             <div class="form-check form-check-info mb-3">
                                                                 <input class="form-check-input" type="checkbox" id="formCheckcolor3" >
                                                                 <label class="form-check-label" for="formCheckcolor3">
-                                                                    Be tolerant. Type: Vocational                                                                            
+                                                                    Be tolerant. Type: Vocational
                                                                 </label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="heading172">
@@ -21082,11 +21079,11 @@
                                                                     Reveal what matters most to you in life. Type: Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="heading173">
@@ -21248,8 +21245,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
-                                                
+                                                <!-- Single item  -->
+
 
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
@@ -21409,11 +21406,11 @@
                                                                     Say Thank you Type: Pre-Vocational
                                                                 </label>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="heading175">
@@ -21494,7 +21491,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
                                                 <!-- Single item  -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="heading176">
@@ -21690,10 +21687,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Single item  --> 
+                                                <!-- Single item  -->
                                             </div>
                                         </div>
-                                   
+
                                 </div>
                             </div>
                         </div>

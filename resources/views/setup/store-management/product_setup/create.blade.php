@@ -1,12 +1,6 @@
 
 @extends('layouts.master')
-
 @section('title') @lang('translation.Starter_Page') @endsection
-
-@section('css')
-
-@endsection
-
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
