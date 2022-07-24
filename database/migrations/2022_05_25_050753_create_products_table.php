@@ -20,6 +20,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
+            $table->string('type');
             $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Unit::class)->constrained()->cascadeOnUpdate();
             $table->integer('reorder_quantity')->nullable();

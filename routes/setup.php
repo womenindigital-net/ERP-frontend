@@ -20,6 +20,8 @@ use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\AccountingMappingController;
 use App\Http\Controllers\CustomerTypeSetupController;
 use App\Http\Controllers\BankReconcilationNewController;
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -43,6 +45,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
 
         'unit' =>UnitController::class,
         'product-category' =>ProductCategoryController::class,
+        'product' =>ProductController::class,
     ]);
 
     // Setup ->> Store Management Route
