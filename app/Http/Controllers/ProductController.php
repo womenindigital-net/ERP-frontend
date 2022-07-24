@@ -34,7 +34,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('setup.store-management.product_setup.create');
     }
 
     /**

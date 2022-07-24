@@ -1,9 +1,7 @@
 @extends('layouts.master')
-
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/custom/custom_step_form/custom_step.css') }}">
 @endsection
-
 @section('content')
 <div class="row">
     <div class="col-xl-12 p-0">
@@ -55,13 +53,13 @@
                                                     <li class="w-100"><a href="#SelfReliance"
                                                             data-toggle="tab">স্বনির্ভরতা</a>
                                                     </li>
-                                                    {{-- <li class="w-100"><a href="#Matters" data-toggle="tab">জীবন
+                                                    <li class="w-100"><a href="#Matters" data-toggle="tab">জীবন
                                                             ধারনের
                                                             বিষয়গুলি</a>
                                                     </li>
                                                     <li class="w-100"><a href="#report" data-toggle="tab">সর্বশেষ
                                                             পরিক্ষার তথ্য/রিপোর্ট</a>
-                                                    </li> --}}
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -861,7 +859,7 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                    {{-- <div class="tab-pane" id="Matters">
+                                                    <div class="tab-pane" id="Matters">
                                                         <section>
                                                             <p>শিশু নিচে বর্ণিত খেলাধুলা ও শারীরিক কসরত বা সঙ্গীত
                                                                 সংক্রান্ত
@@ -975,7 +973,7 @@
                                                                 </div>
                                                             </div>
                                                         </section>
-                                                    </div> --}}
+                                                    </div>
                                                     <div class="wizard-footer d-flex justify-content-between">
                                                         <div class="pull-left">
                                                             <input type='button'
