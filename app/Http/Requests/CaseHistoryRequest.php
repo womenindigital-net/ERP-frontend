@@ -25,7 +25,7 @@ class CaseHistoryRequest extends FormRequest
     {
         return [
             'date'                                                              => 'required',
-            'teacher_id'                                                        => 'nullable',
+            'teacher_id'                                                        => 'required',
             'student_id'                                                        => 'nullable',
             'phone'                                                             => 'nullable',
             'email'                                                             => 'nullable',
