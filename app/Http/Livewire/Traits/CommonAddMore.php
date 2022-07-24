@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Traits;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Session;
 
 trait CommonAddMore
@@ -34,28 +35,89 @@ trait CommonAddMore
 
     public function removeItem($key)
     {
+
         unset($this->inputs[$key]);
+        $filtered = Arr::except($this->inputs, $key);
+        [$keys, $values] = Arr::divide($filtered);
+        $this->inputs = $values;
 
-        if (isset($this->product_id[$key]))
+
+        if (isset($this->product_id[$key])) {
             unset($this->product_id[$key]);
+            $filtered = Arr::except($this->product_id, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->product_id = $values;
+        }
 
-        if (isset($this->available_qty[$key]))
+        if (isset($this->available_qty[$key])) {
             unset($this->available_qty[$key]);
-
-        if (isset($this->qty[$key]))
+            $filtered = Arr::except($this->available_qty, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->available_qty = $values;
+        }
+        
+        if (isset($this->qty[$key])) {
             unset($this->qty[$key]);
-
-        if (isset($this->vat[$key]))
-            unset($this->vat[$key]);
-
-        if (isset($this->sub_total[$key]))
-            unset($this->sub_total[$key]);
-
-        if (isset($this->price[$key]))
+            $filtered = Arr::except($this->qty, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->qty = $values;
+        }
+        
+        if (isset($this->price[$key])) {
             unset($this->price[$key]);
+            $filtered = Arr::except($this->price, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->price = $values;
+        }
 
-        if (isset($this->discount[$key]))
+        if (isset($this->vat[$key])) {
+            unset($this->vat[$key]);
+            $filtered = Arr::except($this->vat, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->vat = $values;
+        }
+
+        if (isset($this->sub_total[$key])) {
+            unset($this->sub_total[$key]);
+            $filtered = Arr::except($this->sub_total, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->sub_total = $values;
+        }
+
+        if (isset($this->price[$key])) {
+            unset($this->price[$key]);
+            $filtered = Arr::except($this->price, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->price = $values;
+        }
+
+        if (isset($this->price[$key])) {
+            unset($this->price[$key]);
+            $filtered = Arr::except($this->price, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->price = $values;
+        }
+
+        if (isset($this->discount[$key])) {
             unset($this->discount[$key]);
+            $filtered = Arr::except($this->discount, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->discount = $values;
+        }
+
+        if (isset($this->budget_head_id[$key])) {
+            unset($this->budget_head_id[$key]);
+            $filtered = Arr::except($this->budget_head_id, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->budget_head_id = $values;
+        }
+        
+        if (isset($this->budget_sub_head_id[$key])) {
+            unset($this->budget_sub_head_id[$key]);
+            $filtered = Arr::except($this->budget_sub_head_id, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->budget_sub_head_id = $values;
+        }
 
         if (isset($this->total_discount))
             $this->total_discount = array_sum($this->discount);

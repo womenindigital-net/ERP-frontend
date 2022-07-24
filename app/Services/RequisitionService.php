@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use App\Traits\CommonServiceElements;
 use Illuminate\Support\Facades\Session;
@@ -20,6 +21,7 @@ class RequisitionService
 
     public function store(array $validated)
     {
+
         if (count(array_unique($validated['product_id'])) < count($validated['product_id'])) {
             Session::put('error', 'true');
             return  redirect()->back();
@@ -29,7 +31,7 @@ class RequisitionService
             DB::beginTransaction();
             [$requisitionInfos, $data] = $this->collectRequisitionInfos($validated);
             $requisition = $this->repo->store($requisitionInfos);
-
+            // dd($data);
             $requisitionDetailsInfos = $this->collectRequisitionDetailsInfos($data);
             $requisition->details()->createMany($requisitionDetailsInfos);
             DB::commit();
@@ -51,7 +53,6 @@ class RequisitionService
     private function collectRequisitionDetailsInfos(mixed $data): array
     {
         [$requisitionDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'qty', 'sub_total', 'price', 'available_qty', 'budget_head_id', 'budget_sub_head_id']);
-
         for ($i = 0; $i < count($requisitionDetailInfos['product_id']); $i++) {
             $custom[$i] = [
                 'product_id' => $requisitionDetailInfos['product_id'][$i],
