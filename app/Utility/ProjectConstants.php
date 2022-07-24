@@ -9,6 +9,10 @@ final class ProjectConstants
     const YES = 'yes';
     const NO = 'no';
 
+    const A = 'A';
+    const B = 'B';
+    const C = 'C';
+
     const USER_TYPE_TEACHER = 'teacher';
     const USER_TYPE_GENERAL = 'general';
 
@@ -45,6 +49,12 @@ final class ProjectConstants
 
     const STATUS_ACTIVE = 'active';
     const STATUS_INACTIVE = 'inactive';
+
+    public static array $activityTypes = [
+        self::A => 'A',
+        self::B => 'B',
+        self::C => 'C',
+    ];
 
     public static array $statuses = [
         self::STATUS_ACTIVE => 'Active',
