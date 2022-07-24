@@ -989,16 +989,16 @@
                                                     </div>
                                                 </section>
                                             </div>
-                                            {{-- <div class="tab-pane" id="Matters">
+                                            <div class="tab-pane" id="Matters">
                                                 <section>
                                                     <p>শিশু নিচে বর্ণিত খেলাধুলা ও শারীরিক কসরত বা সঙ্গীত
                                                         সংক্রান্ত
                                                         বিষয়ে অংশগ্রহণ করে</p>
-                                                    <x-input-radio-or-check name='i_listen_to_the_baby_later'
+                                                    <x-input-radio-or-check  :checked="$caseHistory->i_listen_to_the_baby_later"  name='i_listen_to_the_baby_later'
                                                         label="আমি শিশুকে পরে শুনাই"
                                                         :records="$caseConstants::$absolutely">
                                                     </x-input-radio-or-check>
-                                                    <x-input-radio-or-check name="how_would_you_describe_the_child"
+                                                    <x-input-radio-or-check :checked="$caseHistory->how_would_you_describe_the_child"  name="how_would_you_describe_the_child"
                                                         label="আপনি সন্তানকে কি ভাবে বর্ণনা করবেন ?"
                                                         :records="$caseConstants::$activeFirends" type="checkbox"
                                                         :isVertical="false" :multiple="true">
@@ -1008,7 +1008,7 @@
                                                             <h5 class="">তিনটি প্রধান উদ্বেগের বিষয়গুলি
                                                                 লিখুনঃ</h5>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text type="text" name='three_main_concerns'>
+                                                                <x-input-text name='three_main_concerns'>
                                                                 </x-input-text>
                                                             </div>
                                                             <!-- input-->
@@ -1018,7 +1018,7 @@
                                             </div>
                                             <div class="tab-pane" id="report">
                                                 <section>
-                                                    <x-input-radio-or-check name="whether_the_eyes_were_examined"
+                                                    <x-input-radio-or-check :checked="$caseHistory->whether_the_eyes_were_examined" name="whether_the_eyes_were_examined"
                                                         label="চোখের পরিক্ষা হয়েছিল কিনা? (রিপোর্ট সংযুক্ত করুন)"
                                                         :records="$constants::$yesNo"
                                                         secondaryInputLabel="থাকলে উল্লেখ করুন">
@@ -1099,7 +1099,7 @@
                                                         </div>
                                                     </div>
                                                 </section>
-                                            </div> --}}
+                                            </div>
                                         </div>
                                         <div class="wizard-footer d-flex justify-content-between">
                                             <div class="pull-left">
