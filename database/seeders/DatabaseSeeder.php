@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-    
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
             UnitSeeder::class,
             PaymentTypeSeeder::class,
             BudgetHeadSeeder::class,
+            TaskTypeSeeder::class,
+
         ]);
     }
 }
