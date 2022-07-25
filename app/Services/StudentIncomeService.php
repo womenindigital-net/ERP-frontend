@@ -2,15 +2,15 @@
 
 namespace App\Services;
 
-use App\Http\Livewire\Traits\CommonListElements;
+use Exception;
 use App\Models\Income;
 use App\Models\PaymentMethod;
 use App\Models\StudentIncome;
+use Illuminate\Support\Facades\DB;
+use App\Traits\CommonServiceElements;
 use App\Repositories\IncomeRepository;
 use App\Repositories\StudentIncomeRepository;
-use App\Traits\CommonServiceElements;
-use Exception;
-use Illuminate\Support\Facades\DB;
+use App\Http\Livewire\Traits\CommonListElements;
 
 class StudentIncomeService
 {
@@ -30,6 +30,7 @@ class StudentIncomeService
      */
     public function store(array $validate): void
     {
+        dd($validate);
         [$incomeInfo, $studentIncomeInfo] = $this->segregateInfo($validate);
 
         try {
