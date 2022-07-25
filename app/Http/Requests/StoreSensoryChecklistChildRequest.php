@@ -24,10 +24,9 @@ class StoreSensoryChecklistChildRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "collection_date"                                                  => 'nullable',
-            "teacher_id"                                                       => 'nullable',
-            "student_id"                                                       => 'nullable',
-
+            "collection_date"                                                  => 'required',
+            "teacher_id"                                                       => 'required',
+            "student_id"                                                       => 'required',
             "hypersensitivity_to_touch"                                        => 'nullable',
             "becomes_fearful"                                                  => 'nullable',
             "as_an_infant"                                                     => 'nullable',
