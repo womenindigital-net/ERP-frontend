@@ -23,7 +23,7 @@
                 <li class="menu-title">Accounting</li>
 
                 <li>
-                    <a href="{{ route('journal.index') }}" class="waves-effect">
+                    <a href="{{ route('journal.create') }}" class="waves-effect">
                         <i class="bx bx-share-alt"></i>
                         <span>Journal</span>
                     </a>
@@ -58,14 +58,6 @@
                                 <li>
                                     <a href="{{ route('cash-payment.list') }}">Payment List</a>
                                 </li>
-                                {{-- <li>
-                                    <a href="{{ route('advance.payment.list') }}">Advance Payment
-                                        List</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('bank.to.bank.list') }}">Bank to Bank Transfer
-                                        List</a>
-                                </li> --}}
                             </ul>
                         </li>
                     </ul>
@@ -94,7 +86,6 @@
                         <li><a href="{{ route('stock-hand-report') }}">Stock On Hand Report</a></li>
                         <li><a href="{{ route('stock-product-report') }}">Location Wise Product Report</a></li>
                         <li><a href="{{ route('stock-reorder-report') }}">Stock Reorder Report</a></li>
-                        {{-- <li><a href="inventory-management.stock_receive_report">Stock receive report</a></li> --}}
                         <li><a href="{{ route('product-analysis-report') }}">Report::Product Analysis</a></li>
                     </ul>
                 </li>

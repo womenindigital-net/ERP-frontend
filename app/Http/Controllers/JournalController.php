@@ -18,29 +18,16 @@ use Illuminate\Contracts\Foundation\Application;
 
 class JournalController extends Controller
 {
-    private JournalService $service;
-    private JournalRepository $repo;
-    private ProjectRepository $projectRepo;
 
-    public function __construct(JournalService $service, JournalRepository $journalRepository, ProjectRepository $projectRepository)
-    {
-        $this->service = $service;
-        $this->repo = $journalRepository;
-        $this->projectRepo = $projectRepository;
-    }
 
     /**
      * Display a listing of the resource.
      *
      * @return Application|Factory|View
      */
-    public function index(): Application|Factory|View
+    public function index()
     {
-        $data = [
-            'projects' => $this->projectRepo->getData(),
-        ];
-
-        return view('accounting.journal.index', $data);
+        //
     }
 
     /**
@@ -50,7 +37,7 @@ class JournalController extends Controller
      */
     public function create()
     {
-        //
+        return view('accounting.journal.create');
     }
 
     /**
