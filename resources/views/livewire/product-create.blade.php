@@ -3,44 +3,46 @@
         <div class="col-6 d-flex">
             <label for="example-text-input" class="col-md-3 col-form-label">Code</label>
             <div class="col-md-8">
-                <x-input-text name="code" placeholder="Code"></x-input-text>
+                <x-input-text wireModel="code" placeholder="Code"></x-input-text>
             </div>
         </div>
         <div class="col-6 d-flex">
             <label for="example-text-input" class="col-md-3 col-form-label">Name</label>
             <div class="col-md-8">
-                <x-input-text name="name" placeholder="Name"></x-input-text>
+                <x-input-text wireModel="name" placeholder="Name"></x-input-text>
             </div>
         </div>
         <div class="col-6 d-flex pt-2 pb-2">
             <label for="example-text-input" class="col-md-3 col-form-label">Description</label>
             <div class="col-md-8">
-                <x-input-textarea name="description" rows=1 placeholder="Description">
+                <x-input-textarea wireModel="description" rows=1 placeholder="Description">
                 </x-input-textarea>
             </div>
         </div>
         <div class="col-6 d-flex pt-2 pb-2">
             <label for="example-text-input" class="col-md-3 col-form-label">Type</label>
             <div class="col-md-8">
-                <x-input-select name="type" :records="[]" />
+                <x-input-select wireModel="type" :records="$types"   />
             </div>
         </div>
+        
         <div class="col-6 d-flex  pb-2">
             <label for="example-text-input" class="col-md-3 col-form-label">Category</label>
             <div class="col-md-8">
-                <x-input-select name="category" :records="[]" />
+                <x-input-select wireModel="category_id" :records="$categorys" targetColumn="title"  />
             </div>
         </div>
         <div class="col-6 d-flex  pb-2">
             <label for="example-text-input" class="col-md-3 col-form-label">Measurement</label>
             <div class="col-md-8">
-                <x-input-select name="measurement" :records="[]" />
+                <x-input-select wireModel="unit_id" :records="$unit" />
             </div>
         </div>
+
         <div class="col-6 d-flex pb-4">
             <label for="example-text-input" class="col-md-3 col-form-label">Reorder Quantity</label>
             <div class="col-md-8">
-                <x-input-text type="number" name="reorder_quantity" placeholder="Reorder Quantity">
+                <x-input-text type="number" wireModel="reorder_quantity" placeholder="Reorder Quantity">
                 </x-input-text>
             </div>
         </div>
@@ -50,13 +52,12 @@
                 <div>
                     <form action="#" class="dropzone">
                         <div class="fallback">
-                            <input name="file" type="file" multiple="multiple">
+                            <input wireModel="file" type="file" multiple="multiple">
                         </div>
                         <div class="dz-message needsclick">
                             <div class="mb-3">
                                 <i class="display-4 text-muted bx bxs-cloud-upload"></i>
                             </div>
-
                             <h4>Please uploade product Image.</h4>
                         </div>
                     </form>
@@ -70,7 +71,7 @@
                 <h4 class="pb-0 mb-0 ">Is Sale Item:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="sell" type="checkbox" name="container">
+                <input class="form-check-input" id="sell" type="checkbox" wireModel="container">
             </div>
         </div>
         <div class="col-4 d-flex ">
@@ -78,7 +79,7 @@
                 <h4 class="pb-0 mb-0">Is Purchase Item:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="cost" type="checkbox" name="container">
+                <input class="form-check-input" id="cost" type="checkbox" wireModel="container">
             </div>
         </div>
         <div class="col-4 d-flex">
@@ -86,7 +87,7 @@
                 <h4 class="pb-0 mb-0">Is Expirable Item:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="expiry" type="checkbox" name="container">
+                <input class="form-check-input" id="expiry" type="checkbox" wireModel="container">
             </div>
         </div>
     </div>
@@ -94,21 +95,21 @@
         <div class="col-4 pb-4 ">
             <div class="hide_sell">
                 <label for="example-text-input" class="col-form-label">Sell Price</label>
-                <x-input-text type="number" name="sell_price" placeholder="Sell Price">
+                <x-input-text type="number" wireModel="selling_price" placeholder="Sell Price">
                 </x-input-text>
             </div>
         </div>
         <div class="col-4 pb-4 ">
             <div class="hide_cost">
                 <label for="example-text-input" class=" col-form-label">Cost Price</label>
-                <x-input-text name="cost_price" type="number" placeholder="Cost Price Here">
+                <x-input-text wireModel="cost_price" type="number" placeholder="Cost Price Here">
                 </x-input-text>
             </div>
         </div>
         <div class="col-4 pb-4 ">
             <div class="hide_expiry">
                 <label for="example-text-input" class=" col-form-label ">Expiry Alert</label>
-                <x-input-text type="number" name="expiry_alert" placeholder="Expiry Alert">
+                <x-input-text type="number" wireModel="expiry_alert" placeholder="Expiry Alert">
                 </x-input-text>
             </div>
         </div>
@@ -141,29 +142,29 @@
                 <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
                     <span class="pe-2 pb-1">01</span>
                     <div>
-                        <x-input-select name="p_category" :records="[]" />
+                        <x-input-select wireModel="p_category" :records="$categorys" />
                     </div>
                 </div>
                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-textarea name="product" rows=1 placeholder="Product">
+                    <x-input-textarea wireModel="product" rows=1 placeholder="Product">
                     </x-input-textarea>
 
                 </div>
                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-text name="measure" placeholder="Measure Unit">
+                    <x-input-text wireModel="measure" placeholder="Measure Unit">
                     </x-input-text>
 
                 </div>
                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-text name="quantity" placeholder="Quantity">
+                    <x-input-text wireModel="quantity" placeholder="Quantity">
                     </x-input-text>
                 </div>
                 <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-text name="measure" type="number" placeholder="Price">
+                    <x-input-text wireModel="measure" type="number" placeholder="Price">
                     </x-input-text>
                 </div>
                 <div class="col-lg-2 p-0 pe-1 pb-1 d-flex">
-                    <x-input-text name="cost" type="number" placeholder="Cost">
+                    <x-input-text wireModel="cost" type="number" placeholder="Cost">
                     </x-input-text>
                     <div>
                         <button class="btn btn-outline-danger ms-2 removeBtn">
@@ -182,7 +183,7 @@
                 <h4 class="pb-0 mb-0 ">Sale price in Percent</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="sell" type="checkbox" name="container">
+                <input class="form-check-input" id="sell" type="checkbox" wireModel="container">
             </div>
         </div>
         <div class="col-6 d-flex pb-3">
@@ -190,12 +191,21 @@
                 <h4 class="pb-0 mb-0">Is Active:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="cost" type="checkbox" name="container">
+                <input class="form-check-input" id="cost" type="checkbox" wireModel="container">
             </div>
         </div>
     </div>
-    <div class="modal-footer me-5">
-        <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal"
-            data-bs-target=".social-communication-view"> Save</button>
+     <div class="modal-footer">
+        <div class="w-25">
+            @if ($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode) == 'show')
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+            @else
+            <a href="{{route('product.create')}}" class="btn btn-lg btn-success w-100">
+                Go Back
+            </a>
+            @endif
+        </div>
     </div>
 </div>
