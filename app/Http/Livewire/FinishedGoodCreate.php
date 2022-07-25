@@ -38,7 +38,7 @@ class FinishedGoodCreate extends Component
         FinishedGoodRepository $repository,
         ProductService $productService,
         ProjectRepository $projectRepository,
-        UserRepository $userRepository,
+        UserRepository $userRepository, 
         WarehouseRepository $warehouseRepository,
     ) {
         $this->inputs[] = $this->numberOfItems;
@@ -81,6 +81,7 @@ class FinishedGoodCreate extends Component
         'warehouse_id' => 'required',
         'date' => 'required',
         'note' => 'nullable',
+        
         'product_id.*' => 'required',
         'unit.*' => 'required',
         'qty.*' => 'required',

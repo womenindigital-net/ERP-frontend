@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Course;
@@ -25,7 +24,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        //program-setup/course-setup.create
+        return view('setup.program-setup.course-setup.create');
     }
 
     /**
@@ -47,7 +47,11 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        $data = [
+            'record' => $course,
+        ];
+
+        return view('setup.program-setup.course-setup.show', $data);
     }
 
     /**

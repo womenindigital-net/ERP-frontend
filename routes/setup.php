@@ -1,9 +1,12 @@
 <?php
 
+use App\Models\Product;
 use App\Models\BankReconcilationNew;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\SetupController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\WarehouseController;
@@ -20,8 +23,6 @@ use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\AccountingMappingController;
 use App\Http\Controllers\CustomerTypeSetupController;
 use App\Http\Controllers\BankReconcilationNewController;
-use App\Http\Controllers\ProductController;
-use App\Models\Product;
 
 Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::resources([
@@ -46,6 +47,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'unit' =>UnitController::class,
         'product-category' =>ProductCategoryController::class,
         'product' =>ProductController::class,
+        'course' =>CourseController::class,
     ]);
 
     // Setup ->> Store Management Route
@@ -59,7 +61,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('program-setup/prescription.create', [SetupController::class, 'presCription'])->name('setup.program-setup.prescription.create');
     Route::get('program-setup/tesk-weight-setup.create', [SetupController::class, 'taskWeightSetup'])->name('setup.program-setup.tesk-weight-setup.create');
     Route::get('program-setup/activity-create.create', [SetupController::class, 'activityCreate'])->name('setup.program-setup.activity-create.create');
-    Route::get('program-setup/course-setup.create', [SetupController::class, 'courseSetup'])->name('setup.program-setup.course-setup.create');
+   // Route::get('program-setup/course-setup.create', [SetupController::class, 'courseSetup'])->name('setup.program-setup.course-setup.create');
     Route::get('program-setup/vocational-category-subcategory-setup.create', [SetupController::class, 'vocationalSetup'])->name('setup.program-setup.vocational-category-subcategory-setup.create');
     Route::get('program-setup/academic-calender-create.create', [SetupController::class, 'academicCalender'])->name('setup.program-setup.academic-calender-create.create');
     Route::get('program-setup/attendence-card-setup.create', [SetupController::class, 'attendenceCardSetup'])->name('setup.program-setup.attendence-card-setup.create');
