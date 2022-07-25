@@ -339,7 +339,7 @@
                         <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight
                                 Setup</a>
                         </li>
-                        <li> <a href="{{ route('setup.program-setup.course-setup.create') }}">Course Setup</a> </li>
+                        <li> <a href="{{ route('course.create') }}">Course Setup</a> </li>
                         <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence
                                 card
                                 setup</a></li>

@@ -8,8 +8,9 @@ class CourseRepository extends BaseRepository
 {
     protected string $model = Course::class;
 
-    public function getCoursesWithSpecifyingRelation()
+    public function getListData($perPage, $search)
     {
-        return $this->model::specifyingRelation()->get();
+        return $this->model::when($search, function ($query) use ($search) {
+        })->latest()->paginate($perPage);
     }
 }

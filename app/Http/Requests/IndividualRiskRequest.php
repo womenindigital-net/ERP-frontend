@@ -24,9 +24,9 @@ class IndividualRiskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "collection_date"             => 'nullable',
-            "teacher_id"                  => 'nullable',
-            "student_id"                  => 'nullable',
+            "collection_date"             => 'required',
+            "teacher_id"                  => 'required',
+            "student_id"                  => 'required',
             "hazard_spotted"              => 'nullable',
             "accident_or_incident"        => 'nullable',
             "possible_concerns"           => 'nullable',
