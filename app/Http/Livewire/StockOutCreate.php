@@ -56,7 +56,6 @@ class StockOutCreate extends Component
 
 
     public $stockOut;
-
     public $records;
     public $project_id;
     public $warehouse_id;
@@ -74,7 +73,6 @@ class StockOutCreate extends Component
         'product_id.*' => 'required',
         'stock_out.*' => 'required',
         'total_stock.*' => 'required',
-
     ];
 
 

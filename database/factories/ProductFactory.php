@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
-use App\Models\Product;
 use App\Models\Unit;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -26,7 +26,7 @@ class ProductFactory extends Factory
             'unit_id' => Unit::inRandomOrder()->first()->id,
             'selling_price' => rand(80, 100),
             'making_cost' => rand(20, 80),
-            'expires_at' => $this->faker->dateTimeBetween('1 month', '5 years')->format('Y-m-d'),
+            'expiry_alert' => rand(1, 5),
             'current_price' => $this->faker->randomDigit(15),
         ];
     }

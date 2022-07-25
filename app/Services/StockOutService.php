@@ -21,6 +21,7 @@ class StockOutService
             DB::beginTransaction();
             [$stockOutData, $data] = $this->collectStockOut($validated);
             $stockOut = $this->repo->store($stockOutData);
+            
             $stockOutDetailsInfos = $this->collectStockOutDetailsInfos($data);
             $stockOut->details()->createMany($stockOutDetailsInfos);
             DB::commit();
