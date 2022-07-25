@@ -24,9 +24,9 @@ class PhysiotherapyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "collection_date"                         => 'nullable',
-            "teacher_id"                              => 'nullable',
-            "candidate_id"                            => 'nullable',
+            "collection_date"                         => 'required',
+            "teacher_id"                              => 'required',
+            "candidate_id"                            => 'required',
             "birth_history"                           => 'nullable',
             "before_birth"                            => 'nullable',
             "pregnancy"                               => 'nullable',

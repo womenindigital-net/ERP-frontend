@@ -160,8 +160,8 @@ return new class extends Migration
             $table->text('staying_in_motion_all_the_time')->nullable();
             $table->text('i_listen_to_the_baby_later')->nullable();
             $table->text('how_would_you_describe_the_child')->nullable();
-            $table->text('whether_the_eyes_were_examined')->nullable();
             $table->text('three_main_concerns')->nullable();
+            $table->text('whether_the_eyes_were_examined')->nullable();
             $table->text('report_if_eye_examination_has_been_done')->nullable();
             $table->text('hearing_attach_report_if_checked')->nullable();
             $table->text('hearing_attach_report_if_checked_secondary')->nullable();

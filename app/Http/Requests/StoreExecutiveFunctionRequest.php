@@ -24,9 +24,9 @@ class StoreExecutiveFunctionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "date"                                 => 'nullable',
-            "teacher_id"                           => 'nullable',
-            "candidate_id"                         => 'nullable',
+            "date"                                 => 'required',
+            "teacher_id"                           => 'required',
+            "candidate_id"                         => 'required',
             "have_trouble_getting"                 => 'nullable',
             "start_tasks_with_enthusiasm"          => 'nullable',
             "find_it_hard"                         => 'nullable',
