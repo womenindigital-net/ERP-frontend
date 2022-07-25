@@ -25,6 +25,7 @@ use App\Http\Controllers\MaterialCollectionController;
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
+        
         'student-income' => StudentIncomeController::class,
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
