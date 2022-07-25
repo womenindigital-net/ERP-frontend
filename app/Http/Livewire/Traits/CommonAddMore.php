@@ -35,7 +35,6 @@ trait CommonAddMore
 
     public function removeItem($key)
     {
-
         unset($this->inputs[$key]);
         $filtered = Arr::except($this->inputs, $key);
         [$keys, $values] = Arr::divide($filtered);
@@ -55,19 +54,12 @@ trait CommonAddMore
             [$keys, $values] = Arr::divide($filtered);
             $this->available_qty = $values;
         }
-        
+
         if (isset($this->qty[$key])) {
             unset($this->qty[$key]);
             $filtered = Arr::except($this->qty, $key);
             [$keys, $values] = Arr::divide($filtered);
             $this->qty = $values;
-        }
-        
-        if (isset($this->price[$key])) {
-            unset($this->price[$key]);
-            $filtered = Arr::except($this->price, $key);
-            [$keys, $values] = Arr::divide($filtered);
-            $this->price = $values;
         }
 
         if (isset($this->vat[$key])) {
@@ -91,13 +83,6 @@ trait CommonAddMore
             $this->price = $values;
         }
 
-        if (isset($this->price[$key])) {
-            unset($this->price[$key]);
-            $filtered = Arr::except($this->price, $key);
-            [$keys, $values] = Arr::divide($filtered);
-            $this->price = $values;
-        }
-
         if (isset($this->discount[$key])) {
             unset($this->discount[$key]);
             $filtered = Arr::except($this->discount, $key);
@@ -111,7 +96,7 @@ trait CommonAddMore
             [$keys, $values] = Arr::divide($filtered);
             $this->budget_head_id = $values;
         }
-        
+
         if (isset($this->budget_sub_head_id[$key])) {
             unset($this->budget_sub_head_id[$key]);
             $filtered = Arr::except($this->budget_sub_head_id, $key);
