@@ -93,4 +93,12 @@ class CaseHistory extends Model
             set: fn ($val) => json_encode($val),
         );
     }
+
+    protected function howWouldYouDescribeTheChild(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($val) => json_decode($val),
+            set: fn ($val) => json_encode($val),
+        );
+    }
 }

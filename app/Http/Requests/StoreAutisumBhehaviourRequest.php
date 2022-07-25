@@ -27,9 +27,9 @@ class StoreAutisumBhehaviourRequest extends FormRequest
 //        dd($this->request->all());
 
         return [
-            "date"                                                             => 'nullable',
-            "teacher_id"                                                       => 'nullable',
-            "student_id"                                                       => 'nullable',
+            "date"                                                             => 'required',
+            "teacher_id"                                                       => 'required',
+            "student_id"                                                       => 'required',
             "poor_use_of_visual_discrimination_when_learning"                  => 'nullable',
             "seems_not_to_hear"                                                => 'nullable',
             "sometimes_shows_no_startle_response"                              => 'nullable',

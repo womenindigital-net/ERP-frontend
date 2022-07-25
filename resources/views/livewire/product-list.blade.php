@@ -22,10 +22,10 @@
                             <td>{{ $record->name }}</td>
                             <td>{{ $record->type }}</td>
                             <td>{{ $record->category_id}}</td>
-                            <td>{{ $record->Unit }}</td>
+                            <td>{{ $record->unit }}</td>
                             <td>{{ $record->selling_price }}</td>
                             <td>{{ $record->making_cost }}</td>
-                            <td>{{ $record->created_at }}</td>
+                            <td>{{ $record->create_at }}</td>
                             <td>
                                 <a href="{{ route('product.show', $record->id) }}" target="_blank"
                                     rel="noopener noreferrer"
@@ -46,7 +46,6 @@
                         </tr>
                     @endforeach
                 </tbody>
-
             </table>
         </div>
     </x-record-list>

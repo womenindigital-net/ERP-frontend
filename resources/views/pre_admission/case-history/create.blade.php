@@ -53,9 +53,7 @@
                                                     <li class="w-100"><a href="#SelfReliance"
                                                             data-toggle="tab">স্বনির্ভরতা</a>
                                                     </li>
-                                                    <li class="w-100"><a href="#Matters" data-toggle="tab">জীবন
-                                                            ধারনের
-                                                            বিষয়গুলি</a>
+                                                    <li class="w-100"><a href="#Matters" data-toggle="tab">জীবন ধারনের বিষয়গুলি</a>
                                                     </li>
                                                     <li class="w-100"><a href="#report" data-toggle="tab">সর্বশেষ
                                                             পরিক্ষার তথ্য/রিপোর্ট</a>

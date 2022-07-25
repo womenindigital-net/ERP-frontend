@@ -25,9 +25,9 @@ class SensoryAdultRequest extends FormRequest
     {
         return [
 
-            "collection_date"                                  => 'nullable',
-            "teacher_id"                                       => 'nullable',
-            "student_id"                                       => 'nullable',
+            "collection_date"                                  => 'required',
+            "teacher_id"                                       => 'required',
+            "student_id"                                       => 'required',
             "being_touched_on_some_body_parts"                 => 'nullable',
             "hugs_and_cuddles"                                 => 'nullable',
             "certain_clothing"                                 => 'nullable',
