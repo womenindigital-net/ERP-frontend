@@ -13,4 +13,9 @@ class CourseRepository extends BaseRepository
         return $this->model::when($search, function ($query) use ($search) {
         })->latest()->paginate($perPage);
     }
+
+    public function getCoursesWithSpecifyingRelation()
+    {
+        return $this->model::specifyingRelation()->get();
+    }
 }
