@@ -68,13 +68,7 @@ class StudentIncomeController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        $data = [
-            'projects' => $this->projectRepo->getData(),
-            'students' => $this->studentRepo->getData(),
-            'courses' => $this->courseService->getFormattedDataAsOptGroup(),
-        ];
-
-        return view('accounting.income.student_income.create', $data);
+        return view('accounting.income.student_income.create');
     }
 
     /**

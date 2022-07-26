@@ -154,6 +154,13 @@
                                                                     secondaryInputValue="{{ $speech->talk_too_loud_for_the_context_secondary ?? '' }}"
                                                                 </x-input-radio-or-check>
                                                                 <!--end row -->
+                                                                <x-input-radio-or-check :checked="$body_language->talk_too_quietly_for_the_context ??
+                                                                    ''"
+                                                                    label="Talk too quietly for the context"
+                                                                    :records="$constants::$yesNoEn" secondaryInputLabel="Excessive:">
+                                                                    secondaryInputValue="{{ $body_language->talk_too_quietly_for_the_context_secondary ?? '' }}"
+                                                                </x-input-radio-or-check>
+                                                                <!--end row -->
                                                                 <x-input-radio-or-check
                                                                     label="Speech is hard to understand" :records="$constants::$yesNoEn"
                                                                     :checked="$speech->speech_is_hard_to_understand ??
@@ -218,16 +225,6 @@
                                                         <div class="tab-pane" id="PERSONAL">
                                                             <section>
                                                                 <div>
-                                                                    <!--end row -->
-                                                                    <x-input-radio-or-check name=""
-                                                                        :checked="$body_language->talk_too_quietly_for_the_context ??
-                                                                            ''"
-                                                                        label="Talk too quietly for the context"
-                                                                        :records="$constants::$yesNoEn"
-                                                                        secondaryInputLabel="Excessive:">
-                                                                        secondaryInputValue="{{ $body_language->talk_too_quietly_for_the_context_secondary ?? '' }}"
-                                                                    </x-input-radio-or-check>
-                                                                    <!--end row -->
                                                                     <!--end row -->
                                                                     <x-input-radio-or-check :checked="$body_language->body_posture_is_too_rigid ??
                                                                         ''"
