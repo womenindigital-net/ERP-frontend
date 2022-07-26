@@ -26,7 +26,7 @@ class ProductCreate extends Component
     private MeasureUnitRepository $measureUnitRepo;
     private WarehouseRepository $warehouseRepository;
     private ProductCategoryRepository $productCategoryRepo;
-    // protected array $addMoreItems = ['code', 'name', 'type'];
+     protected array $addMoreItems = ['p_category', 'product', 'measure', 'quantity', 'price', 'cost'];
 
     public function boot(
         ProductCategoryRepository $productCategoryRepo,
@@ -37,7 +37,7 @@ class ProductCreate extends Component
         WarehouseRepository $warehouseRepository,
         MeasureUnitRepository $measureUnitRepo,
     ) {
-        // $this->inputs[] = $this->numberOfItems;
+        $this->inputs[] = $this->numberOfItems;
         $this->repo = $repository;
         $this->service = $service;
         $this->projectRepo = $projectRepository;
@@ -46,10 +46,10 @@ class ProductCreate extends Component
         $this->measureUnitRepo = $measureUnitRepo;
         $this->productCategoryRepo = $productCategoryRepo;
 
-        // $targetKey = count($this->inputs) - 1;
-        // foreach ($this->addMoreItems as $each) {
-        //     $this->{$each}[$targetKey] = null;
-        // }
+         $targetKey = count($this->inputs) - 1;
+         foreach ($this->addMoreItems as $each) {
+             $this->{$each}[$targetKey] = null;
+      }
     }
 
 
@@ -66,6 +66,11 @@ class ProductCreate extends Component
     public $making_cost;
     public $current_price;
     public $expiry_alert;
+    public $p_category;
+    public $measure;
+    public $quantity;
+    public $price;
+    public $cost;
 
 
 
@@ -82,6 +87,11 @@ class ProductCreate extends Component
         'making_cost' => 'nullable',
         'expiry_alert' => 'nullable',
         'current_price' => 'nullable',
+        'p_category' => 'nullable',
+        'measure' => 'nullable',
+        'quantity' => 'nullable',
+        'price' => 'nullable',
+        'cost' => 'nullable',
 
     ];
 
