@@ -28,8 +28,6 @@ class CourseList extends Component
     public function render()
     {
         $data = [
-            // 'projects' => $this->projectRepo->getData(),
-            // 'users' => $this->userRepo->getData(),
             'records' => $this->courseRepo->getListData($this->perPage, $this->search),
             
         ];

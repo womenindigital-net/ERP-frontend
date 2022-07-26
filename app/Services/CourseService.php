@@ -3,41 +3,79 @@
 namespace App\Services;
 
 use App\Repositories\CourseRepository;
+use Illuminate\Support\Facades\DB;
 
 class CourseService
 {
     private CourseRepository $repo;
 
-    public function __construct(CourseRepository $repo)
+    public function __construct(CourseRepository $repository)
     {
-        $this->repo = $repo;
+        $this->repo = $repository;
     }
 
-    public function getFormattedDataAsOptGroup(): array
+    public function store(array $validated)
     {
-        $courses = $this->repo->getCoursesWithSpecifyingRelation();
-        return $this->formattedCoursesAsOptGroup($courses);
+        
+        try {
+            
+            DB::beginTransaction();
+            [$finishedGoods, $data] = $this->collectFinishedGoods($validated);
+            $finishedGoodsData = $this->repo->store($finishedGoods);
+            $finishedGoodsDetailsInfos = $this->collectFinishedGoodsDetailsInfos($data);
+            $finishedGoodsData->details()->createMany($finishedGoodsDetailsInfos);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage(), $e->getLine());
+        }
     }
 
-    private function formattedCoursesAsOptGroup($courses): array
+    private function collectFinishedGoods(array $validated)
     {
-        foreach ($courses as $key => $course) {
-            if (!isset($custom[$course->parent_course_id])) {
-                $custom[$course->parent_course_id] = [
-                    'id'       => $course->parent_course_id,
-                    'title'    => $course->parentCourse->title,
-                    'children' => [],
-                ];
-            }
+        $total_qty = 0;
 
-            $childrenInfo = [
-                'id'    => $course->id,
-                'title' => $course->title,
+        [$finishedGoods, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'date', 'note', 'total_qty']);
+
+        for ($i = 0; $i < count($data['qty']); $i++) {
+            $total_qty = $data['qty'][$i] +  $total_qty;
+        }
+
+        $finishedGoods['total_qty'] = $total_qty;
+        $finishedGoods['created_by'] = auth()->id();
+
+        return [$finishedGoods, $data];
+    }
+
+    private function collectFinishedGoodsDetailsInfos(mixed $data): array
+    {
+        [$stockReceiveDetailInfos, $data] = extractNecessaryFieldsFromData($data, ['product_id', 'unit', 'qty']);
+        for ($i = 0; $i < count($stockReceiveDetailInfos['product_id']); $i++) {
+            $custom[$i] = [
+                'product_id' => $stockReceiveDetailInfos['product_id'][$i],
+                'unit' => $stockReceiveDetailInfos['unit'][$i],
+                'qty' => $stockReceiveDetailInfos['qty'][$i],
             ];
-
-            $custom[$course->parent_course_id]['children'][] = $childrenInfo;
         }
 
         return $custom ?? [];
+    }
+
+    public function update($finishedGood, array $validated)
+    {
+
+        try {
+            DB::beginTransaction();
+            [$finishedGoodData, $data] = $this->collectFinishedGoods($validated);
+            $finishedGoodData = $this->repo->update($finishedGood, $finishedGoodData);
+            $finishedGoodData->details()->delete();
+            $finishedGoodsDetailsInfos = $this->collectFinishedGoodsDetailsInfos($data);
+
+            $finishedGoodData->details()->createMany($finishedGoodsDetailsInfos);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage(), $e->getLine());
+        }
     }
 }

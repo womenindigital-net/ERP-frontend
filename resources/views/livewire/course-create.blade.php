@@ -4,28 +4,22 @@
             <div class="card-body">
                 <div class="row pb-3">
                     <div class="col-6">
-                        <label class="col-form-label">Course / Service Name</label>
-                        <x-input-text type="number" name="course" placeholder="">
+                        <label class="col-form-label">Course / Service wireModel</label>
+                        <x-input-text type="number" wireModel="course" placeholder="">
                         </x-input-text>
                     </div>
                     <div class="col-6">
                         <label class="col-form-label">Duration</label>
-                        <x-input-text type="number" name="duration" placeholder="">
+                        <x-input-text type="number" wireModel="duration" placeholder="">
                         </x-input-text>
                     </div>
                     <div class="col-6">
                         <label class="col-form-label">Cash Acc:</label>
-                        <select class="form-select">
-                            <option>--Select--</option>
-                            <option> 6205 :: 1st January New Year event </option>
-                            <option> 8560 :: Accounting /Tally/ Audit/Legal expenses /option>
-                            <option> 1200 :: Accounts Receivable </option>
-                            <option> 7550002 :: Accounts Staff Salary </option>
-                        </select>
+                        <x-input-select wireModel="cash_acc" :records="$accounts"/>
                     </div>
                     <div class="col-6">
                         <label class="col-form-label">Description:</label>
-                        <x-input-textarea type="number" name="description" placeholder="">
+                        <x-input-textarea type="number" wireModel="description" placeholder="">
                         </x-input-textarea>
                     </div>
 
@@ -35,37 +29,43 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4"><label for="heading" class="">Fee
-                                            Heading</label></div>
-                                    <div class="col-md-4"><label  for="account_id" class="">Acc
-                                            No</label></div>
-                                    <div class="col-md-4"><label for="amount"
-                                            class="">Amount</label></div>
-                                </div>
                                 <form class="repeater" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-md-4"><label for="heading" class="">Fee
+                                                Heading</label></div>
+                                        <div class="col-md-4"><label  for="account_id" class="">Acc
+                                                No</label></div>
+                                        <div class="col-md-4"><label for="amount"
+                                                class="">Amount</label></div>
+                                    </div>
+                               
                                     <div data-repeater-list="group-a">
+                                        @foreach ($inputs as $key => $item)
                                         <div data-repeater-item class="row mb-1 removeRow">
                                             <div class=" col-lg-4">
-                                                <x-input-text name="heading">
+                                                <x-input-text wireModel="heading.{{ $key }}">
                                                 </x-input-text>
                                             </div>
                                             <div class=" col-lg-4 px-1">
-                                                <x-input-select name="account_id" :records="[]" />
-
+                                                <x-input-select wireModel="account_id.{{ $key }}" :records="$accounts" />
                                             </div>
                                             <div class=" col-lg-4 d-flex">
-                                                <x-input-text type="number" name="amount">
+                                                <x-input-text type="number" wireModel="amount.{{ $key }}">
                                                 </x-input-text>
-                                                <button
-                                                    class="btn btn-outline-danger btn-rounded me-3 ms-2 removeBtn">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
+                                                @if (!($this->mode == 'show'))
+                                                <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                                wire:click="removeItem({{ $key }})">
+                                                <i class="fas fa-trash-alt"></i>
+                                                </button>   
+                                                @endif
                                             </div>
                                         </div>
+                                        @endforeach
+                                        @if (!($this->mode == 'show'))
+                                            <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
+                                             wire:click="addMore()" />
+                                        @endif
                                     </div>
-                                    <input data-repeater-create type="button"
-                                        class="btn btn-outline-success m-1 mt-lg-0" value="Add" />
                                 </form>
                             </div>
                         </div>
@@ -74,8 +74,17 @@
             </div>
         </div>
     </div>
-    <div class="text-end pe-2">
-        <button type="button" class="btn btn-outline-danger waves-effect waves-light">Reset</button>
-        <button type="button" class="btn btn-outline-success waves-effect waves-light">Save</button>
+    <div class="modal-footer">
+        <div class="w-25">
+            @if ($this->mode == 'edit')
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!($this->mode) == 'show')
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+            @else
+            <a href="{{route('stock-out.create')}}" class="btn btn-lg btn-success w-100">
+                Go Back
+            </a>
+            @endif
+        </div>
     </div>
 </div>
