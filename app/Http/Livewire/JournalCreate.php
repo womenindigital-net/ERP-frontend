@@ -13,18 +13,27 @@ use App\Http\Livewire\Traits\CommonListElements;
 class JournalCreate extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
-    
+
     private ProjectRepository $projectRepo;
     private JournalRepository $journalRepo;
-    // protected array $addMoreItems = ['code', 'name', 'type'];
+    private JournalService $service;
+    protected array $addMoreItems = ['account_no', 'account_particulars', 'debit', 'credit'];
 
     public function boot(
         ProjectRepository $projectRepository,
         JournalRepository $journalRepo,
+        JournalService $service,
     ) {
         $this->projectRepo = $projectRepository;
         $this->journalRepo = $journalRepo;
+        $this->service = $service;
 
+        $this->inputs[] = $this->numberOfItems;
+
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
 
@@ -35,8 +44,10 @@ class JournalCreate extends Component
     public $particulars;
     public $reference;
     public $account_no;
-    public $is_approved;
-   
+    public $account_particulars;
+    public $debit;
+    public $credit;
+
 
 
 
@@ -45,9 +56,11 @@ class JournalCreate extends Component
         'transaction_amount' => 'nullable',
         'voucher_date' => 'nullable',
         'particulars' => 'nullable',
-        'account_no' => 'nullable',
         'reference' => 'nullable',
-        'is_approved' => 'nullable',
+        'account_no.*' => 'nullable',
+        'account_particulars.*' => 'nullable',
+        'debit.*' => 'nullable',
+        'credit.*' => 'nullable',
     ];
 
 
@@ -56,6 +69,6 @@ class JournalCreate extends Component
         $data = [
             'projcts' => $this->projectRepo->getData(),
         ];
-        return view('livewire.journal-create',$data);
+        return view('livewire.journal-create', $data);
     }
 }

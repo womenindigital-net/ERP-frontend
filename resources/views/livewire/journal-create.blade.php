@@ -58,45 +58,51 @@
                             </div>
                         </div>
                         <div data-repeater-list="journal">
-                            <div data-repeater-item class="row removeRow">
-                                <div class=" col-lg-3 p-0 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="account_no" placeholder="Acc. Number" />
-                                </div>
+                            @foreach ($inputs as $key => $item)
+                                <div data-repeater-item class="row removeRow">
+                                    <div class=" col-lg-3 p-0 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="account_no.{{ $key }}" placeholder="Acc. Number" />
+                                    </div>
 
-                                <div class=" col-lg-4 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="account_particulars" placeholder="Acc. Particular" />
-                                </div>
+                                    <div class=" col-lg-4 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="account_particulars.{{ $key }}" placeholder="Acc. Particular" />
+                                    </div>
 
-                                <div class=" col-lg-2 p-0 pe-1 pb-1">
-                                    <x-input-text wireModel="debit" placeholder="Debit" />
-                                </div>
+                                    <div class=" col-lg-2 p-0 pe-1 pb-1">
+                                        <x-input-text wireModel="debit.{{ $key }}" placeholder="Debit" />
+                                    </div>
 
-                                <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
-                                    <x-input-text wireModel="credit" placeholder="Credit" />
-                                    <div onclick="this.parentNode.parentNode.remove(this)">
-                                        <button class="btn btn-danger ms-2 removeBtn" type="button">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
+                                    <div class=" col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
+                                        <x-input-text wireModel="credit.{{ $key }}" placeholder="Credit" />
+                                        <div onclick="this.parentNode.parentNode.remove(this)">
+                                            <button class="btn btn-danger ms-2 removeBtn" type="button">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
+                            @endforeach
                         </div>
-                        <input data-repeater-create type="button" class="btn btn-success mt-3 px-4 mt-lg-0"
-                            value="Add" />
+                        @if (!($this->mode == 'show'))
+                            <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0"
+                                value="Add" wire:click="addMore()" />
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-success w-100">Save</button>
+    <div class="modal-footer">
+        <div class="w-25">
+            @if ($this->mode == 'edit')
+                <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!$this->mode == 'show')
+                <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+            @else
+                <a href="{{ route('stock-out.create') }}" class="btn btn-lg btn-success w-100">
+                    Go Back
+                </a>
+            @endif
         </div>
     </div>
     <!-- end row -->
