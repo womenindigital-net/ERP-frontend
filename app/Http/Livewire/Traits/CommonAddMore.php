@@ -104,6 +104,13 @@ trait CommonAddMore
             $this->budget_sub_head_id = $values;
         }
 
+        if (isset($this->amount[$key])) {
+            unset($this->amount[$key]);
+            $filtered = Arr::except($this->amount, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->amount = $values;
+        }
+
         if (isset($this->total_discount))
             $this->total_discount = array_sum($this->discount);
 
