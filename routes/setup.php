@@ -14,6 +14,7 @@ use App\Http\Controllers\BudgetHeadController;
 use App\Http\Controllers\BudgetYearController;
 use App\Http\Controllers\BudgetReviewController;
 use App\Http\Controllers\CustomerTypeController;
+use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\YearEndCloseController;
 use App\Http\Controllers\BudgetTemplateController;
@@ -48,6 +49,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'product-category' =>ProductCategoryController::class,
         'product' =>ProductController::class,
         'course' =>CourseController::class,
+        'prescription' =>PrescriptionController::class,
     ]);
 
     // Setup ->> Store Management Route
@@ -58,7 +60,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     // Setup ->> Store Management Route
     // Setup->> Program Setup
     Route::get('program-setup/tesk-create.create', [SetupController::class, 'teskCreate'])->name('setup.program-setup.tesk-create.create');
-    Route::get('program-setup/prescription.create', [SetupController::class, 'presCription'])->name('setup.program-setup.prescription.create');
+    //Route::get('program-setup/prescription.create', [SetupController::class, 'presCription'])->name('setup.program-setup.prescription.create');
     Route::get('program-setup/tesk-weight-setup.create', [SetupController::class, 'taskWeightSetup'])->name('setup.program-setup.tesk-weight-setup.create');
     Route::get('program-setup/activity-create.create', [SetupController::class, 'activityCreate'])->name('setup.program-setup.activity-create.create');
    // Route::get('program-setup/course-setup.create', [SetupController::class, 'courseSetup'])->name('setup.program-setup.course-setup.create');

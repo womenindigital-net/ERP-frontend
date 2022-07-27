@@ -332,7 +332,7 @@
                         <span>Program Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
-                        <li> <a href="{{ route('setup.program-setup.prescription.create') }}">Prescription</a> </li>
+                        <li> <a href="{{ route('prescription.create') }}">Prescription</a> </li>
                         <li> <a href="{{ route('setup.program-setup.activity-create.create') }}">Activity create</a>
                         </li>
                         <li> <a href="{{ route('setup.program-setup.tesk-create.create') }}">Task create</a> </li>
