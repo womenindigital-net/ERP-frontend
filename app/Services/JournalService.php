@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Journal;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\JournalRepository;
 
@@ -17,9 +18,12 @@ class JournalService
 
     public function store(mixed $validated): void
     {
+        dd($validated);
         [$info, $detailInfo] = $this->segregateInfo($validated);
 
-        try {
+        dd([$info, $detailInfo]);
+
+        try{
             DB::beginTransaction();
             /** @var Journal $obj */
             $obj = $this->repo->store($info);
@@ -30,12 +34,14 @@ class JournalService
             DB::rollBack();
             dd($e->getMessage(), $e->getLine());
         }
+
     }
 
     public function update(Journal $journal, array $validated): void
     {
         [$info, $detailInfo] = $this->segregateInfo($validated);
-        try {
+
+        try{
             DB::beginTransaction();
             /** @var Journal $obj */
             $obj = $this->repo->update($journal, $info);
@@ -51,24 +57,30 @@ class JournalService
 
     private function segregateInfo(mixed $validated): array
     {
-        foreach ($validated['journal'] as $key => $journal) {
-            if (!$this->isValidJournalEntry($journal))
-                unset($validated['journal'][$key]);
-        }
+        $journalInfos = Arr::only($validated, ['account_no','account_particulars','debit','credit']);
+        $journalDetailInfos = Arr::only($validated, ['account_no','account_particulars','debit','credit']);
+        dump($journalDetail['account_no']);
+        array_sum($a);
+        
+        // foreach ($journalDetail as $key => $journal) {
+        //     // dd($journal['account_no']);
+        //     if (!$this->isValidJournalEntry($journal))
+        //         unset($validated['journal'][$key]);
+        // }
 
-        $detailInfos = $validated['journal'];
-        unset($validated['journal']);
+        // $detailInfos = $validated['journal'];
+        // unset($validated['journal']);
 
-        return [$validated, $detailInfos];
+        // return [$validated, $detailInfos];
     }
 
     private function isValidJournalEntry(array $journal): bool
     {
-        if (
-            !empty($journal['account_no']) and
-            !empty($journal['account_particulars']) and
-            (empty($journal['debit']) or empty($journal['credit'])) and
-            ($journal['debit'] or $journal['credit'])
+        dd($journal);
+        if (!empty($journal['account_no']) and
+        !empty($journal['account_particulars']) and
+        (empty($journal['debit']) or empty($journal['credit'])) and
+        ($journal['debit'] or $journal['credit'])
         ) {
             return true;
         }

@@ -28,7 +28,6 @@ class StockOutCreate extends Component
     private WarehouseRepository $warehouseRepository;
     private StockRepository $stockRepo;
     protected array $addMoreItems = ['product_id', 'total_stock', 'stock_out'];
-
     public function boot(
         StockOutService $service,
         StockOutRepository $repository,

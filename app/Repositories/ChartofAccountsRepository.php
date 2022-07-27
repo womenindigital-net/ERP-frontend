@@ -8,9 +8,14 @@ class ChartofAccountsRepository extends BaseRepository
 {
     protected string $model = ChartofAccounts::class;
 
-    public function getListData($perPage, $search)
+    public function getListData(int $perPage, string $search)
     {
-        return $this->model::when($search, function ($query) use ($search) {
-        })->latest()->paginate($perPage);
+        return $this->model::with('details','creator','warehouse')->latest()->paginate($perPage);
+    }
+
+    public function getApprovedList()
+    {
+        return $this->model::all();
+//        return $this->model::approved()->all();
     }
 }

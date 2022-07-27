@@ -1,13 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Course;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
-use App\Models\Course;
+use App\Repositories\ChartofAccountsRepository;
 
 class CourseController extends Controller
 {
-    /**
+    private ChartofAccountsRepository $chartAccRepo;
+
+    public function __construct(ChartofAccountsRepository $chartAccRepo)
+    {
+        $this->ChartofAccountsRepository = $chartAccRepo;
+    } 
+    /** 
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -24,7 +32,6 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //program-setup/course-setup.create
         return view('setup.program-setup.course-setup.create');
     }
 
@@ -36,7 +43,9 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        //
+        $this->courseRepo->store($request->validated());
+        Session::flash('success');
+        return redirect()->back();
     }
 
     /**
@@ -47,11 +56,11 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        $data = [
-            'record' => $course,
-        ];
+        // $data = [
+        //     'record' => $course,
+        // ];
 
-        return view('setup.program-setup.course-setup.show', $data);
+        // return view('setup.program-setup.course-setup.show', $data);
     }
 
     /**

@@ -22,14 +22,14 @@
         <div class="col-6 d-flex pt-2 pb-2">
             <label for="example-text-input" class="col-md-3 col-form-label">Type</label>
             <div class="col-md-8">
-                <x-input-select wireModel="type" :records="$types"   />
+                <x-input-select wireModel="type" :records="$types" />
             </div>
         </div>
-        
+
         <div class="col-6 d-flex  pb-2">
             <label for="example-text-input" class="col-md-3 col-form-label">Category</label>
             <div class="col-md-8">
-                <x-input-select wireModel="category_id" :records="$categorys" targetColumn="title"  />
+                <x-input-select wireModel="category_id" :records="$categorys" targetColumn="title" />
             </div>
         </div>
         <div class="col-6 d-flex  pb-2">
@@ -118,7 +118,6 @@
     <form class="repeater" enctype="multipart/form-data">
         <div class="row">
             <div class="col-lg-2 p-0 pe-1">
-                <label for="sl">SL</label>
                 <label for="p_category">P. Category</label>
             </div>
             <div class="col-lg-2 p-0 pe-1">
@@ -138,44 +137,47 @@
             </div>
         </div>
         <div data-repeater-list="group-a">
-            <div data-repeater-item class="row removeRow">
-                <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
-                    <span class="pe-2 pb-1">01</span>
-                    <div>
-                        <x-input-select wireModel="p_category" :records="$categorys" />
+            @foreach ($inputs as $key => $item)
+                <div data-repeater-item class="row removeRow">
+                    <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
+                        <div>
+                            <x-input-select wireModel="p_category.{{ $key }} " :records="$categorys" targetColumn="title" />
+                        </div>
+                    </div>
+                    <div class=" col-lg-2 p-0 pe-1 pb-1">
+                        <x-input-textarea wireModel="product.{{ $key }}" rows=1 placeholder="Product">
+                        </x-input-textarea>
+
+                    </div>
+                    <div class=" col-lg-2 p-0 pe-1 pb-1">
+                        <x-input-text wireModel="measure.{{ $key }}"  placeholder="Measure Unit">
+                        </x-input-text>
+
+                    </div>
+                    <div class=" col-lg-2 p-0 pe-1 pb-1">
+                        <x-input-text wireModel="quantity.{{ $key }}" placeholder="Quantity">
+                        </x-input-text>
+                    </div>
+                    <div class=" col-lg-2 p-0 pe-1 pb-1">
+                        <x-input-text wireModel="price.{{ $key }}" type="number" placeholder="Price">
+                        </x-input-text>
+                    </div>
+                    <div class="col-lg-2 p-0 pe-1 pb-1 d-flex">
+                        <x-input-text wireModel="cost.{{ $key }}" type="number" placeholder="Cost">
+                        </x-input-text>
+                        <div onclick="this.parentNode.parentNode.remove(this)">
+                            <button class="btn btn-danger ms-2 removeBtn" type="button">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-textarea wireModel="product" rows=1 placeholder="Product">
-                    </x-input-textarea>
-
-                </div>
-                <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-text wireModel="measure" placeholder="Measure Unit">
-                    </x-input-text>
-
-                </div>
-                <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-text wireModel="quantity" placeholder="Quantity">
-                    </x-input-text>
-                </div>
-                <div class=" col-lg-2 p-0 pe-1 pb-1">
-                    <x-input-text wireModel="measure" type="number" placeholder="Price">
-                    </x-input-text>
-                </div>
-                <div class="col-lg-2 p-0 pe-1 pb-1 d-flex">
-                    <x-input-text wireModel="cost" type="number" placeholder="Cost">
-                    </x-input-text>
-                    <div>
-                        <button class="btn btn-outline-danger ms-2 removeBtn">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-        <input data-repeater-create type="button" class="btn btn-outline-success mt-3 px-4 mt-lg-0"
-            value="Add" />
+        @if (!($this->mode == 'show'))
+            <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
+                wire:click="addMore()" />
+        @endif
     </form>
     <div class="row pt-3">
         <div class="col-6 d-flex pb-3 ">
@@ -195,16 +197,16 @@
             </div>
         </div>
     </div>
-     <div class="modal-footer">
+    <div class="modal-footer">
         <div class="w-25">
             @if ($this->mode == 'edit')
-            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
-            @elseif (!($this->mode) == 'show')
-            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+                <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!$this->mode == 'show')
+                <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-            <a href="{{route('product.create')}}" class="btn btn-lg btn-success w-100">
-                Go Back
-            </a>
+                <a href="{{ route('product.create') }}" class="btn btn-lg btn-success w-100">
+                    Go Back
+                </a>
             @endif
         </div>
     </div>
