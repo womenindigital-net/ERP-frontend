@@ -35,8 +35,6 @@ class StockTransferCreate extends Component
     public $warehouse_to_customer;
     public $warehouse_to_service_provider;
 
-
-
     private StockTransferService $service;
     private StockTransferRepository $repo;
     private ProductService $productService;
@@ -129,7 +127,7 @@ class StockTransferCreate extends Component
         }
 
         if (str_starts_with($name, 'issue_type')) {
-            if ($value === 'Warehouse to Warehouse'){
+            if ($value === 'Warehouse to Warehouse') {
                 $this->warehouse_to_warehouse = true;
                 $this->warehouse_to_customer = false;
                 $this->warehouse_to_service_provider = false;
@@ -141,12 +139,11 @@ class StockTransferCreate extends Component
                 $this->warehouse_to_service_provider = false;
             }
 
-            if ($value === 'Warehouse to Service Provider'){
+            if ($value === 'Warehouse to Service Provider') {
                 $this->warehouse_to_warehouse = false;
                 $this->warehouse_to_customer = false;
                 $this->warehouse_to_service_provider = true;
             }
-               
         }
     }
 
@@ -169,6 +166,8 @@ class StockTransferCreate extends Component
         $this->dispatchBrowserEvent('notify');
         $this->redirectRoute('stock-transfer.create');
     }
+
+
     public function render()
     {
         $data = [

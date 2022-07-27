@@ -16,10 +16,9 @@ use App\Http\Livewire\Traits\CommonListElements;
 
 class StudentIncomeCreate extends Component
 {
-
     use WithPagination, CommonListElements, CommonAddMore;
 
-    private string $destroyRoute = 'sale-voucher.destroy';
+    private string $destroyRoute = 'student-income.destroy';
     private UserRepository $userRepo;
     private ProjectRepository $projectRepo;
     private StudentRepository $studentRepo;
@@ -27,7 +26,7 @@ class StudentIncomeCreate extends Component
     private CourseService $courseService;
     private StudentIncomeRepository $repo;
     private StudentIncomeService $service;
-    protected array $addMoreItems = ['product_id', 'amount'];
+    protected array $addMoreItems = ['course_id', 'amount'];
 
     public function boot(
         StudentIncomeService $service,
@@ -57,16 +56,49 @@ class StudentIncomeCreate extends Component
     public $project_id;
     public $student_id;
     public $date;
-    public $product_id;
+    public $course_id;
     public $amount;
 
     protected array $rules = [
         'project_id' => 'required',
         'student_id' => 'required',
         'date' => 'required',
-        'product_id.*' => 'required',
+        'course_id.*' => 'required',
         'amount.*' => 'required',
     ];
+
+
+
+    // public function mount()
+    // {
+    //     if ($this->stockTransfer) {
+    //         $this->stockTransfer = $this->repo->getRelatedData($this->stockTransfer, ['details']);
+
+    //         $this->project_id = $this->stockTransfer->project_id;
+    //         $this->issue_type = $this->stockTransfer->issue_type;
+    //         $this->reference = $this->stockTransfer->reference;
+    //         $this->date = $this->stockTransfer->date;
+    //         $this->warehouse_id_from = $this->stockTransfer->warehouse_id_from;
+    //         $this->warehouse_id_to = $this->stockTransfer->warehouse_id_to;
+
+    //         $this->inputs = $this->stockTransfer->details->toArray();
+
+    //         foreach ($this->stockTransfer->details as $key => $detail) {
+    //             $this->product_id[$key] = $detail->product_id;
+    //             $this->transfer_quantity[$key] = $detail->transfer_quantity;
+    //             $this->available_Quantity[$key] = $detail->available_qty;
+    //             $this->serial[$key] = $detail->serial;
+    //         }
+    //     }
+    // }
+
+
+    // public function update()
+    // {
+    //     $this->service->update($this->stockTransfer, $this->validate());
+    //     $this->dispatchBrowserEvent('notify');
+    //     $this->redirectRoute('stock-transfer.create');
+    // }
 
     public function render()
     {

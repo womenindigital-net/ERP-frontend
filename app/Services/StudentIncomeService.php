@@ -30,15 +30,14 @@ class StudentIncomeService
      */
     public function store(array $validate): void
     {
-        dd($validate);
-        [$incomeInfo, $studentIncomeInfo] = $this->segregateInfo($validate);
-
+        
         try {
             DB::beginTransaction();
+            [$studentIncomeInfo, $data] = $this->collectStudentIncomeInfo($validate);
+            dd($studentIncomeInfo);
+            $income = $this->incomeRepo->store($studentIncomeInfo);
 
-            $income = $this->incomeRepo->store($incomeInfo);
-
-            $studentIncome = $income->studentIncome()->create($studentIncomeInfo);
+            $studentIncome = $income->studentIncome()->create($data);
 
             $studentIncome->studentIncomeDetail()->createMany($validate['details']);
             DB::commit();
@@ -48,16 +47,27 @@ class StudentIncomeService
         }
     }
 
-    /**
-     * @throws Exception
-     */
-    public function segregateInfo(array $validate): array
-    {
-        [$validate, $income] = $this->collectIncomeInfo($validate);
-        $studentIncome = $this->collectStudentIncomeInfo($validate);
 
-        return [$income, $studentIncome];
+
+    private function collectStudentIncomeInfo(array $validated): array
+    {
+        [$requisitionInfos, $data] = extractNecessaryFieldsFromData($validated, ['course_id', 'amount']);
+
+        $requisitionInfos['created_by'] = auth()->id();
+
+        return [$requisitionInfos, $data];
     }
+
+    // /**
+    //  * @throws Exception
+    //  */
+    // public function segregateInfo(array $validate): array
+    // {
+    //     [$validate, $income] = $this->collectIncomeInfo($validate);
+    //     $studentIncome = $this->collectStudentIncomeInfo($validate);
+
+    //     return [$income, $studentIncome];
+    // }
 
     /**
      * @throws Exception
@@ -78,13 +88,13 @@ class StudentIncomeService
         return [$validate, $income];
     }
 
-    private function collectStudentIncomeInfo(array $validate): array
-    {
-        return [
-            'student_id'        => $validate['student_id'],
-            'payment_method_id' => PaymentMethod::whereTitle('Cash')->first()->id,
-        ];
-    }
+    // private function collectStudentIncomeInfo(array $validate): array
+    // {
+    //     return [
+    //         'student_id'        => $validate['student_id'],
+    //         'payment_method_id' => PaymentMethod::whereTitle('Cash')->first()->id,
+    //     ];
+    // }
 
     /**
      * @throws Exception
