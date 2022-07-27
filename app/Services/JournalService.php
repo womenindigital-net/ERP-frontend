@@ -96,4 +96,8 @@ class JournalService
 
     //     return false;
     // }
+    public function checkForValidTransaction(mixed $data): bool
+    {
+        return true;
+    }
 }

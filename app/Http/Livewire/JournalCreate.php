@@ -15,6 +15,16 @@ class JournalCreate extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
 
+    public $project_id;
+    public $transaction_amount;
+    public $voucher_date;
+    public $particulars;
+    public $reference;
+    public $account_no;
+    public $account_particulars;
+    public $debit;
+    public $credit;
+
     private ProjectRepository $projectRepo;
     private JournalRepository $repo;
     private JournalService $service;
@@ -37,18 +47,6 @@ class JournalCreate extends Component
         }
     }
 
-    public $project_id;
-    public $transaction_amount;
-    public $voucher_date;
-    public $particulars;
-    public $reference;
-    public $account_no;
-    public $account_particulars;
-    public $debit;
-    public $credit;
-
-
-
     protected array $rules = [
         'project_id' => 'nullable',
         'transaction_amount' => 'required',
@@ -60,6 +58,17 @@ class JournalCreate extends Component
         'debit.*' => 'nullable',
         'credit.*' => 'nullable',
     ];
+
+    public function submit()
+    {
+        if ($this->service->checkForValidTransaction(request()->all()['serverMemo']['data'])) {
+            return $this->addError('transaction_amount', 'mitch match');
+        }
+
+        $this->service->store($this->validate());
+        $this->dispatchBrowserEvent('notify');
+        $this->dispatchBrowserEvent('reload');
+    }
 
 
 
@@ -79,8 +88,6 @@ class JournalCreate extends Component
     //     $this->cheque =  $detail->chequeBook;
     // }
     // }
-
-
 
     public function render()
     {
