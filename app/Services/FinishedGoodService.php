@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Repositories\FinishedGoodRepository;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\FinishedGoodRepository;
 
 class FinishedGoodService
 {

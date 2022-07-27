@@ -1,1 +1,2 @@
 Domain >>> subDomain >>> Area >>> Activity >>> 
+saleVoucher 
