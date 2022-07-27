@@ -64,24 +64,9 @@ class JournalService
                 'credit' => $journalDetailInfos['credit'][$i],
             ];
         }
-        // dd($custom);
+        
         return [$journalInfos, $custom];
     }
-
-    // private function isValidJournalEntry(array $journal): bool
-    // {
-    //     dd($journal);
-    //     if (
-    //         !empty($journal['account_no']) and
-    //         !empty($journal['account_particulars']) and
-    //         (empty($journal['debit']) or empty($journal['credit'])) and
-    //         ($journal['debit'] or $journal['credit'])
-    //     ) {
-    //         return true;
-    //     }
-
-    //     return false;
-    // }
 
 
 

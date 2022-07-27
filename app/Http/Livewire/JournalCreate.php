@@ -8,6 +8,7 @@ use Livewire\WithPagination;
 use App\Services\JournalService;
 use App\Repositories\JournalRepository;
 use App\Repositories\ProjectRepository;
+use Illuminate\Support\Facades\Session;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Http\Livewire\Traits\CommonListElements;
 
@@ -24,7 +25,9 @@ class JournalCreate extends Component
     public $account_particulars;
     public $debit;
     public $credit;
+    public $journal;
 
+    private string $destroyRoute = 'journal.destroy';
     private ProjectRepository $projectRepo;
     private JournalRepository $repo;
     private JournalService $service;
@@ -59,13 +62,42 @@ class JournalCreate extends Component
         'credit.*' => 'nullable',
     ];
 
+
+    public function mount()
+    {
+        if ($this->journal) {
+
+            $this->project_id = $this->journal->project_id;
+            $this->transaction_amount = $this->journal->transaction_amount;
+            $this->voucher_date = $this->journal->voucher_date;
+            $this->particulars = $this->journal->particulars;
+            $this->reference = $this->journal->reference;
+
+            $this->inputs = $this->journal->details->toArray();
+
+            foreach ($this->journal->details as $key => $detail) {
+                $this->account_no[$key] = $detail->account_no;
+                $this->account_particulars[$key] = $detail->account_particulars;
+                $this->debit[$key] = $detail->debit;
+                $this->credit[$key] = $detail->credit;
+            }
+        }
+    }
+
+    public function update()
+    {
+        $this->service->update($this->journal, $this->validate());
+        Session::flash('success');
+        $this->redirectRoute('journal.create');
+    }
+
     public function submit()
     {
 
         $requestData = request()->all('serverMemo')['serverMemo']['data'];
 
         if ($this->service->checkForValidTransaction($requestData)) {
-           return $this->addError('transaction_amount', 'Transaction Amount Not Same with Total Debit Or Total Credit');
+            return $this->addError('transaction_amount', 'Transaction Amount Not Same with Total Debit Or Total Credit');
         }
 
         if ($this->service->journalDebitCreditCheck($requestData)) {

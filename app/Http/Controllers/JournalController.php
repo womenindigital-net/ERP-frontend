@@ -49,11 +49,7 @@ class JournalController extends Controller
      */
     public function store(JournalRequest $request)
     {
-
-        // dd($request->validated());
-        // $this->service->store($request->validated());
-        // Session::flash('success');
-        // return redirect()->route('journal.index');
+        //
     }
 
     /**
@@ -65,12 +61,11 @@ class JournalController extends Controller
      */
     public function show(Journal $journal)
     {
-        // $data = [
-        //     'projects' => $this->projectRepo->getData(),
-        //     'record' => Journal::with('project', 'details')->whereId($journal->id)->first(),
-        // ];
+        $data = [
+            'record' => Journal::with('project', 'details')->whereId($journal->id)->first(),
+        ];
 
-        // return view('accounting.journal.show', $data);
+        return view('accounting.journal.show', $data);
     }
 
     /**
@@ -83,12 +78,11 @@ class JournalController extends Controller
     public function edit(Journal $journal)
     {
 
-        // $data = [
-        //     'projects' => $this->projectRepo->getData(),
-        //     'record' => Journal::with('project', 'details')->whereId($journal->id)->first(),
-        // ];
+        $data = [
+            'record' => Journal::with('project', 'details')->whereId($journal->id)->first(),
+        ];
 
-        // return view('accounting.journal.edit', $data);
+        return view('accounting.journal.edit', $data);
     }
 
     /**
@@ -99,13 +93,9 @@ class JournalController extends Controller
      *
      * @return RedirectResponse
      */
-    public function update(JournalRequest $request, Journal $journal): RedirectResponse
+    public function update(JournalRequest $request, Journal $journal)
     {
-        // $this->service->update($journal, $request->validated());
-
-        // Session::flash('success');
-
-        // return redirect()->route('journal.index');
+        //
     }
 
     /**
@@ -115,8 +105,8 @@ class JournalController extends Controller
      *
      * @return bool|null
      */
-    public function destroy(Journal $journal): ?bool
+    public function destroy(Journal $journal)
     {
-        // return $journal->delete();
+        return $journal->delete();
     }
 }
