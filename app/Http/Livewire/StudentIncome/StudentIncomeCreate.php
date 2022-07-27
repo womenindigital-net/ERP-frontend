@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Services\CourseService;
 use App\Repositories\UserRepository;
+use App\Repositories\CourseRepository;
 use App\Services\StudentIncomeService;
 use App\Repositories\ProjectRepository;
 use App\Repositories\StudentRepository;
@@ -24,6 +25,7 @@ class StudentIncomeCreate extends Component
     private StudentRepository $studentRepo;
     private CaseHistoryRepository $caseRepo;
     private CourseService $courseService;
+    private CourseRepository $courseRepo;
     private StudentIncomeRepository $repo;
     private StudentIncomeService $service;
     protected array $addMoreItems = ['course_id', 'amount'];
@@ -36,6 +38,7 @@ class StudentIncomeCreate extends Component
         CaseHistoryRepository $caseHistoryRepository,
         StudentIncomeRepository $studentIncomeRepository,
         CourseService $courseService,
+        CourseRepository $courseRepository,
     ) {
         $this->userRepo = $userRepository;
         $this->projectRepo = $projectRepository;
@@ -44,6 +47,7 @@ class StudentIncomeCreate extends Component
         $this->courseService = $courseService;
         $this->repo = $studentIncomeRepository;
         $this->service = $service;
+        $this->courseRepo = $courseRepository;
 
 
         $this->inputs[] = $this->numberOfItems;

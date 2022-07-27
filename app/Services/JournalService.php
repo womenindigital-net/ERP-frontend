@@ -18,12 +18,9 @@ class JournalService
 
     public function store(mixed $validated): void
     {
-        dd($validated);
         [$info, $detailInfo] = $this->segregateInfo($validated);
 
-        dd([$info, $detailInfo]);
-
-        try{
+        try {
             DB::beginTransaction();
             /** @var Journal $obj */
             $obj = $this->repo->store($info);
@@ -34,14 +31,13 @@ class JournalService
             DB::rollBack();
             dd($e->getMessage(), $e->getLine());
         }
-
     }
 
     public function update(Journal $journal, array $validated): void
     {
         [$info, $detailInfo] = $this->segregateInfo($validated);
 
-        try{
+        try {
             DB::beginTransaction();
             /** @var Journal $obj */
             $obj = $this->repo->update($journal, $info);
@@ -57,11 +53,23 @@ class JournalService
 
     private function segregateInfo(mixed $validated): array
     {
-        $journalInfos = Arr::only($validated, ['account_no','account_particulars','debit','credit']);
-        $journalDetailInfos = Arr::only($validated, ['account_no','account_particulars','debit','credit']);
-        dump($journalDetail['account_no']);
-        array_sum($a);
-        
+        $journalInfos = Arr::only($validated, ['account_no', 'account_particulars', 'debit', 'credit']);
+        $journalDetailInfos = Arr::only($validated, ['account_no', 'account_particulars', 'debit', 'credit']);
+
+        // dd($journalDetailInfos['account_no'][1]);
+        for ($i = 0; $i < count($journalDetailInfos['account_no']); $i++) {
+            if (
+                !empty($journalDetailInfos['account_no'][$i]) and
+                !empty($journalDetailInfos['account_particulars'][$i]) and
+                (empty($journalDetailInfos['debit'][$i]) or empty($journalDetailInfos['credit'][$i])) and
+                ($journalDetailInfos['debit'][$i] or $journalDetailInfos['credit'][$i])
+            ) {
+                dd(2323);
+                return true;
+            } else {
+            }
+        }
+
         // foreach ($journalDetail as $key => $journal) {
         //     // dd($journal['account_no']);
         //     if (!$this->isValidJournalEntry($journal))
@@ -74,17 +82,18 @@ class JournalService
         // return [$validated, $detailInfos];
     }
 
-    private function isValidJournalEntry(array $journal): bool
-    {
-        dd($journal);
-        if (!empty($journal['account_no']) and
-        !empty($journal['account_particulars']) and
-        (empty($journal['debit']) or empty($journal['credit'])) and
-        ($journal['debit'] or $journal['credit'])
-        ) {
-            return true;
-        }
+    // private function isValidJournalEntry(array $journal): bool
+    // {
+    //     dd($journal);
+    //     if (
+    //         !empty($journal['account_no']) and
+    //         !empty($journal['account_particulars']) and
+    //         (empty($journal['debit']) or empty($journal['credit'])) and
+    //         ($journal['debit'] or $journal['credit'])
+    //     ) {
+    //         return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 }

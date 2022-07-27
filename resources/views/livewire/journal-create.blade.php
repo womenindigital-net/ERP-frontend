@@ -44,7 +44,6 @@
                     <div class="repeater">
                         <div class="row">
                             <div class="col-lg-3  p-0 pe-1">
-                                <label class="pe-2 pb-1">SL</label>
                                 <label for="wireModel">Acc. Number</label>
                             </div>
                             <div class="col-lg-4  p-0 pe-1">

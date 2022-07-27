@@ -55,7 +55,7 @@ class JournalCreate extends Component
         'voucher_date' => 'nullable',
         'particulars' => 'nullable',
         'reference' => 'nullable',
-        'account_no.*' => 'nullable',
+        'account_no.*' => 'required',
         'account_particulars.*' => 'nullable',
         'debit.*' => 'nullable',
         'credit.*' => 'nullable',
