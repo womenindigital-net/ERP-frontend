@@ -26,6 +26,9 @@ class JournalRule implements Rule
      */
     public function passes($attribute, $value): bool
     {
+        dd(array_column(request()->all(''), 'credit'));
+        
+        // journal::request();
         $allCredit = array_sum(array_column(request()->journal, 'credit'));
         $allDebit = array_sum(array_column(request()->journal, 'debit'));
         $transitionAmount = request()->transaction_amount;

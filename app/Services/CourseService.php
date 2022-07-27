@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Repositories\CourseRepository;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\CourseRepository;
 
 class CourseService
 {
@@ -14,11 +14,39 @@ class CourseService
         $this->repo = $repository;
     }
 
+    public function getFormattedDataAsOptGroup(): array
+    {
+        $courses = $this->repo->getCoursesWithSpecifyingRelation();
+        return $this->formattedCoursesAsOptGroup($courses);
+    }
+
+    private function formattedCoursesAsOptGroup($courses): array
+    {
+        foreach ($courses as $key => $course) {
+            if (!isset($custom[$course->parent_course_id])) {
+                $custom[$course->parent_course_id] = [
+                    'id'       => $course->parent_course_id,
+                    'title'    => $course->parentCourse->title,
+                    'children' => [],
+                ];
+            }
+
+            $childrenInfo = [
+                'id'    => $course->id,
+                'title' => $course->title,
+            ];
+
+            $custom[$course->parent_course_id]['children'][] = $childrenInfo;
+        }
+
+        return $custom ?? [];
+    }
+
     public function store(array $validated)
     {
-        
+
         try {
-            
+
             DB::beginTransaction();
             [$finishedGoods, $data] = $this->collectFinishedGoods($validated);
             $finishedGoodsData = $this->repo->store($finishedGoods);

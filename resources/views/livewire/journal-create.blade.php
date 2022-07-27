@@ -4,7 +4,7 @@
         <div class="col-md-4">
             <div class="mb-3">
                 <label class="form-label">Project</label>
-                <x-input-select :records="$projcts" wireModel="project_id" targetColumn="title" />
+                <x-input-select :records="$projects" wireModel="project_id" targetColumn="title" />
             </div>
         </div>
         <div class="col-md-4">
@@ -44,7 +44,6 @@
                     <div class="repeater">
                         <div class="row">
                             <div class="col-lg-3  p-0 pe-1">
-                                <label class="pe-2 pb-1">SL</label>
                                 <label for="wireModel">Acc. Number</label>
                             </div>
                             <div class="col-lg-4  p-0 pe-1">

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Journal;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\JournalRepository;
 
@@ -15,90 +16,75 @@ class JournalService
         $this->repo = $repository;
     }
 
-    public function store(array $validated): void
+    public function store(mixed $validated): void
     {
-        dd($validated);
+        [$info, $detailInfo] = $this->segregateInfo($validated);
+
         try {
             DB::beginTransaction();
-            [$journalData, $data
-            ] = $this->collectJournal($validated);
-            $journal = $this->repo->store($journalData);
+            /** @var Journal $obj */
+            $obj = $this->repo->store($info);
 
-            $journalDetailsInfos = $this->collectJournalDataDetailsInfos($data);
-            $journal->details()->createMany($journalDetailsInfos);
+            $obj->details()->createMany($detailInfo);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e->getMessage(),
-                $e->getLine()
-            );
+            dd($e->getMessage(), $e->getLine());
         }
     }
-    private function collectJournal(array $validated)
+
+    public function update(Journal $journal, array $validated): void
     {
-        [$journal, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'transaction_amount', 'voucher_date', 
-        'particulars', 'account_no', 'reference']);
+        [$info, $detailInfo] = $this->segregateInfo($validated);
 
-        $journal['created_by'] = auth()->id();
+        try {
+            DB::beginTransaction();
+            /** @var Journal $obj */
+            $obj = $this->repo->update($journal, $info);
 
-        return [$journal, $data];
+            $obj->details()->delete();
+            $obj->details()->createMany($detailInfo);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            dd($e->getMessage(), $e->getLine());
+        }
     }
 
-    private function collectJournalDataDetailsInfos(mixed $data): array
+    private function segregateInfo(mixed $validated): array
     {
-        [$journalDetailsInfos, $data] = extractNecessaryFieldsFromData($data, [
-            'project_id', 'transaction_amount', 'voucher_date', 'particulars', 'account_no',
-            'reference', 'cost_price',
-        ]);
-        for ($i = 0; $i < count($journalDetailsInfos['project_id']); $i++) {
-            $custom[$i] = [
-                'project_id' => $journalDetailsInfos['project_id'][$i],
-                'transaction_amount' => $journalDetailsInfos['transaction_amount'][$i],
-                'voucher_date' => $journalDetailsInfos['voucher_date'][$i],
-                'particulars' => $journalDetailsInfos['particulars'][$i],
-                'account_no' => $journalDetailsInfos['account_no'][$i],
-                'reference' => $journalDetailsInfos['reference'][$i],
-                'cost_price' => $journalDetailsInfos['cost_price'][$i],
-            ];
+        $journalInfos = Arr::only($validated, ['account_no', 'account_particulars', 'debit', 'credit']);
+        $journalDetailInfos = Arr::only($validated, ['account_no', 'account_particulars', 'debit', 'credit']);
+
+        // dd($journalDetailInfos['account_no'][1]);
+        for ($i = 0; $i < count($journalDetailInfos['account_no']); $i++) {
+            if (
+                !empty($journalDetailInfos['account_no'][$i]) and
+                !empty($journalDetailInfos['account_particulars'][$i]) and
+                (empty($journalDetailInfos['debit'][$i]) or empty($journalDetailInfos['credit'][$i])) and
+                ($journalDetailInfos['debit'][$i] or $journalDetailInfos['credit'][$i])
+            ) {
+                dd(2323);
+                return true;
+            } else {
+            }
         }
 
-        return $custom ?? [];
+        // foreach ($journalDetail as $key => $journal) {
+        //     // dd($journal['account_no']);
+        //     if (!$this->isValidJournalEntry($journal))
+        //         unset($validated['journal'][$key]);
+        // }
+
+        // $detailInfos = $validated['journal'];
+        // unset($validated['journal']);
+
+        // return [$validated, $detailInfos];
     }
-
-
-
-    // public function update(Journal $journal, array $validated): void
-    // {
-    //     [$info, $detailInfo] = $this->segregateInfo($validated);
-    //     try {
-    //         DB::beginTransaction();
-    //         /** @var Journal $obj */
-    //         $obj = $this->repo->update($journal, $info);
-
-    //         $obj->details()->delete();
-    //         $obj->details()->createMany($detailInfo);
-    //         DB::commit();
-    //     } catch (\Exception $e) {
-    //         DB::rollBack();
-    //         dd($e->getMessage(), $e->getLine());
-    //     }
-    // }
-
-    // private function segregateInfo(mixed $validated): array
-    // {
-    //     foreach ($validated['journal'] as $key => $journal) {
-    //         if (!$this->isValidJournalEntry($journal))
-    //             unset($validated['journal'][$key]);
-    //     }
-
-    //     $detailInfos = $validated['journal'];
-    //     unset($validated['journal']);
-
-    //     return [$validated, $detailInfos];
-    // }
 
     // private function isValidJournalEntry(array $journal): bool
     // {
+    //     dd($journal);
     //     if (
     //         !empty($journal['account_no']) and
     //         !empty($journal['account_particulars']) and
@@ -110,4 +96,8 @@ class JournalService
 
     //     return false;
     // }
+    public function checkForValidTransaction(mixed $data): bool
+    {
+        return true;
+    }
 }

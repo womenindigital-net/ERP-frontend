@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Exception;
 use App\Models\Income;
+use Illuminate\Support\Arr;
 use App\Models\PaymentMethod;
 use App\Models\StudentIncome;
 use Illuminate\Support\Facades\DB;
@@ -30,23 +31,23 @@ class StudentIncomeService
      */
     public function store(array $validate): void
     {
-        dd($validate);
-        [$incomeInfo, $studentIncomeInfo] = $this->segregateInfo($validate);
+        [$incomeInfo, $studentIncomeInfo, $studentIncomeDetails] = $this->segregateInfo($validate);
 
         try {
             DB::beginTransaction();
-
             $income = $this->incomeRepo->store($incomeInfo);
+
 
             $studentIncome = $income->studentIncome()->create($studentIncomeInfo);
 
-            $studentIncome->studentIncomeDetail()->createMany($validate['details']);
+            $studentIncome->studentIncomeDetail()->createMany($studentIncomeDetails);
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
             dd($e->getMessage(), $e->getLine());
         }
     }
+
 
     /**
      * @throws Exception
@@ -55,8 +56,9 @@ class StudentIncomeService
     {
         [$validate, $income] = $this->collectIncomeInfo($validate);
         $studentIncome = $this->collectStudentIncomeInfo($validate);
+        $studentIncomeDetails = $this->collectStudentIncomeDetailsInfo($validate);
 
-        return [$income, $studentIncome];
+        return [$income, $studentIncome, $studentIncomeDetails];
     }
 
     /**
@@ -64,15 +66,10 @@ class StudentIncomeService
      */
     private function collectIncomeInfo(array $validate): array
     {
-        $income = [];
-        foreach ($validate as $key => $value) {
-            if (preg_match(('/(project_id|date)/'), $key)) {
-                $income[$key] = $value;
-                unset($validate[$key]);
-            }
-        }
+        $income = []; // project_id , date 
+        $income = Arr::only($validate, ['project_id', 'date']);
 
-        $income['amount'] = array_sum(array_column($validate['details'], 'amount'));
+        $income['amount'] = array_sum($validate['amount']);
         $income['type'] = 'student';
 
         return [$validate, $income];
@@ -84,6 +81,10 @@ class StudentIncomeService
             'student_id'        => $validate['student_id'],
             'payment_method_id' => PaymentMethod::whereTitle('Cash')->first()->id,
         ];
+    }
+
+    private function collectStudentIncomeDetailsInfo(array $validate): array
+    {
     }
 
     /**
