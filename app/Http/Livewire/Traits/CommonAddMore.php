@@ -200,6 +200,18 @@ trait CommonAddMore
             [$keys, $values] = Arr::divide($filtered);
             $this->serial = $values;
         }
+        if (isset($this->total_stock[$key])) {
+            unset($this->total_stock[$key]);
+            $filtered = Arr::except($this->total_stock, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->total_stock = $values;
+        }
+        if (isset($this->stock_out[$key])) {
+            unset($this->stock_out[$key]);
+            $filtered = Arr::except($this->stock_out, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->stock_out = $values;
+        }
         if (isset($this->avl_stock[$key])) {
             unset($this->avl_stock[$key]);
             $filtered = Arr::except($this->avl_stock, $key);
