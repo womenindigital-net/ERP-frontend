@@ -66,36 +66,36 @@ class FunctionalCommunicationService
 
     private function collectBodyLanguage(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['personal']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['body_language']);
     }
 
     private function collectWordsUsagesVocabulary(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['topic_maintenance']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['words_usages_vocabulary']);
     }
 
     private function collectSentenceStructure(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['conversational_structure']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['sentence_structure']);
     }
     private function collectRelayingInformation(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['word_structure']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['relaying_information']);
     }
     private function collectFollowingDirections(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['manner_effectiveness']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['following_directions']);
     }
     private function collectAttentionAndMemory(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['repair_structures']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['attention_and_memory']);
     }
     private function collectConversationSocialCommunication(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['responsiveness']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['conversation_social_communication']);
     }
     private function collectPlaySkill(mixed $data): array
     {
-        return extractNecessaryFieldsFromData($data, SocialCommunication::$columnCollections['instrumental_states_needs']);
+        return extractNecessaryFieldsFromData($data, UtilityFunctionalCommunication::$columnCollections['play_skill']);
     }
 }
