@@ -35,7 +35,7 @@ class SaleVoucherCreate extends Component
     private IncomeRepository $repo;
     private StockRepository $stockRepo;
     private SaleVoucherService $service;
-    protected array $addMoreItems = ['product_id', 'available_qty', 'qty', 'sub_total', 'price'];
+    protected array $addMoreItems = ['product_id', 'available_qty', 'qty', 'sub_total', 'price', 'discount'];
 
     public $customer_id;
     public $ship_to_address;
@@ -119,7 +119,7 @@ class SaleVoucherCreate extends Component
             // $this->mode = 'edit';
             $this->record = $this->repo->getRelatedData($this->record, ['saleIncome.warehouse', 'saleIncome.details.product', 'project', 'history', 'creator']);
 
-            $this->project_id   = $this->record->project_id;
+            $this->project_id   =  $this->record->project_id;
             $this->customer_id = $this->record->saleIncome->customer_id;
             $this->ship_to_address = $this->record->saleIncome->ship_to_address;
             $this->date         = $this->record->date;
@@ -150,14 +150,14 @@ class SaleVoucherCreate extends Component
                 $this->price[$key]         = $detail->price;
                 $this->sub_total[$key]     = $detail->sub_total;
                 $this->discount[$key]      = $detail->discount;
-                
+
                 $this->total_discount += $detail->discount;
                 $this->total_item += 1;
                 $this->total_cost += $detail->sub_total;
             }
 
             $this->total_paid = $history->card_amount ?? 0 + $history->cash ?? 0  + $history->cheque_amount ?? 0;
-            
+
         }
     }
 
@@ -213,7 +213,6 @@ class SaleVoucherCreate extends Component
             'warehouses' => $this->warehouseRepo->getData(),
             'products'   => $this->productService->getFormattedDataAsOptGroup(),
         ];
-
         return view('livewire.sale-voucher-create', $data);
     }
 }
