@@ -27,28 +27,13 @@
         }
     </style>
 @endsection
-
+apply-view-only
 @section('content')
     <div class="row">
         <div class="col-xl-12 p-0">
             <div class="card">
                 <div class="card-body p-0">
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#case-histroy" role="tab">
-                                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                <span class="d-none d-sm-block">Add</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#case-histroy_list" role="tab">
-                                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                <span class="d-none d-sm-block">List</span>
-                            </a>
-                        </li>
-                    </ul>
-
                     <!-- Tab panes -->
                     <div class="tab-content p-3 text-muted">
                         <div class="tab-pane active" id="case-histroy" role="tabpanel">
@@ -154,12 +139,10 @@
                                                                     
                                                                 </x-input-radio-or-check>
                                                                 <!--end row -->
-                                                                <x-input-radio-or-check name="" :checked="$body_language->talk_too_quietly_for_the_context ??
+                                                                <x-input-radio-or-check :checked="$speech->talk_too_quietly_for_the_context ??
                                                                     ''"
                                                                     label="Talk too quietly for the context"
-                                                                    :records="$constants::$yesNoEn" secondaryInputLabel="Excessive:" secondaryInputValue="{{ $body_language->talk_too_quietly_for_the_context_secondary ?? '' }}">
-                                                                    
-                                                                    
+                                                                    :records="$constants::$yesNoEn" secondaryInputLabel="Excessive:" secondaryInputValue="{{ $speech->talk_too_quietly_for_the_context_secondary ?? '' }}">
                                                                 </x-input-radio-or-check>
                                                                 <!--end row -->
                                                                 <x-input-radio-or-check
@@ -283,20 +266,19 @@
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
                                                                     <!--end row -->
-                                                                    <x-input-radio-or-check :checked="$body_language->expressions_or_body_language_secondary ??
+                                                                    <x-input-radio-or-check :checked="$body_language->has_difficulty_understanding_facial_expressions_or_body_language ??
                                                                         ''"
                                                                         label="Has difficulty understanding facial expressions / body language"
                                                                         :records="$constants::$yesNoEn"
-                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $body_language->expressions_or_body_language_secondary ?? '' }}">
-                                                                        
+                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $body_language->has_difficulty_understanding_facial_expressions_or_body_language_secondary ?? '' }}">
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
                                                                     <!--end row -->
-                                                                    <x-input-radio-or-check :checked="$body_language->orientation_or_proximity_in_interaction ??
+                                                                    <x-input-radio-or-check :checked="$body_language->use_inappropriate_body_orientation_or_proximity_in_interaction ??
                                                                         ''"
                                                                         label="Use inappropriate body orientation or proximity in interaction"
                                                                         :records="$constants::$yesNoEn"
-                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $body_language->orientation_or_proximity_in_interaction_secondary ?? '' }}">
+                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $body_language->use_inappropriate_body_orientation_or_proximity_in_interaction_secondary ?? '' }}">
                                                                         
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
@@ -343,11 +325,11 @@
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
                                                                     <!--end row -->
-                                                                    <x-input-radio-or-check :checked="$words_usages_vocabulary->or_using_humor_appropriately ??
+                                                                    <x-input-radio-or-check :checked="$words_usages_vocabulary->has_difficulty_understanding_or_using_humor_appropriately ??
                                                                         ''"
                                                                         label="Has difficulty understanding /using humor appropriately"
                                                                         :records="$constants::$yesNoEn"
-                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $words_usages_vocabulary->or_using_humor_appropriately_secondary ?? '' }}">
+                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $words_usages_vocabulary->has_difficulty_understanding_or_using_humor_appropriately_secondary ?? '' }}">
                                                                         
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
@@ -549,11 +531,11 @@
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
                                                                     <!--end row -->
-                                                                    <x-input-radio-or-check :checked="$attention_and_memory->often_looks_away_or_ ??
+                                                                    <x-input-radio-or-check :checked="$attention_and_memory->often_looks_away_or_‘day_dreams_during_lectures ??
                                                                         ''"
                                                                         label="Often looks away or ‘day dreams’ during lectures"
                                                                         :records="$constants::$yesNoEn"
-                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $attention_and_memory->often_looks_away_or_secondary ?? '' }}">
+                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $attention_and_memory->often_looks_away_or_‘day_dreams_during_lectures_secondary ?? '' }}">
                                                                         
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
@@ -832,11 +814,11 @@
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->
                                                                     <!--end row -->
-                                                                    <x-input-radio-or-check :checked="$conversation_social_communication->talks_too_little_in_a_conversation_with_peers_adults ??
+                                                                    <x-input-radio-or-check :checked="$conversation_social_communication->talks_too_little_in_a_conversation_with_peers_or_adults ??
                                                                         ''"
                                                                         label="Talks too little in a conversation with peers / adults"
                                                                         :records="$constants::$yesNoEn"
-                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $conversation_social_communication->talks_too_little_in_a_conversation_with_peers_adults_secondary ?? '' }}">
+                                                                        secondaryInputLabel="Excessive:" secondaryInputValue="{{ $conversation_social_communication->talks_too_little_in_a_conversation_with_peers_or_adults_secondary ?? '' }}">
                                                                         
                                                                     </x-input-radio-or-check>
                                                                     <!--end row -->

@@ -173,6 +173,8 @@ class FunctionalCommunicationRequest extends FormRequest
             "has_difficulty_adapting_language_to_audience_or_setting_secondary"                                                           => 'nullable',
             "talks_too_much_in_a_conversation_with_peers_or_adults"                                                                       => 'nullable',
             "talks_too_much_in_a_conversation_with_peers_or_adults_secondary"                                                             => 'nullable',
+            "talks_too_little_in_a_conversation_with_peers_or_adults"                                                                     => 'nullable',
+            "talks_too_little_in_a_conversation_with_peers_or_adults_secondary"                                                           => 'nullable',
             "bringing_up_the_same_topic_repeatedly"                                                                                       => 'nullable',
             "bringing_up_the_same_topic_repeatedly_secondary"                                                                             => 'nullable',
             "gives_recitative_or_redundant_information"                                                                                   => 'nullable',
