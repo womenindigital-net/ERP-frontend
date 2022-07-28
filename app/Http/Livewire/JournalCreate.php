@@ -93,19 +93,10 @@ class JournalCreate extends Component
 
     public function submit()
     {
-
         $requestData = request()->all('serverMemo')['serverMemo']['data'];
 
-        if ($this->service->checkForValidTransaction($requestData)) {
-            return $this->addError('transaction_amount', 'Transaction Amount Not Same with Total Debit Or Total Credit');
-        }
-
-        if ($this->service->journalDebitCreditCheck($requestData)) {
-            for ($i = 0; $i < count($requestData['account_no']); $i++) {
-                $this->addError('debit.' . $i, 'Debit Credit are Not same');
-                $this->addError('credit.' . $i, 'Debit Credit are Not same');
-            }
-            return true;
+        if (!$this->service->checkForValidTransaction($requestData)) {
+            return $this->addError('transaction_amount', 'Transaction amount mitch match');
         }
 
         $this->service->store($this->validate());
