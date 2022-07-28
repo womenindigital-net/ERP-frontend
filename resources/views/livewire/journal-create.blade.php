@@ -98,7 +98,7 @@
             @elseif (!$this->mode == 'show')
                 <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-                <a href="{{ route('stock-out.create') }}" class="btn btn-lg btn-success w-100">
+                <a href="{{ route('journal.create') }}" class="btn btn-lg btn-success w-100">
                     Go Back
                 </a>
             @endif

@@ -99,9 +99,6 @@ class StudentIncomeController extends Controller
     public function show(StudentIncome $studentIncome)
     {
         $data = [
-            'projects' => $this->projectRepo->getData(),
-            'students' => $this->studentRepo->getData(),
-            'courses' => $this->courseService->getFormattedDataAsOptGroup(),
             'record' => $this->repo->getRelatedData($studentIncome, ['income.project', 'incomeDetails']),
         ];
 
@@ -118,9 +115,6 @@ class StudentIncomeController extends Controller
     public function edit(StudentIncome $studentIncome): View|Factory|Application
     {
         $data = [
-            'projects' => $this->projectRepo->getData(),
-            'students' => $this->studentRepo->getData(),
-            'courses' => $this->courseService->getFormattedDataAsOptGroup(),
             'record' => $this->repo->getRelatedData($studentIncome, ['income.project', 'incomeDetails']),
         ];
 

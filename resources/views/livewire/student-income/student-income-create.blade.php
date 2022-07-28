@@ -66,7 +66,7 @@
                     </div>
                     <div>
                         @foreach ($inputs as $key => $item)
-                        <div class="row removeRow px-1">
+                        <div class="row removeRow py-1">
                             <div class="d-flex col-lg-7">
                                 <div class="w-100">
                                     <select class="form-control form-select " wire:model="course_id.{{$key}}">
@@ -108,7 +108,7 @@
                     @elseif (!($this->mode) == 'show')
                     <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
                     @else
-                    <a href="{{route('stock-receive.create')}}" class="btn btn-lg btn-success w-100">
+                    <a href="{{route('student-income.create')}}" class="btn btn-lg btn-success w-100">
                         Go Back
                     </a>
                     @endif

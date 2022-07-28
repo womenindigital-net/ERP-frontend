@@ -19,6 +19,14 @@ class StudentIncomeCreate extends Component
 {
     use WithPagination, CommonListElements, CommonAddMore;
 
+
+    public $project_id;
+    public $student_id;
+    public $date;
+    public $course_id;
+    public $amount;
+    public $studentIncome;
+
     private string $destroyRoute = 'student-income.destroy';
     private UserRepository $userRepo;
     private ProjectRepository $projectRepo;
@@ -57,11 +65,6 @@ class StudentIncomeCreate extends Component
         }
     }
 
-    public $project_id;
-    public $student_id;
-    public $date;
-    public $course_id;
-    public $amount;
 
     protected array $rules = [
         'project_id' => 'required',
@@ -73,36 +76,30 @@ class StudentIncomeCreate extends Component
 
 
 
-    // public function mount()
-    // {
-    //     if ($this->stockTransfer) {
-    //         $this->stockTransfer = $this->repo->getRelatedData($this->stockTransfer, ['details']);
+    public function mount()
+    {
+        if ($this->studentIncome) {
 
-    //         $this->project_id = $this->stockTransfer->project_id;
-    //         $this->issue_type = $this->stockTransfer->issue_type;
-    //         $this->reference = $this->stockTransfer->reference;
-    //         $this->date = $this->stockTransfer->date;
-    //         $this->warehouse_id_from = $this->stockTransfer->warehouse_id_from;
-    //         $this->warehouse_id_to = $this->stockTransfer->warehouse_id_to;
+            $this->project_id = $this->studentIncome->income->project_id;
+            $this->student_id = $this->studentIncome->student_id;
+            $this->date = $this->studentIncome->income->date;
 
-    //         $this->inputs = $this->stockTransfer->details->toArray();
+            $this->inputs = $this->studentIncome->incomeDetails->toArray();
 
-    //         foreach ($this->stockTransfer->details as $key => $detail) {
-    //             $this->product_id[$key] = $detail->product_id;
-    //             $this->transfer_quantity[$key] = $detail->transfer_quantity;
-    //             $this->available_Quantity[$key] = $detail->available_qty;
-    //             $this->serial[$key] = $detail->serial;
-    //         }
-    //     }
-    // }
+            foreach ($this->studentIncome->incomeDetails as $key => $detail) {
+                $this->course_id[$key] = $detail->course_id;
+                $this->amount[$key] = $detail->amount;
+            }
+        }
+    }
 
 
-    // public function update()
-    // {
-    //     $this->service->update($this->stockTransfer, $this->validate());
-    //     $this->dispatchBrowserEvent('notify');
-    //     $this->redirectRoute('stock-transfer.create');
-    // }
+    public function update()
+    {
+        $this->service->update($this->studentIncome, $this->validate());
+        $this->dispatchBrowserEvent('notify');
+        $this->redirectRoute('student-income.create');
+    }
 
     public function render()
     {
