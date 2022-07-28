@@ -43,7 +43,6 @@ class JournalCreate extends Component
         $this->service = $service;
 
         $this->inputs[] = $this->numberOfItems;
-
         $targetKey = count($this->inputs) - 1;
         foreach ($this->addMoreItems as $each) {
             $this->{$each}[$targetKey] = null;
@@ -51,7 +50,7 @@ class JournalCreate extends Component
     }
 
     protected array $rules = [
-        'project_id' => 'nullable',
+        'project_id' => 'required',
         'transaction_amount' => 'required',
         'voucher_date' => 'nullable',
         'particulars' => 'nullable',
