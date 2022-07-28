@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Supplier</label>
-                <x-input-select wireModel="supplier_id" :records="$suppliers" additional="mobile">
+                <x-input-select wireModel="supplier_id" :records="$suppliers" additional="phone">
                 </x-input-select>
             </div>
         </div>

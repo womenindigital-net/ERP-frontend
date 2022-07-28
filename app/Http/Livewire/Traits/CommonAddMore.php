@@ -35,6 +35,7 @@ trait CommonAddMore
 
     public function removeItem($key)
     {
+
         unset($this->inputs[$key]);
         $filtered = Arr::except($this->inputs, $key);
         [$keys, $values] = Arr::divide($filtered);
@@ -122,7 +123,7 @@ trait CommonAddMore
             $this->budget_sub_head_id = $values;
         }
 
-        if (isset($this->amount[$key])) {
+        if (Arr::exists($this->amount, $key)) {
             unset($this->amount[$key]);
             $filtered = Arr::except($this->amount, $key);
             [$keys, $values] = Arr::divide($filtered);

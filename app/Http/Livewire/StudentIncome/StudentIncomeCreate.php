@@ -75,7 +75,6 @@ class StudentIncomeCreate extends Component
     ];
 
 
-
     public function mount()
     {
         if ($this->studentIncome) {

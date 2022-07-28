@@ -37,7 +37,7 @@ class SaleVoucherObserver
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
 
         if ($stock) {
-            $stock->qty -= $saleIncomeDetail->stock_receive_qty;
+            $stock->qty -= $saleIncomeDetail->qty;
             $stock->saveQuietly();
         }
     }

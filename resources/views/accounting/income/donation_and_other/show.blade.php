@@ -63,8 +63,7 @@
                             <div class="col-md-4">
                             </div>
                             <div class="col-md-4">
-                                <a href="{{route('donation-and-other.create')}}"
-                                    class="btn btn-success w-100">Go Create
+                                <a href="{{route('donation-and-other.create')}}" class="btn btn-success w-100">Go Back
                                 </a>
                             </div>
                         </div>
