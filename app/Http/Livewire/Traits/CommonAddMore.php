@@ -156,7 +156,7 @@ trait CommonAddMore
             unset($this->course_id[$key]);
             $filtered = Arr::except($this->course_id, $key);
             [$keys, $values] = Arr::divide($filtered);
-            $this->crcourse_idedit = $values;
+            $this->course_id = $values;
         }
         if (isset($this->credit[$key])) {
             unset($this->credit[$key]);
