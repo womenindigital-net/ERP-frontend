@@ -53,51 +53,46 @@ class JournalService
 
     private function segregateInfo(mixed $validated): array
     {
-        $journalInfos = Arr::only($validated, ['account_no', 'account_particulars', 'debit', 'credit']);
+        $journalInfos = Arr::only($validated, ['project_id', 'transaction_amount', 'voucher_date', 'particulars', 'reference']);
         $journalDetailInfos = Arr::only($validated, ['account_no', 'account_particulars', 'debit', 'credit']);
 
-        // dd($journalDetailInfos['account_no'][1]);
         for ($i = 0; $i < count($journalDetailInfos['account_no']); $i++) {
-            if (
-                !empty($journalDetailInfos['account_no'][$i]) and
-                !empty($journalDetailInfos['account_particulars'][$i]) and
-                (empty($journalDetailInfos['debit'][$i]) or empty($journalDetailInfos['credit'][$i])) and
-                ($journalDetailInfos['debit'][$i] or $journalDetailInfos['credit'][$i])
-            ) {
-                dd(2323);
-                return true;
-            } else {
-            }
+            $custom[$i] = [
+                'account_no' => $journalDetailInfos['account_no'][$i],
+                'account_particulars' => $journalDetailInfos['account_particulars'][$i],
+                'debit' => $journalDetailInfos['debit'][$i],
+                'credit' => $journalDetailInfos['credit'][$i],
+            ];
         }
-
-        // foreach ($journalDetail as $key => $journal) {
-        //     // dd($journal['account_no']);
-        //     if (!$this->isValidJournalEntry($journal))
-        //         unset($validated['journal'][$key]);
-        // }
-
-        // $detailInfos = $validated['journal'];
-        // unset($validated['journal']);
-
-        // return [$validated, $detailInfos];
+        
+        return [$journalInfos, $custom];
     }
 
-    // private function isValidJournalEntry(array $journal): bool
-    // {
-    //     dd($journal);
-    //     if (
-    //         !empty($journal['account_no']) and
-    //         !empty($journal['account_particulars']) and
-    //         (empty($journal['debit']) or empty($journal['credit'])) and
-    //         ($journal['debit'] or $journal['credit'])
-    //     ) {
-    //         return true;
-    //     }
 
-    //     return false;
-    // }
+
+
+
     public function checkForValidTransaction(mixed $data): bool
     {
+        if ((array_sum($data['debit']) === array_sum($data['credit'])) and (array_sum($data['credit']) == ($data['transaction_amount']))) {
+            return false;
+        }
+        return true;
+    }
+
+
+    public function journalDebitCreditCheck($data)
+    {
+        for ($i = 0; $i < count($data['account_no']); $i++) {
+            if (
+                !empty($data['account_no'][$i]) and
+                !empty($data['account_particulars'][$i]) and
+                (empty($data['debit'][$i]) xor empty($data['credit'][$i])) and
+                ($data['debit'][$i] xor $data['credit'][$i])
+            ) {
+                return false;
+            }
+        }
         return true;
     }
 }

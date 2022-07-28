@@ -36,8 +36,7 @@ class StudentIncomeService
         try {
             DB::beginTransaction();
             $income = $this->incomeRepo->store($incomeInfo);
-
-
+            
             $studentIncome = $income->studentIncome()->create($studentIncomeInfo);
 
             $studentIncome->studentIncomeDetail()->createMany($studentIncomeDetails);
@@ -55,7 +54,9 @@ class StudentIncomeService
     public function segregateInfo(array $validate): array
     {
         [$validate, $income] = $this->collectIncomeInfo($validate);
+        
         $studentIncome = $this->collectStudentIncomeInfo($validate);
+        
         $studentIncomeDetails = $this->collectStudentIncomeDetailsInfo($validate);
 
         return [$income, $studentIncome, $studentIncomeDetails];
@@ -85,6 +86,16 @@ class StudentIncomeService
 
     private function collectStudentIncomeDetailsInfo(array $validate): array
     {
+        $studentIncomeDetails = Arr::only($validate, ['course_id', 'amount']);
+
+        for ($i = 0; $i < count($studentIncomeDetails['course_id']); $i++) {
+            $studentIncomeData[$i] = [
+                'course_id' => $studentIncomeDetails['course_id'][$i],
+                'amount' => $studentIncomeDetails['amount'][$i],
+            ];
+        }
+
+        return $studentIncomeData;
     }
 
     /**
@@ -97,16 +108,18 @@ class StudentIncomeService
         try {
             DB::beginTransaction();
             // send income for updating
-            [$validate, $income] = $this->collectIncomeInfo($validate);
-            $this->incomeRepo->update($studentIncome->income, $income);
+            // [$validate, $income] = $this->collectIncomeInfo($validate);
+            [$incomeInfo, $studentIncomeInfo, $studentIncomeDetails] = $this->segregateInfo($validate);
+            $this->incomeRepo->update($studentIncome->income, $incomeInfo);
 
             // check each detail for matching, if not found then delete else keep it
             foreach ($studentIncome->incomeDetails as $incomeDetail) {
                 $found = false;
-                foreach ($validate['details'] as $key => $requestedDetail) {
+                // dd($studentIncomeDetails);
+                foreach ($studentIncomeDetails as $key => $requestedDetail) {
                     if ($requestedDetail['course_id'] == $incomeDetail->course_id && $requestedDetail['amount'] == $incomeDetail->amount) {
                         $found = true;
-                        unset($validate['details'][$key]);
+                        unset($studentIncomeDetails[$key]);
                         break;
                     }
                 }
@@ -114,8 +127,8 @@ class StudentIncomeService
                     $incomeDetail->delete();
                 }
             }
-            if (count($validate['details']))
-                $studentIncome->incomeDetails()->createMany($validate['details']);
+            if (count($studentIncomeDetails))
+                $studentIncome->incomeDetails()->createMany($studentIncomeDetails);
 
             DB::commit();
         } catch (Exception $e) {
