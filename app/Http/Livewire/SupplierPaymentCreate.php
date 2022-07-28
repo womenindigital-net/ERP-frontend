@@ -119,8 +119,7 @@ class SupplierPaymentCreate extends Component
         }
 
         if (str_starts_with($name, 'bank_account_id')) {
-            $detail =  $this->bankAccRepo->getCheque($value);
-            $this->cheque =  $detail->chequeBook;
+            $this->cheque =  $this->bankAccRepo->getCheque($value);
         }
     }
 

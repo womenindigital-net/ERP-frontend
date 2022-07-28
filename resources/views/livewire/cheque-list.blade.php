@@ -30,6 +30,10 @@
                                     <td></td>
                                     <td>{{ $record->created_at }}</td>
                                     <td>
+                                        <button type="button" wire:click="toggleIsInvalid({{$record->id}})"
+                                            class="btn btn-sm btn-{{$record->is_invalid ? 'danger' : 'info'}} btn-rounded waves-effect waves-light mb-2 me-1">
+                                            <i class="fas fa-check"></i>
+                                        </button>
                                         <button type="button" wire:click="confirmDelete({{$record->id}})"
                                             class="btn btn-sm m-1 btn-danger btn-rounded waves-effect waves-light">
                                             <i class="fas fa-trash-alt"></i>

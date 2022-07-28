@@ -86,27 +86,13 @@ class SupplierPaymentService
             'amount' => ($data['cash'] ?? 0) + ($data['cheque_amount'] ?? 0),
         ];
 
-        // dd($data);
-
-        // $searchString = 'cash';
-
-        // if (isset($data['cheque'])) {
-        //     $searchString = "$searchString|cheque*";
-        // }
-
         $info['info'] = [
             'cash' => $data['cash'],
             'bank_account_id' => $data['bank_account_id'],
             'cheque_id' => $data['cheque_id'],
             'cheque_amount' => $data['cheque_amount']
         ];
-        // foreach ($data as $key => $val) {
-        //     if (preg_match("/($searchString)/", $key)) {
-        //         $paymentInfo['info'][$key] = $val;
-        //     }
-        // }
 
-        // dd(array_merge($custom, $info));
 
         return array_merge($custom, $info);
     }

@@ -63,11 +63,8 @@ class DirectPaymentCreate extends Component
     public function mount()
     {
         if ($this->record) {
-            // dd($this->record);
-            // $this->mode = 'edit';
             $this->record = $this->repo->getRelatedData($this->record, ['project']);
 
-            // dd($this->record->project_id);
             $this->project_id   = $this->record->project_id;
             $this->payment_type_id = $this->record->payment_type_id;
             $this->from_account = $this->record->from_account;

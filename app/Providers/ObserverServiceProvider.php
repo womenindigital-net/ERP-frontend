@@ -6,7 +6,9 @@ use App\Models\Income;
 use App\Models\Purchase;
 use App\Models\Requisition;
 use App\Models\StockAssign;
+use App\Models\PaymentHistory;
 use App\Models\StockOutDetail;
+use App\Models\SupplierPayment;
 use App\Models\SaleIncomeDetail;
 use App\Models\StockAssignDetail;
 use App\Observers\IncomeObserver;
@@ -22,6 +24,7 @@ use App\Observers\StockReceiveObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Models\MaterialCollectionProduct;
 use App\Observers\StockOutDetailObserver;
+use App\Observers\SupplierPaymentObserver;
 use App\Observers\StockAssignDetailObserver;
 use App\Observers\FinishedGoodDetailObserver;
 use App\Observers\StockReceiveDetailObserver;
@@ -61,5 +64,6 @@ class ObserverServiceProvider extends ServiceProvider
         StockAssignDetail::observe(StockAssignDetailObserver::class);
         StockOutDetail::observe(StockOutDetailObserver::class);
         Requisition::observe(RequisitionObserver::class);
+        PaymentHistory::observe(SupplierPaymentObserver::class);
     }
 }

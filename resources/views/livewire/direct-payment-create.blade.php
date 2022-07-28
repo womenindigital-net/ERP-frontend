@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-  <div class="modal-footer">
+    <div class="modal-footer">
         <div class="w-25">
             @if ($this->mode == 'edit')
             <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>

@@ -7,6 +7,7 @@
                     <th>Account No</th>
                     <th>Account Name</th>
                     <th>Initial Balance</th>
+                    <th>Current Balance</th>
                     <th>Note</th>
                     <th>Log</th>
                     <th>Action</th>
@@ -19,6 +20,7 @@
                     <td>{{ $record->account_no }}</td>
                     <td>{{ $record->account_name }}</td>
                     <td>{{ $record->initial_balance }}</td>
+                    <td>{{ $record->current_balance }}</td>
                     <td>{{ $record->note }}</td>
                     <td><small>{{ $record->created_at }}</small></td>
                     <td>

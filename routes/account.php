@@ -25,7 +25,7 @@ use App\Http\Controllers\MaterialCollectionController;
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::resources([
         'journal' => JournalController::class,
-        
+
         'student-income' => StudentIncomeController::class,
         'sale-voucher' => SaleVoucherController::class,
         'donation-and-other' => DonationController::class,
@@ -57,7 +57,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::delete('purchase-order/{purchase}/delete', [PurchaseController::class, 'destroy'])->name('purchase-order.delete');
     Route::get('purchase-order-return/{purchase}', [PurchaseController::class, 'purchaseReturn'])->name('purchase-order.return');
     Route::get('purchase-order-return', [PurchaseController::class, 'purchaseReturnShow'])->name('purchase-order.return.show');
-    
+
     // direct Payment route Start
     Route::get('account/direct-payment/cash-payment-list', [DirectPaymentController::class, 'cashPaymentList'])->name('cash-payment.list');
     Route::get('cash-payment-list', [PaymentController::class, 'casePaymentList'])->name('cash-payment-list');
@@ -65,7 +65,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
     Route::get('bank-to-bank-list', [PaymentController::class, 'bankToBankList'])->name('bank.to.bank.list');
     // direct Payment route End
 
-    
+
     // Accounting Reporting
     Route::get('stock-count/report', [StockReportController::class, 'stockCountReport'])->name('stockCount.report');
 

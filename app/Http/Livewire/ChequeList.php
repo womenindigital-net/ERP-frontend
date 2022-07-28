@@ -20,9 +20,9 @@ class ChequeList extends Component
         $this->repo = $repository;
     }
 
-    public function toggleApprove($recordId)
+    public function toggleIsInvalid($recordId)
     {
-        $this->repo->toggleColumn($recordId, 'is_approved');
+        $this->repo->toggleColumn($recordId, 'is_invalid');
         $this->dispatchBrowserEvent('notify');
     }
 

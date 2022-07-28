@@ -13,4 +13,9 @@ class ChequeRepository extends BaseRepository
         return $this->model::when($search, function ($query) use ($search) {
         })->latest()->paginate($perPage);
     }
+
+    public function getSpecificCheque($chequeId)
+    {
+        return $this->model::find($chequeId);
+    }
 }

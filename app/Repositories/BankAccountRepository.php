@@ -17,11 +17,18 @@ class BankAccountRepository extends BaseRepository
     public function getApprovedList()
     {
         return $this->model::all();
-        //        return $this->model::approved()->all();
     }
 
     public function getCheque($value)
     {
-        return $this->model::with('chequeBook')->where(['id' => $value])->first();
+
+        $data = $this->model::with('chequeBook')->where(['id' => $value,])->first()->chequeBook->where('is_invalid', 0)->where('used', 0);
+
+        return $data;
+    }
+
+    public function getSpecificBankAcc($bankId)
+    {
+        return $this->model::find($bankId);
     }
 }
