@@ -43,7 +43,6 @@ class JournalCreate extends Component
         $this->service = $service;
 
         $this->inputs[] = $this->numberOfItems;
-
         $targetKey = count($this->inputs) - 1;
         foreach ($this->addMoreItems as $each) {
             $this->{$each}[$targetKey] = null;
@@ -51,7 +50,7 @@ class JournalCreate extends Component
     }
 
     protected array $rules = [
-        'project_id' => 'nullable',
+        'project_id' => 'required',
         'transaction_amount' => 'required',
         'voucher_date' => 'nullable',
         'particulars' => 'nullable',
@@ -93,19 +92,10 @@ class JournalCreate extends Component
 
     public function submit()
     {
-
         $requestData = request()->all('serverMemo')['serverMemo']['data'];
 
-        if ($this->service->checkForValidTransaction($requestData)) {
-            return $this->addError('transaction_amount', 'Transaction Amount Not Same with Total Debit Or Total Credit');
-        }
-
-        if ($this->service->journalDebitCreditCheck($requestData)) {
-            for ($i = 0; $i < count($requestData['account_no']); $i++) {
-                $this->addError('debit.' . $i, 'Debit Credit are Not same');
-                $this->addError('credit.' . $i, 'Debit Credit are Not same');
-            }
-            return true;
+        if (!$this->service->checkForValidTransaction($requestData)) {
+            return $this->addError('transaction_amount', 'Transaction amount mitch match');
         }
 
         $this->service->store($this->validate());

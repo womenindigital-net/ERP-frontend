@@ -123,7 +123,6 @@ class FunctionalCommunicationController extends Controller
             'conversation_social_communication' => $functionalCommunication['conversation_social_communication'],
             'play_skill' => $functionalCommunication['play_skill'],
         ];
-
         return view('assessment.functional-communication.edit', $data);
     }
 

@@ -53,46 +53,40 @@ class JournalService
 
     private function segregateInfo(mixed $validated): array
     {
-        $journalInfos = Arr::only($validated, ['project_id', 'transaction_amount', 'voucher_date', 'particulars', 'reference']);
+        $journalInfos       = Arr::only($validated, [
+            'project_id',
+            'transaction_amount',
+            'voucher_date',
+            'particulars',
+            'reference',
+        ]);
         $journalDetailInfos = Arr::only($validated, ['account_no', 'account_particulars', 'debit', 'credit']);
 
         for ($i = 0; $i < count($journalDetailInfos['account_no']); $i++) {
             $custom[$i] = [
-                'account_no' => $journalDetailInfos['account_no'][$i],
+                'account_no'          => $journalDetailInfos['account_no'][$i],
                 'account_particulars' => $journalDetailInfos['account_particulars'][$i],
-                'debit' => $journalDetailInfos['debit'][$i],
-                'credit' => $journalDetailInfos['credit'][$i],
+                'debit'               => $journalDetailInfos['debit'][$i],
+                'credit'              => $journalDetailInfos['credit'][$i],
             ];
         }
-        
+
         return [$journalInfos, $custom];
     }
 
-
-
-
-
     public function checkForValidTransaction(mixed $data): bool
     {
+        $result = false;
+
         if ((array_sum($data['debit']) === array_sum($data['credit'])) and (array_sum($data['credit']) == ($data['transaction_amount']))) {
-            return false;
-        }
-        return true;
-    }
-
-
-    public function journalDebitCreditCheck($data)
-    {
-        for ($i = 0; $i < count($data['account_no']); $i++) {
-            if (
-                !empty($data['account_no'][$i]) and
-                !empty($data['account_particulars'][$i]) and
-                (empty($data['debit'][$i]) xor empty($data['credit'][$i])) and
-                ($data['debit'][$i] xor $data['credit'][$i])
-            ) {
-                return false;
+            $result = true;
+            for ($i = 0; $i < count($data['account_no']); $i++) {
+                if ($data['debit'][$i] && $data['credit'][$i]) {
+                    $result = false;
+                }
             }
         }
-        return true;
+
+        return $result;
     }
 }
