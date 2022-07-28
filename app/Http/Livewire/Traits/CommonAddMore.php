@@ -61,6 +61,18 @@ trait CommonAddMore
             [$keys, $values] = Arr::divide($filtered);
             $this->qty = $values;
         }
+        if (isset($this->available_Quantity[$key])) {
+            unset($this->available_Quantity[$key]);
+            $filtered = Arr::except($this->available_Quantity, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->available_Quantity = $values;
+        }
+        if (isset($this->transfer_quantity[$key])) {
+            unset($this->transfer_quantity[$key]);
+            $filtered = Arr::except($this->transfer_quantity, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->transfer_quantity = $values;
+        }
 
         if (isset($this->vat[$key])) {
             unset($this->vat[$key]);
@@ -96,6 +108,12 @@ trait CommonAddMore
             [$keys, $values] = Arr::divide($filtered);
             $this->budget_head_id = $values;
         }
+        if (isset($this->unit[$key])) {
+            unset($this->unit[$key]);
+            $filtered = Arr::except($this->unit, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->unit = $values;
+        }
 
         if (isset($this->budget_sub_head_id[$key])) {
             unset($this->budget_sub_head_id[$key]);
@@ -110,7 +128,96 @@ trait CommonAddMore
             [$keys, $values] = Arr::divide($filtered);
             $this->amount = $values;
         }
-
+        if (isset($this->account_no[$key])) {
+            unset($this->account_no[$key]);
+            $filtered = Arr::except($this->account_no, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->account_no = $values;
+        }
+        if (isset($this->account_particulars[$key])) {
+            unset($this->account_particulars[$key]);
+            $filtered = Arr::except($this->account_particulars, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->account_particulars = $values;
+        }
+        if (isset($this->debit[$key])) {
+            unset($this->debit[$key]);
+            $filtered = Arr::except($this->debit, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->debit = $values;
+        }
+        if (isset($this->credit[$key])) {
+            unset($this->credit[$key]);
+            $filtered = Arr::except($this->credit, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->credit = $values;
+        }
+        if (isset($this->course_id[$key])) {
+            unset($this->course_id[$key]);
+            $filtered = Arr::except($this->course_id, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->crcourse_idedit = $values;
+        }
+        if (isset($this->credit[$key])) {
+            unset($this->credit[$key]);
+            $filtered = Arr::except($this->credit, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->credit = $values;
+        }
+        if (isset($this->exp_date[$key])) {
+            unset($this->exp_date[$key]);
+            $filtered = Arr::except($this->exp_date, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->exp_date = $values;
+        }
+        if (isset($this->received[$key])) {
+            unset($this->received[$key]);
+            $filtered = Arr::except($this->received, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->received = $values;
+        }
+        if (isset($this->return[$key])) {
+            unset($this->return[$key]);
+            $filtered = Arr::except($this->return, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->return = $values;
+        }
+        if (isset($this->receivable[$key])) {
+            unset($this->receivable[$key]);
+            $filtered = Arr::except($this->receivable, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->receivable = $values;
+        }
+        if (isset($this->stock_receive_qty[$key])) {
+            unset($this->stock_receive_qty[$key]);
+            $filtered = Arr::except($this->stock_receive_qty, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->stock_receive_qty = $values;
+        }
+        if (isset($this->serial[$key])) {
+            unset($this->serial[$key]);
+            $filtered = Arr::except($this->serial, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->serial = $values;
+        }
+        if (isset($this->avl_stock[$key])) {
+            unset($this->avl_stock[$key]);
+            $filtered = Arr::except($this->avl_stock, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->avl_stock = $values;
+        }
+        if (isset($this->depreciation_percent[$key])) {
+            unset($this->depreciation_percent[$key]);
+            $filtered = Arr::except($this->depreciation_percent, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->depreciation_percent = $values;
+        }
+        if (isset($this->assigned_to[$key])) {
+            unset($this->assigned_to[$key]);
+            $filtered = Arr::except($this->assigned_to, $key);
+            [$keys, $values] = Arr::divide($filtered);
+            $this->assigned_to = $values;
+        }
         if (isset($this->total_discount))
             $this->total_discount = array_sum($this->discount);
 

@@ -100,7 +100,7 @@
                                 <div class="col-lg-3 p-0 pe-1 pb-1 align-self-center d-flex">
                                     <x-input-text type="number" wireModel="serial.{{ $key }}"></x-input-text>
                                     @if (!($this->mode == 'show'))
-                                    <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                    <button type="button" class="btn mb-1 btn-danger waves-effect ms-1 waves-light removeBtn"
                                         wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
@@ -111,7 +111,6 @@
                             @if (!($this->mode == 'show'))
                             <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
                                 wire:click="addMore()" />
-
                             @endif
                         </div>
                     </form>

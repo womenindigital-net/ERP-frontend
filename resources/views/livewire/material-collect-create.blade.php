@@ -103,7 +103,7 @@
                                             </x-input-text>
                                             @if (!($this->mode == 'show'))
                                             <button type="button"
-                                                class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                                class="btn mb-1 btn-danger waves-effect waves-light removeBtn ms-1"
                                                 wire:click="removeItem({{ $key }})">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>

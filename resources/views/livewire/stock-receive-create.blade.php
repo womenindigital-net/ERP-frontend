@@ -69,44 +69,56 @@
                                 </div>
                                 <div data-repeater-list="group-a">
                                     @foreach ($inputs as $key => $item)
-                                    <div data-repeater-item class="row removeRow">
-                                        <div class="col-lg-2 p-0 pe-1 pb-2 align-items-center ">
-                                            <x-input-select :records="$products" wireModel="product_id.{{$key}}" :disabled="true" />
+                                        <div data-repeater-item class="row removeRow">
+                                            <div class="col-lg-2 p-0 pe-1 pb-2 align-items-center ">
+                                                <x-input-select :records="$products"
+                                                    wireModel="product_id.{{ $key }}" :disabled="true" />
+                                            </div>
+                                            <div class="col-lg-2 p-0 pe-1">
+                                                <x-input-text wireModel="exp_date.{{ $key }}" type="date"
+                                                    :readOnly='true'>
+                                                </x-input-text>
+                                            </div>
+                                            <div class="col-lg-2 p-0 pe-1">
+                                                <x-input-text wireModel="available_qty.{{ $key }}"
+                                                    type="number" :readOnly='true'>
+                                                </x-input-text>
+                                            </div>
+                                            <div class="col-lg-1 p-0 pe-1">
+                                                <x-input-text wireModel="received.{{ $key }}" type="number">
+                                                </x-input-text>
+                                            </div>
+                                            <div class="col-lg-1 p-0 pe-1">
+                                                <x-input-text wireModel="return.{{ $key }}" type="number">
+                                                </x-input-text>
+                                            </div>
+                                            <div class="col-lg-1 p-0 pe-1">
+                                                <x-input-text wireModel="receivable.{{ $key }}" type="number"
+                                                    :readOnly='true'>
+                                                </x-input-text>
+                                            </div>
+                                            <div class="col-lg-1 p-0 pe-1">
+                                                <x-input-text wireModel="stock_receive_qty.{{ $key }}"
+                                                    type="number" :readOnly='true'>
+                                                </x-input-text>
+                                            </div>
+                                            <div class="col-lg-2 d-flex">
+                                                <x-input-text wireModel="serial.{{ $key }}" type="number">
+                                                </x-input-text>
+                                                @if (!($this->mode == 'show'))
+                                                    <button type="button" class="btn ms-2  my-1 btn-danger  removeBtn"
+                                                        wire:click="removeItem({{ $key }})">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="exp_date.{{ $key }}"
-                                                type="date" :readOnly='true'>
-                                            </x-input-text>
-                                        </div>
-                                        <div class="col-lg-2 p-0 pe-1">
-                                            <x-input-text wireModel="available_qty.{{ $key }}" type="number"
-                                                :readOnly='true'>
-                                            </x-input-text>
-                                        </div>
-                                        <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="received.{{ $key }}" type="number">
-                                            </x-input-text>
-                                        </div>
-                                        <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="return.{{ $key }}" type="number">
-                                            </x-input-text>
-                                        </div>
-                                        <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="receivable.{{ $key }}" type="number" :readOnly='true'>
-                                            </x-input-text>
-                                        </div>
-                                        <div class="col-lg-1 p-0 pe-1">
-                                            <x-input-text wireModel="stock_receive_qty.{{ $key }}" type="number"
-                                                :readOnly='true'>
-                                            </x-input-text>
-                                        </div>
-                                        <div class="col-lg-2 d-flex">
-                                            <x-input-text wireModel="serial.{{ $key }}" type="number">
-                                            </x-input-text>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
+                                @if (!($this->mode == 'show'))
+                                    <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0"
+                                        value="Add" wire:click="addMore()" />
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -117,13 +129,13 @@
     <div class="modal-footer">
         <div class="w-25">
             @if ($this->mode == 'edit')
-            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
-            @elseif (!($this->mode) == 'show')
-            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+                <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            @elseif (!$this->mode == 'show')
+                <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-            <a href="{{route('stock-receive.create')}}" class="btn btn-lg btn-success w-100">
-                Go Back
-            </a>
+                <a href="{{ route('stock-receive.create') }}" class="btn btn-lg btn-success w-100">
+                    Go Back
+                </a>
             @endif
         </div>
     </div>

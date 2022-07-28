@@ -35,6 +35,7 @@ class PurchaseOrderCreate extends Component
     private SupplierRepository $supplierRepo;
     private ProductService $productService;
     private RequisitionRepository $requisitionRepo;
+    protected array $addMoreItems = ['product_id','exp_date','available_qty','qty','price','vat','discount','sub_total'];
 
     public function boot(
         PurchaseOrderService $service,
