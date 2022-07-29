@@ -10,9 +10,8 @@ class DirectPaymentRepository extends BaseRepository
 
     public function getListData($perPage, $search)
     {
-        return $this->model::with('payment.supplierPayment')
+        return $this->model::with('project', 'creator', 'history')
             ->when($search, function ($query) use ($search) {
-
             })->latest()->paginate($perPage);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Donation;
 use App\Models\Payment;
+use App\Models\Donation;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\PaymentRepository;
 use App\Repositories\SupplierPaymentRepository;
@@ -28,7 +28,6 @@ class DirectPaymentService
     public function store(mixed $validated)
     {
         $validated['user_id'] = auth()->id();
-        // dd($validated);
         try {
             $this->paymentRepo->store($validated);
 
@@ -45,8 +44,8 @@ class DirectPaymentService
 
         try {
             DB::beginTransaction();
-            
-            $this->repo->update($donation, $validated);
+
+            $this->paymentRepo->update($donation, $validated);
 
             DB::commit();
         } catch (\Exception $e) {

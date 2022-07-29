@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Income;
+use App\Models\Payment;
 use App\Models\Purchase;
 use App\Models\Requisition;
 use App\Models\StockAssign;
@@ -22,6 +23,7 @@ use App\Observers\SaleVoucherObserver;
 use App\Observers\StockAssignObserver;
 use App\Observers\StockReceiveObserver;
 use Illuminate\Support\ServiceProvider;
+use App\Observers\DirectPaymentObserver;
 use App\Models\MaterialCollectionProduct;
 use App\Observers\StockOutDetailObserver;
 use App\Observers\SupplierPaymentObserver;
@@ -65,5 +67,6 @@ class ObserverServiceProvider extends ServiceProvider
         StockOutDetail::observe(StockOutDetailObserver::class);
         Requisition::observe(RequisitionObserver::class);
         PaymentHistory::observe(SupplierPaymentObserver::class);
+        Payment::observe(DirectPaymentObserver::class);
     }
 }
