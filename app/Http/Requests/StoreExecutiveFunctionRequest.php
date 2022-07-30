@@ -30,6 +30,7 @@ class StoreExecutiveFunctionRequest extends FormRequest
             "have_trouble_getting"                 => 'nullable',
             "start_tasks_with_enthusiasm"          => 'nullable',
             "find_it_hard"                         => 'nullable',
+            "i_see_or_hear"                         => 'nullable',
             "become_absorbed_in_things"            => 'nullable',
             "have_trouble_following_conversations" => 'nullable',
             "forget_things"                        => 'nullable',
@@ -41,7 +42,6 @@ class StoreExecutiveFunctionRequest extends FormRequest
             "become_frustrated_when_things"        => 'nullable',
             "have_trouble_completing"              => 'nullable',
             "I_will_do_it_later"                   => 'nullable',
-            "next"                   => 'nullable',
         ];
     }
 }

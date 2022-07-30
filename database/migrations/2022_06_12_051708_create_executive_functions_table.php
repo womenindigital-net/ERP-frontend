@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('have_trouble_getting')->nullable();
             $table->string('start_tasks_with_enthusiasm')->nullable();
             $table->string('find_it_hard')->nullable();
+            $table->string('i_see_or_hear')->nullable();
             $table->string('become_absorbed_in_things')->nullable();
             $table->string('have_trouble_following_conversations')->nullable();
             $table->string('forget_things')->nullable();
