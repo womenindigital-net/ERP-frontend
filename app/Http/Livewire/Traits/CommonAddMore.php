@@ -153,8 +153,15 @@ trait CommonAddMore
             [$keys, $values] = Arr::divide($filtered);
             $this->credit = $values;
         }
-        if (isset($this->course_id[$key])) {
+
+        dd(isset($this->course_id[$key]) and $this->course_id[$key]);
+        if (isset($this->course_id[$key]) and $this->course_id[$key]) {
+
+            dump($this->course_id[$key]);
+            dump($this->course_id);
+
             unset($this->course_id[$key]);
+            dd($this->course_id);
             $filtered = Arr::except($this->course_id, $key);
             [$keys, $values] = Arr::divide($filtered);
             $this->course_id = $values;

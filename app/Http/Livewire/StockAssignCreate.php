@@ -63,6 +63,7 @@ class StockAssignCreate extends Component
     public $product_details;
     public $depreciation_percent;
     public $assigned_to;
+    public $amount;
 
     protected array $rules = [
         'project_id' => 'required',
