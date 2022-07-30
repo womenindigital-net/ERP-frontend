@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Repositories\PaymentRepository;
+use App\Repositories\DirectPaymentRepository;
 use App\Http\Livewire\Traits\CommonListElements;
 
 class CashPaymentList extends Component
@@ -13,9 +14,9 @@ class CashPaymentList extends Component
 
     protected string $destroyRoute = 'direct-payment.destroy';
 
-    private PaymentRepository $repo;
+    private DirectPaymentRepository $repo;
 
-    public function boot(PaymentRepository $repository)
+    public function boot(DirectPaymentRepository $repository)
     {
         $this->repo = $repository;
     }

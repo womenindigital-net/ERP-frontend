@@ -4,7 +4,7 @@
             <table class="table table-bordered w-100">
                 <thead>
                     <tr class="table-primary">
-                        <th>Purpose</th>
+                        <th>Note</th>
                         <th>Project </th>
                         <th>Date</th>
                         <th>Reference</th>
@@ -22,14 +22,15 @@
                     @foreach($records as $record)
                     <tr>
                         <td>{{ $record->note }}</td>
+                        <td>{{ $record->project->title }}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
+                        <td>{{-- $record-> --}}</td>
                         <td>{{ $record->amount }}</td>
-                        <td>{{-- $record-> --}}</td>
-                        <td>{{-- $record-> --}}</td>
-                        <td>{{-- $record-> --}}</td>
-                        <td>{{-- $record-> --}}</td>
-                        <td>{{-- $record-> --}}</td>
-                        <td>{{-- $record-> --}}</td>
-                        <td>{{-- $record-> --}}</td>
                         <td>{{ $record->created_at }}</td>
                         <td>
                             <a href="{{route('direct-payment.show', $record->id)}}" type="button"

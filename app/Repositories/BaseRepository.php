@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Traits\OnlyDelete;
 use App\Traits\OnlyStore;
+use App\Traits\OnlyDelete;
 use App\Traits\OnlyUpdate;
 use Illuminate\Database\Eloquent\Model;
 

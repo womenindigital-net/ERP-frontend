@@ -3,8 +3,8 @@
 namespace App\Observers;
 
 use App\Models\StockReceiveDetail;
-use App\Repositories\StockReceiveDetailRepository;
 use App\Repositories\StockRepository;
+use App\Repositories\StockReceiveDetailRepository;
 
 class StockReceiveObserver
 {
@@ -33,7 +33,7 @@ class StockReceiveObserver
 
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
         if ($stock) {
-            $stock->qty += $stockReceiveDetail->received;
+            $stock->qty += $stockReceiveDetail->stock_receive_qty;
             $stock->saveQuietly();
         }
     }

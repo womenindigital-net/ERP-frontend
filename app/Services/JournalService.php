@@ -66,8 +66,8 @@ class JournalService
             $custom[$i] = [
                 'account_no'          => $journalDetailInfos['account_no'][$i],
                 'account_particulars' => $journalDetailInfos['account_particulars'][$i],
-                'debit'               => $journalDetailInfos['debit'][$i],
-                'credit'              => $journalDetailInfos['credit'][$i],
+                'debit'               => empty($journalDetailInfos['debit'][$i]) ? null : $journalDetailInfos['debit'][$i],
+                'credit'              => empty($journalDetailInfos['credit'][$i]) ? null : $journalDetailInfos['credit'][$i],
             ];
         }
 

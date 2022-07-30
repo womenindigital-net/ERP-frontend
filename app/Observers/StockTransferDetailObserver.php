@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Models\Stock;
 use App\Models\StockTransferDetail;
 use App\Repositories\StockRepository;
 use App\Repositories\StockTransferDetailRepository;
@@ -33,8 +34,8 @@ class StockTransferDetailObserver
         $productId = $stockTransferDetail->product_id;
         $warehouseIdForm = $stockTransferDetail->stockTransfer->warehouse_id_from;
         $warehouseIdTo = $stockTransferDetail->stockTransfer->warehouse_id_to;
-
         $stockForm = $this->stockRepo->getDetailAccordingly($projectId, $warehouseIdForm, $productId);
+
         if ($stockForm) {
             $stockForm->qty -= $stockTransferDetail->transfer_quantity;
             $stockForm->saveQuietly();
@@ -45,6 +46,13 @@ class StockTransferDetailObserver
         if ($stockTo) {
             $stockTo->qty += $stockTransferDetail->transfer_quantity;
             $stockTo->saveQuietly();
+        } else {
+            Stock::create([
+                'project_id' => $projectId,
+                'product_id' => $productId,
+                'warehouse_id' => $warehouseIdTo,
+                'qty' => $stockTransferDetail->transfer_quantity,
+            ]);
         }
     }
 
