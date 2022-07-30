@@ -102,14 +102,19 @@
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check name="find_it_hard"
                                                                     label="Find it hard to do things that aren't necessary or highly stimulating."
-                                                                    :records="$executiveConstants::$oftenOrNot">
+                                                                    :records="$executiveConstants::$agreeOrNot">
+                                                                </x-input-radio-or-check>
+                                                                <!-- end row -->
+                                                                <x-input-radio-or-check name="i_see_or_hear"
+                                                                    label="I am easily distracted by things I see or hear"
+                                                                    :records="$executiveConstants::$agreeOrNot">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check name="become_absorbed_in_things"
                                                                     label="Become absorbed in things or tasks that interest me—sometimes to the point of
                                                                                            forgetting about people around me or other obligations."
-                                                                    :records="$executiveConstants::$oftenOrNot">
+                                                                    :records="$executiveConstants::$agreeOrNot">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <!-- end row -->
