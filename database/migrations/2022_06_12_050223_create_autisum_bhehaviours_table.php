@@ -25,9 +25,21 @@ return new class extends Migration
             $table->string('seems_not_to_hear')->nullable();
             $table->string('sometimes_shows_no_startle_response')->nullable();
             $table->string('sometimes_painful_stimuli_such_as_bruises')->nullable();
+            $table->string('is_directed_toward_eyes')->nullable();
             $table->string('covers_ears_at_many_sounds')->nullable();
             $table->string('squints_frowns_covers_eyes_when_in_the_presence_of_natural_light')->nullable();
             $table->string('frequently_has_no_visual_reaction')->nullable();
+
+            $table->string('has_no_social_smile')->nullable();
+            $table->string('does_not_reach_out_when_reached_for')->nullable();
+            $table->string('not_responsive_to_other_peoples_facial_expressions_or_feelings')->nullable();
+            $table->string('actively_avoids_eye_contact')->nullable();
+            $table->string('resists_being_touched_or_held')->nullable();
+            $table->string('is_flaccid_when_held_in_arms')->nullable();
+            $table->string('is_stiff_and_hard_to_held')->nullable();
+            $table->string('does_not_imitate_other_children_at_play')->nullable();
+            $table->string('has_not_developed_any_friendships')->nullable();
+
             $table->string('stares_into_space_for_long_periods_of_time')->nullable();
             $table->string('whirls_self_for_long_periods_of_time')->nullable();
             $table->string('does_not_use_toys_appropriately')->nullable();
@@ -44,7 +56,6 @@ return new class extends Migration
             $table->string('often_frightened_or_very_anxious')->nullable();
             $table->string('looks_through_people')->nullable();
             $table->string('whirls_self_for_long_periods_time')->nullable();
-            $table->string('sometimes_shows_no_startle_response_to_loud_noise')->nullable();
             $table->string('rocks_self_for_long_periods_time')->nullable();
             $table->string('does_lot_lunging_and_darting')->nullable();
             $table->string('hurts_self_banging_head')->nullable();

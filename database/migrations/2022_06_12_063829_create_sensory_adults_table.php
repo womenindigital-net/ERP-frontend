@@ -47,6 +47,7 @@ return new class extends Migration
             $table->string('being_up_high')->nullable();
             $table->string('less_stable_ground_surfaces')->nullable();
             $table->string('riding_in_a_car')->nullable();
+            $table->string('hearing_loud_sounds—car_horns')->nullable();
             $table->string('hearing_loud_sounds')->nullable();
             $table->string('being_in_noisy_settings')->nullable();
             $table->string('watching_TV_or_listening')->nullable();
