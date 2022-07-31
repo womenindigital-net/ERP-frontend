@@ -155,7 +155,7 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$pragmatic_objective->one ?? ''" name=""
+                                                                :checked="$pragmatic_objective->age_appropriate_peers ?? ''" name="age_appropriate_peers"
                                                                 label="Interaction with age-appropriate peers"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -281,7 +281,7 @@
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
                                                                 :checked="$pragmatic_objective->ability_to_handle_being_left_out ?? ''"
-                                                                name="" label="Ability to handle being “left out”"
+                                                                name="ability_to_handle_being_left_out" label="Ability to handle being “left out”"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
