@@ -103,7 +103,7 @@
                                 label="Getting hands, face, or other body parts “messy” with paint, glue, sand, food, lotion, etc"
                                 :records="$sensoryChecklistConstant::$young"></x-input-radio-or-check>
                               <!--end row -->
-                              <x-input-radio-or-check name="getting_hands"
+                              <x-input-radio-or-check name="grooming_activities_such"
                                 label="Grooming activities such as face and hair washing, brushing, cutting, and nail trimming"
                                 :records="$sensoryChecklistConstant::$young"></x-input-radio-or-check>
                               <!--end row -->

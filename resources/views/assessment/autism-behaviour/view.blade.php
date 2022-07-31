@@ -117,8 +117,8 @@
                                                         :records="$constants::$autismBehaviorCheck">
                                                     </x-input-radio-or-check>
                                                     <!-- row end -->
-                                                    <x-input-radio-or-check :checked="$record->sometimes_painful_stimuli_such_as_bruises"
-                                                        name="sometimes_painful_stimuli_such_as_bruises"
+                                                    <x-input-radio-or-check :checked="$record->is_directed_toward_eyes"
+                                                        name="is_directed_toward_eyes"
                                                         label="Often will not blink when bright light is directed toward eyes"
                                                         :records="$constants::$autismBehaviorCheck">
                                                     </x-input-radio-or-check>
@@ -213,12 +213,6 @@
                                                     <!-- row end -->
                                                     <x-input-radio-or-check :checked="$record->does_not_use_toys_appropriately" name="does_not_use_toys_appropriately"
                                                         label="Does not use toys appropriately"
-                                                        :records="$constants::$autismBehaviorCheck">
-                                                    </x-input-radio-or-check>
-                                                    <!-- row end -->
-                                                    <x-input-radio-or-check :checked="$record->sometimes_shows_no_startle"
-                                                        name="sometimes_shows_no_startle response_to_loud noise"
-                                                        label="Sometimes shows no “startle response” to ”loud noise”"
                                                         :records="$constants::$autismBehaviorCheck">
                                                     </x-input-radio-or-check>
                                                     <!-- row end -->
@@ -392,7 +386,7 @@
                                                         label="Frequently unaware of surroundings, and may be oblivious to dangerous situations"
                                                         :records="$constants::$autismBehaviorCheck">
                                                     </x-input-radio-or-check>
-                                                    <!-- row end -->>
+                                                    <!-- row end -->
                                                     <x-input-radio-or-check :checked="$record->prefers_to_manipulate_and_be_occupied_with_inanimate_things"
                                                         name="prefers_to_manipulate_and_be_occupied_with_inanimate_things"
                                                         label="Prefers to manipulate and be occupied with inanimate things"

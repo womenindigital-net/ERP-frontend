@@ -101,16 +101,20 @@ Student Qa
                                                         <x-input-radio-or-check :checked="$record->find_it_hard"
                                                             name="find_it_hard"
                                                             label="Find it hard to do things that aren't necessary or highly stimulating."
-                                                            :records="$executiveConstants::$oftenOrNot">
+                                                            :records="$executiveConstants::$agreeOrNot">
                                                         </x-input-radio-or-check>
                                                         <!-- end row -->
+                                                        <x-input-radio-or-check :checked="$record->i_see_or_hear" name="i_see_or_hear"
+                                                            label="I am easily distracted by things I see or hear"
+                                                            :records="$executiveConstants::$agreeOrNot">
+                                                        </x-input-radio-or-check>
                                                         <!-- end row -->
                                                         <x-input-radio-or-check
                                                             :checked="$record->become_absorbed_in_things"
                                                             name="become_absorbed_in_things"
                                                             label="Become absorbed in things or tasks that interest me—sometimes to the point of
                                                                                    forgetting about people around me or other obligations."
-                                                            :records="$executiveConstants::$oftenOrNot">
+                                                            :records="$executiveConstants::$agreeOrNot">
                                                         </x-input-radio-or-check>
                                                         <!-- end row -->
                                                         <!-- end row -->
