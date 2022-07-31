@@ -63,6 +63,7 @@ class ProductCreate extends Component
     public $reorder_quantity;
     public $image;
     public $selling_price;
+    public $cost_price;
     public $making_cost;
     public $current_price;
     public $expiry_alert;
@@ -84,6 +85,7 @@ class ProductCreate extends Component
         'reorder_quantity' => 'nullable',
         'image' => 'nullable',
         'selling_price' => 'nullable',
+        'cost_price'  => 'nullable',
         'making_cost' => 'nullable',
         'expiry_alert' => 'nullable',
         'current_price' => 'nullable',

@@ -139,20 +139,28 @@
         <div data-repeater-list="group-a">
             @foreach ($inputs as $key => $item)
                 <div data-repeater-item class="row removeRow">
-                    <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
+                    {{-- <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
                         <div>
                             <x-input-select wireModel="p_category.{{ $key }} " :records="$categorys" targetColumn="title" />
                         </div>
+                    </div> --}}
+                    <div class="col-lg-2 p-0 pe-1 pb-1">
+                        <select class="form-control form-select" wire:model="p_category.{{ $key }}">
+                            <option>--Select--</option>
+                            @foreach ($categorys as $category)
+                                <optgroup label="{{ $category['title'] }}">
+
+                                </optgroup>
+                            @endforeach
+                        </select>
                     </div>
                     <div class=" col-lg-2 p-0 pe-1 pb-1">
                         <x-input-textarea wireModel="product.{{ $key }}" rows=1 placeholder="Product">
                         </x-input-textarea>
-
                     </div>
                     <div class=" col-lg-2 p-0 pe-1 pb-1">
-                        <x-input-text wireModel="measure.{{ $key }}"  placeholder="Measure Unit">
+                        <x-input-text wireModel="measure.{{ $key }}" placeholder="Measure Unit">
                         </x-input-text>
-
                     </div>
                     <div class=" col-lg-2 p-0 pe-1 pb-1">
                         <x-input-text wireModel="quantity.{{ $key }}" placeholder="Quantity">

@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('budget_heads', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->foreignIdFor(BudgetHead::class, 'parent')->nullable()->constrained('budget_heads')->nullOnDelete();
+            $table->string('parent')->nullable();
             $table->string('indent')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();

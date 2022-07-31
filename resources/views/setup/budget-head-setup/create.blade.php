@@ -47,7 +47,7 @@
                                                                                     </div>
                                                                                     <div class="col-8">
                                                                                         <x-input-select name="title"
-                                                                                            :records="[]" />
+                                                                                            :records="$demo_title" />
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row mb-4">
@@ -57,7 +57,7 @@
                                                                                     </div>
                                                                                     <div class="col-8">
                                                                                         <x-input-select name="parent"
-                                                                                            :records="[]" />
+                                                                                            :records="$demo_parent" />
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row mb-4">

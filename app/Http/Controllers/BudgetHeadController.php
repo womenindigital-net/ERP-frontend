@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Requests\StoreBudgetHeadRequest;
 use App\Http\Requests\UpdateBudgetHeadRequest;
 use App\Repositories\BudgetHeadRepository;
+use App\Utility\DemoConstant;
 
 class BudgetHeadController extends Controller
 {
@@ -39,8 +40,8 @@ class BudgetHeadController extends Controller
     public function create()
     {
             $data = [
-            'title' => $this->budgetHeadRepo->getData(),
-            'parent' => $this->budgetHeadRepo->getData(),
+            'demo_title' => DemoConstant::$demo,
+            'demo_parent' => DemoConstant::$demo,
         ];
         return view('setup.budget-head-setup.create' ,$data);
     }
@@ -77,8 +78,10 @@ class BudgetHeadController extends Controller
      */
     public function edit(BudgetHead $budgetHead)
     {
-            $data = [
+        $data = [
             'record' => $budgetHead,
+            'title' => DemoConstant::$demo,
+            'parent' => DemoConstant::$demo,
         ];
       return view('setup.budget-head-setup.edit' ,$data);
     }
