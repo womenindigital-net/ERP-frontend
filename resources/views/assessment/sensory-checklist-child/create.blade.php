@@ -213,11 +213,6 @@
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="avoids_group_situations_for_fear_of_the_unexpected_touch"
-                                                                label="Avoids group situations for fear of the unexpected touch"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- end row -->
                                                             <x-input-radio-or-check
                                                                 name="complains_about_having_hair_brushed"
                                                                 label="Complains about having hair brushed; may be very picky about using a particular brush"
