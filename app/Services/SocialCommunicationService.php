@@ -20,7 +20,7 @@ class SocialCommunicationService
     {
 
         $data = $this->processInfo($validated);
-
+        
         $this->repo->store($data);
     }
 

@@ -241,14 +241,6 @@
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <!-- end row -->
-                                                            <x-input-radio-or-check
-                                                                :checked="$signs_of_tactile_dysfunction->avoids_group_situations_for_fear_of_the_unexpected_touch ?? ''"
-                                                                name="avoids_group_situations_for_fear_of_the_unexpected_touch"
-                                                                label="Avoids group situations for fear of the unexpected touch"
-                                                                :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
-                                                            <!-- end row -->
                                                             <x-input-radio-or-check
                                                                 :checked="$signs_of_tactile_dysfunction->prefers_hugs ?? ''"
                                                                 name="prefers_hugs" label="Prefers hugs"
@@ -577,8 +569,8 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$poor_tactile_perception_and_discrimination->may_not_be_able_to_identify ??''"
-                                                                    name="may_not_be_able_to_identify"
+                                                                    :checked="$poor_tactile_perception_and_discrimination->may_not_be_able_to_identify_objects ??''"
+                                                                    name="may_not_be_able_to_identify_objects"
                                                                     label="May not be able to identify objects by feel, uses vision to help; such as, reaching into backpack or desk to retrieve an item Vestibular Sense: input from the inner ear about equilibrium, gravitational changes, movement experiences, and position in space."
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -638,15 +630,15 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction->fearful_of_feet ??''"
-                                                                    name="fearful_of_feet"
+                                                                    :checked="$signs_of_vestibular_dysfunction->fearful_of_feet_leaving_the_ground ??''"
+                                                                    name="fearful_of_feet_leaving_the_ground"
                                                                     label="Fearful of feet leaving the ground"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction->Fearful_of_going_up ??''"
-                                                                    name="fearful_of_going_up"
+                                                                    :checked="$signs_of_vestibular_dysfunction->fearful_of_going_up_or_down_stairs_or_walking_on_uneven_surfaces ??''"
+                                                                    name="fearful_of_going_up_or_down_stairs_or_walking_on_uneven_surfaces"
                                                                     label="Fearful of going up or down stairs or walking on uneven surfaces"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -666,8 +658,8 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction->as_an_infant ??''"
-                                                                    name="as_an_infant"
+                                                                    :checked="$signs_of_vestibular_dysfunction->as_an_infant_may ??''"
+                                                                    name="as_an_infant_may"
                                                                     label="As an infant, may never have liked baby swings or jumpers"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -681,7 +673,7 @@
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction->may_have_disliked_being_placed ??''"
-                                                                    name="may_have_disliked_being_placed "
+                                                                    name="may_have_disliked_being_placed"
                                                                     label="May have disliked being placed on stomach as an infant"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -694,14 +686,14 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction->Fearful_of_activities ??''"
+                                                                    :checked="$signs_of_vestibular_dysfunction->fearful_of_activities ??''"
                                                                     name="fearful_of_activities"
                                                                     label="Fearful of activities which require good balance"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction->Avoids_rapid_or_rotating_movements ??''"
+                                                                    :checked="$signs_of_vestibular_dysfunction->avoids_rapid_or_rotating_movements ??''"
                                                                     name="avoids_rapid_or_rotating_movements"
                                                                     label="Avoids rapid or rotating movements"
                                                                     :records="$constants::$yesNoEn">
@@ -722,14 +714,14 @@
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_under->in_constant_motion_cant_seem_to_sit_still ??''"
-                                                                    name="in_constant_motion"
+                                                                    name="in_constant_motion_cant_seem_to_sit_still"
                                                                     label="in constant motion, can't seem to sit still"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_under->craves_fast ??''"
-                                                                    name="Craves_fast"
+                                                                    name="craves_fast"
                                                                     label="Craves fast, spinning, and/or intense movement experiences"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -771,7 +763,7 @@
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_under->is_a_thrill_seeker ??''"
-                                                                    name="Is_a_thrill-seeker"
+                                                                    name="is_a_thrill_seeker"
                                                                     label="Is a 'thrill-seeker' dangerous at times"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -789,15 +781,14 @@
                                                                     label="Rocks body, shakes leg, or head while sitting"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
-                                                                <x-input-radio-or-check
+                                                                {{-- <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_under->Avoids_rapid_or_rotating_movements ??''"
                                                                     name="" label="demo"
                                                                     :records="$constants::$yesNoEn">
-                                                                </x-input-radio-or-check>
-
+                                                                </x-input-radio-or-check> --}}
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_under->likes_sudden??''"
+                                                                    :checked="$signs_of_vestibular_dysfunction_under->likes_sudden ??''"
                                                                     name="likes_sudden"
                                                                     label="Likes sudden or quick movements, such as, going over a big bump in the car or on a bike"
                                                                     :records="$constants::$yesNoEn">
@@ -816,8 +807,8 @@
                                                             <div>
 
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check name=""
-                                                                    :checked="$signs_of_vestibular_dysfunction_coordination->has_a_limp??''"
+                                                                <x-input-radio-or-check name="has_a_limp"
+                                                                    :checked="$signs_of_vestibular_dysfunction_coordination->has_a_limp ??''"
                                                                     label="has a limp, 'floppy' body"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -892,8 +883,8 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_coordination->poor_fine_motor_skills??''"
-                                                                    name="Poor_fine_motor_skills"
+                                                                    :checked="$signs_of_vestibular_dysfunction_coordination->poor_fine_motor_skills ??''"
+                                                                    name="poor_fine_motor_skills"
                                                                     label="Poor fine motor skills; difficulty using 'tools', such as pencils, silverware, combs, scissors etc."
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -920,8 +911,8 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_coordination->difficulty_learning_exercise??''"
-                                                                    name="difficulty_learning_exercise "
+                                                                    :checked="$signs_of_vestibular_dysfunction_coordination->difficulty_learning_exercise ??''"
+                                                                    name="difficulty_learning_exercise"
                                                                     label="Difficulty learning exercise or dance steps"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -967,8 +958,8 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->loves_to_be_tightly_wrapped??''"
-                                                                    name=""
+                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->loves_to_be_tightly_wrapped ??''"
+                                                                    name="loves_to_be_tightly_wrapped"
                                                                     label="Loves to be tightly wrapped in many or weighted blankets, especially at bedtime"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -980,15 +971,15 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check
+                                                                {{-- <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_behaviors->may_not_understand_the_idea??''"
                                                                     name="may_not_understand_the_idea "
                                                                     label="May not understand the idea of 'heavy' or 'light'; would not be able to hold two objects and tell you which weighs more"
                                                                     :records="$constants::$yesNoEn">
-                                                                </x-input-radio-or-check>
+                                                                </x-input-radio-or-check> --}}
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->loves_or_seeks_out??''"
+                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->loves_seeks_out ??''"
                                                                     name="loves_seeks_out"
                                                                     label="Loves/seeks out 'squishing' activities"
                                                                     :records="$constants::$yesNoEn">
@@ -1043,21 +1034,21 @@
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->loves_jumping_off_furniture??''"
+                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->loves_jumping_off_furniture ??''"
                                                                     name="loves_jumping_off_furniture"
                                                                     label="Loves jumping off furniture or from high places"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->frequently_hits??''"
+                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->frequently_hits ??''"
                                                                     name="frequently_hits"
                                                                     label="Frequently hits, bumps or pushes other children"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
-                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->chews_on_pens??''"
+                                                                    :checked="$signs_of_vestibular_dysfunction_behaviors->chews_on_pens ??''"
                                                                     name="chews_on_pens"
                                                                     label="chews on pens, straws, shirt sleeves etc."
                                                                     :records="$constants::$yesNoEn">
@@ -1074,12 +1065,10 @@
                                                             Movement"</h3>
                                                         <section>
                                                             <div>
-
-
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_movement->misjudges_how_much_to_flex??''"
-                                                                    name=misjudges_how_much_to_flex"
+                                                                    name="misjudges_how_much_to_flex"
                                                                     label="Misjudges how much to flex and extend muscles during tasks/activities (i.e., putting arms into sleeves or climbing)"
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
@@ -1091,12 +1080,12 @@
                                                                     :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
                                                                 <!-- end row -->
-                                                                <x-input-radio-or-check
+                                                                {{-- <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_movement->kicks_his_her_feet_on_floor??''"
                                                                     name="kicks_his_her_feet_on_floor"
                                                                     label="Kicks his/her feet on floor or chair while sitting at desk/table"
                                                                     :records="$constants::$yesNoEn">
-                                                                </x-input-radio-or-check>
+                                                                </x-input-radio-or-check> --}}
                                                                 <!-- end row -->
                                                                 <x-input-radio-or-check
                                                                     :checked="$signs_of_vestibular_dysfunction_movement->written_work_is_messy??''"
