@@ -93,7 +93,6 @@ class BudgetReviewController extends Controller
 
     public function update(StoreBudgetReviewRequest $request, BudgetReview $budgetReview)
     {
-        dd($request);
         $this->repo->update($budgetReview, $request->validated());
         Session::flash('success');
         return redirect()->back();
