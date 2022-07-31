@@ -45,7 +45,8 @@
                                             <!-- Tab panes -->
                                             <div class="tab-content text-muted mt-4">
                                                 <div class="tab-pane active" id="home1" role="tabpanel">
-                                                    <form>
+                                                    <form action="{{ route('budget-review.store') }}" method="POST">
+                                                        @csrf
                                                         <div class="row">
                                                             <div class="col-6">
                                                                 <div class="row">
@@ -59,7 +60,7 @@
                                                                                     </div>
                                                                                     <div class="col-7">
                                                                                         <x-input-select name="project_id"
-                                                                                            :records="[]" />
+                                                                                            :records="$project_id" targetColumn="title" />
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row mb-4">
@@ -71,7 +72,7 @@
                                                                                         <div class="input-group"
                                                                                             id="datepicker1">
                                                                                             <x-input-text type="date"
-                                                                                                name="date"
+                                                                                                name="startdate"
                                                                                                 placeholder="">
                                                                                             </x-input-text>
                                                                                         </div>
@@ -93,7 +94,7 @@
                                                                                         <h6>Name</h6>
                                                                                     </div>
                                                                                     <div class="col-7">
-                                                                                        <x-input-text name="f_name"
+                                                                                        <x-input-text name="name"
                                                                                             placeholder="">
                                                                                         </x-input-text>
                                                                                     </div>
@@ -107,7 +108,7 @@
                                                                                         <div class="input-group"
                                                                                             id="datepicker1">
                                                                                             <x-input-text type="date"
-                                                                                                name="date"
+                                                                                                name="enddate"
                                                                                                 placeholder="">
                                                                                             </x-input-text>
                                                                                         </div>
@@ -199,7 +200,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6 form-check-danger mt-2">
-                                                                            <input class="form-check-input"
+                                                                            <input name="isactive" class="form-check-input"
                                                                                 type="checkbox" id="formCheckcolor5">
                                                                         </div>
                                                                     </div>
@@ -219,50 +220,7 @@
                             </div>
                         </div>
                         <div class="tab-pane mt-4" id="profile" role="tabpanel">
-
-                            <table id="datatable" class="table table-bordered dt-responsive w-100 ">
-                                <thead>
-                                    <tr class="table-primary">
-                                        <th>Project</th>
-                                        <th>Budget Name</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Requested Amount</th>
-                                        <th>Approved Amount</th>
-                                        <th>Status</th>
-                                        <th class="">Is sent for approval</th>
-                                        <th>Note</th>
-                                        <th>Log</th>
-                                        <th>action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Programme</td>
-                                        <td>Program Budget (2021-2022)</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>1304012.00</td>
-                                        <td>1304012.00</td>
-                                        <td>A</td>
-                                        <td>N</td>
-                                        <td></td>
-                                        <td>Create: Ohidul Hassan @ 2021-07-14 05:11:42
-                                            Update: Sajida Rahman @ 2021-07-14 11:57:19</td>
-                                        <td>
-                                            <button type="button"
-                                                class="btn btn-sm btn-success btn-rounded waves-effect waves-light mb-2 me-1">
-                                                <i class="mdi mdi-pencil"></i>
-                                            </button>
-                                            <button type="button"
-                                                class="btn btn-sm btn-danger btn-rounded waves-effect waves-light mb-2 me-1">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
+                            <livewire:budget-review-list />
                         </div>
                     </div>
                 </div>

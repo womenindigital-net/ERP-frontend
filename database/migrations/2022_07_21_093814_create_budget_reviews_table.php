@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('budget_reviews', function (Blueprint $table) {
             $table->id();
+            $table->string('project_id')->nullable();
+            $table->string('startdate')->nullable();
+            $table->string('name')->nullable();
+            $table->string('enddate')->nullable();
+            $table->string('note')->nullable();
+            $table->string('isactive')->nullable();
+
             $table->timestamps();
         });
     }

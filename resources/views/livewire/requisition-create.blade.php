@@ -118,7 +118,7 @@
                                         targetColumn="title">
                                     </x-input-select>
                                     @if (!($this->mode == 'show'))
-                                    <button type="button" class="btn mb-1 btn-danger waves-effect waves-light removeBtn"
+                                    <button type="button" class="btn mb-1 ms-1 btn-danger waves-effect waves-light removeBtn"
                                         wire:click="removeItem({{ $key }})">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
