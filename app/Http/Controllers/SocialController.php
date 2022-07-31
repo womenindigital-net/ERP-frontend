@@ -161,9 +161,9 @@ class SocialController extends Controller
      * @param  int  $id
      *
      * @return Response
-     */
+     */ 
     public function update(SocialRequest $request, Social $social_communication)
-    {
+    { dd($request->validated());
         $this->service->update($social_communication, $request->validated());
         Session::flash('success');
         return redirect()->route('social-communication.create');

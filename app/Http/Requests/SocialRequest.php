@@ -28,7 +28,7 @@ class SocialRequest extends FormRequest
             "teacher_id"                                                                                                   => 'required',
             "student_id"                                                                                                   => 'required',
             "interaction_with_adults"                                                                                      => 'nullable',
-            "age_appropriate_peers"                                                                                                          => 'nullable',
+            "one"                                                                                                          => 'nullable',
             "interaction_with_younger_children"                                                                            => 'nullable',
             "waiting_for_a_response_from_peers"                                                                            => 'nullable',
             "negotiating_deals"                                                                                            => 'nullable',

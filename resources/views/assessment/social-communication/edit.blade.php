@@ -21,6 +21,7 @@
     <div class="col-xl-12 p-0">
         <div class="card">
             <div class="card-body p-0">
+
                 <div class="tab-content p-3 text-muted">
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
                         <div class="row">
@@ -146,7 +147,7 @@
                                                     <div class="tab-pane" id="Pragmatic_Objective">
                                                         <section>
                                                             <x-input-radio-or-check
-                                                                :checked="$pragmatic_objective->interaction_with_adults?? ''"
+                                                                :checked="$pragmatic_objective->interaction_with_adults ?? ''"
                                                                 name="" label="Interaction with adults "
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false"
@@ -154,7 +155,7 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$pragmatic_objective->age_appropriate_peers?? ''" name=""
+                                                                :checked="$pragmatic_objective->one ?? ''" name=""
                                                                 label="Interaction with age-appropriate peers"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
