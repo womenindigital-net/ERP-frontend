@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Services\DirectPaymentService;
+use App\Utility\DirectPaymentConstant;
 use App\Repositories\ProjectRepository;
 use Illuminate\Support\Facades\Session;
 use App\Http\Livewire\Traits\CommonAddMore;
@@ -43,7 +44,7 @@ class DirectPaymentCreate extends Component
 
     public $record;
     public $project_id;
-    public $payment_type_id;
+    public $payment_type;
     public $from_account;
     public $to_account;
     public $amount;
@@ -52,7 +53,7 @@ class DirectPaymentCreate extends Component
 
     protected array $rules = [
         'project_id'          => 'required',
-        'payment_type_id'         => 'required',
+        'payment_type'         => 'required',
         'from_account'                => 'nullable',
         'to_account'     => 'nullable',
         'amount'        => 'required',
@@ -85,7 +86,7 @@ class DirectPaymentCreate extends Component
     {
 
         $data = [
-            'paymentType' => $this->PayTypeRepo->getData(),
+            'paymentType' => DirectPaymentConstant::$paymentType,
             'projects' => $this->projectRepo->getData(),
             'bankAccount' => $this->bankAccRepo->getData(),
         ];

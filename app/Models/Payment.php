@@ -29,9 +29,14 @@ class Payment extends Model
         return $this->hasOne(paymentType::class);
     }
 
-    public function bankAccount(): HasOne
+    public function fromAccount(): BelongsTo
     {
-        return $this->hasOne(BankAccount::class);
+        return $this->belongsTo(BankAccount::class, 'from_account', 'id');
+    }
+
+    public function toAccount(): BelongsTo
+    {
+        return $this->belongsTo(BankAccount::class, 'to_account', 'id');
     }
 
     public function creator(): BelongsTo

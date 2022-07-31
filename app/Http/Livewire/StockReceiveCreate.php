@@ -159,14 +159,20 @@ class StockReceiveCreate extends Component
             }
         }
 
-        if (str_starts_with($name, 'received.')) {
-            $targetKey = $this->getTargetKey($name);
-            $this->stock_receive_qty[$targetKey] = $value;
-        }
-
         if (str_starts_with($name, 'return.')) {
             $targetKey = $this->getTargetKey($name);
             $this->stock_receive_qty[$targetKey] =  $this->received[$targetKey] -  (int)$value;
+        }
+
+        if (str_starts_with($name, 'received.')) {
+            $targetKey = $this->getTargetKey($name);
+            if ($this->received[$targetKey] > $this->receivable[$targetKey]) {
+                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Value is Greater-than Receivable']);
+                $this->stock_receive_qty[$targetKey] = 0;
+                return;
+            }
+
+            $this->stock_receive_qty[$targetKey] = $value;
         }
     }
 
