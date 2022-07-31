@@ -25,11 +25,11 @@ class StoreBudgetReviewRequest extends FormRequest
     {
         return [
             'project_id'   => 'nullable',
-            'startdate'    => 'nullable',
+            'date'    => 'nullable',
             'name'         => 'nullable',
-            'enddate'      => 'nullable',
+            'end_date'      => 'nullable',
             'note'         => 'nullable',
-            'isactive'    => 'nullable',
+            'is_active'    => 'nullable',
         ];
     }
 }

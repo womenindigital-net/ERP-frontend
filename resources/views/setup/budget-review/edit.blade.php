@@ -63,7 +63,7 @@
                                                                                             <x-input-text type="date"
                                                                                                 name="startdate"
                                                                                                 placeholder=""
-                                                                                                value="{{ $record->startdate }}">
+                                                                                                value="{{ $record->date }}">
                                                                                             </x-input-text>
                                                                                         </div>
                                                                                     </div>
@@ -100,7 +100,7 @@
                                                                                             id="datepicker1">
                                                                                             <x-input-text type="date"
                                                                                                 name="enddate"
-                                                                                                value="{{ $record->enddate }}"
+                                                                                                value="{{ $record->end_date }}"
                                                                                                 placeholder="">
                                                                                             </x-input-text>
                                                                                         </div>
@@ -194,8 +194,8 @@
                                                                         </div>
 
                                                                         <div class="col-6 form-check-danger mt-2">
-                                                                            <input class="form-check-input" name="isactive"
-                                                                            @if ($record->isactive === 'on')
+                                                                            <input class="form-check-input" name="is_active"
+                                                                            @if ($record->is_active === 'on')
                                                                             checked
                                                                             @endif type="checkbox" >
                                                                         </div>
@@ -205,7 +205,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"
-                                                                class="btn btn-outline-success  waves-light"> Save</button>
+                                                                class="btn btn-outline-success  waves-light"> update</button>
                                                         </div>
                                                     </form>
                                                 </div>
