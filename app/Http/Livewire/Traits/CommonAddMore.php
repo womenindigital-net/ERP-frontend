@@ -40,12 +40,9 @@ trait CommonAddMore
         [$keys, $values] = Arr::divide($filtered);
         $this->inputs = $values;
 
-
         foreach ($this->addMoreItems as $item) {
-            dd($this->{$item}[$key]);
-
             unset($this->{$item}[$key]);
-            $filtered = Arr::except($this->course_id, $key);
+            $filtered = Arr::except($this->$item, $key);
             [$keys, $values] = Arr::divide($filtered);
             $this->{$item} = $values;
         }

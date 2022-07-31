@@ -11,10 +11,14 @@ use App\Http\Requests\UpdateBudgetReviewRequest;
 
 class BudgetReviewController extends Controller
 {
-      public function __construct( ProjectRepository $projectrepo, BudgetReviewRepository $budgetReviewRepo)
+
+    private BudgetReviewRepository $repo;
+    private ProjectRepository $projectRepo;
+
+    public function __construct(ProjectRepository $projectRepo, BudgetReviewRepository $repository)
     {
-        $this->projectrepo = $projectrepo;
-        $this->budgetReviewRepo = $budgetReviewRepo;
+        $this->projectRepo = $projectRepo;
+        $this->repo = $repository;
     }
     /**
      * Display a listing of the resource.
@@ -34,9 +38,9 @@ class BudgetReviewController extends Controller
     public function create()
     {
         $data = [
-            'project_id' => $this->projectrepo->getData(),
+            'project_id' => $this->projectRepo->getData(),
         ];
-        return view('setup.budget-review.create',$data);
+        return view('setup.budget-review.create', $data);
     }
 
     /**
@@ -48,7 +52,7 @@ class BudgetReviewController extends Controller
     public function store(StoreBudgetReviewRequest $request)
     {
 
-        $this->budgetReviewRepo->store($request->validated());
+        $this->repo->store($request->validated());
         Session::flash('success');
         return redirect()->back();
     }
@@ -73,10 +77,10 @@ class BudgetReviewController extends Controller
     public function edit(BudgetReview $budgetReview)
     {
         $data = [
-            'project_id' => $this->projectrepo->getData(),
+            'project_id' => $this->projectRepo->getData(),
             'record' => $budgetReview,
         ];
-        return view('setup.budget-review.edit',$data);
+        return view('setup.budget-review.edit', $data);
     }
 
     /**
@@ -86,16 +90,11 @@ class BudgetReviewController extends Controller
      * @param  \App\Models\BudgetReview  $budgetReview
      * @return \Illuminate\Http\Response
      */
-    // public function update(StoreBudgetReviewRequest $request)
-    // {
-    //     $this->budgetReviewRepo->update($request->validated());
-    //     Session::flash('success');
-    //     return redirect()->back();
-    // }
+
     public function update(StoreBudgetReviewRequest $request, BudgetReview $budgetReview)
     {
-
-        $this->budgetReviewRepo->update($budgetReview, $request->validated());
+        dd($request);
+        $this->repo->update($budgetReview, $request->validated());
         Session::flash('success');
         return redirect()->back();
     }
