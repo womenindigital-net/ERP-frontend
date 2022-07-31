@@ -72,7 +72,7 @@
                                                                                         <div class="input-group"
                                                                                             id="datepicker1">
                                                                                             <x-input-text type="date"
-                                                                                                name="startdate"
+                                                                                                name="date"
                                                                                                 placeholder="">
                                                                                             </x-input-text>
                                                                                         </div>
@@ -108,7 +108,7 @@
                                                                                         <div class="input-group"
                                                                                             id="datepicker1">
                                                                                             <x-input-text type="date"
-                                                                                                name="enddate"
+                                                                                                name="end_date"
                                                                                                 placeholder="">
                                                                                             </x-input-text>
                                                                                         </div>

@@ -45,6 +45,21 @@
                                                                                     class="col-3 p-0 d-flex align-items-center">
                                                                                     <h6>Project</h6>
                                                                                 </div>
+                                                                                <div class="row mb-4">
+                                                                                    <div
+                                                                                        class="col-3 p-0 d-flex align-items-center">
+                                                                                        <h6>Start Date</h6>
+                                                                                    </div>
+                                                                                    <div class="col-7">
+                                                                                        <div class="input-group"
+                                                                                            id="datepicker1">
+                                                                                            <x-input-text type="date"
+                                                                                                name="startdate"
+                                                                                                placeholder=""
+                                                                                                value="{{ $record->date }}">
+                                                                                            </x-input-text>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 <div class="col-7">
                                                                                     <x-input-select name="project_id"
                                                                                         :records="$project_id"
@@ -67,42 +82,20 @@
                                                                                         </x-input-text>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <div class="row mt-3">
-                                                                        <div class="col-md-12">
-                                                                            <div class="row mb-4">
-                                                                                <div
-                                                                                    class="col-2 p-0 d-flex align-items-center">
-                                                                                    <h6>Name</h6>
-                                                                                </div>
-                                                                                <div class="col-7">
-                                                                                    <x-input-text name="name"
-                                                                                        placeholder=""
-                                                                                        value="{{ $record->name }}">
-                                                                                    </x-input-text>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="row mb-4">
-                                                                                <div
-                                                                                    class="col-2 p-0 d-flex align-items-center">
-                                                                                    <h6>End Date</h6>
-                                                                                </div>
-                                                                                <div class="col-7">
-                                                                                    <div class="input-group"
-                                                                                        id="datepicker1">
-                                                                                        <x-input-text type="date"
-                                                                                            name="enddate"
-                                                                                            value="{{ $record->enddate }}"
-                                                                                            placeholder="">
-                                                                                        </x-input-text>
+                                                                                <div class="row mb-4">
+                                                                                    <div
+                                                                                        class="col-2 p-0 d-flex align-items-center">
+                                                                                        <h6>End Date</h6>
+                                                                                    </div>
+                                                                                    <div class="col-7">
+                                                                                        <div class="input-group"
+                                                                                            id="datepicker1">
+                                                                                            <x-input-text type="date"
+                                                                                                name="enddate"
+                                                                                                value="{{ $record->end_date }}"
+                                                                                                placeholder="">
+                                                                                            </x-input-text>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -194,19 +187,19 @@
                                                                     </div>
 
                                                                     <div class="col-6 form-check-danger mt-2">
-                                                                        <x-input-text value="{{ $record->isactive }}"
+                                                                        <x-input-text value="{{ $record->is_active }}"
                                                                             name="is_active" type='checkbox'>
                                                                         </x-input-text>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit"
-                                                            class="btn btn-outline-success  waves-light"> Save</button>
-                                                    </div>
-                                                </form>
+                                                        <div class="modal-footer">
+                                                            <button type="submit"
+                                                                class="btn btn-outline-success  waves-light"> update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
