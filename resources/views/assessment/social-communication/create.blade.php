@@ -174,7 +174,7 @@
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check name="one"
+                                                            <x-input-radio-or-check name="age_appropriate_peers"
                                                                 label="Interaction with age-appropriate peers"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -412,18 +412,18 @@
                                                     <div class="tab-pane" id="Word_Structure">
                                                         <section>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check
+                                                            <x-input-radio-or-check name="ability_to_use_generals_or_specifics"
                                                                 label="Ability to use generals/specifics"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check label="Pronoun use"
+                                                            <x-input-radio-or-check label="Pronoun use" name="pronoun_use"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check label="Use of word referents"
+                                                            <x-input-radio-or-check label="Use of word referents" name="use_of_word_referents"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
@@ -889,7 +889,7 @@
                                                                         non-verbal means.</b></h3>
                                                             </div>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check
+                                                            <x-input-radio-or-check name="ability_to_recognize_personal_space_boundaries"
                                                                 label="Ability to recognize “personal space” boundaries"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -978,7 +978,7 @@
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check
+                                                            <x-input-radio-or-check name="ability_to_demonstrate_concern_for_anothers_problems"
                                                                 label="Ability to demonstrate concern for another’s problems"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">

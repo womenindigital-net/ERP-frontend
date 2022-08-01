@@ -125,7 +125,56 @@
                                                                     <div class="m-0">
                                                                         <div class="row">
                                                                             <div class="form-check">
-                                                                                <div class="me-5 ">
+                                                                                <div class="mb-3">
+                                                                                    <label for="formrow-firstname-input"
+                                                                                        class="form-label">Birth history</label>
+                                                                                    <x-input-text name="birth_history" placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <!-- row end -->
+                                                                                <div class="mb-3">
+                                                                                    <label for="formrow-firstname-input"
+                                                                                        class="form-label">Before birth</label>
+                                                                                    <x-input-text name="before_birth" placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <!-- row end -->
+                                                                                <div class="mb-3">
+                                                                                    <label for="formrow-firstname-input"
+                                                                                        class="form-label">Pregnancy</label>
+                                                                                    <x-input-text name="pregnancy" placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <!-- row end -->
+                                                                                <div class="mb-3">
+                                                                                    <label for="formrow-firstname-input"
+                                                                                        class="form-label">Delivery</label>
+                                                                                    <x-input-text name="delivery" placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <!-- row end -->
+                                                                                <div class="mb-3">
+                                                                                    <label for="formrow-firstname-input"
+                                                                                        class="form-label">During Birth</label>
+                                                                                    <x-input-text name="during_birth" placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <!-- row end -->                                       
+                                                                                <div class="mb-3">
+                                                                                    <label for="formrow-firstname-input"
+                                                                                        class="form-label">After Birth</label>
+                                                                                    <x-input-text name="after_birth" placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <!-- row end -->
+                                                                                <div class="mb-3">
+                                                                                    <label for="formrow-firstname-input"
+                                                                                        class="form-label">History</label>
+                                                                                    <x-input-text name="history" placeholder="">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <!-- row end -->                                                               
+                                                                                <div class="me-5 mb-3 ">
                                                                                     <label
                                                                                         class="form-check-label pb-2">Medication
                                                                                         Treatment </label>
@@ -134,7 +183,7 @@
                                                                                         placeholder="Medication Treatment">
                                                                                     </x-input-text>
                                                                                 </div>
-                                                                                <div class="me-5 ">
+                                                                                <div class="me-5  ">
                                                                                     <label
                                                                                         class="form-check-label pb-2">Any
                                                                                         present medicines</label>
@@ -153,11 +202,11 @@
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check label="Communication"
+                                                            <x-input-radio-or-check label="Communication" name="communication"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check label="Communication"
+                                                            <x-input-radio-or-check label="Communication" name="communication_one"
                                                                 :records="$therapyConstants::$communication">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
@@ -203,11 +252,11 @@
                                                                 :records="$therapyConstants::$trunkNeck">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
-                                                            <x-input-radio-or-check label="Lower Limbs"
+                                                            {{-- <x-input-radio-or-check label="Lower Limbs"
                                                                 :records="$therapyConstants::$lowerLimbsTone">
-                                                            </x-input-radio-or-check>
+                                                            </x-input-radio-or-check> --}}
                                                             <!-- row end -->
-                                                            <div class="row py-2 pt-0">
+                                                            {{-- <div class="row py-2 pt-0">
                                                                 <div class="col-xl-12 col-sm-12">
                                                                     <div class="m-0">
                                                                         <div class="row">
@@ -257,7 +306,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                             <!-- row end -->
                                                         </section>
                                                     </div>
@@ -392,7 +441,6 @@
                                                         </section>
                                                     </div>
 
-
                                                     <div class="tab-pane" id="Fine_motor_skil">
                                                         <section>
                                                             <x-input-radio-or-check label="Dominance"
@@ -400,16 +448,41 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
-
+                                                            <div class="row border-top py-2">
+                                                                <div class="col-xl-12 col-sm-12">
+                                                                    <div class="m-0">
+                                                                        <h5></h5>
+                                                                        <div class="row">
+                                                                            <div class="form-check">
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Left</label>
+                                                                                    <x-input-text name="left"
+                                                                                        placeholder="Left">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                                <div class="me-5 ">
+                                                                                    <label
+                                                                                        class="form-check-label pb-2">Right</label>
+                                                                                    <x-input-text name="right"
+                                                                                        placeholder="Right">
+                                                                                    </x-input-text>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- row end -->
                                                             <x-input-radio-or-check label="Reach"
                                                                 :records="$constants::$yesNoEn">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
 
-                                                            <x-input-radio-or-check label="Grasp type"
+                                                            {{-- <x-input-radio-or-check label="Grasp type"
                                                                 :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
+                                                            </x-input-radio-or-check> --}}
                                                             <!-- row end -->
 
 
@@ -491,9 +564,9 @@
                                                             <!-- row end -->
 
 
-                                                            <x-input-radio-or-check label="Vestibular"
+                                                            {{-- <x-input-radio-or-check label="Vestibular"
                                                                 :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
+                                                            </x-input-radio-or-check> --}}
                                                             <!-- row end -->
 
 
@@ -707,10 +780,10 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
 
-
+{{-- 
                                                             <x-input-radio-or-check label="Emotional"
                                                                 :records="$constants::$yesNoEn">
-                                                            </x-input-radio-or-check>
+                                                            </x-input-radio-or-check> --}}
                                                             <!-- row end -->
                                                         </section>
                                                     </div>
