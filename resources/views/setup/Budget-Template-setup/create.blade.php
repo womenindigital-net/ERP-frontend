@@ -47,7 +47,7 @@
                                                                                     </div>
                                                                                     <div class="col-8">
                                                                                         <x-input-select name="project_id"
-                                                                                            :records="[]" />
+                                                                                            :records="$project_id" targetColumn="title" />
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -101,11 +101,11 @@
                                                                                     class="row removeRow">
                                                                                     <div class="col-lg-4  p-0 pe-1 pb-1">
                                                                                         <x-input-select name="budget_head"
-                                                                                            :records="[]" />
+                                                                                            :records="$budgetHead" targetColumn="title" />
                                                                                     </div>
                                                                                     <div class=" col-lg-4 p-0 pe-1 pb-1">
                                                                                         <x-input-select name="account_id"
-                                                                                            :records="[]" />
+                                                                                            :records="$account"  />
                                                                                     </div>
                                                                                     <div
                                                                                         class="col-lg-4 p-0 pe-1 pb-1 align-self-center d-flex">

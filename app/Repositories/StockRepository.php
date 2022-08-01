@@ -20,4 +20,10 @@ class StockRepository extends BaseRepository
             'warehouse_id' => $warehouseId,
         ])->first();
     }
+
+
+    public function getProductByWarehouseId(int $id)
+    {
+        return $this->model::with('project', 'product', 'product.unit')->where(['warehouse_id' => $id])->get();
+    }
 }

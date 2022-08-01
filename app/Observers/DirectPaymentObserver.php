@@ -3,9 +3,12 @@
 namespace App\Observers;
 
 use App\Models\Payment;
+use App\Models\BankAccount;
 
 class DirectPaymentObserver
 {
+
+
     /**
      * Handle the Payment "created" event.
      *
@@ -14,7 +17,15 @@ class DirectPaymentObserver
      */
     public function created(Payment $Payment)
     {
-        dd($Payment);
+        if ($Payment->payment_type == 'Bank to Bank Transfer') {
+            $fromAccount = BankAccount::find($Payment->from_account);
+            $toAccount = BankAccount::find($Payment->to_account);
+
+            $fromAccount->current_balance -= $Payment->amount;
+            $fromAccount->saveQuietly();
+            $toAccount->current_balance += $Payment->amount;
+            $toAccount->saveQuietly();
+        }
     }
 
     /**

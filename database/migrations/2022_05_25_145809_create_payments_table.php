@@ -22,7 +22,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('method')->nullable();
-            $table->foreignIdFor(PaymentType::class)->nullable()->constrained()->nullOnDelete();
+            $table->string('payment_type')->nullable();
             $table->foreignIdFor(Project::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Purchase::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Cheque::class)->nullable()->constrained()->cascadeOnDelete();

@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Payment Type</label>
-                <x-input-select wireModel="payment_type_id" :records="$paymentType" targetColumn="title">
+                <x-input-select wireModel="payment_type" :records="$paymentType">
                 </x-input-select>
             </div>
         </div>

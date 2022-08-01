@@ -3,18 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\BudgetTemplate;
-use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\BudgetTemplateRepository;
+use App\Repositories\BudgetHeadRepository;
+use App\Repositories\ProjectRepository;
+use App\Repositories\BankAccountRepository;
 use App\Http\Requests\StoreBudgetTemplateRequest;
 use App\Http\Requests\UpdateBudgetTemplateRequest;
 
 class BudgetTemplateController extends Controller
 {
-        public function __construct(StudentRepository $studentRepo, BudgetTemplateRepository $budgetTemplateRepo)
+        public function __construct(
+        BankAccountRepository $bankAccountingRepo,
+        ProjectRepository $projectrepo,
+        BudgetTemplateRepository $budgetTemplateRepo,
+        BudgetHeadRepository $budgetHeadRepo,
+         )
     {
-        $this->studentRepo = $studentRepo;
         $this->budgetTemplateRepo = $budgetTemplateRepo;
+        $this->budgetHeadRepo = $budgetHeadRepo;
+        $this->projectrepo = $projectrepo;
+        $this->bankAccountingRepo = $bankAccountingRepo;
     }
     /**
      * Display a listing of the resource.
@@ -34,9 +43,9 @@ class BudgetTemplateController extends Controller
     public function create()
     {
             $data = [
-            'project_id' => $this->budgetTemplateRepo->getData(),
-            'budget_head' => $this->budgetTemplateRepo->getData(),
-            'account_id' => $this->budgetTemplateRepo->getData(),
+            'project_id' => $this->projectrepo->getData(),
+            'budgetHead' => $this->budgetHeadRepo->getData(),
+            'account' => $this->bankAccountingRepo->getData(),
         ];
       return view('setup.Budget-Template-setup.create' ,$data);
     }
@@ -73,8 +82,11 @@ class BudgetTemplateController extends Controller
      */
     public function edit(BudgetTemplate $budgetTemplate)
     {
-            $data = [
+        $data = [
             'record' => $budgetTemplate,
+            'project_id' => $this->projectrepo->getData(),
+            'budget_head' => $this->budgetHeadRepo->getData(),
+            'account' => $this->bankAccountingRepo->getData(),
         ];
         return view('setup.Budget-Template-setup.edit' ,$data);
     }

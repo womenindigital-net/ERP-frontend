@@ -7,7 +7,7 @@ final class SocialCommunication
     public static array $columnCollections = [
         'pragmatic_objective'            => [
             'interaction_with_adults',
-            'one',
+            'age_appropriate_peers',
             'interaction_with_younger_children',
             'waiting_for_a_response_from_peers',
             'negotiating_deals',

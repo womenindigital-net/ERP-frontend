@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\StockCountReport;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\ChequeController;
 use App\Http\Controllers\JournalController;
@@ -67,7 +68,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
 
     // Accounting Reporting
-    Route::get('stock-count/report', [StockReportController::class, 'stockCountReport'])->name('stockCount.report');
+    Route::get('stock-count/report', StockCountReport::class)->name('stockCount.report');
 
     Route::get('stock-hand-report', [StockController::class, 'stockHandReport'])->name('stock-hand-report');
     Route::get('stock-product-report', [StockController::class, 'stockProductReport'])->name('stock-product-report');

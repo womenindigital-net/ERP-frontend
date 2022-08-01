@@ -13,7 +13,7 @@ class StoreBudgetReviewRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class StoreBudgetReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'project_id'   => 'nullable',
+            'date'    => 'nullable',
+            'name'         => 'nullable',
+            'end_date'      => 'nullable',
+            'note'         => 'nullable',
+            'is_active'    => 'nullable',
         ];
     }
 }

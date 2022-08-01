@@ -31,8 +31,8 @@
                                                                                         <h6>Title</h6>
                                                                                     </div>
                                                                                     <div class="col-8">
-                                                                                        <x-input-select value="{{ $record->title }}" name="title"
-                                                                                            :records="[]" />
+                                                                                        <x-input-select :selected="$record->title" name="title"
+                                                                                            :records="$title" />
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row mb-4">
@@ -41,8 +41,8 @@
                                                                                         <h6>Parent</h6>
                                                                                     </div>
                                                                                     <div class="col-8">
-                                                                                        <x-input-select value="{{ $record->parent }}" name="parent"
-                                                                                            :records="[]" />
+                                                                                        <x-input-select :selected="$record->parent" name="parent"
+                                                                                            :records="$parent" />
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row mb-4">

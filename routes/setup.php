@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use App\Models\Product;
 use App\Models\BankReconcilationNew;
@@ -40,14 +40,10 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'bank-reconcilation-new' =>BankReconcilationNewController::class,
         'account_mapping' =>AccountingMappingController::class,
         'yearend-close' =>YearEndCloseController::class,
-
-        // Budget & Forecasting Start
         'budget-year' => BudgetYearController::class,
         'budget-head' => BudgetHeadController::class,
         'budget-template' => BudgetTemplateController::class,
         'budget-review' => BudgetReviewController::class,
-        // Budget & Forecasting Closed
-
         'unit' =>UnitController::class,
         'product-category' =>ProductCategoryController::class,
         'product' =>ProductController::class,
