@@ -167,7 +167,8 @@ class StockReceiveCreate extends Component
         if (str_starts_with($name, 'received.')) {
             $targetKey = $this->getTargetKey($name);
             if ($this->received[$targetKey] > $this->receivable[$targetKey]) {
-                $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Value is Greater-than Receivable']);
+                // $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'Value is Greater-than Receivable']);
+                $this->addError($name, 'Value is Greater-than Receivable');
                 $this->stock_receive_qty[$targetKey] = 0;
                 return;
             }
