@@ -65,6 +65,13 @@ final class OccupationalTherapyConstants
 
     public static array $columnCollections = [
         'general'            => [
+            'birth_history',
+            'before_birth',
+            'pregnancy',
+            'delivery',
+            'during_birth',
+            'after_birth',
+            'history',
             'medication_treatment',
             'any_present_medicines',
             'separate_home_equipment',
@@ -112,6 +119,8 @@ final class OccupationalTherapyConstants
         ],
         'fine_motor_skill'            => [
             'dominance',
+            'dominance_left',
+            'dominance_right',
             'reach',
             'grasp_type',
             'release',
@@ -140,7 +149,7 @@ final class OccupationalTherapyConstants
             'visual_discrimination',
             'visual_memory',
             'visual_figure_ground',
-            'visual_Spatial',
+            'visual_spatial',
             'behavior',
             'social_interaction',
         ],
@@ -150,7 +159,7 @@ final class OccupationalTherapyConstants
             'dressing',
             'toilet',
             'bathing',
-            'any_more_information',
+            'attend_school',
             'activities_of_interest',
             'any_more_information',
             'leisure'

@@ -24,42 +24,42 @@
                     <div class="tab-pane active" id="case-histroy" role="tabpanel">
                       <form action="{{route('setup.other-settings.academic-calender.create')}}" method="POST">
                           @csrf
-                    <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
-                      <div class="col-md-6 d-flex">
-                          <label class="form-label col-2">Domain</label>
-                          <div class="col-6">
-                            <x-input-select name="domain_id" :records="[]" />
+                        <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
+                          <div class="col-md-6 d-flex">
+                              <label class="form-label col-2">Domain</label>
+                              <div class="col-6">
+                                <x-input-select name="domain_id" :records="[]" />
+                              </div>
                           </div>
-                      </div>
-                      <div class="col-md-6 d-flex">
-                          <label class="form-label col-2">Sub-Domain</label>
-                          <div class="col-6">
-                            <x-input-select name="sub_domain_id" :records="[]" />
+                          <div class="col-md-6 d-flex">
+                              <label class="form-label col-2">Sub-Domain</label>
+                              <div class="col-6">
+                                <x-input-select name="sub_domain_id" :records="[]" />
+                              </div>
                           </div>
-                      </div>
-                    </div>
-                    <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
-                      <div class="col-md-6 d-flex">
-                          <label class="form-label col-2">Area</label>
-                          <div class="col-6">
-                            <x-input-select name="area_type" :records="[]" />
+                        </div>
+                        <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
+                          <div class="col-md-6 d-flex">
+                              <label class="form-label col-2">Area</label>
+                              <div class="col-6">
+                                <x-input-select name="area_type" :records="[]" />
+                              </div>
                           </div>
-                      </div>
-                      <div class="col-md-6 d-flex">
-                          <label class="form-label col-2">Activity</label>
-                          <div class="col-6">
-                            <x-input-select name="activity_id" :records="[]" />
+                          <div class="col-md-6 d-flex">
+                              <label class="form-label col-2">Activity</label>
+                              <div class="col-6">
+                                <x-input-select name="activity_id" :records="[]" />
+                              </div>
                           </div>
-                      </div>
-                    </div>
-                    <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
-                      <div class="col-md-6 d-flex">
-                          <label class="form-label col-2">Activity Type</label>
-                          <div class="col-6">
-                            <x-input-select name="activity_type" :records="[]" />
+                        </div>
+                        <div class="col-md-12 d-flex p-4 pt-1 pb-1 gap-2">
+                          <div class="col-md-6 d-flex">
+                              <label class="form-label col-2">Activity Type</label>
+                              <div class="col-6">
+                                <x-input-select name="activity_type" :records="[]" />
+                              </div>
                           </div>
-                      </div>
-                    </div>
+                        </div>
                         <!-- Tab panes One Add  -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-success  waves-light" data-bs-toggle="modal" data-bs-target=".social-communication-view"> Save</button>

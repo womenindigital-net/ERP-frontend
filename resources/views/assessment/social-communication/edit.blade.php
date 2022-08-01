@@ -117,7 +117,6 @@
                                                                     <x-input-select name="student_id"
                                                                         :records="$students" :selected="$student_id">
                                                                     </x-input-select>
-
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -298,14 +297,14 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$personal->identifies_feelings ?? ''" name=""
+                                                                :checked="$personal->identifies_feelings ?? ''" name="identifies_feelings"
                                                                 label="Identifies feelings (I'm happy.)"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$personal->explains_feelings ?? ''" name=""
+                                                                :checked="$personal->explains_feelings ?? ''" name="explains_feelings"
                                                                 label="Explains feelings (I'm happy because it's my birthday)n"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -341,7 +340,7 @@
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
                                                                 :checked="$personal->provides_pertinent_information_on_request ?? ''"
-                                                                name=""
+                                                                name="provides_pertinent_information_on_request"
                                                                 label="Provides pertinent information on request (2 or 3 of the following: name, address, phone, birthdate)"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -438,7 +437,7 @@
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
                                                                 :checked="$conversational_structure->ability_to_order_information_appropriately ?? ''"
-                                                                name=""
+                                                                name="ability_to_order_information_appropriately"
                                                                 label="Ability to order information appropriately (new info follows old)"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -456,29 +455,29 @@
                                                         <section>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$Word_Structure->ability_to_use_generals_or_specifics ?? ''"
-                                                                name="" label="Ability to use generals/specifics"
+                                                                :checked="$word_structure->ability_to_use_generals_or_specifics ?? ''"
+                                                                name="ability_to_use_generals_or_specifics" label="Ability to use generals/specifics"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$Word_Structure->pronoun_use ?? ''" name=""
+                                                                :checked="$word_structure->pronoun_use ?? ''" name="pronoun_use"
                                                                 label="Pronoun use"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$Word_Structure->use_of_word_referents ?? ''"
-                                                                name="" label="Use of word referents"
+                                                                :checked="$word_structure->use_of_word_referents ?? ''"
+                                                                name="use_of_word_referents" label="Use of word referents"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$Word_Structure->ability_to_employee ?? ''"
-                                                                name=""
+                                                                :checked="$word_structure->ability_to_employee ?? ''"
+                                                                name="ability_to_employee"
                                                                 label="Ability to employ Theory of Mind (presuppostion)"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -506,7 +505,7 @@
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
                                                                 :checked="$manner_effectiveness->truthfulness_of_information ?? ''"
-                                                                name=""
+                                                                name="truthfulness_of_information"
                                                                 label="Truthfulness of information (grandiosity)"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -1056,7 +1055,7 @@
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
                                                                 :checked="$nonverbal_communication->ability_to_recognize_personal_space_boundaries ?? ''"
-                                                                name=""
+                                                                name="ability_to_recognize_personal_space_boundaries"
                                                                 label="Ability to recognize “personal space” boundaries"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">
@@ -1167,8 +1166,8 @@
                                                             </x-input-radio-or-check>
                                                             <!-- row end -->
                                                             <x-input-radio-or-check
-                                                                :checked="$nonverbal_communication->ability_to_demonstrate_concern_for_anothers_problems ?? ''"
-                                                                name=""
+                                                                :checked="$perspective_taking->ability_to_demonstrate_concern_for_anothers_problems ?? ''"
+                                                                name="ability_to_demonstrate_concern_for_anothers_problems"
                                                                 label="Ability to demonstrate concern for another’s problems"
                                                                 :records="$constants::$socialCommunication"
                                                                 :isVertical="false">

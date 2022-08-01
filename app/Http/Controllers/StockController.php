@@ -99,7 +99,6 @@ class StockController extends Controller
 
     public function stockAssign()
     {
-
     }
 
     public function finishedGoods()
@@ -121,8 +120,8 @@ class StockController extends Controller
     {
         return view('stock-management.stock_count');
     }
-    
-    
+
+
 
     public function stockOut()
     {

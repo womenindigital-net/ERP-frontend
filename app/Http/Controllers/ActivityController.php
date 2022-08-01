@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreActivitiesRequest;
-use App\Http\Requests\UpdateActivitiesRequest;
 use App\Models\Activity;
+use App\Http\Requests\StoreActivityRequest;
+use App\Http\Requests\UpdateActivityRequest;
 
-class ActivitiesController extends Controller
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,16 +25,16 @@ class ActivitiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('setup.program-setup.activity-create.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreActivitiesRequest  $request
+     * @param  \App\Http\Requests\StoreActivityRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreActivitiesRequest $request)
+    public function store(StoreActivityRequest $request)
     {
         //
     }
@@ -42,11 +42,10 @@ class ActivitiesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Activity $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function show(Activity $activities)
+    public function show(Activity $activity)
     {
         //
     }
@@ -54,11 +53,10 @@ class ActivitiesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Activity  $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activity $activities)
+    public function edit(Activity $activity)
     {
         //
     }
@@ -66,12 +64,11 @@ class ActivitiesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateActivitiesRequest  $request
-     * @param \App\Models\Activity  $activities
-     *
+     * @param  \App\Http\Requests\UpdateActivityRequest  $request
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateActivitiesRequest $request, Activity $activities)
+    public function update(UpdateActivityRequest $request, Activity $activity)
     {
         //
     }
@@ -79,11 +76,10 @@ class ActivitiesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Activity  $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Activity $activities)
+    public function destroy(Activity $activity)
     {
         //
     }

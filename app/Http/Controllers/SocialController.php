@@ -77,7 +77,9 @@ class SocialController extends Controller
      */
     public function show(Social $social_communication)
     {
+        
         $data = [
+            
             'teachers' => $this->userRepo->getSpecificTypeUser('teacher'),
             'students' => $this->studentRepo->getData(),
             'id' => $social_communication['id'],
@@ -107,7 +109,6 @@ class SocialController extends Controller
             'regulatory_gives_commands' => $social_communication['regulatory_gives_commands'],
             'social_emotional' => $social_communication['social_emotional'],
         ];
-
         return view('assessment.social-communication.show', $data);
     }
 
