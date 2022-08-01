@@ -93,6 +93,7 @@ class PhysiotherapyController extends Controller
             'behavior' => $physiotherapy['behavior'],
             'domain_area' => $physiotherapy['domain_area'],
         ];
+
         return view('assessment.physiotherapy.view', $data);
     }
 
@@ -128,6 +129,7 @@ class PhysiotherapyController extends Controller
             'behavior' => $physiotherapy['behavior'],
             'domain_area' => $physiotherapy['domain_area'],
         ];
+        
         return view('assessment.physiotherapy.edit', $data);
     }
 
@@ -140,11 +142,8 @@ class PhysiotherapyController extends Controller
      */
     public function update(PhysiotherapyRequest $request, Physiotherapy $physiotherapy)
     {
-        dd($request->validated());
         $this->service->update($physiotherapy, $request->validated());
-
         Session::flash('success');
-
         return redirect()->route('physiotherapy.create');
     }
 

@@ -11,12 +11,17 @@ class IndividualRisk extends Model
 {
     use HasFactory;
 
-    
+
     public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }
-    
+
+    public function teacher(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
     protected function hazardSpotted(): Attribute
     {
         return Attribute::make(

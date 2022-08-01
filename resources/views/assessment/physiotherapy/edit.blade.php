@@ -86,8 +86,7 @@
                                                                                 <label
                                                                                     for="basicpill-firstname-input">Collection
                                                                                     Date:</label>
-                                                                                <x-input-text
-                                                                                    value="{{ $collection_date }}"
+                                                                                <x-input-text value="{{ $collection_date }}"
                                                                                     name="collection_date"
                                                                                     placeholder="date" type="date">
                                                                                 </x-input-text>
@@ -107,8 +106,7 @@
                                                                                     for="basicpill-phoneno-input">Candidate
                                                                                     ID:</label>
                                                                                 <x-input-select :selected="$candidate_id"
-                                                                                    name="candidate_id"
-                                                                                    :records="$students" />
+                                                                                    name="candidate_id" :records="$students" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-lg-12">
@@ -189,8 +187,7 @@
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">History</label>
-                                                                        <x-input-text
-                                                                            value="{{ $general->history ?? '' }}"
+                                                                        <x-input-text value="{{ $general->history ?? '' }}"
                                                                             name="history" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
@@ -313,9 +310,8 @@
                                                                                 class="form-label">If Yes, Enter school
                                                                                 name</label>
                                                                             <x-input-text
-                                                                                value="{{ $activities_of_daily_living->if_yes_enter_school_name ?? '' }}"
-                                                                                name="if_yes_enter_school_name"
-                                                                                placeholder="">
+                                                                                value="{{ $activities_of_daily_living->enter_your_name ?? '' }}"
+                                                                                name="enter_your_name" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
@@ -398,6 +394,10 @@
                                                                 <div>
                                                                     <form>
                                                                         <!-- end row -->
+                                                                        <x-input-radio-or-check
+                                                                            label="Rolling supine to prone"
+                                                                            :records="$constants::$yesNoEn" :checked="$transitional_movements->rolling_supine_to_prone ??''" >
+                                                                        </x-input-radio-or-check>
                                                                         <x-input-radio-or-check :checked="$transitional_movements->prone_to_supine ??
                                                                             ''"
                                                                             label="Prone to Supine" :records="$constants::$yesNoEn">
@@ -416,11 +416,6 @@
                                                                         <x-input-radio-or-check :checked="$transitional_movements->box_sit_to_stand ??
                                                                             ''"
                                                                             label="Box sit to stand" :records="$constants::$yesNoEn">
-                                                                        </x-input-radio-or-check>
-                                                                        <!-- end row -->
-                                                                        <x-input-radio-or-check :checked="$transitional_movements->jumping ??
-                                                                            ''"
-                                                                            label="Jumping" :records="$constants::$yesNoEn">
                                                                         </x-input-radio-or-check>
                                                                         <!-- end row -->
                                                                         <x-input-radio-or-check :checked="$transitional_movements->cross_sit_to_stand ??
@@ -683,14 +678,14 @@
                                                                 <div>
                                                                     <form>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check :checked="$muscle_power->upper_limbs ?? ''"
+                                                                        <x-input-radio-or-check :checked="$muscle_power->musical_power_upper_limbs ?? ''"
                                                                             label="Upper limbs" :records="$physiotherapyConstants::$limbs">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_power->left ?? '' }}"
+                                                                                value="{{ $muscle_power->musical_power_upper_left ?? '' }}"
                                                                                 name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
@@ -698,19 +693,19 @@
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_power->right ?? '' }}"
+                                                                                value="{{ $muscle_power->musical_power_upper_right ?? '' }}"
                                                                                 name="right">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check :checked="$muscle_power->lower_limbs ?? ''"
+                                                                        <x-input-radio-or-check :checked="$muscle_power->musicle_power_lower_limbs ?? ''"
                                                                             label="Lower Limbs" :records="$physiotherapyConstants::$limbs">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_power->left ?? '' }}"
+                                                                                value="{{ $muscle_power->musicle_power_lower_left ?? '' }}"
                                                                                 name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
@@ -718,7 +713,7 @@
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_power->right ?? '' }}"
+                                                                                value="{{ $muscle_power->musicle_power_lower_right ?? '' }}"
                                                                                 name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
@@ -726,7 +721,7 @@
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Trunk/neck</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_power->trunk ?? '' }}"
+                                                                                value="{{ $muscle_power->trunk_and_neck ?? '' }}"
                                                                                 name="trunk" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
@@ -741,14 +736,14 @@
                                                                 <div>
                                                                     <form>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check :checked="$muscle_tone->upper_limbs ?? ''"
+                                                                        <x-input-radio-or-check :checked="$muscle_tone->musicle_tone_upper_limbs ?? ''"
                                                                             label="Upper limbs" :records="$physiotherapyConstants::$limbsTone">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_tone->left ?? '' }}"
+                                                                                value="{{ $muscle_tone->musicle_tone_upper_left ?? '' }}"
                                                                                 name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
@@ -756,19 +751,19 @@
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_tone->right ?? '' }}"
+                                                                                value="{{ $muscle_tone->musicle_tone_upper_right ?? '' }}"
                                                                                 name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                         <!-- end row -->
-                                                                        <x-input-radio-or-check :checked="$muscle_tone->lower_limbs ?? ''"
+                                                                        <x-input-radio-or-check :checked="$muscle_tone->musicle_tone_lower_limbs ?? ''"
                                                                             label="Lower Limbs" :records="$physiotherapyConstants::$limbsTone">
                                                                         </x-input-radio-or-check>
                                                                         <div class="mb-3">
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Left</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_tone->left ?? '' }}"
+                                                                                value="{{ $muscle_tone->musicle_tone_lower_left ?? '' }}"
                                                                                 name="left" placeholder="">
                                                                             </x-input-text>
                                                                         </div>
@@ -776,7 +771,7 @@
                                                                             <label for="formrow-firstname-input"
                                                                                 class="form-label">Right</label>
                                                                             <x-input-text
-                                                                                value="{{ $muscle_tone->right ?? '' }}"
+                                                                                value="{{ $muscle_tone->musicle_tone_lower_right ?? '' }}"
                                                                                 name="right" placeholder="">
                                                                             </x-input-text>
                                                                         </div>

@@ -175,7 +175,7 @@
                                                                         <h5>Staff signature</h5>
                                                                         <div class="mb-2">
                                                                             <x-input-text name="staff_signature"
-                                                                                placeholder=""
+                                                                                placeholder="" type="file"
                                                                                 value="{{ $record->staff_signature }}" />
                                                                         </div>
                                                                     </div>
@@ -200,7 +200,7 @@
                                                                         <h5>Signature of support worker</h5>
                                                                         <div class="mb-2">
                                                                             <x-input-text
-                                                                                name='signature_of_support_worker'
+                                                                                name='signature_of_support_worker' type="file"
                                                                                 value="{{ $record->signature_of_support_worker }}" />
                                                                         </div>
                                                                     </div>
@@ -232,8 +232,8 @@
                                                         <input type='button'
                                                             class='btn btn-primary waves-effect waves-light btn-next'
                                                             name='next' value='Next' />
-                                                        <input type="submit" class='btn btn-finish btn-fill btn-danger'
-                                                            value='Finish' />
+                                                        <input type="submit" class='btn btn-finish btn-fill btn-success'
+                                                            value='update' />
                                                     </div>
                                                 </div>
                                             </form>
