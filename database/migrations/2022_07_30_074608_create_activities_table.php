@@ -15,10 +15,6 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('code')->nullable();
-            $table->string('type')->nullable();
-            $table->foreignIdFor(\App\Models\Area::class)->constrained('areas')->cascadeOnDelete();
             $table->timestamps();
         });
     }

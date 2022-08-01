@@ -3,11 +3,13 @@
 use App\Models\Product;
 use App\Models\BankReconcilationNew;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\SetupController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\BudgetHeadController;
@@ -17,6 +19,7 @@ use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\SupplierTypeController;
 use App\Http\Controllers\YearEndCloseController;
+use App\Http\Controllers\ActivityCreateController;
 use App\Http\Controllers\BudgetTemplateController;
 use App\Http\Controllers\ChartofAccountsController;
 use App\Http\Controllers\CustomerRegListController;
@@ -50,6 +53,8 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
         'product' =>ProductController::class,
         'course' =>CourseController::class,
         'prescription' =>PrescriptionController::class,
+        'activity' =>ActivityController::class,
+        'task' =>TaskController::class,
     ]);
 
     // Setup ->> Store Management Route
@@ -59,7 +64,7 @@ Route::group(['prefix' => 'setup', 'middleware' => ['auth']], function () {
     Route::get('product-create.create', [SetupController::class, 'productCreate'])->name('product.create.create');
     // Setup ->> Store Management Route
     // Setup->> Program Setup
-    Route::get('program-setup/tesk-create.create', [SetupController::class, 'teskCreate'])->name('setup.program-setup.tesk-create.create');
+    // Route::get('program-setup/tesk-create.create', [SetupController::class, 'teskCreate'])->name('setup.program-setup.tesk-create.create');
     //Route::get('program-setup/prescription.create', [SetupController::class, 'presCription'])->name('setup.program-setup.prescription.create');
     Route::get('program-setup/tesk-weight-setup.create', [SetupController::class, 'taskWeightSetup'])->name('setup.program-setup.tesk-weight-setup.create');
     Route::get('program-setup/activity-create.create', [SetupController::class, 'activityCreate'])->name('setup.program-setup.activity-create.create');

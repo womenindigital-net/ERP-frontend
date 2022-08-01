@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Activity;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\User::class, 'teacher_id')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignIdFor(\App\Models\User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();*/
             $table->string('title');
-            $table->foreignIdFor(\App\Models\Activity::class)->constrained('activities')->cascadeOnDelete();
+            // $table->foreignIdFor(Activity::class)->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

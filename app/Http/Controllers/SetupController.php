@@ -30,10 +30,10 @@ class SetupController extends Controller
     {
         return view('setup.program-setup.attendence-card-setup.create');
     }
-    public function teskCreate()
-    {
-        return view('setup.program-setup.tesk-create.create');
-    }
+    // public function teskCreate()
+    // {
+    //     return view('setup.program-setup.tesk-create.create');
+    // }
     public function vocationalSetup()
     {
         return view('setup.program-setup.vocational-category-subcategory-setup.create');
@@ -42,10 +42,10 @@ class SetupController extends Controller
     {
         return view('setup.program-setup.prescription.create');
     }
-    public function activityCreate()
-    {
-        return view('setup.program-setup.activity-create.create');
-    }
+    // public function activityCreate()
+    // {
+    //     return view('setup.program-setup.activity-create.create');
+    // }
     public function taskWeightSetup()
     {
         return view('setup.program-setup.tesk-weight-setup.create');

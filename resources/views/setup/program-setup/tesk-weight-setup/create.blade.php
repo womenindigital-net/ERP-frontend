@@ -66,8 +66,39 @@
                                                 <x-input-select name="activity_type" :records="[]" />
                                             </div>
                                         </div> 
+                                        <div class="row">
+                                          <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive w-100 p-0">
+                                              <thead>
+                                                  <tr class="table-primary">
+                                                      <th>SL.</th>
+                                                      <th>Task</th>
+                                                      <th>Time</th>
+                                                      <th>Sequence</th>
+                                                      <th>Quantity</th>
+                                                      <th>Quality</th>
+                                                      <th>Delivery</th>
+                                                      <th>Time Taken</th>
+                                                      <th>Target</th>
+                                                      <th>Type</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <tr>
+                                                      <td>1</td>
+                                                      <td>Ray Waters</td>
+                                                      <td>5</td>
+                                                      <td>5</td>
+                                                      <td>5</td>
+                                                      <td>5</td>
+                                                      <td>5</td>
+                                                      <td>5</td>
+                                                      <td>A</td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                      </div>
                                           <div class="text-end pe-5">
-                                            <button type="button" class="btn btn-outline-danger waves-effect waves-light">Reset</button>
+                                            
                                             <button type="button" class="btn btn-outline-success waves-effect waves-light">Save</button>
                                           </div>
                                     </div>
