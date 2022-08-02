@@ -5,9 +5,10 @@
                 <thead>
                     <tr class="table-primary">
                         <th class="">Project</th>
-                        <th class="">Type</th>
-                        <th class="">Date</th>
                         <th class="">Warehouse</th>
+                        <th class="">Type</th>
+                        <th class="">Receive</th>
+                        <th class="">Date</th>
                         <th>Log</th>
                         <th>Action</th>
                     </tr>
@@ -16,9 +17,9 @@
                     @foreach ( $records as $record)
                     <tr>
                         <td>{{ $record->project->title }}</td>
+                        <td>{{ $record->warehouse->title }}</td>
                         <td>{{ $record->type }}</td>
                         <td>{{ $record->date }}</td>
-                        <td>{{ $record->warehouse->title }}</td>
                         <td>{{ $record->created_at }}</td>
                         <td>
                             <a href="{{route('stock-receive.show', $record->id)}}" type="button"

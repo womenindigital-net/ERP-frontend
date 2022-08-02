@@ -73,7 +73,7 @@
                 <label for="subtotal">Discount</label>
             </div>
             <div class="col-lg-1 p-0 pe-1">
-                <label for="subtotal">Subtotal</label>
+                <label for="subtotal">Payable</label>
             </div>
         </div>
         @foreach($purchaseOrderInfo->details as $key => $item)
@@ -92,7 +92,7 @@
                 <p class="form-control">{{ $item->qty }}</p>
             </div>
             <div class=" col-lg-1 p-0 pe-1 pb-1">
-                <p class="form-control">{{ $item->receivable }}</p>
+                <p class="form-control">{{ $item->total_receive_qty }}</p>
             </div>
             <div class=" col-lg-1 p-0 pe-1 pb-1">
                 <p class="form-control">{{ $item->price }}</p>
@@ -104,10 +104,30 @@
                 <p class="form-control">{{ $item->discount }}</p>
             </div>
             <div class="col-lg-1 p-0 pe-1 pb-1 align-self-center d-flex">
-                <p class="form-control">{{ $item->price * $item->receivable }}</p>
+                <p class="form-control">{{ $item->price * $item->total_receive_qty }}</p>
             </div>
         </div>
         @endforeach
+        <div class="row">
+            <div class="col-lg-2 d-flex p-0 pe-1 pb-1">
+                <label for="quality">Purchase Order Price</label>
+            </div>
+            <div class=" col-lg-2 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $purchaseOrderPrice }}</p>
+            </div>
+            <div class=" col-lg-2 p-0 pe-1 pb-1">
+                <label for="quality">Total Paid</label>
+            </div>
+            <div class=" col-lg-2 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $totalPaid }}</p>
+            </div>
+            <div class=" col-lg-2 p-0 pe-1 pb-1">
+                <label for="quality">Total Payable</label>
+            </div>
+            <div class=" col-lg-2 p-0 pe-1 pb-1">
+                <p class="form-control">{{ $payable }}</p>
+            </div>
+        </div>
     </div>
     {{-- Purchase Info End --}}
     @endif

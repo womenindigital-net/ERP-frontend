@@ -75,6 +75,9 @@ class SupplierPaymentCreate extends Component
     public $cheque_id;
     public $cheque;
     public $cheque_amount;
+    public $purchaseOrderPrice;
+    public $payable;
+    public $totalPaid;
     public mixed $purchaseOrderInfo;
 
 
@@ -103,6 +106,20 @@ class SupplierPaymentCreate extends Component
             $this->remark = $this->record->remark;
             $this->note = $this->record->note;
 
+            // purchase Data
+            $this->purchaseOrderInfo =  $this->purchaseOrderRepo->getPurchaseProduct($this->record->purchase_id);
+            $details = $this->purchaseOrderInfo->details->toArray();
+            $this->purchaseOrderPrice = array_sum(data_get($details, '*.sub_total'));
+
+            foreach ($this->purchaseOrderInfo->details as $key => $item) {
+                $this->payable = ($item->price * $item->total_receive_qty);
+            }
+            $supplierPayment = $this->purchaseOrderInfo->supplierPayment;
+            foreach ($supplierPayment as $key => $value) {
+                $this->totalPaid += $value->payment->amount;
+            }
+            // purchase Data
+
             $history = $this->record->payment->history->info;
 
             $this->cash = $history->cash;
@@ -116,6 +133,17 @@ class SupplierPaymentCreate extends Component
     {
         if (str_starts_with($name, 'purchase_id')) {
             $this->purchaseOrderInfo =  $this->purchaseOrderRepo->getPurchaseProduct($value);
+            $details = $this->purchaseOrderInfo->details->toArray();
+            $this->purchaseOrderPrice = array_sum(data_get($details, '*.sub_total'));
+
+            foreach ($this->purchaseOrderInfo->details as $key => $item) {
+                $this->payable = ($item->price * $item->total_receive_qty);
+            }
+            $supplierPayment = $this->purchaseOrderInfo->supplierPayment;
+            foreach ($supplierPayment as $key => $value) {
+                $this->totalPaid += $value->payment->amount;
+            }
+            // dd($this->totalPaid);
         }
 
         if (str_starts_with($name, 'bank_account_id')) {

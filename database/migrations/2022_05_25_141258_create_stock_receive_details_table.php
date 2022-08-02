@@ -1,11 +1,11 @@
 <?php
 
 use App\Models\Product;
-use App\Models\StockReceive;
 use App\Models\Warehouse;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\StockReceive;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
