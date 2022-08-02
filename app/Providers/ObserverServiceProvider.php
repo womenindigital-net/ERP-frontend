@@ -55,7 +55,7 @@ class ObserverServiceProvider extends ServiceProvider
     {
         Income::observe(IncomeObserver::class);
         SaleIncomeDetail::observe(SaleVoucherObserver::class);
-        StockReceiveDetail::observe(StockReceiveObserver::class);
+        // StockReceiveDetail::observe(StockReceiveObserver::class);
         Purchase::observe(PurchaseObserver::class);
         PurchaseReturnDetail::observe(PurchaseReturnDetailObserver::class);
         StockReceiveDetail::observe(StockReceiveDetailObserver::class);
