@@ -29,9 +29,12 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-sm-9 col-md-9 ">
-                                            <form>
-                                                <div class="tab-content apply-view-only">
+                                        <div class="col-sm-9 col-md-9 apply-view-only">
+                                            <form action="{{ route('incident-record.update', $record->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="tab-content">
                                                     <div class="tab-pane" id="Social_Communication">
                                                         <section>
                                                             <div class="row">
@@ -56,6 +59,15 @@
                                                                             :selected="$record->teacher_id" />
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <label
+                                                                            for="basicpill-lastname-input">Candidate ID:</label>
+                                                                        <x-input-select name="candidate_id"
+                                                                            :records="$students"
+                                                                            :selected="$record->candidate_id" />
+                                                                    </div>
+                                                                </div>                
                                                             </div>
 
                                                         </section>
@@ -122,7 +134,7 @@
                                                         <input type='button'
                                                             class='btn btn-primary waves-effect waves-light btn-next'
                                                             name='next' value='Next' />
-                                                        <input type="button" class='btn btn-finish btn-fill btn-danger'
+                                                        <input type="submit" class='btn btn-finish btn-fill btn-danger'
                                                             value='Finish' />
                                                     </div>
                                                 </div>

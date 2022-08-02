@@ -1,14 +1,9 @@
 @extends('layouts.master')
-
 @section('title')
 @lang('translation.Starter_Page')
 @endsection
-
-@section('css')
-@endsection
-
 @section('content')
-<div class="row">
+<div class="row apply-view-only">
     <div class="col-xl-12 p-0">
         <div class="card">
             <div class="card-body p-0">

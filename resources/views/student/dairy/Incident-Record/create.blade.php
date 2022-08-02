@@ -72,6 +72,14 @@
                                                                                 :records="$teachers" />
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-lg-4">
+                                                                        <div class="mb-3">
+                                                                            <label
+                                                                                for="basicpill-lastname-input">Candidate ID:</label>
+                                                                            <x-input-select name="candidate_id"
+                                                                                :records="$students" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
 
                                                             </section>
