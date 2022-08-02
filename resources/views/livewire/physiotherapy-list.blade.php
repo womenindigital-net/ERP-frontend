@@ -13,10 +13,11 @@
                 </thead>
                 <tbody>
                     @foreach ($records as $record)
+
                         <tr>
-                            <td>{{ $record->date }}</td>
+                            <td>{{ $record->collection_date }}</td>
                             <td></td>
-                            <td></td>
+                            <td>{{ $record->teacher->name}}</td>
                             <td>{{ $record->created_at }}</td>
                             <td>
                                 <a href="{{ route('physiotherapy.show', $record->id) }}" target="_blank"

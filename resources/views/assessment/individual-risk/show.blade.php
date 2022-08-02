@@ -36,9 +36,9 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-9 col-md-9 apply-view-only">
+                                            <div class="col-sm-9 col-md-9 ">
                                                 <form action="">
-                                                    <div class="tab-content">
+                                                    <div class="tab-content apply-view-only">
                                                         <div class="tab-pane" id="Social_Communication">
                                                             <section>
                                                                 <div class="row">
@@ -167,7 +167,7 @@
                                                                             <h5>Staff signature</h5>
                                                                             <div class="mb-2">
                                                                                 <x-input-text name="staff_signature"
-                                                                                    placeholder=""
+                                                                                    placeholder="" type="file"
                                                                                     value="{{ $record->staff_signature }}" />
                                                                             </div>
                                                                         </div>
@@ -191,7 +191,7 @@
                                                                         <div class="m-0">
                                                                             <h5>Signature of support worker</h5>
                                                                             <div class="mb-2">
-                                                                                <x-input-text
+                                                                                <x-input-text type="file"
                                                                                     name='signature_of_support_worker'
                                                                                     value="{{ $record->signature_of_support_worker }}" />
                                                                             </div>

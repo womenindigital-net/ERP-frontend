@@ -3,8 +3,8 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use PrescriptionService;
 use Livewire\WithPagination;
+use App\Services\PrescriptionService;
 use App\Http\Livewire\Traits\CommonAddMore;
 use App\Repositories\PrescriptionRepository;
 use App\Http\Livewire\Traits\CommonListElements;
@@ -43,21 +43,37 @@ class PrescriptionCreate extends Component
 
     public function mount()
     {
-        if ($this->finishedGood) {
-            $this->finishedGood = $this->repo->getRelatedData($this->finishedGood, ['details']);
-            $this->date = $this->finishedGood->date;
-            $this->project_id = $this->finishedGood->project_id;
-            $this->warehouse_id = $this->finishedGood->warehouse_id;
-            $this->note = $this->finishedGood->note;
+        // if ($this->finishedGood) {
 
-            $this->inputs = $this->finishedGood->details->toArray();
+        //     $this->finishedGood = $this->repo->getRelatedData($this->finishedGood, ['details']);
+        //     $this->date = $this->finishedGood->date;
+        //     $this->project_id = $this->finishedGood->project_id;
+        //     $this->warehouse_id = $this->finishedGood->warehouse_id;
+        //     $this->note = $this->finishedGood->note;
 
-            foreach ($this->finishedGood->details as $key => $detail) {
-                $this->product_id[$key] = $detail->product_id;
-                $this->qty[$key] = $detail->qty;
-                $this->unit[$key] = $detail->unit;
-            }
-        }
+        //     $this->inputs = $this->finishedGood->details->toArray();
+
+        //     foreach ($this->finishedGood->details as $key => $detail) {
+        //         $this->product_id[$key] = $detail->product_id;
+        //         $this->qty[$key] = $detail->qty;
+        //         $this->unit[$key] = $detail->unit;
+        //     }
+        // }
+    }
+
+    protected array $rules = [
+        'pres_name' => 'nullable',
+        'pres_by' => 'nullable',
+        'medicine_admin' => 'nullable',
+        'medicine_dose' => 'nullable',
+        'medicine_route' => 'nullable',
+    ];
+
+    public function update()
+    {
+        // $this->service->update($this->finishedGood, $this->validate());
+        // $this->dispatchBrowserEvent('notify');
+        // $this->redirectRoute('stock-receive.create');
     }
 
     public function render()

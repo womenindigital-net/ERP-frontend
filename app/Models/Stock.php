@@ -16,4 +16,9 @@ class Stock extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function project(): BelongsTo
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

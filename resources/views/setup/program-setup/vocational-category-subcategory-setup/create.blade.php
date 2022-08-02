@@ -32,7 +32,7 @@
                             <div class="col-lg-6">
                                 <label class="form-label">Categories</label>
                                 <x-input-select name="category_id"
-                :records="[]" />
+                               :records="[]" />
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Sub Categories</label>

@@ -6,7 +6,7 @@ use App\Models\Activity;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ActivitiesPolicy
+class ActivityPolicy
 {
     use HandlesAuthorization;
 
@@ -25,11 +25,10 @@ class ActivitiesPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Activity $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Activity $activities)
+    public function view(User $user, Activity $activity)
     {
         //
     }
@@ -49,11 +48,10 @@ class ActivitiesPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Activity  $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Activity $activities)
+    public function update(User $user, Activity $activity)
     {
         //
     }
@@ -62,11 +60,10 @@ class ActivitiesPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param \App\Models\Activity  $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Activity $activities)
+    public function delete(User $user, Activity $activity)
     {
         //
     }
@@ -75,11 +72,10 @@ class ActivitiesPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param \App\Models\Activity  $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Activity $activities)
+    public function restore(User $user, Activity $activity)
     {
         //
     }
@@ -88,11 +84,10 @@ class ActivitiesPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param \App\Models\Activity  $activities
-     *
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Activity $activities)
+    public function forceDelete(User $user, Activity $activity)
     {
         //
     }

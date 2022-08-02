@@ -333,12 +333,10 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li> <a href="{{ route('prescription.create') }}">Prescription</a> </li>
-                        <li> <a href="{{ route('setup.program-setup.activity-create.create') }}">Activity create</a>
-                        </li>
-                        <li> <a href="{{ route('setup.program-setup.tesk-create.create') }}">Task create</a> </li>
-                        <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight
-                                Setup</a>
-                        </li>
+                        {{-- <li> <a href="{{ route('activity.create') }}">Activity create</a>
+                        </li> --}}
+                        <li> <a href="{{ route('task.create') }}">Task create</a> </li>
+                        <li> <a href="{{ route('setup.program-setup.tesk-weight-setup.create') }}">Task Weight Setup</a></li>
                         <li> <a href="{{ route('course.create') }}">Course Setup</a> </li>
                         <li> <a href="{{ route('setup.program-setup.attendence-card-setup.create') }}">Attendence
                                 card
@@ -369,7 +367,6 @@
                             <a href="javascript: void(0);" class="has-arrow">Course and Admission</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li> <a href="{{ route('setup.course-and-admission.create') }}">Course </a> </li>
-
                             </ul>
                         </li>
                     </ul>
