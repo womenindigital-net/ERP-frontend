@@ -38,11 +38,10 @@
                                                                 data-toggle="tab"> OT Assessment In
                                                                 Computer Trainee</a>
                                                         </li>
-                                                        <li class="w-100"><a href="#General"
-                                                                data-toggle="tab">General</a>
+                                                        <li class="w-100"><a href="#General" data-toggle="tab">General</a>
                                                         </li>
-                                                        <li class="w-100"><a href="#Muscle_Tone"
-                                                                data-toggle="tab">Physical skill
+                                                        <li class="w-100"><a href="#Muscle_Tone" data-toggle="tab">Physical
+                                                                skill
                                                                 Tone</a></li>
                                                         <li class="w-100"><a href="#Range_of_movement"
                                                                 data-toggle="tab">Cognitive, Behavior &
@@ -68,7 +67,8 @@
                                                                                 for="basicpill-firstname-input">Collection
                                                                                 Date:</label>
                                                                             <div class="input-group" id="datepicker2">
-                                                                                <x-input-text type="date" name="date" />
+                                                                                <x-input-text type="date"
+                                                                                    name="date" />
                                                                             </div><!-- input-group -->
                                                                         </div>
                                                                     </div>
@@ -77,7 +77,7 @@
                                                                             <label
                                                                                 for="basicpill-lastname-input">Teacher:</label>
                                                                             <x-input-select name="teacher_id"
-                                                                                :records="$teachers"  />
+                                                                                :records="$teachers" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -108,61 +108,85 @@
                                                         <div class="tab-pane" id="Muscle_Tone">
                                                             <section>
                                                                 <x-input-radio-or-check name="sitting_posture_maintain"
-                                                                    label="Sitting posture maintain" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Sitting posture maintain" :records="$otassessmentConstants::$maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="oint_mobility_shoulder"
-                                                                    label="oint mobility shoulder" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="oint mobility shoulder" :records="$otassessmentConstants::$maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="elbow" label="Elbow"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="wrist" label="Wrist"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="finger" label="Finger"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="body_flexibility"
-                                                                    label="Body flexibility (Trunk)" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Body flexibility (Trunk)" :records="$otassessmentConstants::$maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="dynamic_balance_maintain"
-                                                                    label="Dynamic balance maintain" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Dynamic balance maintain" :records="$otassessmentConstants::$maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="eye_hand_co_ordination"
                                                                     label="Eye hand co ordination to press the key board button"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="mouse_operater"
-                                                                    label="Mouse operater" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Mouse operater" :records="$otassessmentConstants::$maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="muscle_strength_in_hand"
                                                                     label="Muscle strength in hand and finger"
-                                                                    :records="$otassessmentConstants::$strength" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$strength">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="hand_function"
-                                                                    label="Hand function" :records="$otassessmentConstants::$ability"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Hand function" :records="$otassessmentConstants::$ability">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="grasp" label="Grasp"
-                                                                    :records="$otassessmentConstants::$ability" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$ability">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="manipulation"
-                                                                    label="Manipulation" :records="$otassessmentConstants::$ability"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Manipulation" :records="$otassessmentConstants::$ability">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="opp_one" label="Opposition"
-                                                                    :records="$otassessmentConstants::$ability" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$ability">
+                                                                </x-input-radio-or-check>
+
+                                                                <x-input-radio-or-check name="transfer" label="Transfer"
+                                                                    :records="$otassessmentConstants::$ability">
+                                                                </x-input-radio-or-check>
+
+                                                                <x-input-radio-or-check name="weight_carry"
+                                                                    label="Weight Carry" :records="$otassessmentConstants::$ability">
+                                                                </x-input-radio-or-check>
+
+                                                                <x-input-radio-or-check name="sensory" label="Sensory"
+                                                                    :records="$otassessmentConstants::$hyper">
+                                                                </x-input-radio-or-check>
+
+                                                                <x-input-radio-or-check name="tactile" label="Tactile "
+                                                                    :records="$otassessmentConstants::$hyper">
+                                                                </x-input-radio-or-check>
+
+                                                                <x-input-radio-or-check name="visual" label="Visual"
+                                                                    :records="$otassessmentConstants::$hyper">
+                                                                </x-input-radio-or-check>
+
+                                                                <x-input-radio-or-check name="auditory" label="Auditory"
+                                                                    :records="$otassessmentConstants::$hyper">
                                                                 </x-input-radio-or-check>
 
                                                             </section>
@@ -171,45 +195,45 @@
                                                             <section>
                                                                 <x-input-radio-or-check name="sitting_habit_in_specific"
                                                                     label="Sitting habit in specific place"
-                                                                    :records="$otassessmentConstants::$time" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$time">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="keep_attention"
                                                                     label="Keep attention/concentration to work"
-                                                                    :records="$constants::$yesNoEn" secondaryInputLabel="">
+                                                                    :records="$constants::$yesNoEn">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="follow_instruction"
-                                                                    label="Follow instruction" :records="$otassessmentConstants::$follow"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Follow instruction" :records="$otassessmentConstants::$follow">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="response_skill"
-                                                                    label="Response skill" :records="$otassessmentConstants::$response"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Response skill" :records="$otassessmentConstants::$response">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="understand_or_follow"
                                                                     label="Understand or follow the work sequence"
-                                                                    :records="$otassessmentConstants::$maintain" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$maintain">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="interest_of_work"
-                                                                    label="Interest of work" :records="$otassessmentConstants::$show"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Interest of work" :records="$otassessmentConstants::$show">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="information_receives_ability"
-                                                                    label="Information receives ability" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Information receives ability"
+                                                                    :records="$otassessmentConstants::$maintain"></x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="memorizing_the_information"
-                                                                    label="Memorizing the information" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Memorizing the information" :records="$otassessmentConstants::$maintain">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="awareness_of_risk_hazard"
-                                                                    label="Awareness of Risk & hazard" :records="$otassessmentConstants::$maintain"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Awareness of Risk & hazard" :records="$otassessmentConstants::$maintain">
+                                                                </x-input-radio-or-check>
 
-                                                                <x-input-radio-or-check name="opposition_two" label="Opposition"
-                                                                    :records="$otassessmentConstants::$appropriate" secondaryInputLabel="">
+                                                                <x-input-radio-or-check name="opposition_two"
+                                                                    label="Sitting chair" :records="$otassessmentConstants::$appropriate">
                                                                 </x-input-radio-or-check>
 
                                                             </section>
@@ -217,25 +241,25 @@
                                                         <div class="tab-pane" id="work">
                                                             <section>
                                                                 <x-input-radio-or-check name="working_table"
-                                                                    label="Working table/ desk" :records="$otassessmentConstants::$appropriate"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Working table/ desk" :records="$otassessmentConstants::$appropriate">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="Keyboard_and_mouse"
-                                                                    label="Keyboard and mouse place" :records="$otassessmentConstants::$appropriate"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Keyboard and mouse place" :records="$otassessmentConstants::$appropriate">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="monitor_place"
-                                                                    label="Monitor place" :records="$otassessmentConstants::$appropriate"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Monitor place" :records="$otassessmentConstants::$appropriate">
+                                                                </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="cpu"
                                                                     label="CPU, Stabilizer, and multi pluck place"
-                                                                    :records="$otassessmentConstants::$appropriate" secondaryInputLabel="">
+                                                                    :records="$otassessmentConstants::$appropriate">
                                                                 </x-input-radio-or-check>
 
                                                                 <x-input-radio-or-check name="communication_style"
-                                                                    label="Communication Style" :records="$otassessmentConstants::$sign"
-                                                                    secondaryInputLabel=""></x-input-radio-or-check>
+                                                                    label="Communication Style" :records="$otassessmentConstants::$sign">
+                                                                </x-input-radio-or-check>
 
                                                             </section>
                                                         </div>
@@ -296,7 +320,8 @@
                                                                         <div class="me-5 ">
                                                                             <label
                                                                                 class="form-check-label pb-2">Designation</label>
-                                                                            <x-input-text name="designation" placeholder="">
+                                                                            <x-input-text name="designation"
+                                                                                placeholder="">
                                                                             </x-input-text>
                                                                         </div>
                                                                     </div>
@@ -314,7 +339,8 @@
                                                             <input type='button'
                                                                 class='btn btn-primary waves-effect waves-light btn-next'
                                                                 name='next' value='Next' />
-                                                            <input type="submit" class='btn btn-finish btn-fill btn-danger'
+                                                            <input type="submit"
+                                                                class='btn btn-finish btn-fill btn-danger'
                                                                 wire:click='save' value='Finish' />
                                                         </div>
                                                     </div>
@@ -326,7 +352,7 @@
                             </div> <!-- end col -->
                         </div>
                         <div class="tab-pane " id="case-histroy_list" role="tabpanel">
-                           <livewire:ot-assessment-list/>
+                            <livewire:ot-assessment-list />
                         </div>
                     </div>
 

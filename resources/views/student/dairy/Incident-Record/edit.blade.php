@@ -59,6 +59,15 @@
                                                                             :selected="$record->teacher_id" />
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <label
+                                                                            for="basicpill-lastname-input">Candidate ID:</label>
+                                                                        <x-input-select name="candidate_id"
+                                                                            :records="$students"
+                                                                            :selected="$record->candidate_id" />
+                                                                    </div>
+                                                                </div>                
                                                             </div>
 
                                                         </section>
