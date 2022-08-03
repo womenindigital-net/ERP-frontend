@@ -35,21 +35,4 @@
 </div>
 @endsection
 @section('script')
-<script>
-    $(document).ready(function() {
-            $(".hide_sell").hide();
-            $("#sell").click(function() {
-                $(".hide_sell").toggle();
-            });
-            $(".hide_cost").hide();
-            $("#cost").click(function() {
-                $(".hide_cost").toggle();
-            });
-            $(".hide_expiry").hide();
-            $("#expiry").click(function() {
-                $(".hide_expiry").toggle();
-            });
-
-        });
-</script>
 @endsection
