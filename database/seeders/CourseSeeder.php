@@ -20,7 +20,7 @@ class CourseSeeder extends Seeder
             for ($i = 0; $i < 10; $i++) {
                 $custom[] = [
                     'title'            => "Course_$i",
-                    'amount'           => rand(100, 1000),
+                    // 'amount'           => rand(100, 1000),
                     'duration'         => rand(50, 1000),
                     'parent_course_id' => null,
                 ];
@@ -34,7 +34,7 @@ class CourseSeeder extends Seeder
         for ($i = $numberOfExistingCourses; $i < $numberOfExistingCourses+10; $i++) {
             $custom[] = [
                 'title'            => "Course_$i",
-                'amount'           => rand(100, 1000),
+                // 'amount'           => rand(100, 1000),
                 'duration'         => rand(50, 1000),
                 'parent_course_id' => Course::inRandomOrder()->first()->id,
             ];
