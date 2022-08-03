@@ -66,7 +66,7 @@ final class PhysioTherapy
             'enter_your_name',
              'if_yes_enter_school_name',
             'leisure_or_play_activities_of_interest',
-           
+
         ],
         'strength'            => [
             'please_explain_strength_area',
@@ -81,13 +81,13 @@ final class PhysioTherapy
             'ball_skill'
         ],
         'transitional_movements'            => [
+            'rolling_supine_to_prone',
             'prone_to_supine',
             'continuous_rolling',
             'lying_to_sit',
             'box_sit_to_stand',
-            'jumping',
             'cross_sit_to_stand',
-            'kneeling_to_stand',
+            'kneeling_to_stand'
         ],
         'fine_motor_skill'            => [
             'dominance',
@@ -133,21 +133,30 @@ final class PhysioTherapy
             'designation',
         ],
         'muscle_power'            => [
-            'upper_limbs',
-            'left',
-            'right',
-            'lower_limbs',
-            'trunk',
+            'musical_power_upper_limbs',
+            'musical_power_upper_left',
+            'musical_power_upper_right',
+            'musicle_power_lower_limbs',
+            'musicle_power_lower_left',
+            'musicle_power_lower_right',
+            'trunk_and_neck'
         ],
         'muscle_tone'            => [
-            //tabel a kono kichu pai nai (name)
+            'musicle_tone_upper_limbs',
+            'musicle_tone_upper_left',
+            'musicle_tone_upper_right',
+            'musicle_tone_lower_limbs',
+            'musicle_tone_lower_left',
+            'musicle_tone_lower_right',
         ],
+
         'behavior'            => [
             'independence',
             'social_interaction',
             'social_communication',
             'interpersonal',
         ],
+
         'domain_area'            => [
             'physical_Gross_motor_Fine_motor',
             'cognitive',

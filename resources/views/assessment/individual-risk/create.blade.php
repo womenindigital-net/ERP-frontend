@@ -63,7 +63,7 @@
                                                                             <label
                                                                                 for="basicpill-firstname-input">Collection
                                                                                 Date:</label>
-                                                                            <x-input-text name="date" type="date"
+                                                                            <x-input-text name="collection_date" type="date"
                                                                                 placeholder="mm/dd/yyyy">
                                                                             </x-input-text>
                                                                         </div>
@@ -174,7 +174,7 @@
                                                                         <div class="m-0">
                                                                             <h5>Staff signature</h5>
                                                                             <div class="mb-2">
-                                                                                <x-input-text name="staff_signature"
+                                                                                <x-input-text type="file" name="staff_signature"
                                                                                     placeholder="" />
                                                                             </div>
                                                                         </div>
@@ -197,7 +197,7 @@
                                                                         <div class="m-0">
                                                                             <h5>Signature of support worker</h5>
                                                                             <div class="mb-2">
-                                                                                <x-input-text
+                                                                                <x-input-text type="file"
                                                                                     name="signature_of_support_worker" />
                                                                             </div>
                                                                         </div>

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('is_approved')->default(0);
             $table->string('collection_date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->string('candidate_id')->nullable();
             $table->string('incident_type')->nullable();
             $table->string('setting')->nullable();
             $table->string('date_and_time')->nullable();

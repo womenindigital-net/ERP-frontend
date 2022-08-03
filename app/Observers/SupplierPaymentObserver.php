@@ -2,93 +2,79 @@
 
 namespace App\Observers;
 
-use App\Models\PaymentHistory;
-use App\Repositories\ChequeRepository;
-use App\Repositories\PaymentRepository;
-use App\Repositories\BankAccountRepository;
+use App\Models\SupplierPayment;
+use App\Repositories\PurchaseRepository;
 
 class SupplierPaymentObserver
 {
 
-
-    private PaymentRepository $repo;
-    private BankAccountRepository $bankAccRepo;
-    private ChequeRepository $chequeRepo;
+    private PurchaseRepository $purchaseRepo;
 
     public function __construct(
-        PaymentRepository $repository,
-        BankAccountRepository $bankAccRepository,
-        ChequeRepository $chequeRepository,
+        PurchaseRepository $purchaseRepository,
     ) {
-        $this->repo = $repository;
-        $this->bankAccRepo = $bankAccRepository;
-        $this->chequeRepo = $chequeRepository;
+        $this->purchaseRepo = $purchaseRepository;
     }
-
     /**
-     * Handle the PaymentHistory "created" event.
+     * Handle the SupplierPayment "created" event.
      *
-     * @param  \App\Models\PaymentHistory  $paymentHistory
+     * @param  \App\Models\SupplierPayment  $supplierPayment
      * @return void
      */
-    public function created(PaymentHistory $paymentHistory)
+    public function created(SupplierPayment $supplierPayment)
     {
-        $data = $paymentHistory->toArray()['info'];
-        $bankAccountId = $data->bank_account_id;
-        $chequeId = $data->cheque_id;
-        $chequeAmount = $data->cheque_amount;
-        if (!(is_null($bankAccountId) and is_null($chequeId) and is_null($chequeAmount))) {
-            $bankAccount = $this->bankAccRepo->getSpecificBankAcc($bankAccountId);
-            $cheque = $this->chequeRepo->getSpecificCheque($chequeId);
 
-            $bankAccount->current_balance -= $chequeAmount;
-            $bankAccount->saveQuietly();
+        // $totalAmount = (((int) request()->all()['serverMemo']['data']['cash'] ?? 0) + ((int) request()->all()['serverMemo']['data']['cheque_amount'] ?? 0));
 
-            $cheque->used = 1;
-            $cheque->saveQuietly();
-        }
+        // $purchaseData = $this->purchaseRepo->getPurchaseData(request()->all()['serverMemo']['data']['purchase_id']);
+
+        // dd($purchaseData);
+        // // if ($purchaseData) {
+        // //     $purchaseData->total_paid_amount += $totalAmount;
+        // //     $purchaseData->saveQuietly();
+        // // }
     }
 
     /**
-     * Handle the PaymentHistory "updated" event.
+     * Handle the SupplierPayment "updated" event.
      *
-     * @param  \App\Models\PaymentHistory  $paymentHistory
+     * @param  \App\Models\SupplierPayment  $supplierPayment
      * @return void
      */
-    public function updated(PaymentHistory $paymentHistory)
+    public function updated(SupplierPayment $supplierPayment)
     {
         //
     }
 
     /**
-     * Handle the PaymentHistory "deleted" event.
+     * Handle the SupplierPayment "deleted" event.
      *
-     * @param  \App\Models\PaymentHistory  $paymentHistory
+     * @param  \App\Models\SupplierPayment  $supplierPayment
      * @return void
      */
-    public function deleted(PaymentHistory $paymentHistory)
+    public function deleted(SupplierPayment $supplierPayment)
     {
         //
     }
 
     /**
-     * Handle the PaymentHistory "restored" event.
+     * Handle the SupplierPayment "restored" event.
      *
-     * @param  \App\Models\PaymentHistory  $paymentHistory
+     * @param  \App\Models\SupplierPayment  $supplierPayment
      * @return void
      */
-    public function restored(PaymentHistory $paymentHistory)
+    public function restored(SupplierPayment $supplierPayment)
     {
         //
     }
 
     /**
-     * Handle the PaymentHistory "force deleted" event.
+     * Handle the SupplierPayment "force deleted" event.
      *
-     * @param  \App\Models\PaymentHistory  $paymentHistory
+     * @param  \App\Models\SupplierPayment  $supplierPayment
      * @return void
      */
-    public function forceDeleted(PaymentHistory $paymentHistory)
+    public function forceDeleted(SupplierPayment $supplierPayment)
     {
         //
     }

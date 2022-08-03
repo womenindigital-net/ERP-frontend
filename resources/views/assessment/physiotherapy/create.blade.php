@@ -369,6 +369,9 @@
                                                             <section>
                                                                 <div>
                                                                     <!-- end row -->
+                                                                    <x-input-radio-or-check label="Rolling supine to prone"
+                                                                        :records="$constants::$yesNoEn">
+                                                                    </x-input-radio-or-check>
                                                                     <x-input-radio-or-check label="Prone to Supine"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
@@ -388,11 +391,10 @@
                                                                     <x-input-radio-or-check label="Cross sit to stand"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
-                                                                    <!-- end row -->
-                                                                    <x-input-radio-or-check label="Kneeling to stand:"
+                                                                    <x-input-radio-or-check label="Kneeling to stand"
                                                                         :records="$constants::$yesNoEn">
                                                                     </x-input-radio-or-check>
-                                                                    <!-- end row -->
+
                                                                 </div>
                                                             </section>
                                                         </div>
@@ -599,41 +601,42 @@
                                                             <section>
                                                                 <div>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check label="Upper limbs"
+                                                                    <x-input-radio-or-check label="Upper limbs" name="musical_power_upper_limbs"
                                                                         :records="$physiotherapyConstants::$limbs">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text name="left" placeholder="">
+                                                                        <x-input-text name="musical_power_upper_left" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text name="right" placeholder="">
+                                                                        <x-input-text name="musical_power_upper_right" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check label="Lower Limbs"
+                                                                    name="musicle_power_lower_limbs"
                                                                         :records="$physiotherapyConstants::$limbs">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text name="left" placeholder="">
+                                                                        <x-input-text  name="musicle_power_lower_left" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text name="right" placeholder="">
+                                                                        <x-input-text name="musicle_power_lower_right" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Trunk/neck</label>
-                                                                        <x-input-text name="trunk" placeholder="">
+                                                                        <x-input-text name="trunk_and_neck" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                 </div>
@@ -644,34 +647,35 @@
                                                                 <div>
                                                                     <!-- end row -->
                                                                     <x-input-radio-or-check label="Upper limbs"
+                                                                    name="musicle_tone_upper_limbs"
                                                                         :records="$physiotherapyConstants::$limbsTone">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
-                                                                            class="form-label">Left</label>
-                                                                        <x-input-text name="left" placeholder="">
+                                                                            class="form-label" >Left</label>
+                                                                        <x-input-text name="musicle_tone_upper_left" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text name="right" placeholder="">
+                                                                        <x-input-text name="musicle_tone_upper_right" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <!-- end row -->
-                                                                    <x-input-radio-or-check label="Lower Limbs"
+                                                                    <x-input-radio-or-check label="Lower Limbs" name="musicle_tone_lower_limbs"
                                                                         :records="$physiotherapyConstants::$limbsTone">
                                                                     </x-input-radio-or-check>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Left</label>
-                                                                        <x-input-text name="left" placeholder="">
+                                                                        <x-input-text name="musicle_tone_lower_left" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="formrow-firstname-input"
                                                                             class="form-label">Right</label>
-                                                                        <x-input-text name="right" placeholder="">
+                                                                        <x-input-text name="musicle_tone_lower_right" placeholder="">
                                                                         </x-input-text>
                                                                     </div>
                                                                 </div>

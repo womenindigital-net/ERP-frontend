@@ -32,6 +32,7 @@ use App\Observers\FinishedGoodDetailObserver;
 use App\Observers\StockReceiveDetailObserver;
 use App\Observers\StockTransferDetailObserver;
 use App\Observers\PurchaseReturnDetailObserver;
+use App\Observers\SupplierPaymentDetailsObserver;
 use App\Observers\MaterialCollectionProductObserver;
 
 class ObserverServiceProvider extends ServiceProvider
@@ -55,7 +56,7 @@ class ObserverServiceProvider extends ServiceProvider
     {
         Income::observe(IncomeObserver::class);
         SaleIncomeDetail::observe(SaleVoucherObserver::class);
-        StockReceiveDetail::observe(StockReceiveObserver::class);
+        // StockReceiveDetail::observe(StockReceiveObserver::class);
         Purchase::observe(PurchaseObserver::class);
         PurchaseReturnDetail::observe(PurchaseReturnDetailObserver::class);
         StockReceiveDetail::observe(StockReceiveDetailObserver::class);
@@ -66,7 +67,8 @@ class ObserverServiceProvider extends ServiceProvider
         StockAssignDetail::observe(StockAssignDetailObserver::class);
         StockOutDetail::observe(StockOutDetailObserver::class);
         Requisition::observe(RequisitionObserver::class);
-        PaymentHistory::observe(SupplierPaymentObserver::class);
+        PaymentHistory::observe(SupplierPaymentDetailsObserver::class);
+        SupplierPayment::observe(SupplierPaymentObserver::class);
         Payment::observe(DirectPaymentObserver::class);
     }
 }

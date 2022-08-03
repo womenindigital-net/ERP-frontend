@@ -3,8 +3,8 @@
 namespace App\Observers;
 
 use App\Models\PurchaseReturnDetail;
-use App\Repositories\PurchaseReturnDetailRepository;
 use App\Repositories\StockRepository;
+use App\Repositories\PurchaseReturnDetailRepository;
 
 class PurchaseReturnDetailObserver
 {

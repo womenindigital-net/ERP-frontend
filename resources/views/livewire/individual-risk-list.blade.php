@@ -14,9 +14,9 @@
                 <tbody>
                     @foreach ($records as $record)
                     <tr>
-                        <td>{{ $record->collection_date }}</td>
+                        <td>{{ $record->collection_date}}</td>
                         <td>{{ $record->student->name }}</td>
-                        <td></td>
+                        <td>{{ $record->teacher->name}}</td>
                         <td>{{ $record->created_at }}</td>
                         <td>
                             <a href="{{ route('individual-risk.show', $record->id) }}" target="_blank"

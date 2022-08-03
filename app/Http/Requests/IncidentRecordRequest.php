@@ -26,6 +26,7 @@ class IncidentRecordRequest extends FormRequest
         return [
             "collection_date"            => 'nullable',
             "teacher_id"                 => 'nullable',
+            "candidate_id"               => 'nullable',
             "incident_type"              => 'nullable',
             "date_and_time"              => 'nullable',
             "setting"                    => 'nullable',
