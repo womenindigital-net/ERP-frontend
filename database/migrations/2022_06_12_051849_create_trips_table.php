@@ -42,7 +42,9 @@ return new class extends Migration
             $table->json('constructive_work')->nullable();
             $table->json('dinner')->nullable();
             $table->json('after_dinner')->nullable();
-            
+            $table->json('signature')->nullable();
+            $table->json('trip_evaluation_signature')->nullable();
+
             $table->string('special_educator_team')->nullable();
             $table->string('special_educator_team_name')->nullable();
             $table->string('guardian')->nullable();

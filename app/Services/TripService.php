@@ -27,7 +27,7 @@ class TripService
         $data = $this->processInfo($validated);
 
         $this->repo->update($trip, $data);
-        
+
     }
 
     private function processInfo(array $validated): array
@@ -55,6 +55,8 @@ class TripService
         [$constructiveWork, $data] = $this->collectConstructiveWork($data);
         [$dinner, $data] = $this->collectDinner($data);
         [$AfterDinner, $data] = $this->collectAfterDinner($data);
+        [$Signature, $data] = $this->collectSignature($data);
+        [$tripEvaluationSignature, $data] = $this->collectTripEvaluationSignature($data);
 
         return [
             'collection_date' => $validated['collection_date'],
@@ -82,6 +84,8 @@ class TripService
             'constructive_work' => $constructiveWork,
             'dinner' => $dinner,
             'after_dinner' => $AfterDinner,
+            'signature' => $Signature,
+            'trip_evaluation_signature' => $tripEvaluationSignature,
         ];
     }
 
@@ -179,5 +183,13 @@ class TripService
     private function collectAfterDinner(mixed $data): array
     {
         return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['after_dinner']);
+    }
+    private function collectSignature(mixed $data): array
+    {
+        return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['signature']);
+    }
+    private function collectTripEvaluationSignature(mixed $data): array
+    {
+        return extractNecessaryFieldsFromData($data, TripReport::$columnCollections['trip_evaluation_signature']);
     }
 }

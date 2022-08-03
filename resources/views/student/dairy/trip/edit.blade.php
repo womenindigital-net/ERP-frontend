@@ -59,8 +59,6 @@
                                                     <li class="w-100"><a href="#dailyWork" data-toggle="tab">শিক্ষার্থীদের
                                                             দৈনন্দিন রুটিনের সাজেশন >
                                                             দৈনন্দিন কাজ</a></li>
-                                                    <li class="w-100"><a href="#" data-toggle="tab">শিক্ষার্থীদের
-                                                            দৈনন্দিন রুটিনের সাজেশন > নিজের কাজ</a></li>
                                                     <li class="w-100"><a href="#wonWork" data-toggle="tab">শিক্ষার্থীদের
                                                             দৈনন্দিন রুটিনের সাজেশন > নিজের কাজ</a></li>
                                                     <li class="w-100"><a href="#lunch" data-toggle="tab">শিক্ষার্থীদের
@@ -1490,7 +1488,7 @@
                                                             name="give_plate_glass_on_the_table_will_help"
                                                             label="টেবিলে প্লেট গ্লাস দিবে / সহযোগিতা করবে"
                                                             :records="$tripReportConstants::$help"
-                                                            secondaryInputValue="{{ $lunchTimesecondary ?? '' }}"
+                                                            secondaryInputValue="{{ $lunchTime->give_plate_glass_on_the_table_will_help_secondary ?? '' }}"
                                                             secondaryInputLabel="সাজেশন">
                                                         </x-input-radio-or-check>
 
@@ -1551,7 +1549,7 @@
                                                             name="bring_food_from_the_kitchen_to_the_table"
                                                             label="রান্নাঘর থেকে টেবিলে খাবার নিয়ে আসবে"
                                                             :records="$tripReportConstants::$help"
-                                                            secondaryInputValue="{{ $lunchTime->_secondary ?? '' }}"
+                                                            secondaryInputValue="{{ $lunchTime->bring_food_from_the_kitchen_to_the_table_secondary ?? '' }}"
                                                             secondaryInputLabel="সাজেশন">
                                                         </x-input-radio-or-check>
 
@@ -1732,9 +1730,9 @@
                                                             <!-- input-group -->
                                                         </div>
 
-                                                        <x-input-radio-or-check :checked="$restTime->listening_song ?? ''" name="listening_song"
+                                                        <x-input-radio-or-check :checked="$restTime->rest_time_listening_song ?? ''" name="listening_song"
                                                             label="গান শুনা" :records="$tripReportConstants::$help"
-                                                            secondaryInputValue="{{ $restTime->listening_song_secondary ?? '' }}"
+                                                            secondaryInputValue="{{ $restTime->rest_time_listening_song_secondary ?? '' }}"
                                                             secondaryInputLabel="সাজেশন">
                                                         </x-input-radio-or-check>
 
@@ -1743,7 +1741,7 @@
                                                             <label for="basicpill-firstname-input">সময়</label>
                                                             <div class="input-group" id="datepicker2">
                                                                 <x-input-text
-                                                                    value="{{ $restTime->listening_song_time ?? '' }}"
+                                                                    value="{{ $restTime->rest_time_listening_song_time ?? '' }}"
                                                                     name="listening_song_time">
                                                                 </x-input-text>
                                                             </div>
@@ -1754,7 +1752,7 @@
                                                                 লিখুন</label>
                                                             <div class="input-group" id="datepicker2">
                                                                 <x-input-text
-                                                                    value="{{ $restTime->listening_song_time_secondary ?? '' }}"
+                                                                    value="{{ $restTime->rest_time_listening_song_time_secondary ?? '' }}"
                                                                     name="listening_song_time_secondary">
                                                                 </x-input-text>
                                                             </div>
@@ -2100,10 +2098,10 @@
                                                             <!-- input-group -->
                                                         </div>
 
-                                                        <x-input-radio-or-check :checked="$constructiveWork->computer_practice ?? ''"
+                                                        <x-input-radio-or-check :checked="$constructiveWork->constructive_work_computer_practice ?? ''"
                                                             name="computer_practice"
                                                             label="কম্পিউটারে কাজের প্র্যাকটিস করবে" :records="$tripReportConstants::$help"
-                                                            secondaryInputValue="{{ $constructiveWork->computer_practice_secondary ?? '' }}"
+                                                            secondaryInputValue="{{ $constructiveWork->constructive_work_computer_practice_secondary ?? '' }}"
                                                             secondaryInputLabel="সাজেশন">
                                                         </x-input-radio-or-check>
 
@@ -2112,7 +2110,7 @@
                                                             <label for="basicpill-firstname-input">সময়</label>
                                                             <div class="input-group" id="datepicker2">
                                                                 <x-input-text
-                                                                    value="{{ $constructiveWork->computer_practice_time ?? '' }}"
+                                                                    value="{{ $constructiveWork->constructive_work_computer_practice_time ?? '' }}"
                                                                     name="computer_practice_time">
                                                                 </x-input-text>
                                                             </div>
@@ -2123,7 +2121,7 @@
                                                                 লিখুন</label>
                                                             <div class="input-group" id="datepicker2">
                                                                 <x-input-text
-                                                                    value="{{ $constructiveWork->computer_practice_time_secondary ?? '' }}"
+                                                                    value="{{ $constructiveWork->constructive_work_computer_practice_time_secondary ?? '' }}"
                                                                     name="computer_practice_time_secondary">
                                                                 </x-input-text>
                                                             </div>
@@ -2373,11 +2371,11 @@
                                                             <!-- input-group -->
                                                         </div>
 
-                                                        <x-input-radio-or-check :checked="$dinner->night_sit_on_the_table_or_mat_and_eat_with_everyone ??
+                                                        <x-input-radio-or-check :checked="$dinner->night_sit_on_table_or_mat_and_eat_with_everyone ??
                                                             ''"
                                                             name="night_sit_on_the_table_or_mat_and_eat_with_everyone"
                                                             label="টেবিলে বসে সবার সাথে খাবে" :records="$tripReportConstants::$help"
-                                                            secondaryInputValue="{{ $dinner->night_sit_on_the_table_or_mat_and_eat_with_everyone_secondary ?? '' }}"
+                                                            secondaryInputValue="{{ $dinner->night_sit_on_table_or_mat_and_eat_with_everyone_secondary ?? '' }}"
                                                             secondaryInputLabel="সাজেশন">
                                                         </x-input-radio-or-check>
 
@@ -2386,7 +2384,7 @@
                                                             <label for="basicpill-firstname-input">সময়</label>
                                                             <div class="input-group" id="datepicker2">
                                                                 <x-input-text
-                                                                    value="{{ $dinner->night_sit_on_the_table_or_mat_and_eat_with_everyone_time ?? '' }}"
+                                                                    value="{{ $dinner->night_sit_on_table_or_mat_and_eat_with_everyone_time ?? '' }}"
                                                                     name="night_sit_on_the_table_or_mat_and_eat_with_everyone_time">
                                                                 </x-input-text>
                                                             </div>
@@ -2397,16 +2395,16 @@
                                                                 লিখুন</label>
                                                             <div class="input-group" id="datepicker2">
                                                                 <x-input-text
-                                                                    value="{{ $dinner->night_sit_on_the_table_or_mat_and_eat_with_everyone_time_secondary ?? '' }}"
+                                                                    value="{{ $dinner->night_sit_on_table_or_mat_and_eat_with_everyone_time_secondary ?? '' }}"
                                                                     name="night_sit_on_the_table_or_mat_and_eat_with_everyone_time_secondary">
                                                                 </x-input-text>
                                                             </div>
                                                             <!-- input-group -->
                                                         </div>
 
-                                                        <x-input-radio-or-check :checked="$dinner->night_eat_with_your_own_hands_or_spoon ??
+                                                        <x-input-radio-or-check :checked="$dinner->night_eat_with_your ??
                                                             ''"
-                                                            name="night_eat_with_your_own_hands_or_spoon"
+                                                            name="night_eat_with_your"
                                                             label="নিজের হাতে / চামচ দিয়ে খাবে" :records="$tripReportConstants::$help"
                                                             secondaryInputValue="{{ $dinner->night_eat_with_your_own_hands_or_spoon_secondary ?? '' }}"
                                                             secondaryInputLabel="সাজেশন">
@@ -2622,7 +2620,7 @@
                                                             <label for="basicpill-firstname-input">Special Educator
                                                                 Team</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value=""
+                                                                <x-input-text  value="{{ $signature->special_educator_team ?? '' }}"
                                                                     name="special_educator_team" type="file">
                                                                 </x-input-text>
                                                             </div>
@@ -2632,7 +2630,7 @@
                                                             <label for="basicpill-firstname-input">Special Educator
                                                                 Team Name</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value=""
+                                                                <x-input-text value="{{ $signature->special_educator_team_name ?? '' }}"
                                                                     name="special_educator_team_name">
                                                                 </x-input-text>
                                                             </div>
@@ -2641,8 +2639,8 @@
                                                         <div class="mb-3">
                                                             <label for="basicpill-firstname-input">Guardian</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value=""
-                                                                    name="special_educator_team" type="file">
+                                                                <x-input-text value="{{ $signature->guardian_img ?? '' }}"
+                                                                    name="guardian_img" type="file">
                                                                 </x-input-text>
                                                             </div>
                                                             <!-- input-group -->
@@ -2651,7 +2649,7 @@
                                                             <label for="basicpill-firstname-input">Guardian
                                                                 Name</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value="" name="guardian_name">
+                                                                <x-input-text value="{{ $signature->guardian_name ?? '' }}" name="guardian_name">
                                                                 </x-input-text>
                                                             </div>
                                                             <!-- input-group -->
@@ -2660,7 +2658,7 @@
                                                             <label for="basicpill-firstname-input">Note, If
                                                                 any</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value="" name="note_if_any">
+                                                                <x-input-text value="{{ $signature->note_if_any ?? '' }}" name="note_if_any">
                                                                 </x-input-text>
                                                             </div>
                                                             <!-- input-group -->
@@ -2672,7 +2670,7 @@
                                                         <div class="mb-3">
                                                             <label for="basicpill-firstname-input">স্বাক্ষর-
                                                                 টিচার</label>
-                                                            <x-input-text value="" name="signature_teacher"
+                                                            <x-input-text value="{{ $tripEvaluationSignature->signature_teacher ?? '' }}" name="signature_teacher"
                                                                 type="file">
                                                             </x-input-text>
                                                             <!-- input-group -->
@@ -2681,7 +2679,7 @@
                                                             <label for="basicpill-firstname-input">নাম এবং
                                                                 পদবী</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value=""
+                                                                <x-input-text value="{{ $tripEvaluationSignature->signature_teacher_name_or_designation ?? '' }}"
                                                                     name="signature_teacher_name_or_designation">
                                                                 </x-input-text>
                                                             </div>
@@ -2691,7 +2689,7 @@
                                                             <label for="basicpill-firstname-input">সুপারভাইজার
                                                                 এর স্বাক্ষর</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value="" name="supervisor_signature"
+                                                                <x-input-text value="{{ $tripEvaluationSignature->supervisor_signature ?? '' }}" name="supervisor_signature"
                                                                     type="file">
                                                                 </x-input-text>
                                                             </div>
@@ -2701,7 +2699,7 @@
                                                             <label for="basicpill-firstname-input">নাম এবং
                                                                 পদবী</label>
                                                             <div class="input-group" id="datepicker2">
-                                                                <x-input-text value=""
+                                                                <x-input-text value="{{ $tripEvaluationSignature->supervisor_signature_name_or_designation ?? '' }}"
                                                                     name="supervisor_signature_name_or_designation">
                                                                 </x-input-text>
                                                             </div>

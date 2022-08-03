@@ -13,10 +13,9 @@
                 </thead>
                 <tbody>
                     @foreach ($records as $record)
-
                         <tr>
                             <td>{{ $record->collection_date }}</td>
-                            <td></td>
+                            <td>{{ $record->Student->name}}</td>
                             <td>{{ $record->teacher->name}}</td>
                             <td>{{ $record->created_at }}</td>
                             <td>

@@ -25,7 +25,7 @@ class Trip extends Model
             set: fn($val) => json_encode($val),
         );
     }
-    
+
     protected function activities(): Attribute
     {
         return Attribute::make(
@@ -167,6 +167,20 @@ class Trip extends Model
         );
     }
     protected function afterDinner(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function tripEvaluationSignature(): Attribute
+    {
+        return Attribute::make(
+            get: fn($val) => json_decode($val),
+            set: fn($val) => json_encode($val),
+        );
+    }
+    protected function signature(): Attribute
     {
         return Attribute::make(
             get: fn($val) => json_decode($val),

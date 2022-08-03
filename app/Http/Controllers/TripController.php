@@ -148,6 +148,8 @@ class TripController extends Controller
             'constructiveWork' => $trip->constructive_work,
             'dinner' => $trip->dinner,
             'afterDinner' => $trip->after_dinner,
+            'signature' => $trip->signature,
+            'tripEvaluationSignature' => $trip->trip_evaluation_signature,
         ];
         return view('student.dairy.trip.edit', $data);
     }
