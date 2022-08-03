@@ -65,41 +65,10 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-4 d-flex">
-            <label for="example-datetime-local-input" class=" pe-2 col-form-label">
-                <h4 class="pb-0 mb-0 ">Is Sale Item:</h4>
-            </label>
-            <div class="form-check d-flex align-items-center ">
-                {{-- <input class="form-check-input" id="sell" type="checkbox" wireModel="container"> --}}
-                <x-input-text id="sell" type="checkbox" wireModel="is_sale_item" >
-                </x-input-text>
-            </div>
-        </div>
-        <div class="col-4 d-flex ">
-            <label for="example-datetime-local-input" class="pe-2 col-form-label">
-                <h4 class="pb-0 mb-0">Is Purchase Item:</h4>
-            </label>
-            <div class="form-check d-flex align-items-center ">
-                <x-input-text  id="cost" type="checkbox" wireModel="is_purchase_item" >
-                </x-input-text>
-                {{-- <input class="form-check-input" id="cost" type="checkbox" wireModel="container"> --}}
-            </div>
-        </div>
-        <div class="col-4 d-flex">
-            <label for="example-datetime-local-input" class=" pe-2 col-form-label">
-                <h4 class="pb-0 mb-0">Is Expirable Item:</h4>
-            </label>
-            <div class="form-check d-flex align-items-center ">
-                <x-input-text  id="expiry" type="checkbox" wireModel="is_expirable_item" >
-                </x-input-text>
-                {{-- <input class="form-check-input" id="expiry" type="checkbox" wireModel="container"> --}}
-            </div>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row my-5">
         <div class="col-4 pb-4 ">
             <div class="hide_sell">
+                <h4 class="pb-0 mb-0 ">Is Sale Item:</h4>
                 <label for="example-text-input" class="col-form-label">Sell Price</label>
                 <x-input-text type="number" wireModel="selling_price" placeholder="Sell Price">
                 </x-input-text>
@@ -107,13 +76,15 @@
         </div>
         <div class="col-4 pb-4 ">
             <div class="hide_cost">
+                <h4 class="pb-0 mb-0">Is Purchase Item:</h4>
                 <label for="example-text-input" class=" col-form-label">Cost Price</label>
-                <x-input-text wireModel="cost_price" type="number" placeholder="Cost Price Here">
+                <x-input-text wireModel="making_cost" type="number" placeholder="Cost Price Here">
                 </x-input-text>
             </div>
         </div>
         <div class="col-4 pb-4 ">
             <div class="hide_expiry">
+                <h4 class="pb-0 mb-0">Is Expirable Item:</h4>
                 <label for="example-text-input" class=" col-form-label ">Expiry Alert</label>
                 <x-input-text type="number" wireModel="expiry_alert" placeholder="Expiry Alert">
                 </x-input-text>
@@ -198,7 +169,7 @@
             </label>
             <div class="form-check d-flex align-items-center ">
                 {{-- <input class="form-check-input" id="sell" type="checkbox" wireModel="container"> --}}
-                <x-input-text  id="sell" type="checkbox" wireModel="sale_price_in_percent" >
+                <x-input-text id="sell" type="checkbox" wireModel="sale_price_in_percent">
                 </x-input-text>
             </div>
         </div>
@@ -208,7 +179,7 @@
             </label>
             <div class="form-check d-flex align-items-center ">
                 {{-- <input class="form-check-input" id="cost" type="checkbox" wireModel="container"> --}}
-                <x-input-text  id="cost" type="checkbox" wireModel="is_active" >
+                <x-input-text id="cost" type="checkbox" wireModel="is_active">
                 </x-input-text>
             </div>
         </div>
