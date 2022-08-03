@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class CheckBox extends Component
 {
     public string $name;
+    public string $wireModel;
     public string $label;
     public string $placeholder;
     public string $inputClass;
@@ -19,9 +20,10 @@ class CheckBox extends Component
      *
      * @return void
      */
-    public function __construct($name, $label='', $placeholder='', $inputClass='', $inputId='', $required='', $checked='')
+    public function __construct($name = '', $wireModel = '', $label = '', $placeholder = '', $inputClass = '', $inputId = '', $required = '', $checked = '')
     {
         $this->name = $name;
+        $this->wireModel = $wireModel;
         $this->label = $label ?: prepareInputLabel($name);
         $this->placeholder = $placeholder;
         $this->inputClass = $inputClass;
