@@ -26,7 +26,7 @@ class PhysiotherapyRequest extends FormRequest
         return [
             "collection_date"                         => 'required',
             "teacher_id"                              => 'required',
-            "candidate_id"                            => 'required',
+            "student_id"                              => 'required',
             "birth_history"                           => 'nullable',
             "before_birth"                            => 'nullable',
             "pregnancy"                               => 'nullable',

@@ -101,11 +101,10 @@
                                                                         </div>
                                                                         <div class="col-lg-4">
                                                                             <div class="mb-3">
-                                                                                <label
-                                                                                    for="basicpill-phoneno-input">Candidate
+                                                                                <label for="basicpill-phoneno-input">Candidate
                                                                                     ID:</label>
-                                                                                <x-input-select :selected="$candidate_id"
-                                                                                    name="candidate_id" :records="$students" />
+                                                                                <x-input-select name="student_id"
+                                                                                    :records="$students" :selected="$record->student_id" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-lg-12">

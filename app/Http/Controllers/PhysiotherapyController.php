@@ -92,6 +92,7 @@ class PhysiotherapyController extends Controller
             'muscle_tone' => $physiotherapy['muscle_tone'],
             'behavior' => $physiotherapy['behavior'],
             'domain_area' => $physiotherapy['domain_area'],
+            'record' => $this->record = $physiotherapy,
         ];
 
         return view('assessment.physiotherapy.view', $data);
@@ -128,8 +129,9 @@ class PhysiotherapyController extends Controller
             'muscle_tone' => $physiotherapy['muscle_tone'],
             'behavior' => $physiotherapy['behavior'],
             'domain_area' => $physiotherapy['domain_area'],
+            'record' => $this->record = $physiotherapy,
         ];
-        
+
         return view('assessment.physiotherapy.edit', $data);
     }
 
@@ -141,7 +143,7 @@ class PhysiotherapyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(PhysiotherapyRequest $request, Physiotherapy $physiotherapy)
-    {
+    { 
         $this->service->update($physiotherapy, $request->validated());
         Session::flash('success');
         return redirect()->route('physiotherapy.create');

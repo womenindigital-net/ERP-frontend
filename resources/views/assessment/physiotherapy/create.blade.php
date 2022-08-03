@@ -114,7 +114,7 @@
                                                                         <div class="mb-3">
                                                                             <label for="basicpill-phoneno-input">Candidate
                                                                                 ID:</label>
-                                                                            <x-input-select name="candidate_id"
+                                                                            <x-input-select name="student_id"
                                                                                 :records="$students" />
                                                                         </div>
                                                                     </div>

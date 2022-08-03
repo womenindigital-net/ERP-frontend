@@ -51,7 +51,7 @@ class PhysiotherapyService
         return [
             'collection_date' => $validated['collection_date'],
             'teacher_id' => $validated['teacher_id'],
-            'candidate_id' => $validated['candidate_id'],
+            'student_id' => $validated['student_id'],
             'general' => $general,
             'visual_perception' => $visualPerception,
             'activities_of_daily_living' => $activitiesOfDailyLiving,

@@ -71,11 +71,11 @@ final class TripReport
 
     public static array $help = [
 
-        self::HELP1 => 'সমস্যা নেই',
-        self::HELP2 => 'পরিবর্তন দরকার',
-        self::HELP3 => 'সমস্যা নেই',
-        self::HELP4 => 'পরিবর্তন দরকার',
-        self::HELP5 => 'পরিবর্তন দরকার',
+        self::HELP1 => 'পুরপুরি সাহায্য নিয়ে করা',
+        self::HELP2 => 'আংশিক সাহায্য নিয়ে করা',
+        self::HELP3 => 'ছবির মাধ্যমে/দেখে কাজ করা',
+        self::HELP4 => 'মৌখিক নির্দেশে কাজ করা',
+        self::HELP5 => 'নিজে থেকে কাজ করা',
     ];
 
     public static array $columnCollections = [
@@ -389,6 +389,11 @@ final class TripReport
             'reading_story_book_secondary',
             'reading_story_book_time',
             'reading_story_book_time_secondary',
+            'rest_time_listening_song',
+            'rest_time_listening_song_secondary',
+            'rest_time_listening_song_time',
+            'rest_time_listening_song_time_secondary',
+            'listening_time_secondary',
             'playing_video_game',
             'playing_video_game_secondary',
             'playing_video_game_time',
@@ -440,6 +445,10 @@ final class TripReport
             'constructive_game_secondary',
             'constructive_game_time',
             'constructive_game_time_secondary',
+            'constructive_work_computer_practice',
+            'constructive_work_computer_practice_secondary',
+            'constructive_work_computer_practice_time',
+            'constructive_work_computer_practice_time_secondary',
             'home_work',
             'home_work_secondary',
             'home_work_time',
@@ -475,7 +484,7 @@ final class TripReport
             'night_sit_on_table_or_mat_and_eat_with_everyone_secondary',
             'night_sit_on_table_or_mat_and_eat_with_everyone_time',
             'night_sit_on_table_or_mat_and_eat_with_everyone_time_secondary',
-            'night_eat_with_your_own_hands_or_spoon',
+            'night_eat_with_your',
             'night_eat_with_your_own_hands_or_spoon_secondary',
             'night_eat_with_your_own_hands_or_spoon_time',
             'night_eat_with_your_own_hands_or_spoon_time_secondary',
@@ -505,6 +514,26 @@ final class TripReport
             'turn_off_the_lights_and_go_to_bed_secondary',
             'turn_off_the_lights_and_go_to_bed_time',
             'turn_off_the_lights_and_go_to_bed_time_secondary',
+        ],
+        'signature' => [
+            'special_educator_team',
+            'special_educator_team_name',
+            'guardian_img',
+            'guardian_name',
+            'note_if_any',
+        ],
+        'signature' => [
+            'special_educator_team',
+            'special_educator_team_name',
+            'guardian_img',
+            'guardian_name',
+            'note_if_any',
+        ],
+        'trip_evaluation_signature' => [
+            'signature_teacher',
+            'signature_teacher_name_or_designation',
+            'supervisor_signature',
+            'supervisor_signature_name_or_designation',
         ],
     ];
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->id();
             $table->string('collection_date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
-            $table->foreignIdFor(Student::class, 'candidate_id')->nullable()->constrained('students')->cascadeOnDelete();
+            $table->foreignIdFor(Student::class, 'student_id')->nullable()->constrained('students')->cascadeOnDelete();
 
 
             $table->json('general')->nullable();
@@ -39,7 +39,7 @@ return new class extends Migration
             $table->json('muscle_tone')->nullable();
             $table->json('behavior')->nullable();
             $table->json('domain_area')->nullable();
-           
+
             // $table->string('birth_history')->nullable();
             // $table->string('before_birth')->nullable();
             // $table->string('pregnancy')->nullable();
@@ -122,19 +122,19 @@ return new class extends Migration
             // $table->string('treatment_plan')->nullable();
             // $table->string('treatment_plann')->nullable();
             // $table->string('progress')->nullable();
-            
+
             // $table->string('therapist_signature')->nullable();
             // $table->string('designation')->nullable();
 
             // $table->string('upper_limbs')->nullable();
             // $table->string('lower_limbs')->nullable();
             // $table->string('trunk')->nullable();
-            
+
             // $table->string('independence')->nullable();
             // $table->string('social_interaction')->nullable();
             // $table->string('social_communication')->nullable();
             // $table->string('interpersonal')->nullable();
-            
+
             // $table->string('physical_Gross_motor_Fine_motor')->nullable();
             // $table->string('cognitive')->nullable();
             // $table->string('if_yes')->nullable();

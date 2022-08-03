@@ -1518,7 +1518,7 @@
                                                                 <!-- input-group -->
                                                             </div>
 
-                                                            <x-input-radio-or-check name="listening_song"
+                                                            <x-input-radio-or-check name="rest_time_listening_song"
                                                                 label="গান শুনা" :records="$tripReportConstants::$help"
                                                                 secondaryInputLabel="সাজেশন">
                                                             </x-input-radio-or-check>
@@ -1527,7 +1527,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="listening_song_time">
+                                                                    <x-input-text name="rest_time_listening_song_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1536,7 +1536,7 @@
                                                                 <label for="basicpill-firstname-input">বিস্তারিত
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="listening_song_time_secondary">
+                                                                    <x-input-text name="rest_time_listening_song_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1840,7 +1840,7 @@
                                                                 <!-- input-group -->
                                                             </div>
 
-                                                            <x-input-radio-or-check name="computer_practice"
+                                                            <x-input-radio-or-check name="constructive_work_computer_practice"
                                                                 label="কম্পিউটারে কাজের প্র্যাকটিস করবে"
                                                                 :records="$tripReportConstants::$help"
                                                                 secondaryInputLabel="সাজেশন">
@@ -1850,7 +1850,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">সময়</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="computer_practice_time">
+                                                                    <x-input-text name="constructive_work_computer_practice_time">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -1860,7 +1860,7 @@
                                                                     লিখুন</label>
                                                                 <div class="input-group" id="datepicker2">
                                                                     <x-input-text
-                                                                        name="computer_practice_time_secondary">
+                                                                        name="constructive_work_computer_practice_time_secondary">
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-group -->
@@ -2107,7 +2107,7 @@
                                                             </div>
 
                                                             <x-input-radio-or-check
-                                                                name="night_eat_with_your_own_hands_or_spoon"
+                                                                name="night_eat_with_your"
                                                                 label="নিজের হাতে / চামচ দিয়ে খাবে"
                                                                 :records="$tripReportConstants::$help"
                                                                 secondaryInputLabel="সাজেশন">
@@ -2315,7 +2315,7 @@
                                                             <div class="mb-3">
                                                                 <label for="basicpill-firstname-input">Guardian</label>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text name="special_educator_team"
+                                                                    <x-input-text name="guardian_img"
                                                                         type="file">
                                                                     </x-input-text>
                                                                 </div>
