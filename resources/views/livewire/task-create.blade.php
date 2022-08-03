@@ -6,13 +6,13 @@
                     <div class="col-6 row">
                         <label class="col-4 col-form-label">Activity</label>
                         <div class="col-8">
-                            <x-input-select name="student_id" :records="[]" />
+                            <x-input-select name="activity" :records="[]" />
                         </div>
                     </div>
                     <div class="col-6 row">
                         <label class="col-4 col-form-label">Domain Weight</label>
                         <div class="col-8">
-                            <x-input-select name="student_id" :records="[]" />
+                            <x-input-select name="domain_weight" :records="[]" />
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                                                     <label for="name" class="">Task Name</label>
                                                 </div>
                                                 <div class="col-7">
-                                                    <x-input-text name="hello1" placeholder="">
+                                                    <x-input-text name="task_name" placeholder="">
                                                     </x-input-text>
                                                 </div>
                                             </div>
@@ -38,7 +38,7 @@
                                                         class="">Type</label>
                                                 </div>
                                                 <div class="col-lg-9 d-flex gap-3 pt-2">
-                                                    <x-input-select name="student_id"
+                                                    <x-input-select name="type"
                                                         :records="[]" />
                                                     <button class="btn btn-outline-danger waves-effect waves-light removeBtn">
                                                         <i class="fas fa-trash-alt"></i>

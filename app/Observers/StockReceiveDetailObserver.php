@@ -33,20 +33,26 @@ class StockReceiveDetailObserver
     public function created(StockReceiveDetail $stockReceiveDetail)
     {
 
+
+
         $stockReceiveDetail = $this->repo->getRelatedData($stockReceiveDetail, ['stockReceive']);
 
         $projectId = $stockReceiveDetail->stockReceive->project_id;
         $productId = $stockReceiveDetail->product_id;
         $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
 
-
-
         $purchaseId = $stockReceiveDetail->stockReceive->purchase_id;
 
         $purchaseDetailData = $this->purchaseDetailRepo->getPurchaseData($productId, $purchaseId);
+
+
+
+
         if ($purchaseDetailData) {
+            $purchaseDetailData->total_receive_qty += $stockReceiveDetail->stock_receive_qty;
             $purchaseDetailData->receivable += ($stockReceiveDetail->receivable - $stockReceiveDetail->stock_receive_qty);
             $purchaseDetailData->saveQuietly();
+            // dd($purchaseDetailData);
         }
 
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);

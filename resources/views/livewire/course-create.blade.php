@@ -4,8 +4,8 @@
             <div class="card-body">
                 <div class="row pb-3">
                     <div class="col-6">
-                        <label class="col-form-label">Course / Service wireModel</label>
-                        <x-input-text type="number" wireModel="course" placeholder="">
+                        <label class="col-form-label">Course / Service name</label>
+                        <x-input-text type="number" wireModel="title" placeholder="">
                         </x-input-text>
                     </div>
                     <div class="col-6">
@@ -14,8 +14,8 @@
                         </x-input-text>
                     </div>
                     <div class="col-6">
-                        <label class="col-form-label">Cash Acc:</label>
-                        <x-input-select wireModel="cash_acc" :records="$accounts"/>
+                        <label class="col-form-label">Cash Account:</label>
+                        <x-input-select wireModel="cash_account" :records="$accounts"/>
                     </div>
                     <div class="col-6">
                         <label class="col-form-label">Description:</label>
@@ -43,7 +43,7 @@
                                         @foreach ($inputs as $key => $item)
                                         <div data-repeater-item class="row mb-1 removeRow">
                                             <div class=" col-lg-4">
-                                                <x-input-text wireModel="heading.{{ $key }}">
+                                                <x-input-text wireModel="fee_heading.{{ $key }}">
                                                 </x-input-text>
                                             </div>
                                             <div class=" col-lg-4 px-1">

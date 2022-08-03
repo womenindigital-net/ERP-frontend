@@ -143,5 +143,16 @@ final class OtAssessment
 
     ];
 
+    const NORMALL = 'Normal';
+    const HYPO = 'Hypo';
+    const HYPER = 'Hyper';
+
+    public static array $hyper = [
+        self::NORMALL => 'Normal',
+        self::HYPO => 'Hypo',
+        self::HYPER => 'Hyper',
+
+    ];
+
 
 }

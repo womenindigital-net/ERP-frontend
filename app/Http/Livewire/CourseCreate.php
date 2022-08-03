@@ -14,15 +14,17 @@ class CourseCreate extends Component
 {
 
     use WithPagination, CommonListElements, CommonAddMore;
+
     private CourseService $service;
     private CourseRepository $repo;
     private ChartofAccountsRepository $chartAccRepo;
-    protected array $addMoreItems = ['heading', 'account_id', 'amount', 'cash_acc'];
+    protected array $addMoreItems = ['fee_heading', 'account_id', 'amount'];
 
     public function boot(
         ChartofAccountsRepository $chartAccRepo,
         CourseService $service,
-    ) {
+    )
+     {
         $this->chartAccRepo = $chartAccRepo;
         $this->service = $service;
         $this->inputs[] = $this->numberOfItems;
@@ -34,13 +36,22 @@ class CourseCreate extends Component
     
     }
 
-    public $course;
+    public $title;
     public $duration;
     public $description;
-    public $heading;
+    public $fee_heading;
     public $account_id;
     public $amount;
-    public $cash_acc;
+    public $cash_account_id;
+
+    public function submit()
+    {
+        
+        $this->service->store($this->validate());
+        $this->dispatchBrowserEvent('notify');
+        $this->dispatchBrowserEvent('reload');
+    }
+
     // public function mount()
     // {
     //     if ($this->finishedGood) {
@@ -54,15 +65,15 @@ class CourseCreate extends Component
     //         $this->inputs = $this->finishedGood->details->toArray();
     //     }
     // }
+    
     protected array $rules = [
-        'course' => 'nullable',
-        'duration' => 'nullable',
-        'cash_acc' => 'nullable',
+        'title' => 'required',
+        'duration' => 'required',
         'description' => 'nullable',
-        'heading' => 'nullable',
+        'cash_account_id' => 'nullable',
+        'fee_heading.*' => 'required',
         'account_id.*' => 'nullable',
-        'amount' => 'nullable',
-        'cash_acc' => 'nullable',
+        'amount.*' => 'nullable',
     ];
     // public function update()
     // {

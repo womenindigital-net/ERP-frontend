@@ -25,15 +25,21 @@ class StockReceiveObserver
      */
     public function created(StockReceiveDetail $stockReceiveDetail): void
     {
-        $stockReceiveDetail = $this->repo->getRelatedData($stockReceiveDetail, ['StockReceive']);
+        // dump($stockReceiveDetail);
+        $stockReceive = $this->repo->getRelatedData($stockReceiveDetail, ['StockReceive']);
+        // dump($stockReceiveDetail);
 
-        $projectId = $stockReceiveDetail->stockReceive->project_id;
-        $productId = $stockReceiveDetail->product_id;
-        $warehouseId = $stockReceiveDetail->stockReceive->warehouse_id;
+        $projectId = $stockReceive->stockReceive->project_id;
+        $productId = $stockReceive->product_id;
+        $warehouseId = $stockReceive->stockReceive->warehouse_id;
 
         $stock = $this->stockRepo->getDetailAccordingly($projectId, $warehouseId, $productId);
         if ($stock) {
-            $stock->qty += $stockReceiveDetail->stock_receive_qty;
+            // dump($stock->qty);
+            // dump($stockReceiveDetail->stock_receive_qty);
+
+            $stock->qty =  $stock->qty + $stockReceiveDetail->stock_receive_qty;
+            // dd($stock->qty);
             $stock->saveQuietly();
         }
     }

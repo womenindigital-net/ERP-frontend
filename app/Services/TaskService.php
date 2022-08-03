@@ -5,7 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\TaskRepository;
 
-class CourseService
+class TaskService
 {
     private TaskRepository $repo;
 
@@ -14,11 +14,11 @@ class CourseService
         $this->repo = $repository;
     }
 
-    public function getFormattedDataAsOptGroup(): array
-    {
-        $courses = $this->repo->getCoursesWithSpecifyingRelation();
-        return $this->formattedCoursesAsOptGroup($courses);
-    }
+    // public function getFormattedDataAsOptGroup(): array
+    // {
+    //     // $courses = $this->repo->getCoursesWithSpecifyingRelation();
+    //     // return $this->formattedCoursesAsOptGroup($courses);
+    // }
 
     private function formattedCoursesAsOptGroup($courses): array
     {

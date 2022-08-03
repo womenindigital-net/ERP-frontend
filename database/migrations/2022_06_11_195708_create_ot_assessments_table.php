@@ -36,6 +36,12 @@ return new class extends Migration
             $table->string('grasp')->nullable();
             $table->string('manipulation')->nullable();
             $table->string('opp_one')->nullable();
+            $table->string('transfer')->nullable();
+            $table->string('weight_carry')->nullable();
+            $table->string('sensory')->nullable();
+            $table->string('tactile')->nullable();
+            $table->string('visual')->nullable();
+            $table->string('auditory')->nullable();
             $table->string('sitting_habit_in_specific')->nullable();
             $table->string('keep_attention')->nullable();
             $table->string('follow_instruction')->nullable();

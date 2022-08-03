@@ -46,12 +46,13 @@ class CourseService
     {
 
         try {
-
+            
             DB::beginTransaction();
-            [$finishedGoods, $data] = $this->collectFinishedGoods($validated);
-            $finishedGoodsData = $this->repo->store($finishedGoods);
+            [$course, $data] = $this->collectCourse($validated);
+            dd([$course, $data]);
+            $courseData = $this->repo->store($course);
             $finishedGoodsDetailsInfos = $this->collectFinishedGoodsDetailsInfos($data);
-            $finishedGoodsData->details()->createMany($finishedGoodsDetailsInfos);
+            $courseData->details()->createMany($finishedGoodsDetailsInfos);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
@@ -59,20 +60,13 @@ class CourseService
         }
     }
 
-    private function collectFinishedGoods(array $validated)
+    private function collectCourse(array $validated)
     {
-        $total_qty = 0;
+        
+        [$course, $data] = extractNecessaryFieldsFromData($validated, ['title', 'duration', 'description', 'cash_account_id']);
+        $course['created_by'] = auth()->id();
 
-        [$finishedGoods, $data] = extractNecessaryFieldsFromData($validated, ['project_id', 'warehouse_id', 'date', 'note', 'total_qty']);
-
-        for ($i = 0; $i < count($data['qty']); $i++) {
-            $total_qty = $data['qty'][$i] +  $total_qty;
-        }
-
-        $finishedGoods['total_qty'] = $total_qty;
-        $finishedGoods['created_by'] = auth()->id();
-
-        return [$finishedGoods, $data];
+        return [$course, $data];
     }
 
     private function collectFinishedGoodsDetailsInfos(mixed $data): array
@@ -94,7 +88,7 @@ class CourseService
 
         try {
             DB::beginTransaction();
-            [$finishedGoodData, $data] = $this->collectFinishedGoods($validated);
+            [$finishedGoodData, $data] = $this->collectCourse($validated);
             $finishedGoodData = $this->repo->update($finishedGood, $finishedGoodData);
             $finishedGoodData->details()->delete();
             $finishedGoodsDetailsInfos = $this->collectFinishedGoodsDetailsInfos($data);

@@ -3,6 +3,8 @@
         <table class="table table-bordered w-100">
             <thead>
                 <tr class="table-primary">
+
+                    <th>PO ID</th>
                     <th>Project</th>
                     <th>Items</th>
                     <th>Date</th>
@@ -12,6 +14,7 @@
             <tbody>
                 @foreach($records as $record)
                 <tr>
+                    <td>{{$record->invoice_no}}</td>
                     <td>{{$record->requisition->project->title}}</td>
                     <td>{{$record->details->count()}}</td>
                     <td>{{$record->date}}</td>

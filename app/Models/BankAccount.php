@@ -15,4 +15,9 @@ class BankAccount extends Model
     {
         return $this->hasMany(Cheque::class);
     }
+
+    public function CourseDetails()
+    {
+      return $this->belongsTo(Course::class, 'cash_account_id', 'id');
+    }
 }

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('available_qty')->nullable();
             $table->integer('qty')->nullable();
             $table->string('receivable')->nullable();
+            $table->string('total_receive_qty')->nullable();
             $table->double('price', 8, 2)->nullable();
             $table->double('vat', 4, 2)->nullable();
             $table->double('discount', 4, 2)->nullable();
