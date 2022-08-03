@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('trips', function (Blueprint $table) {
 
             $table->id();
+            $table->boolean('is_approved')->default(0);
             $table->string('collection_date')->nullable();
             $table->foreignIdFor(User::class, 'teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
             $table->json('activities_of_daily_living')->nullable();

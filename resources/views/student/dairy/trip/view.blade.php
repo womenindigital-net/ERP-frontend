@@ -11,9 +11,7 @@
                     <!-- Nav tabs -->
                     <div class="row">
                         <div class="col-12 apply-view-only">
-                            <form action="{{ route('trip.update', $id) ?? '' }}" method="POST">
-                                @method('put')
-                                @csrf
+                            <form >
                                 <!-- Wizard container -->
                                 <div class="wizard-container">
                                     <div class="card_stap wizard-card row" data-color="red" id="wizard">
