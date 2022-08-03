@@ -168,11 +168,12 @@
                                                                 type="checkbox" :isVertical="false" :multiple="true">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
-                                                            <x-input-radio-or-check name="has_control_over_body"
+                                                            {{-- <x-input-radio-or-check name="has_control_over_body"
                                                                 label="শরীরের ওপর সাধারণ নিয়ন্ত্রন আছে কিনা?"
-                                                                :records="$constants::$yesNo">
-                                                            </x-input-radio-or-check>
-
+                                                                :records="$caseConstants::$dengrous"
+                                                                type="checkbox" :isVertical="false" :multiple="true">
+                                                            </x-input-radio-or-check> --}}
+                                                            <!-- end row -->
                                                             <!-- end row -->
                                                             <x-input-radio-or-check name="has_speaking_problem"
                                                                 label="কথা বলার সমস্যা আছে কিনাঃ"
@@ -188,7 +189,7 @@
                                                             <!-- end row -->
                                                             <x-input-radio-or-check
                                                                 name="is_able_to_use_correct_word_in_sentence"
-                                                                label="ভাষার ব্যবহার পারে ?(যেমন- বাক্যে সঠিক শব্দের ব্যবহার)"
+                                                                label="ভাষা এবং শব্দের ব্যবহার পারে"
                                                                 :records="$caseConstants::$isAbleToUseCurrectWordInSentanse"
                                                                 secondaryInputLabel="সমস্যা থাকলে উল্লেখ করুন">
                                                             </x-input-radio-or-check>
@@ -200,16 +201,32 @@
                                                                 secondaryInputLabel="স্পেশালিষ্ট এর পদবি ও বিস্তারিত লিখুন।">
                                                             </x-input-radio-or-check>
                                                             <!-- end row -->
+                                                            <div class="col-xl-12 col-sm-12">
+                                                                <div class="mb-2">
+                                                                    <h5>পারিবারিক প্রতিবন্ধীতার কোন ইতিহাস আছে কিনা ?</h5>
+                                                                    <div class="input-group">
+                                                                        <x-input-text type="text"
+                                                                            name='is_there_any_family_history_of_disability'>
+                                                                        </x-input-text>
+                                                                    </div>
+                                                                    <!-- input-->
+                                                                </div>
+                                                            </div> 
                                                             <x-input-radio-or-check
                                                                 name="has_family_learning_disability"
                                                                 label="লার্নিং ডিজাবিলিটি বা কোন কিছু শিখতে পারাতে কোন সমস্যা পরিবারে কারো ছিল কিনা?"
                                                                 :records="$constants::$yesNo">
                                                             </x-input-radio-or-check>
-                                                            <!-- end row -->
-                                                            <x-input-radio-or-check name="has_instability"
-                                                                label="সন্তানের মধ্যে অস্থিরতা আছে কিনা"
+                                                            <x-input-radio-or-check
+                                                                name="do_you_have_any_learning_difficulties_in_learning_the_language"
+                                                                label="ভাষা শিখতে কোন শেখার সমস্যা আছে কিনা?"
                                                                 :records="$constants::$yesNo">
                                                             </x-input-radio-or-check>
+                                                            <!-- end row -->
+                                                            {{-- <x-input-radio-or-check name="has_instability"
+                                                                label="সন্তানের মধ্যে অস্থিরতা আছে কিনা"
+                                                                :records="$constants::$yesNo">
+                                                            </x-input-radio-or-check> --}}
                                                         </section>
                                                     </div>
                                                     <div class="tab-pane" id="TheTrendOfEvolution">

@@ -17,6 +17,12 @@ final class CaseHistoryConstants
     const DYSCALCULIA = 'ডিসক্যাল্কুলিয়া (বিভিন্ন ধরনের গণিত বা অংক বিষয়ক সমস্যা তৈরি করে )';
     const DYSGRAPHIA = 'ডিসগ্রাফিয়া (বানান ভুল করা, খারাপ হাতের লেখা এবং কাগজ সঠিক ভাবে গুছিয়ে না লিখতে পারার সমস্যা, এটা ভাষা ভিত্তিক বা অ-ভাষা ভিত্তিক সমস্যা হতে পারে।)';
 
+    const STUMBLESS = 'বার বার হোঁচট খায় কিনা';
+    const DENGROUS = 'বিপদ সম্বন্ধে সজাগ কিনা';
+    const RESTLESSNESS = 'সন্তানের মধ্যে অস্থিরতা আছে কিনা';
+    const WORKING = 'চলাফেরা বা মুভমেন্ট';
+
+
     const MORECRAYMING = 'বেশি কান্নাকাটি';
     const MOREDEMANDING = 'বেশি ডিমান্ডিং';
     const STUBBORN = 'জেদি';
@@ -140,6 +146,13 @@ final class CaseHistoryConstants
         self::DYSCALCULIA => 'ডিসক্যাল্কুলিয়া (বিভিন্ন ধরনের গণিত বা অংক বিষয়ক সমস্যা তৈরি করে )',
         self::DYSGRAPHIA => 'ডিসগ্রাফিয়া (বানান ভুল করা, খারাপ হাতের লেখা এবং কাগজ সঠিক ভাবে গুছিয়ে না লিখতে পারার সমস্যা, এটা ভাষা ভিত্তিক বা অ-ভাষা ভিত্তিক সমস্যা হতে পারে।)',
 
+    ];
+
+    public static array $dengrous = [
+        self::STUMBLESS => 'বার বার হোঁচট খায় কিনা',
+        self::DENGROUS => 'বিপদ সম্বন্ধে সজাগ কিনা',
+        self::RESTLESSNESS => 'সন্তানের মধ্যে অস্থিরতা আছে কিনা',
+        self::WORKING => 'চলাফেরা বা মুভমেন্ট',
     ];
 
     public static array $isAbleToUseCurrectWordInSentanse = [

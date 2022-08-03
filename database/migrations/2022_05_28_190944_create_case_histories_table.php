@@ -39,8 +39,10 @@ return new class extends Migration
             $table->text('is_able_to_use_correct_word_in_sentence_secondary')->nullable();
             $table->text('has_past_assessment_by_specialist')->nullable();
             $table->text('has_past_assessment_by_specialist_secondary')->nullable();
+            $table->text('is_there_any_family_history_of_disability')->nullable();
             $table->text('has_family_learning_disability')->nullable();
-            $table->text('has_instability')->nullable();
+            $table->text('do_you_have_any_learning_difficulties_in_learning_the_language')->nullable();
+            // $table->text('has_instability')->nullable();
             $table->json('child_description')->nullable();
             $table->text('child_description_secondary')->nullable();
             $table->text('has_sleep_patten_problem')->nullable();

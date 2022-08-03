@@ -158,12 +158,14 @@
                                                             :multiple="true">
                                                         </x-input-radio-or-check>
                                                         <!-- end row -->
-                                                        <x-input-radio-or-check :checked="$caseHistory->has_control_over_body"
+
+                                                        {{-- <x-input-radio-or-check :checked="$caseHistory->has_control_over_body"
                                                             name="has_control_over_body"
                                                             label="শরীরের ওপর সাধারণ নিয়ন্ত্রন আছে কিনা?"
-                                                            :records="$constants::$yesNo">
-                                                        </x-input-radio-or-check>
-
+                                                            :records="$caseConstants::$hasAnyLerningAbstagol" type="checkbox" :isVertical="false"
+                                                            :multiple="true">
+                                                        </x-input-radio-or-check> --}}
+                                                        
                                                         <!-- end row -->
                                                         <x-input-radio-or-check :checked="$caseHistory->has_speaking_problem"
                                                             name="has_speaking_problem" label="কথা বলার সমস্যা আছে কিনাঃ"
@@ -180,8 +182,7 @@
                                                         <!-- end row -->
                                                         <x-input-radio-or-check :checked="$caseHistory->is_able_to_use_correct_word_in_sentence"
                                                             name="is_able_to_use_correct_word_in_sentence"
-                                                            label="ভাষার ব্যবহার পারে ?(যেমন- বাক্যে সঠিক শব্দের ব্যবহার)"
-                                                            :records="$caseConstants::$isAbleToUseCurrectWordInSentanse"
+                                                            label="ভাষা এবং শব্দের ব্যবহার পারে" :records="$caseConstants::$isAbleToUseCurrectWordInSentanse"
                                                             secondaryInputLabel="সমস্যা থাকলে উল্লেখ করুন"
                                                             :secondaryInputValue="$caseHistory->is_able_to_use_correct_word_in_sentence_secondary">
                                                         </x-input-radio-or-check>
@@ -194,15 +195,33 @@
                                                             :secondaryInputValue="$caseHistory->has_past_assessment_by_specialist_secondary">
                                                         </x-input-radio-or-check>
                                                         <!-- end row -->
+                                                        <div class="col-xl-12 col-sm-12">
+                                                            <div class="mb-2">
+                                                                <h5 class="">পারিবারিক প্রতিবন্ধীতার কোন ইতিহাস আছে
+                                                                    কিনা ?</h5>
+                                                                <div class="input-group">
+                                                                    <x-input-text type="text"
+                                                                        value="{{ $caseHistory->is_there_any_family_history_of_disability }}"
+                                                                        name='is_there_any_family_history_of_disability'>
+                                                                    </x-input-text>
+                                                                </div>
+                                                                <!-- input-->
+                                                            </div>
+                                                        </div>
                                                         <x-input-radio-or-check :checked="$caseHistory->has_family_learning_disability"
                                                             name="has_family_learning_disability"
                                                             label="লার্নিং ডিজাবিলিটি বা কোন কিছু শিখতে পারাতে কোন সমস্যা পরিবারে কারো ছিল কিনা?"
                                                             :records="$constants::$yesNo">
                                                         </x-input-radio-or-check>
-                                                        <!-- end row -->
-                                                        <x-input-radio-or-check :checked="$caseHistory->has_instability" name="has_instability"
-                                                            label="সন্তানের মধ্যে অস্থিরতা আছে কিনা" :records="$constants::$yesNo">
+                                                        <x-input-radio-or-check :checked="$caseHistory->do_you_have_any_learning_difficulties_in_learning_the_language"
+                                                            name="do_you_have_any_learning_difficulties_in_learning_the_language"
+                                                            label="ভাষা শিখতে কোন শেখার সমস্যা আছে কিনা?"
+                                                            :records="$constants::$yesNo">
                                                         </x-input-radio-or-check>
+                                                        <!-- end row -->
+                                                        {{-- <x-input-radio-or-check :checked="$caseHistory->has_instability" name="has_instability"
+                                                            label="সন্তানের মধ্যে অস্থিরতা আছে কিনা" :records="$constants::$yesNo">
+                                                        </x-input-radio-or-check> --}}
                                                     </section>
                                                 </div>
                                                 <div class="tab-pane" id="TheTrendOfEvolution">
@@ -872,7 +891,9 @@
                                                                 <h5 class="">তিনটি প্রধান উদ্বেগের বিষয়গুলি
                                                                     লিখুনঃ</h5>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text value="{{ $caseHistory->three_main_concerns }}" name='three_main_concerns'>
+                                                                    <x-input-text
+                                                                        value="{{ $caseHistory->three_main_concerns }}"
+                                                                        name='three_main_concerns'>
                                                                     </x-input-text>
                                                                 </div>
                                                                 <!-- input-->
@@ -892,7 +913,9 @@
                                                                 <h5 class="">চোখের পরিক্ষা হয়ে থাকলে রিপোর্ট
                                                                     সংযুক্ত করুন</h5>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text value="{{ $caseHistory->report_if_eye_examination_has_been_done}}" type="file"
+                                                                    <x-input-text
+                                                                        value="{{ $caseHistory->report_if_eye_examination_has_been_done }}"
+                                                                        type="file"
                                                                         name='report_if_eye_examination_has_been_done'>
                                                                     </x-input-text>
                                                                 </div>
@@ -908,7 +931,9 @@
                                                                 <h5 class="">শ্রবণ ( Hearing)পরিক্ষা হয়ে
                                                                     থাকলে রিপোর্ট সংযুক্ত করুন</h5>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text value="{{ $caseHistory->hearing_attach_report_if_checked }}" type="file"
+                                                                    <x-input-text
+                                                                        value="{{ $caseHistory->hearing_attach_report_if_checked }}"
+                                                                        type="file"
                                                                         name='hearing_attach_report_if_checked'>
                                                                     </x-input-text>
                                                                 </div>
@@ -954,7 +979,9 @@
                                                                     রিপোর্ট
                                                                     সংযুক্ত করুন-</h5>
                                                                 <div class="input-group" id="datepicker2">
-                                                                    <x-input-text value="{{ $caseHistory->attach_the_report_if_you_have_other_relevant_treatment_information }}" type="file"
+                                                                    <x-input-text
+                                                                        value="{{ $caseHistory->attach_the_report_if_you_have_other_relevant_treatment_information }}"
+                                                                        type="file"
                                                                         name='attach_the_report_if_you_have_other_relevant_treatment_information'>
                                                                     </x-input-text>
                                                                 </div>
