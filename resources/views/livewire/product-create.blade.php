@@ -138,53 +138,51 @@
         </div>
         <div data-repeater-list="group-a">
             @foreach ($inputs as $key => $item)
-                <div data-repeater-item class="row removeRow">
-                    {{-- <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
-                        <div>
-                            <x-input-select wireModel="p_category.{{ $key }} " :records="$categorys" targetColumn="title" />
-                        </div>
-                    </div> --}}
-                    <div class="col-lg-2 p-0 pe-1 pb-1">
-                        <select class="form-control form-select" wire:model="p_category.{{ $key }}">
-                            <option>--Select--</option>
-                            @foreach ($categorys as $category)
-                                <optgroup label="{{ $category['title'] }}">
+            <div data-repeater-item class="row removeRow">
+                {{-- <div class=" col-lg-2 d-flex p-0 pe-1 pb-1">
+                    <div>
+                        <x-input-select wireModel="p_category.{{ $key }} " :records="$categorys" targetColumn="title" />
+                    </div>
+                </div> --}}
+                <div class="col-lg-2 p-0 pe-1 pb-1">
+                    <select class="form-control form-select" wire:model="category.{{ $key }}">
+                        <option>--Select--</option>
+                        @foreach ($categorys as $category)
+                        <optgroup label="{{ $category['title'] }}">
 
-                                </optgroup>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                        <x-input-textarea wireModel="product.{{ $key }}" rows=1 placeholder="Product">
-                        </x-input-textarea>
-                    </div>
-                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                        <x-input-text wireModel="measure.{{ $key }}" placeholder="Measure Unit">
-                        </x-input-text>
-                    </div>
-                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                        <x-input-text wireModel="quantity.{{ $key }}" placeholder="Quantity">
-                        </x-input-text>
-                    </div>
-                    <div class=" col-lg-2 p-0 pe-1 pb-1">
-                        <x-input-text wireModel="price.{{ $key }}" type="number" placeholder="Price">
-                        </x-input-text>
-                    </div>
-                    <div class="col-lg-2 p-0 pe-1 pb-1 d-flex">
-                        <x-input-text wireModel="cost.{{ $key }}" type="number" placeholder="Cost">
-                        </x-input-text>
-                        <div onclick="this.parentNode.parentNode.remove(this)">
-                            <button class="btn btn-danger ms-2 removeBtn" type="button">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </div>
-                    </div>
+                        </optgroup>
+                        @endforeach
+                    </select>
                 </div>
+                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                    <x-input-textarea wireModel="product.{{ $key }}" rows=1 placeholder="Product">
+                    </x-input-textarea>
+                </div>
+                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                    <x-input-text wireModel="measure.{{ $key }}" placeholder="Measure Unit">
+                    </x-input-text>
+                </div>
+                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                    <x-input-text wireModel="quantity.{{ $key }}" placeholder="Quantity">
+                    </x-input-text>
+                </div>
+                <div class=" col-lg-2 p-0 pe-1 pb-1">
+                    <x-input-text wireModel="price.{{ $key }}" type="number" placeholder="Price">
+                    </x-input-text>
+                </div>
+                <div class="col-lg-2 p-0 pe-1 pb-1 d-flex">
+                    <x-input-text wireModel="cost.{{ $key }}" type="number" placeholder="Cost">
+                    </x-input-text>
+                    <button type="button" class="btn ms-2 btn-danger t removeBtn" wire:click="removeItem({{ $key }})">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </div>
             @endforeach
         </div>
         @if (!($this->mode == 'show'))
-            <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
-                wire:click="addMore()" />
+        <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add"
+            wire:click="addMore()" />
         @endif
     </form>
     <div class="row pt-3">
@@ -208,13 +206,13 @@
     <div class="modal-footer">
         <div class="w-25">
             @if ($this->mode == 'edit')
-                <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
+            <button class="btn btn-lg btn-success w-100" wire:click="update()">Update</button>
             @elseif (!$this->mode == 'show')
-                <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
+            <button class="btn btn-lg btn-success w-100" wire:click="submit()">Save</button>
             @else
-                <a href="{{ route('product.create') }}" class="btn btn-lg btn-success w-100">
-                    Go Back
-                </a>
+            <a href="{{ route('product.create') }}" class="btn btn-lg btn-success w-100">
+                Go Back
+            </a>
             @endif
         </div>
     </div>

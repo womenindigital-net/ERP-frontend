@@ -26,7 +26,7 @@ class ProductCreate extends Component
     private MeasureUnitRepository $measureUnitRepo;
     private WarehouseRepository $warehouseRepository;
     private ProductCategoryRepository $productCategoryRepo;
-     protected array $addMoreItems = ['p_category', 'product', 'measure', 'quantity', 'price', 'cost'];
+    protected array $addMoreItems = ['p_category', 'product', 'measure', 'quantity', 'price', 'cost'];
 
     public function boot(
         ProductCategoryRepository $productCategoryRepo,
@@ -46,10 +46,10 @@ class ProductCreate extends Component
         $this->measureUnitRepo = $measureUnitRepo;
         $this->productCategoryRepo = $productCategoryRepo;
 
-         $targetKey = count($this->inputs) - 1;
-         foreach ($this->addMoreItems as $each) {
-             $this->{$each}[$targetKey] = null;
-      }
+        $targetKey = count($this->inputs) - 1;
+        foreach ($this->addMoreItems as $each) {
+            $this->{$each}[$targetKey] = null;
+        }
     }
 
 
