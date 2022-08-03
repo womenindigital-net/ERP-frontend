@@ -72,6 +72,11 @@ class ProductCreate extends Component
     public $quantity;
     public $price;
     public $cost;
+    public $is_sale_item;
+    public $is_purchase_item;
+    public $is_expirable_item;
+    public $is_active;
+    public $sale_price_in_percent;
 
 
 
@@ -94,6 +99,11 @@ class ProductCreate extends Component
         'quantity' => 'nullable',
         'price' => 'nullable',
         'cost' => 'nullable',
+        'is_sale_item' => 'nullable',
+        'is_purchase_item' => 'nullable',
+        'is_expirable_item' => 'nullable',
+        'is_active' => 'nullable',
+        'sale_price_in_percent' => 'nullable',
 
     ];
 

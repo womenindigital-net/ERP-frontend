@@ -29,9 +29,13 @@ return new class extends Migration
             $table->double('selling_price', 8, 2)->nullable();
             $table->double('making_cost', 8, 2)->nullable();
             $table->string('expiry_alert')->nullable();
-            $table->string('expiry_alert')->nullable();
             $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users')->nullOnDelete();
             $table->double('current_price')->nullable();
+            $table->string('is_sale_item')->nullable();
+            $table->string('is_purchase_item')->nullable();
+            $table->string('is_expirable_item')->nullable();
+            $table->string('is_active')->nullable();
+            $table->string('sale_price_in_percent')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

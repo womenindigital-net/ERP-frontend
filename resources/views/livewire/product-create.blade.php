@@ -71,7 +71,9 @@
                 <h4 class="pb-0 mb-0 ">Is Sale Item:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="sell" type="checkbox" wireModel="container">
+                {{-- <input class="form-check-input" id="sell" type="checkbox" wireModel="container"> --}}
+                <x-input-text id="sell" type="checkbox" wireModel="is_sale_item" >
+                </x-input-text>
             </div>
         </div>
         <div class="col-4 d-flex ">
@@ -79,7 +81,9 @@
                 <h4 class="pb-0 mb-0">Is Purchase Item:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="cost" type="checkbox" wireModel="container">
+                <x-input-text  id="cost" type="checkbox" wireModel="is_purchase_item" >
+                </x-input-text>
+                {{-- <input class="form-check-input" id="cost" type="checkbox" wireModel="container"> --}}
             </div>
         </div>
         <div class="col-4 d-flex">
@@ -87,7 +91,9 @@
                 <h4 class="pb-0 mb-0">Is Expirable Item:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="expiry" type="checkbox" wireModel="container">
+                <x-input-text  id="expiry" type="checkbox" wireModel="is_expirable_item" >
+                </x-input-text>
+                {{-- <input class="form-check-input" id="expiry" type="checkbox" wireModel="container"> --}}
             </div>
         </div>
     </div>
@@ -191,7 +197,9 @@
                 <h4 class="pb-0 mb-0 ">Sale price in Percent</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="sell" type="checkbox" wireModel="container">
+                {{-- <input class="form-check-input" id="sell" type="checkbox" wireModel="container"> --}}
+                <x-input-text  id="sell" type="checkbox" wireModel="sale_price_in_percent" >
+                </x-input-text>
             </div>
         </div>
         <div class="col-6 d-flex pb-3">
@@ -199,7 +207,9 @@
                 <h4 class="pb-0 mb-0">Is Active:</h4>
             </label>
             <div class="form-check d-flex align-items-center ">
-                <input class="form-check-input" id="cost" type="checkbox" wireModel="container">
+                {{-- <input class="form-check-input" id="cost" type="checkbox" wireModel="container"> --}}
+                <x-input-text  id="cost" type="checkbox" wireModel="is_active" >
+                </x-input-text>
             </div>
         </div>
     </div>
